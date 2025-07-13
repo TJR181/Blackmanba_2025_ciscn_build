@@ -1,0 +1,48 @@
+[
+  {
+    "设备品牌": "JBL",
+    "设备类型": "车载音频系统",
+    "产品型号": "soundbar multibeam ",
+    "CVE编号": "CVE-2023-37215",
+    "漏洞描述": " JBL soundbar multibeam 5.1 - CWE-798: Use of Hard-coded Credentials",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.gov.il/en/Departments/faq/cve_advisories"
+    ],
+    "受影响版本": [
+      "All versions"
+    ],
+    "公开日期": "2023年07月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载音频系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-38548",
+    "漏洞描述": "JBL Go 2 devices through 2021-08-09 allow remote attackers to recover speech signals from an LED on the device, via a telescope and an electro-optical sensor, aka a \"Glowworm\" attack. The power indicator LED of the speakers is connected directly to the power line, as a result, the intensity of a device's power indicator LED is correlative to the power consumption. The sound played by the speakers affects their power consumption and as a result is also correlative to the light intensity of the LEDs. By analyzing measurements obtained from an electro-optical sensor directed at the power indicator LEDs of the speakers, we can recover the sound played by them.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nassiben.com/glowworm-attack"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载音频系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-28155",
+    "漏洞描述": "The Bluetooth Classic implementation on JBL TUNE500BT devices does not properly handle the reception of continuous unsolicited LMP responses, allowing attackers in radio range to trigger a denial of service and shutdown a device by flooding the target device with LMP Feature Response data.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.jbl.com.sg/over-ear-headphones/JBL+TUNE500BT.html",
+      "https://dl.packetstormsecurity.net/papers/general/braktooth.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月07日"
+  }
+]

@@ -1,0 +1,228 @@
+[
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "NGINX Open Source",
+    "CVE编号": "CVE-2024-7347",
+    "漏洞描述": "NGINX Open Source and NGINX Plus have a vulnerability in the ngx_http_mp4_module, which might allow an attacker to over-read NGINX worker memory resulting in its termination, using a specially crafted mp4 file. The issue only affects NGINX if it is built with the ngx_http_mp4_module and the mp4 directive is used in the configuration file. Additionally, the attack is possible only if an attacker can trigger the processing of a specially crafted mp4 file with the ngx_http_mp4_module.  Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://my.f5.com/manage/s/article/K000140529"
+    ],
+    "受影响版本": [
+      "1.5.13"
+    ],
+    "公开日期": "2024年08月14日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "NGINX Plus",
+    "CVE编号": "CVE-2024-39792",
+    "漏洞描述": "When the NGINX Plus is configured to use the MQTT pre-read module, undisclosed requests can cause an increase in memory resource utilization.  Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://my.f5.com/manage/s/article/K000140108"
+    ],
+    "受影响版本": [
+      "R30"
+    ],
+    "公开日期": "2024年08月14日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "NGINX Open Source",
+    "CVE编号": "CVE-2024-35200",
+    "漏洞描述": "When NGINX Plus or NGINX OSS are configured to use the HTTP/3 QUIC module, undisclosed HTTP/3 requests can cause NGINX worker processes to terminate.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://my.f5.com/manage/s/article/K000139612",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R7RPLWC35WHEUFCGKNFG62ESNID25TEZ/",
+      "http://www.openwall.com/lists/oss-security/2024/05/30/4",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MLAOKJWDALQZBIV3WKGPJ6T5Z56D3PRD/"
+    ],
+    "受影响版本": [
+      "1.25.0"
+    ],
+    "公开日期": "2024年05月29日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "NGINX Open Source",
+    "CVE编号": "CVE-2024-34161",
+    "漏洞描述": "When NGINX Plus or NGINX OSS are configured to use the HTTP/3 QUIC module and the network infrastructure supports a Maximum Transmission Unit (MTU) of 4096 or greater without fragmentation, undisclosed QUIC packets can cause NGINX worker processes to leak previously freed memory.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://my.f5.com/manage/s/article/K000139627",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R7RPLWC35WHEUFCGKNFG62ESNID25TEZ/",
+      "http://www.openwall.com/lists/oss-security/2024/05/30/4",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MLAOKJWDALQZBIV3WKGPJ6T5Z56D3PRD/"
+    ],
+    "受影响版本": [
+      "1.25.0"
+    ],
+    "公开日期": "2024年05月29日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "NGINX Open Source",
+    "CVE编号": "CVE-2024-32760",
+    "漏洞描述": "When NGINX Plus or NGINX OSS are configured to use the HTTP/3 QUIC module, undisclosed HTTP/3 encoder instructions can cause NGINX worker processes to terminate or cause or other potential impact.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://my.f5.com/manage/s/article/K000139609",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R7RPLWC35WHEUFCGKNFG62ESNID25TEZ/",
+      "http://www.openwall.com/lists/oss-security/2024/05/30/4",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MLAOKJWDALQZBIV3WKGPJ6T5Z56D3PRD/"
+    ],
+    "受影响版本": [
+      "1.25.0"
+    ],
+    "公开日期": "2024年05月29日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "NGINX Open Source",
+    "CVE编号": "CVE-2024-31079",
+    "漏洞描述": "When NGINX Plus or NGINX OSS are configured to use the HTTP/3 QUIC module, undisclosed HTTP/3 requests can cause NGINX worker processes to terminate or cause other potential impact. This attack requires that a request be specifically timed during the connection draining process, which the attacker has no visibility and limited influence over.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://my.f5.com/manage/s/article/K000139611",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R7RPLWC35WHEUFCGKNFG62ESNID25TEZ/",
+      "http://www.openwall.com/lists/oss-security/2024/05/30/4",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MLAOKJWDALQZBIV3WKGPJ6T5Z56D3PRD/"
+    ],
+    "受影响版本": [
+      "1.25.0"
+    ],
+    "公开日期": "2024年05月29日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "NGINX Plus",
+    "CVE编号": "CVE-2024-24990",
+    "漏洞描述": "When NGINX Plus or NGINX OSS are configured to use the HTTP/3 QUIC module, undisclosed requests can cause NGINX worker processes to terminate.\n\nNote: The HTTP/3 QUIC module is not enabled by default and is considered experimental. For more information, refer to  Support for QUIC and HTTP/3 https://nginx.org/en/docs/quic.html .\n\n\n\n \n\n\nNote: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://my.f5.com/manage/s/article/K000138445",
+      "http://www.openwall.com/lists/oss-security/2024/05/30/4"
+    ],
+    "受影响版本": [
+      "R31",
+      "R30"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "NGINX Plus",
+    "CVE编号": "CVE-2024-24989",
+    "漏洞描述": "When NGINX Plus or NGINX OSS are configured to use the HTTP/3 QUIC module, undisclosed requests can cause NGINX worker processes to terminate.\n\nNote: The HTTP/3 QUIC module is not enabled by default and is considered experimental. For more information, refer to  Support for QUIC and HTTP/3 https://nginx.org/en/docs/quic.html .\n\n\n\nNOTE: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://my.f5.com/manage/s/article/K000138444",
+      "http://www.openwall.com/lists/oss-security/2024/05/30/4"
+    ],
+    "受影响版本": [
+      "R31"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "NGINX Plus",
+    "CVE编号": "CVE-2022-41743",
+    "漏洞描述": "NGINX Plus before versions R27 P1 and R26 P1 have a vulnerability in the module ngx_http_hls_module that might allow a local attacker to corrupt NGINX worker memory, resulting in its crash or potential other impact using a specially crafted audio or video file. The issue affects only NGINX Plus when the hls directive is used in the configuration file. Further, the attack is possible only if an attacker can trigger processing of a specially crafted audio or video file with the module ngx_http_hls_module.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K01112063"
+    ],
+    "受影响版本": [
+      "R27",
+      "R1"
+    ],
+    "公开日期": "2022年10月19日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "NGINX",
+    "CVE编号": "CVE-2022-41742",
+    "漏洞描述": "NGINX Open Source before versions 1.23.2 and 1.22.1, NGINX Open Source Subscription before versions R2 P1 and R1 P1, and NGINX Plus before versions R27 P1 and R26 P1 have a vulnerability in the module ngx_http_mp4_module that might allow a local attacker to cause a worker process crash, or might result in worker process memory disclosure by using a specially crafted audio or video file. The issue affects only NGINX products that are built with the module ngx_http_mp4_module, when the mp4 directive is used in the configuration file. Further, the attack is possible only if an attacker can trigger processing of a specially crafted audio or video file with the module ngx_http_mp4_module.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K28112382",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/BPRVYA4FS34VWB4FEFYNAD7Z2LFCJVEI/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/FD6M3PVVKO35WLAA7GLDBS6TEQ26SM64/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/WBORRVG7VVXYOAIAD64ZHES2U2VIUKFQ/",
+      "https://www.debian.org/security/2022/dsa-5281",
+      "https://lists.debian.org/debian-lts-announce/2022/11/msg00031.html",
+      "https://security.netapp.com/advisory/ntap-20230120-0005/"
+    ],
+    "受影响版本": [
+      "Mainline",
+      "Stable"
+    ],
+    "公开日期": "2022年10月19日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "NGINX",
+    "CVE编号": "CVE-2022-41741",
+    "漏洞描述": "NGINX Open Source before versions 1.23.2 and 1.22.1, NGINX Open Source Subscription before versions R2 P1 and R1 P1, and NGINX Plus before versions R27 P1 and R26 P1 have a vulnerability in the module ngx_http_mp4_module that might allow a local attacker to corrupt NGINX worker memory, resulting in its termination or potential other impact using a specially crafted audio or video file. The issue affects only NGINX products that are built with the ngx_http_mp4_module, when the mp4 directive is used in the configuration file. Further, the attack is possible only if an attacker can trigger processing of a specially crafted audio or video file with the module ngx_http_mp4_module.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K81926432",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/BPRVYA4FS34VWB4FEFYNAD7Z2LFCJVEI/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/FD6M3PVVKO35WLAA7GLDBS6TEQ26SM64/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/WBORRVG7VVXYOAIAD64ZHES2U2VIUKFQ/",
+      "https://www.debian.org/security/2022/dsa-5281",
+      "https://lists.debian.org/debian-lts-announce/2022/11/msg00031.html",
+      "https://security.netapp.com/advisory/ntap-20230120-0005/"
+    ],
+    "受影响版本": [
+      "Mainline",
+      "Stable"
+    ],
+    "公开日期": "2022年10月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "负载均衡器",
+    "产品型号": "NGINX Controller",
+    "CVE编号": "CVE-2020-5864",
+    "漏洞描述": "In versions of NGINX Controller prior to 3.2.0, communication between NGINX Controller and NGINX Plus instances skip TLS verification by default.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K27205552",
+      "https://security.netapp.com/advisory/ntap-20200430-0005/"
+    ],
+    "受影响版本": [
+      "< 3.2.0"
+    ],
+    "公开日期": "2020年04月23日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "负载均衡器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-29658",
+    "漏洞描述": "Zoho ManageEngine Application Control Plus before 100523 has an insecure SSL configuration setting for Nginx, leading to Privilege Escalation.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/application-control/knowledge-base/privilege-escalation-vulnerability-open-SSL.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年03月05日"
+  }
+]

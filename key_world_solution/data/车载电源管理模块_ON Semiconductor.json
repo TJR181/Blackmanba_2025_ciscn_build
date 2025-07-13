@@ -1,0 +1,130 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-33225",
+    "漏洞描述": "An issue in the component RTKVHD64.sys of Realtek Semiconductor Corp Realtek(r) High Definition Audio Function Driver v6.0.9549.1 allows attackers to escalate privileges and execute arbitrary code via sending crafted IOCTL requests.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/DriverHunter/Win-Driver-EXP/tree/main/CVE-2024-33225"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年05月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-33224",
+    "漏洞描述": "An issue in the component rtkio64.sys of Realtek Semiconductor Corp Realtek lO Driver v1.008.0823.2017 allows attackers to escalate privileges and execute arbitrary code via sending crafted IOCTL requests.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/DriverHunter/Win-Driver-EXP/tree/main/CVE-2024-33224"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年05月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-25074",
+    "漏洞描述": "An issue was discovered in Samsung Semiconductor Mobile Processor and Modem Exynos 9820, Exynos 9825, Exynos 980, Exynos 990, Exynos 850, Exynos 1080, Exynos 2100, Exynos 2200, Exynos 1280, Exynos 1380, Exynos 1330, Exynos 9110, Exynos W920, Exynos W930, Exynos Modem 5123, Exynos Modem 5300. The baseband software does not properly check a pointer specified by the SM (Session Management module), which can lead to Denial of Service (Untrusted Pointer Dereference).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://semiconductor.samsung.com/support/quality-support/product-security-updates/",
+      "https://semiconductor.samsung.com/support/quality-support/product-security-updates/cve-2024-25074/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年09月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-25073",
+    "漏洞描述": "An issue was discovered in Samsung Semiconductor Mobile Processor and Modem Exynos 9820, Exynos 9825, Exynos 980, Exynos 990, Exynos 850, Exynos 1080, Exynos 2100, Exynos 2200, Exynos 1280, Exynos 1380, Exynos 1330, Exynos 9110, Exynos W920, Exynos W930, Exynos Modem 5123, Exynos Modem 5300. The baseband software does not properly check a pointer specified by the CC (Call Control module), which can lead to Denial of Service (Untrusted Pointer Dereference).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://semiconductor.samsung.com/support/quality-support/product-security-updates/",
+      "https://semiconductor.samsung.com/support/quality-support/product-security-updates/cve-2024-25073/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年09月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-46870",
+    "漏洞描述": "extcap/nrf_sniffer_ble.py, extcap/nrf_sniffer_ble.sh, extcap/SnifferAPI/*.py in Nordic Semiconductor nRF Sniffer for Bluetooth LE 3.0.0, 3.1.0, 4.0.0, 4.1.0, and 4.1.1 have set incorrect file permission, which allows attackers to do code execution via modified bash and python scripts.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/Chapoly1305/CVE-2023-46870"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年05月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-40480",
+    "漏洞描述": "Nordic Semiconductor, Microchip Technology NRF5340-DK DT100112 was discovered to contain an issue which allows attackers to cause a Denial of Service (DoS) via a crafted ConReq packet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://blediff.github.io/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年02月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-27211",
+    "漏洞描述": "Nordic Semiconductor nRF52840 devices through 2020-10-19 have improper protection against physical side channels. The flash read-out protection (APPROTECT) can be bypassed by injecting a fault during the boot phase.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.aisec.fraunhofer.de/en/FirmwareProtection.html",
+      "https://eprint.iacr.org/2021/640",
+      "https://limitedresults.com/2020/06/nrf52-debug-resurrection-approtect-bypass/",
+      "https://infocenter.nordicsemi.com/pdf/in_133_v1.0.pdf",
+      "https://www.aisec.fraunhofer.de/de/das-institut/wissenschaftliche-exzellenz/security-and-trust-in-open-source-security-tokens.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年05月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-15509",
+    "漏洞描述": "Nordic Semiconductor Android BLE Library through 2.2.1 and DFU Library through 1.10.4 for Android (as used by nRF Connect and other applications) can engage in unencrypted communication while showing the user that the communication is purportedly encrypted. The problem is in bond creation (e.g., internalCreateBond in BleManagerHandler).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/NordicSemiconductor/Android-BLE-Library/commits/master",
+      "https://github.com/NordicSemiconductor/Android-DFU-Library/commits/release",
+      "https://secretdiary.ninja/index.php/2020/07/03/norec-attack-stripping-ble-encryption-from-nordicsemis-android-library-cve-2020-15509/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年07月07日"
+  }
+]

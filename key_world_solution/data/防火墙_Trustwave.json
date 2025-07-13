@@ -1,0 +1,52 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-38285",
+    "漏洞描述": "Trustwave ModSecurity 3.x before 3.0.10 has Inefficient Algorithmic Complexity.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.trustwave.com/en-us/resources/security-resources/software-updates/end-of-sale-and-trustwave-support-for-modsecurity-web-application-firewall/",
+      "https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/modsecurity-v3-dos-vulnerability-in-four-transformations-cve-2023-38285/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年07月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-28882",
+    "漏洞描述": "Trustwave ModSecurity 3.0.5 through 3.0.8 before 3.0.9 allows a denial of service (worker crash and unresponsiveness) because some inputs cause a segfault in the Transaction class for some configurations.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.trustwave.com/en-us/resources/security-resources/software-updates/announcing-modsecurity-version-309/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年04月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-15598",
+    "漏洞描述": "Trustwave ModSecurity 3.x through 3.0.4 allows denial of service via a special request. NOTE: The discoverer reports \"Trustwave has signaled they are disputing our claims.\" The CVE suggests that there is a security issue with how ModSecurity handles regular expressions that can result in a Denial of Service condition. The vendor does not consider this as a security issue because1) there is no default configuration issue here. An attacker would need to know that a rule using a potentially problematic regular expression was in place, 2) the attacker would need to know the basic nature of the regular expression itself to exploit any resource issues. It's well known that regular expression usage can be taxing on system resources regardless of the use case. It is up to the administrator to decide on when it is appropriate to trade resources for potential security benefit",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.modsecurity.org",
+      "http://packetstormsecurity.com/files/159185/ModSecurity-3.0.x-Denial-Of-Service.html",
+      "http://seclists.org/fulldisclosure/2020/Sep/32",
+      "https://www.debian.org/security/2020/dsa-4765",
+      "https://coreruleset.org/20200914/cve-2020-15598/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年10月06日"
+  }
+]

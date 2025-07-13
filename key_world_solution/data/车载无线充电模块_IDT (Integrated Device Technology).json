@@ -1,0 +1,1605 @@
+[
+  {
+    "设备品牌": "Gosuncn Technology Group",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Audio-Visual Integrated Management Platform",
+    "CVE编号": "CVE-2025-4536",
+    "漏洞描述": "A vulnerability has been found in Gosuncn Technology Group Audio-Visual Integrated Management Platform 1.0 and classified as critical. Affected by this vulnerability is an unknown functionality of the file /sysmgr/user/listByPage. The manipulation leads to information disclosure. The attack can be launched remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://wiki.shikangsi.com/post/share/ab0b0245-dc38-4b27-80e8-bc61de83692c"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2025年05月11日"
+  },
+  {
+    "设备品牌": "Gosuncn Technology Group",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Audio-Visual Integrated Management Platform",
+    "CVE编号": "CVE-2025-4535",
+    "漏洞描述": "A vulnerability, which was classified as problematic, was found in Gosuncn Technology Group Audio-Visual Integrated Management Platform 4.0. Affected is an unknown function of the file /config/config.properties of the component Configuration File Handler. The manipulation leads to information disclosure. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://wiki.shikangsi.com/post/share/d9f6cb0a-a673-472c-812c-7ba9545bfba8"
+    ],
+    "受影响版本": [
+      "4.0"
+    ],
+    "公开日期": "2025年05月11日"
+  },
+  {
+    "设备品牌": "Beijing Zhide Intelligent Internet Technology",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Modern Farm Digital Integrated Management System",
+    "CVE编号": "CVE-2025-2147",
+    "漏洞描述": "A vulnerability was found in Beijing Zhide Intelligent Internet Technology Modern Farm Digital Integrated Management System 1.0. It has been classified as problematic. Affected is an unknown function. The manipulation leads to files or directories accessible. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. Multiple endpoints are affected. The vendor was contacted early about this disclosure but did not respond in any way.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://github.com/fubxx/CVE/blob/main/%E7%91%9E%E7%94%B0%E7%8E%B0%E4%BB%A3%E5%86%9C%E5%9C%BA%E6%95%B0%E5%AD%97%E5%8C%96%E7%BB%BC%E5%90%88%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95%E9%81%8D%E5%8E%86.md"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2025年03月10日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco Unified Computing System (Managed)",
+    "CVE编号": "CVE-2025-20261",
+    "漏洞描述": "A vulnerability in the SSH connection handling of Cisco Integrated Management Controller (IMC) for Cisco UCS B-Series, UCS C-Series, UCS S-Series, and UCS X-Series Servers could allow an authenticated, remote attacker to access internal services with elevated privileges.\r\n\r\nThis vulnerability is due to insufficient restrictions on access to internal services. An attacker with a valid user account could exploit this vulnerability by using crafted syntax when connecting to the Cisco IMC of an affected device through SSH. A successful exploit could allow the attacker to access internal services with elevated privileges, which may allow unauthorized modifications to the system, including the possibility of creating new administrator accounts on the affected device.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ucs-ssh-priv-esc-2mZDtdjM"
+    ],
+    "受影响版本": [
+      "4.0(1a)",
+      "3.2(3n)",
+      "4.1(1a)",
+      "4.1(1b)",
+      "4.0(4h)",
+      "4.1(1c)",
+      "3.2(3k)",
+      "3.2(2c)",
+      "4.0(4e)",
+      "4.0(4g)",
+      "3.2(3i)",
+      "4.0(2e)",
+      "3.2(3g)",
+      "4.0(4a)",
+      "4.0(2d)",
+      "3.2(2d)",
+      "4.0(1b)",
+      "4.0(4f)",
+      "3.2(3h)",
+      "3.2(2f)",
+      "4.0(4c)",
+      "3.2(3a)",
+      "4.0(1c)",
+      "3.2(3d)",
+      "3.2(2b)",
+      "4.0(4b)",
+      "3.2(2e)",
+      "4.0(2b)",
+      "4.0(4d)",
+      "3.2(1d)",
+      "3.2(3e)",
+      "3.2(3l)",
+      "3.2(3b)",
+      "4.0(2a)",
+      "3.2(3j)",
+      "4.0(1d)",
+      "3.2(3o)",
+      "4.0(4i)",
+      "4.1(1d)",
+      "4.1(2a)",
+      "4.1(1e)",
+      "3.2(3p)",
+      "4.1(2b)",
+      "4.0(4k)",
+      "4.1(3a)",
+      "4.1(3b)",
+      "4.1(2c)",
+      "4.0(4l)",
+      "4.1(4a)",
+      "4.1(3c)",
+      "4.1(3d)",
+      "4.2(1c)",
+      "4.2(1d)",
+      "4.0(4m)",
+      "4.1(3e)",
+      "4.2(1f)",
+      "4.1(3f)",
+      "4.2(1i)",
+      "4.2(1k)",
+      "4.0(4n)",
+      "4.1(3h)",
+      "4.2(1l)",
+      "4.2(1m)",
+      "4.1(3i)",
+      "4.2(2a)",
+      "4.2(1n)",
+      "4.1(3j)",
+      "4.2(2c)",
+      "4.2(2d)",
+      "4.2(3b)",
+      "4.1(3k)",
+      "4.0(4o)",
+      "4.2(2e)",
+      "4.2(3d)",
+      "4.2(3e)",
+      "4.2(3g)",
+      "4.1(3l)",
+      "4.3(2b)",
+      "4.2(3h)",
+      "4.2(3i)",
+      "4.3(2c)",
+      "4.1(3m)",
+      "4.3(2e)",
+      "4.3(3a)",
+      "4.2(3j)",
+      "4.3(3c)",
+      "4.3(4a)",
+      "4.3(4b)",
+      "4.3(2f)",
+      "4.1(3n)"
+    ],
+    "公开日期": "2025年06月04日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco NX-OS Software",
+    "CVE编号": "CVE-2025-20191",
+    "漏洞描述": "A vulnerability in the Switch Integrated Security Features (SISF) of Cisco IOS Software, Cisco IOS XE Software, Cisco NX-OS Software, and Cisco Wireless LAN Controller (WLC) AireOS Software could allow an unauthenticated, adjacent attacker to cause a denial of service (DoS) condition on an affected device.\r\n\r\nThis vulnerability is due to the incorrect handling of DHCPv6 packets. An attacker could exploit this vulnerability by sending a crafted DHCPv6 packet to an affected device. A successful exploit could allow the attacker to cause the device to reload, resulting in a DoS condition.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sisf-dos-ZGwt4DdY"
+    ],
+    "受影响版本": [
+      "8.2(5)",
+      "7.3(5)D1(1)",
+      "8.4(2)",
+      "8.4(3)",
+      "9.2(3)",
+      "9.2(2v)",
+      "7.3(4)D1(1)",
+      "8.2(1)",
+      "9.2(1)",
+      "9.2(2t)",
+      "9.2(3y)",
+      "7.0(3)I7(6z)",
+      "9.3(2)",
+      "7.0(3)I7(3z)",
+      "7.0(3)IM7(2)",
+      "7.0(3)I7(5a)",
+      "8.1(1)",
+      "8.2(2)",
+      "8.3(2)",
+      "7.3(2)D1(3a)",
+      "9.2(4)",
+      "8.1(2)",
+      "7.3(3)D1(1)",
+      "8.2(3)",
+      "7.0(3)I7(2)",
+      "7.0(3)I7(3)",
+      "8.4(1)",
+      "7.3(0)DX(1)",
+      "7.3(2)D1(1)",
+      "9.3(1)",
+      "7.0(3)I7(6)",
+      "7.3(2)D1(2)",
+      "8.2(4)",
+      "7.0(3)I7(4)",
+      "7.0(3)I7(7)",
+      "9.3(1z)",
+      "9.2(2)",
+      "8.1(2a)",
+      "7.3(2)D1(3)",
+      "7.0(3)I7(5)",
+      "7.0(3)I7(1)",
+      "7.0(3)IA7(2)",
+      "7.0(3)IA7(1)",
+      "8.3(1)",
+      "7.3(1)D1(1)",
+      "7.3(0)D1(1)",
+      "9.3(3)",
+      "7.3(2)D1(1d)",
+      "7.0(3)I7(8)",
+      "9.3(4)",
+      "7.3(6)D1(1)",
+      "8.2(6)",
+      "9.3(5)",
+      "7.0(3)I7(9)",
+      "9.3(6)",
+      "10.1(2)",
+      "10.1(1)",
+      "8.4(4)",
+      "7.3(7)D1(1)",
+      "9.3(5w)",
+      "8.2(7)",
+      "9.3(7)",
+      "9.3(7k)",
+      "7.0(3)I7(9w)",
+      "10.2(1)",
+      "7.3(8)D1(1)",
+      "9.3(7a)",
+      "8.2(7a)",
+      "9.3(8)",
+      "8.4(4a)",
+      "8.4(5)",
+      "7.0(3)I7(10)",
+      "8.2(8)",
+      "10.2(1q)",
+      "10.2(2)",
+      "9.3(9)",
+      "10.1(2t)",
+      "7.3(9)D1(1)",
+      "10.2(3)",
+      "8.4(6)",
+      "10.2(3t)",
+      "9.3(10)",
+      "10.2(2a)",
+      "8.2(9)",
+      "10.3(1)",
+      "10.2(4)",
+      "8.4(7)",
+      "10.3(2)",
+      "8.4(6a)",
+      "9.3(11)",
+      "10.3(3)",
+      "10.2(5)",
+      "8.2(10)",
+      "9.3(12)",
+      "10.2(3v)",
+      "10.4(1)",
+      "8.4(8)",
+      "10.3(99w)",
+      "10.2(6)",
+      "10.3(3w)",
+      "10.3(99x)",
+      "10.3(3o)",
+      "8.4(9)",
+      "10.3(4)",
+      "10.3(3p)",
+      "10.3(4a)",
+      "10.4(2)",
+      "10.3(3q)",
+      "9.3(13)",
+      "8.2(11)",
+      "10.3(5)",
+      "10.2(7)",
+      "10.4(3)",
+      "10.3(3x)",
+      "10.3(4g)",
+      "10.2(8)",
+      "10.3(3r)",
+      "9.3(14)",
+      "10.3(4h)"
+    ],
+    "公开日期": "2025年05月07日"
+  },
+  {
+    "设备品牌": "PLANET Technology",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "GS-4210-24PL4C hardware 2.0",
+    "CVE编号": "CVE-2024-8449",
+    "漏洞描述": "Certain switch models from PLANET Technology have a Hard-coded Credential in the password recovering functionality, allowing an unauthenticated attacker to connect to the device via the serial console and use this credential to reset any user's password.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://www.twcert.org.tw/tw/cp-132-8047-adf79-1.html",
+      "https://www.twcert.org.tw/en/cp-139-8048-f0e4d-2.html"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年09月30日"
+  },
+  {
+    "设备品牌": "CollaboraOnline",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "online",
+    "CVE编号": "CVE-2024-45045",
+    "漏洞描述": "Collabora Online is a collaborative online office suite based on LibreOffice technology. In the mobile (Android/iOS) device variants of Collabora Online it was possible to inject JavaScript via url encoded values in links contained in documents. Since the Android JavaScript interface allows access to internal functions, the likelihood that the app could be compromised via this vulnerability is considered high. Non-mobile variants are not affected. Mobile variants should update to the latest version provided by the platform appstore. There are no known workarounds for this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/CollaboraOnline/online/security/advisories/GHSA-78cg-rg4q-26qv"
+    ],
+    "受影响版本": [
+      "Collabora Office (Android): < 24.04.6.2"
+    ],
+    "公开日期": "2024年08月29日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-45011",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nchar: xillybus: Check USB endpoints when probing device\n\nEnsure, as the driver probes the device, that all endpoints that the\ndriver may attempt to access exist and are of the correct type.\n\nAll XillyUSB devices must have a Bulk IN and Bulk OUT endpoint at\naddress 1. This is verified in xillyusb_setup_base_eps().\n\nOn top of that, a XillyUSB device may have additional Bulk OUT\nendpoints. The information about these endpoints' addresses is deduced\nfrom a data structure (the IDT) that the driver fetches from the device\nwhile probing it. These endpoints are checked in setup_channels().\n\nA XillyUSB device never has more than one IN endpoint, as all data\ntowards the host is multiplexed in this single Bulk IN endpoint. This is\nwhy setup_channels() only checks OUT endpoints.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/25ee8b2908200fc862c0434e5ad483817d50ceda",
+      "https://git.kernel.org/stable/c/4267131278f5cc98f8db31d035d64bdbbfe18658",
+      "https://git.kernel.org/stable/c/5cff754692ad45d5086b75fef8cc3a99c30a1005",
+      "https://git.kernel.org/stable/c/1371d32b95972d39c1e6e4bae8b6d0df1b573731",
+      "https://git.kernel.org/stable/c/2374bf7558de915edc6ec8cb10ec3291dfab9594"
+    ],
+    "受影响版本": [
+      "a53d1202aef122894b6e46116a92174a9123db5d",
+      "a53d1202aef122894b6e46116a92174a9123db5d",
+      "a53d1202aef122894b6e46116a92174a9123db5d",
+      "a53d1202aef122894b6e46116a92174a9123db5d",
+      "a53d1202aef122894b6e46116a92174a9123db5d"
+    ],
+    "公开日期": "2024年09月11日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-45006",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nxhci: Fix Panther point NULL pointer deref at full-speed re-enumeration\n\nre-enumerating full-speed devices after a failed address device command\ncan trigger a NULL pointer dereference.\n\nFull-speed devices may need to reconfigure the endpoint 0 Max Packet Size\nvalue during enumeration. Usb core calls usb_ep0_reinit() in this case,\nwhich ends up calling xhci_configure_endpoint().\n\nOn Panther point xHC the xhci_configure_endpoint() function will\nadditionally check and reserve bandwidth in software. Other hosts do\nthis in hardware\n\nIf xHC address device command fails then a new xhci_virt_device structure\nis allocated as part of re-enabling the slot, but the bandwidth table\npointers are not set up properly here.\nThis triggers the NULL pointer dereference the next time usb_ep0_reinit()\nis called and xhci_configure_endpoint() tries to check and reserve\nbandwidth\n\n[46710.713538] usb 3-1: new full-speed USB device number 5 using xhci_hcd\n[46710.713699] usb 3-1: Device not responding to setup address.\n[46710.917684] usb 3-1: Device not responding to setup address.\n[46711.125536] usb 3-1: device not accepting address 5, error -71\n[46711.125594] BUG: kernel NULL pointer dereference, address: 0000000000000008\n[46711.125600] #PF: supervisor read access in kernel mode\n[46711.125603] #PF: error_code(0x0000) - not-present page\n[46711.125606] PGD 0 P4D 0\n[46711.125610] Oops: Oops: 0000 [#1] PREEMPT SMP PTI\n[46711.125615] CPU: 1 PID: 25760 Comm: kworker/1:2 Not tainted 6.10.3_2 #1\n[46711.125620] Hardware name: Gigabyte Technology Co., Ltd.\n[46711.125623] Workqueue: usb_hub_wq hub_event [usbcore]\n[46711.125668] RIP: 0010:xhci_reserve_bandwidth (drivers/usb/host/xhci.c\n\nFix this by making sure bandwidth table pointers are set up correctly\nafter a failed address device command, and additionally by avoiding\nchecking for bandwidth in cases like this where no actual endpoints are\nadded or removed, i.e. only context for default control endpoint 0 is\nevaluated.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/ef0a0e616b2789bb804a0ce5e161db03170a85b6",
+      "https://git.kernel.org/stable/c/a57b0ebabe6862dce0a2e0f13e17941ad72fc56b",
+      "https://git.kernel.org/stable/c/0f0654318e25b2c185e245ba4a591e42fabb5e59",
+      "https://git.kernel.org/stable/c/365ef7c4277fdd781a695c3553fa157d622d805d",
+      "https://git.kernel.org/stable/c/5ad898ae82412f8a689d59829804bff2999dd0ea",
+      "https://git.kernel.org/stable/c/6b99de301d78e1f5249e57ef2c32e1dec3df2bb1",
+      "https://git.kernel.org/stable/c/8fb9d412ebe2f245f13481e4624b40e651570cbd",
+      "https://git.kernel.org/stable/c/af8e119f52e9c13e556be9e03f27957554a84656"
+    ],
+    "受影响版本": [
+      "651aaf36a7d7b36a58980e70133f9437d4f6d312",
+      "651aaf36a7d7b36a58980e70133f9437d4f6d312",
+      "651aaf36a7d7b36a58980e70133f9437d4f6d312",
+      "651aaf36a7d7b36a58980e70133f9437d4f6d312",
+      "651aaf36a7d7b36a58980e70133f9437d4f6d312",
+      "651aaf36a7d7b36a58980e70133f9437d4f6d312",
+      "651aaf36a7d7b36a58980e70133f9437d4f6d312",
+      "651aaf36a7d7b36a58980e70133f9437d4f6d312"
+    ],
+    "公开日期": "2024年09月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-42905",
+    "漏洞描述": "Beijing Digital China Cloud Technology Co., Ltd. DCME-320 v.7.4.12.60 has a command execution vulnerability, which can be exploited to obtain device administrator privileges via the getVar function in the code/function/system/tool/ping.php file.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://immense-mirror-b42.notion.site/Beijing-Digital-China-Yunke-Information-Technology-Co-Ltd-DCN-firewall-has-a-command-execution-vuln-31bdd1228f6d47c09e854af5f0e7059f",
+      "https://github.com/ZackSecurity/VulnerReport/blob/cve/DCN/1.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年08月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-24486",
+    "漏洞描述": "An issue discovered in silex technology DS-600 Firmware v.1.4.1 allows a remote attacker to edit device settings via the SAVE EEP_DATA command.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://raw.githubusercontent.com/MostafaSoliman/Security-Advisories/master/CVE-2024-24486"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年04月15日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco Unified Computing System (Standalone)",
+    "CVE编号": "CVE-2024-20295",
+    "漏洞描述": "A vulnerability in the CLI of the Cisco Integrated Management Controller (IMC) could allow an authenticated, local attacker to perform command injection attacks on the underlying operating system and elevate privileges to root. To exploit this vulnerability, the attacker must have read-only or higher privileges on an affected device. This vulnerability is due to insufficient validation of user-supplied input. An attacker could exploit this vulnerability by submitting a crafted CLI command. A successful exploit could allow the attacker to elevate privileges to root.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cimc-cmd-inj-mUx4c5AJ"
+    ],
+    "受影响版本": [
+      "3.0(1c)",
+      "3.0(1d)",
+      "3.0(2b)",
+      "3.0(3a)",
+      "3.0(3b)",
+      "3.0(3c)",
+      "3.0(3e)",
+      "3.0(3f)",
+      "3.0(4a)",
+      "3.0(4d)",
+      "3.0(4e)",
+      "3.0(4i)",
+      "3.0(4j)",
+      "3.0(4k)",
+      "3.0(4l)",
+      "3.0(4m)",
+      "3.0(4n)",
+      "3.0(4o)",
+      "3.0(4p)",
+      "3.0(4q)",
+      "3.0(4r)",
+      "3.0(4s)",
+      "2.0(10b)",
+      "2.0(10c)",
+      "2.0(10e)",
+      "2.0(10f)",
+      "2.0(10g)",
+      "2.0(10h)",
+      "2.0(10i)",
+      "2.0(10k)",
+      "2.0(10l)",
+      "2.0(12b)",
+      "2.0(12c)",
+      "2.0(12d)",
+      "2.0(12e)",
+      "2.0(12f)",
+      "2.0(12g)",
+      "2.0(12h)",
+      "2.0(12i)",
+      "2.0(13e)",
+      "2.0(13f)",
+      "2.0(13h)",
+      "2.0(13i)",
+      "2.0(13k)",
+      "2.0(13n)",
+      "2.0(13o)",
+      "2.0(13p)",
+      "2.0(13q)",
+      "2.0(1a)",
+      "2.0(1b)",
+      "2.0(3d)1",
+      "2.0(3d)2",
+      "2.0(3e)1",
+      "2.0(3f)3",
+      "2.0(3i)",
+      "2.0(3j)1",
+      "2.0(4c)",
+      "2.0(4c)1",
+      "2.0(6d)",
+      "2.0(6f)",
+      "2.0(8d)",
+      "2.0(8e)",
+      "2.0(8g)",
+      "2.0(8h)",
+      "2.0(9c)",
+      "2.0(9e)",
+      "2.0(9f)",
+      "2.0(9l)",
+      "2.0(9m)",
+      "2.0(9n)",
+      "2.0(9o)",
+      "2.0(9p)",
+      "3.1(1d)",
+      "3.1(2b)",
+      "3.1(2c)",
+      "3.1(2d)",
+      "3.1(2e)",
+      "3.1(2g)",
+      "3.1(2i)",
+      "3.1(3a)",
+      "3.1(3b)",
+      "3.1(3c)",
+      "3.1(3d)",
+      "3.1(3g)",
+      "3.1(3h)",
+      "3.1(3i)",
+      "3.1(3j)",
+      "3.1(3k)",
+      "4.0(1.240)",
+      "4.0(1a)",
+      "4.0(1b)",
+      "4.0(1c)",
+      "4.0(1d)",
+      "4.0(1e)",
+      "4.0(1g)",
+      "4.0(1h)",
+      "4.0(2c)",
+      "4.0(2d)",
+      "4.0(2f)",
+      "4.0(2g)",
+      "4.0(2h)",
+      "4.0(2i)",
+      "4.0(2l)",
+      "4.0(2n)",
+      "4.0(4b)",
+      "4.0(4c)",
+      "4.0(4d)",
+      "4.0(4e)",
+      "4.0(4f)",
+      "4.0(4h)",
+      "4.0(4i)",
+      "4.0(4k)",
+      "4.0(4l)",
+      "4.0(4m)",
+      "4.0(2o)",
+      "4.0(2p)",
+      "4.0(4n)",
+      "4.0(2q)",
+      "4.0(2r)",
+      "4.1(1c)",
+      "4.1(1d)",
+      "4.1(1f)",
+      "4.1(1g)",
+      "4.1(2a)",
+      "4.1(1h)",
+      "4.1(2b)",
+      "4.1(2f)",
+      "4.1(2e)",
+      "4.1(3b)",
+      "4.1(2d)",
+      "4.1(3c)",
+      "4.1(3d)",
+      "4.1(2g)",
+      "4.1(3f)",
+      "4.1(2h)",
+      "4.1(2j)",
+      "4.1(2k)",
+      "4.1(2l)",
+      "4.1(3h)",
+      "4.1(3i)",
+      "4.1(3l)",
+      "4.2(1a)",
+      "4.2(1b)",
+      "4.2(1c)",
+      "4.2(1e)",
+      "4.2(1f)",
+      "4.2(1g)",
+      "4.2(1i)",
+      "4.2(1j)",
+      "4.2(2a)",
+      "4.2(2f)",
+      "4.2(2g)",
+      "4.2(3b)",
+      "4.2(3d)",
+      "4.2(3e)",
+      "4.2(3g)",
+      "4.2(3h)",
+      "4.2(3i)",
+      "4.3(1.230097)",
+      "4.3(1.230124)",
+      "4.3(1.230138)",
+      "4.3(2.230207)",
+      "4.3(2.230270)"
+    ],
+    "公开日期": "2024年04月24日"
+  },
+  {
+    "设备品牌": "Changing Information Technology",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "CGFIDO",
+    "CVE编号": "CVE-2024-12839",
+    "漏洞描述": "The login mechanism via device authentication of CGFIDO from Changing Information Technology has an Authentication Bypass vulnerability. If a user visits a forged website, the agent program deployed on their device will send an authentication signature to the website. An unauthenticated remote attacker who obtains this signature can use it to log into the system with any device.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.twcert.org.tw/tw/cp-132-8334-8b836-1.html",
+      "https://www.twcert.org.tw/en/cp-139-8335-e4a3f-2.html"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年12月31日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52750",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\narm64: Restrict CPU_BIG_ENDIAN to GNU as or LLVM IAS 15.x or newer\n\nPrior to LLVM 15.0.0, LLVM's integrated assembler would incorrectly\nbyte-swap NOP when compiling for big-endian, and the resulting series of\nbytes happened to match the encoding of FNMADD S21, S30, S0, S0.\n\nThis went unnoticed until commit:\n\n  34f66c4c4d5518c1 (\"arm64: Use a positive cpucap for FP/SIMD\")\n\nPrior to that commit, the kernel would always enable the use of FPSIMD\nearly in boot when __cpu_setup() initialized CPACR_EL1, and so usage of\nFNMADD within the kernel was not detected, but could result in the\ncorruption of user or kernel FPSIMD state.\n\nAfter that commit, the instructions happen to trap during boot prior to\nFPSIMD being detected and enabled, e.g.\n\n| Unhandled 64-bit el1h sync exception on CPU0, ESR 0x000000001fe00000 -- ASIMD\n| CPU: 0 PID: 0 Comm: swapper Not tainted 6.6.0-rc3-00013-g34f66c4c4d55 #1\n| Hardware name: linux,dummy-virt (DT)\n| pstate: 400000c9 (nZcv daIF -PAN -UAO -TCO -DIT -SSBS BTYPE=--)\n| pc : __pi_strcmp+0x1c/0x150\n| lr : populate_properties+0xe4/0x254\n| sp : ffffd014173d3ad0\n| x29: ffffd014173d3af0 x28: fffffbfffddffcb8 x27: 0000000000000000\n| x26: 0000000000000058 x25: fffffbfffddfe054 x24: 0000000000000008\n| x23: fffffbfffddfe000 x22: fffffbfffddfe000 x21: fffffbfffddfe044\n| x20: ffffd014173d3b70 x19: 0000000000000001 x18: 0000000000000005\n| x17: 0000000000000010 x16: 0000000000000000 x15: 00000000413e7000\n| x14: 0000000000000000 x13: 0000000000001bcc x12: 0000000000000000\n| x11: 00000000d00dfeed x10: ffffd414193f2cd0 x9 : 0000000000000000\n| x8 : 0101010101010101 x7 : ffffffffffffffc0 x6 : 0000000000000000\n| x5 : 0000000000000000 x4 : 0101010101010101 x3 : 000000000000002a\n| x2 : 0000000000000001 x1 : ffffd014171f2988 x0 : fffffbfffddffcb8\n| Kernel panic - not syncing: Unhandled exception\n| CPU: 0 PID: 0 Comm: swapper Not tainted 6.6.0-rc3-00013-g34f66c4c4d55 #1\n| Hardware name: linux,dummy-virt (DT)\n| Call trace:\n|  dump_backtrace+0xec/0x108\n|  show_stack+0x18/0x2c\n|  dump_stack_lvl+0x50/0x68\n|  dump_stack+0x18/0x24\n|  panic+0x13c/0x340\n|  el1t_64_irq_handler+0x0/0x1c\n|  el1_abort+0x0/0x5c\n|  el1h_64_sync+0x64/0x68\n|  __pi_strcmp+0x1c/0x150\n|  unflatten_dt_nodes+0x1e8/0x2d8\n|  __unflatten_device_tree+0x5c/0x15c\n|  unflatten_device_tree+0x38/0x50\n|  setup_arch+0x164/0x1e0\n|  start_kernel+0x64/0x38c\n|  __primary_switched+0xbc/0xc4\n\nRestrict CONFIG_CPU_BIG_ENDIAN to a known good assembler, which is\neither GNU as or LLVM's IAS 15.0.0 and newer, which contains the linked\ncommit.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/d08a1e75253b4e19ae290b1c35349f12cfcebc0a",
+      "https://git.kernel.org/stable/c/936c9c10efaefaf1ab3ef020e1f8aaaaff1ad2f9",
+      "https://git.kernel.org/stable/c/ef0224ee5399ea8a46bc07dc6c6494961ed5fdd2",
+      "https://git.kernel.org/stable/c/bd31e534721ab95ef237020fe6995c899ffdf21a",
+      "https://git.kernel.org/stable/c/69e619d2fd056fe1f5d0adf01584f2da669e0d28",
+      "https://git.kernel.org/stable/c/146a15b873353f8ac28dc281c139ff611a3c4848"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2024年05月21日"
+  },
+  {
+    "设备品牌": "azure-rtos",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "usbx",
+    "CVE编号": "CVE-2023-48698",
+    "漏洞描述": "Azure RTOS USBX is a USB host, device, and on-the-go (OTG) embedded stack, that is fully integrated with Azure RTOS ThreadX. An attacker can cause remote code execution due to expired pointer dereference vulnerabilities in Azure RTOS USBX. The affected components include functions/processes in host stack and host classes, related to device linked classes, GSER and HID in RTOS v6.2.1 and below. The fixes have been included in USBX release 6.3.0. Users are advised to upgrade. There are no known workarounds for this vulnerability.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://github.com/azure-rtos/usbx/security/advisories/GHSA-grhp-f66q-x857"
+    ],
+    "受影响版本": [
+      "< 6.3.0"
+    ],
+    "公开日期": "2023年12月05日"
+  },
+  {
+    "设备品牌": "azure-rtos",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "usbx",
+    "CVE编号": "CVE-2023-48697",
+    "漏洞描述": "Azure RTOS USBX is a USB host, device, and on-the-go (OTG) embedded stack, that is fully integrated with Azure RTOS ThreadX. An attacker can cause remote code execution due to memory buffer and pointer vulnerabilities in Azure RTOS USBX. The affected components include functions/processes in pictbridge and host class, related to PIMA, storage, CDC ACM, ECM, audio, hub in RTOS v6.2.1 and below. The fixes have been included in USBX release 6.3.0. Users are advised to upgrade. There are no known workarounds for this vulnerability.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://github.com/azure-rtos/usbx/security/advisories/GHSA-p2p9-wp2q-wjv4"
+    ],
+    "受影响版本": [
+      "< 6.3.0"
+    ],
+    "公开日期": "2023年12月05日"
+  },
+  {
+    "设备品牌": "azure-rtos",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "usbx",
+    "CVE编号": "CVE-2023-48696",
+    "漏洞描述": "Azure RTOS USBX is a USB host, device, and on-the-go (OTG) embedded stack, that is fully integrated with Azure RTOS ThreadX. An attacker can cause remote code execution due to expired pointer dereference vulnerabilities in Azure RTOS USBX. The affected components include components in host class, related to CDC ACM in RTOS v6.2.1 and below. The fixes have been included in USBX release 6.3.0. Users are advised to upgrade. There are no known workarounds for this vulnerability.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://github.com/azure-rtos/usbx/security/advisories/GHSA-h733-98hq-f884"
+    ],
+    "受影响版本": [
+      "< 6.3.0"
+    ],
+    "公开日期": "2023年12月05日"
+  },
+  {
+    "设备品牌": "azure-rtos",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "usbx",
+    "CVE编号": "CVE-2023-48695",
+    "漏洞描述": "Azure RTOS USBX is a USB host, device, and on-the-go (OTG) embedded stack, that is fully integrated with Azure RTOS ThreadX. An attacker can cause remote code execution due to out of bounds write vulnerabilities in Azure RTOS USBX. The affected components include functions/processes in host and device classes, related to CDC ECM and RNDIS in RTOS v6.2.1 and below. The fixes have been included in USBX release 6.3.0. Users are advised to upgrade. There are no known workarounds for this vulnerability.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://github.com/azure-rtos/usbx/security/advisories/GHSA-mwj9-rpph-v8wc"
+    ],
+    "受影响版本": [
+      "< 6.3.0"
+    ],
+    "公开日期": "2023年12月05日"
+  },
+  {
+    "设备品牌": "azure-rtos",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "usbx",
+    "CVE编号": "CVE-2023-48694",
+    "漏洞描述": "Azure RTOS USBX is a USB host, device, and on-the-go (OTG) embedded stack, that is fully integrated with Azure RTOS ThreadX. An attacker can cause remote code execution due to expired pointer dereference and type confusion vulnerabilities in Azure RTOS USBX. The affected components include functions/processes in host stack and host class, related to device linked classes, ASIX, Prolific, SWAR, audio, CDC ECM in RTOS v6.2.1 and below. The fixes have been included in USBX release 6.3.0. Users are advised to upgrade. There are no known workarounds for this vulnerability.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://github.com/azure-rtos/usbx/security/advisories/GHSA-qjw8-7w86-44qj"
+    ],
+    "受影响版本": [
+      "< 6.3.0"
+    ],
+    "公开日期": "2023年12月05日"
+  },
+  {
+    "设备品牌": "AMD",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "AIM-T (AMD Integrated Management Technology) software",
+    "CVE编号": "CVE-2023-31361",
+    "漏洞描述": "A DLL hijacking vulnerability in AMD Integrated Management Technology (AIM-T) Manageability Service could allow an attacker to achieve privilege escalation potentially resulting in arbitrary code execution.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.amd.com/en/resources/product-security/bulletin/amd-sb-9012.html"
+    ],
+    "受影响版本": [
+      "4.0.0.722"
+    ],
+    "公开日期": "2025年02月11日"
+  },
+  {
+    "设备品牌": "AMD",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "AIM-T(AMD Integrated Management Technology) software",
+    "CVE编号": "CVE-2023-31360",
+    "漏洞描述": "Incorrect default permissions in the AMD Integrated Management Technology (AIM-T) Manageability Service installation directory could allow an attacker to achieve privilege escalation, potentially resulting in arbitrary code execution.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.amd.com/en/resources/product-security/bulletin/amd-sb-9012.html"
+    ],
+    "受影响版本": [
+      "4.0.0.722"
+    ],
+    "公开日期": "2025年02月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-30356",
+    "漏洞描述": "Missing Support for an Integrity Check in Shenzen Tenda Technology IP Camera CP3 V11.10.00.2211041355 allows attackers to update the device with crafted firmware",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/SECloudUNIMORE/ACES/blob/master/Tenda/CP3/tmp_MU.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年05月10日"
+  },
+  {
+    "设备品牌": "Siemens",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "SIMOTION C240",
+    "CVE编号": "CVE-2023-27465",
+    "漏洞描述": "A vulnerability has been identified in SIMOTION C240 (All versions >= V5.4 < V5.5 SP1), SIMOTION C240 PN (All versions >= V5.4 < V5.5 SP1), SIMOTION D410-2 DP (All versions >= V5.4 < V5.5 SP1), SIMOTION D410-2 DP/PN (All versions >= V5.4 < V5.5 SP1), SIMOTION D425-2 DP (All versions >= V5.4 < V5.5 SP1), SIMOTION D425-2 DP/PN (All versions >= V5.4 < V5.5 SP1), SIMOTION D435-2 DP (All versions >= V5.4 < V5.5 SP1), SIMOTION D435-2 DP/PN (All versions >= V5.4 < V5.5 SP1), SIMOTION D445-2 DP/PN (All versions >= V5.4), SIMOTION D445-2 DP/PN (All versions >= V5.4 < V5.5 SP1), SIMOTION D455-2 DP/PN (All versions >= V5.4 < V5.5 SP1), SIMOTION P320-4 E (All versions >= V5.4), SIMOTION P320-4 S (All versions >= V5.4). When operated with Security Level Low the device does not protect access to certain services relevant for debugging. This could allow an unauthenticated attacker to extract confidential technology object (TO) configuration from the device.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-482956.pdf"
+    ],
+    "受影响版本": [
+      "All versions >= V5.4 < V5.5 SP1"
+    ],
+    "公开日期": "2023年06月13日"
+  },
+  {
+    "设备品牌": "Juniper Networks",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Junos OS",
+    "CVE编号": "CVE-2023-22395",
+    "漏洞描述": "A Missing Release of Memory after Effective Lifetime vulnerability in the kernel of Juniper Networks Junos OS allows an unauthenticated, adjacent attacker to cause a Denial of Service (DoS). In an MPLS scenario specific packets destined to an Integrated Routing and Bridging (irb) interface of the device will cause a buffer (mbuf) to leak. Continued receipt of these specific packets will eventually cause a loss of connectivity to and from the device, and requires a reboot to recover. These mbufs can be monitored by using the CLI command 'show system buffers': user@host> show system buffers 783/1497/2280 mbufs in use (current/cache/total) user@host> show system buffers 793/1487/2280 mbufs in use (current/cache/total) <<<<<< mbuf usage increased This issue affects Juniper Networks Junos OS: All versions prior to 19.3R3-S7; 19.4 versions prior to 19.4R3-S9; 20.1 version 20.1R1 and later versions; 20.2 versions prior to 20.2R3-S5; 20.3 versions prior to 20.3R3-S5; 20.4 versions prior to 20.4R3-S4; 21.1 versions prior to 21.1R3-S3; 21.2 versions prior to 21.2R3-S2; 21.3 versions prior to 21.3R3-S1; 21.4 versions prior to 21.4R3; 22.1 versions prior to 22.1R2.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://kb.juniper.net/JSA70191"
+    ],
+    "受影响版本": [
+      "unspecified",
+      "19.4",
+      "20.1R1",
+      "20.2",
+      "20.3",
+      "20.4",
+      "21.1",
+      "21.2",
+      "21.3",
+      "21.4",
+      "22.1"
+    ],
+    "公开日期": "2023年01月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Kernel",
+    "CVE编号": "CVE-2023-1118",
+    "漏洞描述": "A flaw use after free in the Linux kernel integrated infrared receiver/transceiver driver was found in the way user detaching rc device. A local user could use this flaw to crash the system or potentially escalate their privileges on the system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/torvalds/linux/commit/29b0589a865b6f66d141d79b2dd1373e4e50fe17",
+      "https://security.netapp.com/advisory/ntap-20230413-0003/",
+      "https://lists.debian.org/debian-lts-announce/2023/05/msg00005.html",
+      "https://lists.debian.org/debian-lts-announce/2023/05/msg00006.html"
+    ],
+    "受影响版本": [
+      "Linux kernel 6.3-rc1"
+    ],
+    "公开日期": "2023年03月02日"
+  },
+  {
+    "设备品牌": "Siemens",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "SCALANCE X204RNA (HSR)",
+    "CVE编号": "CVE-2022-46350",
+    "漏洞描述": "A vulnerability has been identified in SCALANCE X204RNA (HSR) (All versions < V3.2.7), SCALANCE X204RNA (PRP) (All versions < V3.2.7), SCALANCE X204RNA EEC (HSR) (All versions < V3.2.7), SCALANCE X204RNA EEC (PRP) (All versions < V3.2.7), SCALANCE X204RNA EEC (PRP/HSR) (All versions < V3.2.7). The integrated web server could allow Cross-Site Scripting (XSS) attacks if unsuspecting users are tricked into accessing a malicious link. This can be used by an attacker to trigger a malicious request on the affected device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-363821.pdf"
+    ],
+    "受影响版本": [
+      "All versions < V3.2.7"
+    ],
+    "公开日期": "2022年12月13日"
+  },
+  {
+    "设备品牌": "Siemens",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "APOGEE PXC Compact (BACnet)",
+    "CVE编号": "CVE-2022-45937",
+    "漏洞描述": "A vulnerability has been identified in APOGEE PXC Compact (BACnet) (All versions < V3.5.5), APOGEE PXC Compact (P2 Ethernet) (All versions < V2.8.20), APOGEE PXC Modular (BACnet) (All versions < V3.5.5), APOGEE PXC Modular (P2 Ethernet) (All versions < V2.8.20), TALON TC Compact (BACnet) (All versions < V3.5.5), TALON TC Modular (BACnet) (All versions < V3.5.5). A low privilege authenticated attacker with network access to the integrated web server could download sensitive information from the device containing user account credentials.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-180579.pdf"
+    ],
+    "受影响版本": [
+      "All versions < V3.5.5"
+    ],
+    "公开日期": "2022年12月13日"
+  },
+  {
+    "设备品牌": "azure-rtos",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "usbx",
+    "CVE编号": "CVE-2022-39344",
+    "漏洞描述": "Azure RTOS USBX is a USB host, device, and on-the-go (OTG) embedded stack, that is fully integrated with Azure RTOS ThreadX. Prior to version 6.1.12, the USB DFU UPLOAD functionality may be utilized to introduce a buffer overflow resulting in overwrite of memory contents. In particular cases this may allow an attacker to bypass security features or execute arbitrary code. The implementation of `ux_device_class_dfu_control_request` function prevents buffer overflow during handling of DFU UPLOAD command when current state is `UX_SYSTEM_DFU_STATE_DFU_IDLE`. This issue has been patched, please upgrade to version 6.1.12. As a workaround, add the `UPLOAD_LENGTH` check in all possible states.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/azure-rtos/usbx/security/advisories/GHSA-m9p8-xrp7-vvqp"
+    ],
+    "受影响版本": [
+      "< 6.1.12"
+    ],
+    "公开日期": "2022年11月04日"
+  },
+  {
+    "设备品牌": "azure-rtos",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "usbx",
+    "CVE编号": "CVE-2022-39293",
+    "漏洞描述": "Azure RTOS USBX is a high-performance USB host, device, and on-the-go (OTG) embedded stack, that is fully integrated with Azure RTOS ThreadX. The case is, in [_ux_host_class_pima_read](https://github.com/azure-rtos/usbx/blob/master/common/usbx_host_classes/src/ux_host_class_pima_read.c), there is data length from device response, returned in the very first packet, and read by [L165 code](https://github.com/azure-rtos/usbx/blob/082fd9db09a3669eca3358f10b8837a5c1635c0b/common/usbx_host_classes/src/ux_host_class_pima_read.c#L165), as header_length. Then in [L178 code](https://github.com/azure-rtos/usbx/blob/082fd9db09a3669eca3358f10b8837a5c1635c0b/common/usbx_host_classes/src/ux_host_class_pima_read.c#L178), there is a “if” branch, which check the expression of “(header_length - UX_HOST_CLASS_PIMA_DATA_HEADER_SIZE) > data_length” where if header_length is smaller than UX_HOST_CLASS_PIMA_DATA_HEADER_SIZE, calculation could overflow and then [L182 code](https://github.com/azure-rtos/usbx/blob/082fd9db09a3669eca3358f10b8837a5c1635c0b/common/usbx_host_classes/src/ux_host_class_pima_read.c#L182) the calculation of data_length is also overflow, this way the later [while loop start from L192](https://github.com/azure-rtos/usbx/blob/082fd9db09a3669eca3358f10b8837a5c1635c0b/common/usbx_host_classes/src/ux_host_class_pima_read.c#L192) can move data_pointer to unexpected address and cause write buffer overflow. The fix has been included in USBX release [6.1.12](https://github.com/azure-rtos/usbx/releases/tag/v6.1.12_rel). The following can be used as a workaround: Add check of `header_length`: 1. It must be greater than `UX_HOST_CLASS_PIMA_DATA_HEADER_SIZE`. 1. It should be greater or equal to the current returned data length (`transfer_request -> ux_transfer_request_actual_length`).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/azure-rtos/usbx/releases/tag/v6.1.12_rel",
+      "https://github.com/azure-rtos/usbx/security/advisories/GHSA-gg76-h537-xq48"
+    ],
+    "受影响版本": [
+      "< 6.1.12"
+    ],
+    "公开日期": "2022年10月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-38970",
+    "漏洞描述": "ieGeek IG20 hipcam RealServer V1.0 is vulnerable to Incorrect Access Control. The algorithm used to generate device IDs (UIDs) for devices that utilize Shenzhen Yunni Technology iLnkP2P suffers from a predictability flaw that allows remote attackers to establish direct connections to arbitrary devices.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.realinfosec.net/cybersecurity-news/iegeek-vulnerabilities-still-prevalent-in-2022-amazon-ft-ig20/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年09月26日"
+  },
+  {
+    "设备品牌": "azure-rtos",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "usbx",
+    "CVE编号": "CVE-2022-36063",
+    "漏洞描述": "Azure RTOS USBx is a USB host, device, and on-the-go (OTG) embedded stack, fully integrated with Azure RTOS ThreadX and available for all Azure RTOS ThreadX–supported processors. Azure RTOS USBX implementation of host support for USB CDC ECM includes an integer underflow and a buffer overflow in the `_ux_host_class_cdc_ecm_mac_address_get` function which may be potentially exploited to achieve remote code execution or denial of service. Setting mac address string descriptor length to a `0` or `1` allows an attacker to introduce an integer underflow followed (string_length) by a buffer overflow of the `cdc_ecm -> ux_host_class_cdc_ecm_node_id` array. This may allow one to redirect the code execution flow or introduce a denial of service. The fix has been included in USBX release [6.1.12](https://github.com/azure-rtos/usbx/releases/tag/v6.1.12_rel). Improved mac address string descriptor length validation to check for unexpectedly small values may be used as a workaround.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/azure-rtos/usbx/security/advisories/GHSA-chpp-5fv9-6368",
+      "https://github.com/azure-rtos/usbx/blob/master/common/usbx_host_classes/src/ux_host_class_cdc_ecm_mac_address_get.c#L264",
+      "https://github.com/azure-rtos/usbx/releases/tag/v6.1.12_rel"
+    ],
+    "受影响版本": [
+      "< 6.1.12"
+    ],
+    "公开日期": "2022年10月10日"
+  },
+  {
+    "设备品牌": "UNIMO Technology Co., Ltd",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "UNIMO Technology digital video recorders UDR-JA1004/JA1008/JA1016 and UDR-JA1016",
+    "CVE编号": "CVE-2022-35733",
+    "漏洞描述": "Missing authentication for critical function vulnerability in UNIMO Technology digital video recorders (UDR-JA1004/JA1008/JA1016 firmware versions v1.0.20.13 and earlier, and UDR-JA1016 firmware versions v2.0.20.13 and earlier) allows a remote unauthenticated attacker to execute an arbitrary OS command by sending a specially crafted request to the affected device web interface.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://www.unimo.co.jp/table_notice/index.php?act=1&resid=1643590226-637355",
+      "https://jvn.jp/en/vu/JVNVU90821877/index.html"
+    ],
+    "受影响版本": [
+      "UDR-JA1004/JA1008/JA1016 firmware versions v1.0.20.13 and earlier, and UDR-JA1016 firmware versions v2.0.20.13 and earlier"
+    ],
+    "公开日期": "2022年08月23日"
+  },
+  {
+    "设备品牌": "Siemens",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "SiPass integrated AC5102 (ACC-G2)",
+    "CVE编号": "CVE-2022-31807",
+    "漏洞描述": "A vulnerability has been identified in SiPass integrated AC5102 (ACC-G2) (All versions), SiPass integrated ACC-AP (All versions). Affected devices do not properly check the integrity of firmware updates. This could allow a local attacker to upload a maliciously modified firmware onto the device. In a second scenario, a remote attacker who is able to intercept the transfer of a valid firmware from the server to the device could modify the firmware \"on the fly\".",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://cert-portal.siemens.com/productcert/html/ssa-367714.html"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年05月23日"
+  },
+  {
+    "设备品牌": "Siemens",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "SCALANCE X302-7 EEC (230V)",
+    "CVE编号": "CVE-2022-25756",
+    "漏洞描述": "A vulnerability has been identified in SCALANCE X302-7 EEC (230V), SCALANCE X302-7 EEC (230V, coated), SCALANCE X302-7 EEC (24V), SCALANCE X302-7 EEC (24V, coated), SCALANCE X302-7 EEC (2x 230V), SCALANCE X302-7 EEC (2x 230V, coated), SCALANCE X302-7 EEC (2x 24V), SCALANCE X302-7 EEC (2x 24V, coated), SCALANCE X304-2FE, SCALANCE X306-1LD FE, SCALANCE X307-2 EEC (230V), SCALANCE X307-2 EEC (230V, coated), SCALANCE X307-2 EEC (24V), SCALANCE X307-2 EEC (24V, coated), SCALANCE X307-2 EEC (2x 230V), SCALANCE X307-2 EEC (2x 230V, coated), SCALANCE X307-2 EEC (2x 24V), SCALANCE X307-2 EEC (2x 24V, coated), SCALANCE X307-3, SCALANCE X307-3, SCALANCE X307-3LD, SCALANCE X307-3LD, SCALANCE X308-2, SCALANCE X308-2, SCALANCE X308-2LD, SCALANCE X308-2LD, SCALANCE X308-2LH, SCALANCE X308-2LH, SCALANCE X308-2LH+, SCALANCE X308-2LH+, SCALANCE X308-2M, SCALANCE X308-2M, SCALANCE X308-2M PoE, SCALANCE X308-2M PoE, SCALANCE X308-2M TS, SCALANCE X308-2M TS, SCALANCE X310, SCALANCE X310, SCALANCE X310FE, SCALANCE X310FE, SCALANCE X320-1 FE, SCALANCE X320-1-2LD FE, SCALANCE X408-2, SCALANCE XR324-12M (230V, ports on front), SCALANCE XR324-12M (230V, ports on front), SCALANCE XR324-12M (230V, ports on rear), SCALANCE XR324-12M (230V, ports on rear), SCALANCE XR324-12M (24V, ports on front), SCALANCE XR324-12M (24V, ports on front), SCALANCE XR324-12M (24V, ports on rear), SCALANCE XR324-12M (24V, ports on rear), SCALANCE XR324-12M TS (24V), SCALANCE XR324-12M TS (24V), SCALANCE XR324-4M EEC (100-240VAC/60-250VDC, ports on front), SCALANCE XR324-4M EEC (100-240VAC/60-250VDC, ports on front), SCALANCE XR324-4M EEC (100-240VAC/60-250VDC, ports on rear), SCALANCE XR324-4M EEC (100-240VAC/60-250VDC, ports on rear), SCALANCE XR324-4M EEC (24V, ports on front), SCALANCE XR324-4M EEC (24V, ports on front), SCALANCE XR324-4M EEC (24V, ports on rear), SCALANCE XR324-4M EEC (24V, ports on rear), SCALANCE XR324-4M EEC (2x 100-240VAC/60-250VDC, ports on front), SCALANCE XR324-4M EEC (2x 100-240VAC/60-250VDC, ports on front), SCALANCE XR324-4M EEC (2x 100-240VAC/60-250VDC, ports on rear), SCALANCE XR324-4M EEC (2x 100-240VAC/60-250VDC, ports on rear), SCALANCE XR324-4M EEC (2x 24V, ports on front), SCALANCE XR324-4M EEC (2x 24V, ports on front), SCALANCE XR324-4M EEC (2x 24V, ports on rear), SCALANCE XR324-4M EEC (2x 24V, ports on rear), SCALANCE XR324-4M PoE (230V, ports on front), SCALANCE XR324-4M PoE (230V, ports on rear), SCALANCE XR324-4M PoE (24V, ports on front), SCALANCE XR324-4M PoE (24V, ports on rear), SCALANCE XR324-4M PoE TS (24V, ports on front), SIPLUS NET SCALANCE X308-2. The integrated web server could allow Cross-Site Scripting (XSS) attacks if unsuspecting users are tricked into accessing a malicious link. This can be used by an attacker to trigger a malicious request on the affected device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-836527.pdf"
+    ],
+    "受影响版本": [
+      "All versions < V4.1.4"
+    ],
+    "公开日期": "2022年04月12日"
+  },
+  {
+    "设备品牌": "Siemens",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "SCALANCE X302-7 EEC (230V)",
+    "CVE编号": "CVE-2022-25754",
+    "漏洞描述": "A vulnerability has been identified in SCALANCE X302-7 EEC (230V), SCALANCE X302-7 EEC (230V, coated), SCALANCE X302-7 EEC (24V), SCALANCE X302-7 EEC (24V, coated), SCALANCE X302-7 EEC (2x 230V), SCALANCE X302-7 EEC (2x 230V, coated), SCALANCE X302-7 EEC (2x 24V), SCALANCE X302-7 EEC (2x 24V, coated), SCALANCE X304-2FE, SCALANCE X306-1LD FE, SCALANCE X307-2 EEC (230V), SCALANCE X307-2 EEC (230V, coated), SCALANCE X307-2 EEC (24V), SCALANCE X307-2 EEC (24V, coated), SCALANCE X307-2 EEC (2x 230V), SCALANCE X307-2 EEC (2x 230V, coated), SCALANCE X307-2 EEC (2x 24V), SCALANCE X307-2 EEC (2x 24V, coated), SCALANCE X307-3, SCALANCE X307-3, SCALANCE X307-3LD, SCALANCE X307-3LD, SCALANCE X308-2, SCALANCE X308-2, SCALANCE X308-2LD, SCALANCE X308-2LD, SCALANCE X308-2LH, SCALANCE X308-2LH, SCALANCE X308-2LH+, SCALANCE X308-2LH+, SCALANCE X308-2M, SCALANCE X308-2M, SCALANCE X308-2M PoE, SCALANCE X308-2M PoE, SCALANCE X308-2M TS, SCALANCE X308-2M TS, SCALANCE X310, SCALANCE X310, SCALANCE X310FE, SCALANCE X310FE, SCALANCE X320-1 FE, SCALANCE X320-1-2LD FE, SCALANCE X408-2, SCALANCE XR324-12M (230V, ports on front), SCALANCE XR324-12M (230V, ports on front), SCALANCE XR324-12M (230V, ports on rear), SCALANCE XR324-12M (230V, ports on rear), SCALANCE XR324-12M (24V, ports on front), SCALANCE XR324-12M (24V, ports on front), SCALANCE XR324-12M (24V, ports on rear), SCALANCE XR324-12M (24V, ports on rear), SCALANCE XR324-12M TS (24V), SCALANCE XR324-12M TS (24V), SCALANCE XR324-4M EEC (100-240VAC/60-250VDC, ports on front), SCALANCE XR324-4M EEC (100-240VAC/60-250VDC, ports on front), SCALANCE XR324-4M EEC (100-240VAC/60-250VDC, ports on rear), SCALANCE XR324-4M EEC (100-240VAC/60-250VDC, ports on rear), SCALANCE XR324-4M EEC (24V, ports on front), SCALANCE XR324-4M EEC (24V, ports on front), SCALANCE XR324-4M EEC (24V, ports on rear), SCALANCE XR324-4M EEC (24V, ports on rear), SCALANCE XR324-4M EEC (2x 100-240VAC/60-250VDC, ports on front), SCALANCE XR324-4M EEC (2x 100-240VAC/60-250VDC, ports on front), SCALANCE XR324-4M EEC (2x 100-240VAC/60-250VDC, ports on rear), SCALANCE XR324-4M EEC (2x 100-240VAC/60-250VDC, ports on rear), SCALANCE XR324-4M EEC (2x 24V, ports on front), SCALANCE XR324-4M EEC (2x 24V, ports on front), SCALANCE XR324-4M EEC (2x 24V, ports on rear), SCALANCE XR324-4M EEC (2x 24V, ports on rear), SCALANCE XR324-4M PoE (230V, ports on front), SCALANCE XR324-4M PoE (230V, ports on rear), SCALANCE XR324-4M PoE (24V, ports on front), SCALANCE XR324-4M PoE (24V, ports on rear), SCALANCE XR324-4M PoE TS (24V, ports on front), SIPLUS NET SCALANCE X308-2. The integrated web server of the affected device could allow remote attackers to perform actions with the permissions of a victim user, provided the victim user has an active session and is induced to trigger the malicious request.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-836527.pdf"
+    ],
+    "受影响版本": [
+      "All versions < V4.1.4"
+    ],
+    "公开日期": "2022年04月12日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco IOS",
+    "CVE编号": "CVE-2022-20761",
+    "漏洞描述": "A vulnerability in the integrated wireless access point (AP) packet processing of the Cisco 1000 Series Connected Grid Router (CGR1K) could allow an unauthenticated, adjacent attacker to cause a denial of service condition on an affected device. This vulnerability is due to insufficient input validation of received traffic. An attacker could exploit this vulnerability by sending crafted traffic to an affected device. A successful exploit could allow the attacker to cause the integrated AP to stop processing traffic, resulting in a DoS condition. It may be necessary to manually reload the CGR1K to restore AP operation.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cgr1k-ap-dos-mSZR4QVh"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年04月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-44345",
+    "漏洞描述": "Beijing Wisdom Vision Technology Industry Co., Ltd One Card Integrated Management System 3.0 is vulnerable to SQL Injection.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.cnvd.org.cn/flaw/show/3454201"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年03月20日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco Web Security Appliance (WSA)",
+    "CVE编号": "CVE-2021-34749",
+    "漏洞描述": "A vulnerability in Server Name Identification (SNI) request filtering of Cisco Web Security Appliance (WSA), Cisco Firepower Threat Defense (FTD), and the Snort detection engine could allow an unauthenticated, remote attacker to bypass filtering technology on an affected device and exfiltrate data from a compromised host. This vulnerability is due to inadequate filtering of the SSL handshake. An attacker could exploit this vulnerability by using data from the SSL client hello packet to communicate with an external server. A successful exploit could allow the attacker to execute a command-and-control attack on a compromised host and perform additional data exfiltration attacks.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sni-data-exfil-mFgzXqLN",
+      "https://lists.debian.org/debian-lts-announce/2023/02/msg00011.html",
+      "https://www.debian.org/security/2023/dsa-5354"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月18日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco Unified Computing System (Managed)",
+    "CVE编号": "CVE-2021-34736",
+    "漏洞描述": "A vulnerability in the web-based management interface of Cisco Integrated Management Controller (IMC) Software could allow an unauthenticated, remote attacker to cause the web-based management interface to unexpectedly restart. The vulnerability is due to insufficient input validation on the web-based management interface. An attacker could exploit this vulnerability by sending a crafted HTTP request to an affected device. A successful exploit could allow the attacker to cause the interface to restart, resulting in a denial of service (DoS) condition.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-imc-gui-dos-TZjrFyZh"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年10月21日"
+  },
+  {
+    "设备品牌": "Geutebrück",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "E2 Series",
+    "CVE编号": "CVE-2021-33543",
+    "漏洞描述": "Multiple camera devices by UDP Technology, Geutebrück and other vendors allow unauthenticated remote access to sensitive files due to default user authentication settings. This can lead to manipulation of the device and denial of service.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.randorisec.fr/fr/udp-technology-ip-camera-vulnerabilities/",
+      "https://us-cert.cisa.gov/ics/advisories/icsa-21-208-03"
+    ],
+    "受影响版本": [
+      "EBC-21xx 1.12.13.2 ",
+      "EBC-21xx 1.12.14.5",
+      "EFD-22xx 1.12.13.2 ",
+      "EFD-22xx 1.12.14.5",
+      "ETHC-22xx 1.12.13.2 ",
+      "ETHC-22xx 1.12.14.5",
+      "EWPC-22xx 1.12.13.2 ",
+      "EWPC-22xx 1.12.14.5",
+      "EBC-21xx",
+      "EFD-22xx",
+      "ETHC-22xx",
+      "EWPC-22xx"
+    ],
+    "公开日期": "2021年09月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-31642",
+    "漏洞描述": "A denial of service condition exists after an integer overflow in several IoT devices from CHIYU Technology, including BIOSENSE, Webpass, and BF-630, BF-631, and SEMAC. The vulnerability can be explored by sending an unexpected integer (> 32 bits) on the page parameter that will crash the web portal and making it unavailable until a reboot of the device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://gitbook.seguranca-informatica.pt/cve-and-exploits/cves/chiyu-iot-devices#cve-2021-31642",
+      "https://seguranca-informatica.pt/dancing-in-the-iot-chiyu-devices-vulnerable-to-remote-attacks/",
+      "https://www.chiyu-tech.com/msg/message-Firmware-update-87.html",
+      "http://packetstormsecurity.com/files/162934/CHIYU-IoT-Denial-Of-Service.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年06月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-31251",
+    "漏洞描述": "An authentication bypass in telnet server in BF-430 and BF431 232/422 TCP/IP Converter, BF-450M and SEMAC from CHIYU Technology Inc allows obtaining a privileged connection with the target device by supplying a specially malformed request and an attacker may force the remote telnet server to believe that the user has already authenticated.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.chiyu-tech.com/msg/message-Firmware-update-87.html",
+      "https://gitbook.seguranca-informatica.pt/cve-and-exploits/cves/chiyu-iot-devices#cve-2021-31251",
+      "https://seguranca-informatica.pt/dancing-in-the-iot-chiyu-devices-vulnerable-to-remote-attacks/#.YLqK1KhKguU"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年06月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-28653",
+    "漏洞描述": "The iOS and macOS apps before 1.4.1 for the Western Digital G-Technology ArmorLock NVMe SSD store keys insecurely. They choose a non-preferred storage mechanism if the device has Secure Enclave support but lacks biometric authentication hardware.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/productsecurity/wdc-21003-armorLock-insecure-key-storage-vulnerability"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年03月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Welch Allyn medical device management tools",
+    "CVE编号": "CVE-2021-27410",
+    "漏洞描述": "The affected product is vulnerable to an out-of-bounds write, which may result in corruption of data or code execution on the Welch Allyn medical device management tools (Welch Allyn Service Tool: versions prior to v1.10, Welch Allyn Connex Device Integration Suite – Network Connectivity Engine (NCE): versions prior to v5.3, Welch Allyn Software Development Kit (SDK): versions prior to v3.2, Welch Allyn Connex Central Station (CS): versions prior to v1.8.6, Welch Allyn Service Monitor: versions prior to v1.7.0.0, Welch Allyn Connex Vital Signs Monitor (CVSM): versions prior to v2.43.02, Welch Allyn Connex Integrated Wall System (CIWS): versions prior to v2.43.02, Welch Allyn Connex Spot Monitor (CSM): versions prior to v1.52, Welch Allyn Spot Vital Signs 4400 Device (Spot 4400) / Welch Allyn Spot 4400 Vital Signs Extended Care Device: versions prior to v1.11.00).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://us-cert.cisa.gov/ics/advisories/icsma-21-152-01"
+    ],
+    "受影响版本": [
+      "Welch Allyn Service Tool: versions prior to v1.10, Welch Allyn Connex Device Integration Suite – Network Connectivity Engine (NCE): versions prior to v5.3, Welch Allyn Software Development Kit (SDK): versions prior to v3.2, Welch Allyn Connex Central Station (CS): versions prior to v1.8.6, Welch Allyn Service Monitor: versions prior to v1.7.0.0, Welch Allyn Connex Vital Signs Monitor (CVSM): versions prior to v2.43.02, Welch Allyn Connex Integrated Wall System (CIWS): versions prior to v2.43.02, Welch Allyn Connex Spot Monitor (CSM): versions prior to v1.52, Welch Allyn Spot Vital Signs 4400 Device (Spot 4400) / Welch Allyn Spot 4400 Vital Signs Extended Care Device: versions prior to v1.11.00"
+    ],
+    "公开日期": "2021年06月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Welch Allyn medical device management tools",
+    "CVE编号": "CVE-2021-27408",
+    "漏洞描述": "The affected product is vulnerable to an out-of-bounds read, which can cause information leakage leading to arbitrary code execution if chained to the out-of-bounds write vulnerability on the Welch Allyn medical device management tools (Welch Allyn Service Tool: versions prior to v1.10, Welch Allyn Connex Device Integration Suite – Network Connectivity Engine (NCE): versions prior to v5.3, Welch Allyn Software Development Kit (SDK): versions prior to v3.2, Welch Allyn Connex Central Station (CS): versions prior to v1.8.6, Welch Allyn Service Monitor: versions prior to v1.7.0.0, Welch Allyn Connex Vital Signs Monitor (CVSM): versions prior to v2.43.02, Welch Allyn Connex Integrated Wall System (CIWS): versions prior to v2.43.02, Welch Allyn Connex Spot Monitor (CSM): versions prior to v1.52, Welch Allyn Spot Vital Signs 4400 Device (Spot 4400) / Welch Allyn Spot 4400 Vital Signs Extended Care Device: versions prior to v1.11.00).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://us-cert.cisa.gov/ics/advisories/icsma-21-152-01"
+    ],
+    "受影响版本": [
+      "Welch Allyn Service Tool: versions prior to v1.10, Welch Allyn Connex Device Integration Suite – Network Connectivity Engine (NCE): versions prior to v5.3, Welch Allyn Software Development Kit (SDK): versions prior to v3.2, Welch Allyn Connex Central Station (CS): versions prior to v1.8.6, Welch Allyn Service Monitor: versions prior to v1.7.0.0, Welch Allyn Connex Vital Signs Monitor (CVSM): versions prior to v2.43.02, Welch Allyn Connex Integrated Wall System (CIWS): versions prior to v2.43.02, Welch Allyn Connex Spot Monitor (CSM): versions prior to v1.52, Welch Allyn Spot Vital Signs 4400 Device (Spot 4400) / Welch Allyn Spot 4400 Vital Signs Extended Care Device: versions prior to v1.11.00"
+    ],
+    "公开日期": "2021年06月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-25328",
+    "漏洞描述": "Skyworth Digital Technology RN510 V.3.1.0.4 RN510 V.3.1.0.4 contains a buffer overflow vulnerability in /cgi-bin/app-staticIP.asp. An authenticated attacker can send a specially crafted request to endpoint which can lead to a denial of service (DoS) or possible code execution on the device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://s3curityb3ast.github.io/KSA-Dev-011.md",
+      "http://seclists.org/fulldisclosure/2021/May/5",
+      "http://packetstormsecurity.com/files/162450/Shenzhen-Skyworth-RN510-Buffer-Overflow.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年04月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Modicon M340 CPUs: BMXP34 (Versions prior to V3.40), Modicon M340 X80 Ethernet Communication Modules: BMXNOE0100 (H), BMXNOE0110 (H), BMXNOC0401, BMXNOR0200H RTU (All Versions), Modicon Premium Processors with integrated Ethernet (Copro): TSXP574634, TSXP575634, TSXP576634 (All Versions), Modicon Quantum Processors with Integrated Ethernet (Copro): 140CPU65xxxxx (All Versions), Modicon Quantum Communication Modules: 140NOE771x1, 140NOC78x00, 140NOC77101 (All Versions), Modicon Premium Communication Modules: TSXETY4103, TSXETY5103 (All Versions)",
+    "CVE编号": "CVE-2021-22788",
+    "漏洞描述": "A CWE-787: Out-of-bounds Write vulnerability exists that could cause denial of service when an attacker sends a specially crafted HTTP request to the web server of the device. Affected Product: Modicon M340 CPUs: BMXP34 (Versions prior to V3.40), Modicon M340 X80 Ethernet Communication Modules: BMXNOE0100 (H), BMXNOE0110 (H), BMXNOC0401, BMXNOR0200H RTU (All Versions), Modicon Premium Processors with integrated Ethernet (Copro): TSXP574634, TSXP575634, TSXP576634 (All Versions), Modicon Quantum Processors with Integrated Ethernet (Copro): 140CPU65xxxxx (All Versions), Modicon Quantum Communication Modules: 140NOE771x1, 140NOC78x00, 140NOC77101 (All Versions), Modicon Premium Communication Modules: TSXETY4103, TSXETY5103 (All Versions)",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2021-257-02"
+    ],
+    "受影响版本": [
+      "Modicon M340 CPUs: BMXP34 (Versions prior to V3.40), Modicon M340 X80 Ethernet Communication Modules: BMXNOE0100 (H), BMXNOE0110 (H), BMXNOC0401, BMXNOR0200H RTU (All Versions), Modicon Premium Processors with integrated Ethernet (Copro): TSXP574634, TSXP575634, TSXP576634 (All Versions), Modicon Quantum Processors with Integrated Ethernet (Copro): 140CPU65xxxxx (All Versions), Modicon Quantum Communication Modules: 140NOE771x1, 140NOC78x00, 140NOC77101 (All Versions), Modicon Premium Communication Modules: TSXETY4103, TSXETY5103 (All Versions)"
+    ],
+    "公开日期": "2022年02月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Modicon M340 CPUs: BMXP34 (Versions prior to V3.40), Modicon M340 X80 Ethernet Communication Modules: BMXNOE0100 (H), BMXNOE0110 (H), BMXNOC0401, BMXNOR0200H RTU (All Versions), Modicon Premium Processors with integrated Ethernet (Copro): TSXP574634, TSXP575634, TSXP576634 (All Versions), Modicon Quantum Processors with Integrated Ethernet (Copro): 140CPU65xxxxx (All Versions), Modicon Quantum Communication Modules: 140NOE771x1, 140NOC78x00, 140NOC77101 (All Versions), Modicon Premium Communication Modules: TSXETY4103, TSXETY5103 (All Versions)",
+    "CVE编号": "CVE-2021-22787",
+    "漏洞描述": "A CWE-20: Improper Input Validation vulnerability exists that could cause denial of service of the device when an attacker sends a specially crafted HTTP request to the web server of the device. Affected Product: Modicon M340 CPUs: BMXP34 (Versions prior to V3.40), Modicon M340 X80 Ethernet Communication Modules: BMXNOE0100 (H), BMXNOE0110 (H), BMXNOC0401, BMXNOR0200H RTU (All Versions), Modicon Premium Processors with integrated Ethernet (Copro): TSXP574634, TSXP575634, TSXP576634 (All Versions), Modicon Quantum Processors with Integrated Ethernet (Copro): 140CPU65xxxxx (All Versions), Modicon Quantum Communication Modules: 140NOE771x1, 140NOC78x00, 140NOC77101 (All Versions), Modicon Premium Communication Modules: TSXETY4103, TSXETY5103 (All Versions)",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2021-257-02"
+    ],
+    "受影响版本": [
+      "Modicon M340 CPUs: BMXP34 (Versions prior to V3.40), Modicon M340 X80 Ethernet Communication Modules: BMXNOE0100 (H), BMXNOE0110 (H), BMXNOC0401, BMXNOR0200H RTU (All Versions), Modicon Premium Processors with integrated Ethernet (Copro): TSXP574634, TSXP575634, TSXP576634 (All Versions), Modicon Quantum Processors with Integrated Ethernet (Copro): 140CPU65xxxxx (All Versions), Modicon Quantum Communication Modules: 140NOE771x1, 140NOC78x00, 140NOC77101 (All Versions), Modicon Premium Communication Modules: TSXETY4103, TSXETY5103 (All Versions)"
+    ],
+    "公开日期": "2022年02月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Modicon M340 CPUs: BMXP34 (Versions prior to V3.40), Modicon M340 X80 Ethernet Communication Modules: BMXNOE0100 (H), BMXNOE0110 (H), BMXNOC0401, BMXNOR0200H RTU (All Versions), Modicon Premium Processors with integrated Ethernet (Copro): TSXP574634, TSXP575634, TSXP576634 (All Versions), Modicon Quantum Processors with Integrated Ethernet (Copro): 140CPU65xxxxx (All Versions), Modicon Quantum Communication Modules: 140NOE771x1, 140NOC78x00, 140NOC77101 (All Versions), Modicon Premium Communication Modules: TSXETY4103, TSXETY5103 (All Versions)",
+    "CVE编号": "CVE-2021-22785",
+    "漏洞描述": "A CWE-200: Information Exposure vulnerability exists that could cause sensitive information of files located in the web root directory to leak when an attacker sends a HTTP request to the web server of the device. Affected Product: Modicon M340 CPUs: BMXP34 (Versions prior to V3.40), Modicon M340 X80 Ethernet Communication Modules: BMXNOE0100 (H), BMXNOE0110 (H), BMXNOC0401, BMXNOR0200H RTU (All Versions), Modicon Premium Processors with integrated Ethernet (Copro): TSXP574634, TSXP575634, TSXP576634 (All Versions), Modicon Quantum Processors with Integrated Ethernet (Copro): 140CPU65xxxxx (All Versions), Modicon Quantum Communication Modules: 140NOE771x1, 140NOC78x00, 140NOC77101 (All Versions), Modicon Premium Communication Modules: TSXETY4103, TSXETY5103 (All Versions)",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2021-257-02"
+    ],
+    "受影响版本": [
+      "Modicon M340 CPUs: BMXP34 (Versions prior to V3.40), Modicon M340 X80 Ethernet Communication Modules: BMXNOE0100 (H), BMXNOE0110 (H), BMXNOC0401, BMXNOR0200H RTU (All Versions), Modicon Premium Processors with integrated Ethernet (Copro): TSXP574634, TSXP575634, TSXP576634 (All Versions), Modicon Quantum Processors with Integrated Ethernet (Copro): 140CPU65xxxxx (All Versions), Modicon Quantum Communication Modules: 140NOE771x1, 140NOC78x00, 140NOC77101 (All Versions), Modicon Premium Communication Modules: TSXETY4103, TSXETY5103 (All Versions)"
+    ],
+    "公开日期": "2022年02月11日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco IOS",
+    "CVE编号": "CVE-2021-1460",
+    "漏洞描述": "A vulnerability in the Cisco IOx Application Framework of Cisco 809 Industrial Integrated Services Routers (Industrial ISRs), Cisco 829 Industrial ISRs, Cisco CGR 1000 Compute Module, and Cisco IC3000 Industrial Compute Gateway could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected device. This vulnerability is due to insufficient error handling during packet processing. An attacker could exploit this vulnerability by sending a high and sustained rate of crafted TCP traffic to the IOx web server on an affected device. A successful exploit could allow the attacker to cause the IOx web server to stop processing requests, resulting in a DoS condition.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iox-dos-4Fgcjh6"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年03月24日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco IOS XE Software",
+    "CVE编号": "CVE-2021-1441",
+    "漏洞描述": "A vulnerability in the hardware initialization routines of Cisco IOS XE Software for Cisco 1100 Series Industrial Integrated Services Routers and Cisco ESR6300 Embedded Series Routers could allow an authenticated, local attacker to execute unsigned code at system boot time. This vulnerability is due to incorrect validations of parameters passed to a diagnostic script that is executed when the device boots up. An attacker could exploit this vulnerability by tampering with an executable file stored on a device. A successful exploit could allow the attacker to execute unsigned code at boot time and bypass the software image verification check part of the secure boot process of an affected device. To exploit this vulnerability, the attacker would need administrative level credentials (level 15) on the device.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ios-xe-iot-codexec-k46EFF6q"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年03月24日"
+  },
+  {
+    "设备品牌": "Juniper Networks",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Junos OS",
+    "CVE编号": "CVE-2021-0257",
+    "漏洞描述": "On Juniper Networks MX Series and EX9200 Series platforms with Trio-based MPCs (Modular Port Concentrators) where Integrated Routing and Bridging (IRB) interfaces are configured and mapped to a VPLS instance or a Bridge-Domain, certain Layer 2 network events at Customer Edge (CE) devices may cause memory leaks in the MPC of Provider Edge (PE) devices which can cause an out of memory condition and MPC restart. When this issue occurs, there will be temporary traffic interruption until the MPC is restored. An administrator can use the following CLI command to monitor the status of memory usage level of the MPC: user@device> show system resource-monitor fpc FPC Resource Usage Summary Free Heap Mem Watermark : 20 % Free NH Mem Watermark : 20 % Free Filter Mem Watermark : 20 % * - Watermark reached Slot # % Heap Free RTT Average RTT 1 87 PFE # % ENCAP mem Free % NH mem Free % FW mem Free 0 NA 88 99 1 NA 89 99 When the issue is occurring, the value of “% NH mem Free” will go down until the MPC restarts. This issue affects MX Series and EX9200 Series with Trio-based PFEs (Packet Forwarding Engines), including MX-MPC1-3D, MX-MPC1E-3D, MX-MPC2-3D, MX-MPC2E-3D, MPC-3D-16XGE, and CHAS-MXxx Series MPCs. No other products or platforms are affected by this issue. This issue affects Juniper Networks Junos OS on MX Series, EX9200 Series: 17.3 versions prior to 17.3R3-S10; 17.4 versions prior to 17.4R3-S3; 18.2 versions prior to 18.2R3-S7; 18.3 versions prior to 18.3R3-S4; 18.4 versions prior to 18.4R3-S6; 19.2 versions prior to 19.2R3-S2; 19.3 versions prior to 19.3R3-S1; 19.4 versions prior to 19.4R2-S2, 19.4R3; 20.2 versions prior to 20.2R1-S3, 20.2R2; 20.3 versions prior to 20.3R1-S1,, 20.3R2. This issue does not affect Juniper Networks Junos OS: 17.3 versions prior to 17.3R3-S8; 17.4 versions prior to 17.4R3-S2; 18.1; 18.2 versions prior to 18.2R3-S4; 18.3 versions prior to 18.3R3-S2; 18.4 versions prior to 18.4R3-S1; 19.1; 19.2 versions prior to 19.2R2; 19.3 versions prior to 19.3R3; 19.4 versions prior to 19.4R2.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://kb.juniper.net/JSA11148"
+    ],
+    "受影响版本": [
+      "17.3",
+      "17.4",
+      "18.2",
+      "18.3",
+      "18.4",
+      "19.2",
+      "19.3",
+      "19.4",
+      "20.2",
+      "20.3"
+    ],
+    "公开日期": "2021年04月22日"
+  },
+  {
+    "设备品牌": "Juniper Networks",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Junos OS",
+    "CVE编号": "CVE-2021-0202",
+    "漏洞描述": "On Juniper Networks MX Series and EX9200 Series platforms with Trio-based MPC (Modular Port Concentrator) where Integrated Routing and Bridging (IRB) interface is configured and it is mapped to a VPLS instance or a Bridge-Domain, certain network events at Customer Edge (CE) device may cause memory leak in the MPC which can cause an out of memory and MPC restarts. When this issue occurs, there will be temporary traffic interruption until the MPC is restored. An administrator can use the following CLI command to monitor the status of memory usage level of the MPC: user@device> show system resource-monitor fpc FPC Resource Usage Summary Free Heap Mem Watermark : 20 % Free NH Mem Watermark : 20 % Free Filter Mem Watermark : 20 % * - Watermark reached Slot # % Heap Free RTT Average RTT 1 87 PFE # % ENCAP mem Free % NH mem Free % FW mem Free 0 NA 88 99 1 NA 89 99 When the issue is occurring, the value of “% NH mem Free” will go down until the MPC restarts. This issue affects MX Series and EX9200 Series with Trio-based PFEs (Packet Forwarding Engines). Please refer to https://kb.juniper.net/KB25385 for the list of Trio-based PFEs. This issue affects Juniper Networks Junos OS on MX Series, EX9200 Series: 17.3R3-S8; 17.4R3-S2; 18.2R3-S4, 18.2R3-S5; 18.3R3-S2, 18.3R3-S3; 18.4 versions starting from 18.4R3-S1 and later versions prior to 18.4R3-S6; 19.2 versions starting from 19.2R2 and later versions prior to 19.2R3-S1; 19.4 versions starting from 19.4R2 and later versions prior to 19.4R2-S3, 19.4R3; 20.2 versions starting from 20.2R1 and later versions prior to 20.2R1-S3, 20.2R2. This issue does not affect Juniper Networks Junos OS: 18.1, 19.1, 19.3, 20.1.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.juniper.net/JSA11092"
+    ],
+    "受影响版本": [
+      "17.3R3-S8",
+      "17.4R3-S2",
+      "18.1",
+      "19.1",
+      "19.3",
+      "20.1",
+      "18.2R3-S4",
+      "18.3R3-S2",
+      "18.4R3-S1",
+      "19.2R2",
+      "19.4R2",
+      "20.2R1"
+    ],
+    "公开日期": "2021年01月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-9529",
+    "漏洞描述": "Firmware developed by Shenzhen Hichip Vision Technology (V6 through V20), as used by many different vendors in millions of Internet of Things devices, suffers from a privilege escalation vulnerability that allows attackers on the local network to reset the device's administrator password. This affects products marketed under the following brand names: Accfly, Alptop, Anlink, Besdersec, BOAVISION, COOAU, CPVAN, Ctronics, D3D Security, Dericam, Elex System, Elite Security, ENSTER, ePGes, Escam, FLOUREON, GENBOLT, Hongjingtian (HJT), ICAMI, Iegeek, Jecurity, Jennov, KKMoon, LEFTEK, Loosafe, Luowice, Nesuniq, Nettoly, ProElite, QZT, Royallite, SDETER, SV3C, SY2L, Tenvis, ThinkValue, TOMLOV, TPTEK, WGCC, and ZILINK.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://hacked.camera/",
+      "https://redprocyon.com"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-36128",
+    "漏洞描述": "Pax Technology PAXSTORE v7.0.8_20200511171508 and lower is affected by a token spoofing vulnerability. Each payment terminal has a session token (called X-Terminal-Token) to access the marketplace. This allows the store to identify the terminal and make available the applications distributed by its reseller. By intercepting HTTPS traffic from the application store, it is possible to collect the request responsible for assigning the X-Terminal-Token to the terminal, which makes it possible to craft an X-Terminal-Token pretending to be another device. An attacker can use this behavior to authenticate its own payment terminal in the application store through token impersonation.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://marketing.paxtechnology.com/about-pax",
+      "https://www.whatspos.com/",
+      "https://blog.pridesec.com.br/p/4c972078-5f01-419e-8bea-cf31ff2e3670/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年05月07日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco IOS XE ROMMON Software",
+    "CVE编号": "CVE-2020-3524",
+    "漏洞描述": "A vulnerability in the Cisco IOS XE ROM Monitor (ROMMON) Software for Cisco 4000 Series Integrated Services Routers, Cisco ASR 920 Series Aggregation Services Routers, Cisco ASR 1000 Series Aggregation Services Routers, and Cisco cBR-8 Converged Broadband Routers could allow an unauthenticated, physical attacker to break the chain of trust and load a compromised software image on an affected device. The vulnerability is due to the presence of a debugging configuration option in the affected software. An attacker could exploit this vulnerability by connecting to an affected device through the console, forcing the device into ROMMON mode, and writing a malicious pattern using that specific option on the device. A successful exploit could allow the attacker to break the chain of trust and load a compromised software image on the affected device. A compromised software image is any software image that has not been digitally signed by Cisco.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-rommon-secboot-7JgVLVYC"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月24日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco IOS 15.2(6)E4",
+    "CVE编号": "CVE-2020-3426",
+    "漏洞描述": "A vulnerability in the implementation of the Low Power, Wide Area (LPWA) subsystem of Cisco IOS Software for Cisco 800 Series Industrial Integrated Services Routers (Industrial ISRs) and Cisco 1000 Series Connected Grid Routers (CGR1000) could allow an unauthenticated, remote attacker to gain unauthorized read access to sensitive data or cause a denial of service (DoS) condition. The vulnerability is due to a lack of input and validation checking mechanisms for virtual-LPWA (VLPWA) protocol modem messages. An attacker could exploit this vulnerability by supplying crafted packets to an affected device. A successful exploit could allow the attacker to gain unauthorized read access to sensitive data or cause the VLPWA interface of the affected device to shut down, resulting in DoS condition.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ios-lpwa-access-cXsD7PRA"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月24日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco IOS XE Software 3.7.0S",
+    "CVE编号": "CVE-2020-3423",
+    "漏洞描述": "A vulnerability in the implementation of the Lua interpreter that is integrated in Cisco IOS XE Software could allow an authenticated, local attacker to execute arbitrary code with root privileges on the underlying Linux operating system (OS) of an affected device. The vulnerability is due to insufficient restrictions on Lua function calls within the context of user-supplied Lua scripts. An attacker with valid administrative credentials could exploit this vulnerability by submitting a malicious Lua script. When this file is processed, an exploitable buffer overflow condition could occur. A successful exploit could allow the attacker to execute arbitrary code with root privileges on the underlying Linux OS of the affected device.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ios-lua-rce-7VeJX4f"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月24日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco IOS XE Software 17.1.1",
+    "CVE编号": "CVE-2020-3414",
+    "漏洞描述": "A vulnerability in the packet processing of Cisco IOS XE Software for Cisco 4461 Integrated Services Routers could allow an unauthenticated, remote attacker to cause an affected device to reload, resulting in a denial of service (DoS) condition. The vulnerability is due to incorrect processing of IPv4 or IPv6 traffic to or through an affected device. An attacker could exploit this vulnerability by sending IP traffic to or through an affected device. A successful exploit could allow the attacker to cause the device to reload, resulting in a DoS condition.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ISR4461-gKKUROhx"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月24日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco IOS 12.2(60)EZ16",
+    "CVE编号": "CVE-2020-3257",
+    "漏洞描述": "Multiple vulnerabilities in the Cisco IOx application environment of Cisco 809 and 829 Industrial Integrated Services Routers (Industrial ISRs) and Cisco 1000 Series Connected Grid Routers (CGR1000) that are running Cisco IOS Software could allow an attacker to cause a denial of service (DoS) condition or execute arbitrary code with elevated privileges on an affected device. For more information about these vulnerabilities, see the Details section of this advisory.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ios-iot-gos-vuln-s9qS8kYL"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月03日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco IOS 12.2(60)EZ16",
+    "CVE编号": "CVE-2020-3234",
+    "漏洞描述": "A vulnerability in the virtual console authentication of Cisco IOS Software for Cisco 809 and 829 Industrial Integrated Services Routers (Industrial ISRs) and Cisco 1000 Series Connected Grid Routers (CGR1000) could allow an authenticated but low-privileged, local attacker to log in to the Virtual Device Server (VDS) of an affected device by using a set of default credentials. The vulnerability is due to the presence of weak, hard-coded credentials. An attacker could exploit this vulnerability by authenticating to the targeted device and then connecting to VDS through the device&rsquo;s virtual console by using the static credentials. A successful exploit could allow the attacker to access the Linux shell of VDS as the root user.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ios-iot-vds-cred-uPMp9zbY"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月03日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco IOS XE Software 16.4.1",
+    "CVE编号": "CVE-2020-3220",
+    "漏洞描述": "A vulnerability in the hardware crypto driver of Cisco IOS XE Software for Cisco 4300 Series Integrated Services Routers and Cisco Catalyst 9800-L Wireless Controllers could allow an unauthenticated, remote attacker to disconnect legitimate IPsec VPN sessions to an affected device. The vulnerability is due to insufficient verification of authenticity of received Encapsulating Security Payload (ESP) packets. An attacker could exploit this vulnerability by tampering with ESP cleartext values as a man-in-the-middle.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxe-vpn-dos-edOmW28Z"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月03日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco IOS 12.2(60)EZ16",
+    "CVE编号": "CVE-2020-3210",
+    "漏洞描述": "A vulnerability in the CLI parsers of Cisco IOS Software for Cisco 809 and 829 Industrial Integrated Services Routers (Industrial ISRs) and Cisco 1000 Series Connected Grid Routers (CGR1000) could allow an authenticated, local attacker to execute arbitrary shell commands on the Virtual Device Server (VDS) of an affected device. The attacker must have valid user credentials at privilege level 15. The vulnerability is due to insufficient validation of arguments that are passed to specific VDS-related CLI commands. An attacker could exploit this vulnerability by authenticating to the targeted device and including malicious input as the argument of an affected command. A successful exploit could allow the attacker to execute arbitrary commands in the context of the Linux shell of VDS with the privileges of the root user.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ios-iot-vds-cmd-inj-VfJtqGhE"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月03日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco IOS 12.2(60)EZ16",
+    "CVE编号": "CVE-2020-3208",
+    "漏洞描述": "A vulnerability in the image verification feature of Cisco IOS Software for Cisco 809 and 829 Industrial Integrated Services Routers (Industrial ISRs) could allow an authenticated, local attacker to boot a malicious software image on an affected device. The vulnerability is due to insufficient access restrictions on the area of code that manages the image verification feature. An attacker could exploit this vulnerability by first authenticating to the targeted device and then logging in to the Virtual Device Server (VDS) of an affected device. The attacker could then, from the VDS shell, disable Cisco IOS Software integrity (image) verification. A successful exploit could allow the attacker to boot a malicious Cisco IOS Software image on the targeted device. To exploit this vulnerability, the attacker must have valid user credentials at privilege level 15.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ios-ir800-img-verif-wHhLYHjK"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月03日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco IOS 12.2(60)EZ16",
+    "CVE编号": "CVE-2020-3205",
+    "漏洞描述": "A vulnerability in the implementation of the inter-VM channel of Cisco IOS Software for Cisco 809 and 829 Industrial Integrated Services Routers (Industrial ISRs) and Cisco 1000 Series Connected Grid Routers (CGR1000) could allow an unauthenticated, adjacent attacker to execute arbitrary shell commands on the Virtual Device Server (VDS) of an affected device. The vulnerability is due to insufficient validation of signaling packets that are destined to VDS. An attacker could exploit this vulnerability by sending malicious packets to an affected device. A successful exploit could allow the attacker to execute arbitrary commands in the context of the Linux shell of VDS with the privileges of the root user. Because the device is designed on a hypervisor architecture, exploitation of a vulnerability that affects the inter-VM channel may lead to a complete system compromise. For more information about this vulnerability, see the Details section of this advisory.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ios-iot-udp-vds-inj-f2D5Jzrt"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月03日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Cisco IOS 12.2(60)EZ16",
+    "CVE编号": "CVE-2020-3199",
+    "漏洞描述": "Multiple vulnerabilities in the Cisco IOx application environment of Cisco 809 and 829 Industrial Integrated Services Routers (Industrial ISRs) and Cisco 1000 Series Connected Grid Routers (CGR1000) that are running Cisco IOS Software could allow an attacker to cause a denial of service (DoS) condition or execute arbitrary code with elevated privileges on an affected device. For more information about these vulnerabilities, see the Details section of this advisory.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ios-iot-gos-vuln-s9qS8kYL"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-26097",
+    "漏洞描述": "The firmware of the PLANET Technology Corp NVR-915 and NVR-1615 before 2020-10-28 embeds default credentials for root access via telnet. By exposing telnet on the Internet, remote root access on the device is possible. NOTE: This vulnerability only affects products that are no longer supported by the maintainer",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.sec-research.com/1604584604-hard-coded-credentials-in-netzwerk-videorekorder-planet-nvr-915.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月18日"
+  },
+  {
+    "设备品牌": "Atop Technology",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "3G/4G LTE Cellular to Ethernet and Serial Secure Industrial Gateway SE5901",
+    "CVE编号": "CVE-2020-24552",
+    "漏洞描述": "Atop Technology industrial 3G/4G gateway contains Command Injection vulnerability. Due to insufficient input validation, the device's web management interface allows attackers to inject specific code and execute system commands without privilege.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.twcert.org.tw/tw/cp-132-3956-608f1-1.html"
+    ],
+    "受影响版本": [
+      "1.18"
+    ],
+    "公开日期": "2020年09月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-22253",
+    "漏洞描述": "Xiongmai Technology Co devices AHB7008T-MH-V2, AHB7804R-ELS, AHB7804R-MH-V2, AHB7808R-MS-V2, AHB7808R-MS, AHB7808T-MS-V2, AHB7804R-LMS, and HI3518E_50H10L_S39 were all discovered to have port 9530 open which allows unauthenticated attackers to make arbitrary Telnet connections with the victim device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://www.xiongmaitech.com/en/index.php/news/info/12/68"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年04月06日"
+  },
+  {
+    "设备品牌": "Juniper Networks",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "Junos OS",
+    "CVE编号": "CVE-2020-1688",
+    "漏洞描述": "On Juniper Networks SRX Series and NFX Series, a local authenticated user with access to the shell may obtain the Web API service private key that is used to provide encrypted communication between the Juniper device and the authenticator services. Exploitation of this vulnerability may allow an attacker to decrypt the communications between the Juniper device and the authenticator service. This Web API service is used for authentication services such as the Juniper Identity Management Service, used to obtain user identity for Integrated User Firewall feature, or the integrated ClearPass authentication and enforcement feature. This issue affects Juniper Networks Junos OS on Networks SRX Series and NFX Series: 12.3X48 versions prior to 12.3X48-D105; 15.1X49 versions prior to 15.1X49-D190; 16.1 versions prior to 16.1R7-S8; 17.2 versions prior to 17.2R3-S4; 17.3 versions prior to 17.3R3-S8; 17.4 versions prior to 17.4R2-S11, 17.4R3; 18.1 versions prior to 18.1R3-S7; 18.2 versions prior to 18.2R3; 18.3 versions prior to 18.3R2-S4, 18.3R3; 18.4 versions prior to 18.4R1-S7, 18.4R2; 19.1 versions prior to 19.1R2; 19.2 versions prior to 19.2R1-S4, 19.2R2.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://kb.juniper.net/JSA11085",
+      "https://kb.juniper.net/InfoCenter/index?page=content&id=KB30911",
+      "https://www.juniper.net/documentation/en_US/junos/topics/topic-map/security-user-auth-configure-jims.html",
+      "https://www.juniper.net/documentation/en_US/junos/topics/topic-map/security-user-auth-intergrated-user-firewall-overview.html",
+      "https://www.juniper.net/documentation/en_US/junos/topics/reference/configuration-statement/services-webapi-user-cli.html"
+    ],
+    "受影响版本": [
+      "12.3X48",
+      "15.1X49",
+      "16.1",
+      "17.2",
+      "17.3",
+      "17.4",
+      "18.1",
+      "18.2",
+      "18.3",
+      "18.4",
+      "19.1",
+      "19.2"
+    ],
+    "公开日期": "2020年10月16日"
+  },
+  {
+    "设备品牌": "Siemens",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "SCALANCE X-200 switch family (incl. SIPLUS NET variants)",
+    "CVE编号": "CVE-2020-15799",
+    "漏洞描述": "A vulnerability has been identified in SCALANCE X-200 switch family (incl. SIPLUS NET variants) (All versions < V5.2.5), SCALANCE X-200IRT switch family (incl. SIPLUS NET variants) (All versions < V5.5.0). The vulnerability could allow an unauthenticated attacker to reboot the device over the network by using special urls from integrated web server of the affected products.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-139628.pdf"
+    ],
+    "受影响版本": [
+      "All versions < V5.2.5"
+    ],
+    "公开日期": "2021年01月12日"
+  },
+  {
+    "设备品牌": "Phoenix Contact",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "TC MGUARD RS4000 4G VZW VPN (1010461)",
+    "CVE编号": "CVE-2020-12523",
+    "漏洞描述": "On Phoenix Contact mGuard Devices versions before 8.8.3 LAN ports get functional after reboot even if they are disabled in the device configuration. For mGuard devices with integrated switch on the LAN side, single switch ports can be disabled by device configuration. After a reboot these ports get functional independent from their configuration setting: Missing Initialization of Resource",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://cert.vde.com/en-us/advisories/vde-2020-046"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年12月17日"
+  },
+  {
+    "设备品牌": "Pepperl+Fuchs",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "P+F Comtrol RocketLinx",
+    "CVE编号": "CVE-2020-12502",
+    "漏洞描述": "Improper Authorization vulnerability of Pepperl+Fuchs P+F Comtrol RocketLinx ES7510-XT, ES8509-XT, ES8510-XT, ES9528-XTv2, ES7506, ES7510, ES7528, ES8508, ES8508F, ES8510, ES8510-XTE, ES9528/ES9528-XT (all versions) and ICRL-M-8RJ45/4SFP-G-DIN, ICRL-M-16RJ45/4CP-G-DIN FW 1.2.3 and below is prone to unauthenticated device administration.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://cert.vde.com/de-de/advisories/vde-2020-040",
+      "http://seclists.org/fulldisclosure/2021/Jun/0",
+      "http://packetstormsecurity.com/files/162903/Korenix-CSRF-Backdoor-Accounts-Command-Injection-Missing-Authentication.html",
+      "https://sec-consult.com/vulnerability-lab/advisory/multiple-critical-vulnerabilities-in-korenix-technology-westermo-pepperl-fuchs/",
+      "https://cert.vde.com/en-us/advisories/vde-2020-053",
+      "http://packetstormsecurity.com/files/165875/Korenix-Technology-JetWave-CSRF-Command-Injection-Missing-Authentication.html"
+    ],
+    "受影响版本": [
+      "ES8509-XT, ES8510-XT, ES9528-XTv2, ES7506, ES7510, ES7528, ES8508, ES8508F,  ES8510-XTE, ES9528/ES9528-XT all",
+      "ES7510-XT",
+      "ES8510"
+    ],
+    "公开日期": "2020年10月15日"
+  },
+  {
+    "设备品牌": "Pepperl+Fuchs",
+    "设备类型": "车载无线充电模块",
+    "产品型号": "P+F Comtrol RocketLinx",
+    "CVE编号": "CVE-2020-12500",
+    "漏洞描述": "Improper Authorization vulnerability of Pepperl+Fuchs P+F Comtrol RocketLinx ES7510-XT, ES8509-XT, ES8510-XT, ES9528-XTv2, ES7506, ES7510, ES7528, ES8508, ES8508F, ES8510, ES8510-XTE, ES9528/ES9528-XT (all versions) allows unauthenticated device administration.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://cert.vde.com/de-de/advisories/vde-2020-040",
+      "http://seclists.org/fulldisclosure/2021/Jun/0",
+      "http://packetstormsecurity.com/files/162903/Korenix-CSRF-Backdoor-Accounts-Command-Injection-Missing-Authentication.html",
+      "https://sec-consult.com/vulnerability-lab/advisory/multiple-critical-vulnerabilities-in-korenix-technology-westermo-pepperl-fuchs/",
+      "http://packetstormsecurity.com/files/165875/Korenix-Technology-JetWave-CSRF-Command-Injection-Missing-Authentication.html"
+    ],
+    "受影响版本": [
+      "ES8509-XT, ES8510-XT, ES9528-XTv2, ES7506, ES7510, ES7528, ES8508, ES8508F,  ES8510-XTE, ES9528/ES9528-XT all",
+      "ES7510-XT",
+      "ES8510"
+    ],
+    "公开日期": "2020年10月15日"
+  }
+]

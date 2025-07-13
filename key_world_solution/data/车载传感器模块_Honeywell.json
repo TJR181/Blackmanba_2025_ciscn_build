@@ -1,0 +1,1103 @@
+[
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "MB-Secure",
+    "CVE编号": "CVE-2025-2605",
+    "漏洞描述": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability in Honeywell MB-Secure allows Privilege Abuse. This issue affects MB-Secure: from V11.04 before V12.53 and MB-Secure PRO from V01.06 before V03.09.Honeywell also recommends updating to the most recent version of this product.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.honeywell.com/us/en/product-security#security-notices"
+    ],
+    "受影响版本": [
+      "V11.04"
+    ],
+    "公开日期": "2025年05月02日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "PC42t, PC42tp, and PC42d (Common Firmware)",
+    "CVE编号": "CVE-2024-6620",
+    "漏洞描述": "Honeywell PC42t, PC42tp, and PC42d Printers, T10.19.020016 to T10.20.060398, contain a cross-site scripting vulnerability. A(n) attacker could potentially inject malicious code which may lead to information disclosure, session theft, or client-side request forgery. Honeywell recommends updating to the most recent version of this firmware, PC42 Printer Firmware Version 20.6 T10.20.060398.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://sps.honeywell.com/us/en/support/productivity/cyber-security-notifications"
+    ],
+    "受影响版本": [
+      "T10.19.020016"
+    ],
+    "公开日期": "2024年07月29日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Niagara Framework",
+    "CVE编号": "CVE-2024-1309",
+    "漏洞描述": "Uncontrolled Resource Consumption vulnerability in Honeywell Niagara Framework on Windows, Linux, QNX allows Content Spoofing.This issue affects Niagara Framework: before Niagara AX 3.8.1, before Niagara 4.1.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com",
+      "https://www.honeywell.com/us/en/product-security",
+      "https://www.kb.cert.org/vuls/id/417980"
+    ],
+    "受影响版本": [
+      "0",
+      "0"
+    ],
+    "公开日期": "2024年02月13日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "ProWatch",
+    "CVE编号": "CVE-2023-6179",
+    "漏洞描述": "Honeywell ProWatch, 4.5, including all Service Pack versions, contain a Vulnerability in Application Server's executable folder(s). A(n) attacker could potentially exploit this vulnerability, leading to a standard user to have arbitrary system code execution. Honeywell recommends updating to the most recent version of this product, service or offering (Pro-watch 6.0.2, 6.0, 5.5.2,5.0.5).\n\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://buildings.honeywell.com/us/en/brands/our-brands/security/support-and-resources/product-resources/eol-and-security-notices",
+      "https://www.honeywell.com/us/en/product-security"
+    ],
+    "受影响版本": [
+      "4.5",
+      "6.0.2",
+      "6.0",
+      "5.5.2",
+      "5.0.5"
+    ],
+    "公开日期": "2023年11月17日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "OneWireless Network Wireless Device Manager",
+    "CVE编号": "CVE-2023-5878",
+    "漏洞描述": "Honeywell OneWireless \n\nWireless Device Manager (WDM) for the following versions R310.x, R320.x, R321.x, R322.1, R322.2, R323.x, R330.1 contains a command injection vulnerability. An attacker who is authenticated could use the firmware update process to potentially exploit the vulnerability, leading to a command injection. Honeywell recommends updating to \n\n R322.3, R330.2 or the most recent version of this product2.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com/"
+    ],
+    "受影响版本": [
+      "310.1",
+      "323.1"
+    ],
+    "公开日期": "2025年02月06日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "C300",
+    "CVE编号": "CVE-2023-5407",
+    "漏洞描述": "Controller denial of service due to improper handling of a specially crafted message received by the controller.\n\nSee Honeywell Security Notification for recommendations on upgrading and versioning.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion Server",
+    "CVE编号": "CVE-2023-5406",
+    "漏洞描述": "Server communication with a controller can lead to remote code execution using a specially crafted message from the controller. See Honeywell Security Notification for recommendations on upgrading and versioning.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion Server",
+    "CVE编号": "CVE-2023-5405",
+    "漏洞描述": "Server information leak for the CDA Server process memory can occur when an error is generated in response to a specially crafted message. See Honeywell Security Notification for recommendations on upgrading and versioning.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion Server",
+    "CVE编号": "CVE-2023-5404",
+    "漏洞描述": "Server receiving a malformed message can cause a pointer to be overwritten which can result in a remote code execution or failure. See Honeywell Security Notification for recommendations on upgrading and versioning.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion Server",
+    "CVE编号": "CVE-2023-5403",
+    "漏洞描述": "Server hostname translation to IP address manipulation which could lead to an attacker performing remote code execution or causing a failure.\n\nSee Honeywell Security Notification for recommendations on upgrading and versioning.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion Server",
+    "CVE编号": "CVE-2023-5401",
+    "漏洞描述": "Server receiving a malformed message based on a using the specified key values can cause a stack overflow vulnerability which could lead to an attacker performing remote code execution or causing a failure. See Honeywell Security Notification for recommendations on upgrading and versioning.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion Server",
+    "CVE编号": "CVE-2023-5400",
+    "漏洞描述": "Server receiving a malformed message based on a using the specified key values can cause a heap overflow vulnerability which could lead to an attacker performing remote code execution or causing a failure. \nSee Honeywell Security Notification for recommendations on upgrading and versioning.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion Server",
+    "CVE编号": "CVE-2023-5398",
+    "漏洞描述": "Server receiving a malformed message based on a list of IPs resulting in heap corruption causing a denial of service. See Honeywell Security Notification for recommendations on upgrading and versioning.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion Server",
+    "CVE编号": "CVE-2023-5397",
+    "漏洞描述": "Server receiving a malformed message to create a new connection could lead to an attacker performing remote code execution or causing a failure. See Honeywell Security Notification for recommendations on upgrading and versioning.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion Server",
+    "CVE编号": "CVE-2023-5396",
+    "漏洞描述": "Server receiving a malformed message creates connection for a hostname that may cause a stack overflow resulting in possible remote code execution. See Honeywell Security Notification for recommendations on upgrading and versioning.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion Server",
+    "CVE编号": "CVE-2023-5395",
+    "漏洞描述": "Server receiving a malformed message that uses the hostname in an internal table may cause a stack overflow resulting in possible remote code execution. See Honeywell Security Notification for recommendations on upgrading and versioning.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion Server",
+    "CVE编号": "CVE-2023-5394",
+    "漏洞描述": "Server receiving a malformed message that where the GCL message hostname may be too large which may cause a stack overflow; resulting in possible remote code execution. Honeywell recommends updating to the most recent version of the product. See Honeywell Security Notification for recommendations on upgrading and versioning. \n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年04月11日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion Server",
+    "CVE编号": "CVE-2023-5393",
+    "漏洞描述": "Server receiving a malformed message that causes a disconnect to a hostname may causing a stack overflow resulting in possible remote code execution. Honeywell recommends updating to the most recent version of the product. See Honeywell Security Notification for recommendations on upgrading and versioning.\n\n \n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年04月11日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "C300",
+    "CVE编号": "CVE-2023-5392",
+    "漏洞描述": "C300 information leak due to an analysis feature which allows extracting more memory over the network than required by the function. Honeywell recommends updating to the most recent version of the product. See Honeywell Security Notification for recommendations on upgrading and versioning. \n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年04月11日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "ControlEdge UOC",
+    "CVE编号": "CVE-2023-5390",
+    "漏洞描述": "An attacker could potentially exploit this vulnerability, leading to files being read from the Honeywell Experion ControlEdge VirtualUOC and ControlEdge UOC. This exploit could be used to read files from the controller that may expose limited information from the device. Honeywell recommends updating to the most recent version of the product. See Honeywell Security Notification for recommendations on upgrading and versioning.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com",
+      "https://www.honeywell.com/us/en/product-security"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年01月31日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "ControlEdge UOC",
+    "CVE编号": "CVE-2023-5389",
+    "漏洞描述": "\nAn attacker could potentially exploit this vulnerability, leading to the ability to modify files on Honeywell Experion ControlEdge VirtualUOC and ControlEdge UOC . This exploit could be used to write a file that may result in unexpected behavior based on configuration changes or updating of files that could result in subsequent execution of a malicious application if triggered. Honeywell recommends updating to the most recent version of the product. See Honeywell Security Notification for recommendations on upgrading and versioning. ",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com",
+      "https://www.honeywell.com/us/en/product-security"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年01月30日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Saia PG5 Controls Suite",
+    "CVE编号": "CVE-2023-51605",
+    "漏洞描述": "Honeywell Saia PG5 Controls Suite XML External Entity Processing Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of Honeywell Saia PG5 Controls Suite. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file.\n\nThe specific flaw exists within the parsing of XML files. Due to the improper restriction of XML External Entity (XXE) references, a crafted document specifying a URI causes the XML parser to access the URI and embed the contents back into the XML document for further processing. An attacker can leverage this vulnerability to disclose information in the context of the current process.\n. Was ZDI-CAN-18644.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1854/"
+    ],
+    "受影响版本": [
+      "PG5 v2.3.193"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Saia PG5 Controls Suite",
+    "CVE编号": "CVE-2023-51604",
+    "漏洞描述": "Honeywell Saia PG5 Controls Suite XML External Entity Processing Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of Honeywell Saia PG5 Controls Suite. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file.\n\nThe specific flaw exists within the parsing of XML files. Due to the improper restriction of XML External Entity (XXE) references, a crafted document specifying a URI causes the XML parser to access the URI and embed the contents back into the XML document for further processing. An attacker can leverage this vulnerability to disclose information in the context of the current process.\n. Was ZDI-CAN-18593.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1853/"
+    ],
+    "受影响版本": [
+      "PG5 v2.3.193"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Saia PG5 Controls Suite",
+    "CVE编号": "CVE-2023-51603",
+    "漏洞描述": "Honeywell Saia PG5 Controls Suite CAB File Parsing Directory Traversal Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of Honeywell Saia PG5 Controls Suite. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file.\n\nThe specific flaw exists within the parsing of CAB files. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to execute code in the context of the current user.\n. Was ZDI-CAN-18592.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1852/"
+    ],
+    "受影响版本": [
+      "PG5 v2.3.193"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Saia PG5 Controls Suite",
+    "CVE编号": "CVE-2023-51602",
+    "漏洞描述": "Honeywell Saia PG5 Controls Suite XML External Entity Processing Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of Honeywell Saia PG5 Controls Suite. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file.\n\nThe specific flaw exists within the parsing of XML files. Due to the improper restriction of XML External Entity (XXE) references, a crafted document specifying a URI causes the XML parser to access the URI and embed the contents back into the XML document for further processing. An attacker can leverage this vulnerability to disclose information in the context of the current process.\n. Was ZDI-CAN-18591.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1851/"
+    ],
+    "受影响版本": [
+      "PG5 v2.3.193"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Saia PG5 Controls Suite",
+    "CVE编号": "CVE-2023-51601",
+    "漏洞描述": "Honeywell Saia PG5 Controls Suite XML External Entity Processing Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of Honeywell Saia PG5 Controls Suite. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file.\n\nThe specific flaw exists within the parsing of xml files. Due to the improper restriction of XML External Entity (XXE) references, a crafted document specifying a URI causes the XML parser to access the URI and embed the contents back into the XML document for further processing. An attacker can leverage this vulnerability to disclose information in the context of the current process.\n. Was ZDI-CAN-18563.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1850/"
+    ],
+    "受影响版本": [
+      "PG5 v2.3.193"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Saia PG5 Controls Suite",
+    "CVE编号": "CVE-2023-51600",
+    "漏洞描述": "Honeywell Saia PG5 Controls Suite XML External Entity Processing Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of Honeywell Saia PG5 Controls Suite. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file.\n\nThe specific flaw exists within the parsing of XML files. Due to the improper restriction of XML External Entity (XXE) references, a crafted document specifying a URI causes the XML parser to access the URI and embed the contents back into the XML document for further processing. An attacker can leverage this vulnerability to disclose information in the context of the current process.\n. Was ZDI-CAN-18456.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1849/"
+    ],
+    "受影响版本": [
+      "PG5 v2.3.193"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Saia PG5 Controls Suite",
+    "CVE编号": "CVE-2023-51599",
+    "漏洞描述": "Honeywell Saia PG5 Controls Suite Directory Traversal Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of Honeywell Saia PG5 Controls Suite. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file.\n\nThe specific flaw exists within the parsing of ZIP files. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to execute code in the context of the current user.\n. Was ZDI-CAN-18412.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1848/"
+    ],
+    "受影响版本": [
+      "PG5 v2.3.193"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "PM23/43",
+    "CVE编号": "CVE-2023-3712",
+    "漏洞描述": "Files or Directories Accessible to External Parties vulnerability in Honeywell PM43 on 32 bit, ARM (Printer web page modules) allows Privilege Escalation.This issue affects PM43 versions prior to P10.19.050004. \n\nUpdate to the latest available firmware version of the respective printers to version MR19.5 (e.g. P10.19.050006).\n\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.honeywell.com/us/en/product-security",
+      "https://hsmftp.honeywell.com:443/en/Software/Printers/Industrial/PM23-PM23c-PM43-PM43c/Current/Firmware/firmwaresignedP1019050004",
+      "https://hsmftp.honeywell.com:443/en/Software/Printers/Industrial/PM23-PM23c-PM43-PM43c/Current/Firmware/firmwarexasignedP1019050004A"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年09月12日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "PM23/43",
+    "CVE编号": "CVE-2023-3711",
+    "漏洞描述": "Session Fixation vulnerability in Honeywell PM43 on 32 bit, ARM (Printer web page modules) allows Session Credential Falsification through Prediction.This issue affects PM43 versions prior to P10.19.050004. Update to the latest available firmware version of the respective printers to version MR19.5 (e.g. P10.19.050006).\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.honeywell.com/us/en/product-security",
+      "https://hsmftp.honeywell.com:443/en/Software/Printers/Industrial/PM23-PM23c-PM43-PM43c/Current/Firmware/firmwaresignedP1019050004",
+      "https://hsmftp.honeywell.com:443/en/Software/Printers/Industrial/PM23-PM23c-PM43-PM43c/Current/Firmware/firmwarexasignedP1019050004A"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年09月12日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "PM23/43",
+    "CVE编号": "CVE-2023-3710",
+    "漏洞描述": "Improper Input Validation vulnerability in Honeywell PM43 on 32 bit, ARM (Printer web page modules) allows Command Injection.This issue affects PM43 versions prior to P10.19.050004. Update to the latest available firmware version of the respective printers to version MR19.5 (e.g. P10.19.050006).\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.honeywell.com/us/en/product-security",
+      "https://hsmftp.honeywell.com:443/en/Software/Printers/Industrial/PM23-PM23c-PM43-PM43c/Current/Firmware/firmwaresignedP1019050004",
+      "https://hsmftp.honeywell.com:443/en/Software/Printers/Industrial/PM23-PM23c-PM43-PM43c/Current/Firmware/firmwarexasignedP1019050004A"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年09月12日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "C300",
+    "CVE编号": "CVE-2023-26597",
+    "漏洞描述": "Controller DoS due to buffer overflow in the handling of a specially crafted message received by the controller. See Honeywell Security Notification for recommendations on upgrading and versioning. See Honeywell Security Notification for recommendations on upgrading and versioning. \n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "501.1",
+      "510.1",
+      "511.1",
+      "520.1",
+      "520.2"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion Server",
+    "CVE编号": "CVE-2023-25948",
+    "漏洞描述": "Server information leak of configuration data when an error is generated in response to a specially crafted message. See Honeywell Security Notification for recommendations on upgrading and versioning. \n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "501.1",
+      "510.1",
+      "511.1",
+      "520.1",
+      "520.2"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "C300",
+    "CVE编号": "CVE-2023-25770",
+    "漏洞描述": "Controller DoS may occur due to buffer overflow when an error is generated in response to a specially crafted message. See Honeywell Security Notification for recommendations on upgrading and versioning. \n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "501.1",
+      "510.1",
+      "511.1",
+      "520.1",
+      "520.2"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "C300",
+    "CVE编号": "CVE-2023-25178",
+    "漏洞描述": "Controller may be loaded with malicious firmware which could enable remote code execution. See Honeywell Security Notification for recommendations on upgrading and versioning. \n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "501.1",
+      "510.1",
+      "511.1",
+      "520.1",
+      "520.2"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion Server",
+    "CVE编号": "CVE-2023-25078",
+    "漏洞描述": "Server or Console Station DoS due to heap overflow occurring during the handling of a specially crafted message for a specific configuration operation. \n\nSee Honeywell Security Notification for recommendations on upgrading and versioning. \n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "501.1",
+      "510.1",
+      "511.1",
+      "520.1",
+      "520.2"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "C300",
+    "CVE编号": "CVE-2023-24480",
+    "漏洞描述": "Controller DoS due to stack overflow when decoding a message from the server. \n\nSee Honeywell Security Notification for recommendations on upgrading and versioning. \n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "501.1",
+      "510.1",
+      "511.1",
+      "520.1",
+      "520.2"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion Server",
+    "CVE编号": "CVE-2023-23585",
+    "漏洞描述": "Experion server DoS due to heap overflow occurring during the handling of a specially crafted message for a specific configuration operation. \n\nSee Honeywell Security Notification for recommendations on upgrading and versioning. \n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "501.1",
+      "510.1",
+      "511.1",
+      "520.1",
+      "520.2"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "MPA2 Access Panel",
+    "CVE编号": "CVE-2023-1841",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Honeywell MPA2 Access Panel (Web server modules) allows XSS Using Invalid Characters.This issue affects MPA2 Access Panel all version prior to R1.00.08.05. \n\nHoneywell released firmware update package MPA2 firmware R1.00.08.05 which addresses this vulnerability.  This version and all later versions\ncorrect the reported vulnerability.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://buildings.honeywell.com/us/en/brands/our-brands/security/support-and-resources/product-resources/eol-and-security-notices",
+      "https://https://www.honeywell.com/us/en/product-security"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年02月29日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "OneWireless",
+    "CVE编号": "CVE-2022-43485",
+    "漏洞描述": "\nUse of Insufficiently Random Values in Honeywell OneWireless. This vulnerability may allow attacker to manipulate claims in client's JWT token. This issue affects OneWireless version 322.1",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com/"
+    ],
+    "受影响版本": [
+      "322.1"
+    ],
+    "公开日期": "2023年05月30日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "OneWireless",
+    "CVE编号": "CVE-2022-4240",
+    "漏洞描述": "Missing Authentication for Critical Function vulnerability in Honeywell OneWireless allows Authentication Bypass. This issue affects OneWireless version 322.1",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com/"
+    ],
+    "受影响版本": [
+      "322.1"
+    ],
+    "公开日期": "2023年05月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-30318",
+    "漏洞描述": "Honeywell ControlEdge through R151.1 uses Hard-coded Credentials. According to FSCT-2022-0056, there is a Honeywell ControlEdge hardcoded credentials issue. The affected components are characterized as: SSH. The potential impact is: Remote code execution, manipulate configuration, denial of service. The Honeywell ControlEdge PLC and RTU product line exposes an SSH service on port 22/TCP. Login as root to this service is permitted and credentials for the root user are hardcoded without automatically changing them upon first commissioning. The credentials for the SSH service are hardcoded in the firmware. The credentials grant an attacker access to a root shell on the PLC/RTU, allowing for remote code execution, configuration manipulation and denial of service.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.forescout.com/blog/",
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-22-242-06"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年08月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-30317",
+    "漏洞描述": "Honeywell Experion LX through 2022-05-06 has Missing Authentication for a Critical Function. According to FSCT-2022-0055, there is a Honeywell Experion LX Control Data Access (CDA) EpicMo protocol with unauthenticated functionality issue. The affected components are characterized as: Honeywell Control Data Access (CDA) EpicMo (55565/TCP). The potential impact is: Firmware manipulation, Denial of service. The Honeywell Experion LX Distributed Control System (DCS) utilizes the Control Data Access (CDA) EpicMo protocol (55565/TCP) for device diagnostics and maintenance purposes. This protocol does not have any authentication features, allowing any attacker capable of communicating with the ports in question to invoke (a subset of) desired functionality. There is no authentication functionality on the protocol in question. An attacker capable of invoking the protocols' functionalities could issue firmware download commands potentially allowing for firmware manipulation and reboot devices causing denial of service.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.forescout.com/blog/",
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-22-242-07"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年08月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-30316",
+    "漏洞描述": "Honeywell Experion PKS Safety Manager 5.02 has Insufficient Verification of Data Authenticity. According to FSCT-2022-0054, there is a Honeywell Experion PKS Safety Manager unauthenticated firmware update issue. The affected components are characterized as: Firmware update functionality. The potential impact is: Firmware manipulation. The Honeywell Experion PKS Safety Manager utilizes the DCOM-232/485 communication FTA serial interface and Enea POLO bootloader for firmware management purposes. An engineering workstation running the Safety Builder software communicates via serial or serial-over-ethernet link with the DCOM-232/485 interface. Firmware images were found to have no authentication (in the form of firmware signing) and only relied on insecure checksums for regular integrity checks. Firmware images are unsigned. An attacker with access to the serial interface (either through physical access, a compromised EWS or an exposed serial-to-ethernet gateway) can utilize hardcoded credentials (see FSCT-2022-0052) for the POLO bootloader to control the boot process and push malicious firmware images to the controller allowing for firmware manipulation, remote code execution and denial of service impacts. A mitigating factor is that in order for a firmware update to be initiated, the Safety Manager has to be rebooted which is typically done by means of physical controls on the Safety Manager itself. As such, an attacker would have to either lay dormant until a legitimate reboot occurs or possibly attempt to force a reboot through a secondary vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.forescout.com/blog/",
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-22-207-02"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年07月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-30315",
+    "漏洞描述": "Honeywell Experion PKS Safety Manager (SM and FSC) through 2022-05-06 has Insufficient Verification of Data Authenticity. According to FSCT-2022-0053, there is a Honeywell Experion PKS Safety Manager insufficient logic security controls issue. The affected components are characterized as: Honeywell FSC runtime (FSC-CPU, QPP), Honeywell Safety Builder. The potential impact is: Remote Code Execution, Denial of Service. The Honeywell Experion PKS Safety Manager family of safety controllers utilize the unauthenticated Safety Builder protocol (FSCT-2022-0051) for engineering purposes, including downloading projects and control logic to the controller. Control logic is downloaded to the controller on a block-by-block basis. The logic that is downloaded consists of FLD code compiled to native machine code for the CPU module (which applies to both the Safety Manager and FSC families). Since this logic does not seem to be cryptographically authenticated, it allows an attacker capable of triggering a logic download to execute arbitrary machine code on the controller's CPU module in the context of the runtime. While the researchers could not verify this in detail, the researchers believe that the microprocessor underpinning the FSC and Safety Manager CPU modules is incapable of offering memory protection or privilege separation capabilities which would give an attacker full control of the CPU module. There is no authentication on control logic downloaded to the controller. Memory protection and privilege separation capabilities for the runtime are possibly lacking. The researchers confirmed the issues in question on Safety Manager R145.1 and R152.2 but suspect the issue affects all FSC and SM controllers and associated Safety Builder versions regardless of software or firmware revision. An attacker who can communicate with a Safety Manager controller via the Safety Builder protocol can execute arbitrary code without restrictions on the CPU module, allowing for covert manipulation of control operations and implanting capabilities similar to the TRITON malware (MITRE ATT&CK software ID S1009). A mitigating factor with regards to some, but not all, of the above functionality is that these require the Safety Manager physical keyswitch to be in the right position.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.forescout.com/blog/",
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-22-207-02"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年07月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-30314",
+    "漏洞描述": "Honeywell Experion PKS Safety Manager 5.02 uses Hard-coded Credentials. According to FSCT-2022-0052, there is a Honeywell Experion PKS Safety Manager hardcoded credentials issue. The affected components are characterized as: POLO bootloader. The potential impact is: Manipulate firmware. The Honeywell Experion PKS Safety Manager utilizes the DCOM-232/485 serial interface for firmware management purposes. When booting, the Safety Manager exposes the Enea POLO bootloader via this interface. Access to the boot configuration is controlled by means of credentials hardcoded in the Safety Manager firmware. The credentials for the bootloader are hardcoded in the firmware. An attacker with access to the serial interface (either through physical access, a compromised EWS or an exposed serial-to-ethernet gateway) can utilize these credentials to control the boot process and manipulate the unauthenticated firmware image (see FSCT-2022-0054).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.forescout.com/blog/",
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-22-207-02"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年07月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-30313",
+    "漏洞描述": "Honeywell Experion PKS Safety Manager through 2022-05-06 has Missing Authentication for a Critical Function. According to FSCT-2022-0051, there is a Honeywell Experion PKS Safety Manager multiple proprietary protocols with unauthenticated functionality issue. The affected components are characterized as: Honeywell Experion TCP (51000/TCP), Safety Builder (51010/TCP). The potential impact is: Manipulate controller state, Manipulate controller configuration, Manipulate controller logic, Manipulate controller files, Manipulate IO. The Honeywell Experion PKS Distributed Control System (DCS) Safety Manager utilizes several proprietary protocols for a wide variety of functionality, including process data acquisition, controller steering and configuration management. These protocols include: Experion TCP (51000/TCP) and Safety Builder (51010/TCP). None of these protocols have any authentication features, allowing any attacker capable of communicating with the ports in question to invoke (a subset of) desired functionality. There is no authentication functionality on the protocols in question. An attacker capable of invoking the protocols' functionalities could achieve a wide range of adverse impacts, including (but not limited to), the following: for Experion TCP (51000/TCP): Issue IO manipulation commands, Issue file read/write commands; and for Safety Builder (51010/TCP): Issue controller start/stop commands, Issue logic download/upload commands, Issue file read commands, Issue system time change commands. A mitigating factor with regards to some, but not all, of the above functionality is that these require the Safety Manager physical keyswitch to be in the right position.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.forescout.com/blog/",
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-22-207-02"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年07月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-30245",
+    "漏洞描述": "Honeywell Alerton Compass Software 1.6.5 allows unauthenticated configuration changes from remote users. This enables configuration data to be stored on the controller and then implemented. A user with malicious intent can send a crafted packet to change the controller configuration without the knowledge of other users, altering the controller's function capabilities. The changed configuration is not updated in the User Interface, which creates an inconsistency between the configuration display and the actual configuration on the controller. After the configuration change, remediation requires reverting to the correct configuration, requiring either physical or remote access depending on the configuration that was altered.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://blog.scadafence.com",
+      "https://www.honeywell.com/us/en/product-security",
+      "https://github.com/scadafence/Honeywell-Alerton-Vulnerabilities"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年07月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-30244",
+    "漏洞描述": "Honeywell Alerton Ascent Control Module (ACM) through 2022-05-04 allows unauthenticated programming writes from remote users. This enables code to be store on the controller and then run without verification. A user with malicious intent can send a crafted packet to change and/or stop the program without the knowledge of other users, altering the controller's function. After the programming change, the program needs to be overwritten in order for the controller to restore its original operational function.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://blog.scadafence.com",
+      "https://www.honeywell.com/us/en/product-security",
+      "https://github.com/scadafence/Honeywell-Alerton-Vulnerabilities"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年07月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-30243",
+    "漏洞描述": "Honeywell Alerton Visual Logic through 2022-05-04 allows unauthenticated programming writes from remote users. This enables code to be stored on the controller and then run without verification. A user with malicious intent can send a crafted packet to change and/or stop the program without the knowledge of other users, altering the controller's function. After the programming change, the program needs to be overwritten in order for the controller to restore its original operational function.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://blog.scadafence.com",
+      "https://www.honeywell.com/us/en/product-security",
+      "https://github.com/scadafence/Honeywell-Alerton-Vulnerabilities"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年07月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-30242",
+    "漏洞描述": "Honeywell Alerton Ascent Control Module (ACM) through 2022-05-04 allows unauthenticated configuration changes from remote users. This enables configuration data to be stored on the controller and then implemented. A user with malicious intent can send a crafted packet to change the controller configuration without the knowledge of other users, altering the controller's function capabilities. The changed configuration is not updated in the User Interface, which creates an inconsistency between the configuration display and the actual configuration on the controller. After the configuration change, remediation requires reverting to the correct configuration, requiring either physical or remote access depending on the configuration that was altered.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://blog.scadafence.com",
+      "https://www.honeywell.com/us/en/product-security",
+      "https://github.com/scadafence/Honeywell-Alerton-Vulnerabilities"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年07月15日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "SoftMaster",
+    "CVE编号": "CVE-2022-2333",
+    "漏洞描述": "If an attacker manages to trick a valid user into loading a malicious DLL, the attacker may be able to achieve code execution in Honeywell SoftMaster version 4.51 application’s context and permissions.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-22-256-02",
+      "https://www.security.honeywell.com/-/media/Security/Resources/PDF/Product-Warranty/Security_Notification_SN_2019-09-13-02_V4-pdf.pdf"
+    ],
+    "受影响版本": [
+      "4.51"
+    ],
+    "公开日期": "2022年09月16日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "SoftMaster",
+    "CVE编号": "CVE-2022-2332",
+    "漏洞描述": "A local unprivileged attacker may escalate to administrator privileges in Honeywell SoftMaster version 4.51, due to insecure permission assignment.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-22-256-02",
+      "https://www.security.honeywell.com/-/media/Security/Resources/PDF/Product-Warranty/Security_Notification_SN_2019-09-13-02_V4-pdf.pdf"
+    ],
+    "受影响版本": [
+      "4.51"
+    ],
+    "公开日期": "2022年09月16日"
+  },
+  {
+    "设备品牌": "Matrikon, a subsidiary of Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Matrikon OPC Server",
+    "CVE编号": "CVE-2022-1261",
+    "漏洞描述": "Matrikon, a subsidary of Honeywell Matrikon OPC Server (all versions) is vulnerable to a condition where a low privileged user allowed to connect to the OPC server to use the functions of the IPersisFile to execute operating system processes with system-level privileges.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-22-144-02"
+    ],
+    "受影响版本": [
+      "All Versions"
+    ],
+    "公开日期": "2022年05月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-39364",
+    "漏洞描述": "Honeywell HDZP252DI 1.00.HW02.4 and HBW2PER1 1.000.HW01.3 devices allow command spoofing (for camera control) after ARP cache poisoning has been achieved.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.honeywell.com/us/en/product-security",
+      "https://buildings.honeywell.com/us/en/brands/our-brands/security/support-and-resources/product-resources/eol-and-security-notices",
+      "https://buildings.honeywell.com/content/dam/hbtbt/en/documents/downloads/Security_Notification_SN_2022-01-26-02_CVE-2021-39364_Video_Replay_HBW2PER1.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年02月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-39363",
+    "漏洞描述": "Honeywell HDZP252DI 1.00.HW02.4 and HBW2PER1 1.000.HW01.3 devices allow a video replay attack after ARP cache poisoning has been achieved.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.honeywell.com/us/en/product-security",
+      "https://buildings.honeywell.com/us/en/brands/our-brands/security/support-and-resources/product-resources/eol-and-security-notices",
+      "https://buildings.honeywell.com/content/dam/hbtbt/en/documents/downloads/Security_Notification_SN_2022-01-26-01_CVE-2021-39363_Command_Injection_HDZP252DI.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年02月24日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion PKS",
+    "CVE编号": "CVE-2021-38399",
+    "漏洞描述": "Honeywell Experion PKS C200, C200E, C300, and ACE controllers are vulnerable to relative path traversal, which may allow an attacker access to unauthorized files and directories.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-21-278-04",
+      "https://www.honeywellprocess.com/library/support/notifications/Customer/SN2021-02-22-01-Experion-C300-CCL.pdf"
+    ],
+    "受影响版本": [
+      "C200",
+      "C200E",
+      "C300",
+      "ACE controllers"
+    ],
+    "公开日期": "2022年10月28日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion PKS",
+    "CVE编号": "CVE-2021-38397",
+    "漏洞描述": "Honeywell Experion PKS C200, C200E, C300, and ACE controllers are vulnerable to unrestricted file uploads, which may allow an attacker to remotely execute arbitrary code and cause a denial-of-service condition.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-21-278-04",
+      "https://www.honeywellprocess.com/library/support/notifications/Customer/SN2021-02-22-01-Experion-C300-CCL.pdf"
+    ],
+    "受影响版本": [
+      "C200",
+      "C200E",
+      "C300",
+      "ACE controllers"
+    ],
+    "公开日期": "2022年10月28日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Experion PKS",
+    "CVE编号": "CVE-2021-38395",
+    "漏洞描述": "Honeywell Experion PKS C200, C200E, C300, and ACE controllers are vulnerable to improper neutralization of special elements in output, which may allow an attacker to remotely execute arbitrary code and cause a denial-of-service condition.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-21-278-04",
+      "https://www.honeywellprocess.com/library/support/notifications/Customer/SN2021-02-22-01-Experion-C300-CCL.pdf"
+    ],
+    "受影响版本": [
+      "C200",
+      "C200E",
+      "C300",
+      "ACE controllers"
+    ],
+    "公开日期": "2022年10月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Honeywell WIN-PAK 4.7.2, Web and prior versions",
+    "CVE编号": "CVE-2020-7005",
+    "漏洞描述": "In Honeywell WIN-PAK 4.7.2, Web and prior versions, the affected product is vulnerable to a cross-site request forgery, which may allow an attacker to remotely execute arbitrary code.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.us-cert.gov/ics/advisories/icsa-20-056-05"
+    ],
+    "受影响版本": [
+      "Honeywell WIN-PAK 4.7.2, Web and prior versions"
+    ],
+    "公开日期": "2020年03月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Honeywell WIN-PAK 4.7.2, Web and prior versions",
+    "CVE编号": "CVE-2020-6982",
+    "漏洞描述": "In Honeywell WIN-PAK 4.7.2, Web and prior versions, the header injection vulnerability has been identified, which may allow remote code execution.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.us-cert.gov/ics/advisories/icsa-20-056-05"
+    ],
+    "受影响版本": [
+      "Honeywell WIN-PAK 4.7.2, Web and prior versions"
+    ],
+    "公开日期": "2020年03月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Honeywell WIN-PAK 4.7.2, Web and prior versions",
+    "CVE编号": "CVE-2020-6978",
+    "漏洞描述": "In Honeywell WIN-PAK 4.7.2, Web and prior versions, the affected product is vulnerable due to the usage of old jQuery libraries.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.us-cert.gov/ics/advisories/icsa-20-056-05"
+    ],
+    "受影响版本": [
+      "Honeywell WIN-PAK 4.7.2, Web and prior versions"
+    ],
+    "公开日期": "2020年03月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Honeywell Notifier Web Server (NWS)",
+    "CVE编号": "CVE-2020-6974",
+    "漏洞描述": "Honeywell Notifier Web Server (NWS) Version 3.50 is vulnerable to a path traversal attack, which allows an attacker to bypass access to restricted directories. Honeywell has released a firmware update to address the problem.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.us-cert.gov/ics/advisories/icsa-20-051-03"
+    ],
+    "受影响版本": [
+      "Version 3.50 and earlier"
+    ],
+    "公开日期": "2020年04月07日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Notifier Web Server (NWS) Version 3.50 and earlier",
+    "CVE编号": "CVE-2020-6972",
+    "漏洞描述": "In Notifier Web Server (NWS) Version 3.50 and earlier, the Honeywell Fire Web Server’s authentication may be bypassed by a capture-replay attack from a web browser.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.us-cert.gov/ics/advisories/icsa-20-051-03"
+    ],
+    "受影响版本": [
+      "Notifier Web Server (NWS) Version 3.50 and earlier"
+    ],
+    "公开日期": "2020年03月24日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "车载传感器模块",
+    "产品型号": "INNCOM INNControl 3",
+    "CVE编号": "CVE-2020-6968",
+    "漏洞描述": "Honeywell INNCOM INNControl 3 allows workstation users to escalate application user privileges through the modification of local configuration files.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.us-cert.gov/ics/advisories/icsa-20-049-01"
+    ],
+    "受影响版本": [
+      "Versions 3.21 and prior"
+    ],
+    "公开日期": "2020年02月20日"
+  }
+]

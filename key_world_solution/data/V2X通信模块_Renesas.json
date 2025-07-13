@@ -1,0 +1,521 @@
+[
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-21917",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nusb: renesas_usbhs: Flush the notify_hotplug_work\n\nWhen performing continuous unbind/bind operations on the USB drivers\navailable on the Renesas RZ/G2L SoC, a kernel crash with the message\n\"Unable to handle kernel NULL pointer dereference at virtual address\"\nmay occur. This issue points to the usbhsc_notify_hotplug() function.\n\nFlush the delayed work to avoid its execution when driver resources are\nunavailable.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/4cd847a7b630a85493d0294ad9542c21aafaa246",
+      "https://git.kernel.org/stable/c/394965f90454d6f00fe11879142b720c6c1a872e",
+      "https://git.kernel.org/stable/c/3248c1f833f924246cb98ce7da4569133c1b2292",
+      "https://git.kernel.org/stable/c/4ca078084cdd5f32d533311d6a0b63a60dcadd41",
+      "https://git.kernel.org/stable/c/d50f5c0cd949593eb9a3d822b34d7b50046a06b7",
+      "https://git.kernel.org/stable/c/e5aac1c9b2974636db7ce796ffa6de88fa08335e",
+      "https://git.kernel.org/stable/c/830818c8e70c0364e377f0c243b28061ef7967eb",
+      "https://git.kernel.org/stable/c/552ca6b87e3778f3dd5b87842f95138162e16c82"
+    ],
+    "受影响版本": [
+      "bc57381e634782009b1cb2e86b18013699ada576",
+      "bc57381e634782009b1cb2e86b18013699ada576",
+      "bc57381e634782009b1cb2e86b18013699ada576",
+      "bc57381e634782009b1cb2e86b18013699ada576",
+      "bc57381e634782009b1cb2e86b18013699ada576",
+      "bc57381e634782009b1cb2e86b18013699ada576",
+      "bc57381e634782009b1cb2e86b18013699ada576",
+      "bc57381e634782009b1cb2e86b18013699ada576"
+    ],
+    "公开日期": "2025年04月01日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-21912",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ngpio: rcar: Use raw_spinlock to protect register access\n\nUse raw_spinlock in order to fix spurious messages about invalid context\nwhen spinlock debugging is enabled. The lock is only used to serialize\nregister access.\n\n    [    4.239592] =============================\n    [    4.239595] [ BUG: Invalid wait context ]\n    [    4.239599] 6.13.0-rc7-arm64-renesas-05496-gd088502a519f #35 Not tainted\n    [    4.239603] -----------------------------\n    [    4.239606] kworker/u8:5/76 is trying to lock:\n    [    4.239609] ffff0000091898a0 (&p->lock){....}-{3:3}, at: gpio_rcar_config_interrupt_input_mode+0x34/0x164\n    [    4.239641] other info that might help us debug this:\n    [    4.239643] context-{5:5}\n    [    4.239646] 5 locks held by kworker/u8:5/76:\n    [    4.239651]  #0: ffff0000080fb148 ((wq_completion)async){+.+.}-{0:0}, at: process_one_work+0x190/0x62c\n    [    4.250180] OF: /soc/sound@ec500000/ports/port@0/endpoint: Read of boolean property 'frame-master' with a value.\n    [    4.254094]  #1: ffff80008299bd80 ((work_completion)(&entry->work)){+.+.}-{0:0}, at: process_one_work+0x1b8/0x62c\n    [    4.254109]  #2: ffff00000920c8f8\n    [    4.258345] OF: /soc/sound@ec500000/ports/port@1/endpoint: Read of boolean property 'bitclock-master' with a value.\n    [    4.264803]  (&dev->mutex){....}-{4:4}, at: __device_attach_async_helper+0x3c/0xdc\n    [    4.264820]  #3: ffff00000a50ca40 (request_class#2){+.+.}-{4:4}, at: __setup_irq+0xa0/0x690\n    [    4.264840]  #4:\n    [    4.268872] OF: /soc/sound@ec500000/ports/port@1/endpoint: Read of boolean property 'frame-master' with a value.\n    [    4.273275] ffff00000a50c8c8 (lock_class){....}-{2:2}, at: __setup_irq+0xc4/0x690\n    [    4.296130] renesas_sdhi_internal_dmac ee100000.mmc: mmc1 base at 0x00000000ee100000, max clock rate 200 MHz\n    [    4.304082] stack backtrace:\n    [    4.304086] CPU: 1 UID: 0 PID: 76 Comm: kworker/u8:5 Not tainted 6.13.0-rc7-arm64-renesas-05496-gd088502a519f #35\n    [    4.304092] Hardware name: Renesas Salvator-X 2nd version board based on r8a77965 (DT)\n    [    4.304097] Workqueue: async async_run_entry_fn\n    [    4.304106] Call trace:\n    [    4.304110]  show_stack+0x14/0x20 (C)\n    [    4.304122]  dump_stack_lvl+0x6c/0x90\n    [    4.304131]  dump_stack+0x14/0x1c\n    [    4.304138]  __lock_acquire+0xdfc/0x1584\n    [    4.426274]  lock_acquire+0x1c4/0x33c\n    [    4.429942]  _raw_spin_lock_irqsave+0x5c/0x80\n    [    4.434307]  gpio_rcar_config_interrupt_input_mode+0x34/0x164\n    [    4.440061]  gpio_rcar_irq_set_type+0xd4/0xd8\n    [    4.444422]  __irq_set_trigger+0x5c/0x178\n    [    4.448435]  __setup_irq+0x2e4/0x690\n    [    4.452012]  request_threaded_irq+0xc4/0x190\n    [    4.456285]  devm_request_threaded_irq+0x7c/0xf4\n    [    4.459398] ata1: link resume succeeded after 1 retries\n    [    4.460902]  mmc_gpiod_request_cd_irq+0x68/0xe0\n    [    4.470660]  mmc_start_host+0x50/0xac\n    [    4.474327]  mmc_add_host+0x80/0xe4\n    [    4.477817]  tmio_mmc_host_probe+0x2b0/0x440\n    [    4.482094]  renesas_sdhi_probe+0x488/0x6f4\n    [    4.486281]  renesas_sdhi_internal_dmac_probe+0x60/0x78\n    [    4.491509]  platform_probe+0x64/0xd8\n    [    4.495178]  really_probe+0xb8/0x2a8\n    [    4.498756]  __driver_probe_device+0x74/0x118\n    [    4.503116]  driver_probe_device+0x3c/0x154\n    [    4.507303]  __device_attach_driver+0xd4/0x160\n    [    4.511750]  bus_for_each_drv+0x84/0xe0\n    [    4.515588]  __device_attach_async_helper+0xb0/0xdc\n    [    4.520470]  async_run_entry_fn+0x30/0xd8\n    [    4.524481]  process_one_work+0x210/0x62c\n    [    4.528494]  worker_thread+0x1ac/0x340\n    [    4.532245]  kthread+0x10c/0x110\n    [    4.535476]  ret_from_fork+0x10/0x20",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/7c1f36f9c9aca507d317479a3d3388150ae40a87",
+      "https://git.kernel.org/stable/c/3e300913c42041e81c5b17a970c4e078086ff2d1",
+      "https://git.kernel.org/stable/c/c10365031f16514a29c812cd909085a6e4ea4b61",
+      "https://git.kernel.org/stable/c/b42c84f9e4ec5bc2885e7fd80c79ec0352f5d2af",
+      "https://git.kernel.org/stable/c/51ef3073493e2a25dced05fdd59dfb059e7e284d",
+      "https://git.kernel.org/stable/c/f02c41f87cfe61440c18bf77d1ef0a884b9ee2b5"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2025年04月01日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-21801",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: ravb: Fix missing rtnl lock in suspend/resume path\n\nFix the suspend/resume path by ensuring the rtnl lock is held where\nrequired. Calls to ravb_open, ravb_close and wol operations must be\nperformed under the rtnl lock to prevent conflicts with ongoing ndo\noperations.\n\nWithout this fix, the following warning is triggered:\n[   39.032969] =============================\n[   39.032983] WARNING: suspicious RCU usage\n[   39.033019] -----------------------------\n[   39.033033] drivers/net/phy/phy_device.c:2004 suspicious\nrcu_dereference_protected() usage!\n...\n[   39.033597] stack backtrace:\n[   39.033613] CPU: 0 UID: 0 PID: 174 Comm: python3 Not tainted\n6.13.0-rc7-next-20250116-arm64-renesas-00002-g35245dfdc62c #7\n[   39.033623] Hardware name: Renesas SMARC EVK version 2 based on\nr9a08g045s33 (DT)\n[   39.033628] Call trace:\n[   39.033633]  show_stack+0x14/0x1c (C)\n[   39.033652]  dump_stack_lvl+0xb4/0xc4\n[   39.033664]  dump_stack+0x14/0x1c\n[   39.033671]  lockdep_rcu_suspicious+0x16c/0x22c\n[   39.033682]  phy_detach+0x160/0x190\n[   39.033694]  phy_disconnect+0x40/0x54\n[   39.033703]  ravb_close+0x6c/0x1cc\n[   39.033714]  ravb_suspend+0x48/0x120\n[   39.033721]  dpm_run_callback+0x4c/0x14c\n[   39.033731]  device_suspend+0x11c/0x4dc\n[   39.033740]  dpm_suspend+0xdc/0x214\n[   39.033748]  dpm_suspend_start+0x48/0x60\n[   39.033758]  suspend_devices_and_enter+0x124/0x574\n[   39.033769]  pm_suspend+0x1ac/0x274\n[   39.033778]  state_store+0x88/0x124\n[   39.033788]  kobj_attr_store+0x14/0x24\n[   39.033798]  sysfs_kf_write+0x48/0x6c\n[   39.033808]  kernfs_fop_write_iter+0x118/0x1a8\n[   39.033817]  vfs_write+0x27c/0x378\n[   39.033825]  ksys_write+0x64/0xf4\n[   39.033833]  __arm64_sys_write+0x18/0x20\n[   39.033841]  invoke_syscall+0x44/0x104\n[   39.033852]  el0_svc_common.constprop.0+0xb4/0xd4\n[   39.033862]  do_el0_svc+0x18/0x20\n[   39.033870]  el0_svc+0x3c/0xf0\n[   39.033880]  el0t_64_sync_handler+0xc0/0xc4\n[   39.033888]  el0t_64_sync+0x154/0x158\n[   39.041274] ravb 11c30000.ethernet eth0: Link is Down",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/0296981941cf291edfbc318d3255a93439f368e4",
+      "https://git.kernel.org/stable/c/ad19522c007bb24ed874468f8baa1503c4662cf4",
+      "https://git.kernel.org/stable/c/2c2ebb2b49573e5f8726112ad06b1dffc3c9ea03"
+    ],
+    "受影响版本": [
+      "0184165b2f42c4b032da9dd11546bfbaeb5afd4e",
+      "0184165b2f42c4b032da9dd11546bfbaeb5afd4e",
+      "0184165b2f42c4b032da9dd11546bfbaeb5afd4e"
+    ],
+    "公开日期": "2025年02月27日"
+  },
+  {
+    "设备品牌": "Renesas",
+    "设备类型": "V2X通信模块",
+    "产品型号": "rcar_gen3_v2.5",
+    "CVE编号": "CVE-2024-6563",
+    "漏洞描述": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') vulnerability in Renesas arm-trusted-firmware allows Local Execution of Code. This vulnerability is associated with program files  https://github.Com/renesas-rcar/arm-trusted-firmware/blob/rcar_gen3_v2.5/drivers/renesas/common/io/i... https://github.Com/renesas-rcar/arm-trusted-firmware/blob/rcar_gen3_v2.5/drivers/renesas/common/io/io_rcar.C .\n\n\n\n\nIn line 313 \"addr_loaded_cnt\" is checked not to be \"CHECK_IMAGE_AREA_CNT\" (5) or larger, this check does not halt the function. Immediately after (line 317) there will be an overflow in the buffer and the value of \"dst\" will be written to the area immediately after the buffer, which is \"addr_loaded_cnt\". This will allow an attacker to freely control the value of \"addr_loaded_cnt\" and thus control the destination of the write immediately after (line 318). The write in line 318 will then be fully controlled by said attacker, with whichever address and whichever value (\"len\") they desire.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://github.com/renesas-rcar/arm-trusted-firmware/commit/235f85b654a031f7647e81b86fc8e4ffeb430164",
+      "https://asrg.io/security-advisories/cve-2024-6563/"
+    ],
+    "受影响版本": [
+      "c2f286820471ed276c57e603762bd831873e5a17"
+    ],
+    "公开日期": "2024年07月08日"
+  },
+  {
+    "设备品牌": "Renesas",
+    "设备类型": "V2X通信模块",
+    "产品型号": "rcar_gen3_v2.5",
+    "CVE编号": "CVE-2024-6287",
+    "漏洞描述": "Incorrect Calculation vulnerability in Renesas arm-trusted-firmware allows Local Execution of Code.\n\n\nWhen checking whether a new image invades/overlaps with a previously loaded image the code neglects to consider a few cases. that could An attacker to bypass memory range restriction and overwrite an already loaded image partly or completely, which could result in code execution and bypass of secure boot.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://github.com/renesas-rcar/arm-trusted-firmware/commit/954d488a9798f8fda675c6b57c571b469b298f04",
+      "https://asrg.io/security-advisories/cve-2024-6287/"
+    ],
+    "受影响版本": [
+      "6a96c18c474e6339fab93f54d52aa7dcc4b70e52"
+    ],
+    "公开日期": "2024年06月24日"
+  },
+  {
+    "设备品牌": "Renesas",
+    "设备类型": "V2X通信模块",
+    "产品型号": "rcar_gen3_v2.5",
+    "CVE编号": "CVE-2024-6285",
+    "漏洞描述": "Integer Underflow (Wrap or Wraparound) vulnerability in Renesas arm-trusted-firmware.\nAn integer underflow in image range check calculations could lead to bypassing address restrictions and loading of images to unallowed addresses.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://github.com/renesas-rcar/arm-trusted-firmware/commit/b596f580637bae919b0ac3a5471422a1f756db3b",
+      "https://asrg.io/security-advisories/cve-2024-6285/"
+    ],
+    "受影响版本": [
+      "c2f286820471ed276c57e603762bd831873e5a17"
+    ],
+    "公开日期": "2024年06月24日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-56629",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nHID: wacom: fix when get product name maybe null pointer\n\nDue to incorrect dev->product reporting by certain devices, null\npointer dereferences occur when dev->product is empty, leading to\npotential system crashes.\n\nThis issue was found on EXCELSIOR DL37-D05 device with\nLoongson-LS3A6000-7A2000-DL37 motherboard.\n\nKernel logs:\n[   56.470885] usb 4-3: new full-speed USB device number 4 using ohci-pci\n[   56.671638] usb 4-3: string descriptor 0 read error: -22\n[   56.671644] usb 4-3: New USB device found, idVendor=056a, idProduct=0374, bcdDevice= 1.07\n[   56.671647] usb 4-3: New USB device strings: Mfr=1, Product=2, SerialNumber=3\n[   56.678839] hid-generic 0003:056A:0374.0004: hiddev0,hidraw3: USB HID v1.10 Device [HID 056a:0374] on usb-0000:00:05.0-3/input0\n[   56.697719] CPU 2 Unable to handle kernel paging request at virtual address 0000000000000000, era == 90000000066e35c8, ra == ffff800004f98a80\n[   56.697732] Oops[#1]:\n[   56.697734] CPU: 2 PID: 2742 Comm: (udev-worker) Tainted: G           OE      6.6.0-loong64-desktop #25.00.2000.015\n[   56.697737] Hardware name: Inspur CE520L2/C09901N000000000, BIOS 2.09.00 10/11/2024\n[   56.697739] pc 90000000066e35c8 ra ffff800004f98a80 tp 9000000125478000 sp 900000012547b8a0\n[   56.697741] a0 0000000000000000 a1 ffff800004818b28 a2 0000000000000000 a3 0000000000000000\n[   56.697743] a4 900000012547b8f0 a5 0000000000000000 a6 0000000000000000 a7 0000000000000000\n[   56.697745] t0 ffff800004818b2d t1 0000000000000000 t2 0000000000000003 t3 0000000000000005\n[   56.697747] t4 0000000000000000 t5 0000000000000000 t6 0000000000000000 t7 0000000000000000\n[   56.697748] t8 0000000000000000 u0 0000000000000000 s9 0000000000000000 s0 900000011aa48028\n[   56.697750] s1 0000000000000000 s2 0000000000000000 s3 ffff800004818e80 s4 ffff800004810000\n[   56.697751] s5 90000001000b98d0 s6 ffff800004811f88 s7 ffff800005470440 s8 0000000000000000\n[   56.697753]    ra: ffff800004f98a80 wacom_update_name+0xe0/0x300 [wacom]\n[   56.697802]   ERA: 90000000066e35c8 strstr+0x28/0x120\n[   56.697806]  CRMD: 000000b0 (PLV0 -IE -DA +PG DACF=CC DACM=CC -WE)\n[   56.697816]  PRMD: 0000000c (PPLV0 +PIE +PWE)\n[   56.697821]  EUEN: 00000000 (-FPE -SXE -ASXE -BTE)\n[   56.697827]  ECFG: 00071c1d (LIE=0,2-4,10-12 VS=7)\n[   56.697831] ESTAT: 00010000 [PIL] (IS= ECode=1 EsubCode=0)\n[   56.697835]  BADV: 0000000000000000\n[   56.697836]  PRID: 0014d000 (Loongson-64bit, Loongson-3A6000)\n[   56.697838] Modules linked in: wacom(+) bnep bluetooth rfkill qrtr nls_iso8859_1 nls_cp437 snd_hda_codec_conexant snd_hda_codec_generic ledtrig_audio snd_hda_codec_hdmi snd_hda_intel snd_intel_dspcfg snd_hda_codec snd_hda_core snd_hwdep snd_pcm snd_timer snd soundcore input_leds mousedev led_class joydev deepin_netmonitor(OE) fuse nfnetlink dmi_sysfs ip_tables x_tables overlay amdgpu amdxcp drm_exec gpu_sched drm_buddy radeon drm_suballoc_helper i2c_algo_bit drm_ttm_helper r8169 ttm drm_display_helper spi_loongson_pci xhci_pci cec xhci_pci_renesas spi_loongson_core hid_generic realtek gpio_loongson_64bit\n[   56.697887] Process (udev-worker) (pid: 2742, threadinfo=00000000aee0d8b4, task=00000000a9eff1f3)\n[   56.697890] Stack : 0000000000000000 ffff800004817e00 0000000000000000 0000251c00000000\n[   56.697896]         0000000000000000 00000011fffffffd 0000000000000000 0000000000000000\n[   56.697901]         0000000000000000 1b67a968695184b9 0000000000000000 90000001000b98d0\n[   56.697906]         90000001000bb8d0 900000011aa48028 0000000000000000 ffff800004f9d74c\n[   56.697911]         90000001000ba000 ffff800004f9ce58 0000000000000000 ffff800005470440\n[   56.697916]         ffff800004811f88 90000001000b98d0 9000000100da2aa8 90000001000bb8d0\n[   56.697921]         0000000000000000 90000001000ba000 900000011aa48028 ffff800004f9d74c\n[   56.697926]         ffff8000054704e8 90000001000bb8b8 90000001000ba000 0000000000000000\n[   56.697931]         90000001000bb8d0 \n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/d031eef3cc2e3bf524509e38fb898e5335c85c96",
+      "https://git.kernel.org/stable/c/5912a921289edb34d40aeab32ea6d52d41e75fed",
+      "https://git.kernel.org/stable/c/2ed3e3a3ac06af8a6391c3d6a7791b7967d7d43a",
+      "https://git.kernel.org/stable/c/2cd323c55bd3f356bf23ae1b4c20100abcdc29d6",
+      "https://git.kernel.org/stable/c/a7f0509556fa2f9789639dbcee9eed46e471ccef",
+      "https://git.kernel.org/stable/c/e689bc6697a7fcebd4a945ab0b1e1112c76024d8",
+      "https://git.kernel.org/stable/c/59548215b76be98cf3422eea9a67d6ea578aca3d"
+    ],
+    "受影响版本": [
+      "09dc28acaec74d7467c7c9b81dc8676e5bc957ce",
+      "09dc28acaec74d7467c7c9b81dc8676e5bc957ce",
+      "09dc28acaec74d7467c7c9b81dc8676e5bc957ce",
+      "09dc28acaec74d7467c7c9b81dc8676e5bc957ce",
+      "09dc28acaec74d7467c7c9b81dc8676e5bc957ce",
+      "09dc28acaec74d7467c7c9b81dc8676e5bc957ce",
+      "09dc28acaec74d7467c7c9b81dc8676e5bc957ce"
+    ],
+    "公开日期": "2024年12月27日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-56542",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amd/display: fix a memleak issue when driver is removed\n\nRunning \"modprobe amdgpu\" the second time (followed by a modprobe -r\namdgpu) causes a call trace like:\n\n[  845.212163] Memory manager not clean during takedown.\n[  845.212170] WARNING: CPU: 4 PID: 2481 at drivers/gpu/drm/drm_mm.c:999 drm_mm_takedown+0x2b/0x40\n[  845.212177] Modules linked in: amdgpu(OE-) amddrm_ttm_helper(OE) amddrm_buddy(OE) amdxcp(OE) amd_sched(OE) drm_exec drm_suballoc_helper drm_display_helper i2c_algo_bit amdttm(OE) amdkcl(OE) cec rc_core sunrpc qrtr intel_rapl_msr intel_rapl_common snd_hda_codec_hdmi edac_mce_amd snd_hda_intel snd_intel_dspcfg snd_intel_sdw_acpi snd_usb_audio snd_hda_codec snd_usbmidi_lib kvm_amd snd_hda_core snd_ump mc snd_hwdep kvm snd_pcm snd_seq_midi snd_seq_midi_event irqbypass crct10dif_pclmul snd_rawmidi polyval_clmulni polyval_generic ghash_clmulni_intel sha256_ssse3 sha1_ssse3 snd_seq aesni_intel crypto_simd snd_seq_device cryptd snd_timer mfd_aaeon asus_nb_wmi eeepc_wmi joydev asus_wmi snd ledtrig_audio sparse_keymap ccp wmi_bmof input_leds k10temp i2c_piix4 platform_profile rapl soundcore gpio_amdpt mac_hid binfmt_misc msr parport_pc ppdev lp parport efi_pstore nfnetlink dmi_sysfs ip_tables x_tables autofs4 hid_logitech_hidpp hid_logitech_dj hid_generic usbhid hid ahci xhci_pci igc crc32_pclmul libahci xhci_pci_renesas video\n[  845.212284]  wmi [last unloaded: amddrm_ttm_helper(OE)]\n[  845.212290] CPU: 4 PID: 2481 Comm: modprobe Tainted: G        W  OE      6.8.0-31-generic #31-Ubuntu\n[  845.212296] RIP: 0010:drm_mm_takedown+0x2b/0x40\n[  845.212300] Code: 1f 44 00 00 48 8b 47 38 48 83 c7 38 48 39 f8 75 09 31 c0 31 ff e9 90 2e 86 00 55 48 c7 c7 d0 f6 8e 8a 48 89 e5 e8 f5 db 45 ff <0f> 0b 5d 31 c0 31 ff e9 74 2e 86 00 66 0f 1f 84 00 00 00 00 00 90\n[  845.212302] RSP: 0018:ffffb11302127ae0 EFLAGS: 00010246\n[  845.212305] RAX: 0000000000000000 RBX: ffff92aa5020fc08 RCX: 0000000000000000\n[  845.212307] RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000\n[  845.212309] RBP: ffffb11302127ae0 R08: 0000000000000000 R09: 0000000000000000\n[  845.212310] R10: 0000000000000000 R11: 0000000000000000 R12: 0000000000000004\n[  845.212312] R13: ffff92aa50200000 R14: ffff92aa5020fb10 R15: ffff92aa5020faa0\n[  845.212313] FS:  0000707dd7c7c080(0000) GS:ffff92b93de00000(0000) knlGS:0000000000000000\n[  845.212316] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\n[  845.212318] CR2: 00007d48b0aee200 CR3: 0000000115a58000 CR4: 0000000000f50ef0\n[  845.212320] PKRU: 55555554\n[  845.212321] Call Trace:\n[  845.212323]  <TASK>\n[  845.212328]  ? show_regs+0x6d/0x80\n[  845.212333]  ? __warn+0x89/0x160\n[  845.212339]  ? drm_mm_takedown+0x2b/0x40\n[  845.212344]  ? report_bug+0x17e/0x1b0\n[  845.212350]  ? handle_bug+0x51/0xa0\n[  845.212355]  ? exc_invalid_op+0x18/0x80\n[  845.212359]  ? asm_exc_invalid_op+0x1b/0x20\n[  845.212366]  ? drm_mm_takedown+0x2b/0x40\n[  845.212371]  amdgpu_gtt_mgr_fini+0xa9/0x130 [amdgpu]\n[  845.212645]  amdgpu_ttm_fini+0x264/0x340 [amdgpu]\n[  845.212770]  amdgpu_bo_fini+0x2e/0xc0 [amdgpu]\n[  845.212894]  gmc_v12_0_sw_fini+0x2a/0x40 [amdgpu]\n[  845.213036]  amdgpu_device_fini_sw+0x11a/0x590 [amdgpu]\n[  845.213159]  amdgpu_driver_release_kms+0x16/0x40 [amdgpu]\n[  845.213302]  devm_drm_dev_init_release+0x5e/0x90\n[  845.213305]  devm_action_release+0x12/0x30\n[  845.213308]  release_nodes+0x42/0xd0\n[  845.213311]  devres_release_all+0x97/0xe0\n[  845.213314]  device_unbind_cleanup+0x12/0x80\n[  845.213317]  device_release_driver_internal+0x230/0x270\n[  845.213319]  ? srso_alias_return_thunk+0x5/0xfbef5\n\nThis is caused by lost memory during early init phase. First time driver\nis removed, memory is freed but when second time the driver is inserted,\nVBIOS dmub is not active, since the PSP policy is to retain the driver\nloaded version on subsequent warm boots. Hence, communication with VBIOS\nDMUB fails.\n\nFix this by aborting further comm\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/e51cbe40b77a32e8698ad8b9582e5b4fce6da364",
+      "https://git.kernel.org/stable/c/5860c637513036a6ffc130950ea98676b591b47c",
+      "https://git.kernel.org/stable/c/d4f36e5fd800de7db74c1c4e62baf24a091a5ff6"
+    ],
+    "受影响版本": [
+      "43ebd0faec24652cb529ceefd594c61897059f90",
+      "f59549c7e705be0087d08bc116ccc767b86d8362",
+      "f59549c7e705be0087d08bc116ccc767b86d8362"
+    ],
+    "公开日期": "2024年12月27日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-55639",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: renesas: rswitch: avoid use-after-put for a device tree node\n\nThe device tree node saved in the rswitch_device structure is used at\nseveral driver locations. So passing this node to of_node_put() after\nthe first use is wrong.\n\nMove of_node_put() for this node to exit paths.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/bf8c6755f02029d1eddc3ff19b870240f054afc7",
+      "https://git.kernel.org/stable/c/92007a28f95413058a7268dc84e5f44b700165d1",
+      "https://git.kernel.org/stable/c/66b7e9f85b8459c823b11e9af69dbf4be5eb6be8"
+    ],
+    "受影响版本": [
+      "b46f1e5793298c67efc2f1b917350a2cefacf9d6",
+      "b46f1e5793298c67efc2f1b917350a2cefacf9d6",
+      "b46f1e5793298c67efc2f1b917350a2cefacf9d6"
+    ],
+    "公开日期": "2025年01月11日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-46721",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\napparmor: fix possible NULL pointer dereference\n\nprofile->parent->dents[AAFS_PROF_DIR] could be NULL only if its parent is made\nfrom __create_missing_ancestors(..) and 'ent->old' is NULL in\naa_replace_profiles(..).\nIn that case, it must return an error code and the code, -ENOENT represents\nits state that the path of its parent is not existed yet.\n\nBUG: kernel NULL pointer dereference, address: 0000000000000030\nPGD 0 P4D 0\nPREEMPT SMP PTI\nCPU: 4 PID: 3362 Comm: apparmor_parser Not tainted 6.8.0-24-generic #24\nHardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 1.15.0-1 04/01/2014\nRIP: 0010:aafs_create.constprop.0+0x7f/0x130\nCode: 4c 63 e0 48 83 c4 18 4c 89 e0 5b 41 5c 41 5d 41 5e 41 5f 5d 31 d2 31 c9 31 f6 31 ff 45 31 c0 45 31 c9 45 31 d2 c3 cc cc cc cc <4d> 8b 55 30 4d 8d ba a0 00 00 00 4c 89 55 c0 4c 89 ff e8 7a 6a ae\nRSP: 0018:ffffc9000b2c7c98 EFLAGS: 00010246\nRAX: 0000000000000000 RBX: 00000000000041ed RCX: 0000000000000000\nRDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000\nRBP: ffffc9000b2c7cd8 R08: 0000000000000000 R09: 0000000000000000\nR10: 0000000000000000 R11: 0000000000000000 R12: ffffffff82baac10\nR13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000\nFS:  00007be9f22cf740(0000) GS:ffff88817bc00000(0000) knlGS:0000000000000000\nCS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\nCR2: 0000000000000030 CR3: 0000000134b08000 CR4: 00000000000006f0\nCall Trace:\n <TASK>\n ? show_regs+0x6d/0x80\n ? __die+0x24/0x80\n ? page_fault_oops+0x99/0x1b0\n ? kernelmode_fixup_or_oops+0xb2/0x140\n ? __bad_area_nosemaphore+0x1a5/0x2c0\n ? find_vma+0x34/0x60\n ? bad_area_nosemaphore+0x16/0x30\n ? do_user_addr_fault+0x2a2/0x6b0\n ? exc_page_fault+0x83/0x1b0\n ? asm_exc_page_fault+0x27/0x30\n ? aafs_create.constprop.0+0x7f/0x130\n ? aafs_create.constprop.0+0x51/0x130\n __aafs_profile_mkdir+0x3d6/0x480\n aa_replace_profiles+0x83f/0x1270\n policy_update+0xe3/0x180\n profile_load+0xbc/0x150\n ? rw_verify_area+0x47/0x140\n vfs_write+0x100/0x480\n ? __x64_sys_openat+0x55/0xa0\n ? syscall_exit_to_user_mode+0x86/0x260\n ksys_write+0x73/0x100\n __x64_sys_write+0x19/0x30\n x64_sys_call+0x7e/0x25c0\n do_syscall_64+0x7f/0x180\n entry_SYSCALL_64_after_hwframe+0x78/0x80\nRIP: 0033:0x7be9f211c574\nCode: c7 00 16 00 00 00 b8 ff ff ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 f3 0f 1e fa 80 3d d5 ea 0e 00 00 74 13 b8 01 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 54 c3 0f 1f 00 55 48 89 e5 48 83 ec 20 48 89\nRSP: 002b:00007ffd26f2b8c8 EFLAGS: 00000202 ORIG_RAX: 0000000000000001\nRAX: ffffffffffffffda RBX: 00005d504415e200 RCX: 00007be9f211c574\nRDX: 0000000000001fc1 RSI: 00005d504418bc80 RDI: 0000000000000004\nRBP: 0000000000001fc1 R08: 0000000000001fc1 R09: 0000000080000000\nR10: 0000000000000000 R11: 0000000000000202 R12: 00005d504418bc80\nR13: 0000000000000004 R14: 00007ffd26f2b9b0 R15: 00007ffd26f2ba30\n </TASK>\nModules linked in: snd_seq_dummy snd_hrtimer qrtr snd_hda_codec_generic snd_hda_intel snd_intel_dspcfg snd_intel_sdw_acpi snd_hda_codec snd_hda_core snd_hwdep snd_pcm snd_seq_midi snd_seq_midi_event snd_rawmidi snd_seq snd_seq_device i2c_i801 snd_timer i2c_smbus qxl snd soundcore drm_ttm_helper lpc_ich ttm joydev input_leds serio_raw mac_hid binfmt_misc msr parport_pc ppdev lp parport efi_pstore nfnetlink dmi_sysfs qemu_fw_cfg ip_tables x_tables autofs4 hid_generic usbhid hid ahci libahci psmouse virtio_rng xhci_pci xhci_pci_renesas\nCR2: 0000000000000030\n---[ end trace 0000000000000000 ]---\nRIP: 0010:aafs_create.constprop.0+0x7f/0x130\nCode: 4c 63 e0 48 83 c4 18 4c 89 e0 5b 41 5c 41 5d 41 5e 41 5f 5d 31 d2 31 c9 31 f6 31 ff 45 31 c0 45 31 c9 45 31 d2 c3 cc cc cc cc <4d> 8b 55 30 4d 8d ba a0 00 00 00 4c 89 55 c0 4c 89 ff e8 7a 6a ae\nRSP: 0018:ffffc9000b2c7c98 EFLAGS: 00010246\nRAX: 0000000000000000 RBX: 00000000000041ed RCX: 0000000000000000\nRDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000\nRBP: ffffc9000b2c7cd8 R08: 0000000000000000 R09: 0000000000000000\nR10: 0000\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/8d9da10a392a32368392f7a16775e1f36e2a5346",
+      "https://git.kernel.org/stable/c/730ee2686af0d55372e97a2695005ff142702363",
+      "https://git.kernel.org/stable/c/52338a3aa772762b8392ce7cac106c1099aeab85",
+      "https://git.kernel.org/stable/c/e3c7d23f7a5c0b11ba0093cea32261ab8098b94e",
+      "https://git.kernel.org/stable/c/09b2d107fe63e55b6ae643f9f26bf8eb14a261d9",
+      "https://git.kernel.org/stable/c/59f742e55a469ef36c5c1533b6095a103b61eda8",
+      "https://git.kernel.org/stable/c/c49bbe69ee152bd9c1c1f314c0f582e76c578f64",
+      "https://git.kernel.org/stable/c/3dd384108d53834002be5630132ad5c3f32166ad"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2024年09月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-25077",
+    "漏洞描述": "An issue was discovered on Renesas SmartBond DA14691, DA14695, DA14697, and DA14699 devices. The Nonce used for on-the-fly decryption of flash images is stored in an unsigned header, allowing its value to be modified without invalidating the signature used for secureboot image verification. Because the encryption engine for on-the-fly decryption uses AES in CTR mode without authentication, an attacker-modified Nonce can result in execution of arbitrary code.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/atredispartners/advisories/blob/master/ATREDIS-2024-0001.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年07月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-25076",
+    "漏洞描述": "An issue was discovered on Renesas SmartBond DA14691, DA14695, DA14697, and DA14699 devices. The bootrom function responsible for validating the Flash Product Header directly uses a user-controllable size value (Length of Flash Config Section) to control a read from the QSPI device into a fixed sized buffer, resulting in a buffer overflow and execution of arbitrary code.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/atredispartners/advisories/blob/master/ATREDIS-2024-0001.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年07月10日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52817",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdgpu: Fix a null pointer access when the smc_rreg pointer is NULL\n\nIn certain types of chips, such as VEGA20, reading the amdgpu_regs_smc file could result in an abnormal null pointer access when the smc_rreg pointer is NULL. Below are the steps to reproduce this issue and the corresponding exception log:\n\n1. Navigate to the directory: /sys/kernel/debug/dri/0\n2. Execute command: cat amdgpu_regs_smc\n3. Exception Log::\n[4005007.702554] BUG: kernel NULL pointer dereference, address: 0000000000000000\n[4005007.702562] #PF: supervisor instruction fetch in kernel mode\n[4005007.702567] #PF: error_code(0x0010) - not-present page\n[4005007.702570] PGD 0 P4D 0\n[4005007.702576] Oops: 0010 [#1] SMP NOPTI\n[4005007.702581] CPU: 4 PID: 62563 Comm: cat Tainted: G           OE     5.15.0-43-generic #46-Ubunt       u\n[4005007.702590] RIP: 0010:0x0\n[4005007.702598] Code: Unable to access opcode bytes at RIP 0xffffffffffffffd6.\n[4005007.702600] RSP: 0018:ffffa82b46d27da0 EFLAGS: 00010206\n[4005007.702605] RAX: 0000000000000000 RBX: 0000000000000000 RCX: ffffa82b46d27e68\n[4005007.702609] RDX: 0000000000000001 RSI: 0000000000000000 RDI: ffff9940656e0000\n[4005007.702612] RBP: ffffa82b46d27dd8 R08: 0000000000000000 R09: ffff994060c07980\n[4005007.702615] R10: 0000000000020000 R11: 0000000000000000 R12: 00007f5e06753000\n[4005007.702618] R13: ffff9940656e0000 R14: ffffa82b46d27e68 R15: 00007f5e06753000\n[4005007.702622] FS:  00007f5e0755b740(0000) GS:ffff99479d300000(0000) knlGS:0000000000000000\n[4005007.702626] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\n[4005007.702629] CR2: ffffffffffffffd6 CR3: 00000003253fc000 CR4: 00000000003506e0\n[4005007.702633] Call Trace:\n[4005007.702636]  <TASK>\n[4005007.702640]  amdgpu_debugfs_regs_smc_read+0xb0/0x120 [amdgpu]\n[4005007.703002]  full_proxy_read+0x5c/0x80\n[4005007.703011]  vfs_read+0x9f/0x1a0\n[4005007.703019]  ksys_read+0x67/0xe0\n[4005007.703023]  __x64_sys_read+0x19/0x20\n[4005007.703028]  do_syscall_64+0x5c/0xc0\n[4005007.703034]  ? do_user_addr_fault+0x1e3/0x670\n[4005007.703040]  ? exit_to_user_mode_prepare+0x37/0xb0\n[4005007.703047]  ? irqentry_exit_to_user_mode+0x9/0x20\n[4005007.703052]  ? irqentry_exit+0x19/0x30\n[4005007.703057]  ? exc_page_fault+0x89/0x160\n[4005007.703062]  ? asm_exc_page_fault+0x8/0x30\n[4005007.703068]  entry_SYSCALL_64_after_hwframe+0x44/0xae\n[4005007.703075] RIP: 0033:0x7f5e07672992\n[4005007.703079] Code: c0 e9 b2 fe ff ff 50 48 8d 3d fa b2 0c 00 e8 c5 1d 02 00 0f 1f 44 00 00 f3 0f        1e fa 64 8b 04 25 18 00 00 00 85 c0 75 10 0f 05 <48> 3d 00 f0 ff ff 77 56 c3 0f 1f 44 00 00 48 83 e       c 28 48 89 54 24\n[4005007.703083] RSP: 002b:00007ffe03097898 EFLAGS: 00000246 ORIG_RAX: 0000000000000000\n[4005007.703088] RAX: ffffffffffffffda RBX: 0000000000020000 RCX: 00007f5e07672992\n[4005007.703091] RDX: 0000000000020000 RSI: 00007f5e06753000 RDI: 0000000000000003\n[4005007.703094] RBP: 00007f5e06753000 R08: 00007f5e06752010 R09: 00007f5e06752010\n[4005007.703096] R10: 0000000000000022 R11: 0000000000000246 R12: 0000000000022000\n[4005007.703099] R13: 0000000000000003 R14: 0000000000020000 R15: 0000000000020000\n[4005007.703105]  </TASK>\n[4005007.703107] Modules linked in: nf_tables libcrc32c nfnetlink algif_hash af_alg binfmt_misc nls_       iso8859_1 ipmi_ssif ast intel_rapl_msr intel_rapl_common drm_vram_helper drm_ttm_helper amd64_edac t       tm edac_mce_amd kvm_amd ccp mac_hid k10temp kvm acpi_ipmi ipmi_si rapl sch_fq_codel ipmi_devintf ipm       i_msghandler msr parport_pc ppdev lp parport mtd pstore_blk efi_pstore ramoops pstore_zone reed_solo       mon ip_tables x_tables autofs4 ib_uverbs ib_core amdgpu(OE) amddrm_ttm_helper(OE) amdttm(OE) iommu_v       2 amd_sched(OE) amdkcl(OE) drm_kms_helper syscopyarea sysfillrect sysimgblt fb_sys_fops cec rc_core        drm igb ahci xhci_pci libahci i2c_piix4 i2c_algo_bit xhci_pci_renesas dca\n[4005007.703184] CR2: 0000000000000000\n[4005007.703188] ---[ en\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/bf2d51eedf03bd61e3556e35d74d49e2e6112398",
+      "https://git.kernel.org/stable/c/437e0fa907ba39b4d7eda863c03ea9cf48bd93a9",
+      "https://git.kernel.org/stable/c/f475d5502f33a6c5b149b0afe96316ad1962a64a",
+      "https://git.kernel.org/stable/c/174f62a0aa15c211e60208b41ee9e7cdfb73d455",
+      "https://git.kernel.org/stable/c/6c1b3d89a2dda79881726bb6e37af19c0936d736",
+      "https://git.kernel.org/stable/c/820daf9ffe2b0afb804567b10983fb38bc5ae288",
+      "https://git.kernel.org/stable/c/ba3c0796d292de84f2932cc5bbb0f771fc720996",
+      "https://git.kernel.org/stable/c/5104fdf50d326db2c1a994f8b35dcd46e63ae4ad"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2024年05月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-35828",
+    "漏洞描述": "An issue was discovered in the Linux kernel before 6.3.2. A use-after-free was found in renesas_usb3_remove in drivers/usb/gadget/udc/renesas_usb3.c.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://cdn.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.3.2",
+      "https://lore.kernel.org/all/20230327121700.52d881e0%40canb.auug.org.au/",
+      "https://lore.kernel.org/lkml/CAJedcCwkuznS1kSTvJXhzPoavcZDWNhNMshi-Ux0spSVRwU=RA%40mail.gmail.com/T/",
+      "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=2b947f8769be8b8181dc795fd292d3e7120f5204",
+      "https://lists.debian.org/debian-lts-announce/2023/07/msg00030.html",
+      "https://security.netapp.com/advisory/ntap-20230803-0002/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年06月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-35827",
+    "漏洞描述": "An issue was discovered in the Linux kernel through 6.3.8. A use-after-free was found in ravb_remove in drivers/net/ethernet/renesas/ravb_main.c.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.spinics.net/lists/netdev/msg886947.html",
+      "https://lore.kernel.org/lkml/cca0b40b-d6f8-54c7-1e46-83cb62d0a2f1%40huawei.com/T/",
+      "https://security.netapp.com/advisory/ntap-20230803-0003/",
+      "https://lists.debian.org/debian-lts-announce/2024/01/msg00005.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年06月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-50163",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nax25: fix incorrect dev_tracker usage\n\nWhile investigating a separate rose issue [1], and enabling\nCONFIG_NET_DEV_REFCNT_TRACKER=y, Bernard reported an orthogonal ax25 issue [2]\n\nAn ax25_dev can be used by one (or many) struct ax25_cb.\nWe thus need different dev_tracker, one per struct ax25_cb.\n\nAfter this patch is applied, we are able to focus on rose.\n\n[1] https://lore.kernel.org/netdev/fb7544a1-f42e-9254-18cc-c9b071f4ca70@free.fr/\n\n[2]\n[  205.798723] reference already released.\n[  205.798732] allocated in:\n[  205.798734]  ax25_bind+0x1a2/0x230 [ax25]\n[  205.798747]  __sys_bind+0xea/0x110\n[  205.798753]  __x64_sys_bind+0x18/0x20\n[  205.798758]  do_syscall_64+0x5c/0x80\n[  205.798763]  entry_SYSCALL_64_after_hwframe+0x44/0xae\n[  205.798768] freed in:\n[  205.798770]  ax25_release+0x115/0x370 [ax25]\n[  205.798778]  __sock_release+0x42/0xb0\n[  205.798782]  sock_close+0x15/0x20\n[  205.798785]  __fput+0x9f/0x260\n[  205.798789]  ____fput+0xe/0x10\n[  205.798792]  task_work_run+0x64/0xa0\n[  205.798798]  exit_to_user_mode_prepare+0x18b/0x190\n[  205.798804]  syscall_exit_to_user_mode+0x26/0x40\n[  205.798808]  do_syscall_64+0x69/0x80\n[  205.798812]  entry_SYSCALL_64_after_hwframe+0x44/0xae\n[  205.798827] ------------[ cut here ]------------\n[  205.798829] WARNING: CPU: 2 PID: 2605 at lib/ref_tracker.c:136 ref_tracker_free.cold+0x60/0x81\n[  205.798837] Modules linked in: rose netrom mkiss ax25 rfcomm cmac algif_hash algif_skcipher af_alg bnep snd_hda_codec_hdmi nls_iso8859_1 i915 rtw88_8821ce rtw88_8821c x86_pkg_temp_thermal rtw88_pci intel_powerclamp rtw88_core snd_hda_codec_realtek snd_hda_codec_generic ledtrig_audio coretemp snd_hda_intel kvm_intel snd_intel_dspcfg mac80211 snd_hda_codec kvm i2c_algo_bit drm_buddy drm_dp_helper btusb drm_kms_helper snd_hwdep btrtl snd_hda_core btbcm joydev crct10dif_pclmul btintel crc32_pclmul ghash_clmulni_intel mei_hdcp btmtk intel_rapl_msr aesni_intel bluetooth input_leds snd_pcm crypto_simd syscopyarea processor_thermal_device_pci_legacy sysfillrect cryptd intel_soc_dts_iosf snd_seq sysimgblt ecdh_generic fb_sys_fops rapl libarc4 processor_thermal_device intel_cstate processor_thermal_rfim cec snd_timer ecc snd_seq_device cfg80211 processor_thermal_mbox mei_me processor_thermal_rapl mei rc_core at24 snd intel_pch_thermal intel_rapl_common ttm soundcore int340x_thermal_zone video\n[  205.798948]  mac_hid acpi_pad sch_fq_codel ipmi_devintf ipmi_msghandler drm msr parport_pc ppdev lp parport ramoops pstore_blk reed_solomon pstore_zone efi_pstore ip_tables x_tables autofs4 hid_generic usbhid hid i2c_i801 i2c_smbus r8169 xhci_pci ahci libahci realtek lpc_ich xhci_pci_renesas [last unloaded: ax25]\n[  205.798992] CPU: 2 PID: 2605 Comm: ax25ipd Not tainted 5.18.11-F6BVP #3\n[  205.798996] Hardware name: To be filled by O.E.M. To be filled by O.E.M./CK3, BIOS 5.011 09/16/2020\n[  205.798999] RIP: 0010:ref_tracker_free.cold+0x60/0x81\n[  205.799005] Code: e8 d2 01 9b ff 83 7b 18 00 74 14 48 c7 c7 2f d7 ff 98 e8 10 6e fc ff 8b 7b 18 e8 b8 01 9b ff 4c 89 ee 4c 89 e7 e8 5d fd 07 00 <0f> 0b b8 ea ff ff ff e9 30 05 9b ff 41 0f b6 f7 48 c7 c7 a0 fa 4e\n[  205.799008] RSP: 0018:ffffaf5281073958 EFLAGS: 00010286\n[  205.799011] RAX: 0000000080000000 RBX: ffff9a0bd687ebe0 RCX: 0000000000000000\n[  205.799014] RDX: 0000000000000001 RSI: 0000000000000282 RDI: 00000000ffffffff\n[  205.799016] RBP: ffffaf5281073a10 R08: 0000000000000003 R09: fffffffffffd5618\n[  205.799019] R10: 0000000000ffff10 R11: 000000000000000f R12: ffff9a0bc53384d0\n[  205.799022] R13: 0000000000000282 R14: 00000000ae000001 R15: 0000000000000001\n[  205.799024] FS:  0000000000000000(0000) GS:ffff9a0d0f300000(0000) knlGS:0000000000000000\n[  205.799028] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\n[  205.799031] CR2: 00007ff6b8311554 CR3: 000000001ac10004 CR4: 00000000001706e0\n[  205.799033] Call Trace:\n[  205.799035]  <TASK>\n[  205.799038]  ? ax25_dev_device_down+0xd9/\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/d08e3d71e5942f77fbff7f3529ed7fc82fbb3dfa",
+      "https://git.kernel.org/stable/c/4294df1374450912b2f64ee3cf575069fc784679",
+      "https://git.kernel.org/stable/c/d7c4c9e075f8cc6d88d277bc24e5d99297f03c06"
+    ],
+    "受影响版本": [
+      "feef318c855a361a1eccd880f33e88c460eb63b4",
+      "feef318c855a361a1eccd880f33e88c460eb63b4",
+      "feef318c855a361a1eccd880f33e88c460eb63b4",
+      "b8c07f33aa35dacf5444e7053ed9662d1869f536",
+      "b1e0a6fc7f17500484c402ad1cd018c24dfc14b3",
+      "7528d0f2210c3a1154186175516ed37aa970f2b1",
+      "57cc15f5fd550316e4104eaf84b90fbc640fd7a5",
+      "b982492ec3a115e0a136856a1b2dbe32f2d21a0e"
+    ],
+    "公开日期": "2025年06月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-50032",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nusb: renesas: Fix refcount leak bug\n\nIn usbhs_rza1_hardware_init(), of_find_node_by_name() will return\na node pointer with refcount incremented. We should use of_node_put()\nwhen it is not used anymore.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/36b18b777dece704b7c2e9e7947ca41a9b0fb009",
+      "https://git.kernel.org/stable/c/cfa8f707a58d68b2341a9dd0b33cf048f0628b4d",
+      "https://git.kernel.org/stable/c/9790a5a4f07f38a5add85ec58c44797d3a7c3677",
+      "https://git.kernel.org/stable/c/fbdbd61a36d887e00114321c6758e359e9573a8e",
+      "https://git.kernel.org/stable/c/5c4b699193eba51f1bbf462d758d66f545fddd35",
+      "https://git.kernel.org/stable/c/9d6d5303c39b8bc182475b22f45504106a07f086"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2025年06月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49449",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\npinctrl: renesas: rzn1: Fix possible null-ptr-deref in sh_pfc_map_resources()\n\nIt will cause null-ptr-deref when using 'res', if platform_get_resource()\nreturns NULL, so move using 'res' after devm_ioremap_resource() that\nwill check it to avoid null-ptr-deref.\nAnd use devm_platform_get_and_ioremap_resource() to simplify code.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/b646e0cfeb38bf5f1944fd548f1dfa9b129fa00c",
+      "https://git.kernel.org/stable/c/c16b59d445135c8026a04e388d8b2762feaa3b3b",
+      "https://git.kernel.org/stable/c/34c719b8fdfbd0c7c54cae56e6b0f16e9f8bf03e",
+      "https://git.kernel.org/stable/c/01f9e02e0f13df3fd291676dc80054e977be1601",
+      "https://git.kernel.org/stable/c/2f661477c2bb8068194dbba9738d05219f111c6e"
+    ],
+    "受影响版本": [
+      "4e53b5004745ef26a37bca4933b2d3ea71313f2a",
+      "4e53b5004745ef26a37bca4933b2d3ea71313f2a",
+      "4e53b5004745ef26a37bca4933b2d3ea71313f2a",
+      "4e53b5004745ef26a37bca4933b2d3ea71313f2a",
+      "4e53b5004745ef26a37bca4933b2d3ea71313f2a"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49445",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\npinctrl: renesas: core: Fix possible null-ptr-deref in sh_pfc_map_resources()\n\nIt will cause null-ptr-deref when using 'res', if platform_get_resource()\nreturns NULL, so move using 'res' after devm_ioremap_resource() that\nwill check it to avoid null-ptr-deref.\nAnd use devm_platform_get_and_ioremap_resource() to simplify code.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/f991879762392c19661af5b722578089a12b305f",
+      "https://git.kernel.org/stable/c/5ed0519d425619b435150372cce2ffeec71581fa",
+      "https://git.kernel.org/stable/c/e3a1ad8fd0ac11f4fa1260c23b5db71a25473254",
+      "https://git.kernel.org/stable/c/fb4f022b3ad1f3ff3cafdbc7d51896090ae17701",
+      "https://git.kernel.org/stable/c/5376e3d904532e657fd7ca1a9b1ff3d351527b90"
+    ],
+    "受影响版本": [
+      "c7977ec4a33633c8e8d9267dd014356cf857351c",
+      "c7977ec4a33633c8e8d9267dd014356cf857351c",
+      "c7977ec4a33633c8e8d9267dd014356cf857351c",
+      "c7977ec4a33633c8e8d9267dd014356cf857351c",
+      "c7977ec4a33633c8e8d9267dd014356cf857351c"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49430",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nInput: gpio-keys - cancel delayed work only in case of GPIO\n\ngpio_keys module can either accept gpios or interrupts. The module\ninitializes delayed work in case of gpios only and is only used if\ndebounce timer is not used, so make sure cancel_delayed_work_sync()\nis called only when its gpio-backed and debounce_use_hrtimer is false.\n\nThis fixes the issue seen below when the gpio_keys module is unloaded and\nan interrupt pin is used instead of GPIO:\n\n[  360.297569] ------------[ cut here ]------------\n[  360.302303] WARNING: CPU: 0 PID: 237 at kernel/workqueue.c:3066 __flush_work+0x414/0x470\n[  360.310531] Modules linked in: gpio_keys(-)\n[  360.314797] CPU: 0 PID: 237 Comm: rmmod Not tainted 5.18.0-rc5-arm64-renesas-00116-g73636105874d-dirty #166\n[  360.324662] Hardware name: Renesas SMARC EVK based on r9a07g054l2 (DT)\n[  360.331270] pstate: 60400005 (nZCv daif +PAN -UAO -TCO -DIT -SSBS BTYPE=--)\n[  360.338318] pc : __flush_work+0x414/0x470\n[  360.342385] lr : __cancel_work_timer+0x140/0x1b0\n[  360.347065] sp : ffff80000a7fba00\n[  360.350423] x29: ffff80000a7fba00 x28: ffff000012b9c5c0 x27: 0000000000000000\n[  360.357664] x26: ffff80000a7fbb80 x25: ffff80000954d0a8 x24: 0000000000000001\n[  360.364904] x23: ffff800009757000 x22: 0000000000000000 x21: ffff80000919b000\n[  360.372143] x20: ffff00000f5974e0 x19: ffff00000f5974e0 x18: ffff8000097fcf48\n[  360.379382] x17: 0000000000000000 x16: 0000000000000000 x15: 0000000000053f40\n[  360.386622] x14: ffff800009850e88 x13: 0000000000000002 x12: 000000000000a60c\n[  360.393861] x11: 000000000000a610 x10: 0000000000000000 x9 : 0000000000000008\n[  360.401100] x8 : 0101010101010101 x7 : 00000000a473c394 x6 : 0080808080808080\n[  360.408339] x5 : 0000000000000001 x4 : 0000000000000000 x3 : ffff80000919b458\n[  360.415578] x2 : ffff8000097577f0 x1 : 0000000000000001 x0 : 0000000000000000\n[  360.422818] Call trace:\n[  360.425299]  __flush_work+0x414/0x470\n[  360.429012]  __cancel_work_timer+0x140/0x1b0\n[  360.433340]  cancel_delayed_work_sync+0x10/0x18\n[  360.437931]  gpio_keys_quiesce_key+0x28/0x58 [gpio_keys]\n[  360.443327]  devm_action_release+0x10/0x18\n[  360.447481]  release_nodes+0x8c/0x1a0\n[  360.451194]  devres_release_all+0x90/0x100\n[  360.455346]  device_unbind_cleanup+0x14/0x60\n[  360.459677]  device_release_driver_internal+0xe8/0x168\n[  360.464883]  driver_detach+0x4c/0x90\n[  360.468509]  bus_remove_driver+0x54/0xb0\n[  360.472485]  driver_unregister+0x2c/0x58\n[  360.476462]  platform_driver_unregister+0x10/0x18\n[  360.481230]  gpio_keys_exit+0x14/0x828 [gpio_keys]\n[  360.486088]  __arm64_sys_delete_module+0x1e0/0x270\n[  360.490945]  invoke_syscall+0x40/0xf8\n[  360.494661]  el0_svc_common.constprop.3+0xf0/0x110\n[  360.499515]  do_el0_svc+0x20/0x78\n[  360.502877]  el0_svc+0x48/0xf8\n[  360.505977]  el0t_64_sync_handler+0x88/0xb0\n[  360.510216]  el0t_64_sync+0x148/0x14c\n[  360.513930] irq event stamp: 4306\n[  360.517288] hardirqs last  enabled at (4305): [<ffff8000080b0300>] __cancel_work_timer+0x130/0x1b0\n[  360.526359] hardirqs last disabled at (4306): [<ffff800008d194fc>] el1_dbg+0x24/0x88\n[  360.534204] softirqs last  enabled at (4278): [<ffff8000080104a0>] _stext+0x4a0/0x5e0\n[  360.542133] softirqs last disabled at (4267): [<ffff8000080932ac>] irq_exit_rcu+0x18c/0x1b0\n[  360.550591] ---[ end trace 0000000000000000 ]---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/96c460687813915dedca9dd7d04ae0e90607fd79",
+      "https://git.kernel.org/stable/c/4160e09619086fc155b51ccdb3462a3f233a5f4b",
+      "https://git.kernel.org/stable/c/8b1ae300c2953257c146b5f0757537935c0b6027",
+      "https://git.kernel.org/stable/c/cee409bbba0d1bd3fb73064fb480ff365f453b5d"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49383",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nwatchdog: rzg2l_wdt: Fix 'BUG: Invalid wait context'\n\nThis patch fixes the issue 'BUG: Invalid wait context' during restart()\ncallback by using clk_prepare_enable() instead of pm_runtime_get_sync()\nfor turning on the clocks during restart.\n\nThis issue is noticed when testing with renesas_defconfig.\n\n[   42.213802] reboot: Restarting system\n[   42.217860]\n[   42.219364] =============================\n[   42.223368] [ BUG: Invalid wait context ]\n[   42.227372] 5.17.0-rc5-arm64-renesas-00002-g10393723e35e #522 Not tainted\n[   42.234153] -----------------------------\n[   42.238155] systemd-shutdow/1 is trying to lock:\n[   42.242766] ffff00000a650828 (&genpd->mlock){+.+.}-{3:3}, at: genpd_lock_mtx+0x14/0x20\n[   42.250709] other info that might help us debug this:\n[   42.255753] context-{4:4}\n[   42.258368] 2 locks held by systemd-shutdow/1:\n[   42.262806]  #0: ffff80000944e1c8 (system_transition_mutex#2){+.+.}-{3:3}, at: __do_sys_reboot+0xd0/0x250\n[   42.272388]  #1: ffff8000094c4e40 (rcu_read_lock){....}-{1:2}, at: atomic_notifier_call_chain+0x0/0x150\n[   42.281795] stack backtrace:\n[   42.284672] CPU: 0 PID: 1 Comm: systemd-shutdow Not tainted 5.17.0-rc5-arm64-renesas-00002-g10393723e35e #522\n[   42.294577] Hardware name: Renesas SMARC EVK based on r9a07g044c2 (DT)\n[   42.301096] Call trace:\n[   42.303538]  dump_backtrace+0xcc/0xd8\n[   42.307203]  show_stack+0x14/0x30\n[   42.310517]  dump_stack_lvl+0x88/0xb0\n[   42.314180]  dump_stack+0x14/0x2c\n[   42.317492]  __lock_acquire+0x1b24/0x1b50\n[   42.321502]  lock_acquire+0x120/0x3a8\n[   42.325162]  __mutex_lock+0x84/0x8f8\n[   42.328737]  mutex_lock_nested+0x30/0x58\n[   42.332658]  genpd_lock_mtx+0x14/0x20\n[   42.336319]  genpd_runtime_resume+0xc4/0x228\n[   42.340587]  __rpm_callback+0x44/0x170\n[   42.344337]  rpm_callback+0x64/0x70\n[   42.347824]  rpm_resume+0x4e0/0x6b8\n[   42.351310]  __pm_runtime_resume+0x50/0x78\n[   42.355404]  rzg2l_wdt_restart+0x28/0x68\n[   42.359329]  watchdog_restart_notifier+0x1c/0x30\n[   42.363943]  atomic_notifier_call_chain+0x94/0x150\n[   42.368732]  do_kernel_restart+0x24/0x30\n[   42.372652]  machine_restart+0x44/0x70\n[   42.376399]  kernel_restart+0x3c/0x60\n[   42.380058]  __do_sys_reboot+0x228/0x250\n[   42.383977]  __arm64_sys_reboot+0x20/0x28\n[   42.387983]  invoke_syscall+0x40/0xf8",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/6505541e5298cea2b79da68ee626f583f8e18784",
+      "https://git.kernel.org/stable/c/0a635239cd5484d8f2e702713ccc49ec82aa7594",
+      "https://git.kernel.org/stable/c/e4cf89596c1f1e33309556699f910ced4abbaf44"
+    ],
+    "受影响版本": [
+      "2cbc5cd0b55fa2310cc557c77b0665f5e00272de",
+      "2cbc5cd0b55fa2310cc557c77b0665f5e00272de",
+      "2cbc5cd0b55fa2310cc557c77b0665f5e00272de"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49050",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmemory: renesas-rpc-if: fix platform-device leak in error path\n\nMake sure to free the flash platform device in the event that\nregistration fails during probe.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/c089ffc846c85f200db34ad208338f4f81a6d82d",
+      "https://git.kernel.org/stable/c/05d1824a7fb43ab9adb1eb82404954af81d8c984",
+      "https://git.kernel.org/stable/c/66b9b707ea4dcafca92b6261c6924652914e3b73",
+      "https://git.kernel.org/stable/c/b452dbf24d7d9a990d70118462925f6ee287d135"
+    ],
+    "受影响版本": [
+      "ca7d8b980b67f133317525c4273e144116ee1ae5",
+      "ca7d8b980b67f133317525c4273e144116ee1ae5",
+      "ca7d8b980b67f133317525c4273e144116ee1ae5",
+      "ca7d8b980b67f133317525c4273e144116ee1ae5"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2021-47050",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmemory: renesas-rpc-if: fix possible NULL pointer dereference of resource\n\nThe platform_get_resource_byname() can return NULL which would be\nimmediately dereferenced by resource_size().  Instead dereference it\nafter validating the resource.\n\nAddresses-Coverity: Dereference null return value",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/71bcc1b4a1743534d8abdcb57ff912e6bc390438",
+      "https://git.kernel.org/stable/c/e16acc3a37f09e18835dc5d8014942c2ef6ca957",
+      "https://git.kernel.org/stable/c/a74cb41af7dbe019e4096171f8bc641c7ce910ad",
+      "https://git.kernel.org/stable/c/59e27d7c94aa02da039b000d33c304c179395801"
+    ],
+    "受影响版本": [
+      "ca7d8b980b67f133317525c4273e144116ee1ae5",
+      "ca7d8b980b67f133317525c4273e144116ee1ae5",
+      "ca7d8b980b67f133317525c4273e144116ee1ae5",
+      "ca7d8b980b67f133317525c4273e144116ee1ae5"
+    ],
+    "公开日期": "2024年02月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-43327",
+    "漏洞描述": "An issue was discovered on Renesas RX65 and RX65N devices. With a VCC glitch, an attacker can extract the security ID key from the device. Then, the protected firmware can be extracted.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.collshade.fr/articles/reneshack/rx_glitch_article.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月02日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Intel(R) Renesas Electronics(R) USB 3.0 Driver",
+    "CVE编号": "CVE-2020-0560",
+    "漏洞描述": "Improper permissions in the installer for the Intel(R) Renesas Electronics(R) USB 3.0 Driver, all versions, may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00273.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2020年02月13日"
+  }
+]

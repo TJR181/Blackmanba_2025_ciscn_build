@@ -1,0 +1,17 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Intel(R) Renesas Electronics(R) USB 3.0 Driver",
+    "CVE编号": "CVE-2020-0560",
+    "漏洞描述": "Improper permissions in the installer for the Intel(R) Renesas Electronics(R) USB 3.0 Driver, all versions, may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00273.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2020年02月13日"
+  }
+]

@@ -1,0 +1,992 @@
+[
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "e-STUDIO 908",
+    "CVE编号": "CVE-2024-48870",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs improperly validate input data in URI data registration, resulting in a stored cross-site scripting vulnerability.\r\nIf crafted input is stored by an administrative user, malicious script may be executed on the web browsers of other victim users.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "T2.12.h3.00 and earlier versions"
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Sharp Digital Full-color MFPs and Monochrome MFPs",
+    "CVE编号": "CVE-2024-47801",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs improperly process query parameters in HTTP requests, resulting in a reflected cross-site scripting vulnerability.\r\nAccessing a crafted URL which points to an affected product may cause malicious script executed on the web browser.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "see the information provided by Sharp Corporation"
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Sharp Digital Full-color MFPs and Monochrome MFPs",
+    "CVE编号": "CVE-2024-47549",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs improperly process query parameters in HTTP requests, which may allow contamination of unintended data to HTTP response headers.\r\nAccessing a crafted URL which points to an affected product may cause malicious script executed on the web browser.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "see the information provided by Sharp Corporation"
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Sharp Digital Full-color MFPs and Monochrome MFPs",
+    "CVE编号": "CVE-2024-47406",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs improperly process HTTP authentication requests, resulting in an authentication bypass vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "see the information provided by Sharp Corporation"
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Sharp Digital Full-color MFPs and Monochrome MFPs",
+    "CVE编号": "CVE-2024-47005",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs provide configuration related APIs. They are expected to be called by administrative users only, but insufficiently restricted.\r\nA non-administrative user may execute some configuration APIs.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "see the information provided by Sharp Corporation"
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Sharp Digital Full-color MFPs and Monochrome MFPs",
+    "CVE编号": "CVE-2024-45842",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs improperly process URI data in HTTP PUT requests resulting in a path Traversal vulnerability.\r\nUnintended internal files may be retrieved when processing crafted HTTP requests.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "see the information provided by Sharp Corporation"
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Sharp Digital Full-color MFPs and Monochrome MFPs",
+    "CVE编号": "CVE-2024-45829",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs provide the web page to download data, where query parameters in HTTP requests are improperly processed and resulting in an Out-of-bounds Read vulnerability.\r\nCrafted HTTP requests may cause affected products crashed.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "see the information provided by Sharp Corporation"
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Sharp Digital Full-color MFPs and Monochrome MFPs",
+    "CVE编号": "CVE-2024-43424",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs improperly process HTTP request headers, resulting in an Out-of-bounds Read vulnerability.\r\nCrafted HTTP requests may cause affected products crashed.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "see the information provided by Sharp Corporation"
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Sharp Digital Full-color MFPs and Monochrome MFPs",
+    "CVE编号": "CVE-2024-42420",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs contain multiple Out-of-bounds Read vulnerabilities, due to improper processing of keyword search input and improper processing of SOAP messages.\r\nCrafted HTTP requests may cause affected products crashed.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "see the information provided by Sharp Corporation."
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-41028",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nplatform/x86: toshiba_acpi: Fix array out-of-bounds access\n\nIn order to use toshiba_dmi_quirks[] together with the standard DMI\nmatching functions, it must be terminated by a empty entry.\n\nSince this entry is missing, an array out-of-bounds access occurs\nevery time the quirk list is processed.\n\nFix this by adding the terminating empty entry.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/e030aa6c972641cb069086a8c7a0f747653e472a",
+      "https://git.kernel.org/stable/c/639868f1cb87b683cf830353bbee0c4078202313",
+      "https://git.kernel.org/stable/c/0d71da43d6b7916d36cf1953d793da80433c50bf",
+      "https://git.kernel.org/stable/c/b6e02c6b0377d4339986e07aeb696c632cd392aa"
+    ],
+    "受影响版本": [
+      "3cb1f40dfdc3b9f5449076c96b4e2523139f5cd0",
+      "3cb1f40dfdc3b9f5449076c96b4e2523139f5cd0",
+      "3cb1f40dfdc3b9f5449076c96b4e2523139f5cd0",
+      "3cb1f40dfdc3b9f5449076c96b4e2523139f5cd0"
+    ],
+    "公开日期": "2024年07月29日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Multiple MFPs (multifunction printers)",
+    "CVE编号": "CVE-2024-36254",
+    "漏洞描述": "Out-of-bounds read vulnerability exists in Sharp Corporation and Toshiba Tec Corporation multiple MFPs (multifunction printers), which may lead to a denial-of-service (DoS) condition.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://global.sharp/products/copier/info/info_security_2024-05.html",
+      "https://jp.sharp/business/print/information/info_security_2024-05.html",
+      "https://www.toshibatec.com/information/20240531_02.html",
+      "https://www.toshibatec.co.jp/information/20240531_02.html",
+      "https://jvn.jp/en/vu/JVNVU93051062/"
+    ],
+    "受影响版本": [
+      "See the information provided by Sharp Corporation listed under [References]"
+    ],
+    "公开日期": "2024年11月26日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Multiple MFPs (multifunction printers)",
+    "CVE编号": "CVE-2024-36249",
+    "漏洞描述": "Cross-site scripting vulnerability exists in Sharp Corporation and Toshiba Tech Corporation multiple MFPs (multifunction printers). If this vulnerability is exploited, an arbitrary script may be executed on the administrative page of the affected MFPs. As for the details of affected product names, model numbers, and versions, refer to the information provided by the respective vendors listed under [References].",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://global.sharp/products/copier/info/info_security_2024-05.html",
+      "https://jp.sharp/business/print/information/info_security_2024-05.html",
+      "https://www.toshibatec.com/information/20240531_02.html",
+      "https://www.toshibatec.co.jp/information/20240531_02.html",
+      "https://jvn.jp/en/vu/JVNVU93051062/"
+    ],
+    "受影响版本": [
+      "See the information provided by Sharp Corporation listed under [References]"
+    ],
+    "公开日期": "2024年11月26日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-3497",
+    "漏洞描述": "Path traversal vulnerability in the web server of the Toshiba printer enables attacker to overwrite orginal files or add new ones to the printer. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27180",
+    "漏洞描述": "An attacker with admin access can install rogue applications. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27179",
+    "漏洞描述": "Admin cookies are written in clear-text in logs. An attacker can retrieve them and bypass the authentication mechanism. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27178",
+    "漏洞描述": "An attacker can get Remote Code Execution by overwriting files.  Overwriting files is enable by falsifying file name variable. This vulnerability can be executed in combination with other vulnerabilities and  difficult to execute alone. So, the CVSS score for this vulnerability alone is lower than the score listed in the \"Base Score\" of this vulnerability. For detail on related other vulnerabilities, please ask to the below contact point.\n https://www.toshibatec.com/contacts/products/ \nAs for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27177",
+    "漏洞描述": "An attacker can get Remote Code Execution by overwriting files.  Overwriting files is enable by falsifying package name variable. This vulnerability can be executed in combination with other vulnerabilities and  difficult to execute alone. So, the CVSS score for this vulnerability alone is lower than the score listed in the \"Base Score\" of this vulnerability. For detail on related other vulnerabilities, please ask to the below contact point.\n https://www.toshibatec.com/contacts/products/ \nAs for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27176",
+    "漏洞描述": "An attacker can get Remote Code Execution by overwriting files. Overwriting files is enable by falsifying session ID variable. This vulnerability can be executed in combination with other vulnerabilities and  difficult to execute alone. So, the CVSS score for this vulnerability alone is lower than the score listed in the \"Base Score\" of this vulnerability. For detail on related other vulnerabilities, please ask to the below contact point.\n https://www.toshibatec.com/contacts/products/ \nAs for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27175",
+    "漏洞描述": "Remote Command program allows an attacker to read any file using a Local File Inclusion vulnerability. An attacker can read any file on the printer. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27174",
+    "漏洞描述": "Remote Command program allows an attacker to get Remote Code Execution. This vulnerability can be executed in combination with other vulnerabilities and  difficult to execute alone. So, the CVSS score for this vulnerability alone is lower than the score listed in the \"Base Score\" of this vulnerability. For detail on related other vulnerabilities, please ask to the below contact point.\n https://www.toshibatec.com/contacts/products/ \nAs for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27173",
+    "漏洞描述": "Remote Command program allows an attacker to get Remote Code Execution by overwriting existing Python files containing executable code. This vulnerability can be executed in combination with other vulnerabilities and  difficult to execute alone. So, the CVSS score for this vulnerability alone is lower than the score listed in the \"Base Score\" of this vulnerability. For detail on related other vulnerabilities, please ask to the below contact point.\n https://www.toshibatec.com/contacts/products/ \nAs for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27172",
+    "漏洞描述": "Remote Command program allows an attacker to get Remote Code Execution. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27171",
+    "漏洞描述": "A remote attacker using the insecure upload functionality will be able to overwrite any Python file and get Remote Code Execution. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27170",
+    "漏洞描述": "It was observed that all the Toshiba printers contain credentials used for WebDAV access in the readable file. Then, it is possible to get a full access with WebDAV to the printer. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27169",
+    "漏洞描述": "Toshiba printers provides API without authentication for internal access. A local attacker can bypass authentication in applications, providing administrative access. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27168",
+    "漏洞描述": "It appears that some hardcoded keys are used for authentication to internal API. Knowing these private keys may allow attackers to bypass authentication and reach administrative interfaces. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27167",
+    "漏洞描述": "Toshiba printers use Sendmail to send emails to recipients. Sendmail is used with several insecure directories. A local attacker can inject a malicious Sendmail configuration file. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27166",
+    "漏洞描述": "Coredump binaries in Toshiba printers have incorrect permissions. A local attacker can steal confidential information. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27165",
+    "漏洞描述": "Toshiba printers contain a suidperl binary and it has a Local Privilege Escalation vulnerability. A local attacker can get root privileges. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27164",
+    "漏洞描述": "Toshiba printers contain hardcoded credentials. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27163",
+    "漏洞描述": "Toshiba printers will display the password of the admin user in clear-text and additional passwords when sending 2 specific HTTP requests to the internal API. An attacker stealing the cookie of an admin or abusing a XSS vulnerability can recover this password in clear-text and compromise the printer. This vulnerability can be executed in combination with other vulnerabilities and  difficult to execute alone. So, the CVSS score for this vulnerability alone is lower than the score listed in the \"Base Score\" of this vulnerability. For detail on related other vulnerabilities, please ask to the below contact point.\n https://www.toshibatec.com/contacts/products/ \nAs for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27162",
+    "漏洞描述": "Toshiba printers provide a web interface that will load the JavaScript file. The file contains insecure codes vulnerable to XSS and is loaded inside all the webpages provided by the printer. An attacker can steal the cookie of an admin user. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27161",
+    "漏洞描述": "all the Toshiba printers have programs containing a hardcoded key used to encrypt files. An attacker can decrypt the encrypted files using the hardcoded key. Insecure algorithm is used for the encryption. This vulnerability can be executed in combination with other vulnerabilities and  difficult to execute alone. So, the CVSS score for this vulnerability alone is lower than the score listed in the \"Base Score\" of this vulnerability. For detail on related other vulnerabilities, please ask to the below contact point.\n https://www.toshibatec.com/contacts/products/ \nAs for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27160",
+    "漏洞描述": "All the Toshiba printers contain a shell script using the same hardcoded key to encrypt logs. An attacker can decrypt the encrypted files using the hardcoded key. This vulnerability can be executed in combination with other vulnerabilities and  difficult to execute alone. So, the CVSS score for this vulnerability alone is lower than the score listed in the \"Base Score\" of this vulnerability. For detail on related other vulnerabilities, please ask to the below contact point.\n https://www.toshibatec.com/contacts/products/ \nAs for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27159",
+    "漏洞描述": "All the Toshiba printers contain a shell script using the same hardcoded key to encrypt logs. An attacker can decrypt the encrypted files using the hardcoded key. This vulnerability can be executed in combination with other vulnerabilities and  difficult to execute alone. So, the CVSS score for this vulnerability alone is lower than the score listed in the \"Base Score\" of this vulnerability. For detail on related other vulnerabilities, please ask to the below contact point.\n https://www.toshibatec.com/contacts/products/ \nAs for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27158",
+    "漏洞描述": "All the Toshiba printers share the same hardcoded root password. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27157",
+    "漏洞描述": "The sessions are stored in clear-text logs. An attacker can retrieve authentication sessions. A remote attacker can retrieve the credentials and bypass the authentication mechanism. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27156",
+    "漏洞描述": "The session cookies, used for authentication, are stored in clear-text logs. An attacker can retrieve authentication sessions. A remote attacker can retrieve the credentials and bypass the authentication mechanism. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27155",
+    "漏洞描述": "The Toshiba printers are vulnerable to a Local Privilege Escalation vulnerability. An attacker can remotely compromise any Toshiba printer. The programs can be replaced by malicious programs by any local or remote attacker. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27154",
+    "漏洞描述": "Passwords are stored in clear-text logs. An attacker can retrieve passwords. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27153",
+    "漏洞描述": "The Toshiba printers are vulnerable to a Local Privilege Escalation vulnerability. An attacker can remotely compromise any Toshiba printer. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27152",
+    "漏洞描述": "The Toshiba printers are vulnerable to a Local Privilege Escalation vulnerability. An attacker can remotely compromise any Toshiba printer. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27151",
+    "漏洞描述": "The Toshiba printers are vulnerable to a Local Privilege Escalation vulnerability. An attacker can remotely compromise any Toshiba printer. The programs can be replaced by malicious programs by any local or remote attacker. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27150",
+    "漏洞描述": "The Toshiba printers are vulnerable to a Local Privilege Escalation vulnerability. An attacker can remotely compromise any Toshiba printer. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27149",
+    "漏洞描述": "The Toshiba printers are vulnerable to a Local Privilege Escalation vulnerability. An attacker can remotely compromise any Toshiba printer. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27148",
+    "漏洞描述": "The Toshiba printers are vulnerable to a Local Privilege Escalation vulnerability. An attacker can remotely compromise any Toshiba printer. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27147",
+    "漏洞描述": "The Toshiba printers are vulnerable to a Local Privilege Escalation vulnerability. An attacker can remotely compromise any Toshiba printer. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27146",
+    "漏洞描述": "The Toshiba printers do not implement privileges separation. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27145",
+    "漏洞描述": "The Toshiba printers provide several ways to upload files using the admin web interface. An attacker can remotely compromise any Toshiba printer. An attacker can overwrite any insecure files. This vulnerability can be executed in combination with other vulnerabilities and  difficult to execute alone. So, the CVSS score for this vulnerability alone is lower than the score listed in the \"Base Score\" of this vulnerability. For detail on related other vulnerabilities, please ask to the below contact point.\n https://www.toshibatec.com/contacts/products/ \nAs for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27144",
+    "漏洞描述": "The Toshiba printers provide several ways to upload files using the web interface without authentication. An attacker can overwrite any insecure files. And the Toshiba printers are vulnerable to a Local Privilege Escalation vulnerability. An attacker can remotely compromise any Toshiba printer. The programs can be replaced by malicious programs by any local or remote attacker. This vulnerability can be executed in combination with other vulnerabilities and  difficult to execute alone. So, the CVSS score for this vulnerability alone is lower than the score listed in the \"Base Score\" of this vulnerability. For detail on related other vulnerabilities, please ask to the below contact point.\n https://www.toshibatec.com/contacts/products/ \nAs for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27143",
+    "漏洞描述": "Toshiba printers use SNMP for configuration. Using the private community, it is possible to remotely execute commands as root on the remote printer. Using this vulnerability will allow any attacker to get a root access on a remote Toshiba printer. This vulnerability can be executed in combination with other vulnerabilities and  difficult to execute alone. So, the CVSS score for this vulnerability alone is lower than the score listed in the \"Base Score\" of this vulnerability. For detail on related other vulnerabilities, please ask to the below contact point.\n https://www.toshibatec.com/contacts/products/ \nAs for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27142",
+    "漏洞描述": "Toshiba printers use XML communication for the API endpoint provided by the printer. For the endpoint, XML parsing library is used and it is vulnerable to a time-based blind XML External Entity (XXE) vulnerability. An attacker can DoS the printers. An attacker can exploit the XXE to retrieve information. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Toshiba Tec e-Studio multi-function peripheral (MFP)",
+    "CVE编号": "CVE-2024-27141",
+    "漏洞描述": "Toshiba printers use XML communication for the API endpoint provided by the printer. For the endpoint, XML parsing library is used and it is vulnerable to a time-based blind XML External Entity (XXE) vulnerability. An attacker can DoS the printers by sending a HTTP request without authentication. An attacker can exploit the XXE to retrieve information. As for the affected products/models/versions, see the reference URL.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.toshibatec.com/information/20240531_01.html",
+      "https://www.toshibatec.com/information/pdf/information20240531_01.pdf",
+      "https://jvn.jp/en/vu/JVNVU97136265/index.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/1"
+    ],
+    "受影响版本": [
+      "see the reference URL"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-30421",
+    "漏洞描述": "Improper Authentication vulnerability in Toshiba Storage Security Software V1.2.0.7413 is that allows for sensitive information to be obtained via(local) password authentication module.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://global.gmarket.co.kr/item?goodscode=741668527",
+      "https://www.ebay.com/itm/274246695791",
+      "http://global.11st.co.kr/glb/product/SellerProductDetail.tmall?method=getSellerProductDetail&prdNo=1398327038",
+      "https://github.com/bosslabdcu/Vulnerability-Reporting/security/advisories/GHSA-px7r-44vj-8h7m"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年01月31日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2021-47065",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nrtw88: Fix array overrun in rtw_get_tx_power_params()\n\nUsing a kernel with the Undefined Behaviour Sanity Checker (UBSAN) enabled, the\nfollowing array overrun is logged:\n\n================================================================================\nUBSAN: array-index-out-of-bounds in /home/finger/wireless-drivers-next/drivers/net/wireless/realtek/rtw88/phy.c:1789:34\nindex 5 is out of range for type 'u8 [5]'\nCPU: 2 PID: 84 Comm: kworker/u16:3 Tainted: G           O      5.12.0-rc5-00086-gd88bba47038e-dirty #651\nHardware name: TOSHIBA TECRA A50-A/TECRA A50-A, BIOS Version 4.50   09/29/2014\nWorkqueue: phy0 ieee80211_scan_work [mac80211]\nCall Trace:\n dump_stack+0x64/0x7c\n ubsan_epilogue+0x5/0x40\n __ubsan_handle_out_of_bounds.cold+0x43/0x48\n rtw_get_tx_power_params+0x83a/drivers/net/wireless/realtek/rtw88/0xad0 [rtw_core]\n ? rtw_pci_read16+0x20/0x20 [rtw_pci]\n ? check_hw_ready+0x50/0x90 [rtw_core]\n rtw_phy_get_tx_power_index+0x4d/0xd0 [rtw_core]\n rtw_phy_set_tx_power_level+0xee/0x1b0 [rtw_core]\n rtw_set_channel+0xab/0x110 [rtw_core]\n rtw_ops_config+0x87/0xc0 [rtw_core]\n ieee80211_hw_config+0x9d/0x130 [mac80211]\n ieee80211_scan_state_set_channel+0x81/0x170 [mac80211]\n ieee80211_scan_work+0x19f/0x2a0 [mac80211]\n process_one_work+0x1dd/0x3a0\n worker_thread+0x49/0x330\n ? rescuer_thread+0x3a0/0x3a0\n kthread+0x134/0x150\n ? kthread_create_worker_on_cpu+0x70/0x70\n ret_from_fork+0x22/0x30\n================================================================================\n\nThe statement where an array is being overrun is shown in the following snippet:\n\n\tif (rate <= DESC_RATE11M)\n\t\ttx_power = pwr_idx_2g->cck_base[group];\n\telse\n====>\t\ttx_power = pwr_idx_2g->bw40_base[group];\n\nThe associated arrays are defined in main.h as follows:\n\nstruct rtw_2g_txpwr_idx {\n\tu8 cck_base[6];\n\tu8 bw40_base[5];\n\tstruct rtw_2g_1s_pwr_idx_diff ht_1s_diff;\n\tstruct rtw_2g_ns_pwr_idx_diff ht_2s_diff;\n\tstruct rtw_2g_ns_pwr_idx_diff ht_3s_diff;\n\tstruct rtw_2g_ns_pwr_idx_diff ht_4s_diff;\n};\n\nThe problem arises because the value of group is 5 for channel 14. The trivial\nincrease in the dimension of bw40_base fails as this struct must match the layout of\nefuse. The fix is to add the rate as an argument to rtw_get_channel_group() and set\nthe group for channel 14 to 4 if rate <= DESC_RATE11M.\n\nThis patch fixes commit fa6dfe6bff24 (\"rtw88: resolve order of tx power setting routines\")",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/6b5aa0cf321c25f41e09a61c83ee4dc7ab9549cb",
+      "https://git.kernel.org/stable/c/95fb153c6027924cda3422120169d1890737f3a0",
+      "https://git.kernel.org/stable/c/5f3dbced8eaa5c9ed7d6943f3fea99f235a6516a",
+      "https://git.kernel.org/stable/c/9cd09722e18a08b6a3d68b8bccfac39ddc22434c",
+      "https://git.kernel.org/stable/c/2ff25985ea9ccc6c9af2c77b0b49045adcc62e0e"
+    ],
+    "受影响版本": [
+      "fa6dfe6bff246ddd5be3cfe81637f137acd6c294",
+      "fa6dfe6bff246ddd5be3cfe81637f137acd6c294",
+      "fa6dfe6bff246ddd5be3cfe81637f137acd6c294",
+      "fa6dfe6bff246ddd5be3cfe81637f137acd6c294",
+      "fa6dfe6bff246ddd5be3cfe81637f137acd6c294"
+    ],
+    "公开日期": "2024年02月29日"
+  }
+]

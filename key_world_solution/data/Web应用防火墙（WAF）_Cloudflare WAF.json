@@ -1,0 +1,19 @@
+[
+  {
+    "设备品牌": "nexryai",
+    "设备类型": "Web应用防火墙（WAF）",
+    "产品型号": "nexkey",
+    "CVE编号": "CVE-2023-43805",
+    "漏洞描述": "Nexkey is a fork of Misskey, an open source, decentralized social media platform. Prior to version 12.121.9, incomplete URL validation can allow users to bypass authentication for access to the job queue dashboard. Version 12.121.9 contains a fix for this issue. As a workaround, it may be possible to avoid this by blocking access using tools such as Cloudflare's WAF.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/nexryai/nexkey/security/advisories/GHSA-g8w5-568f-ffwf",
+      "https://github.com/misskey-dev/misskey/security/advisories/GHSA-9fj2-gjcf-cqqc",
+      "https://github.com/nexryai/nexkey/commit/d89575c521fd4492f5e2ba5a221c5e8f1382081d"
+    ],
+    "受影响版本": [
+      "< 12.121.9"
+    ],
+    "公开日期": "2023年10月04日"
+  }
+]

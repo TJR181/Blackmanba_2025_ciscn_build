@@ -1,0 +1,634 @@
+{
+    "keywords": [
+        {
+            "device_type": "服务器",
+            "keywords": [
+                "Dell PowerEdge",
+                "HPE ProLiant",
+                "Lenovo ThinkSystem",
+                "Cisco UCS",
+                "IBM System x",
+                "Supermicro",
+                "Fujitsu PRIMERGY",
+                "Huawei FusionServer",
+                "Inspur Server",
+                "Oracle SPARC"
+            ]
+        },
+        {
+            "device_type": "存储设备",
+            "keywords": [
+                "Dell EMC Unity",
+                "HPE 3PAR StoreServ",
+                "NetApp FAS",
+                "IBM Storwize",
+                "Hitachi Vantara HNAS",
+                "Huawei OceanStor",
+                "Pure Storage FlashArray",
+                "Western Digital Ultrastar",
+                "Seagate Exos"
+            ]
+        },
+        {
+            "device_type": "网络设备",
+            "keywords": [
+                "Cisco Catalyst",
+                "HPE Aruba",
+                "Juniper EX Series",
+                "Arista Networks",
+                "Extreme Networks",
+                "Dell Networking N Series",
+                "Huawei CloudEngine",
+                "MikroTik RouterBOARD",
+                "TP-Link JetStream"
+            ]
+        },
+        {
+            "device_type": "无线设备",
+            "keywords": [
+                "Cisco Aironet",
+                "Aruba Instant AP",
+                "Ubiquiti UniFi AP",
+                "Ruckus Wireless ZoneFlex",
+                "HPE OfficeConnect Wireless",
+                "TP-Link EAP Series",
+                "Netgear Insight Managed AP"
+            ]
+        },
+        {
+            "device_type": "负载均衡器",
+            "keywords": [
+                "F5 BIG-IP",
+                "Citrix ADC (NetScaler)",
+                "A10 Networks Thunder",
+                "Kemp LoadMaster",
+                "Radware Alteon",
+                "Nginx Plus",
+                "HAProxy Enterprise"
+            ]
+        },
+        {
+            "device_type": "Web应用防火墙（WAF）",
+            "keywords": [
+                "F5 Advanced WAF",
+                "Imperva Incapsula",
+                "Fortinet FortiWeb",
+                "AWS WAF",
+                "Cloudflare WAF",
+                "Barracuda WAF",
+                "Citrix Web App Firewall"
+            ]
+        },
+        {
+            "device_type": "邮件网关",
+            "keywords": [
+                "Cisco Email Security Appliance (ESA)",
+                "Symantec Email Security.cloud",
+                "Proofpoint Email Protection",
+                "Fortinet FortiMail",
+                "Barracuda Email Security Gateway"
+            ]
+        },
+        {
+            "device_type": "入侵检测系统（IDS）",
+            "keywords": [
+                "Snort",
+                "Suricata",
+                "Cisco Firepower",
+                "McAfee Network Security Platform",
+                "IBM QRadar",
+                "Trend Micro Deep Discovery",
+                "AlienVault OSSIM"
+            ]
+        },
+        {
+            "device_type": "入侵防御系统（IPS）",
+            "keywords": [
+                "Cisco IPS",
+                "Palo Alto Networks NGIPS",
+                "Check Point IPS",
+                "SonicWall IPS",
+                "Trend Micro Deep Security"
+            ]
+        },
+        {
+            "device_type": "防火墙",
+            "keywords": [
+                "Palo Alto Networks Next-Generation Firewall",
+                "Fortinet FortiGate",
+                "Cisco ASA",
+                "Check Point Firewall",
+                "SonicWall TZ Series",
+                "Juniper SRX Series",
+                "Barracuda CloudGen Firewall",
+                "WatchGuard Firebox",
+                "Palo Alto Networks Next-Generation Firewall",
+                "Fortinet FortiGate",
+                "Cisco ASA",
+                "Check Point Firewall",
+                "SonicWall TZ Series",
+                "Juniper SRX Series",
+                "Barracuda CloudGen Firewall",
+                "WatchGuard Firebox",
+                "Hillstone Networks",
+                "Trustwave",
+                "Forcepoint",
+                "Sangfor",
+                "NSFOCUS",
+                "Palo Alto",
+                "Fortinet",
+                "Check Point",
+                "SonicWall",
+                "Barracuda",
+                "Sophos"
+            ]
+        },
+        {
+            "device_type": "路由器",
+            "keywords": [
+                "Cisco ISR",
+                "Juniper MX Series",
+                "HPE FlexNetwork",
+                "Arista Networks",
+                "MikroTik RouterBOARD",
+                "Ubiquiti EdgeRouter",
+                "Huawei AR Series",
+                "TP-Link SafeStream",
+                "Netgear ProSafe",
+                "Seagate Exos",
+                "Western Digital Red",
+                "Synology DiskStation",
+                "QNAP Turbo NAS",
+                "Western Digital My Cloud",
+                "Netgear ReadyNAS",
+                "Buffalo LinkStation",
+                "HP LaserJet Pro",
+                "Canon imageCLASS",
+                "Brother HL Series",
+                "Epson WorkForce Pro",
+                "Lexmark MS Series",
+                "Hikvision DS-2CD Series",
+                "Dahua IPC Series",
+                "Axis Communications M Series",
+                "Amcrest ProHD Series",
+                "SolarWinds Network Performance Monitor",
+                "Nagios XI",
+                "Zabbix",
+                "PRTG Network Monitor",
+                "ManageEngine OpManager",
+                "Cisco Prime Infrastructure",
+                "Synology DiskStation",
+                "QNAP Turbo NAS",
+                "Western Digital My Cloud",
+                "Netgear ReadyNAS",
+                "Buffalo LinkStation",
+                "HP LaserJet Pro",
+                "Canon imageCLASS",
+                "Brother HL Series"
+            ]
+        },
+        {
+            "device_type": "交换机",
+            "keywords": [
+                "Cisco Catalyst",
+                "HPE Aruba",
+                "Juniper EX Series",
+                "Arista Networks",
+                "Extreme Networks",
+                "Dell Networking N Series",
+                "Huawei CloudEngine",
+                "MikroTik RouterBOARD",
+                "TP-Link JetStream",
+                "Netgear ProSafe",
+                "Seagate Exos",
+                "Western Digital Red"
+            ]
+        },
+        {
+            "device_type": "VPN设备",
+            "keywords": [
+                "Cisco ASA",
+                "Palo Alto Networks GlobalProtect",
+                "Fortinet FortiClient",
+                "Check Point VPN",
+                "SonicWall Mobile Connect",
+                "Juniper SSL VPN",
+                "Cisco AnyConnect"
+            ]
+        },
+        {
+            "device_type": "网络监控设备",
+            "keywords": [
+                "SolarWinds Network Performance Monitor",
+                "Nagios XI",
+                "Zabbix",
+                "PRTG Network Monitor",
+                "ManageEngine OpManager",
+                "Cisco Prime Infrastructure"
+            ]
+        },
+        {
+            "device_type": "网络存储设备（NAS）",
+            "keywords": [
+                "Synology DiskStation",
+                "QNAP Turbo NAS",
+                "Western Digital My Cloud",
+                "Netgear ReadyNAS",
+                "Buffalo LinkStation"
+            ]
+        },
+        {
+            "device_type": "网络打印机",
+            "keywords": [
+                "HP LaserJet Pro",
+                "Canon imageCLASS",
+                "Brother HL Series",
+                "Epson WorkForce Pro",
+                "Lexmark MS Series"
+            ]
+        },
+        {
+            "device_type": "网络摄像头（IP Camera）",
+            "keywords": [
+                "Hikvision DS-2CD Series",
+                "Dahua IPC Series",
+                "Axis Communications M Series",
+                "Amcrest ProHD Series"
+            ]
+        },
+        {
+            "device_type": "车载通信网关",
+            "keywords": [
+                "Sierra Wireless",
+                "Telit",
+                "Gemalto",
+                "Quectel",
+                "U-blox",
+                "Fibocom",
+                "Neoway",
+                "LG Innotek",
+                "Bosch",
+                "Continental",
+                "Harman",
+                "Denso",
+                "Visteon",
+                "Marelli",
+                "Aptiv",
+                "Lear"
+            ]
+        },
+        {
+            "device_type": "车载信息娱乐系统",
+            "keywords": [
+                "Harman Becker",
+                "Denso Ten",
+                "Panasonic",
+                "Alpine",
+                "Pioneer",
+                "Clarion",
+                "Faurecia",
+                "JVC Kenwood",
+                "Sony",
+                "Hyundai Mobis",
+                "Desay SV",
+                "Hangsheng",
+                "Coagent",
+                "Baidu"
+            ]
+        },
+        {
+            "device_type": "V2X通信模块",
+            "keywords": [
+                "Qualcomm",
+                "Autotalks",
+                "Cohda Wireless",
+                "Savari",
+                "Commsignia",
+                "Siemens",
+                "NXP",
+                "Infineon",
+                "STMicroelectronics",
+                "Renesas",
+                "Texas Instruments",
+                "NEC",
+                "Ericsson"
+            ]
+        },
+        {
+            "device_type": "车载摄像头",
+            "keywords": [
+                "Mobileye",
+                "Aptiv",
+                "Valeo",
+                "Continental",
+                "Bosch",
+                "Denso",
+                "Sony",
+                "OmniVision",
+                "LG Innotek",
+                "Samsung Electro-Mechanics",
+                "Sharp",
+                "Canon"
+            ]
+        },
+        {
+            "device_type": "车载雷达传感器",
+            "keywords": [
+                "Bosch",
+                "Continental",
+                "Valeo",
+                "Denso",
+                "Aptiv",
+                "Hella",
+                "ZF Friedrichshafen",
+                "NXP Semiconductors",
+                "Texas Instruments",
+                "Infineon Technologies"
+            ]
+        },
+        {
+            "device_type": "车载GPS导航系统",
+            "keywords": [
+                "Garmin",
+                "TomTom",
+                "Navman",
+                "Magellan",
+                "Pioneer",
+                "Alpine",
+                "Clarion",
+                "Bosch",
+                "Denso",
+                "Harman",
+                "Panasonic",
+                "Sony"
+            ]
+        },
+        {
+            "device_type": "车载诊断系统（OBD）",
+            "keywords": [
+                "Bosch",
+                "Delphi Technologies",
+                "Continental",
+                "Denso",
+                "Hella Gutmann Solutions",
+                "Snap-on Tools",
+                "Autel",
+                "Launch Tech",
+                "BlueDriver"
+            ]
+        },
+        {
+            "device_type": "车载无线充电模块",
+            "keywords": [
+                "Qualcomm",
+                "Texas Instruments",
+                "NXP Semiconductors",
+                "Infineon Technologies",
+                "IDT (Integrated Device Technology)",
+                "Witricity",
+                "Powermat Technologies",
+                "Samsung Electronics",
+                "LG Innotek"
+            ]
+        },
+        {
+            "device_type": "车载音频系统",
+            "keywords": [
+                "Bose",
+                "Harman Kardon",
+                "Bang & Olufsen",
+                "Bowers & Wilkins",
+                "Focal",
+                "JBL",
+                "Sony",
+                "Pioneer",
+                "Alpine"
+            ]
+        },
+        {
+            "device_type": "车载视频监控系统",
+            "keywords": [
+                "Mobileye",
+                "Aptiv",
+                "Valeo",
+                "Continental",
+                "Bosch",
+                "Denso",
+                "Hella",
+                "Samsung Electronics",
+                "LG Innotek",
+                "Sony"
+            ]
+        },
+        {
+            "device_type": "车载无线通信模块",
+            "keywords": [
+                "Qualcomm",
+                "Huawei HiSilicon",
+                "Intel Automotive Solutions",
+                "NXP Semiconductors",
+                "Texas Instruments",
+                "Infineon Technologies",
+                "Marvell Technology Group",
+                "Broadcom Limited"
+            ]
+        },
+        {
+            "device_type": "车载电源管理模块",
+            "keywords": [
+                "Texas Instruments",
+                "Infineon Technologies",
+                "NXP Semiconductors",
+                "STMicroelectronics",
+                "Analog Devices",
+                "Maxim Integrated",
+                "Renesas Electronics",
+                "ON Semiconductor"
+            ]
+        },
+        {
+            "device_type": "车载安全模块（TPM）",
+            "keywords": [
+                "Infineon Technologies",
+                "NXP Semiconductors",
+                "STMicroelectronics",
+                "Microchip Technology",
+                "Atmel (now part of Microchip)",
+                "Winbond Electronics"
+            ]
+        },
+        {
+            "device_type": "车载显示屏",
+            "keywords": [
+                "LG Display",
+                "Samsung Display",
+                "BOE Technology Group",
+                "Sharp Corporation",
+                "Japan Display Inc.",
+                "AU Optronics",
+                "Innolux Corporation",
+                "Tianma Microelectronics"
+            ]
+        },
+        {
+            "device_type": "车载传感器模块",
+            "keywords": [
+                "Bosch Sensortec",
+                "STMicroelectronics",
+                "Texas Instruments",
+                "Infineon Technologies",
+                "Analog Devices",
+                "Honeywell",
+                "NXP Semiconductors"
+            ]
+        },
+        {
+            "device_type": "车载以太网交换机",
+            "keywords": [
+                "Broadcom",
+                "Marvell Technology Group",
+                "NXP Semiconductors",
+                "Texas Instruments",
+                "Microchip Technology",
+                "Realtek Semiconductor",
+                "Renesas Electronics"
+            ]
+        },
+        {
+            "device_type": "车载无线网络模块",
+            "keywords": [
+                "Qualcomm Atheros",
+                "Intel Wireless Solutions",
+                "Broadcom Limited",
+                "Marvell Technology Group",
+                "MediaTek",
+                "Realtek Semiconductor"
+            ]
+        },
+        {
+            "device_type": "车载蓝牙模块",
+            "keywords": [
+                "Qualcomm Atheros",
+                "Broadcom Limited",
+                "Texas Instruments",
+                "Nordic Semiconductor",
+                "Cypress Semiconductor (now part of Infineon)",
+                "Silicon Labs"
+            ]
+        },
+        {
+            "device_type": "车载Wi-Fi模块",
+            "keywords": [
+                "Qualcomm Atheros",
+                "Broadcom Limited",
+                "Marvell Technology Group",
+                "MediaTek",
+                "Realtek Semiconductor",
+                "Intel Wireless Solutions"
+            ]
+        },
+        {
+            "device_type": "车载NFC模块",
+            "keywords": [
+                "NXP Semiconductors",
+                "STMicroelectronics",
+                "Broadcom Limited",
+                "Sony Semiconductor Solutions",
+                "Infineon Technologies",
+                "Samsung Electronics"
+            ]
+        },
+        {
+            "device_type": "车载GPS模块",
+            "keywords": [
+                "u-blox",
+                "Quectel",
+                "Telit",
+                "Sierra Wireless",
+                "MediaTek",
+                "Broadcom Limited",
+                "SkyTraq Technology"
+            ]
+        },
+        {
+            "device_type": "车载摄像头模块",
+            "keywords": [
+                "OmniVision Technologies",
+                "Sony Semiconductor Solutions",
+                "Samsung Electronics",
+                "LG Innotek",
+                "Sharp Corporation"
+            ]
+        },
+        {
+            "device_type": "车载雷达模块",
+            "keywords": [
+                "Bosch Sensortec",
+                "Valeo",
+                "Continental",
+                "Denso",
+                "Hella",
+                "Aptiv",
+                "Texas Instruments",
+                "Infineon Technologies"
+            ]
+        },
+        {
+            "device_type": "车载激光雷达模块",
+            "keywords": [
+                "Velodyne Lidar",
+                "Luminar Technologies",
+                "Waymo",
+                "Aeva",
+                "Innoviz Technologies",
+                "Ouster",
+                "Quanergy Systems"
+            ]
+        },
+        {
+            "device_type": "车载电池管理系统（BMS）",
+            "keywords": [
+                "Texas Instruments",
+                "Infineon Technologies",
+                "NXP Semiconductors",
+                "Analog Devices",
+                "Maxim Integrated (now part of Analog Devices)",
+                "Renesas Electronics"
+            ]
+        },
+        {
+            "device_type": "OTA_FOTA模块",
+            "keywords": [
+                "Airbiquity",
+                "Movimento",
+                "Green Hills Software",
+                "Wind River",
+                "BlackBerry QNX",
+                "Elektrobit",
+                "SUSE",
+                "Red Bend",
+                "Excelfore",
+                "HERE Technologies",
+                "Sibros",
+                "Upstream Security"
+            ]
+        },
+        {
+            "device_type": "CAN总线控制器",
+            "keywords": [
+                "Microchip",
+                "Analog Devices",
+                "Broadcom",
+                "ON Semiconductor",
+                "Maxim Integrated",
+                "Elmos",
+                "Melexis",
+                "Rohm",
+                "Toshiba",
+                "Fujitsu",
+                "Cypress",
+                "Silicon Labs"
+            ]
+        }
+    ]
+}

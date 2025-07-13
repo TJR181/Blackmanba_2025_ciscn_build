@@ -1,0 +1,34 @@
+[
+  {
+    "设备品牌": "Trend Micro, Inc.",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Trend Micro Deep Discovery Inspector",
+    "CVE编号": "CVE-2024-46903",
+    "漏洞描述": "A vulnerability in Trend Micro Deep Discovery Inspector (DDI) versions 5.8 and above could allow an attacker to disclose sensitive information affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/en-US/solution/KA-0017793",
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-1228/"
+    ],
+    "受影响版本": [
+      "5.8, 6.6, 6.7"
+    ],
+    "公开日期": "2024年10月22日"
+  },
+  {
+    "设备品牌": "Trend Micro, Inc.",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Trend Micro Deep Discovery Inspector",
+    "CVE编号": "CVE-2024-46902",
+    "漏洞描述": "A vulnerability in Trend Micro Deep Discovery Inspector (DDI) versions 5.8 and above could allow an attacker to disclose sensitive information affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute high-privileged code (admin user rights) on the target system in order to exploit this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/en-US/solution/KA-0017793",
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-1227/"
+    ],
+    "受影响版本": [
+      "5.8, 6.6, 6.7"
+    ],
+    "公开日期": "2024年10月22日"
+  }
+]

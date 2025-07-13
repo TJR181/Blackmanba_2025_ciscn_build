@@ -1,0 +1,711 @@
+[
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Intercept X",
+    "CVE编号": "CVE-2024-8885",
+    "漏洞描述": "A local privilege escalation vulnerability in Sophos Intercept X for Windows with Central Device Encryption 2024.2.0 and older allows writing of arbitrary files.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20241002-cde-lpe"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年10月02日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Firewall",
+    "CVE编号": "CVE-2024-12729",
+    "漏洞描述": "A post-auth code injection vulnerability in the User Portal allows authenticated users to execute code remotely in Sophos Firewall older than version 21.0 MR1 (21.0.1).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20241219-sfos-rce"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年12月19日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Firewall",
+    "CVE编号": "CVE-2024-12728",
+    "漏洞描述": "A weak credentials vulnerability potentially allows privileged system access via SSH to Sophos Firewall older than version 20.0 MR3 (20.0.3).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20241219-sfos-rce"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年12月19日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Firewall",
+    "CVE编号": "CVE-2024-12727",
+    "漏洞描述": "A pre-auth SQL injection vulnerability in the email protection feature of Sophos Firewall versions older than 21.0 MR1 (21.0.1) allows access to the reporting database and can lead to remote code execution if a specific configuration of Secure PDF eXchange (SPX) is enabled in combination with the firewall running in High Availability (HA) mode.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20241219-sfos-rce"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年12月19日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Firewall",
+    "CVE编号": "CVE-2023-5552",
+    "漏洞描述": "A password disclosure vulnerability in the Secure PDF eXchange (SPX) feature allows attackers with full email access to decrypt PDFs in Sophos Firewall version 19.5 MR3 (19.5.3) and older, if the password type is set to “Specified by sender”.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20231017-spx-password"
+    ],
+    "受影响版本": [
+      "19.5.4",
+      "20.0.0"
+    ],
+    "公开日期": "2023年10月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-33336",
+    "漏洞描述": "Reflected cross site scripting (XSS) vulnerability was discovered in Sophos Web Appliance v4.3.9.1 that allows for arbitrary code to be inputted via the double quotes.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://inf0seq.github.io/cve/2023/04/30/Cross-site-scripting-%28XSS%29-in-Sophos-Web-Appliance-4.1.1-0.9.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年06月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-33335",
+    "漏洞描述": "Cross Site Scripting (XSS) in Sophos Sophos iView (The EOL was December 31st 2020) in grpname parameter that allows arbitrary script to be executed.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://inf0seq.github.io/cve/2023/05/03/Cross-Site-scripting-%28XSS%29-in-Sophos-iView.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年07月05日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Web Appliance",
+    "CVE编号": "CVE-2023-1671",
+    "漏洞描述": "A pre-auth command injection vulnerability in the warn-proceed handler of Sophos Web Appliance older than version 4.3.10.4 allows execution of arbitrary code.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20230404-swa-rce",
+      "http://packetstormsecurity.com/files/172016/Sophos-Web-Appliance-4.3.10.4-Command-Injection.html"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2023年04月04日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Web Appliance",
+    "CVE编号": "CVE-2022-4934",
+    "漏洞描述": "A post-auth command injection vulnerability in the exception wizard of Sophos Web Appliance older than version 4.3.10.4 allows administrators to execute arbitrary code.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20230404-swa-rce"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2023年04月04日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Connect Client",
+    "CVE编号": "CVE-2022-4901",
+    "漏洞描述": "Multiple stored XSS vulnerabilities in Sophos Connect versions older than 2.2.90 allow Javascript code to run in the local UI via a malicious VPN configuration that must be manually loaded by the victim.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20230301-scc-csrf"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2023年03月01日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Connect Client",
+    "CVE编号": "CVE-2022-48310",
+    "漏洞描述": "An information disclosure vulnerability allows sensitive key material to be included in technical support archives in Sophos Connect versions older than 2.2.90.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20230301-scc-csrf"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2023年03月01日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Connect Client",
+    "CVE编号": "CVE-2022-48309",
+    "漏洞描述": "A CSRF vulnerability allows malicious websites to retrieve logs and technical support archives in Sophos Connect versions older than 2.2.90.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20230301-scc-csrf"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2023年03月01日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Mobile managed on-premises",
+    "CVE编号": "CVE-2022-3980",
+    "漏洞描述": "An XML External Entity (XEE) vulnerability allows server-side request forgery (SSRF) and potential code execution in Sophos Mobile managed on-premises between versions 5.0.0 and 9.7.4.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20221116-smc-xee"
+    ],
+    "受影响版本": [
+      "5.0.0",
+      "unspecified"
+    ],
+    "公开日期": "2022年11月16日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Firewall",
+    "CVE编号": "CVE-2022-3713",
+    "漏洞描述": "A code injection vulnerability allows adjacent attackers to execute code in the Wifi controller of Sophos Firewall releases older than version 19.5 GA.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20221201-sfos-19-5-0"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年12月01日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Firewall",
+    "CVE编号": "CVE-2022-3711",
+    "漏洞描述": "A post-auth read-only SQL injection vulnerability allows users to read non-sensitive configuration database contents in the User Portal of Sophos Firewall releases older than version 19.5 GA.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20221201-sfos-19-5-0"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年12月01日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Firewall",
+    "CVE编号": "CVE-2022-3710",
+    "漏洞描述": "A post-auth read-only SQL injection vulnerability allows API clients to read non-sensitive configuration database contents in the API controller of Sophos Firewall releases older than version 19.5 GA.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20221201-sfos-19-5-0"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年12月01日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Firewall",
+    "CVE编号": "CVE-2022-3709",
+    "漏洞描述": "A stored XSS vulnerability allows admin to super-admin privilege escalation in the Webadmin import group wizard of Sophos Firewall releases older than version 19.5 GA.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20221201-sfos-19-5-0"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年12月01日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Firewall",
+    "CVE编号": "CVE-2022-3696",
+    "漏洞描述": "A post-auth code injection vulnerability allows admins to execute code in Webadmin of Sophos Firewall releases older than version 19.5 GA.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20221201-sfos-19-5-0"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年12月01日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Firewall",
+    "CVE编号": "CVE-2022-3236",
+    "漏洞描述": "A code injection vulnerability in the User Portal and Webadmin allows a remote attacker to execute code in Sophos Firewall version v19.0 MR1 and older.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20220923-sfos-rce"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年09月23日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Firewall",
+    "CVE编号": "CVE-2022-3226",
+    "漏洞描述": "An OS command injection vulnerability allows admins to execute code via SSL VPN configuration uploads in Sophos Firewall releases older than version 19.5 GA.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20221201-sfos-19-5-0"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年12月01日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Firewall",
+    "CVE编号": "CVE-2022-1807",
+    "漏洞描述": "Multiple SQLi vulnerabilities in Webadmin allow for privilege escalation from admin to super-admin in Sophos Firewall older than version 18.5 MR4 and version 19.0 MR1.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20220907-sfos-18-5-4",
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20220907-sfos-19-0-1"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年09月07日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Firewall",
+    "CVE编号": "CVE-2022-1040",
+    "漏洞描述": "An authentication bypass vulnerability in the User Portal and Webadmin allows a remote attacker to execute code in Sophos Firewall version v18.5 MR3 and older.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20220325-sfos-rce",
+      "http://packetstormsecurity.com/files/168046/Sophos-XG115w-Firewall-17.0.10-MR-10-Authentication-Bypass.html",
+      "https://www.exploit-db.com/exploits/51006"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年03月25日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos UTM",
+    "CVE编号": "CVE-2022-0652",
+    "漏洞描述": "Confd log files contain local users', including root’s, SHA512crypt password hashes with insecure access permissions. This allows a local attacker to attempt off-line brute-force attacks against these password hashes in Sophos UTM before version 9.710.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20220321-utm-9710"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年03月21日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos UTM",
+    "CVE编号": "CVE-2022-0386",
+    "漏洞描述": "A post-auth SQL injection vulnerability in the Mail Manager potentially allows an authenticated attacker to execute code in Sophos UTM before version 9.710.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20220321-utm-9710"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年03月21日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Firewall",
+    "CVE编号": "CVE-2022-0331",
+    "漏洞描述": "An information disclosure vulnerability in Webadmin allows an unauthenticated remote attacker to read the device serial number in Sophos Firewall version v18.5 MR2 and older.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20220328-sfos-18-5-3"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年03月29日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "SSL VPN client",
+    "CVE编号": "CVE-2021-36809",
+    "漏洞描述": "A local attacker can overwrite arbitrary files on the system with VPN client logs using administrator privileges, potentially resulting in a denial of service and data loss, in all versions of Sophos SSL VPN client.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20220303-sslvpn-local-dos"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年03月07日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Secure Workspace for Android",
+    "CVE编号": "CVE-2021-36808",
+    "漏洞描述": "A local attacker could bypass the app password using a race condition in Sophos Secure Workspace for Android before version 9.7.3115.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20211029-ssw-pw-bypass"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年10月30日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Email Appliance",
+    "CVE编号": "CVE-2021-36806",
+    "漏洞描述": "\nA reflected XSS vulnerability allows an open redirect when the victim clicks a malicious link to an error page on \n\nSophos Email Appliance \n\nolder than version 4.5.3.4.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://community.sophos.com/email-appliance/b/blog/posts/sophos-email-appliance-version-4-5-3-4-released"
+    ],
+    "受影响版本": [
+      "4.5.3.3"
+    ],
+    "公开日期": "2023年11月30日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos UTM",
+    "CVE编号": "CVE-2021-25273",
+    "漏洞描述": "Stored XSS can execute as administrator in quarantined email detail view in Sophos UTM before version 9.706.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://community.sophos.com/utm-firewall/b/blog/posts/utm-up2date-9-706-released",
+      "http://seclists.org/fulldisclosure/2021/Dec/3"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年07月29日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Intercept X Advanced",
+    "CVE编号": "CVE-2021-25269",
+    "漏洞描述": "A local administrator could prevent the HMPA service from starting despite tamper protection using an unquoted service path vulnerability in the HMPA component of Sophos Intercept X Advanced and Sophos Intercept X Advanced for Server before version 2.0.23, as well as Sophos Exploit Prevention before version 3.8.3.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20211126-ixa-hmpa-local-dos"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年11月26日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Firewall",
+    "CVE编号": "CVE-2021-25268",
+    "漏洞描述": "Multiple XSS vulnerabilities in Webadmin allow for privilege escalation from MySophos admin to SFOS admin in Sophos Firewall older than version 19.0 GA.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20220505-sfos-19-0-0"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Firewall",
+    "CVE编号": "CVE-2021-25267",
+    "漏洞描述": "Multiple XSS vulnerabilities in Webadmin allow for privilege escalation from admin to super-admin in Sophos Firewall older than version 19.0 GA.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20220505-sfos-19-0-0"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Intercept X for Mobile (Android)",
+    "CVE编号": "CVE-2021-25266",
+    "漏洞描述": "An insecure data storage vulnerability allows a physical attacker with root privileges to retrieve TOTP secret keys from unlocked phones in Sophos Authenticator for Android version 3.4 and older, and Intercept X for Mobile (Android) before version 9.7.3495.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20220427-ixm-storage"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年04月27日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Connect Client",
+    "CVE编号": "CVE-2021-25265",
+    "漏洞描述": "A malicious website could execute code remotely in Sophos Connect Client before version 2.1.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://community.sophos.com/b/security-blog",
+      "https://community.sophos.com/b/security-blog/posts/resolved-rce-in-sophos-connect-client-for-windows-cve-2021-25265"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年03月22日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Intercept X for MacOS",
+    "CVE编号": "CVE-2021-25264",
+    "漏洞描述": "In multiple versions of Sophos Endpoint products for MacOS, a local attacker could execute arbitrary code with administrator privileges.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://community.sophos.com/b/security-blog",
+      "https://community.sophos.com/b/security-blog/posts/resolved-lpe-in-endpoint-for-macos-cve-2021-25264"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年05月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-9540",
+    "漏洞描述": "Sophos HitmanPro.Alert before build 861 allows local elevation of privilege.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.hitmanpro.com/en-us/whatsnewalert.aspx"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年03月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-9363",
+    "漏洞描述": "The Sophos AV parsing engine before 2020-01-14 allows virus-detection bypass via a crafted ZIP archive. This affects Endpoint Protection, Cloud Optix, Mobile, Intercept X Endpoint, Intercept X for Server, and Secure Web Gateway. NOTE: the vendor feels that this does not apply to endpoint-protection products because the virus would be detected upon extraction.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://blog.zoller.lu/p/release-mode-coordinated-disclosure-ref.html",
+      "https://community.sophos.com/b/security-blog/posts/sophos-comments-to-cve-2020-9363"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年02月24日"
+  },
+  {
+    "设备品牌": "Sophos",
+    "设备类型": "防火墙",
+    "产品型号": "Sophos Web Appliance",
+    "CVE编号": "CVE-2020-36692",
+    "漏洞描述": "A reflected XSS via POST vulnerability in report scheduler of Sophos Web Appliance versions older than 4.3.10.4 allows execution of JavaScript code in the victim browser via a malicious form that must be manually submitted by the victim while logged in to SWA.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us/security-advisories/sophos-sa-20230404-swa-rce"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2023年04月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-25223",
+    "漏洞描述": "A remote code execution vulnerability exists in the WebAdmin of Sophos SG UTM before v9.705 MR5, v9.607 MR7, and v9.511 MR11",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://cwe.mitre.org/data/definitions/78.html",
+      "https://community.sophos.com/b/security-blog",
+      "https://community.sophos.com/b/security-blog/posts/advisory-resolved-rce-in-sg-utm-webadmin-cve-2020-25223",
+      "http://packetstormsecurity.com/files/164697/Sophos-UTM-WebAdmin-SID-Command-Injection.html",
+      "https://www.secpod.com/blog/remote-code-execution-in-sophos-utm/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-17352",
+    "漏洞描述": "Two OS command injection vulnerabilities in the User Portal of Sophos XG Firewall through 2020-08-05 potentially allow an authenticated attacker to remotely execute arbitrary code.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://community.sophos.com/b/security-blog",
+      "https://community.sophos.com/b/security-blog/posts/advisory-resolved-authenticated-rce-issues-in-user-portal-cve-2020-17352"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-15504",
+    "漏洞描述": "A SQL injection vulnerability in the user and admin web interfaces of Sophos XG Firewall v18.0 MR1 and older potentially allows an attacker to run arbitrary code remotely. The fix is built into the re-release of XG Firewall v18 MR-1 (named MR-1-Build396) and the v17.5 MR13 release. All other versions >= 17.0 have received a hotfix.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://community.sophos.com/b/security-blog/posts/advisory-resolved-rce-via-sqli-cve-2020-15504"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年07月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-15069",
+    "漏洞描述": "Sophos XG Firewall 17.x through v17.5 MR12 allows a Buffer Overflow and remote code execution via the HTTP/S Bookmarks feature for clientless access. Hotfix HF062020.1 was published for all firewalls running v17.x.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://community.sophos.com/b/security-blog/posts/advisory-buffer-overflow-vulnerability-in-user-portal"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-14980",
+    "漏洞描述": "The Sophos Secure Email application through 3.9.4 for Android has Missing SSL Certificate Validation.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.info-sec.ca/advisories/Sophos-Secure-Email.html",
+      "http://packetstormsecurity.com/files/158322/Sophos-Secure-Email-Android-Application-3.9.4-Man-In-The-Middle.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-12271",
+    "漏洞描述": "A SQL injection issue was found in SFOS 17.0, 17.1, 17.5, and 18.0 before 2020-04-25 on Sophos XG Firewall devices, as exploited in the wild in April 2020. This affected devices configured with either the administration (HTTPS) service or the User Portal exposed on the WAN zone. A successful attack may have caused remote code execution that exfiltrated usernames and hashed passwords for the local device admin(s), portal admins, and user accounts used for remote access (but not external Active Directory or LDAP passwords)",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://cwe.mitre.org/data/definitions/89.html",
+      "https://community.sophos.com/kb/en-us/135412",
+      "https://news.sophos.com/en-us/2020/04/26/asnarok/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年04月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-11503",
+    "漏洞描述": "A heap-based buffer overflow in the awarrensmtp component of Sophos XG Firewall v17.5 MR11 and older potentially allows an attacker to run arbitrary code remotely.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://community.sophos.com/b/security-blog/posts/advisory-potential-rce-through-heap-overflow-in-awarrensmtp-cve-2020-11503"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10947",
+    "漏洞描述": "Mac Endpoint for Sophos Central before 9.9.6 and Mac Endpoint for Sophos Home before 2.2.6 allow Privilege Escalation.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.sophos.com/en-us.aspx",
+      "https://community.sophos.com/b/security-blog/posts/advisory-cve-2020-10947---sophos-anti-virus-for-macos-privilege-escalation"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年04月17日"
+  }
+]

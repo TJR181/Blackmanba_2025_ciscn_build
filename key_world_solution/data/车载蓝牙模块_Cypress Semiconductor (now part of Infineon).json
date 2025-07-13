@@ -1,0 +1,623 @@
+[
+  {
+    "设备品牌": "Apache Software Foundation",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Apache Camel",
+    "CVE编号": "CVE-2025-29891",
+    "漏洞描述": "Bypass/Injection vulnerability in Apache Camel.\n\nThis issue affects Apache Camel: from 4.10.0 before 4.10.2, from 4.8.0 before 4.8.5, from 3.10.0 before 3.22.4.\n\nUsers are recommended to upgrade to version 4.10.2 for 4.10.x LTS, 4.8.5 for 4.8.x LTS and 3.22.4 for 3.x releases.\n\nThis vulnerability is present in Camel's default incoming header filter, that allows an attacker to include Camel specific headers that for some Camel components can alter the behaviours such as the camel-bean component, or the camel-exec component.\n\nIf you have Camel applications that are directly connected to the internet via HTTP, then an attacker could include parameters in the HTTP requests that are sent to the Camel application that get translated into headers. \n\nThe headers could be both provided as request parameters for an HTTP methods invocation or as part of the payload of the HTTP methods invocation.\n\nAll the known Camel HTTP component such as camel-servlet, camel-jetty, camel-undertow, camel-platform-http, and camel-netty-http would be vulnerable out of the box.\n\nThis CVE is related to the CVE-2025-27636: while they have the same root cause and are fixed with the same fix, CVE-2025-27636 was assumed to only be exploitable if an attacker could add malicious HTTP headers, while we have now determined that it is also exploitable via HTTP parameters. Like in CVE-2025-27636, exploitation is only possible if the Camel route uses particular vulnerable components.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://camel.apache.org/security/CVE-2025-27636.html",
+      "https://camel.apache.org/security/CVE-2025-29891.html"
+    ],
+    "受影响版本": [
+      "3.10.0",
+      "4.10.0",
+      "4.8.0"
+    ],
+    "公开日期": "2025年03月12日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-21932",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmm: abort vma_modify() on merge out of memory failure\n\nThe remainder of vma_modify() relies upon the vmg state remaining pristine\nafter a merge attempt.\n\nUsually this is the case, however in the one edge case scenario of a merge\nattempt failing not due to the specified range being unmergeable, but\nrather due to an out of memory error arising when attempting to commit the\nmerge, this assumption becomes untrue.\n\nThis results in vmg->start, end being modified, and thus the proceeding\nattempts to split the VMA will be done with invalid start/end values.\n\nThankfully, it is likely practically impossible for us to hit this in\nreality, as it would require a maple tree node pre-allocation failure that\nwould likely never happen due to it being 'too small to fail', i.e.  the\nkernel would simply keep retrying reclaim until it succeeded.\n\nHowever, this scenario remains theoretically possible, and what we are\ndoing here is wrong so we must correct it.\n\nThe safest option is, when this scenario occurs, to simply give up the\noperation.  If we cannot allocate memory to merge, then we cannot allocate\nmemory to split either (perhaps moreso!).\n\nAny scenario where this would be happening would be under very extreme\n(likely fatal) memory pressure, so it's best we give up early.\n\nSo there is no doubt it is appropriate to simply bail out in this\nscenario.\n\nHowever, in general we must if at all possible never assume VMG state is\nstable after a merge attempt, since merge operations update VMG fields. \nAs a result, additionally also make this clear by storing start, end in\nlocal variables.\n\nThe issue was reported originally by syzkaller, and by Brad Spengler (via\nan off-list discussion), and in both instances it manifested as a\ntriggering of the assert:\n\n\tVM_WARN_ON_VMG(start >= end, vmg);\n\nIn vma_merge_existing_range().\n\nIt seems at least one scenario in which this is occurring is one in which\nthe merge being attempted is due to an madvise() across multiple VMAs\nwhich looks like this:\n\n        start     end\n          |<------>|\n     |----------|------|\n     |   vma    | next |\n     |----------|------|\n\nWhen madvise_walk_vmas() is invoked, we first find vma in the above\n(determining prev to be equal to vma as we are offset into vma), and then\nenter the loop.\n\nWe determine the end of vma that forms part of the range we are\nmadvise()'ing by setting 'tmp' to this value:\n\n\t\t/* Here vma->vm_start <= start < (end|vma->vm_end) */\n\t\ttmp = vma->vm_end;\n\nWe then invoke the madvise() operation via visit(), letting prev get\nupdated to point to vma as part of the operation:\n\n\t\t/* Here vma->vm_start <= start < tmp <= (end|vma->vm_end). */\n\t\terror = visit(vma, &prev, start, tmp, arg);\n\nWhere the visit() function pointer in this instance is\nmadvise_vma_behavior().\n\nAs observed in syzkaller reports, it is ultimately madvise_update_vma()\nthat is invoked, calling vma_modify_flags_name() and vma_modify() in turn.\n\nThen, in vma_modify(), we attempt the merge:\n\n\tmerged = vma_merge_existing_range(vmg);\n\tif (merged)\n\t\treturn merged;\n\nWe invoke this with vmg->start, end set to start, tmp as such:\n\n        start  tmp\n          |<--->|\n     |----------|------|\n     |   vma    | next |\n     |----------|------|\n\nWe find ourselves in the merge right scenario, but the one in which we\ncannot remove the middle (we are offset into vma).\n\nHere we have a special case where vmg->start, end get set to perhaps\nunintuitive values - we intended to shrink the middle VMA and expand the\nnext.\n\nThis means vmg->start, end are set to...  vma->vm_start, start.\n\nNow the commit_merge() fails, and vmg->start, end are left like this. \nThis means we return to the rest of vma_modify() with vmg->start, end\n(here denoted as start', end') set as:\n\n  start' end'\n     |<-->|\n     |----------|------|\n     |   vma    | next |\n     |----------|------|\n\nSo we now erroneously try to split accordingly.  This is where the\nunfortunate\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/79636d2981b066acd945117387a9533f56411f6f",
+      "https://git.kernel.org/stable/c/53fd215f7886a1e8dea5a9ca1391dbb697fff601",
+      "https://git.kernel.org/stable/c/47b16d0462a460000b8f05dfb1292377ac48f3ca"
+    ],
+    "受影响版本": [
+      "2f1c6611b0a89afcb8641471af5f223c9caa01e0"
+    ],
+    "公开日期": "2025年04月01日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-21732",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nRDMA/mlx5: Fix a race for an ODP MR which leads to CQE with error\n\nThis patch addresses a race condition for an ODP MR that can result in a\nCQE with an error on the UMR QP.\n\nDuring the __mlx5_ib_dereg_mr() flow, the following sequence of calls\noccurs:\n\nmlx5_revoke_mr()\n mlx5r_umr_revoke_mr()\n mlx5r_umr_post_send_wait()\n\nAt this point, the lkey is freed from the hardware's perspective.\n\nHowever, concurrently, mlx5_ib_invalidate_range() might be triggered by\nanother task attempting to invalidate a range for the same freed lkey.\n\nThis task will:\n - Acquire the umem_odp->umem_mutex lock.\n - Call mlx5r_umr_update_xlt() on the UMR QP.\n - Since the lkey has already been freed, this can lead to a CQE error,\n   causing the UMR QP to enter an error state [1].\n\nTo resolve this race condition, the umem_odp->umem_mutex lock is now also\nacquired as part of the mlx5_revoke_mr() scope.  Upon successful revoke,\nwe set umem_odp->private which points to that MR to NULL, preventing any\nfurther invalidation attempts on its lkey.\n\n[1] From dmesg:\n\n   infiniband rocep8s0f0: dump_cqe:277:(pid 0): WC error: 6, Message: memory bind operation error\n   cqe_dump: 00000000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n   cqe_dump: 00000010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n   cqe_dump: 00000020: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n   cqe_dump: 00000030: 00 00 00 00 08 00 78 06 25 00 11 b9 00 0e dd d2\n\n   WARNING: CPU: 15 PID: 1506 at drivers/infiniband/hw/mlx5/umr.c:394 mlx5r_umr_post_send_wait+0x15a/0x2b0 [mlx5_ib]\n   Modules linked in: ip6table_mangle ip6table_natip6table_filter ip6_tables iptable_mangle xt_conntrack xt_MASQUERADE nf_conntrack_netlink nfnetlink xt_addrtype iptable_nat nf_nat br_netfilter rpcsec_gss_krb5 auth_rpcgss oid_registry overlay rpcrdma rdma_ucm ib_iser libiscsi scsi_transport_iscsi rdma_cm iw_cm ib_umad ib_ipoib ib_cm mlx5_ib ib_uverbs ib_core fuse mlx5_core\n   CPU: 15 UID: 0 PID: 1506 Comm: ibv_rc_pingpong Not tainted 6.12.0-rc7+ #1626\n   Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS rel-1.13.0-0-gf21b5a4aeb02-prebuilt.qemu.org 04/01/2014\n   RIP: 0010:mlx5r_umr_post_send_wait+0x15a/0x2b0 [mlx5_ib]\n   [..]\n   Call Trace:\n   <TASK>\n   mlx5r_umr_update_xlt+0x23c/0x3e0 [mlx5_ib]\n   mlx5_ib_invalidate_range+0x2e1/0x330 [mlx5_ib]\n   __mmu_notifier_invalidate_range_start+0x1e1/0x240\n   zap_page_range_single+0xf1/0x1a0\n   madvise_vma_behavior+0x677/0x6e0\n   do_madvise+0x1a2/0x4b0\n   __x64_sys_madvise+0x25/0x30\n   do_syscall_64+0x6b/0x140\n   entry_SYSCALL_64_after_hwframe+0x76/0x7e",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/b13d32786acabf70a7b04ed24b7468fc3c82977c",
+      "https://git.kernel.org/stable/c/5297f5ddffef47b94172ab0d3d62270002a3dcc1",
+      "https://git.kernel.org/stable/c/abb604a1a9c87255c7a6f3b784410a9707baf467"
+    ],
+    "受影响版本": [
+      "e6fb246ccafbdfc86e0750af021628132fdbceac"
+    ],
+    "公开日期": "2025年02月27日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-21710",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ntcp: correct handling of extreme memory squeeze\n\nTesting with iperf3 using the \"pasta\" protocol splicer has revealed\na problem in the way tcp handles window advertising in extreme memory\nsqueeze situations.\n\nUnder memory pressure, a socket endpoint may temporarily advertise\na zero-sized window, but this is not stored as part of the socket data.\nThe reasoning behind this is that it is considered a temporary setting\nwhich shouldn't influence any further calculations.\n\nHowever, if we happen to stall at an unfortunate value of the current\nwindow size, the algorithm selecting a new value will consistently fail\nto advertise a non-zero window once we have freed up enough memory.\nThis means that this side's notion of the current window size is\ndifferent from the one last advertised to the peer, causing the latter\nto not send any data to resolve the sitution.\n\nThe problem occurs on the iperf3 server side, and the socket in question\nis a completely regular socket with the default settings for the\nfedora40 kernel. We do not use SO_PEEK or SO_RCVBUF on the socket.\n\nThe following excerpt of a logging session, with own comments added,\nshows more in detail what is happening:\n\n//              tcp_v4_rcv(->)\n//                tcp_rcv_established(->)\n[5201<->39222]:     ==== Activating log @ net/ipv4/tcp_input.c/tcp_data_queue()/5257 ====\n[5201<->39222]:     tcp_data_queue(->)\n[5201<->39222]:        DROPPING skb [265600160..265665640], reason: SKB_DROP_REASON_PROTO_MEM\n                       [rcv_nxt 265600160, rcv_wnd 262144, snt_ack 265469200, win_now 131184]\n                       [copied_seq 259909392->260034360 (124968), unread 5565800, qlen 85, ofoq 0]\n                       [OFO queue: gap: 65480, len: 0]\n[5201<->39222]:     tcp_data_queue(<-)\n[5201<->39222]:     __tcp_transmit_skb(->)\n                        [tp->rcv_wup: 265469200, tp->rcv_wnd: 262144, tp->rcv_nxt 265600160]\n[5201<->39222]:       tcp_select_window(->)\n[5201<->39222]:         (inet_csk(sk)->icsk_ack.pending & ICSK_ACK_NOMEM) ? --> TRUE\n                        [tp->rcv_wup: 265469200, tp->rcv_wnd: 262144, tp->rcv_nxt 265600160]\n                        returning 0\n[5201<->39222]:       tcp_select_window(<-)\n[5201<->39222]:       ADVERTISING WIN 0, ACK_SEQ: 265600160\n[5201<->39222]:     [__tcp_transmit_skb(<-)\n[5201<->39222]:   tcp_rcv_established(<-)\n[5201<->39222]: tcp_v4_rcv(<-)\n\n// Receive queue is at 85 buffers and we are out of memory.\n// We drop the incoming buffer, although it is in sequence, and decide\n// to send an advertisement with a window of zero.\n// We don't update tp->rcv_wnd and tp->rcv_wup accordingly, which means\n// we unconditionally shrink the window.\n\n[5201<->39222]: tcp_recvmsg_locked(->)\n[5201<->39222]:   __tcp_cleanup_rbuf(->) tp->rcv_wup: 265469200, tp->rcv_wnd: 262144, tp->rcv_nxt 265600160\n[5201<->39222]:     [new_win = 0, win_now = 131184, 2 * win_now = 262368]\n[5201<->39222]:     [new_win >= (2 * win_now) ? --> time_to_ack = 0]\n[5201<->39222]:     NOT calling tcp_send_ack()\n                    [tp->rcv_wup: 265469200, tp->rcv_wnd: 262144, tp->rcv_nxt 265600160]\n[5201<->39222]:   __tcp_cleanup_rbuf(<-)\n                  [rcv_nxt 265600160, rcv_wnd 262144, snt_ack 265469200, win_now 131184]\n                  [copied_seq 260040464->260040464 (0), unread 5559696, qlen 85, ofoq 0]\n                  returning 6104 bytes\n[5201<->39222]: tcp_recvmsg_locked(<-)\n\n// After each read, the algorithm for calculating the new receive\n// window in __tcp_cleanup_rbuf() finds it is too small to advertise\n// or to update tp->rcv_wnd.\n// Meanwhile, the peer thinks the window is zero, and will not send\n// any more data to trigger an update from the interrupt mode side.\n\n[5201<->39222]: tcp_recvmsg_locked(->)\n[5201<->39222]:   __tcp_cleanup_rbuf(->) tp->rcv_wup: 265469200, tp->rcv_wnd: 262144, tp->rcv_nxt 265600160\n[5201<->39222]:     [new_win = 262144, win_now = 131184, 2 * win_n\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/b01e7ceb35dcb7ffad413da657b78c3340a09039",
+      "https://git.kernel.org/stable/c/1dd823a46e25ffde1492c391934f69a9e5eb574f",
+      "https://git.kernel.org/stable/c/b4055e2fe96f4ef101d8af0feb056d78d77514ff",
+      "https://git.kernel.org/stable/c/8c670bdfa58e48abad1d5b6ca1ee843ca91f7303"
+    ],
+    "受影响版本": [
+      "e2142825c120d4317abf7160a0fc34b3de532586"
+    ],
+    "公开日期": "2025年02月27日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-21647",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nsched: sch_cake: add bounds checks to host bulk flow fairness counts\n\nEven though we fixed a logic error in the commit cited below, syzbot\nstill managed to trigger an underflow of the per-host bulk flow\ncounters, leading to an out of bounds memory access.\n\nTo avoid any such logic errors causing out of bounds memory accesses,\nthis commit factors out all accesses to the per-host bulk flow counters\nto a series of helpers that perform bounds-checking before any\nincrements and decrements. This also has the benefit of improving\nreadability by moving the conditional checks for the flow mode into\nthese helpers, instead of having them spread out throughout the\ncode (which was the cause of the original logic error).\n\nAs part of this change, the flow quantum calculation is consolidated\ninto a helper function, which means that the dithering applied to the\nost load scaling is now applied both in the DRR rotation and when a\nsparse flow's quantum is first initiated. The only user-visible effect\nof this is that the maximum packet size that can be sent while a flow\nstays sparse will now vary with +/- one byte in some cases. This should\nnot make a noticeable difference in practice, and thus it's not worth\ncomplicating the code to preserve the old behaviour.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/44fe1efb4961c1a5ccab16bb579dfc6b308ad58b",
+      "https://git.kernel.org/stable/c/b1a1743aaa4906c41c426eda97e2e2586f79246d",
+      "https://git.kernel.org/stable/c/bb0245fa72b783cb23a9949c5048781341e91423",
+      "https://git.kernel.org/stable/c/a777e06dfc72bed73c05dcb437d7c27ad5f90f3f",
+      "https://git.kernel.org/stable/c/27202e2e8721c3b23831563c36ed5ac7818641ba",
+      "https://git.kernel.org/stable/c/91bb18950b88f955838ec0c1d97f74d135756dc7",
+      "https://git.kernel.org/stable/c/737d4d91d35b5f7fa5bb442651472277318b0bfd"
+    ],
+    "受影响版本": [
+      "4a4eeefa514db570be025ab46d779af180e2c9bb",
+      "546ea84d07e3e324644025e2aae2d12ea4c5896e",
+      "549e407569e08459d16122341d332cb508024094",
+      "7725152b54d295b7da5e34c2f419539b30d017bd",
+      "cde71a5677971f4f1b69b25e854891dbe78066a4",
+      "d4a9039a7b3d8005b90c7b1a55a306444f0e5447",
+      "d7c01c0714c04431b5e18cf17a9ea68a553d1c3c"
+    ],
+    "公开日期": "2025年01月19日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-56674",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nvirtio_net: correct netdev_tx_reset_queue() invocation point\n\nWhen virtnet_close is followed by virtnet_open, some TX completions can\npossibly remain unconsumed, until they are finally processed during the\nfirst NAPI poll after the netdev_tx_reset_queue(), resulting in a crash\n[1]. Commit b96ed2c97c79 (\"virtio_net: move netdev_tx_reset_queue() call\nbefore RX napi enable\") was not sufficient to eliminate all BQL crash\ncases for virtio-net.\n\nThis issue can be reproduced with the latest net-next master by running:\n`while :; do ip l set DEV down; ip l set DEV up; done` under heavy network\nTX load from inside the machine.\n\nnetdev_tx_reset_queue() can actually be dropped from virtnet_open path;\nthe device is not stopped in any case. For BQL core part, it's just like\ntraffic nearly ceases to exist for some period. For stall detector added\nto BQL, even if virtnet_close could somehow lead to some TX completions\ndelayed for long, followed by virtnet_open, we can just take it as stall\nas mentioned in commit 6025b9135f7a (\"net: dqs: add NIC stall detector\nbased on BQL\"). Note also that users can still reset stall_max via sysfs.\n\nSo, drop netdev_tx_reset_queue() from virtnet_enable_queue_pair(). This\neliminates the BQL crashes. As a result, netdev_tx_reset_queue() is now\nexplicitly required in freeze/restore path. This patch adds it to\nimmediately after free_unused_bufs(), following the rule of thumb:\nnetdev_tx_reset_queue() should follow any SKB freeing not followed by\nnetdev_tx_completed_queue(). This seems the most consistent and\nstreamlined approach, and now netdev_tx_reset_queue() runs whenever\nfree_unused_bufs() is done.\n\n[1]:\n------------[ cut here ]------------\nkernel BUG at lib/dynamic_queue_limits.c:99!\nOops: invalid opcode: 0000 [#1] PREEMPT SMP NOPTI\nCPU: 7 UID: 0 PID: 1598 Comm: ip Tainted: G    N 6.12.0net-next_main+ #2\nTainted: [N]=TEST\nHardware name: QEMU Standard PC (Q35 + ICH9, 2009), \\\nBIOS rel-1.16.3-0-ga6ed6b701f0a-prebuilt.qemu.org 04/01/2014\nRIP: 0010:dql_completed+0x26b/0x290\nCode: b7 c2 49 89 e9 44 89 da 89 c6 4c 89 d7 e8 ed 17 47 00 58 65 ff 0d\n4d 27 90 7e 0f 85 fd fe ff ff e8 ea 53 8d ff e9 f3 fe ff ff <0f> 0b 01\nd2 44 89 d1 29 d1 ba 00 00 00 00 0f 48 ca e9 28 ff ff ff\nRSP: 0018:ffffc900002b0d08 EFLAGS: 00010297\nRAX: 0000000000000000 RBX: ffff888102398c80 RCX: 0000000080190009\nRDX: 0000000000000000 RSI: 000000000000006a RDI: 0000000000000000\nRBP: ffff888102398c00 R08: 0000000000000000 R09: 0000000000000000\nR10: 00000000000000ca R11: 0000000000015681 R12: 0000000000000001\nR13: ffffc900002b0d68 R14: ffff88811115e000 R15: ffff8881107aca40\nFS:  00007f41ded69500(0000) GS:ffff888667dc0000(0000)\nknlGS:0000000000000000\nCS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\nCR2: 0000556ccc2dc1a0 CR3: 0000000104fd8003 CR4: 0000000000772ef0\nPKRU: 55555554\nCall Trace:\n <IRQ>\n ? die+0x32/0x80\n ? do_trap+0xd9/0x100\n ? dql_completed+0x26b/0x290\n ? dql_completed+0x26b/0x290\n ? do_error_trap+0x6d/0xb0\n ? dql_completed+0x26b/0x290\n ? exc_invalid_op+0x4c/0x60\n ? dql_completed+0x26b/0x290\n ? asm_exc_invalid_op+0x16/0x20\n ? dql_completed+0x26b/0x290\n __free_old_xmit+0xff/0x170 [virtio_net]\n free_old_xmit+0x54/0xc0 [virtio_net]\n virtnet_poll+0xf4/0xe30 [virtio_net]\n ? __update_load_avg_cfs_rq+0x264/0x2d0\n ? update_curr+0x35/0x260\n ? reweight_entity+0x1be/0x260\n __napi_poll.constprop.0+0x28/0x1c0\n net_rx_action+0x329/0x420\n ? enqueue_hrtimer+0x35/0x90\n ? trace_hardirqs_on+0x1d/0x80\n ? kvm_sched_clock_read+0xd/0x20\n ? sched_clock+0xc/0x30\n ? kvm_sched_clock_read+0xd/0x20\n ? sched_clock+0xc/0x30\n ? sched_clock_cpu+0xd/0x1a0\n handle_softirqs+0x138/0x3e0\n do_softirq.part.0+0x89/0xc0\n </IRQ>\n <TASK>\n __local_bh_enable_ip+0xa7/0xb0\n virtnet_open+0xc8/0x310 [virtio_net]\n __dev_open+0xfa/0x1b0\n __dev_change_flags+0x1de/0x250\n dev_change_flags+0x22/0x60\n do_setlink.isra.0+0x2df/0x10b0\n ? rtnetlink_rcv_msg+0x34f/0x3f0\n ? netlink_rcv_skb+0x54/0x100\n ? netlink_unicas\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/b4294d4ac61fbb382811a1d64eaf81f446ce2af4",
+      "https://git.kernel.org/stable/c/3ddccbefebdbe0c4c72a248676e4d39ac66a8e26"
+    ],
+    "受影响版本": [
+      "c8bd1f7f3e61fc6c562c806045f3ccd2cc819c01"
+    ],
+    "公开日期": "2024年12月27日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-50221",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amd/pm: Vangogh: Fix kernel memory out of bounds write\n\nKASAN reports that the GPU metrics table allocated in\nvangogh_tables_init() is not large enough for the memset done in\nsmu_cmn_init_soft_gpu_metrics(). Condensed report follows:\n\n[   33.861314] BUG: KASAN: slab-out-of-bounds in smu_cmn_init_soft_gpu_metrics+0x73/0x200 [amdgpu]\n[   33.861799] Write of size 168 at addr ffff888129f59500 by task mangoapp/1067\n...\n[   33.861808] CPU: 6 UID: 1000 PID: 1067 Comm: mangoapp Tainted: G        W          6.12.0-rc4 #356 1a56f59a8b5182eeaf67eb7cb8b13594dd23b544\n[   33.861816] Tainted: [W]=WARN\n[   33.861818] Hardware name: Valve Galileo/Galileo, BIOS F7G0107 12/01/2023\n[   33.861822] Call Trace:\n[   33.861826]  <TASK>\n[   33.861829]  dump_stack_lvl+0x66/0x90\n[   33.861838]  print_report+0xce/0x620\n[   33.861853]  kasan_report+0xda/0x110\n[   33.862794]  kasan_check_range+0xfd/0x1a0\n[   33.862799]  __asan_memset+0x23/0x40\n[   33.862803]  smu_cmn_init_soft_gpu_metrics+0x73/0x200 [amdgpu 13b1bc364ec578808f676eba412c20eaab792779]\n[   33.863306]  vangogh_get_gpu_metrics_v2_4+0x123/0xad0 [amdgpu 13b1bc364ec578808f676eba412c20eaab792779]\n[   33.864257]  vangogh_common_get_gpu_metrics+0xb0c/0xbc0 [amdgpu 13b1bc364ec578808f676eba412c20eaab792779]\n[   33.865682]  amdgpu_dpm_get_gpu_metrics+0xcc/0x110 [amdgpu 13b1bc364ec578808f676eba412c20eaab792779]\n[   33.866160]  amdgpu_get_gpu_metrics+0x154/0x2d0 [amdgpu 13b1bc364ec578808f676eba412c20eaab792779]\n[   33.867135]  dev_attr_show+0x43/0xc0\n[   33.867147]  sysfs_kf_seq_show+0x1f1/0x3b0\n[   33.867155]  seq_read_iter+0x3f8/0x1140\n[   33.867173]  vfs_read+0x76c/0xc50\n[   33.867198]  ksys_read+0xfb/0x1d0\n[   33.867214]  do_syscall_64+0x90/0x160\n...\n[   33.867353] Allocated by task 378 on cpu 7 at 22.794876s:\n[   33.867358]  kasan_save_stack+0x33/0x50\n[   33.867364]  kasan_save_track+0x17/0x60\n[   33.867367]  __kasan_kmalloc+0x87/0x90\n[   33.867371]  vangogh_init_smc_tables+0x3f9/0x840 [amdgpu]\n[   33.867835]  smu_sw_init+0xa32/0x1850 [amdgpu]\n[   33.868299]  amdgpu_device_init+0x467b/0x8d90 [amdgpu]\n[   33.868733]  amdgpu_driver_load_kms+0x19/0xf0 [amdgpu]\n[   33.869167]  amdgpu_pci_probe+0x2d6/0xcd0 [amdgpu]\n[   33.869608]  local_pci_probe+0xda/0x180\n[   33.869614]  pci_device_probe+0x43f/0x6b0\n\nEmpirically we can confirm that the former allocates 152 bytes for the\ntable, while the latter memsets the 168 large block.\n\nRoot cause appears that when GPU metrics tables for v2_4 parts were added\nit was not considered to enlarge the table to fit.\n\nThe fix in this patch is rather \"brute force\" and perhaps later should be\ndone in a smarter way, by extracting and consolidating the part version to\nsize logic to a common helper, instead of brute forcing the largest\npossible allocation. Nevertheless, for now this works and fixes the out of\nbounds write.\n\nv2:\n * Drop impossible v3_0 case. (Mario)\n\n(cherry picked from commit 0880f58f9609f0200483a49429af0f050d281703)",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/f111de0f010308949254ee1cc45df8e6b8e1d7d4",
+      "https://git.kernel.org/stable/c/f8fd9f0d57af4f8f48b383ec28287af85b47cb9f",
+      "https://git.kernel.org/stable/c/4aa923a6e6406b43566ef6ac35a3d9a3197fa3e8"
+    ],
+    "受影响版本": [
+      "41cec40bc9baba83d36a0718ea94bfe63189274a"
+    ],
+    "公开日期": "2024年11月09日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-47736",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nerofs: handle overlapped pclusters out of crafted images properly\n\nsyzbot reported a task hang issue due to a deadlock case where it is\nwaiting for the folio lock of a cached folio that will be used for\ncache I/Os.\n\nAfter looking into the crafted fuzzed image, I found it's formed with\nseveral overlapped big pclusters as below:\n\n Ext:   logical offset   |  length :     physical offset    |  length\n   0:        0..   16384 |   16384 :     151552..    167936 |   16384\n   1:    16384..   32768 |   16384 :     155648..    172032 |   16384\n   2:    32768..   49152 |   16384 :  537223168.. 537239552 |   16384\n...\n\nHere, extent 0/1 are physically overlapped although it's entirely\n_impossible_ for normal filesystem images generated by mkfs.\n\nFirst, managed folios containing compressed data will be marked as\nup-to-date and then unlocked immediately (unlike in-place folios) when\ncompressed I/Os are complete.  If physical blocks are not submitted in\nthe incremental order, there should be separate BIOs to avoid dependency\nissues.  However, the current code mis-arranges z_erofs_fill_bio_vec()\nand BIO submission which causes unexpected BIO waits.\n\nSecond, managed folios will be connected to their own pclusters for\nefficient inter-queries.  However, this is somewhat hard to implement\neasily if overlapped big pclusters exist.  Again, these only appear in\nfuzzed images so let's simply fall back to temporary short-lived pages\nfor correctness.\n\nAdditionally, it justifies that referenced managed folios cannot be\ntruncated for now and reverts part of commit 2080ca1ed3e4 (\"erofs: tidy\nup `struct z_erofs_bvec`\") for simplicity although it shouldn't be any\ndifference.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/1bf7e414cac303c9aec1be67872e19be8b64980c",
+      "https://git.kernel.org/stable/c/b9b30af0e86ffb485301ecd83b9129c9dfb7ebf8",
+      "https://git.kernel.org/stable/c/9cfa199bcbbbba31cbf97b2786f44f4464f3f29a",
+      "https://git.kernel.org/stable/c/9e2f9d34dd12e6e5b244ec488bcebd0c2d566c50"
+    ],
+    "受影响版本": [
+      "8e6c8fa9f2e95c88a642521a5da19a8e31748846"
+    ],
+    "公开日期": "2024年10月21日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-47705",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nblock: fix potential invalid pointer dereference in blk_add_partition\n\nThe blk_add_partition() function initially used a single if-condition\n(IS_ERR(part)) to check for errors when adding a partition. This was\nmodified to handle the specific case of -ENXIO separately, allowing the\nfunction to proceed without logging the error in this case. However,\nthis change unintentionally left a path where md_autodetect_dev()\ncould be called without confirming that part is a valid pointer.\n\nThis commit separates the error handling logic by splitting the\ninitial if-condition, improving code readability and handling specific\nerror scenarios explicitly. The function now distinguishes the general\nerror case from -ENXIO without altering the existing behavior of\nmd_autodetect_dev() calls.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/4bc4272e2506941c3f3d4fb8b0c659ee814dcf6f",
+      "https://git.kernel.org/stable/c/cc4d21d9492db4e534d3e01253cf885c90dd2a8b",
+      "https://git.kernel.org/stable/c/64cf2a39202ca2d9df5ee70eb310b6141ce2b8ed",
+      "https://git.kernel.org/stable/c/80f5bfbb80ea1615290dbc24f49d3d8c86db58fe",
+      "https://git.kernel.org/stable/c/652039ba477c9a4ab43740cf2cb0d068d53508c2",
+      "https://git.kernel.org/stable/c/afe53ea9b378c376101d99d216f13b6256f75189",
+      "https://git.kernel.org/stable/c/26e197b7f9240a4ac301dd0ad520c0c697c2ea7d"
+    ],
+    "受影响版本": [
+      "b72053072c0bbe9f1cdfe2ffa3c201c185da2201"
+    ],
+    "公开日期": "2024年10月21日"
+  },
+  {
+    "设备品牌": "Eclipse Foundation",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "EDC",
+    "CVE编号": "CVE-2024-4536",
+    "漏洞描述": "In Eclipse Dataspace Components from version 0.2.1 to 0.6.2, in the EDC Connector component ( https://github.com/eclipse-edc/Connector ), an attacker might obtain OAuth2 client secrets from the vault.\n\nIn Eclipse Dataspace Components from version 0.2.1 to 0.6.2, we have identified a security vulnerability in the EDC Connector component ( https://github.com/eclipse-edc/Connector ) regarding the OAuth2-protected data sink feature. When using a custom, OAuth2-protected data sink, the OAuth2-specific data address properties are resolved by the provider data plane. Problematically, the consumer-provided clientSecretKey, which indicates the OAuth2 client secret to retrieve from a secrets vault, is resolved in the context of the provider's vault, not the consumer. This secret's value is then sent to the tokenUrl, also consumer-controlled, as part of an OAuth2 client credentials grant. The returned access token is then sent as a bearer token to the data sink URL.\n\nThis feature is now disabled entirely, because not all code paths necessary for a successful realization were fully implemented.\n\n",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/eclipse-edc/Connector/commit/a4e6018d2c0457fba6f672fafa6c590513c45d1b",
+      "https://github.com/eclipse-edc/Connector/releases/tag/v0.6.3",
+      "https://gitlab.eclipse.org/security/cve-assignement/-/issues/22",
+      "https://gitlab.eclipse.org/security/vulnerability-reports/-/issues/198"
+    ],
+    "受影响版本": [
+      "0.2.1"
+    ],
+    "公开日期": "2024年05月07日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-44980",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/xe: Fix opregion leak\n\nBeing part o the display, ideally the setup and cleanup would be done by\ndisplay itself. However this is a bigger refactor that needs to be done\non both i915 and xe. For now, just fix the leak:\n\nunreferenced object 0xffff8881a0300008 (size 192):\n  comm \"modprobe\", pid 4354, jiffies 4295647021\n  hex dump (first 32 bytes):\n    00 00 87 27 81 88 ff ff 18 80 9b 00 00 c9 ff ff  ...'............\n    18 81 9b 00 00 c9 ff ff 00 00 00 00 00 00 00 00  ................\n  backtrace (crc 99260e31):\n    [<ffffffff823ce65b>] kmemleak_alloc+0x4b/0x80\n    [<ffffffff81493be2>] kmalloc_trace_noprof+0x312/0x3d0\n    [<ffffffffa1345679>] intel_opregion_setup+0x89/0x700 [xe]\n    [<ffffffffa125bfaf>] xe_display_init_noirq+0x2f/0x90 [xe]\n    [<ffffffffa1199ec3>] xe_device_probe+0x7a3/0xbf0 [xe]\n    [<ffffffffa11f3713>] xe_pci_probe+0x333/0x5b0 [xe]\n    [<ffffffff81af6be8>] local_pci_probe+0x48/0xb0\n    [<ffffffff81af8778>] pci_device_probe+0xc8/0x280\n    [<ffffffff81d09048>] really_probe+0xf8/0x390\n    [<ffffffff81d0937a>] __driver_probe_device+0x8a/0x170\n    [<ffffffff81d09503>] driver_probe_device+0x23/0xb0\n    [<ffffffff81d097b7>] __driver_attach+0xc7/0x190\n    [<ffffffff81d0628d>] bus_for_each_dev+0x7d/0xd0\n    [<ffffffff81d0851e>] driver_attach+0x1e/0x30\n    [<ffffffff81d07ac7>] bus_add_driver+0x117/0x250\n\n(cherry picked from commit 6f4e43a2f771b737d991142ec4f6d4b7ff31fbb4)",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/f7ecdd9853dd9f34e7cdfdadfb70b8f40644ebb4",
+      "https://git.kernel.org/stable/c/f4b2a0ae1a31fd3d1b5ca18ee08319b479cf9b5f"
+    ],
+    "受影响版本": [
+      "44e694958b95395bd1c41508c88c8ca141bf9bd7"
+    ],
+    "公开日期": "2024年09月04日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-42148",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nbnx2x: Fix multiple UBSAN array-index-out-of-bounds\n\nFix UBSAN warnings that occur when using a system with 32 physical\ncpu cores or more, or when the user defines a number of Ethernet\nqueues greater than or equal to FP_SB_MAX_E1x using the num_queues\nmodule parameter.\n\nCurrently there is a read/write out of bounds that occurs on the array\n\"struct stats_query_entry query\" present inside the \"bnx2x_fw_stats_req\"\nstruct in \"drivers/net/ethernet/broadcom/bnx2x/bnx2x.h\".\nLooking at the definition of the \"struct stats_query_entry query\" array:\n\nstruct stats_query_entry query[FP_SB_MAX_E1x+\n         BNX2X_FIRST_QUEUE_QUERY_IDX];\n\nFP_SB_MAX_E1x is defined as the maximum number of fast path interrupts and\nhas a value of 16, while BNX2X_FIRST_QUEUE_QUERY_IDX has a value of 3\nmeaning the array has a total size of 19.\nSince accesses to \"struct stats_query_entry query\" are offset-ted by\nBNX2X_FIRST_QUEUE_QUERY_IDX, that means that the total number of Ethernet\nqueues should not exceed FP_SB_MAX_E1x (16). However one of these queues\nis reserved for FCOE and thus the number of Ethernet queues should be set\nto [FP_SB_MAX_E1x -1] (15) if FCOE is enabled or [FP_SB_MAX_E1x] (16) if\nit is not.\n\nThis is also described in a comment in the source code in\ndrivers/net/ethernet/broadcom/bnx2x/bnx2x.h just above the Macro definition\nof FP_SB_MAX_E1x. Below is the part of this explanation that it important\nfor this patch\n\n/*\n  * The total number of L2 queues, MSIX vectors and HW contexts (CIDs) is\n  * control by the number of fast-path status blocks supported by the\n  * device (HW/FW). Each fast-path status block (FP-SB) aka non-default\n  * status block represents an independent interrupts context that can\n  * serve a regular L2 networking queue. However special L2 queues such\n  * as the FCoE queue do not require a FP-SB and other components like\n  * the CNIC may consume FP-SB reducing the number of possible L2 queues\n  *\n  * If the maximum number of FP-SB available is X then:\n  * a. If CNIC is supported it consumes 1 FP-SB thus the max number of\n  *    regular L2 queues is Y=X-1\n  * b. In MF mode the actual number of L2 queues is Y= (X-1/MF_factor)\n  * c. If the FCoE L2 queue is supported the actual number of L2 queues\n  *    is Y+1\n  * d. The number of irqs (MSIX vectors) is either Y+1 (one extra for\n  *    slow-path interrupts) or Y+2 if CNIC is supported (one additional\n  *    FP interrupt context for the CNIC).\n  * e. The number of HW context (CID count) is always X or X+1 if FCoE\n  *    L2 queue is supported. The cid for the FCoE L2 queue is always X.\n  */\n\nHowever this driver also supports NICs that use the E2 controller which can\nhandle more queues due to having more FP-SB represented by FP_SB_MAX_E2.\nLooking at the commits when the E2 support was added, it was originally\nusing the E1x parameters: commit f2e0899f0f27 (\"bnx2x: Add 57712 support\").\nBack then FP_SB_MAX_E2 was set to 16 the same as E1x. However the driver\nwas later updated to take full advantage of the E2 instead of having it be\nlimited to the capabilities of the E1x. But as far as we can tell, the\narray \"stats_query_entry query\" was still limited to using the FP-SB\navailable to the E1x cards as part of an oversignt when the driver was\nupdated to take full advantage of the E2, and now with the driver being\naware of the greater queue size supported by E2 NICs, it causes the UBSAN\nwarnings seen in the stack traces below.\n\nThis patch increases the size of the \"stats_query_entry query\" array by\nreplacing FP_SB_MAX_E1x with FP_SB_MAX_E2 to be large enough to handle\nboth types of NICs.\n\nStack traces:\n\nUBSAN: array-index-out-of-bounds in\n       drivers/net/ethernet/broadcom/bnx2x/bnx2x_stats.c:1529:11\nindex 20 is out of range for type 'stats_query_entry [19]'\nCPU: 12 PID: 858 Comm: systemd-network Not tainted 6.9.0-060900rc7-generic\n\t     #202405052133\nHardware name: HP ProLiant DL360 Gen9/ProLiant DL360 \n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/cfb04472ce33bee2579caf4dc9f4242522f6e26e",
+      "https://git.kernel.org/stable/c/cbe53087026ad929cd3950508397e8892a6a2a0f",
+      "https://git.kernel.org/stable/c/8b17cec33892a66bbd71f8d9a70a45e2072ae84f",
+      "https://git.kernel.org/stable/c/0edae06b4c227bcfaf3ce21208d49191e1009d3b",
+      "https://git.kernel.org/stable/c/9504a1550686f53b0bab4cab31d435383b1ee2ce",
+      "https://git.kernel.org/stable/c/f1313ea92f82451923e28ab45a4aaa0e70e80b98",
+      "https://git.kernel.org/stable/c/b9ea38e767459111a511ed4fb74abc37db95a59d",
+      "https://git.kernel.org/stable/c/134061163ee5ca4759de5c24ca3bd71608891ba7"
+    ],
+    "受影响版本": [
+      "50f0a562f8cc9ed9d9f7f7380434c3c8646172d5"
+    ],
+    "公开日期": "2024年07月30日"
+  },
+  {
+    "设备品牌": "wintercms",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "wn-dusk-plugin",
+    "CVE编号": "CVE-2024-32003",
+    "漏洞描述": "wn-dusk-plugin (Dusk plugin) is a plugin which integrates Laravel Dusk browser testing into Winter CMS. The Dusk plugin provides some special routes as part of its testing framework to allow a browser environment (such as headless Chrome) to act as a user in the Backend or User plugin without having to go through authentication. This route is `[[URL]]/_dusk/login/[[USER ID]]/[[MANAGER]]` - where `[[URL]]` is the base URL of the site, `[[USER ID]]` is the ID of the user account and `[[MANAGER]]` is the authentication manager (either `backend` for Backend, or `user` for the User plugin). If a configuration of a site using the Dusk plugin is set up in such a way that the Dusk plugin is available publicly and the test cases in Dusk are run with live data, this route may potentially be used to gain access to any user account in either the Backend or User plugin without authentication. As indicated in the `README`, this plugin should only be used in development and should *NOT* be used in a production instance. It is specifically recommended that the plugin be installed as a development dependency only in Composer. In order to remediate this issue, the special routes used above will now no longer be registered unless the `APP_ENV` environment variable is specifically set to `dusk`. Since Winter by default does not use this environment variable and it is not populated by default, it will only exist if Dusk's automatic configuration is used (which won't exhibit this vulnerability) or if a developer manually specifies it in their configuration. The automatic configuration performed by the Dusk plugin has also been hardened by default to use sane defaults and not allow external environment variables to leak into this configuration. This will only affect users in which the Winter CMS installation meets ALL the following criteria: 1. The Dusk plugin is installed in the Winter CMS instance. 2. The application is in production mode (ie. the `debug` config value is set to `true` in `config/app.php`). 3. The Dusk plugin's automatic configuration has been overridden, either by providing a custom `.env.dusk` file or by providing custom configuration in the `config/dusk` folder, or by providing configuration environment variables externally. 4. The environment has been configured to use production data in the database for testing, and not the temporary SQLite database that Dusk uses by default. 5. The application is connectable via the web. This issue has been fixed in version 2.1.0. Users are advised to upgrade.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/wintercms/wn-dusk-plugin/security/advisories/GHSA-chcp-g9j5-3xxx",
+      "https://github.com/wintercms/wn-dusk-plugin/blob/main/README.md"
+    ],
+    "受影响版本": [
+      "< 2.1.0"
+    ],
+    "公开日期": "2024年04月12日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-26607",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/bridge: sii902x: Fix probing race issue\n\nA null pointer dereference crash has been observed rarely on TI\nplatforms using sii9022 bridge:\n\n[   53.271356]  sii902x_get_edid+0x34/0x70 [sii902x]\n[   53.276066]  sii902x_bridge_get_edid+0x14/0x20 [sii902x]\n[   53.281381]  drm_bridge_get_edid+0x20/0x34 [drm]\n[   53.286305]  drm_bridge_connector_get_modes+0x8c/0xcc [drm_kms_helper]\n[   53.292955]  drm_helper_probe_single_connector_modes+0x190/0x538 [drm_kms_helper]\n[   53.300510]  drm_client_modeset_probe+0x1f0/0xbd4 [drm]\n[   53.305958]  __drm_fb_helper_initial_config_and_unlock+0x50/0x510 [drm_kms_helper]\n[   53.313611]  drm_fb_helper_initial_config+0x48/0x58 [drm_kms_helper]\n[   53.320039]  drm_fbdev_dma_client_hotplug+0x84/0xd4 [drm_dma_helper]\n[   53.326401]  drm_client_register+0x5c/0xa0 [drm]\n[   53.331216]  drm_fbdev_dma_setup+0xc8/0x13c [drm_dma_helper]\n[   53.336881]  tidss_probe+0x128/0x264 [tidss]\n[   53.341174]  platform_probe+0x68/0xc4\n[   53.344841]  really_probe+0x188/0x3c4\n[   53.348501]  __driver_probe_device+0x7c/0x16c\n[   53.352854]  driver_probe_device+0x3c/0x10c\n[   53.357033]  __device_attach_driver+0xbc/0x158\n[   53.361472]  bus_for_each_drv+0x88/0xe8\n[   53.365303]  __device_attach+0xa0/0x1b4\n[   53.369135]  device_initial_probe+0x14/0x20\n[   53.373314]  bus_probe_device+0xb0/0xb4\n[   53.377145]  deferred_probe_work_func+0xcc/0x124\n[   53.381757]  process_one_work+0x1f0/0x518\n[   53.385770]  worker_thread+0x1e8/0x3dc\n[   53.389519]  kthread+0x11c/0x120\n[   53.392750]  ret_from_fork+0x10/0x20\n\nThe issue here is as follows:\n\n- tidss probes, but is deferred as sii902x is still missing.\n- sii902x starts probing and enters sii902x_init().\n- sii902x calls drm_bridge_add(). Now the sii902x bridge is ready from\n  DRM's perspective.\n- sii902x calls sii902x_audio_codec_init() and\n  platform_device_register_data()\n- The registration of the audio platform device causes probing of the\n  deferred devices.\n- tidss probes, which eventually causes sii902x_bridge_get_edid() to be\n  called.\n- sii902x_bridge_get_edid() tries to use the i2c to read the edid.\n  However, the sii902x driver has not set up the i2c part yet, leading\n  to the crash.\n\nFix this by moving the drm_bridge_add() to the end of the\nsii902x_init(), which is also at the very end of sii902x_probe().",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/e0f83c234ea7a3dec1f84e5d02caa1c51664a076",
+      "https://git.kernel.org/stable/c/56f96cf6eb11a1c2d594367c3becbfb06a855ec1",
+      "https://git.kernel.org/stable/c/2a4c6af7934a7b4c304542c38fee35e09cc1770c",
+      "https://git.kernel.org/stable/c/08ac6f132dd77e40f786d8af51140c96c6d739c9"
+    ],
+    "受影响版本": [
+      "21d808405fe49028036932dd969920f4fee4f481"
+    ],
+    "公开日期": "2024年02月29日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52828",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf: Detect IP == ksym.end as part of BPF program\n\nNow that bpf_throw kfunc is the first such call instruction that has\nnoreturn semantics within the verifier, this also kicks in dead code\nelimination in unprecedented ways. For one, any instruction following\na bpf_throw call will never be marked as seen. Moreover, if a callchain\nends up throwing, any instructions after the call instruction to the\neventually throwing subprog in callers will also never be marked as\nseen.\n\nThe tempting way to fix this would be to emit extra 'int3' instructions\nwhich bump the jited_len of a program, and ensure that during runtime\nwhen a program throws, we can discover its boundaries even if the call\ninstruction to bpf_throw (or to subprogs that always throw) is emitted\nas the final instruction in the program.\n\nAn example of such a program would be this:\n\ndo_something():\n\t...\n\tr0 = 0\n\texit\n\nfoo():\n\tr1 = 0\n\tcall bpf_throw\n\tr0 = 0\n\texit\n\nbar(cond):\n\tif r1 != 0 goto pc+2\n\tcall do_something\n\texit\n\tcall foo\n\tr0 = 0  // Never seen by verifier\n\texit\t//\n\nmain(ctx):\n\tr1 = ...\n\tcall bar\n\tr0 = 0\n\texit\n\nHere, if we do end up throwing, the stacktrace would be the following:\n\nbpf_throw\nfoo\nbar\nmain\n\nIn bar, the final instruction emitted will be the call to foo, as such,\nthe return address will be the subsequent instruction (which the JIT\nemits as int3 on x86). This will end up lying outside the jited_len of\nthe program, thus, when unwinding, we will fail to discover the return\naddress as belonging to any program and end up in a panic due to the\nunreliable stack unwinding of BPF programs that we never expect.\n\nTo remedy this case, make bpf_prog_ksym_find treat IP == ksym.end as\npart of the BPF program, so that is_bpf_text_address returns true when\nsuch a case occurs, and we are able to unwind reliably when the final\ninstruction ends up being a call instruction.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/6058e4829696412457729a00734969acc6fd1d18",
+      "https://git.kernel.org/stable/c/cf353904a82873e952633fcac4385c2fcd3a46e1",
+      "https://git.kernel.org/stable/c/aa42a7cb92647786719fe9608685da345883878f",
+      "https://git.kernel.org/stable/c/327b92e8cb527ae097961ffd1610c720481947f5",
+      "https://git.kernel.org/stable/c/821a7e4143af115b840ec199eb179537e18af922",
+      "https://git.kernel.org/stable/c/66d9111f3517f85ef2af0337ece02683ce0faf21"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2024年05月21日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52452",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf: Fix accesses to uninit stack slots\n\nPrivileged programs are supposed to be able to read uninitialized stack\nmemory (ever since 6715df8d5) but, before this patch, these accesses\nwere permitted inconsistently. In particular, accesses were permitted\nabove state->allocated_stack, but not below it. In other words, if the\nstack was already \"large enough\", the access was permitted, but\notherwise the access was rejected instead of being allowed to \"grow the\nstack\". This undesired rejection was happening in two places:\n- in check_stack_slot_within_bounds()\n- in check_stack_range_initialized()\nThis patch arranges for these accesses to be permitted. A bunch of tests\nthat were relying on the old rejection had to change; all of them were\nchanged to add also run unprivileged, in which case the old behavior\npersists. One tests couldn't be updated - global_func16 - because it\ncan't run unprivileged for other reasons.\n\nThis patch also fixes the tracking of the stack size for variable-offset\nreads. This second fix is bundled in the same commit as the first one\nbecause they're inter-related. Before this patch, writes to the stack\nusing registers containing a variable offset (as opposed to registers\nwith fixed, known values) were not properly contributing to the\nfunction's needed stack size. As a result, it was possible for a program\nto verify, but then to attempt to read out-of-bounds data at runtime\nbecause a too small stack had been allocated for it.\n\nEach function tracks the size of the stack it needs in\nbpf_subprog_info.stack_depth, which is maintained by\nupdate_stack_depth(). For regular memory accesses, check_mem_access()\nwas calling update_state_depth() but it was passing in only the fixed\npart of the offset register, ignoring the variable offset. This was\nincorrect; the minimum possible value of that register should be used\ninstead.\n\nThis tracking is now fixed by centralizing the tracking of stack size in\ngrow_stack_state(), and by lifting the calls to grow_stack_state() to\ncheck_stack_access_within_bounds() as suggested by Andrii. The code is\nnow simpler and more convincingly tracks the correct maximum stack size.\ncheck_stack_range_initialized() can now rely on enough stack having been\nallocated for the access; this helps with the fix for the first issue.\n\nA few tests were changed to also check the stack depth computation. The\none that fails without this patch is verifier_var_off:stack_write_priv_vs_unpriv.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/0954982db8283016bf38e9db2da5adf47a102e19",
+      "https://git.kernel.org/stable/c/fbcf372c8eda2290470268e0afb5ab5d5f5d5fde",
+      "https://git.kernel.org/stable/c/6b4a64bafd107e521c01eec3453ce94a3fb38529"
+    ],
+    "受影响版本": [
+      "01f810ace9ed37255f27608a0864abebccf0aab3",
+      "d1b725ea5d104caea250427899f4e2e3ab15b4fc",
+      "f3c4b01689d392373301e6e60d1b02c5b4020afc"
+    ],
+    "公开日期": "2024年02月22日"
+  },
+  {
+    "设备品牌": "paritytech",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "frontier",
+    "CVE编号": "CVE-2023-45130",
+    "漏洞描述": "Frontier is Substrate's Ethereum compatibility layer. Prior to commit aea528198b3b226e0d20cce878551fd4c0e3d5d0, at the end of a contract execution, when opcode SUICIDE marks a contract to be deleted, the software uses `storage::remove_prefix` (now renamed to `storage::clear_prefix`) to remove all storages associated with it. This is a single IO primitive call passing the WebAssembly boundary. For large contracts, the call (without providing a `limit` parameter) can be slow. In addition, for parachains, all storages to be deleted will be part of the PoV, which easily exceed relay chain PoV size limit. On the other hand, Frontier's maintainers only charge a fixed cost for opcode SUICIDE. The maintainers consider the severity of this issue high, because an attacker can craft a contract with a lot of storage values on a parachain, and then call opcode SUICIDE on the contract. If the transaction makes into a parachain block, the parachain will then stall because the PoV size will exceed relay chain's limit. This is especially an issue for XCM transactions, because they can't be skipped. Commit aea528198b3b226e0d20cce878551fd4c0e3d5d0 contains a patch for this issue. For parachains, it's recommended to issue an emergency runtime upgrade as soon as possible. For standalone chains, the impact is less severe because the issue mainly affects PoV sizes. It's recommended to issue a normal runtime upgrade as soon as possible. There are no known workarounds.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/paritytech/frontier/security/advisories/GHSA-gc88-2gvv-gp3v",
+      "https://github.com/paritytech/frontier/pull/1212",
+      "https://github.com/paritytech/frontier/commit/aea528198b3b226e0d20cce878551fd4c0e3d5d0"
+    ],
+    "受影响版本": [
+      "<= 0.1.0"
+    ],
+    "公开日期": "2023年10月13日"
+  },
+  {
+    "设备品牌": "xwiki",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "xwiki-platform",
+    "CVE编号": "CVE-2023-29510",
+    "漏洞描述": "XWiki Platform is a generic wiki platform offering runtime services for applications built on top of it. In XWiki, every user can add translations that are only applied to the current user. This also allows overriding existing translations. Such translations are often included in privileged contexts without any escaping which allows remote code execution for any user who has edit access on at least one document which could be the user's own profile where edit access is enabled by default. A mitigation for this vulnerability is part of XWiki 14.10.2 and XWiki 15.0 RC1: translations with user scope now require script right. This means that regular users cannot exploit this anymore as users don't have script right by default anymore starting with XWiki 14.10. There are no known workarounds apart from upgrading to a patched versions.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/xwiki/xwiki-platform/security/advisories/GHSA-4v38-964c-xjmw",
+      "https://github.com/xwiki/xwiki-platform/commit/d06ff8a58480abc7f63eb1d4b8b366024d990643",
+      "https://jira.xwiki.org/browse/XWIKI-19749"
+    ],
+    "受影响版本": [
+      "< 14.10.2"
+    ],
+    "公开日期": "2023年04月18日"
+  },
+  {
+    "设备品牌": "Open-Xchange GmbH",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "OX App Suite",
+    "CVE编号": "CVE-2023-29051",
+    "漏洞描述": "User-defined OXMF templates could be used to access a limited part of the internal OX App Suite Java API. The existing switch to disable the feature by default was not effective in this case. Unauthorized users could discover and modify application state, including objects related to other users and contexts. We now make sure that the switch to disable user-generated templates by default works as intended and will remove the feature in future generations of the product. No publicly available exploits are known.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://software.open-xchange.com/products/appsuite/doc/Release_Notes_for_Patch_Release_6251_7.10.6_2023-09-25.pdf",
+      "https://documentation.open-xchange.com/appsuite/security/advisories/csaf/2023/oxas-adv-2023-0006.json"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年01月08日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-50089",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nbtrfs: ensure pages are unlocked on cow_file_range() failure\n\nThere is a hung_task report on zoned btrfs like below.\n\nhttps://github.com/naota/linux/issues/59\n\n  [726.328648] INFO: task rocksdb:high0:11085 blocked for more than 241 seconds.\n  [726.329839]       Not tainted 5.16.0-rc1+ #1\n  [726.330484] \"echo 0 > /proc/sys/kernel/hung_task_timeout_secs\" disables this message.\n  [726.331603] task:rocksdb:high0   state:D stack:    0 pid:11085 ppid: 11082 flags:0x00000000\n  [726.331608] Call Trace:\n  [726.331611]  <TASK>\n  [726.331614]  __schedule+0x2e5/0x9d0\n  [726.331622]  schedule+0x58/0xd0\n  [726.331626]  io_schedule+0x3f/0x70\n  [726.331629]  __folio_lock+0x125/0x200\n  [726.331634]  ? find_get_entries+0x1bc/0x240\n  [726.331638]  ? filemap_invalidate_unlock_two+0x40/0x40\n  [726.331642]  truncate_inode_pages_range+0x5b2/0x770\n  [726.331649]  truncate_inode_pages_final+0x44/0x50\n  [726.331653]  btrfs_evict_inode+0x67/0x480\n  [726.331658]  evict+0xd0/0x180\n  [726.331661]  iput+0x13f/0x200\n  [726.331664]  do_unlinkat+0x1c0/0x2b0\n  [726.331668]  __x64_sys_unlink+0x23/0x30\n  [726.331670]  do_syscall_64+0x3b/0xc0\n  [726.331674]  entry_SYSCALL_64_after_hwframe+0x44/0xae\n  [726.331677] RIP: 0033:0x7fb9490a171b\n  [726.331681] RSP: 002b:00007fb943ffac68 EFLAGS: 00000246 ORIG_RAX: 0000000000000057\n  [726.331684] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007fb9490a171b\n  [726.331686] RDX: 00007fb943ffb040 RSI: 000055a6bbe6ec20 RDI: 00007fb94400d300\n  [726.331687] RBP: 00007fb943ffad00 R08: 0000000000000000 R09: 0000000000000000\n  [726.331688] R10: 0000000000000031 R11: 0000000000000246 R12: 00007fb943ffb000\n  [726.331690] R13: 00007fb943ffb040 R14: 0000000000000000 R15: 00007fb943ffd260\n  [726.331693]  </TASK>\n\nWhile we debug the issue, we found running fstests generic/551 on 5GB\nnon-zoned null_blk device in the emulated zoned mode also had a\nsimilar hung issue.\n\nAlso, we can reproduce the same symptom with an error injected\ncow_file_range() setup.\n\nThe hang occurs when cow_file_range() fails in the middle of\nallocation. cow_file_range() called from do_allocation_zoned() can\nsplit the give region ([start, end]) for allocation depending on\ncurrent block group usages. When btrfs can allocate bytes for one part\nof the split regions but fails for the other region (e.g. because of\n-ENOSPC), we return the error leaving the pages in the succeeded regions\nlocked. Technically, this occurs only when @unlock == 0. Otherwise, we\nunlock the pages in an allocated region after creating an ordered\nextent.\n\nConsidering the callers of cow_file_range(unlock=0) won't write out\nthe pages, we can unlock the pages on error exit from\ncow_file_range(). So, we can ensure all the pages except @locked_page\nare unlocked on error case.\n\nIn summary, cow_file_range now behaves like this:\n\n- page_started == 1 (return value)\n  - All the pages are unlocked. IO is started.\n- unlock == 1\n  - All the pages except @locked_page are unlocked in any case\n- unlock == 0\n  - On success, all the pages are locked for writing out them\n  - On failure, all the pages except @locked_page are unlocked",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/b367f125c80fa838eae49e3b138dc67dfc9f46ef",
+      "https://git.kernel.org/stable/c/9535ec371d741fa037e37eddc0a5b25ba82d0027",
+      "https://git.kernel.org/stable/c/e160aa87c87a9c4e0c8d1430235f715a3a91e2cd",
+      "https://git.kernel.org/stable/c/9ce7466f372d83054c7494f6b3e4b9abaf3f0355"
+    ],
+    "受影响版本": [
+      "42c011000963442ce533d92a492c4a057b2f5a46"
+    ],
+    "公开日期": "2025年06月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49943",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nUSB: gadget: Fix obscure lockdep violation for udc_mutex\n\nA recent commit expanding the scope of the udc_lock mutex in the\ngadget core managed to cause an obscure and slightly bizarre lockdep\nviolation.  In abbreviated form:\n\n======================================================\nWARNING: possible circular locking dependency detected\n5.19.0-rc7+ #12510 Not tainted\n------------------------------------------------------\nudevadm/312 is trying to acquire lock:\nffff80000aae1058 (udc_lock){+.+.}-{3:3}, at: usb_udc_uevent+0x54/0xe0\n\nbut task is already holding lock:\nffff000002277548 (kn->active#4){++++}-{0:0}, at: kernfs_seq_start+0x34/0xe0\n\nwhich lock already depends on the new lock.\n\nthe existing dependency chain (in reverse order) is:\n\n-> #3 (kn->active#4){++++}-{0:0}:\n        lock_acquire+0x68/0x84\n        __kernfs_remove+0x268/0x380\n        kernfs_remove_by_name_ns+0x58/0xac\n        sysfs_remove_file_ns+0x18/0x24\n        device_del+0x15c/0x440\n\n-> #2 (device_links_lock){+.+.}-{3:3}:\n        lock_acquire+0x68/0x84\n        __mutex_lock+0x9c/0x430\n        mutex_lock_nested+0x38/0x64\n        device_link_remove+0x3c/0xa0\n        _regulator_put.part.0+0x168/0x190\n        regulator_put+0x3c/0x54\n        devm_regulator_release+0x14/0x20\n\n-> #1 (regulator_list_mutex){+.+.}-{3:3}:\n        lock_acquire+0x68/0x84\n        __mutex_lock+0x9c/0x430\n        mutex_lock_nested+0x38/0x64\n        regulator_lock_dependent+0x54/0x284\n        regulator_enable+0x34/0x80\n        phy_power_on+0x24/0x130\n        __dwc2_lowlevel_hw_enable+0x100/0x130\n        dwc2_lowlevel_hw_enable+0x18/0x40\n        dwc2_hsotg_udc_start+0x6c/0x2f0\n        gadget_bind_driver+0x124/0x1f4\n\n-> #0 (udc_lock){+.+.}-{3:3}:\n        __lock_acquire+0x1298/0x20cc\n        lock_acquire.part.0+0xe0/0x230\n        lock_acquire+0x68/0x84\n        __mutex_lock+0x9c/0x430\n        mutex_lock_nested+0x38/0x64\n        usb_udc_uevent+0x54/0xe0\n\nEvidently this was caused by the scope of udc_mutex being too large.\nThe mutex is only meant to protect udc->driver along with a few other\nthings.  As far as I can tell, there's no reason for the mutex to be\nheld while the gadget core calls a gadget driver's ->bind or ->unbind\nroutine, or while a UDC is being started or stopped.  (This accounts\nfor link #1 in the chain above, where the mutex is held while the\ndwc2_hsotg_udc is started as part of driver probing.)\n\nGadget drivers' ->disconnect callbacks are problematic.  Even though\nusb_gadget_disconnect() will now acquire the udc_mutex, there's a\nwindow in usb_gadget_bind_driver() between the times when the mutex is\nreleased and the ->bind callback is invoked.  If a disconnect occurred\nduring that window, we could call the driver's ->disconnect routine\nbefore its ->bind routine.  To prevent this from happening, it will be\nnecessary to prevent a UDC from connecting while it has no gadget\ndriver.  This should be done already but it doesn't seem to be;\ncurrently usb_gadget_connect() has no check for this.  Such a check\nwill have to be added later.\n\nSome degree of mutual exclusion is required in soft_connect_store(),\nwhich can dereference udc->driver at arbitrary times since it is a\nsysfs callback.  The solution here is to acquire the gadget's device\nlock rather than the udc_mutex.  Since the driver core guarantees that\nthe device lock is always held during driver binding and unbinding,\nthis will make the accesses in soft_connect_store() mutually exclusive\nwith any changes to udc->driver.\n\nLastly, it turns out there is one place which should hold the\nudc_mutex but currently does not: The function_show() routine needs\nprotection while it dereferences udc->driver.  The missing lock and\nunlock calls are added.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/1a065e4673cbdd9f222a05f85e17d78ea50c8d9c",
+      "https://git.kernel.org/stable/c/1016fc0c096c92dd0e6e0541daac7a7868169903"
+    ],
+    "受影响版本": [
+      "2191c00855b03aa59c20e698be713d952d51fc18",
+      "f44b0b95d50fffeca036e1ba36770390e0b519dd"
+    ],
+    "公开日期": "2025年06月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49326",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nrtl818x: Prevent using not initialized queues\n\nUsing not existing queues can panic the kernel with rtl8180/rtl8185 cards.\nIgnore the skb priority for those cards, they only have one tx queue. Pierre\nAsselin (pa@panix.com) reported the kernel crash in the Gentoo forum:\n\nhttps://forums.gentoo.org/viewtopic-t-1147832-postdays-0-postorder-asc-start-25.html\n\nHe also confirmed that this patch fixes the issue. In summary this happened:\n\nAfter updating wpa_supplicant from 2.9 to 2.10 the kernel crashed with a\n\"divide error: 0000\" when connecting to an AP. Control port tx now tries to\nuse IEEE80211_AC_VO for the priority, which wpa_supplicants starts to use in\n2.10.\n\nSince only the rtl8187se part of the driver supports QoS, the priority\nof the skb is set to IEEE80211_AC_BE (2) by mac80211 for rtl8180/rtl8185\ncards.\n\nrtl8180 is then unconditionally reading out the priority and finally crashes on\ndrivers/net/wireless/realtek/rtl818x/rtl8180/dev.c line 544 without this\npatch:\n\tidx = (ring->idx + skb_queue_len(&ring->queue)) % ring->entries\n\n\"ring->entries\" is zero for rtl8180/rtl8185 cards, tx_ring[2] never got\ninitialized.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/b5dca2cd3f0239512da808598b4e70557eb4c2a1",
+      "https://git.kernel.org/stable/c/d7e30dfc166d33470bba31a42f9bbc346e5409d5",
+      "https://git.kernel.org/stable/c/9d5e96cc1f1720019ce27b127a31695148d38bb0",
+      "https://git.kernel.org/stable/c/b8ce58ab80faaea015c206382041ff3bcf5495ff",
+      "https://git.kernel.org/stable/c/769ec2a824deae2f1268dfda14999a4d14d0d0c5",
+      "https://git.kernel.org/stable/c/6ad81ad0cf5744738ce94c8e64051ddd80a1734c",
+      "https://git.kernel.org/stable/c/9ad1981fc4de3afb7db3e8eb5a6a52d4c7d0d577",
+      "https://git.kernel.org/stable/c/98e55b0b876bde3353f4e074883d66ecb55c65a3",
+      "https://git.kernel.org/stable/c/746285cf81dc19502ab238249d75f5990bd2d231"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49203",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amd/display: Fix double free during GPU reset on DC streams\n\n[Why]\nThe issue only occurs during the GPU reset code path.\n\nWe first backup the current state prior to commiting 0 streams\ninternally from DM to DC. This state backup contains valid link\nencoder assignments.\n\nDC will clear the link encoder assignments as part of current state\n(but not the backup, since it was a copied before the commit) and\nfree the extra stream reference it held.\n\nDC requires that the link encoder assignments remain cleared/invalid\nprior to commiting. Since the backup still has valid assignments we\ncall the interface post reset to clear them. This routine also\nreleases the extra reference that the link encoder interface held -\nresulting in a double free (and eventually a NULL pointer dereference).\n\n[How]\nWe'll have to do a full DC commit anyway after GPU reset because\nthe stream count previously went to 0.\n\nWe don't need to retain the assignment that we had backed up, so\njust copy off of the now clean current state assignment after the\nreset has occcurred with the new link_enc_cfg_copy() interface.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/bbfcdd6289ba6f00f0cd7d496946dce9f6c600ac",
+      "https://git.kernel.org/stable/c/32685b32d825ca08c5dec826477332df886c4743"
+    ],
+    "受影响版本": [
+      "6d63fcc2a334f7bd15e4e9b1db50a19335d2af4f"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-48822",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nusb: f_fs: Fix use-after-free for epfile\n\nConsider a case where ffs_func_eps_disable is called from\nffs_func_disable as part of composition switch and at the\nsame time ffs_epfile_release get called from userspace.\nffs_epfile_release will free up the read buffer and call\nffs_data_closed which in turn destroys ffs->epfiles and\nmark it as NULL. While this was happening the driver has\nalready initialized the local epfile in ffs_func_eps_disable\nwhich is now freed and waiting to acquire the spinlock. Once\nspinlock is acquired the driver proceeds with the stale value\nof epfile and tries to free the already freed read buffer\ncausing use-after-free.\n\nFollowing is the illustration of the race:\n\n      CPU1                                  CPU2\n\n   ffs_func_eps_disable\n   epfiles (local copy)\n\t\t\t\t\tffs_epfile_release\n\t\t\t\t\tffs_data_closed\n\t\t\t\t\tif (last file closed)\n\t\t\t\t\tffs_data_reset\n\t\t\t\t\tffs_data_clear\n\t\t\t\t\tffs_epfiles_destroy\nspin_lock\ndereference epfiles\n\nFix this races by taking epfiles local copy & assigning it under\nspinlock and if epfiles(local) is null then update it in ffs->epfiles\nthen finally destroy it.\nExtending the scope further from the race, protecting the ep related\nstructures, and concurrent accesses.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/32048f4be071f9a6966744243f1786f45bb22dc2",
+      "https://git.kernel.org/stable/c/cfe5f6fd335d882bcc829a1c8a7d462a455c626e",
+      "https://git.kernel.org/stable/c/c9fc422c9a43e3d58d246334a71f3390401781dc",
+      "https://git.kernel.org/stable/c/0042178a69eb77a979e36a50dcce9794a3140ef8",
+      "https://git.kernel.org/stable/c/72a8aee863af099d4434314c4536d6c9a61dcf3c",
+      "https://git.kernel.org/stable/c/3e078b18753669615301d946297bafd69294ad2c",
+      "https://git.kernel.org/stable/c/ebe2b1add1055b903e2acd86b290a85297edc0b3"
+    ],
+    "受影响版本": [
+      "5cd8f6788ff34999dbd4cbec81a6adfc215e1e60",
+      "a9e6f83c2df199187a5248f824f31b6787ae23ae"
+    ],
+    "公开日期": "2024年07月16日"
+  },
+  {
+    "设备品牌": "Go standard library",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "mime/multipart",
+    "CVE编号": "CVE-2022-41725",
+    "漏洞描述": "A denial of service is possible from excessive resource consumption in net/http and mime/multipart. Multipart form parsing with mime/multipart.Reader.ReadForm can consume largely unlimited amounts of memory and disk files. This also affects form parsing in the net/http package with the Request methods FormFile, FormValue, ParseMultipartForm, and PostFormValue. ReadForm takes a maxMemory parameter, and is documented as storing \"up to maxMemory bytes +10MB (reserved for non-file parts) in memory\". File parts which cannot be stored in memory are stored on disk in temporary files. The unconfigurable 10MB reserved for non-file parts is excessively large and can potentially open a denial of service vector on its own. However, ReadForm did not properly account for all memory consumed by a parsed form, such as map entry overhead, part names, and MIME headers, permitting a maliciously crafted form to consume well over 10MB. In addition, ReadForm contained no limit on the number of disk files created, permitting a relatively small request body to create a large number of disk temporary files. With fix, ReadForm now properly accounts for various forms of memory overhead, and should now stay within its documented limit of 10MB + maxMemory bytes of memory consumption. Users should still be aware that this limit is high and may still be hazardous. In addition, ReadForm now creates at most one on-disk temporary file, combining multiple form parts into a single temporary file. The mime/multipart.File interface type's documentation states, \"If stored on disk, the File's underlying concrete type will be an *os.File.\". This is no longer the case when a form contains more than one file part, due to this coalescing of parts into a single file. The previous behavior of using distinct files for each form part may be reenabled with the environment variable GODEBUG=multipartfiles=distinct. Users should be aware that multipart.ReadForm and the http.Request methods that call it do not limit the amount of disk consumed by temporary files. Callers can limit the size of form data with http.MaxBytesReader.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://go.dev/issue/58006",
+      "https://go.dev/cl/468124",
+      "https://groups.google.com/g/golang-announce/c/V0aBFqaFs_E",
+      "https://pkg.go.dev/vuln/GO-2023-1569",
+      "https://security.gentoo.org/glsa/202311-09"
+    ],
+    "受影响版本": [
+      "0",
+      "1.20.0-0"
+    ],
+    "公开日期": "2023年02月28日"
+  },
+  {
+    "设备品牌": "Lora-net",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "LoRaMac-node",
+    "CVE编号": "CVE-2022-39274",
+    "漏洞描述": "LoRaMac-node is a reference implementation and documentation of a LoRa network node. Versions of LoRaMac-node prior to 4.7.0 are vulnerable to a buffer overflow. Improper size validation of the incoming radio frames can lead to an 65280-byte out-of-bounds write. The function `ProcessRadioRxDone` implicitly expects incoming radio frames to have at least a payload of one byte or more. An empty payload leads to a 1-byte out-of-bounds read of user controlled content when the payload buffer is reused. This allows an attacker to craft a FRAME_TYPE_PROPRIETARY frame with size -1 which results in an 65280-byte out-of-bounds memcopy likely with partially controlled attacker data. Corrupting a large part if the data section is likely to cause a DoS. If the large out-of-bounds write does not immediately crash the attacker may gain control over the execution due to now controlling large parts of the data section. Users are advised to upgrade either by updating their package or by manually applying the patch commit `e851b079`.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/Lora-net/LoRaMac-node/security/advisories/GHSA-7vv8-73pc-63c2",
+      "https://github.com/Lora-net/LoRaMac-node/commit/e851b079c82ba1bcf3f4d291ab69a571b0bf458a",
+      "https://github.com/Lora-net/LoRaMac-node/releases/tag/v4.7.0"
+    ],
+    "受影响版本": [
+      "< 4.7.0"
+    ],
+    "公开日期": "2022年10月06日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2021-46986",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nusb: dwc3: gadget: Free gadget structure only after freeing endpoints\n\nAs part of commit e81a7018d93a (\"usb: dwc3: allocate gadget structure\ndynamically\") the dwc3_gadget_release() was added which will free\nthe dwc->gadget structure upon the device's removal when\nusb_del_gadget_udc() is called in dwc3_gadget_exit().\n\nHowever, simply freeing the gadget results a dangling pointer\nsituation: the endpoints created in dwc3_gadget_init_endpoints()\nhave their dep->endpoint.ep_list members chained off the list_head\nanchored at dwc->gadget->ep_list.  Thus when dwc->gadget is freed,\nthe first dwc3_ep in the list now has a dangling prev pointer and\nlikewise for the next pointer of the dwc3_ep at the tail of the list.\nThe dwc3_gadget_free_endpoints() that follows will result in a\nuse-after-free when it calls list_del().\n\nThis was caught by enabling KASAN and performing a driver unbind.\nThe recent commit 568262bf5492 (\"usb: dwc3: core: Add shutdown\ncallback for dwc3\") also exposes this as a panic during shutdown.\n\nThere are a few possibilities to fix this.  One could be to perform\na list_del() of the gadget->ep_list itself which removes it from\nthe rest of the dwc3_ep chain.\n\nAnother approach is what this patch does, by splitting up the\nusb_del_gadget_udc() call into its separate \"del\" and \"put\"\ncomponents.  This allows dwc3_gadget_free_endpoints() to be\ncalled before the gadget is finally freed with usb_put_gadget().",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/1ea775021282d90e1d08d696b7ab54aa75d688e5",
+      "https://git.kernel.org/stable/c/bc0cdd72493236fb72b390ad38ce581e353c143c",
+      "https://git.kernel.org/stable/c/b4b8e9601d7ee8806d2687f081a42485d27674a1",
+      "https://git.kernel.org/stable/c/bb9c74a5bd1462499fe5ccb1e3c5ac40dcfa9139"
+    ],
+    "受影响版本": [
+      "e81a7018d93a7de31a3f121c9a7eecd0a5ec58b0"
+    ],
+    "公开日期": "2024年02月28日"
+  },
+  {
+    "设备品牌": "symfony",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "symfony",
+    "CVE编号": "CVE-2021-41270",
+    "漏洞描述": "Symfony/Serializer handles serializing and deserializing data structures for Symfony, a PHP framework for web and console applications and a set of reusable PHP components. Symfony versions 4.1.0 before 4.4.35 and versions 5.0.0 before 5.3.12 are vulnerable to CSV injection, also known as formula injection. In Symfony 4.1, maintainers added the opt-in `csv_escape_formulas` option in the `CsvEncoder`, to prefix all cells starting with `=`, `+`, `-` or `@` with a tab `\\t`. Since then, OWASP added 2 chars in that list: Tab (0x09) and Carriage return (0x0D). This makes the previous prefix char (Tab `\\t`) part of the vulnerable characters, and OWASP suggests using the single quote `'` for prefixing the value. Starting with versions 4.4.34 and 5.3.12, Symfony now follows the OWASP recommendations and uses the single quote `'` to prefix formulas and add the prefix to cells starting by `\\t`, `\\r` as well as `=`, `+`, `-` and `@`.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/symfony/symfony/pull/44243",
+      "https://github.com/symfony/symfony/releases/tag/v5.3.12",
+      "https://github.com/symfony/symfony/security/advisories/GHSA-2xhg-w2g5-w95x",
+      "https://github.com/symfony/symfony/commit/3da6f2d45e7536ccb2a26f52fbaf340917e208a8",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/QSREFD2TJT5LWKM6S4MD3W26NQQ5WJUP/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/3BPT4SF6SIXFMZARDWED5T32J7JEH3EP/"
+    ],
+    "受影响版本": [
+      ">= 4.1.0, < 4.4.35",
+      ">= 5.0.0, < 5.3.12"
+    ],
+    "公开日期": "2021年11月24日"
+  },
+  {
+    "设备品牌": "npm",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "node-tar",
+    "CVE编号": "CVE-2021-37713",
+    "漏洞描述": "The npm package \"tar\" (aka node-tar) before versions 4.4.18, 5.0.10, and 6.1.9 has an arbitrary file creation/overwrite and arbitrary code execution vulnerability. node-tar aims to guarantee that any file whose location would be outside of the extraction target directory is not extracted. This is, in part, accomplished by sanitizing absolute paths of entries within the archive, skipping archive entries that contain `..` path portions, and resolving the sanitized paths against the extraction target directory. This logic was insufficient on Windows systems when extracting tar files that contained a path that was not an absolute path, but specified a drive letter different from the extraction target, such as `C:some\\path`. If the drive letter does not match the extraction target, for example `D:\\extraction\\dir`, then the result of `path.resolve(extractionDirectory, entryPath)` would resolve against the current working directory on the `C:` drive, rather than the extraction target directory. Additionally, a `..` portion of the path could occur immediately after the drive letter, such as `C:../foo`, and was not properly sanitized by the logic that checked for `..` within the normalized and split portions of the path. This only affects users of `node-tar` on Windows systems. These issues were addressed in releases 4.4.18, 5.0.10 and 6.1.9. The v3 branch of node-tar has been deprecated and did not receive patches for these issues. If you are still using a v3 release we recommend you update to a more recent version of node-tar. There is no reasonable way to work around this issue without performing the same path normalization procedures that node-tar now does. Users are encouraged to upgrade to the latest patched versions of node-tar, rather than attempt to sanitize paths themselves.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.npmjs.com/package/tar",
+      "https://github.com/npm/node-tar/security/advisories/GHSA-5955-9wpr-37jh",
+      "https://www.oracle.com/security-alerts/cpuoct2021.html",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf"
+    ],
+    "受影响版本": [
+      "< 4.4.18",
+      ">= 5.0.0, < 5.0.10",
+      ">= 6.0.0, < 6.1.9"
+    ],
+    "公开日期": "2021年08月31日"
+  },
+  {
+    "设备品牌": "http4s",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "blaze",
+    "CVE编号": "CVE-2021-21293",
+    "漏洞描述": "blaze is a Scala library for building asynchronous pipelines, with a focus on network IO. All servers running blaze-core before version 0.14.15 are affected by a vulnerability in which unbounded connection acceptance leads to file handle exhaustion. Blaze, accepts connections unconditionally on a dedicated thread pool. This has the net effect of amplifying degradation in services that are unable to handle their current request load, since incoming connections are still accepted and added to an unbounded queue. Each connection allocates a socket handle, which drains a scarce OS resource. This can also confound higher level circuit breakers which work based on detecting failed connections. The vast majority of affected users are using it as part of http4s-blaze-server <= 0.21.16. http4s provides a mechanism for limiting open connections, but is enforced inside the Blaze accept loop, after the connection is accepted and the socket opened. Thus, the limit only prevents the number of connections which can be simultaneously processed, not the number of connections which can be held open. The issue is fixed in version 0.14.15 for \"NIO1SocketServerGroup\". A \"maxConnections\" parameter is added, with a default value of 512. Concurrent connections beyond this limit are rejected. To run unbounded, which is not recommended, set a negative number. The \"NIO2SocketServerGroup\" has no such setting and is now deprecated. There are several possible workarounds described in the refrenced GitHub Advisory GHSA-xmw9-q7x9-j5qc.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/http4s/blaze/security/advisories/GHSA-xmw9-q7x9-j5qc",
+      "https://github.com/http4s/http4s/security/advisories/GHSA-xhv5-w9c5-2r2w",
+      "https://github.com/http4s/blaze/commit/4f786177f9fb71ab272f3a5f6c80bca3e5662aa1"
+    ],
+    "受影响版本": [
+      "< 0.14.15"
+    ],
+    "公开日期": "2021年02月02日"
+  },
+  {
+    "设备品牌": "tendermint",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "tendermint",
+    "CVE编号": "CVE-2021-21271",
+    "漏洞描述": "Tendermint Core is an open source Byzantine Fault Tolerant (BFT) middleware that takes a state transition machine - written in any programming language - and securely replicates it on many machines. Tendermint Core v0.34.0 introduced a new way of handling evidence of misbehavior. As part of this, we added a new Timestamp field to Evidence structs. This timestamp would be calculated using the same algorithm that is used when a block is created and proposed. (This algorithm relies on the timestamp of the last commit from this specific block.) In Tendermint Core v0.34.0-v0.34.2, the consensus reactor is responsible for forming DuplicateVoteEvidence whenever double signs are observed. However, the current block is still “in flight” when it is being formed by the consensus reactor. It hasn’t been finalized through network consensus yet. This means that different nodes in the network may observe different “last commits” when assigning a timestamp to DuplicateVoteEvidence. In turn, different nodes could form DuplicateVoteEvidence objects at the same height but with different timestamps. One DuplicateVoteEvidence object (with one timestamp) will then eventually get finalized in the block, but this means that any DuplicateVoteEvidence with a different timestamp is considered invalid. Any node that formed invalid DuplicateVoteEvidence will continue to propose invalid evidence; its peers may see this, and choose to disconnect from this node. This bug means that double signs are DoS vectors in Tendermint Core v0.34.0-v0.34.2. Tendermint Core v0.34.3 is a security release which fixes this bug. As of v0.34.3, DuplicateVoteEvidence is no longer formed by the consensus reactor; rather, the consensus reactor passes the Votes themselves into the EvidencePool, which is now responsible for forming DuplicateVoteEvidence. The EvidencePool has timestamp info that should be consistent across the network, which means that DuplicateVoteEvidence formed in this reactor should have consistent timestamps. This release changes the API between the consensus and evidence reactors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/tendermint/tendermint/security/advisories/GHSA-p658-8693-mhvg",
+      "https://github.com/tendermint/tendermint/blob/v0.34.3/CHANGELOG.md#v0.34.3",
+      "https://github.com/tendermint/tendermint/commit/a2a6852ab99e4a0f9e79f0ea8c1726e262e25c76"
+    ],
+    "受影响版本": [
+      ">= 0.34.0,  < 0.34.3"
+    ],
+    "公开日期": "2021年01月26日"
+  },
+  {
+    "设备品牌": "NVIDIA",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "NVIDIA GeForce NOW Application",
+    "CVE编号": "CVE-2020-5975",
+    "漏洞描述": "NVIDIA GeForce NOW, versions prior to 2.0.23 on Windows and macOS, contains a vulnerability in the desktop application software that includes sensitive information as part of a URL, which may lead to information disclosure.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://nvidia.custhelp.com/app/answers/detail/a_id/5052"
+    ],
+    "受影响版本": [
+      "All versions prior to 2.0.23 (applicable to Windows, macOS)"
+    ],
+    "公开日期": "2020年09月18日"
+  },
+  {
+    "设备品牌": "ScratchVerifier",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "ScratchVerifier",
+    "CVE编号": "CVE-2020-26236",
+    "漏洞描述": "In ScratchVerifier before commit a603769, an attacker can hijack the verification process to log into someone else's account on any site that uses ScratchVerifier for logins. A possible exploitation would follow these steps: 1. User starts login process. 2. Attacker attempts login for user, and is given the same verification code. 3. User comments code as part of their normal login. 4. Before user can, attacker completes the login process now that the code is commented. 5. User gets a failed login and attacker now has control of the account. Since commit a603769 starting a login twice will generate different verification codes, causing both user and attacker login to fail. For clients that rely on a clone of ScratchVerifier not hosted by the developers, their users may attempt to finish the login process as soon as possible after commenting the code. There is no reliable way for the attacker to know before the user can finish the process that the user has commented the code, so this vulnerability only really affects those who comment the code and then take several seconds before finishing the login.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/ScratchVerifier/ScratchVerifier/security/advisories/GHSA-99cr-hvf7-85g9",
+      "https://github.com/ScratchVerifier/ScratchVerifier/commit/a603769010abf8c1bede91af46e4945314e4aa4a"
+    ],
+    "受影响版本": [
+      "< a603769"
+    ],
+    "公开日期": "2020年11月20日"
+  },
+  {
+    "设备品牌": "weaveworks",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Weave",
+    "CVE编号": "CVE-2020-11091",
+    "漏洞描述": "In Weave Net before version 2.6.3, an attacker able to run a process as root in a container is able to respond to DNS requests from the host and thereby insert themselves as a fake service. In a cluster with an IPv4 internal network, if IPv6 is not totally disabled on the host (via ipv6.disable=1 on the kernel cmdline), it will be either unconfigured or configured on some interfaces, but it's pretty likely that ipv6 forwarding is disabled, ie /proc/sys/net/ipv6/conf//forwarding == 0. Also by default, /proc/sys/net/ipv6/conf//accept_ra == 1. The combination of these 2 sysctls means that the host accepts router advertisements and configure the IPv6 stack using them. By sending rogue router advertisements, an attacker can reconfigure the host to redirect part or all of the IPv6 traffic of the host to the attacker controlled container. Even if there was no IPv6 traffic before, if the DNS returns A (IPv4) and AAAA (IPv6) records, many HTTP libraries will try to connect via IPv6 first then fallback to IPv4, giving an opportunity to the attacker to respond. If by chance you also have on the host a vulnerability like last year's RCE in apt (CVE-2019-3462), you can now escalate to the host. Weave Net version 2.6.3 disables the accept_ra option on the veth devices that it creates.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/weaveworks/weave/security/advisories/GHSA-59qg-grp7-5r73",
+      "https://github.com/weaveworks/weave/commit/15f21f1899060f7716c70a8555a084e836f39a60"
+    ],
+    "受影响版本": [
+      "< 2.6.3"
+    ],
+    "公开日期": "2020年06月03日"
+  }
+]

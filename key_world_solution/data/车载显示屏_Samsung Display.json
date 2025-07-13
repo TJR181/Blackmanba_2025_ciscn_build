@@ -1,0 +1,32 @@
+[
+  {
+    "设备品牌": "Samsung Mobile",
+    "设备类型": "车载显示屏",
+    "产品型号": "Samsung Internet",
+    "CVE编号": "CVE-2021-25419",
+    "漏洞描述": "Non-compliance of recommended secure coding scheme in Samsung Internet prior to version 14.0.1.62 allows attackers to display fake URL in address bar via phising URL link.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://security.samsungmobile.com/serviceWeb.smsb?year=2021&month=6"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年06月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10852",
+    "漏洞描述": "An issue was discovered on Samsung mobile devices with O(8.x), P(9.0), and Q(10.0) software. There is a stack overflow in display driver. The Samsung ID is SVE-2019-15877 (January 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://security.samsungmobile.com/securityUpdate.smsb"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年03月24日"
+  }
+]

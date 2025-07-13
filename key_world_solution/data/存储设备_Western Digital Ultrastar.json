@@ -1,0 +1,856 @@
+[
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud",
+    "CVE编号": "CVE-2024-22170",
+    "漏洞描述": "Improper Restriction of Operations within the Bounds of a Memory Buffer vulnerability in Western Digital My Cloud ddns-start on Linux allows Overflow Buffers.This issue affects My Cloud: before 5.29.102.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-24005-western-digital-my-cloud-os-5-firmware-5-29-102"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年09月27日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud OS 5",
+    "CVE编号": "CVE-2023-22819",
+    "漏洞描述": "An uncontrolled resource consumption vulnerability issue that could arise by sending crafted requests to a service to consume a large amount of memory, eventually resulting in the service being stopped and restarted was discovered in Western Digital My Cloud Home, My Cloud Home Duo, SanDisk ibi and Western Digital My Cloud OS 5 devices. This issue requires the attacker to already have root privileges in order to exploit this vulnerability. This issue affects My Cloud Home and My Cloud Home Duo: before 9.5.1-104; ibi: before 9.5.1-104; My Cloud OS 5: before 5.27.161.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-24001-western-digital-my-cloud-os-5-my-cloud-home-duo-and-sandisk-ibi-firmware-update"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年02月05日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud OS 5",
+    "CVE编号": "CVE-2023-22816",
+    "漏洞描述": "A post-authentication remote command injection vulnerability in a CGI file in Western Digital My Cloud OS 5 devices that could allow an attacker to build files with redirects and execute larger payloads.\nThis issue affects My Cloud OS 5 devices: before 5.26.300.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-23010-my-cloud-firmware-version-5-26-300"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年06月30日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud OS 5",
+    "CVE编号": "CVE-2023-22815",
+    "漏洞描述": "Post-authentication remote command injection vulnerability in Western Digital My Cloud OS 5 devices that could allow an attacker to execute code in the context of the root user on vulnerable CGI files. This vulnerability can only be exploited over the network and the attacker must already have admin/root privileges to carry out the exploit. An authentication bypass is required for this exploit, thereby making it more complex. The attack may not require user interaction. Since an attacker must already be authenticated, the confidentiality impact is low while the integrity and availability impact is high. \n\nThis issue affects My Cloud OS 5 devices: before 5.26.300.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-23010-my-cloud-firmware-version-5-26-300"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年06月30日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud OS 5 Mobile App",
+    "CVE编号": "CVE-2023-22813",
+    "漏洞描述": "\n\n\n\n\n\n\n\n\n\nA device API\nendpoint was missing access controls on Western Digital My Cloud OS 5 iOS and Anroid Mobile Apps, My Cloud Home iOS and Android Mobile Apps, SanDisk ibi iOS and Android Mobile Apps, My Cloud OS 5 Web App, My Cloud Home Web App and the SanDisk ibi Web App. Due to a permissive CORS policy\nand missing authentication requirement for private IPs, a remote attacker on\nthe same network as the device could obtain device information by convincing a\nvictim user to visit an attacker-controlled server and issue a cross-site\nrequest.\n\n\n\nThis issue affects\nMy Cloud OS 5 Mobile App: before 4.21.0; My Cloud Home Mobile App: before 4.21.0; ibi Mobile App: before 4.21.0; My\nCloud OS 5 Web App: before 4.26.0-6126; My Cloud Home Web App: before 4.26.0-6126;\nibi Web App: before 4.26.0-6126.\n\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-23004-western-digital-my-cloud-os-5-my-cloud-home-sandisk-ibi-and-wd-cloud-mobile-and-web-app-update"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月08日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud OS 5",
+    "CVE编号": "CVE-2022-36331",
+    "漏洞描述": "Western Digital My Cloud, My Cloud Home, My Cloud Home Duo, and SanDisk ibi devices were vulnerable to an impersonation attack that could allow an unauthenticated attacker to gain access to user data.\nThis issue affects My Cloud OS 5 devices: before 5.25.132; My Cloud Home and My Cloud Home Duo: before 8.13.1-102; SanDisk ibi: before 8.13.1-102.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://https://www.westerndigital.com/support/product-security/wdc-22020-my-cloud-os-5-my-cloud-home-ibi-firmware-update"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年06月12日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud Home and My Cloud Home Duo",
+    "CVE编号": "CVE-2022-36330",
+    "漏洞描述": "A buffer overflow vulnerability was discovered on firmware version validation that could lead to an unauthenticated remote code execution in Western Digital My Cloud Home, My Cloud Home Duo and SanDisk ibi devices. An attacker would require exploitation of another vulnerability to raise their privileges in order to exploit this buffer overflow vulnerability.\n\nThis issue affects My Cloud Home and My Cloud Home Duo: before 9.4.0-191; ibi: before 9.4.0-191. \n\n\n\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-23003-western-digital-my-cloud-home-my-cloud-home-duo-and-sandisk-ibi-firmware-version-9-4-0-191"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月09日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud Home and My Cloud Home Duo",
+    "CVE编号": "CVE-2022-36329",
+    "漏洞描述": "An improper privilege management issue that could allow an attacker to cause a denial of service over the OTA mechanism was discovered in Western Digital My Cloud Home, My Cloud Home Duo and SanDisk ibi devices.This issue affects My Cloud Home and My Cloud Home Duo: before 9.4.0-191; ibi: before 9.4.0-191.\n\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-23003-western-digital-my-cloud-home-my-cloud-home-duo-and-sandisk-ibi-firmware-version-9-4-0-191"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月10日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud Home and My Cloud Home Duo",
+    "CVE编号": "CVE-2022-36328",
+    "漏洞描述": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability that could allow an attacker to create arbitrary shares on arbitrary directories and exfiltrate sensitive files, passwords, users and device configurations was discovered in Western Digital My Cloud Home, My Cloud Home Duo, SanDisk ibi and Western Digital My Cloud OS 5 devices. This can only be exploited once an attacker gains root privileges on the devices using an authentication bypass issue or another vulnerability.This issue affects My Cloud Home and My Cloud Home Duo: before 9.4.0-191; ibi: before 9.4.0-191; My Cloud OS 5: before 5.26.202.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-23003-western-digital-my-cloud-home-my-cloud-home-duo-and-sandisk-ibi-firmware-version-9-4-0-191",
+      "https://www.westerndigital.com/support/product-security/wdc-23006-my-cloud-firmware-version-5-26-202"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月18日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud Home and My Cloud Home Duo",
+    "CVE编号": "CVE-2022-36327",
+    "漏洞描述": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability that could allow an attacker to write files to locations with certain critical filesystem types leading to remote code execution was discovered in Western Digital My Cloud Home, My Cloud Home Duo, SanDisk ibi and Western Digital My Cloud OS 5 devices. This issue requires an authentication bypass issue to be triggered before this can be exploited. \nThis issue affects My Cloud Home and My Cloud Home Duo: before 9.4.0-191; ibi: before 9.4.0-191; My Cloud OS 5: before 5.26.202.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-23003-western-digital-my-cloud-home-my-cloud-home-duo-and-sandisk-ibi-firmware-version-9-4-0-191",
+      "https://www.westerndigital.com/support/product-security/wdc-23006-my-cloud-firmware-version-5-26-202"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月18日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud Home and My Cloud Home Duo",
+    "CVE编号": "CVE-2022-36326",
+    "漏洞描述": "An uncontrolled resource consumption vulnerability issue that could arise by sending crafted requests to a service to consume a large amount of memory, eventually resulting in the service being stopped and restarted was discovered in Western Digital My Cloud Home, My Cloud Home Duo, SanDisk ibi and Western Digital My Cloud OS 5 devices. This issue requires the attacker to already have root privileges in order to exploit this vulnerability.This issue affects My Cloud Home and My Cloud Home Duo: before 9.4.0-191; ibi: before 9.4.0-191; My Cloud OS 5: before 5.26.202.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-23003-western-digital-my-cloud-home-my-cloud-home-duo-and-sandisk-ibi-firmware-version-9-4-0-191",
+      "https://www.westerndigital.com/support/product-security/wdc-23006-my-cloud-firmware-version-5-26-202"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月18日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud",
+    "CVE编号": "CVE-2022-29844",
+    "漏洞描述": "A vulnerability in the FTP service of Western Digital My Cloud OS 5 devices running firmware versions prior to 5.26.119 allows an attacker to read and write arbitrary files. This could lead to a full NAS compromise and would give remote execution capabilities to the attacker.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/en-in/support/product-security/wdc-23002-my-cloud-firmware-version-5-26-119"
+    ],
+    "受影响版本": [
+      "My Cloud OS 5"
+    ],
+    "公开日期": "2023年01月25日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud",
+    "CVE编号": "CVE-2022-29843",
+    "漏洞描述": "A command injection vulnerability in the DDNS service configuration of Western Digital My Cloud OS 5 devices running firmware versions prior to 5.26.119 allows an attacker to execute code in the context of the root user.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/en-in/support/product-security/wdc-23002-my-cloud-firmware-version-5-26-119"
+    ],
+    "受影响版本": [
+      "My Cloud OS 5"
+    ],
+    "公开日期": "2023年01月25日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud OS 5",
+    "CVE编号": "CVE-2022-29842",
+    "漏洞描述": "Improper Neutralization of Special Elements used in a Command ('Command Injection') vulnerability that could allow an attacker to execute code in the context of the root user on a vulnerable CGI file was discovered in Western Digital My Cloud OS 5 devicesThis issue affects My Cloud OS 5: before 5.26.119.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-23002-my-cloud-firmware-version-5-26-119"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月10日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud OS 5",
+    "CVE编号": "CVE-2022-29841",
+    "漏洞描述": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability that was caused by a command that read files from a privileged location and created a system command without sanitizing the read data. This command could be triggered by an attacker remotely to cause code execution and gain a reverse shell in Western Digital My Cloud OS 5 devices.This issue affects My Cloud OS 5: before 5.26.119.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-23002-my-cloud-firmware-version-5-26-119"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月10日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud OS 5",
+    "CVE编号": "CVE-2022-29840",
+    "漏洞描述": "Server-Side Request Forgery (SSRF) vulnerability that could allow a rogue server on the local network to modify its URL to point back to the loopback adapter was addressed in Western Digital My Cloud OS 5 devices. This could allow the URL to exploit other vulnerabilities on the local server.This issue affects My Cloud OS 5 devices before 5.26.202.\n\n\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-23006-my-cloud-firmware-version-5-26-202"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月10日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud",
+    "CVE编号": "CVE-2022-29839",
+    "漏洞描述": "Insufficiently Protected Credentials vulnerability in the remote backups application on Western Digital My Cloud devices that could allow an attacker who has gained access to a relevant endpoint to use that information to access protected data. This issue affects: Western Digital My Cloud My Cloud versions prior to 5.25.124 on Linux.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-22019-my-cloud-firmware-version-5-25-124"
+    ],
+    "受影响版本": [
+      "My Cloud"
+    ],
+    "公开日期": "2022年12月09日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud",
+    "CVE编号": "CVE-2022-29838",
+    "漏洞描述": "Improper Authentication vulnerability in the encrypted volumes and auto mount features of Western Digital My Cloud devices allows insecure direct access to the drive information in the case of a device reset. This issue affects: Western Digital My Cloud My Cloud versions prior to 5.25.124 on Linux.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-22019-my-cloud-firmware-version-5-25-124"
+    ],
+    "受影响版本": [
+      "My Cloud"
+    ],
+    "公开日期": "2022年12月09日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud Home",
+    "CVE编号": "CVE-2022-29837",
+    "漏洞描述": "A path traversal vulnerability was addressed in Western Digital My Cloud Home, My Cloud Home Duo and SanDisk ibi which could allow an attacker to initiate installation of custom ZIP packages and overwrite system files. This could potentially lead to a code execution.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-22018-western-digital-my-cloud-home-my-cloud-home-duo-and-sandisk-ibi-firmware-version-8-12-0-178"
+    ],
+    "受影响版本": [
+      "My Cloud Home ",
+      "My Cloud Home Duo"
+    ],
+    "公开日期": "2022年12月01日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud Home",
+    "CVE编号": "CVE-2022-29836",
+    "漏洞描述": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability was discovered via an HTTP API on Western Digital My Cloud Home; My Cloud Home Duo; and SanDisk ibi devices that could allow an attacker to abuse certain parameters to point to random locations on the file system. This could also allow the attacker to initiate the installation of custom packages at these locations. This can only be exploited once the attacker has been authenticated to the device. This issue affects: Western Digital My Cloud Home and My Cloud Home Duo versions prior to 8.11.0-113 on Linux; SanDisk ibi versions prior to 8.11.0-113 on Linux.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-22016-my-cloud-home-ibi-firmware-version-8-11-0-113"
+    ],
+    "受影响版本": [
+      "My Cloud Home ",
+      "My Cloud Home Duo"
+    ],
+    "公开日期": "2022年11月09日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "WD Discovery",
+    "CVE编号": "CVE-2022-29835",
+    "漏洞描述": "WD Discovery software executable files were signed with an unsafe SHA-1 hashing algorithm. An attacker could use this weakness to create forged certificate signatures due to the use of a hashing algorithm that is not collision-free. This could thereby impact the confidentiality of user content. This issue affects: Western Digital WD Discovery WD Discovery Desktop App versions prior to 4.4.396 on Mac; WD Discovery Desktop App versions prior to 4.4.396 on Windows.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-22014-wd-discovery-desktop-app-version-4-4-396"
+    ],
+    "受影响版本": [
+      "WD Discovery Desktop App"
+    ],
+    "公开日期": "2022年09月19日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud Home",
+    "CVE编号": "CVE-2022-23006",
+    "漏洞描述": "A stack-based buffer overflow vulnerability was found on Western Digital My Cloud Home, My Cloud Home Duo, and SanDisk ibi that could allow an attacker accessing the system locally to read information from /etc/version file. This vulnerability can only be exploited by chaining it with another issue. If an attacker is able to carry out a remote code execution attack, they can gain access to the vulnerable file, due to the presence of insecure functions in code. User interaction is required for exploitation. Exploiting the vulnerability could result in exposure of information, ability to modify files, memory access errors, or system crashes.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2022-23006"
+    ],
+    "受影响版本": [
+      "8.10.0-117"
+    ],
+    "公开日期": "2022年09月27日"
+  },
+  {
+    "设备品牌": "NA",
+    "设备类型": "存储设备",
+    "产品型号": "NA",
+    "CVE编号": "CVE-2022-23005",
+    "漏洞描述": "Western Digital has identified a weakness in the UFS standard that could result in a security vulnerability. This vulnerability may exist in some systems where the Host boot ROM code implements the UFS Boot feature to boot from UFS compliant storage devices. The UFS Boot feature, as specified in the UFS standard, is provided by UFS devices to support platforms that need to download the system boot loader from external non-volatile storage locations. Several scenarios have been identified in which adversaries may disable the boot capability, or revert to an old boot loader code, if the host boot ROM code is improperly implemented. UFS Host Boot ROM implementers may be impacted by this vulnerability. UFS devices are only impacted when connected to a vulnerable UFS Host and are not independently impacted by this vulnerability. When present, the vulnerability is in the UFS Host implementation and is not a vulnerability in Western Digital UFS Devices. Western Digital has provided details of the vulnerability to the JEDEC standards body, multiple vendors of host processors, and software solutions providers.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-23001-host-boot-rom-code-vulnerability-in-systems-implementing-ufs-boot-feature",
+      "https://documents.westerndigital.com/content/dam/doc-library/en_us/assets/public/western-digital/collateral/white-paper/white-paper-host-boot-rom-code-vulnerability-and-mitigation.pdf"
+    ],
+    "受影响版本": [
+      "NA"
+    ],
+    "公开日期": "2023年01月23日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud",
+    "CVE编号": "CVE-2022-23000",
+    "漏洞描述": "The Western Digital My Cloud Web App [https://os5.mycloud.com/] uses a weak SSLContext when attempting to configure port forwarding rules. This was enabled to maintain compatibility with old or outdated home routers. By using an \"SSL\" context instead of \"TLS\" or specifying stronger validation, deprecated or insecure protocols are permitted. As a result, a local user with no privileges can exploit this vulnerability and jeopardize the integrity, confidentiality and authenticity of information transmitted. The scope of impact cannot extend to other components and no user input is required to exploit this vulnerability.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-22011-my-cloud-firmware-version-5-23-114"
+    ],
+    "受影响版本": [
+      "My Cloud OS 5"
+    ],
+    "公开日期": "2022年07月25日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud",
+    "CVE编号": "CVE-2022-22999",
+    "漏洞描述": "Western Digital My Cloud devices are vulnerable to a cross side scripting vulnerability that can allow a malicious user with elevated privileges access to drives being backed up to construct and inject JavaScript payloads into an authenticated user's browser. As a result, it may be possible to gain control over the authenticated session, steal data, modify settings, or redirect the user to malicious websites. The scope of impact can extend to other components.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-22011-my-cloud-firmware-version-5-23-114"
+    ],
+    "受影响版本": [
+      "My Cloud OS 5"
+    ],
+    "公开日期": "2022年07月25日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud",
+    "CVE编号": "CVE-2022-22994",
+    "漏洞描述": "A remote code execution vulnerability was discovered on Western Digital My Cloud devices where an attacker could trick a NAS device into loading through an unsecured HTTP call. This was a result insufficient verification of calls to the device. The vulnerability was addressed by disabling checks for internet connectivity using HTTP.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-22002-my-cloud-os5-firmware-5-19-117",
+      "https://www.zerodayinitiative.com/advisories/ZDI-22-349/"
+    ],
+    "受影响版本": [
+      "My Cloud OS 5"
+    ],
+    "公开日期": "2022年01月28日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "存储设备",
+    "产品型号": "My Cloud",
+    "CVE编号": "CVE-2022-22993",
+    "漏洞描述": "A limited SSRF vulnerability was discovered on Western Digital My Cloud devices that could allow an attacker to impersonate a server and reach any page on the server by bypassing access controls. The vulnerability was addressed by creating a whitelist for valid parameters.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-22002-my-cloud-os5-firmware-5-19-117",
+      "https://www.zerodayinitiative.com/advisories/ZDI-22-348/"
+    ],
+    "受影响版本": [
+      "My Cloud OS 5"
+    ],
+    "公开日期": "2022年01月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-22992",
+    "漏洞描述": "A command injection remote code execution vulnerability was discovered on Western Digital My Cloud Devices that could allow an attacker to execute arbitrary system commands on the device. The vulnerability was addressed by escaping individual arguments to shell functions coming from user input.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-22002-my-cloud-os5-firmware-5-19-117"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年01月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-45608",
+    "漏洞描述": "Certain D-Link, Edimax, NETGEAR, TP-Link, Tenda, and Western Digital devices are affected by an integer overflow by an unauthenticated attacker. Remote code execution from the WAN interface (TCP port 20005) cannot be ruled out; however, exploitability was judged to be of \"rather significant complexity\" but not \"impossible.\" The overflow is in SoftwareBus_dispatchNormalEPMsgOut in the KCodes NetUSB kernel module. Affected NETGEAR devices are D7800 before 1.0.1.68, R6400v2 before 1.0.4.122, and R6700v3 before 1.0.4.122.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064437/Security-Advisory-for-Pre-Authentication-Buffer-Overflow-on-Multiple-Products-PSV-2021-0278",
+      "https://www.sentinelone.com/labs/cve-2021-45608-netusb-rce-flaw-in-millions-of-end-user-routers/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-36226",
+    "漏洞描述": "Western Digital My Cloud devices before OS5 do not use cryptographically signed Firmware upgrade files.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://krebsonsecurity.com/2021/07/another-0-day-looms-for-many-western-digital-users/",
+      "https://www.youtube.com/watch?v=vsg9YgvGBec",
+      "https://github.com/pedrib/PoC/blob/master/advisories/Pwn2Own/Tokyo_2020/weekend_destroyer/weekend_destroyer.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年02月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-36225",
+    "漏洞描述": "Western Digital My Cloud devices before OS5 allow REST API access by low-privileged accounts, as demonstrated by API commands for firmware uploads and installation.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://krebsonsecurity.com/2021/07/another-0-day-looms-for-many-western-digital-users/",
+      "https://www.youtube.com/watch?v=vsg9YgvGBec",
+      "https://github.com/pedrib/PoC/blob/master/advisories/Pwn2Own/Tokyo_2020/weekend_destroyer/weekend_destroyer.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年02月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-36224",
+    "漏洞描述": "Western Digital My Cloud devices before OS5 have a nobody account with a blank password.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://krebsonsecurity.com/2021/07/another-0-day-looms-for-many-western-digital-users/",
+      "https://www.youtube.com/watch?v=vsg9YgvGBec",
+      "https://github.com/pedrib/PoC/blob/master/advisories/Pwn2Own/Tokyo_2020/weekend_destroyer/weekend_destroyer.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年02月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-35941",
+    "漏洞描述": "Western Digital WD My Book Live (2.x and later) and WD My Book Live Duo (all versions) have an administrator API that can perform a system factory restore without authentication, as exploited in the wild in June 2021, a different vulnerability than CVE-2018-18472.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/productsecurity/wdc-21008-recommended-security-measures-wd-mybooklive-wd-mybookliveduo",
+      "https://arstechnica.com/gadgets/2021/06/hackers-exploited-0-day-not-2018-bug-to-mass-wipe-my-book-live-devices/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年06月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-33205",
+    "漏洞描述": "Western Digital EdgeRover before 0.25 has an escalation of privileges vulnerability where a low privileged user could load malicious content into directories with higher privileges, because of how Node.js is used. An attacker can gain admin privileges and carry out malicious activities such as creating a fake library and stealing user credentials.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/productsecurity/wdc-21007-edgerover-windows-app-ver-0-25"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年06月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-3310",
+    "漏洞描述": "Western Digital My Cloud OS 5 devices before 5.10.122 mishandle Symbolic Link Following on SMB and AFP shares. This can lead to code execution and information disclosure (by reading local files).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/productsecurity/wdc-21002-my-cloud-firmware-version-5-10-122",
+      "https://www.zerodayinitiative.com/advisories/ZDI-21-277/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年03月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-28653",
+    "漏洞描述": "The iOS and macOS apps before 1.4.1 for the Western Digital G-Technology ArmorLock NVMe SSD store keys insecurely. They choose a non-preferred storage mechanism if the device has Secure Enclave support but lacks biometric authentication hardware.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/productsecurity/wdc-21003-armorLock-insecure-key-storage-vulnerability"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年03月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-8990",
+    "漏洞描述": "Western Digital My Cloud Home before 3.6.0 and ibi before 3.6.0 allow Session Fixation.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.wdc.com/downloads.aspx?g=907&lang=en#downloads",
+      "https://www.westerndigital.com/support/productsecurity/wdc-19013-my-cloud-home-and-ibi-session-invalidation-vulnerability"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年02月20日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-8960",
+    "漏洞描述": "Western Digital mycloud.com before Web Version 2.2.0-134 allows XSS.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.wdc.com/downloads.aspx?g=907&lang=en#downloads",
+      "https://www.westerndigital.com/support/productsecurity/wdc-20003-mycloud-xss-vulnerability",
+      "https://www.westerndigital.com/support/productsecurity/wdc-20003-mycloud-site-version-2-2-0-134"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年02月20日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-8959",
+    "漏洞描述": "Western Digital WesternDigitalSSDDashboardSetup.exe before 3.0.2.0 allows DLL Hijacking.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.wdc.com/downloads.aspx?g=907&lang=en#downloads",
+      "https://www.westerndigital.com/support/productsecurity/wdc-20001-ssd-dashboard-setup-privilege-escalation"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年02月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-29654",
+    "漏洞描述": "Western Digital Dashboard before 3.2.2.9 allows DLL Hijacking that leads to compromise of the SYSTEM account.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/productsecurity/wdc-20011-western-digital-dashboard-privilege-escalation"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-29563",
+    "漏洞描述": "An issue was discovered on Western Digital My Cloud OS 5 devices before 5.07.118. A NAS Admin authentication bypass vulnerability could allow an unauthenticated user to gain access to the device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/productsecurity/wdc-20010-my-cloud-os5-firmware-5-07-118",
+      "https://www.zerodayinitiative.com/advisories/ZDI-20-1446/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-28971",
+    "漏洞描述": "An issue was discovered on Western Digital My Cloud OS 5 devices before 5.06.115. A NAS Admin authentication bypass vulnerability could allow an unauthenticated user to execute privileged commands on the device via a cookie, because of insufficient validation of URI paths.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.wdc.com/downloads.aspx?g=907&lang=en#downloads",
+      "https://www.westerndigital.com/support/productsecurity/wdc-20009-os5-firmware-5-06-115",
+      "https://www.zerodayinitiative.com/advisories/ZDI-20-1447/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-28970",
+    "漏洞描述": "An issue was discovered on Western Digital My Cloud OS 5 devices before 5.06.115. A NAS Admin authentication bypass vulnerability could allow an unauthenticated user to execute privileged commands on the device via a cookie. (In addition, an upload endpoint could then be used by an authenticated administrator to upload executable PHP scripts.)",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.wdc.com/downloads.aspx?g=907&lang=en#downloads",
+      "https://www.westerndigital.com/support/productsecurity/wdc-20009-os5-firmware-5-06-115",
+      "https://www.zerodayinitiative.com/advisories/ZDI-20-1448/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-28940",
+    "漏洞描述": "On Western Digital My Cloud OS 5 devices before 5.06.115, the NAS Admin dashboard has an authentication bypass vulnerability that could allow an unauthenticated user to execute privileged commands on the device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.wdc.com/downloads.aspx?g=907&lang=en#downloads",
+      "https://www.westerndigital.com/support/productsecurity/wdc-20009-os5-firmware-5-06-115",
+      "https://www.zerodayinitiative.com/advisories/ZDI-20-1445/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-27744",
+    "漏洞描述": "An issue was discovered on Western Digital My Cloud NAS devices before 5.04.114. They allow remote code execution with resultant escalation of privileges.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/productsecurity/wdc-20007-my-cloud-firmware-version-5-04-114",
+      "https://www.comparitech.com/blog/information-security/security-vulnerabilities-80000-devices-update-now/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年10月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-27160",
+    "漏洞描述": "Addressed remote code execution vulnerability in AvailableApps.php that allowed escalation of privileges in Western Digital My Cloud NAS devices prior to 5.04.114 (issue 3 of 3).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/productsecurity",
+      "https://www.westerndigital.com/support/productsecurity/wdc-20007-my-cloud-firmware-version-5-04-114",
+      "https://www.comparitech.com/blog/information-security/security-vulnerabilities-80000-devices-update-now/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年10月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-27159",
+    "漏洞描述": "Addressed remote code execution vulnerability in DsdkProxy.php due to insufficient sanitization and insufficient validation of user input in Western Digital My Cloud NAS devices prior to 5.04.114",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/productsecurity",
+      "https://www.westerndigital.com/support/productsecurity/wdc-20007-my-cloud-firmware-version-5-04-114",
+      "https://www.comparitech.com/blog/information-security/security-vulnerabilities-80000-devices-update-now/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年10月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-27158",
+    "漏洞描述": "Addressed remote code execution vulnerability in cgi_api.php that allowed escalation of privileges in Western Digital My Cloud NAS devices prior to 5.04.114.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/productsecurity",
+      "https://www.westerndigital.com/support/productsecurity/wdc-20007-my-cloud-firmware-version-5-04-114",
+      "https://www.comparitech.com/blog/information-security/security-vulnerabilities-80000-devices-update-now/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年10月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-25765",
+    "漏洞描述": "Addressed remote code execution vulnerability in reg_device.php due to insufficient validation of user input.in Western Digital My Cloud Devices prior to 5.4.1140.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/productsecurity",
+      "https://www.westerndigital.com/support/productsecurity/wdc-20007-my-cloud-firmware-version-5-04-114",
+      "https://www.comparitech.com/blog/information-security/security-vulnerabilities-80000-devices-update-now/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年10月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-15816",
+    "漏洞描述": "In Western Digital WD Discovery before 4.0.251.0, a malicious application running with standard user permissions could potentially execute code in the application's process through library injection by using DYLD environment variables.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/productsecurity/wdc-20005-wd-discovery-remote-command-execution-vulnerability"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年07月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-13799",
+    "漏洞描述": "Western Digital has identified a security vulnerability in the Replay Protected Memory Block (RPMB) protocol as specified in multiple standards for storage device interfaces, including all versions of eMMC, UFS, and NVMe. The RPMB protocol is specified by industry standards bodies and is implemented by storage devices from multiple vendors to assist host systems in securing trusted firmware. Several scenarios have been identified in which the RPMB state may be affected by an attacker without the knowledge of the trusted component that uses the RPMB feature.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.kb.cert.org/vuls/id/231329",
+      "https://www.kb.cert.org/vuls/id/231329",
+      "https://www.westerndigital.com/support/productsecurity/wdc-20008-replay-attack-vulnerabilities-rpmb-protocol-applications"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-12830",
+    "漏洞描述": "Addressed multiple stack buffer overflow vulnerabilities that could allow an attacker to carry out escalation of privileges through unauthorized remote code execution in Western Digital My Cloud devices before 5.04.114.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.wdc.com/downloads.aspx?g=907&lang=en",
+      "https://www.westerndigital.com/support/productsecurity/wdc-20007-my-cloud-firmware-version-5-04-114"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年10月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-12427",
+    "漏洞描述": "The Western Digital WD Discovery application before 3.8.229 for MyCloud Home on Windows and macOS is vulnerable to CSRF, with impacts such as stealing data, modifying disk contents, or exhausting disk space.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.wdc.com/downloads.aspx?g=907&lang=en",
+      "https://www.westerndigital.com/support/productsecurity/wdc-20004-wd-discovery-cross-site-request-forgery-csrf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年05月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10951",
+    "漏洞描述": "Western Digital My Cloud Home and ibi devices before 2.2.0 allow clickjacking on sign-in pages.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.wdc.com/downloads.aspx?g=907&lang=en",
+      "https://www.westerndigital.com/support/productsecurity/wdc-19012-my-cloud-home-and-ibi-portal-websites-clickjacking-vulnerability",
+      "https://www.westerndigital.com/support/productsecurity/wdc-19012-my-cloud-home-and-ibi-websites-2-2-0",
+      "https://www.westerndigital.com/support/productsecurity/wdc-19012-my-cloud-home-and-ibi-websites-2-2-0"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年04月15日"
+  }
+]

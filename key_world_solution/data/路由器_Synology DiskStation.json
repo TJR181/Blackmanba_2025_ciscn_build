@@ -1,0 +1,776 @@
+[
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2025-1021",
+    "漏洞描述": "Missing authorization vulnerability in synocopy in Synology DiskStation Manager (DSM) before 7.1.1-42962-8, 7.2.1-69057-7 and 7.2.2-72806-3 allows remote attackers to read arbitrary files via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/en-global/security/advisory/Synology_SA_25_03"
+    ],
+    "受影响版本": [
+      "7.2.2",
+      "7.2.1",
+      "7.1",
+      "0"
+    ],
+    "公开日期": "2025年04月23日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2024-50629",
+    "漏洞描述": "Improper encoding or escaping of output vulnerability in the webapi component in Synology BeeStation OS (BSM) before 1.1-65374 and Synology DiskStation Manager (DSM) before 7.1.1-42962-7, 7.2-64570-4, 7.2.1-69057-6 and 7.2.2-72806-1 allow remote attackers to read limited files via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/en-global/security/advisory/Synology_SA_24_20",
+      "https://www.synology.com/en-global/security/advisory/Synology_SA_24_23"
+    ],
+    "受影响版本": [
+      "7.2.2",
+      "7.2.1",
+      "7.2",
+      "7.1",
+      "0"
+    ],
+    "公开日期": "2025年03月19日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2024-10445",
+    "漏洞描述": "Improper certificate validation vulnerability in the update functionality in Synology BeeStation OS (BSM) before 1.1-65374 and Synology DiskStation Manager (DSM) before 6.2.4-25556-8, 7.1.1-42962-7, 7.2-64570-4, 7.2.1-69057-6 and 7.2.2-72806-1 allow remote attackers to write limited files via unspecified vectors.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/en-global/security/advisory/Synology_SA_24_20",
+      "https://www.synology.com/en-global/security/advisory/Synology_SA_24_23"
+    ],
+    "受影响版本": [
+      "7.2.2",
+      "7.2.1",
+      "7.2",
+      "7.1",
+      "6.2",
+      "0"
+    ],
+    "公开日期": "2025年03月19日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2024-10444",
+    "漏洞描述": "Improper certificate validation vulnerability in the LDAP utilities in Synology DiskStation Manager (DSM) before 7.1.1-42962-8, 7.2.1-69057-7 and 7.2.2-72806-3 allows man-in-the-middle attackers to hijack the authentication of administrators via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/en-global/security/advisory/Synology_SA_25_01"
+    ],
+    "受影响版本": [
+      "7.2.2",
+      "7.2.1",
+      "7.1",
+      "0"
+    ],
+    "公开日期": "2025年03月19日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2024-10441",
+    "漏洞描述": "Improper encoding or escaping of output vulnerability in the system plugin daemon in Synology BeeStation OS (BSM) before 1.1-65374 and Synology DiskStation Manager (DSM) before 7.2-64570-4, 7.2.1-69057-6 and 7.2.2-72806-1 allows remote attackers to execute arbitrary code via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/en-global/security/advisory/Synology_SA_24_20",
+      "https://www.synology.com/en-global/security/advisory/Synology_SA_24_23"
+    ],
+    "受影响版本": [
+      "7.2.2",
+      "7.2.1",
+      "7.2",
+      "7.1",
+      "0"
+    ],
+    "公开日期": "2025年03月19日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2024-0854",
+    "漏洞描述": "URL redirection to untrusted site ('Open Redirect') vulnerability in file access component in Synology DiskStation Manager (DSM) before 6.2.4-25556-8, 7.0.1-42218-7, 7.1.1-42962-7 and 7.2.1-69057-2 allows remote authenticated users to conduct phishing attacks via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/en-global/security/advisory/Synology_SA_24_02"
+    ],
+    "受影响版本": [
+      "7.2",
+      "7.1",
+      "7.0",
+      "6.2",
+      "0"
+    ],
+    "公开日期": "2024年01月24日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2023-2729",
+    "漏洞描述": "Use of insufficiently random values vulnerability in User Management Functionality in Synology DiskStation Manager (DSM) before 7.2-64561 allows remote attackers to obtain user credential via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/en-global/security/advisory/Synology_SA_23_07",
+      "https://www.synology.com/en-global/security/advisory/Synology_SA_23_08"
+    ],
+    "受影响版本": [
+      "7.2",
+      "7.1",
+      "7.0",
+      "6.2",
+      "0"
+    ],
+    "公开日期": "2023年06月13日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2023-0142",
+    "漏洞描述": "Uncontrolled search path element vulnerability in Backup Management functionality in Synology DiskStation Manager (DSM) before 6.2.4-25556-8, 7.0.1-42218-7 and 7.1-42661 allows remote authenticated users with administrator privileges to read or write arbitrary files via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/en-global/security/advisory/Synology_SA_23_05",
+      "https://www.synology.com/en-global/security/advisory/Synology_SA_23_06"
+    ],
+    "受影响版本": [
+      "7.2",
+      "7.1",
+      "7.0",
+      "6.2",
+      "0"
+    ],
+    "公开日期": "2023年06月13日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2022-3576",
+    "漏洞描述": "A vulnerability regarding out-of-bounds read is found in the session processing functionality of Out-of-Band (OOB) Management. This allows remote attackers to obtain sensitive information via unspecified vectors. The following models with Synology DiskStation Manager (DSM) versions before 7.1.1-42962-2 may be affected: DS3622xs+, FS3410, and HD6500.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_22_17"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年10月20日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2022-27626",
+    "漏洞描述": "A vulnerability regarding concurrent execution using shared resource with improper synchronization ('Race Condition') is found in the session processing functionality of Out-of-Band (OOB) Management. This allows remote attackers to execute arbitrary commands via unspecified vectors. The following models with Synology DiskStation Manager (DSM) versions before 7.1.1-42962-2 may be affected: DS3622xs+, FS3410, and HD6500.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_22_17"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年10月20日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2022-27625",
+    "漏洞描述": "A vulnerability regarding improper restriction of operations within the bounds of a memory buffer is found in the message processing functionality of Out-of-Band (OOB) Management. This allows remote attackers to execute arbitrary commands via unspecified vectors. The following models with Synology DiskStation Manager (DSM) versions before 7.1.1-42962-2 may be affected: DS3622xs+, FS3410, and HD6500.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_22_17"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年10月20日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2022-27624",
+    "漏洞描述": "A vulnerability regarding improper restriction of operations within the bounds of a memory buffer is found in the packet decryption functionality of Out-of-Band (OOB) Management. This allows remote attackers to execute arbitrary commands via unspecified vectors. The following models with Synology DiskStation Manager (DSM) versions before 7.1.1-42962-2 may be affected: DS3622xs+, FS3410, and HD6500.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_22_17"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年10月20日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2022-27623",
+    "漏洞描述": "Missing authentication for critical function vulnerability in iSCSI management functionality in Synology DiskStation Manager (DSM) before 7.1-42661 allows remote attackers to read or write arbitrary files via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_22_18"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年10月25日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2022-27622",
+    "漏洞描述": "Server-Side Request Forgery (SSRF) vulnerability in Package Center functionality in Synology DiskStation Manager (DSM) before 7.1-42661 allows remote authenticated users to access intranet resources via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_22_18"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年10月25日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2022-27616",
+    "漏洞描述": "Improper neutralization of special elements used in an OS command ('OS Command Injection') vulnerability in webapi component in Synology DiskStation Manager (DSM) before 7.0.1-42218-3 allows remote authenticated users to execute arbitrary commands via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_22_03"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年08月03日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2022-27610",
+    "漏洞描述": "Improper limitation of a pathname to a restricted directory ('Path Traversal') vulnerability in webapi component in Synology DiskStation Manager (DSM) before 6.2.3-25423 allows remote authenticated users to delete arbitrary files via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_06"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年07月27日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2022-22688",
+    "漏洞描述": "Improper neutralization of special elements used in a command ('Command Injection') vulnerability in File service functionality in Synology DiskStation Manager (DSM) before 6.2.4-25556-2 allows remote authenticated users to execute arbitrary commands via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_21_22"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年03月25日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2022-22687",
+    "漏洞描述": "Buffer copy without checking size of input ('Classic Buffer Overflow') vulnerability in Authentication functionality in Synology DiskStation Manager (DSM) before 6.2.3-25426-3 allows remote attackers to execute arbitrary code via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_26"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年03月25日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2022-22684",
+    "漏洞描述": "Improper neutralization of special elements used in an OS command ('OS Command Injection') vulnerability in task management component in Synology DiskStation Manager (DSM) before 6.2.4-25553 allows remote authenticated users to execute arbitrary commands via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_21_03"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年07月28日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2022-22680",
+    "漏洞描述": "Exposure of sensitive information to an unauthorized actor vulnerability in Web Server in Synology DiskStation Manager (DSM) before 7.0.1-42218-2 allows remote attackers to obtain sensitive information via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_22_01"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年02月07日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2022-22679",
+    "漏洞描述": "Improper limitation of a pathname to a restricted directory ('Path Traversal') vulnerability in support service management in Synology DiskStation Manager (DSM) before 7.0.1-42218-2 allows remote authenticated users to write arbitrary files via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_22_01"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年02月07日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-43929",
+    "漏洞描述": "Improper neutralization of special elements in output used by a downstream component ('Injection') vulnerability in work flow management in Synology DiskStation Manager (DSM) before 7.0.1-42218-2 allows remote authenticated users to inject arbitrary web script or HTML via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_22_01"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年02月07日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-43927",
+    "漏洞描述": "Improper neutralization of special elements used in an SQL command ('SQL Injection') vulnerability in Security Management functionality in Synology DiskStation Manager (DSM) before 7.0.1-42218-2 allows remote attackers to inject SQL commands via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_22_01"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年02月07日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-43926",
+    "漏洞描述": "Improper neutralization of special elements used in an SQL command ('SQL Injection') vulnerability in Log Management functionality in Synology DiskStation Manager (DSM) before 7.0.1-42218-2 allows remote attackers to inject SQL commands via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_22_01"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年02月07日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-43925",
+    "漏洞描述": "Improper neutralization of special elements used in an SQL command ('SQL Injection') vulnerability in Log Management functionality in Synology DiskStation Manager (DSM) before 7.0.1-42218-2 allows remote attackers to inject SQL commands via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_22_01"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年02月07日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "Synology DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-33182",
+    "漏洞描述": "Improper limitation of a pathname to a restricted directory ('Path Traversal') vulnerability in PDF Viewer component in Synology DiskStation Manager (DSM) before 6.2.4-25553 allows remote authenticated users to read limited files via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_21_03"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年06月01日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager",
+    "CVE编号": "CVE-2021-31439",
+    "漏洞描述": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Synology DiskStation Manager. Authentication is not required to exploit this vulnerablity. The specific flaw exists within the processing of DSI structures in Netatalk. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a heap-based buffer. An attacker can leverage this vulnerability to execute code in the context of the current process. Was ZDI-CAN-12326.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-21-492/",
+      "https://www.synology.com/zh-hk/security/advisory/Synology_SA_20_26",
+      "https://lists.debian.org/debian-lts-announce/2023/05/msg00018.html",
+      "https://www.debian.org/security/2023/dsa-5503",
+      "https://security.gentoo.org/glsa/202311-02"
+    ],
+    "受影响版本": [
+      "6.1.1-15101-4"
+    ],
+    "公开日期": "2021年05月21日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "Synology DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-29088",
+    "漏洞描述": "Improper limitation of a pathname to a restricted directory ('Path Traversal') in cgi component in Synology DiskStation Manager (DSM) before 6.2.4-25553 allows local users to execute arbitrary code via unspecified vectors.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_21_03"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年06月01日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-29087",
+    "漏洞描述": "Improper limitation of a pathname to a restricted directory ('Path Traversal') vulnerability in webapi component in Synology DiskStation Manager (DSM) before 6.2.3-25426-3 allows remote attackers to write arbitrary files via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_26"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年06月23日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-29086",
+    "漏洞描述": "Exposure of sensitive information to an unauthorized actor vulnerability in webapi component in Synology DiskStation Manager (DSM) before 6.2.3-25426-3 allows remote attackers to obtain sensitive information via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_26"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年06月23日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-29085",
+    "漏洞描述": "Improper neutralization of special elements in output used by a downstream component ('Injection') vulnerability in file sharing management component in Synology DiskStation Manager (DSM) before 6.2.3-25426-3 allows remote attackers to read arbitrary files via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_26"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年06月23日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-29084",
+    "漏洞描述": "Improper neutralization of special elements in output used by a downstream component ('Injection') vulnerability in Security Advisor report management component in Synology DiskStation Manager (DSM) before 6.2.3-25426-3 allows remote attackers to read arbitrary files via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_26"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年06月23日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "Synology DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-29083",
+    "漏洞描述": "Improper neutralization of special elements used in an OS command in SYNO.Core.Network.PPPoE in Synology DiskStation Manager (DSM) before 6.2.3-25426-3 allows remote authenticated users to execute arbitrary code via realname parameter.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_26"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年04月01日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-27649",
+    "漏洞描述": "Use after free vulnerability in file transfer protocol component in Synology DiskStation Manager (DSM) before 6.2.3-25426-3 allows remote attackers to execute arbitrary code via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_26"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年06月23日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "Synology DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-27647",
+    "漏洞描述": "Out-of-bounds Read vulnerability in iscsi_snapshot_comm_core in Synology DiskStation Manager (DSM) before 6.2.3-25426-3 allows remote attackers to execute arbitrary code via crafted web requests.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_26",
+      "https://www.zerodayinitiative.com/advisories/ZDI-21-339/"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年03月12日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "Synology DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-27646",
+    "漏洞描述": "Use After Free vulnerability in iscsi_snapshot_comm_core in Synology DiskStation Manager (DSM) before 6.2.3-25426-3 allows remote attackers to execute arbitrary code via crafted web requests.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_26",
+      "https://www.zerodayinitiative.com/advisories/ZDI-21-340/",
+      "https://www.zerodayinitiative.com/advisories/ZDI-21-339/"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年03月12日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "Synology DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-26569",
+    "漏洞描述": "Race Condition within a Thread vulnerability in iscsi_snapshot_comm_core in Synology DiskStation Manager (DSM) before 6.2.3-25426-3 allows remote attackers to execute arbitrary code via crafted web requests.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_26",
+      "https://www.zerodayinitiative.com/advisories/ZDI-21-338/"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年03月12日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "Synology DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-26566",
+    "漏洞描述": "Insertion of sensitive information into sent data vulnerability in synorelayd in Synology DiskStation Manager (DSM) before 6.2.3-25426-3 allows man-in-the-middle attackers to execute arbitrary commands via inbound QuickConnect traffic.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_26",
+      "https://www.talosintelligence.com/vulnerability_reports/TALOS-2020-1160"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年02月26日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "Synology DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-26565",
+    "漏洞描述": "Cleartext transmission of sensitive information vulnerability in synorelayd in Synology DiskStation Manager (DSM) before 6.2.3-25426-3 allows man-in-the-middle attackers to obtain sensitive information via an HTTP session.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_26",
+      "https://www.talosintelligence.com/vulnerability_reports/TALOS-2020-1160"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年02月26日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "Synology DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-26564",
+    "漏洞描述": "Cleartext transmission of sensitive information vulnerability in synorelayd in Synology DiskStation Manager (DSM) before 6.2.3-25426-3 allows man-in-the-middle attackers to spoof servers via an HTTP session.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_26",
+      "https://www.talosintelligence.com/vulnerability_reports/TALOS-2020-1160"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年02月26日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-26563",
+    "漏洞描述": "Incorrect authorization vulnerability in synoagentregisterd in Synology DiskStation Manager (DSM) before 6.2.4-25553 allows local users to execute arbitrary code via unspecified vectors.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.talosintelligence.com/vulnerability_reports/TALOS-2020-1158",
+      "https://www.synology.com/security/advisory/Synology_SA_21_03"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年02月26日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "Synology DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-26562",
+    "漏洞描述": "Out-of-bounds write vulnerability in synoagentregisterd in Synology DiskStation Manager (DSM) before 6.2.3-25426-3 allows man-in-the-middle attackers to execute arbitrary code via syno_finder_site HTTP header.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_26",
+      "https://www.talosintelligence.com/vulnerability_reports/TALOS-2020-1159"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年02月26日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "Synology DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-26561",
+    "漏洞描述": "Stack-based buffer overflow vulnerability in synoagentregisterd in Synology DiskStation Manager (DSM) before 6.2.3-25426-3 allows man-in-the-middle attackers to execute arbitrary code via syno_finder_site HTTP header.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_26",
+      "https://www.talosintelligence.com/vulnerability_reports/TALOS-2020-1159"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年02月26日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "Synology DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2021-26560",
+    "漏洞描述": "Cleartext transmission of sensitive information vulnerability in synoagentregisterd in Synology DiskStation Manager (DSM) before 6.2.3-25426-3 allows man-in-the-middle attackers to spoof servers via an HTTP session.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_26",
+      "https://www.talosintelligence.com/vulnerability_reports/TALOS-2020-1159"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年02月26日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2020-27656",
+    "漏洞描述": "Cleartext transmission of sensitive information vulnerability in DDNS in Synology DiskStation Manager (DSM) before 6.2.3-25426-2 allows man-in-the-middle attackers to eavesdrop authentication information of DNSExit via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_18",
+      "https://www.talosintelligence.com/vulnerability_reports/TALOS-2020-1071"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年10月29日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2020-27652",
+    "漏洞描述": "Algorithm downgrade vulnerability in QuickConnect in Synology DiskStation Manager (DSM) before 6.2.3-25426-2 allows man-in-the-middle attackers to spoof servers and obtain sensitive information via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_18",
+      "https://www.talosintelligence.com/vulnerability_reports/TALOS-2020-1061"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年10月29日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2020-27650",
+    "漏洞描述": "Synology DiskStation Manager (DSM) before 6.2.3-25426-2 does not set the Secure flag for the session cookie in an HTTPS session, which makes it easier for remote attackers to capture this cookie by intercepting its transmission within an HTTP session.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_18"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年10月29日"
+  },
+  {
+    "设备品牌": "Synology",
+    "设备类型": "路由器",
+    "产品型号": "DiskStation Manager (DSM)",
+    "CVE编号": "CVE-2020-27648",
+    "漏洞描述": "Improper certificate validation vulnerability in OpenVPN client in Synology DiskStation Manager (DSM) before 6.2.3-25426-2 allows man-in-the-middle attackers to spoof servers and obtain sensitive information via a crafted certificate.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.synology.com/security/advisory/Synology_SA_20_18",
+      "https://www.talosintelligence.com/vulnerability_reports/TALOS-2020-1058"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年10月29日"
+  }
+]

@@ -1,0 +1,158 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "交换机",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-38292",
+    "漏洞描述": "In Extreme Networks XIQ-SE before 24.2.11, due to a missing access control check, a path traversal is possible, which may lead to privilege escalation.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://community.extremenetworks.com/t5/security-advisories-formerly/sa-2024-104-xiq-se-path-traversal-privilege-escalation-cve-2024/ba-p/116362"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年02月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "交换机",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-46272",
+    "漏洞描述": "Buffer Overflow vulnerability in Extreme Networks IQ Engine before 10.6r1a, and through 10.6r4 before 10.6r5, allows an attacker to execute arbitrary code via the implementation of the ah_auth service",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://extreme-networks.my.site.com/ExtrArticleDetail?an=000115355&q=CVE-2023-46272",
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1765/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年02月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "交换机",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-46271",
+    "漏洞描述": "Extreme Networks IQ Engine before 10.6r1a, and through 10.6r4 before 10.6r5, has a buffer overflow. This issue arises from the ah_webui service, which listens on TCP port 3009 by default.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://extremenetworks.com",
+      "https://extreme-networks.my.site.com/ExtrArticleDetail?an=000115354&q=CVE-2023-46271",
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1766/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年02月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "交换机",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-43121",
+    "漏洞描述": "A Directory Traversal vulnerability discovered in Chalet application in Extreme Networks Switch Engine (EXOS) before 32.5.1.5, before 22.7, and before 31.7.2 allows attackers to read arbitrary files.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://extreme-networks.my.site.com/ExtrArticleDetail?an=000114376"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年10月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "交换机",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-43120",
+    "漏洞描述": "An issue discovered in Extreme Networks Switch Engine (EXOS) before 32.5.1.5, before 22.7 and before 31.7.1 allows attackers to gain escalated privileges via crafted HTTP request.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://extreme-networks.my.site.com/ExtrArticleDetail?an=000114377"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年10月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "交换机",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-43119",
+    "漏洞描述": "An Access Control issue discovered in Extreme Networks Switch Engine (EXOS) before 32.5.1.5, also fixed in 22.7, 31.7.2 allows attackers to gain escalated privileges using crafted telnet commands via Redis server.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://extreme-networks.my.site.com/ExtrArticleDetail?an=000114378"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年10月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "交换机",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-43118",
+    "漏洞描述": "Cross Site Request Forgery (CSRF) vulnerability in Chalet application in Extreme Networks Switch Engine (EXOS) before 32.5.1.5, fixed in 31.7.2 and 32.5.1.5 allows attackers to run arbitrary code and cause other unspecified impacts via /jsonrpc API.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://extreme-networks.my.site.com/ExtrArticleDetail?an=000114379"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年10月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "交换机",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-40457",
+    "漏洞描述": "The BGP daemon in Extreme Networks ExtremeXOS (aka EXOS) 30.7.1.1 allows an attacker (who is not on a directly connected network) to cause a denial of service (BGP session reset) because of BGP attribute error mishandling (for attribute 21 and 25). NOTE: the vendor disputes this because it is \"evaluating support for RFC 7606 as a future feature\" and believes that \"customers that have chosen to not require or implement RFC 7606 have done so willingly and with knowledge of what is needed to defend against these types of attacks.\"",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://supportdocs.extremenetworks.com/support/documentation/extremexos-32-5/",
+      "https://blog.benjojo.co.uk/post/bgp-path-attributes-grave-error-handling",
+      "https://blog.benjojo.co.uk/asset/JgH8G5duO1"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年11月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "交换机",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-18305",
+    "漏洞描述": "Extreme Networks EXOS before v.22.7 and before v.30.2 was discovered to contain an issue in its Web GUI which fails to restrict URL access, allowing attackers to access sensitive information or escalate privileges.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://gist.github.com/yasinyilmaz/1fe3fe58dd275edb77dcbe890fce2f2c"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年05月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "交换机",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-16152",
+    "漏洞描述": "The NetConfig UI administrative interface in Extreme Networks ExtremeWireless Aerohive HiveOS and IQ Engine through 10.0r8a allows attackers to execute PHP code as the root user via remote HTTP requests that insert this code into a log file and then traverse to that file.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://gtacknowledge.extremenetworks.com/articles/Vulnerability_Notice/VN-2020-001",
+      "http://packetstormsecurity.com/files/164957/Aerohive-NetConfig-10.0r8a-Local-File-Inclusion-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年11月14日"
+  }
+]

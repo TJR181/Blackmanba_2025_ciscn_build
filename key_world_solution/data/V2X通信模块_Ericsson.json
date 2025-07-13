@@ -1,0 +1,404 @@
+[
+  {
+    "设备品牌": "Ericsson",
+    "设备类型": "V2X通信模块",
+    "产品型号": "CodeChecker",
+    "CVE编号": "CVE-2025-1300",
+    "漏洞描述": "CodeChecker is an analyzer tooling, defect database and viewer extension for the Clang Static Analyzer and Clang Tidy. \n\nThe CodeChecker web server contains an open redirect vulnerability due to missing protections against multiple slashes after the product name in the URL. This results in bypassing the protections against CVE-2021-28861, leading to the same open redirect pathway.\n\nThis issue affects CodeChecker: through 6.24.5.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/Ericsson/codechecker/security/advisories/GHSA-g839-x3p3-g5fm"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年02月28日"
+  },
+  {
+    "设备品牌": "Ericsson",
+    "设备类型": "V2X通信模块",
+    "产品型号": "CodeChecker",
+    "CVE编号": "CVE-2024-53829",
+    "漏洞描述": "CodeChecker is an analyzer tooling, defect database and viewer extension for the Clang Static Analyzer and Clang Tidy. \nCross-site request forgery allows an unauthenticated attacker to hijack the authentication of a logged in user, and use the web API with the same permissions, including but not limited to adding, removing or editing products. The attacker needs to know the ID of the available products to modify or delete them. The attacker cannot directly exfiltrate data (view) from CodeChecker, due to being limited to form-based CSRF.\n\nThis issue affects CodeChecker: through 6.24.4.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/Ericsson/codechecker/security/advisories/GHSA-f8c8-4pm7-w885"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月21日"
+  },
+  {
+    "设备品牌": "Ericsson",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Packet Core Controller",
+    "CVE编号": "CVE-2024-53827",
+    "漏洞描述": "Ericsson Packet Core Controller (PCC) contains a\nvulnerability where an attacker sending a large volume of specially\ncrafted messages may cause service degradation",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ericsson.com/en/about-us/security/psirt/CVE-2024-53827"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年05月16日"
+  },
+  {
+    "设备品牌": "Ericsson",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Ericsson RAN Compute Basebands (all BB variants)",
+    "CVE编号": "CVE-2024-25010",
+    "漏洞描述": "Ericsson RAN Compute\nand Site Controller 6610 contains in certain configurations a high severity\nvulnerability where improper input validation could be exploited leading to arbitrary code execution.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.ericsson.com/en/about-us/security/psirt/CVE-2024-25010"
+    ],
+    "受影响版本": [
+      "0",
+      "0"
+    ],
+    "公开日期": "2025年05月22日"
+  },
+  {
+    "设备品牌": "Ericsson",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Packet Core Controller",
+    "CVE编号": "CVE-2024-25009",
+    "漏洞描述": "Ericsson Packet Core Controller (PCC) contains a vulnerability in Access and Mobility Management Function (AMF) where improper input validation can lead to denial of service which may result in service degradation.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.ericsson.com/en/about-us/security/psirt/security-bulletin-ericsson-packet-core-controller-pcc-august-2024"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年08月20日"
+  },
+  {
+    "设备品牌": "Ericsson",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Ericsson RAN Compute Basebands (all BB variants)",
+    "CVE编号": "CVE-2024-25008",
+    "漏洞描述": "Ericsson RAN Compute and Site Controller 6610 contains a vulnerability in the Control System where Improper Input Validation can lead to arbitrary code execution, for example to obtain a Linux Shell with the same privileges as the attacker. The attacker would require elevated privileges for example a valid OAM user having the system administrator role to exploit the vulnerability.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.ericsson.com/en/about-us/security/psirt/security-bulletin-ericsson-ran-compute-august-2024"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年08月16日"
+  },
+  {
+    "设备品牌": "Ericsson",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Ericsson Network Manager",
+    "CVE编号": "CVE-2024-25007",
+    "漏洞描述": "\nEricsson Network Manager (ENM), versions prior to 23.1, contains a vulnerability in the export function of application log where Improper Neutralization of Formula Elements in a CSV File can lead to code execution or information disclosure. There is limited impact to integrity and availability. The attacker on the adjacent network with administration access can exploit the vulnerability.\n\n",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.ericsson.com/en/about-us/security/psirt/security-bulletin--ericsson-network-manager-march-2024"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年04月04日"
+  },
+  {
+    "设备品牌": "Ericsson",
+    "设备类型": "V2X通信模块",
+    "产品型号": "CodeChecker",
+    "CVE编号": "CVE-2024-10082",
+    "漏洞描述": "CodeChecker is an analyzer tooling, defect database and viewer extension for the Clang Static Analyzer and Clang Tidy. \nAuthentication method confusion allows logging in as the built-in root user from an external service. The built-in root user up until 6.24.1 is generated in a weak manner, cannot be disabled, and has universal access.This vulnerability allows an attacker who can create an account on an enabled external authentication service, to log in as the root user, and access and control everything that can be controlled via the web interface. The attacker needs to acquire the username of the root user to be successful.\n\nThis issue affects CodeChecker: through 6.24.1.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/Ericsson/codechecker/security/advisories/GHSA-fpm5-2wcj-vfr7"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年11月06日"
+  },
+  {
+    "设备品牌": "Ericsson",
+    "设备类型": "V2X通信模块",
+    "产品型号": "CodeChecker",
+    "CVE编号": "CVE-2024-10081",
+    "漏洞描述": "CodeChecker is an analyzer tooling, defect database and viewer extension for the Clang Static Analyzer and Clang Tidy. \nAuthentication bypass occurs when the API URL ends with Authentication. This bypass allows superuser access to all API endpoints other than Authentication. These endpoints include the ability to add, edit, and remove products, among others. All endpoints, apart from the /Authentication is affected by the vulnerability.\n\nThis issue affects CodeChecker: through 6.24.1.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/Ericsson/codechecker/security/advisories/GHSA-f3f8-vx3w-hp5q"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年11月06日"
+  },
+  {
+    "设备品牌": "Ericsson",
+    "设备类型": "V2X通信模块",
+    "产品型号": "codechecker",
+    "CVE编号": "CVE-2023-49793",
+    "漏洞描述": "CodeChecker is an analyzer tooling, defect database and viewer extension for the Clang Static Analyzer and Clang Tidy. Zip files uploaded to the server endpoint of `CodeChecker store` are not properly sanitized. An attacker, using a path traversal attack, can load and display files on the machine of `CodeChecker server`. The vulnerable endpoint is `/Default/v6.53/CodeCheckerService@massStoreRun`. The path traversal vulnerability allows reading data on the machine of the `CodeChecker server`, with the same permission level as the `CodeChecker server`.\nThe attack requires a user account on the `CodeChecker server`, with permission to store to a server, and view the stored report. This vulnerability has been patched in version 6.23.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/Ericsson/codechecker/security/advisories/GHSA-h26w-r4m5-8rrf",
+      "https://github.com/Ericsson/codechecker/commit/46bada41e32f3ba0f6011d5c556b579f6dddf07a"
+    ],
+    "受影响版本": [
+      "< 6.23.0"
+    ],
+    "公开日期": "2024年06月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-39909",
+    "漏洞描述": "Ericsson Network Manager before 23.2 mishandles Access Control and thus unauthenticated low-privilege users can access the NCM application.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.gruppotim.it/it/footer/red-team.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年12月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-47531",
+    "漏洞描述": "An issue was discovered in Ericsson Evolved Packet Gateway (EPG) versions 3.x before 3.25 and 2.x before 2.16, allows authenticated users to bypass system CLI and execute commands they are authorized to execute directly in the UNIX shell.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.gruppotim.it/it/footer/red-team.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年12月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-46408",
+    "漏洞描述": "Ericsson Network Manager (ENM), versions prior to 22.1, contains a vulnerability in the application Network Connectivity Manager (NCM) where improper Neutralization of Formula Elements in a CSV File can lead to remote code execution or data leakage via maliciously injected hyperlinks. The attacker would need admin/elevated access to exploit the vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.gruppotim.it/it/footer/red-team.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年06月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-46407",
+    "漏洞描述": "Ericsson Network Manager (ENM), versions prior to 22.2, contains a vulnerability in the REST endpoint “editprofile” where Open Redirect HTTP Header Injection can lead to redirection of the submitted request to domain out of control of ENM deployment. The attacker would need admin/elevated access to exploit the vulnerability",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.gruppotim.it/it/footer/red-team.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年06月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-44217",
+    "漏洞描述": "In Ericsson CodeChecker through 6.18.0, a Stored Cross-site scripting (XSS) vulnerability in the comments component of the reports viewer allows remote attackers to inject arbitrary web script or HTML via the POST JSON data of the /CodeCheckerService API.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://codechecker-demo.eastus.cloudapp.azure.com/",
+      "https://user-images.githubusercontent.com/9525971/142965091-e118b012-a7fc-4c2f-ad0c-80aeed6f7ec9.png",
+      "https://github.com/Ericsson/codechecker/releases",
+      "https://github.com/Hyperkopite/CVE-2021-44217/blob/main/README.md",
+      "https://github.com/Ericsson/codechecker/pull/3549"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年01月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-43339",
+    "漏洞描述": "In Ericsson Network Location before 2021-07-31, it is possible for an authenticated attacker to inject commands via file_name in the export functionality. For example, a new admin user could be created.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.exploit-db.com/exploits/50469",
+      "https://pentest.com.tr/blog/RCE-via-Meow-Variant-along-with-an-Example-0day-PacketHackingVillage-Defcon29.html",
+      "https://www.exploit-db.com/exploits/50468"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年11月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-41391",
+    "漏洞描述": "In Ericsson ECM before 18.0, it was observed that Security Management Endpoint in User Profile Management Section is vulnerable to stored XSS via a name, leading to session hijacking and full account takeover.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://the-it-wonders.blogspot.com/2021/09/ericsson-ecm-enterprise-content.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-41390",
+    "漏洞描述": "In Ericsson ECM before 18.0, it was observed that Security Provider Endpoint in the User Profile Management Section is vulnerable to CSV Injection.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://the-it-wonders.blogspot.com/2021/09/ericsson-ecm-enterprise-content_17.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-32571",
+    "漏洞描述": "In OSS-RC systems of the release 18B and older during data migration procedures certain files containing usernames and passwords are left in the system undeleted but in folders accessible by top privileged accounts only. NOTE: This vulnerability only affects products that are no longer supported by the maintainer. Ericsson Network Manager is a new generation OSS system which OSS-RC customers shall upgrade to",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.gruppotim.it/it/innovazione/servizi-digitali/cybersecurity/red-team.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年10月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-32570",
+    "漏洞描述": "In Ericsson Network Manager (ENM) releases before 21.2, users belonging to the same AMOS authorization group can retrieve the data from certain log files. All AMOS users are considered to be highly privileged users in ENM system and all must be previously defined and authorized by the Security Administrator. Those users can access some log’s files, under a common path, and read information stored in the log’s files in order to conduct privilege escalation.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.ericsson.com",
+      "https://www.gruppotim.it/it/footer/red-team.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年08月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-32569",
+    "漏洞描述": "In OSS-RC systems of the release 18B and older customer documentation browsing libraries under ALEX are subject to Cross-Site Scripting. This problem is completely resolved in new Ericsson library browsing tool ELEX used in systems like Ericsson Network Manager. NOTE: This vulnerability only affects products that are no longer supported by the maintainer. Ericsson Network Manager is a new generation OSS system which OSS-RC customers shall upgrade to",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.gruppotim.it/it/innovazione/servizi-digitali/cybersecurity/red-team.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年10月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-28488",
+    "漏洞描述": "Ericsson Network Manager (ENM) before 21.2 has incorrect access-control behavior (that only affects the level of access available to persons who were already granted a highly privileged role). Users in the same AMOS authorization group can retrieve managed-network data that was not set to be accessible to the entire group (i.e., was only set to be accessible to a subset of that group).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.ericsson.com",
+      "https://www.gruppotim.it/it/footer/red-team.html",
+      "https://www.ericsson.com/en/about-us/enterprise-security/psirt"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年03月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-28485",
+    "漏洞描述": "In Ericsson Mobile Switching Center Server (MSC-S) before IS 3.1 CP22, the SIS web application allows relative path traversal via a specific parameter in the https request after authentication, which allows access to files on the system that are not intended to be accessible via the web application.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.gruppotim.it/it/footer/red-team.html",
+      "https://www.ericsson.com/en/about-us/security/psirt"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年09月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-29145",
+    "漏洞描述": "In Ericsson BSCS iX R18 Billing & Rating iX R18, ADMX is a web base module in BSCS iX that is vulnerable to stored XSS via the name or description field to a solutionUnitServlet?SuName=UserReferenceDataSU Access Rights Group. In most test cases, session hijacking was also possible by utilizing the XSS vulnerability. This potentially allows for full account takeover, or exploiting admins' browsers by using the beef framework.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://the-it-wonders.blogspot.com/2020/01/ericsson-bscs-ix-r18-billing-rating.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-29144",
+    "漏洞描述": "In Ericsson BSCS iX R18 Billing & Rating iX R18, MX is a web base module in BSCS iX that is vulnerable to stored XSS via an Alert Dashboard comment. In most test cases, session hijacking was also possible by utilizing the XSS vulnerability. This potentially allows for full account takeover, or exploiting admins' browsers by using the beef framework.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://the-it-wonders.blogspot.com/2020/01/ericsson-bscs-ix-r18-billing-rating.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-22158",
+    "漏洞描述": "MediaKind (formerly Ericsson) RX8200 5.13.3 devices are vulnerable to multiple reflected and stored XSS. An attacker has to inject JavaScript code directly in the \"path\" or \"Services+ID\" parameters and send the URL to a user in order to exploit reflected XSS. In the case of stored XSS, an attacker must modify the \"name\" parameter with the malicious code.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://sku11army.blogspot.com/2020/02/ericsson-multiple-stored-reflected-xss.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月14日"
+  }
+]

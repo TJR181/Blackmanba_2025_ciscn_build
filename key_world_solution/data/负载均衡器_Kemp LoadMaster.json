@@ -1,0 +1,17 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "负载均衡器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-41823",
+    "漏洞描述": "The Web Application Firewall (WAF) in Kemp LoadMaster 7.2.54.1 allows certain uses of onmouseover to bypass an XSS protection mechanism.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://pastebin.com/kpx9Nvbf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年01月01日"
+  }
+]

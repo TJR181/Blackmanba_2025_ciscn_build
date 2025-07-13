@@ -1,0 +1,22 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "V2X通信模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-45678",
+    "漏洞描述": "Yubico YubiKey 5 Series devices with firmware before 5.7.0 and YubiHSM 2 devices with firmware before 2.4.0 allow an ECDSA secret-key extraction attack (that requires physical access and expensive equipment) in which an electromagnetic side channel is present because of a non-constant-time modular inversion for the Extended Euclidean Algorithm, aka the EUCLEAK issue. Other uses of an Infineon cryptographic library may also be affected.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.yubico.com/support/security-advisories/ysa-2024-03/",
+      "https://support.yubico.com/hc/en-us/articles/15705749884444",
+      "https://ninjalab.io/eucleak/",
+      "https://ninjalab.io/wp-content/uploads/2024/09/20240903_eucleak.pdf",
+      "https://news.ycombinator.com/item?id=41434500",
+      "https://arstechnica.com/security/2024/09/yubikeys-are-vulnerable-to-cloning-attacks-thanks-to-newly-discovered-side-channel/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年09月03日"
+  }
+]

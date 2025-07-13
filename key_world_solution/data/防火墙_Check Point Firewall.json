@@ -1,0 +1,73 @@
+[
+  {
+    "设备品牌": "espocrm",
+    "设备类型": "防火墙",
+    "产品型号": "espocrm",
+    "CVE编号": "CVE-2023-46736",
+    "漏洞描述": "EspoCRM is an Open Source CRM (Customer Relationship Management) software. In affected versions there is Server-Side Request Forgery (SSRF) vulnerability via the upload image from url api. Users who have access to `the /Attachment/fromImageUrl` endpoint can specify URL to point to an internal host. Even though there is check for content type, it can be bypassed by redirects in some cases. This SSRF can be leveraged to disclose internal information (in some cases), target internal hosts and bypass firewalls. This vulnerability has been addressed in commit `c536cee63` which is included in release version 8.0.5. Users are advised to upgrade. There are no known workarounds for this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/espocrm/espocrm/security/advisories/GHSA-g955-rwxx-jvf6",
+      "https://github.com/espocrm/espocrm/commit/c536cee6375e2088f961af13db7aaa652c983072",
+      "https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/"
+    ],
+    "受影响版本": [
+      "< 8.0.5"
+    ],
+    "公开日期": "2023年12月05日"
+  },
+  {
+    "设备品牌": "Juniper Networks",
+    "设备类型": "防火墙",
+    "产品型号": "Junos OS",
+    "CVE编号": "CVE-2023-28961",
+    "漏洞描述": "An Improper Handling of Unexpected Data Type vulnerability in IPv6 firewall filter processing of Juniper Networks Junos OS on the ACX Series devices will prevent a firewall filter with the term 'from next-header ah' from being properly installed in the packet forwarding engine (PFE). There is no immediate indication of an incomplete firewall filter commit shown at the CLI, which could allow an attacker to send valid packets to or through the device that were explicitly intended to be dropped. An indication that the filter was not installed can be identified with the following logs: fpc0 ACX_DFW_CFG_FAILED: ACX Error (dfw):dnx_dfw_rule_prepare : Config failed: Unsupported Ip-protocol 51 in the filter lo0.0-inet6-i fpc0 ACX_DFW_CFG_FAILED: ACX Error (dfw):dnx_dfw_rule_prepare : Please detach the filter, remove unsupported match and re-attach fpc0 ACX_DFW_CFG_FAILED: ACX Error (dfw):dnx_dfw_process_rule : Status:104 dnx_dfw_rule_prepare failed fpc0 ACX_DFW_CFG_FAILED: ACX Error (dfw):dnx_dfw_process_filter : Status:104 dnx_dfw_process_rule failed fpc0 ACX_DFW_CFG_FAILED: ACX Error (dfw):dnx_dfw_update_filter_in_hw : Status:104 Could not process filter(lo0.0-inet6-i) for rule expansion Unsupported match, action present. fpc0 ACX_DFW_CFG_FAILED: ACX Error (dfw):dnx_dfw_create_hw_instance : Status:104 Could not program dfw(lo0.0-inet6-i) type(IFP_DFLT_INET6_Lo0_FILTER)! [104] fpc0 ACX_DFW_CFG_FAILED: ACX Error (dfw):dnx_dfw_bind_shim : [104] Could not create dfw(lo0.0-inet6-i) type(IFP_DFLT_INET6_Lo0_FILTER) fpc0 ACX_DFW_CFG_FAILED: ACX Error (dfw):dnx_dfw_update_resolve : [100] Failed to bind filter(3) to bind point fpc0 ACX_DFW_CFG_FAILED: ACX Error (dfw):dnx_dfw_change_end : dnx_dfw_update_resolve (resolve type) failed This issue affects Juniper Networks Junos OS on ACX Series: All versions prior to 20.2R3-S7; 20.4 versions prior to 20.4R3-S4; 21.1 versions prior to 21.1R3-S3; 21.2 versions prior to 21.2R3-S4; 21.3 versions prior to 21.3R3; 21.4 versions prior to 21.4R3; 22.1 versions prior to 22.1R2.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://supportportal.juniper.net/JSA70586"
+    ],
+    "受影响版本": [
+      "20.4",
+      "21.1",
+      "21.2",
+      "21.3",
+      "21.4",
+      "22.1",
+      "unspecified"
+    ],
+    "公开日期": "2023年04月17日"
+  },
+  {
+    "设备品牌": "scylladb",
+    "设备类型": "防火墙",
+    "产品型号": "scylla",
+    "CVE编号": "CVE-2022-29240",
+    "漏洞描述": "Scylla is a real-time big data database that is API-compatible with Apache Cassandra and Amazon DynamoDB. When decompressing CQL frame received from user, Scylla assumes that user-provided uncompressed length is correct. If user provides fake length, that is greater than the real one, part of decompression buffer won't be overwritten, and will be left uninitialized. This can be exploited in several ways, depending on the privileges of the user. 1. The main exploit is that an attacker with access to CQL port, but no user account, can bypass authentication, but only if there are other legitimate clients making connections to the cluster, and they use LZ4. 2. Attacker that already has a user account on the cluster can read parts of uninitialized memory, which can contain things like passwords of other users or fragments of other queries / results, which leads to authorization bypass and sensitive information disclosure. The bug has been patched in the following versions: Scylla Enterprise: 2020.1.14, 2021.1.12, 2022.1.0. Scylla Open Source: 4.6.7, 5.0.3. Users unable to upgrade should make sure none of their drivers connect to cluster using LZ4 compression, and that Scylla CQL port is behind firewall. Additionally make sure no untrusted client can connect to Scylla, by setting up authentication and applying workarounds from previous point (firewall, no lz4 compression).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/scylladb/scylla/security/advisories/GHSA-25pq-rrqm-6fmr",
+      "https://github.com/scylladb/scylladb/issues/11476",
+      "https://github.com/scylladb/scylladb/commit/1c2eef384da439b0457b6d71c7e37d7268e471cb"
+    ],
+    "受影响版本": [
+      "< 4.6.7",
+      ">= 5.0.0, < 5.0.3"
+    ],
+    "公开日期": "2022年09月15日"
+  },
+  {
+    "设备品牌": "wireapp",
+    "设备类型": "防火墙",
+    "产品型号": "wire-server",
+    "CVE编号": "CVE-2021-41100",
+    "漏洞描述": "Wire-server is the backing server for the open source wire secure messaging application. In affected versions it is possible to trigger email address change of a user with only the short-lived session token in the `Authorization` header. As the short-lived token is only meant as means of authentication by the client for less critical requests to the backend, the ability to change the email address with a short-lived token constitutes a privilege escalation attack. Since the attacker can change the password after setting the email address to one that they control, changing the email address can result in an account takeover by the attacker. Short-lived tokens can be requested from the backend by Wire clients using the long lived tokens, after which the long lived tokens can be stored securely, for example on the devices key chain. The short lived tokens can then be used to authenticate the client towards the backend for frequently performed actions such as sending and receiving messages. While short-lived tokens should not be available to an attacker per-se, they are used more often and in the shape of an HTTP header, increasing the risk of exposure to an attacker relative to the long-lived tokens, which are stored and transmitted in cookies. If you are running an on-prem instance and provision all users with SCIM, you are not affected by this issue (changing email is blocked for SCIM users). SAML single-sign-on is unaffected by this issue, and behaves identically before and after this update. The reason is that the email address used as SAML NameID is stored in a different location in the databse from the one used to contact the user outside wire. Version 2021-08-16 and later provide a new end-point that requires both the long-lived client cookie and `Authorization` header. The old end-point has been removed. If you are running an on-prem instance with at least some of the users invited or provisioned via SAML SSO and you cannot update then you can block `/self/email` on nginz (or in any other proxies or firewalls you may have set up). You don't need to discriminate by verb: `/self/email` only accepts `PUT` and `DELETE`, and `DELETE` is almost never used.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/wireapp/wire-server/security/advisories/GHSA-9rm2-w6pq-333m"
+    ],
+    "受影响版本": [
+      "< 2021-08-16"
+    ],
+    "公开日期": "2021年10月04日"
+  }
+]

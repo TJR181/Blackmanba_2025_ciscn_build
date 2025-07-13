@@ -1,0 +1,228 @@
+[
+  {
+    "设备品牌": "Forcepoint",
+    "设备类型": "防火墙",
+    "产品型号": "FIE Endpoint",
+    "CVE编号": "CVE-2025-2272",
+    "漏洞描述": "Uncontrolled Search Path Element vulnerability in Forcepoint FIE Endpoint allows Privilege Escalation, Code Injection, Hijacking a privileged process.This issue affects FIE Endpoint: before 25.05.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://support.forcepoint.com/s/article/Security-Advisory-Privilege-Escalation-and-Arbitrary-code-execution-in-F1E-Endpoint"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年05月22日"
+  },
+  {
+    "设备品牌": "Forcepoint",
+    "设备类型": "防火墙",
+    "产品型号": "Email Security",
+    "CVE编号": "CVE-2024-9103",
+    "漏洞描述": "Improper Neutralization of Script in Attributes in a Web Page vulnerability in Forcepoint Email Security (Blocked Messages module) allows Stored XSS.\nThis issue affects Email Security through 8.5.5.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.forcepoint.com/s/article/Security-Advisory-Email-Security-Gateway-Persistent-XSS-in-Blocked-Messages"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年03月24日"
+  },
+  {
+    "设备品牌": "Forcepoint",
+    "设备类型": "防火墙",
+    "产品型号": "Email Security",
+    "CVE编号": "CVE-2024-2166",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Forcepoint Email Security (Real Time Monitor modules) allows Reflected XSS.This issue affects Email Security: before 8.5.5 HF003.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.forcepoint.com/s/article/000042397"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年09月04日"
+  },
+  {
+    "设备品牌": "Forcepoint",
+    "设备类型": "防火墙",
+    "产品型号": "Web Security",
+    "CVE编号": "CVE-2023-6452",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Forcepoint Web Security (Transaction Viewer) allows Stored XSS.\n\n\n\n\n\nThe\n Forcepoint Web Security portal allows administrators to generate \ndetailed reports on user requests made through the Web proxy. It has \nbeen determined that the \"user agent\" field in the Transaction Viewer is\n vulnerable to a persistent Cross-Site Scripting (XSS) vulnerability, \nwhich can be exploited by any user who can route traffic through the \nForcepoint Web proxy.\n\nThis \nvulnerability enables unauthorized attackers to execute JavaScript \nwithin the browser context of a Forcepoint administrator, thereby \nallowing them to perform actions on the administrator's behalf. Such a \nbreach could lead to unauthorized access or modifications, posing a \nsignificant security risk.\n\n\n\n\n\n\nThis issue affects Web Security: before 8.5.6.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.forcepoint.com/s/article/000042212"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年08月22日"
+  },
+  {
+    "设备品牌": "Forcepoint",
+    "设备类型": "防火墙",
+    "产品型号": "Next Generation Firewall Security Management Center ",
+    "CVE编号": "CVE-2023-5451",
+    "漏洞描述": "Forcepoint\n NGFW Security Management Center Management Server has SMC Downloads \noptional feature to offer standalone Management Client downloads and ECA\n configuration downloads.\n\nImproper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Forcepoint Next Generation Firewall Security Management Center (SMC Downloads feature) allows Reflected XSS.\n\nThis issue affects Next Generation Firewall Security Management Center : before 6.10.13, from 6.11.0 before 7.1.2.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.forcepoint.com/s/article/000042395"
+    ],
+    "受影响版本": [
+      "0",
+      "6.11.0"
+    ],
+    "公开日期": "2024年03月04日"
+  },
+  {
+    "设备品牌": "Forcepoint",
+    "设备类型": "防火墙",
+    "产品型号": "Cloud Security Gateway (CSG)",
+    "CVE编号": "CVE-2023-26292",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Forcepoint Cloud Security Gateway (CSG) Portal on Web Cloud Security Gateway, Email Security Cloud (login_submit.mhtml modules), Forcepoint Web Security Portal on Hybrid (login_submit.mhtml modules) allows Reflected XSS.This issue affects Cloud Security Gateway (CSG): before 03/29/2023; Web Security: before 03/29/2023.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.forcepoint.com/s/article/000041617"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年03月29日"
+  },
+  {
+    "设备品牌": "Forcepoint",
+    "设备类型": "防火墙",
+    "产品型号": "Cloud Security Gateway (CSG)",
+    "CVE编号": "CVE-2023-26291",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Forcepoint Cloud Security Gateway (CSG) Portal on Web Cloud Security Gateway, Email Security Cloud (login_form.mhtml modules), Forcepoint Web Security Portal on Hybrid (login_form.mhtml modules) allows Reflected XSS.This issue affects Cloud Security Gateway (CSG): before 03/29/2023; Web Security: before 03/29/2023.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.forcepoint.com/s/article/000041617"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年03月29日"
+  },
+  {
+    "设备品牌": "Forcepoint",
+    "设备类型": "防火墙",
+    "产品型号": "Cloud Security Gateway (CSG)",
+    "CVE编号": "CVE-2023-26290",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Forcepoint Cloud Security Gateway (CSG) Portal on Web Cloud Security Gateway, Email Security Cloud (login_reset_request.mhtml modules), Forcepoint Web Security Portal on Hybrid (login_reset_request.mhtml modules) allows Reflected XSS.This issue affects Cloud Security Gateway (CSG): before 03/29/2023; Web Security: before 03/29/2023.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.forcepoint.com/s/article/000041617"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年03月29日"
+  },
+  {
+    "设备品牌": "Forcepoint",
+    "设备类型": "防火墙",
+    "产品型号": "Cloud Security Gateway (CSG) ",
+    "CVE编号": "CVE-2023-2080",
+    "漏洞描述": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Forcepoint Cloud Security Gateway (CSG) Portal on Web Cloud Security Gateway, Email Security Cloud allows Blind SQL Injection.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.forcepoint.com/s/article/000041871"
+    ],
+    "受影响版本": [
+      "TBD"
+    ],
+    "公开日期": "2023年06月15日"
+  },
+  {
+    "设备品牌": "Forcepoint",
+    "设备类型": "防火墙",
+    "产品型号": "F|One SmartEdge Agent",
+    "CVE编号": "CVE-2023-1705",
+    "漏洞描述": "Missing Authorization vulnerability in Forcepoint F|One SmartEdge Agent on Windows (bgAutoinstaller service modules) allows Privilege Escalation, Functionality Bypass.This issue affects F|One SmartEdge Agent: before 1.7.0.230330-554.\n\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://support.forcepoint.com/s/article/000042333"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年01月29日"
+  },
+  {
+    "设备品牌": "Forcepoint",
+    "设备类型": "防火墙",
+    "产品型号": "One Endpoint",
+    "CVE编号": "CVE-2022-27609",
+    "漏洞描述": "Forcepoint One Endpoint prior to version 22.01 installed on Microsoft Windows does not provide sufficient anti-tampering protection of services by users with Administrator privileges. This could result in a user disabling Forcepoint One Endpoint and the protection offered by it.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://help.forcepoint.com/security/CVE/CVE-2022-27609.html"
+    ],
+    "受影响版本": [
+      "22.01"
+    ],
+    "公开日期": "2022年04月04日"
+  },
+  {
+    "设备品牌": "Forcepoint",
+    "设备类型": "防火墙",
+    "产品型号": "One Endpoint",
+    "CVE编号": "CVE-2022-27608",
+    "漏洞描述": "Forcepoint One Endpoint prior to version 22.01 installed on Microsoft Windows is vulnerable to registry key tampering by users with Administrator privileges. This could result in a user disabling anti-tampering mechanisms which would then allow the user to disable Forcepoint One Endpoint and the protection offered by it.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://help.forcepoint.com/security/CVE/CVE-2022-27608.html"
+    ],
+    "受影响版本": [
+      "22.01"
+    ],
+    "公开日期": "2022年04月04日"
+  },
+  {
+    "设备品牌": "Forcepoint",
+    "设备类型": "防火墙",
+    "产品型号": "Data Loss Prevention (DLP)",
+    "CVE编号": "CVE-2022-1700",
+    "漏洞描述": "Improper Restriction of XML External Entity Reference ('XXE') vulnerability in the Policy Engine of Forcepoint Data Loss Prevention (DLP), which is also leveraged by Forcepoint One Endpoint (F1E), Web Security Content Gateway, Email Security with DLP enabled, and Cloud Security Gateway prior to June 20, 2022. The XML parser in the Policy Engine was found to be improperly configured to support external entities and external DTD (Document Type Definitions), which can lead to an XXE attack. This issue affects: Forcepoint Data Loss Prevention (DLP) versions prior to 8.8.2. Forcepoint One Endpoint (F1E) with Policy Engine versions prior to 8.8.2. Forcepoint Web Security Content Gateway versions prior to 8.5.5. Forcepoint Email Security with DLP enabled versions prior to 8.5.5. Forcepoint Cloud Security Gateway prior to June 20, 2022.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://help.forcepoint.com/security/CVE/CVE-2022-1700.html"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年09月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "Forcepoint Next Generation Firewall",
+    "CVE编号": "CVE-2021-41530",
+    "漏洞描述": "Forcepoint NGFW Engine versions 6.5.11 and earlier, 6.8.6 and earlier, and 6.10.0 are vulnerable to TCP reflected amplification vulnerability, if HTTP User Response has been configured.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://help.forcepoint.com/security/CVE/CVE-2021-41530.html"
+    ],
+    "受影响版本": [
+      "NGFW Engine versions 6.5.11 and earlier, 6.8.6 and earlier, and 6.10.0 are all vulnerable, if HTTP User Response has been configured."
+    ],
+    "公开日期": "2021年10月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "Forcepoint Web Security Content Gateway",
+    "CVE编号": "CVE-2020-6590",
+    "漏洞描述": "Forcepoint Web Security Content Gateway versions prior to 8.5.4 improperly process XML input, leading to information disclosure.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://help.forcepoint.com/security/CVE/CVE-2020-6590.html"
+    ],
+    "受影响版本": [
+      "versions prior to 8.5.4"
+    ],
+    "公开日期": "2021年04月08日"
+  }
+]

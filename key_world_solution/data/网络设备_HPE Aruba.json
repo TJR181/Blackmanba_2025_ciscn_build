@@ -1,0 +1,446 @@
+[
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking Private 5G Core",
+    "CVE编号": "CVE-2025-37100",
+    "漏洞描述": "A vulnerability in the APIs of HPE Aruba Networking Private 5G Core could potentially expose sensitive information to unauthorized users. \nA successful exploitation could allow an attacker to iteratively navigate through the filesystem and ultimately download protected system files containing sensitive information.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw04883en_us&docLocale=en_US"
+    ],
+    "受影响版本": [
+      "1.24.1.0"
+    ],
+    "公开日期": "2025年06月10日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "Virtual Intranet Access (VIA)",
+    "CVE编号": "CVE-2025-25041",
+    "漏洞描述": "A vulnerability in the HPE Aruba Networking Virtual Intranet Access (VIA) client could allow malicious users to overwrite arbitrary files as NT AUTHORITY\\SYSTEM (root). A successful exploit could allow the creation of a Denial-of-Service (DoS) condition affecting the Microsoft Windows Operating System. This vulnerability does not affect Linux and Android based clients.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw04841en_us&docLocale=en_US"
+    ],
+    "受影响版本": [
+      "4.0.0"
+    ],
+    "公开日期": "2025年04月01日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "AOS-CX",
+    "CVE编号": "CVE-2025-25040",
+    "漏洞描述": "A vulnerability has been identified in the port ACL functionality of AOS-CX software running on the HPE Aruba Networking CX 9300 Switch Series only and affects: \n\n     - AOS-CX 10.14.xxxx : All patches\n     - AOS-CX 10.15.xxxx : 10.15.1000 and below \nThe vulnerability is specific to traffic originated by the CX 9300 switch platform and could allow an attacker to bypass ACL rules applied to routed ports on egress. As a result, port ACLs are not correctly enforced, which could lead to unauthorized traffic flow and violations of security policies. Egress VLAN ACLs and Routed VLAN ACLs are not affected by this vulnerability.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw04818en_us&docLocale=en_US"
+    ],
+    "受影响版本": [
+      "10.14.0000",
+      "10.15.0000"
+    ],
+    "公开日期": "2025年03月18日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking ClearPass Policy Manager",
+    "CVE编号": "CVE-2025-25039",
+    "漏洞描述": "A vulnerability in the web-based management interface of HPE Aruba Networking ClearPass Policy Manager (CPPM) allows remote authenticated users to run arbitrary commands on the underlying host. A successful exploit could allow an attacker to execute arbitrary commands as a lower privileged user on the underlying operating system.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw04784en_us&docLocale=en_US"
+    ],
+    "受影响版本": [
+      "6.12.0",
+      "6.11.0"
+    ],
+    "公开日期": "2025年02月04日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking ClearPass Policy Manager",
+    "CVE编号": "CVE-2025-23060",
+    "漏洞描述": "A vulnerability in HPE Aruba Networking ClearPass Policy Manager may, under certain circumstances, expose sensitive unencrypted information. Exploiting this vulnerability could allow an attacker to perform a man-in-the-middle attack, potentially granting unauthorized access to network resources as well as enabling data tampering.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw04784en_us&docLocale=en_US"
+    ],
+    "受影响版本": [
+      "6.12.0",
+      "6.11.0"
+    ],
+    "公开日期": "2025年02月04日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking ClearPass Policy Manager",
+    "CVE编号": "CVE-2025-23059",
+    "漏洞描述": "A vulnerability in the web-based management interface of HPE Aruba Networking ClearPass Policy Manager exposes directories containing sensitive information. If exploited successfully, this vulnerability allows an authenticated remote attacker with high privileges to access and retrieve sensitive data, potentially compromising the integrity and security of the entire system.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw04784en_us&docLocale=en_US"
+    ],
+    "受影响版本": [
+      "6.12.0",
+      "6.11.0"
+    ],
+    "公开日期": "2025年02月04日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking Fabric Composer (AFC)",
+    "CVE编号": "CVE-2025-23057",
+    "漏洞描述": "A vulnerability in the web management interface of HPE Aruba Networking Fabric Composer could allow an authenticated remote attacker to conduct a stored cross-site scripting (XSS) attack. If successfully exploited, a threat actor could run arbitrary script code in a victim's web browser within the context of the compromised interface.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw04775en_us&docLocale=en_US"
+    ],
+    "受影响版本": [
+      "7.0.0"
+    ],
+    "公开日期": "2025年01月28日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking Fabric Composer (AFC)",
+    "CVE编号": "CVE-2025-23056",
+    "漏洞描述": "A vulnerability in the web management interface of HPE Aruba Networking Fabric Composer could allow an authenticated remote attacker to conduct a stored cross-site scripting (XSS) attack. If successfully exploited, a threat actor could run arbitrary script code in a victim's web browser within the context of the compromised interface.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw04775en_us&docLocale=en_US"
+    ],
+    "受影响版本": [
+      "7.0.0"
+    ],
+    "公开日期": "2025年01月28日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking Fabric Composer (AFC)",
+    "CVE编号": "CVE-2025-23055",
+    "漏洞描述": "A vulnerability in the web management interface of HPE Aruba Networking Fabric Composer could allow an authenticated remote attacker to conduct a stored cross-site scripting (XSS) attack. If successfully exploited, a threat actor could run arbitrary script code in a victim's web browser within the context of the compromised interface.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw04775en_us&docLocale=en_US"
+    ],
+    "受影响版本": [
+      "7.0.0"
+    ],
+    "公开日期": "2025年01月28日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking Fabric Composer (AFC)",
+    "CVE编号": "CVE-2025-23054",
+    "漏洞描述": "A vulnerability in the web-based management interface of HPE Aruba Networking Fabric Composer could allow an authenticated low privilege operator user to perform operations not allowed by their privilege level. Successful exploitation could allow an attacker to manipulate user generated files, potentially leading to unauthorized changes in critical system configurations.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw04775en_us&docLocale=en_US"
+    ],
+    "受影响版本": [
+      "7.0.0"
+    ],
+    "公开日期": "2025年01月28日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking Fabric Composer (AFC)",
+    "CVE编号": "CVE-2025-23053",
+    "漏洞描述": "A privilege escalation vulnerability exists in the web-based management interface of HPE Aruba Networking Fabric Composer. Successful exploitation could allow an authenticated low privilege operator user to change the state of certain settings of a vulnerable system.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw04775en_us&docLocale=en_US"
+    ],
+    "受影响版本": [
+      "7.0.0"
+    ],
+    "公开日期": "2025年01月28日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "AOS-CX",
+    "CVE编号": "CVE-2024-54010",
+    "漏洞描述": "A vulnerability in the firewall component of HPE Aruba Networking CX 10000 Series Switches  exists. It could allow an unauthenticated adjacent attacker to conduct a packet  forwarding attack against the ICMP and UDP protocol. For this attack to be successful an attacker requires a switch configuration that allows packets routing (at layer 3). Configurations that do not allow network traffic routing are not impacted. Successful exploitation could allow an attacker to bypass security policies, potentially leading to unauthorized data exposure.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://csaf.arubanetworks.com/2024/hpe_aruba_networking_-_hpesbnw04772.txt"
+    ],
+    "受影响版本": [
+      "Version 10.10.0000: 10.10.1140 and below",
+      "Version 10.13.0000: 10.13.1060 and below",
+      "Version 10.14.0000: 10.14.1020 and below",
+      "Version 10.15.0000: 10.15.0005 and below"
+    ],
+    "公开日期": "2025年01月08日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking ClearPass Policy Manager",
+    "CVE编号": "CVE-2024-51773",
+    "漏洞描述": "A vulnerability in the HPE Aruba Networking ClearPass Policy Manager web-based management interface could allow an authenticated remote Attacker to conduct a stored cross-site scripting (XSS) attack. Successful exploitation could enable a threat actor to perform any actions the user is authorized to do, including accessing the user's data and altering information within the user's permissions. This could lead to data modification, deletion, or theft, including unauthorized access to files, file deletion, or the theft of session cookies, which an attacker could use to hijack a user's session.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw04761en_us&docLocale=en_US"
+    ],
+    "受影响版本": [
+      "6.12.0",
+      "6.11.0"
+    ],
+    "公开日期": "2024年12月03日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking ClearPass Policy Manager",
+    "CVE编号": "CVE-2024-51771",
+    "漏洞描述": "A vulnerability in the HPE Aruba Networking ClearPass Policy Manager web-based management interface could allow an authenticated remote threat actor to conduct a remote code execution attack. Successful exploitation could enable the attacker to run arbitrary commands on the underlying operating system.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw04761en_us&docLocale=en_US"
+    ],
+    "受影响版本": [
+      "6.12.0",
+      "6.11.0"
+    ],
+    "公开日期": "2024年12月03日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking EdgeConnect SD-WAN",
+    "CVE编号": "CVE-2024-41136",
+    "漏洞描述": "An authenticated command injection vulnerability exists in the HPE Aruba Networking EdgeConnect SD-WAN gateways Command Line Interface. Successful exploitation of this vulnerability results in the ability to execute arbitrary commands as a privileged user on the underlying operating system.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csaf.arubanetworks.com/2024/hpe_aruba_networking_-_hpesbnw04673.txt"
+    ],
+    "受影响版本": [
+      "ECOS 9.3.x.x: 9.3.3.0 and below",
+      "ECOS 9.2.x.x: 9.2.9.0 and below",
+      "ECOS 9.1.x.x: 9.1.11.0 and below",
+      "ECOS 9.0.x.x: all builds are affected and are out of maintenance.",
+      "ECOS 8.0.x.x: all builds are affected and are out of maintenance."
+    ],
+    "公开日期": "2024年07月24日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking EdgeConnect SD-WAN",
+    "CVE编号": "CVE-2024-41135",
+    "漏洞描述": "A vulnerability exists in the HPE Aruba Networking EdgeConnect SD-WAN gateway's Command Line Interface that allows remote authenticated users to run arbitrary commands on the underlying host. Successful exploitation of this vulnerability will result in the ability to execute arbitrary commands as root on the underlying operating system leading to complete system compromise",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csaf.arubanetworks.com/2024/hpe_aruba_networking_-_hpesbnw04673.txt"
+    ],
+    "受影响版本": [
+      "ECOS 9.3.x.x: 9.3.3.0 and below",
+      "ECOS 9.2.x.x: 9.2.9.0 and below",
+      "ECOS 9.1.x.x: 9.1.11.0 and below",
+      "ECOS 9.0.x.x: all builds are affected and are out of maintenance.",
+      "ECOS 8.0.x.x: all builds are affected and are out of maintenance."
+    ],
+    "公开日期": "2024年07月24日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking EdgeConnect SD-WAN",
+    "CVE编号": "CVE-2024-41134",
+    "漏洞描述": "A vulnerability exists in the HPE Aruba Networking EdgeConnect SD-WAN gateway's Command Line Interface that allows remote authenticated users to run arbitrary commands on the underlying host. Successful exploitation of this vulnerability will result in the ability to execute arbitrary commands as root on the underlying operating system leading to complete system compromise",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csaf.arubanetworks.com/2024/hpe_aruba_networking_-_hpesbnw04673.txt"
+    ],
+    "受影响版本": [
+      "ECOS 9.3.x.x: 9.3.3.0 and below",
+      "ECOS 9.2.x.x: 9.2.9.0 and below",
+      "ECOS 9.1.x.x: 9.1.11.0 and below",
+      "ECOS 9.0.x.x: all builds are affected and are out of maintenance.",
+      "ECOS 8.0.x.x: all builds are affected and are out of maintenance."
+    ],
+    "公开日期": "2024年07月24日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking EdgeConnect SD-WAN",
+    "CVE编号": "CVE-2024-41133",
+    "漏洞描述": "A vulnerability exists in the HPE Aruba Networking EdgeConnect SD-WAN gateway's Command Line Interface that allows remote authenticated users to run arbitrary commands on the underlying host. Successful exploitation of this vulnerability will result in the ability to execute arbitrary commands as root on the underlying operating system leading to complete system compromise",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csaf.arubanetworks.com/2024/hpe_aruba_networking_-_hpesbnw04673.txt"
+    ],
+    "受影响版本": [
+      "ECOS 9.3.x.x: 9.3.3.0 and below",
+      "ECOS 9.2.x.x: 9.2.9.0 and below",
+      "ECOS 9.1.x.x: 9.1.11.0 and below",
+      "ECOS 9.0.x.x: all builds are affected and are out of maintenance.",
+      "ECOS 8.0.x.x: all builds are affected and are out of maintenance."
+    ],
+    "公开日期": "2024年07月24日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking EdgeConnect SD-WAN",
+    "CVE编号": "CVE-2024-33519",
+    "漏洞描述": "A vulnerability in the web-based management interface of HPE Aruba Networking EdgeConnect SD-WAN gateway could allow an authenticated remote attacker to conduct a server-side prototype pollution attack. Successful exploitation of this vulnerability could allow an attacker to execute arbitrary commands on the underlying operating system leading to complete system compromise.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csaf.arubanetworks.com/2024/hpe_aruba_networking_-_hpesbnw04673.txt"
+    ],
+    "受影响版本": [
+      "ECOS 9.3.x.x: 9.3.3.0 and below",
+      "ECOS 9.2.x.x: 9.2.9.0 and below",
+      "ECOS 9.1.x.x: 9.1.11.0 and below",
+      "ECOS 9.0.x.x: all builds are affected and are out of maintenance.",
+      "ECOS 8.0.x.x: all builds are affected and are out of maintenance."
+    ],
+    "公开日期": "2024年07月24日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking Virtual Intranet Access (VIA)",
+    "CVE编号": "CVE-2023-38402",
+    "漏洞描述": "A vulnerability in the HPE Aruba Networking Virtual Intranet Access (VIA) client could allow malicious users to overwrite arbitrary files as NT AUTHORITY\\SYSTEM. A successful exploit could allow these malicious users to create a Denial-of-Service (DoS) condition affecting the Microsoft Windows operating System boot process.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2023-011.txt"
+    ],
+    "受影响版本": [
+      "HPE Aruba Networking Virtual Intranet Access (VIA) client for Microsoft Windows"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Networking Virtual Intranet Access (VIA)",
+    "CVE编号": "CVE-2023-38401",
+    "漏洞描述": "A vulnerability in the HPE Aruba Networking Virtual Intranet Access (VIA) client could allow local users to elevate privileges. Successful exploitation could allow execution of arbitrary code with NT AUTHORITY\\SYSTEM privileges on the operating system.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2023-011.txt"
+    ],
+    "受影响版本": [
+      "HPE Aruba Networking Virtual Intranet Access (VIA) client for Microsoft Windows"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Instant (IAP)",
+    "CVE编号": "CVE-2021-37732",
+    "漏洞描述": "A remote arbitrary command execution vulnerability was discovered in HPE Aruba Instant (IAP) version(s): Aruba Instant 6.4.x.x: 6.4.4.8-4.2.4.17 and below; Aruba Instant 6.5.x.x: 6.5.4.18 and below; Aruba Instant 8.5.x.x: 8.5.0.11 and below; Aruba Instant 8.6.x.x: 8.6.0.6 and below; Aruba Instant 8.7.x.x: 8.7.1.0 and below. Aruba has released patches for Aruba Instant (IAP) that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-017.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-917476.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x.x: 6.4.4.8-4.2.4.17 and below",
+      "Aruba Instant 6.5.x.x: 6.5.4.18 and below",
+      "Aruba Instant 8.5.x.x: 8.5.0.11 and below",
+      "Aruba Instant 8.6.x.x: 8.6.0.6 and below",
+      "Aruba Instant 8.7.x.x: 8.7.1.0 and below"
+    ],
+    "公开日期": "2021年10月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Instant (IAP)",
+    "CVE编号": "CVE-2021-37730",
+    "漏洞描述": "A remote arbitrary command execution vulnerability was discovered in HPE Aruba Instant (IAP) version(s): Aruba Instant 6.4.x.x: 6.4.4.8-4.2.4.18 and below; Aruba Instant 6.5.x.x: 6.5.4.20 and below; Aruba Instant 8.5.x.x: 8.5.0.12 and below; Aruba Instant 8.6.x.x: 8.6.0.11 and below; Aruba Instant 8.7.x.x: 8.7.1.3 and below. Aruba has released patches for Aruba Instant (IAP) that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-017.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-917476.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x.x: 6.4.4.8-4.2.4.18 and below",
+      "Aruba Instant 6.5.x.x: 6.5.4.20 and below",
+      "Aruba Instant 8.5.x.x: 8.5.0.12 and below",
+      "Aruba Instant 8.6.x.x: 8.6.0.11 and below",
+      "Aruba Instant 8.7.x.x: 8.7.1.3 and below"
+    ],
+    "公开日期": "2021年10月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Instant (IAP)",
+    "CVE编号": "CVE-2021-37727",
+    "漏洞描述": "A remote arbitrary command execution vulnerability was discovered in HPE Aruba Instant (IAP) version(s): 6.4.x.x: 6.4.4.8-4.2.4.18 and below; Aruba Instant 6.5.x.x: 6.5.4.20 and below; Aruba Instant 8.5.x.x: 8.5.0.12 and below; Aruba Instant 8.6.x.x: 8.6.0.11 and below; Aruba Instant 8.7.x.x: 8.7.1.3 and below. Aruba has released patches for Aruba Instant (IAP) that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-017.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-917476.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x.x: 6.4.4.8-4.2.4.18 and below",
+      "Aruba Instant 6.5.x.x: 6.5.4.20 and below",
+      "Aruba Instant 8.5.x.x: 8.5.0.12 and below",
+      "Aruba Instant 8.6.x.x: 8.6.0.11 and below",
+      "Aruba Instant 8.7.x.x: 8.7.1.3 and below"
+    ],
+    "公开日期": "2021年10月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络设备",
+    "产品型号": "HPE Aruba Instant (IAP)",
+    "CVE编号": "CVE-2021-37726",
+    "漏洞描述": "A remote buffer overflow vulnerability was discovered in HPE Aruba Instant (IAP) version(s): Aruba Instant 8.7.x.x: 8.7.0.0 through 8.7.1.2. Aruba has released patches for Aruba Instant (IAP) that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-017.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-917476.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 8.7.x.x: 8.7.0.0 through 8.7.1.2"
+    ],
+    "公开日期": "2021年10月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络设备",
+    "产品型号": "Aruba 5400R zl2 Switch Series; Aruba 2930F Switch Series; Aruba 2920 Switch Series; Aruba 2930M Switch Series; Aruba 2530 Switch Series; Aruba 2540 Switch Series; Aruba 3800 Switch Series; HPE 3500 and 3500 yl Switch Series; Aruba 3810M Switch Series; HPE 8200 zl Switch Series; Aruba 2620 Switch Series; Aruba 5400 zl Switch Series; HPE 6200 yl Switch Series",
+    "CVE编号": "CVE-2021-25141",
+    "漏洞描述": "A security vulnerability has been identified in in certain HPE and Aruba L2/L3 switch firmware. A data processing error due to improper handling of an unexpected data type in user supplied information to the switch's management interface has been identified. The data processing error could be exploited to cause a crash or reboot in the switch management interface and/or possibly the switch itself leading to local denial of service (DoS). The user must have administrator privileges to exploit this vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbnw04082en_us"
+    ],
+    "受影响版本": [
+      "Prior to KB.16.10.0012",
+      "- Prior to WC.16.10.0012",
+      "- Prior to WB.16.10.0011",
+      "- Aruba 2530YA prior to YA.16.10.0012 / Aruba 2530YB prior YB.16.10.0012",
+      "- Prior to YC.16.10.0012",
+      "- Prior to KA.16.04.0022",
+      "- Prior to K.16.02.0032",
+      "- Prior to KB.16.10.0012",
+      "- Prior to K.15.18.0024",
+      "- Prior to RA.16.04.0022"
+    ],
+    "公开日期": "2021年02月09日"
+  }
+]

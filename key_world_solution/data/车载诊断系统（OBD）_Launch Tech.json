@@ -1,0 +1,64 @@
+[
+  {
+    "设备品牌": "Brilliance",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "Golden Link Secondary System",
+    "CVE编号": "CVE-2025-5698",
+    "漏洞描述": "A vulnerability, which was classified as critical, was found in Brilliance Golden Link Secondary System up to 20250424. Affected is an unknown function of the file /sysframework/logSelect.htm. The manipulation of the argument nodename leads to sql injection. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://github.com/K-mxredo/MXdocument/blob/K-mxredo-blob/%E9%BB%84%E9%87%91%E9%80%9Asysframework-logSelect.htm.md"
+    ],
+    "受影响版本": [
+      "20250424"
+    ],
+    "公开日期": "2025年06月05日"
+  },
+  {
+    "设备品牌": "ruifang-tech",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "Rebuild",
+    "CVE编号": "CVE-2024-12665",
+    "漏洞描述": "A vulnerability, which was classified as problematic, was found in ruifang-tech Rebuild 3.8.5. Affected is an unknown function of the component Task Comment Attachment Upload. The manipulation leads to cross site scripting. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://github.com/cydtseng/Vulnerability-Research/blob/main/rebuild/StoredXSS-TaskCommentAttachments.md"
+    ],
+    "受影响版本": [
+      "3.8.5"
+    ],
+    "公开日期": "2024年12月16日"
+  },
+  {
+    "设备品牌": "cjbi",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "wetech-cms",
+    "CVE编号": "CVE-2024-12480",
+    "漏洞描述": "A vulnerability was found in cjbi wetech-cms 1.0/1.1/1.2. It has been classified as critical. Affected is the function searchTopic of the file wetech-cms-master\\wetech-core\\src\\main\\java\\tech\\wetech\\cms\\dao\\TopicDao.java. The manipulation of the argument con leads to sql injection. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://github.com/hadagaga/vuln/blob/master/wetech-cms/sql-2/SQL_injection_vulnerability.md"
+    ],
+    "受影响版本": [
+      "1.0",
+      "1.1",
+      "1.2"
+    ],
+    "公开日期": "2024年12月11日"
+  },
+  {
+    "设备品牌": "unspecified",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "Neetai Tech",
+    "CVE编号": "CVE-2020-36540",
+    "漏洞描述": "A vulnerability, which was classified as critical, was found in Neetai Tech. Affected is an unknown function of the file /product.php. The manipulation leads to sql injection. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "无官方补丁，建议联系厂商或及时更新系统"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年06月03日"
+  }
+]

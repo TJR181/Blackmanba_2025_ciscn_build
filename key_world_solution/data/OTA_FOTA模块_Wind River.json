@@ -1,0 +1,196 @@
+[
+  {
+    "设备品牌": "Wind River Systems",
+    "设备类型": "OTA",
+    "产品型号": "VxWorks 7",
+    "CVE编号": "CVE-2025-26500",
+    "漏洞描述": ": Uncontrolled Resource Consumption vulnerability in Wind River Systems VxWorks 7 on VxWorks allows Excessive Allocation.  \n\nSpecifically crafted USB packets may lead to the system becoming unavailable\n\nThis issue affects VxWorks 7: from 22.06 through 24.03.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://support2.windriver.com/index.php?page=cve&on=view&id=CVE-2025-26500"
+    ],
+    "受影响版本": [
+      "22.06"
+    ],
+    "公开日期": "2025年03月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-28759",
+    "漏洞描述": "A crafted network packet may cause a buffer overrun in Wind River VxWorks 7 through 23.09.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://windriver.com",
+      "https://support2.windriver.com/index.php?page=cve&on=view&id=CVE-2024-28759"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年05月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-51787",
+    "漏洞描述": "An issue was discovered in Wind River VxWorks 7 22.09 and 23.03. If a VxWorks task or POSIX thread that uses OpenSSL exits, limited per-task memory is not freed, resulting in a memory leak.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support2.windriver.com/index.php?page=cve&on=view&id=CVE-2023-51787"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年02月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-38346",
+    "漏洞描述": "An issue was discovered in Wind River VxWorks 6.9 and 7. The function ``tarExtract`` implements TAR file extraction and thereby also processes files within an archive that have relative or absolute file paths. A developer using the \"tarExtract\" function may expect that the function will strip leading slashes from absolute paths or stop processing when encountering relative paths that are outside of the extraction path, unless otherwise forced. This could lead to unexpected and undocumented behavior, which in general could result in a directory traversal, and associated unexpected behavior.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support2.windriver.com/index.php?page=security-notices",
+      "https://www.pentagrid.ch/en/blog/wind-river-vxworks-tarextract-directory-traversal-vulnerability/",
+      "https://support2.windriver.com/index.php?page=cve&on=view&id=CVE-2023-38346"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年09月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-38767",
+    "漏洞描述": "An issue was discovered in Wind River VxWorks 6.9 and 7, that allows a specifically crafted packet sent by a Radius server, may cause Denial of Service during the IP Radius access procedure.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://windriver.com",
+      "https://support2.windriver.com/index.php?page=cve&on=view&id=CVE-2022-38767"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年11月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-23937",
+    "漏洞描述": "In Wind River VxWorks 6.9 and 7, a specific crafted packet may lead to an out-of-bounds read during an IKE initial exchange scenario.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support2.windriver.com/index.php?page=security-notices",
+      "https://support2.windriver.com/index.php?page=cve&pg=21#list"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年03月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-29999",
+    "漏洞描述": "An issue was discovered in Wind River VxWorks through 6.8. There is a possible stack overflow in dhcp server.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support2.windriver.com/index.php?page=security-notices"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年04月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-29998",
+    "漏洞描述": "An issue was discovered in Wind River VxWorks before 6.5. There is a possible heap overflow in dhcp client.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support2.windriver.com/index.php?page=security-notices",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-560465.pdf",
+      "https://us-cert.cisa.gov/ics/advisories/icsa-21-194-12",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-910883.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年04月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-29997",
+    "漏洞描述": "An issue was discovered in Wind River VxWorks 7 before 21.03. A specially crafted packet may lead to buffer over-read on IKE.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support2.windriver.com/index.php?page=security-notices",
+      "https://support2.windriver.com/index.php?page=cve&on=view&id=CVE-2021-29997"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年04月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-35198",
+    "漏洞描述": "An issue was discovered in Wind River VxWorks 7. The memory allocator has a possible integer overflow in calculating a memory block's size to be allocated by calloc(). As a result, the actual memory allocated is smaller than the buffer size specified by the arguments, leading to memory corruption.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support2.windriver.com/index.php?page=security-notices",
+      "https://support2.windriver.com/index.php?page=cve&on=view&id=CVE-2020-35198",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年05月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-28895",
+    "漏洞描述": "In Wind River VxWorks, memory allocator has a possible overflow in calculating the memory block's size to be allocated by calloc(). As a result, the actual memory allocated is smaller than the buffer size specified by the arguments, leading to memory corruption.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support2.windriver.com/index.php?page=defects&on=view&id=V7LIBC-1327",
+      "https://support2.windriver.com/index.php?page=cve&on=view&id=CVE-2020-28895",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-11440",
+    "漏洞描述": "httpRpmFs in WebCLI in Wind River VxWorks 5.5 through 7 SR0640 has no check for an escape from the web root.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://windriver.com",
+      "https://support2.windriver.com/index.php?page=cve&on=view&id=CVE-2020-11440"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年07月23日"
+  }
+]

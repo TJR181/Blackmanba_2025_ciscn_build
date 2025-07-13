@@ -1,0 +1,2805 @@
+[
+  {
+    "设备品牌": "JuliaRegistries",
+    "设备类型": "OTA",
+    "产品型号": "Registrator.jl",
+    "CVE编号": "CVE-2025-52480",
+    "漏洞描述": "Registrator is a GitHub app that automates creation of registration pull requests for julia packages to the General registry. Prior to version 1.9.5, if the clone URL returned by GitHub is malicious (or can be injected using upstream vulnerabilities), an argument injection is possible in the `gettreesha()` function. This can then lead to a potential remote code execution. Users should upgrade immediately to v1.9.5 to receive a patch. All prior versions are vulnerable. No known workarounds are available.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/JuliaRegistries/Registrator.jl/security/advisories/GHSA-w8jv-rg3h-fc68",
+      "https://github.com/JuliaRegistries/Registrator.jl/pull/449"
+    ],
+    "受影响版本": [
+      "< 1.9.5"
+    ],
+    "公开日期": "2025年06月25日"
+  },
+  {
+    "设备品牌": "upstreamplugin",
+    "设备类型": "OTA",
+    "产品型号": "UpStream: a Project Management Plugin for WordPress",
+    "CVE编号": "CVE-2025-49974",
+    "漏洞描述": "Missing Authorization vulnerability in upstreamplugin UpStream: a Project Management Plugin for WordPress allows Exploiting Incorrectly Configured Access Control Security Levels. This issue affects UpStream: a Project Management Plugin for WordPress: from n/a through 2.1.0.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://patchstack.com/database/wordpress/plugin/upstream/vulnerability/wordpress-upstream-a-project-management-plugin-for-wordpress-plugin-2-1-0-broken-access-control-vulnerability?_s_id=cve"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年06月20日"
+  },
+  {
+    "设备品牌": "c-ares",
+    "设备类型": "OTA",
+    "产品型号": "c-ares",
+    "CVE编号": "CVE-2025-31498",
+    "漏洞描述": "c-ares is an asynchronous resolver library. From 1.32.3 through 1.34.4, there is a use-after-free in read_answers() when process_answer() may re-enqueue a query either due to a DNS Cookie Failure or when the upstream server does not properly support EDNS, or possibly on TCP queries if the remote closed the connection immediately after a response. If there was an issue trying to put that new transaction on the wire, it would close the connection handle, but read_answers() was still expecting the connection handle to be available to possibly dequeue other responses. In theory a remote attacker might be able to trigger this by flooding the target with ICMP UNREACHABLE packets if they also control the upstream nameserver and can return a result with one of those conditions, this has been untested. Otherwise only a local attacker might be able to change system behavior to make send()/write() return a failure condition. This vulnerability is fixed in 1.34.5.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/c-ares/c-ares/security/advisories/GHSA-6hxc-62jh-p29v",
+      "https://github.com/c-ares/c-ares/pull/821",
+      "https://github.com/c-ares/c-ares/commit/29d38719112639d8c0ba910254a3dd4f482ea2d1"
+    ],
+    "受影响版本": [
+      ">= 1.32.3, < 1.34.5"
+    ],
+    "公开日期": "2025年04月08日"
+  },
+  {
+    "设备品牌": "Kubernetes",
+    "设备类型": "OTA",
+    "产品型号": "Kubelet",
+    "CVE编号": "CVE-2025-1767",
+    "漏洞描述": "This CVE only affects Kubernetes clusters that utilize the in-tree gitRepo volume to clone git repositories from other pods within the same node. Since the in-tree gitRepo volume feature has been deprecated and will not receive security updates upstream, any cluster still using this feature remains vulnerable.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/kubernetes/kubernetes/pull/130786",
+      "https://groups.google.com/g/kubernetes-security-announce/c/19irihsKg7s"
+    ],
+    "受影响版本": [
+      "<=v1.32.2"
+    ],
+    "公开日期": "2025年03月13日"
+  },
+  {
+    "设备品牌": "",
+    "设备类型": "OTA",
+    "产品型号": "",
+    "CVE编号": "CVE-2024-8285",
+    "漏洞描述": "A flaw was found in Kroxylicious. When establishing the connection with the upstream Kafka server using a TLS secured connection, Kroxylicious fails to properly verify the server's hostname, resulting in an insecure connection. For a successful attack to be performed, the attacker needs to perform a Man-in-the-Middle attack or compromise any external systems, such as DNS or network routing configuration. This issue is considered a high complexity attack, with additional high privileges required, as the attack would need access to the Kroxylicious configuration or a peer system. The result of a successful attack impacts both data integrity and confidentiality.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://access.redhat.com/errata/RHSA-2024:9571",
+      "https://access.redhat.com/security/cve/CVE-2024-8285",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2308606"
+    ],
+    "受影响版本": [
+      "0.80.0"
+    ],
+    "公开日期": "2024年08月30日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2024-53270",
+    "漏洞描述": "Envoy is a cloud-native high-performance edge/middle/service proxy. In affected versions `sendOverloadError` is going to assume the active request exists when `envoy.load_shed_points.http1_server_abort_dispatch` is configured. If `active_request` is nullptr, only onMessageBeginImpl() is called. However, the `onMessageBeginImpl` will directly return ok status if the stream is already reset leading to the nullptr reference. The downstream reset can actually happen during the H/2 upstream reset. As a result envoy may crash. This issue has been addressed in releases 1.32.3, 1.31.5, 1.30.9, and 1.29.12. Users are advised to upgrade. Users unable to upgrade may disable `http1_server_abort_dispatch` load shed point and/or use a high threshold.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-q9qv-8j52-77p3",
+      "https://github.com/envoyproxy/envoy/pull/37743/commits/6cf8afda956ba67c9afad185b962325a5242ef02"
+    ],
+    "受影响版本": [
+      ">= 1.32.0, < 1.32.3",
+      ">= 1.31.0, < 1.31.5",
+      ">= 1.30.0, < 1.30.9",
+      "< 1.29.12"
+    ],
+    "公开日期": "2024年12月18日"
+  },
+  {
+    "设备品牌": "argoproj",
+    "设备类型": "OTA",
+    "产品型号": "argo-helm",
+    "CVE编号": "CVE-2024-52799",
+    "漏洞描述": "Argo Workflows Chart is used to set up argo and its needed dependencies through one command. Prior to 0.44.0, the workflow-role has excessive privileges, the worst being create pods/exec, which will allow kubectl exec into any Pod in the same namespace, i.e. arbitrary code execution within those Pods. If a user can be made to run a malicious template, their whole namespace can be compromised. This affects versions of the argo-workflows Chart that use appVersion: 3.4 and above, which no longer need these permissions for the only available Executor, Emissary. It could also affect users below 3.4 depending on their choice of Executor in those versions. This only affects the Helm Chart and not the upstream manifests. This vulnerability is fixed in 0.44.0.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://github.com/argoproj/argo-helm/security/advisories/GHSA-fgrf-2886-4q7m",
+      "https://github.com/argoproj/argo-helm/commit/81dc44c4a5ccd42c799469a78eb96a68048a4987"
+    ],
+    "受影响版本": [
+      "< 0.44.0"
+    ],
+    "公开日期": "2024年11月21日"
+  },
+  {
+    "设备品牌": "gstreamer",
+    "设备类型": "OTA",
+    "产品型号": "gstreamer",
+    "CVE编号": "CVE-2024-47776",
+    "漏洞描述": "GStreamer is a library for constructing graphs of media-handling components. An OOB-read has been discovered in gst_wavparse_cue_chunk within gstwavparse.c. The vulnerability happens due to a discrepancy between the size of the data buffer and the size value provided to the function. This mismatch causes the comparison  if (size < 4 + ncues * 24) to fail in some cases, allowing the subsequent loop to access beyond the bounds of the data buffer. The root cause of this discrepancy stems from a miscalculation when clipping the chunk size based on upstream data size. This vulnerability allows reading beyond the bounds of the data buffer, potentially leading to a crash (denial of service) or the leak of sensitive data. This vulnerability is fixed in 1.24.10.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://securitylab.github.com/advisories/GHSL-2024-260_Gstreamer/",
+      "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/merge_requests/8042.patch",
+      "https://gstreamer.freedesktop.org/security/sa-2024-0027.html"
+    ],
+    "受影响版本": [
+      "< 1.24.10"
+    ],
+    "公开日期": "2024年12月11日"
+  },
+  {
+    "设备品牌": "vercel",
+    "设备类型": "OTA",
+    "产品型号": "next.js",
+    "CVE编号": "CVE-2024-46982",
+    "漏洞描述": "Next.js is a React framework for building full-stack web applications. By sending a crafted HTTP request, it is possible to poison the cache of a non-dynamic server-side rendered route in the pages router (this does not affect the app router). When this crafted request is sent it could coerce Next.js to cache a route that is meant to not be cached and send a `Cache-Control: s-maxage=1, stale-while-revalidate` header which some upstream CDNs may cache as well. To be potentially affected all of the following must apply: 1. Next.js between 13.5.1 and 14.2.9, 2. Using pages router, & 3. Using non-dynamic server-side rendered routes e.g. `pages/dashboard.tsx` not `pages/blog/[slug].tsx`. This vulnerability was resolved in Next.js v13.5.7, v14.2.10, and later. We recommend upgrading regardless of whether you can reproduce the issue or not. There are no official or recommended workarounds for this issue, we recommend that users patch to a safe version.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/vercel/next.js/security/advisories/GHSA-gp8f-8m3g-qvj9",
+      "https://github.com/vercel/next.js/commit/7ed7f125e07ef0517a331009ed7e32691ba403d3",
+      "https://github.com/vercel/next.js/commit/bd164d53af259c05f1ab434004bcfdd3837d7cda"
+    ],
+    "受影响版本": [
+      ">= 13.5.1, < 13.5.7",
+      ">= 14.0.0, < 14.2.10"
+    ],
+    "公开日期": "2024年09月17日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2024-45809",
+    "漏洞描述": "Envoy is a cloud-native high-performance edge/middle/service proxy. Jwt filter will lead to an Envoy crash when clear route cache with remote JWKs. In the following case: 1. remote JWKs are used, which requires async header processing; 2. clear_route_cache is enabled on the provider; 3. header operations are enabled in JWT filter, e.g. header to claims feature; 4. the routing table is configured in a way that the JWT header operations modify requests to not match any route. When these conditions are met, a crash is triggered in the upstream code due to nullptr reference conversion from route(). The root cause is the ordering of continueDecoding and clearRouteCache. This issue has been addressed in versions 1.31.2, 1.30.6, and 1.29.9. Users are advised to upgrade. There are no known workarounds for this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-wqr5-qmq7-3qw3"
+    ],
+    "受影响版本": [
+      ">= 1.29.0, < 1.29.9",
+      ">= 1.30.0, < 1.30.6",
+      ">= 1.31.0, < 1.31.2"
+    ],
+    "公开日期": "2024年09月19日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "OTA",
+    "产品型号": "FortiOS",
+    "CVE编号": "CVE-2024-40591",
+    "漏洞描述": "An incorrect privilege assignment vulnerability [CWE-266] in Fortinet FortiOS version 7.6.0, 7.4.0 through 7.4.4, 7.2.0 through 7.2.9 and before 7.0.15 allows an authenticated admin whose access profile has the Security Fabric permission to escalate their privileges to super-admin by connecting the targetted FortiGate to a malicious upstream FortiGate they control.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://fortiguard.fortinet.com/psirt/FG-IR-24-302"
+    ],
+    "受影响版本": [
+      "7.6.0",
+      "7.4.0",
+      "7.2.0",
+      "7.0.0",
+      "6.4.0"
+    ],
+    "公开日期": "2025年02月11日"
+  },
+  {
+    "设备品牌": "pomerium",
+    "设备类型": "OTA",
+    "产品型号": "pomerium",
+    "CVE编号": "CVE-2024-39315",
+    "漏洞描述": "Pomerium is an identity and context-aware access proxy. Prior to version 0.26.1, the Pomerium user info page (at `/.pomerium`) unintentionally included serialized OAuth2 access and ID tokens from the logged-in user's session. These tokens are not intended to be exposed to end users. This issue may be more severe in the presence of a cross-site scripting vulnerability in an upstream application proxied through Pomerium. If an attacker could insert a malicious script onto a web page proxied through Pomerium, that script could access these tokens by making a request to the `/.pomerium` endpoint. Upstream applications that authenticate only the ID token may be vulnerable to user impersonation using a token obtained in this manner. Note that an OAuth2 access token or ID token by itself is not sufficient to hijack a user's Pomerium session. Upstream applications should not be vulnerable to user impersonation via these tokens provided the application verifies the Pomerium JWT for each request, the connection between Pomerium and the application is secured by mTLS, or the connection between Pomerium and the application is otherwise secured at the network layer. The issue is patched in Pomerium v0.26.1. No known workarounds are available.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/pomerium/pomerium/security/advisories/GHSA-rrqr-7w59-637v",
+      "https://github.com/pomerium/pomerium/commit/4c7c4320afb2ced70ba19b46de1ac4383f3daa48"
+    ],
+    "受影响版本": [
+      "< 0.26.1"
+    ],
+    "公开日期": "2024年07月02日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2024-39305",
+    "漏洞描述": "Envoy is a cloud-native, open source edge and service proxy. Prior to versions 1.30.4, 1.29.7, 1.28.5, and 1.27.7. Envoy references already freed memory when route hash policy is configured with cookie attributes. Note that this vulnerability has been fixed in the open as the effect would be immediately apparent if it was configured. Memory allocated for holding attribute values is freed after configuration was parsed. During request processing Envoy will attempt to copy content of de-allocated memory into request cookie header. This can lead to arbitrary content of Envoy's memory to be sent to the upstream service or abnormal process termination. This vulnerability is fixed in Envoy versions v1.30.4, v1.29.7, v1.28.5, and v1.27.7. As a workaround, do not use cookie attributes in route action hash policy.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-fp35-g349-h66f",
+      "https://github.com/envoyproxy/envoy/commit/02a06681fbe0e039b1c7a9215257a7537eddb518",
+      "https://github.com/envoyproxy/envoy/commit/50b384cb203a1f2894324cbae64b6d9bc44cce45",
+      "https://github.com/envoyproxy/envoy/commit/99b6e525fb9f6f6f19a0425f779bc776f121c7e5",
+      "https://github.com/envoyproxy/envoy/commit/b7f509607ad860fd6a63cde4f7d6f0197f9f63bb"
+    ],
+    "受影响版本": [
+      ">= 1.30.0, < 1.30.4",
+      ">= 1.29.0, < 1.29.7",
+      ">= 1.28.0, < 1.28.5",
+      "< 1.27.7"
+    ],
+    "公开日期": "2024年07月01日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2024-32475",
+    "漏洞描述": "Envoy is a cloud-native, open source edge and service proxy. When an upstream TLS cluster is used with `auto_sni` enabled, a request containing a `host`/`:authority` header longer than 255 characters triggers an abnormal termination of Envoy process. Envoy does not gracefully handle an error when setting SNI for outbound TLS connection. The error can occur when Envoy attempts to use the `host`/`:authority` header value longer than 255 characters as SNI for outbound TLS connection. SNI length is limited to 255 characters per the standard. Envoy always expects this operation to succeed and abnormally aborts the process when it fails. This vulnerability is fixed in 1.30.1, 1.29.4, 1.28.3, and 1.27.5.\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-3mh5-6q8v-25wj",
+      "https://github.com/envoyproxy/envoy/commit/b47fc6648d7c2dfe0093a601d44cb704b7bad382"
+    ],
+    "受影响版本": [
+      ">= 1.30.0, < 11.30.1",
+      ">= 1.29.0, < 1.29.4",
+      ">= 1.28.0, < 1.28.3",
+      ">= 1.13.0, < 1.27.5"
+    ],
+    "公开日期": "2024年04月18日"
+  },
+  {
+    "设备品牌": "",
+    "设备类型": "OTA",
+    "产品型号": "",
+    "CVE编号": "CVE-2024-3094",
+    "漏洞描述": "Malicious code was discovered in the upstream tarballs of xz, starting with version 5.6.0. \r\nThrough a series of complex obfuscations, the liblzma build process extracts a prebuilt object file from a disguised test file existing in the source code, which is then used to modify specific functions in the liblzma code. This results in a modified liblzma library that can be used by any software linked against this library, intercepting and modifying the data interaction with this library.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://access.redhat.com/security/cve/CVE-2024-3094",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2272210",
+      "https://www.openwall.com/lists/oss-security/2024/03/29/4",
+      "https://www.redhat.com/en/blog/urgent-security-alert-fedora-41-and-rawhide-users"
+    ],
+    "受影响版本": [
+      "5.6.0",
+      "5.6.1"
+    ],
+    "公开日期": "2024年03月29日"
+  },
+  {
+    "设备品牌": "moby",
+    "设备类型": "OTA",
+    "产品型号": "moby",
+    "CVE编号": "CVE-2024-29018",
+    "漏洞描述": "Moby is an open source container framework that is a key component of Docker Engine, Docker Desktop, and other distributions of container tooling or runtimes. Moby's networking implementation allows for many networks, each with their own IP address range and gateway, to be defined. This feature is frequently referred to as custom networks, as each network can have a different driver, set of parameters and thus behaviors. When creating a network, the `--internal` flag is used to designate a network as _internal_. The `internal` attribute in a docker-compose.yml file may also be used to mark a network _internal_, and other API clients may specify the `internal` parameter as well.\n\nWhen containers with networking are created, they are assigned unique network interfaces and IP addresses. The host serves as a router for non-internal networks, with a gateway IP that provides SNAT/DNAT to/from container IPs.\n\nContainers on an internal network may communicate between each other, but are precluded from communicating with any networks the host has access to (LAN or WAN) as no default route is configured, and firewall rules are set up to drop all outgoing traffic. Communication with the gateway IP address (and thus appropriately configured host services) is possible, and the host may communicate with any container IP directly.\n\nIn addition to configuring the Linux kernel's various networking features to enable container networking, `dockerd` directly provides some services to container networks. Principal among these is serving as a resolver, enabling service discovery, and resolution of names from an upstream resolver.\n\nWhen a DNS request for a name that does not correspond to a container is received, the request is forwarded to the configured upstream resolver. This request is made from the container's network namespace: the level of access and routing of traffic is the same as if the request was made by the container itself.\n\nAs a consequence of this design, containers solely attached to an internal network will be unable to resolve names using the upstream resolver, as the container itself is unable to communicate with that nameserver. Only the names of containers also attached to the internal network are able to be resolved.\n\nMany systems run a local forwarding DNS resolver. As the host and any containers have separate loopback devices, a consequence of the design described above is that containers are unable to resolve names from the host's configured resolver, as they cannot reach these addresses on the host loopback device. To bridge this gap, and to allow containers to properly resolve names even when a local forwarding resolver is used on a loopback address, `dockerd` detects this scenario and instead forward DNS requests from the host namework namespace. The loopback resolver then forwards the requests to its configured upstream resolvers, as expected.\n\nBecause `dockerd` forwards DNS requests to the host loopback device, bypassing the container network namespace's normal routing semantics entirely, internal networks can unexpectedly forward DNS requests to an external nameserver. By registering a domain for which they control the authoritative nameservers, an attacker could arrange for a compromised container to exfiltrate data by encoding it in DNS queries that will eventually be answered by their nameservers.\n\nDocker Desktop is not affected, as Docker Desktop always runs an internal resolver on a RFC 1918 address.\n\nMoby releases 26.0.0, 25.0.4, and 23.0.11 are patched to prevent forwarding any DNS requests from internal networks. As a workaround, run containers intended to be solely attached to internal networks with a custom upstream address, which will force all upstream DNS queries to be resolved from the container's network namespace.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/moby/moby/security/advisories/GHSA-mq39-4gv4-mvpx",
+      "https://github.com/moby/moby/pull/46609"
+    ],
+    "受影响版本": [
+      ">= 26.0.0-rc1, < 26.0.0-rc3",
+      ">= 25.0.0, < 25.0.5",
+      "< 23.0.11"
+    ],
+    "公开日期": "2024年03月20日"
+  },
+  {
+    "设备品牌": "stacklok",
+    "设备类型": "OTA",
+    "产品型号": "minder",
+    "CVE编号": "CVE-2024-27093",
+    "漏洞描述": "Minder is a Software Supply Chain Security Platform. In version 0.0.31 and earlier, it is possible for an attacker to register a repository with a invalid or differing upstream ID, which causes Minder to report the repository as registered, but not remediate any future changes which conflict with policy (because the webhooks for the repo do not match any known repository in the database).  When attempting to register a repo with a different repo ID, the registered provider must have admin on the named repo, or a 404 error will result.  Similarly, if the stored provider token does not have repo access, then the remediations will not apply successfully.  Lastly, it appears that reconciliation actions do not execute against repos with this type of mismatch. This appears to primarily be a potential denial-of-service vulnerability.  This vulnerability is patched in version 0.20240226.1425+ref.53868a8.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/stacklok/minder/security/advisories/GHSA-q6h8-4j2v-pjg4",
+      "https://github.com/stacklok/minder/commit/53868a878e93f29c43437f96dbc990b548e48d1d"
+    ],
+    "受影响版本": [
+      "< 0.20240226.1425+ref.53868a8"
+    ],
+    "公开日期": "2024年02月26日"
+  },
+  {
+    "设备品牌": "",
+    "设备类型": "OTA",
+    "产品型号": "",
+    "CVE编号": "CVE-2024-2698",
+    "漏洞描述": "A vulnerability was found in FreeIPA in how the initial implementation of MS-SFU by MIT Kerberos was missing a condition for granting the \"forwardable\" flag on S4U2Self tickets. Fixing this mistake required adding a special case for the check_allowed_to_delegate() function: If the target service argument is NULL, then it means the KDC is probing for general constrained delegation rules and not checking a specific S4U2Proxy request.\r\n\r\nIn FreeIPA 4.11.0, the behavior of ipadb_match_acl() was modified to match the changes from upstream MIT Kerberos 1.20. However, a mistake resulting in this mechanism applies in cases where the target service argument is set AND where it is unset. This results in S4U2Proxy requests being accepted regardless of whether or not there is a matching service delegation rule.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://access.redhat.com/errata/RHSA-2024:3754",
+      "https://access.redhat.com/errata/RHSA-2024:3755",
+      "https://access.redhat.com/errata/RHSA-2024:3757",
+      "https://access.redhat.com/errata/RHSA-2024:3759",
+      "https://access.redhat.com/security/cve/CVE-2024-2698",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2270353",
+      "https://www.freeipa.org/release-notes/4-12-1.html"
+    ],
+    "受影响版本": [
+      "4.11.0",
+      "4.12.0"
+    ],
+    "公开日期": "2024年06月12日"
+  },
+  {
+    "设备品牌": "PowerDNS",
+    "设备类型": "OTA",
+    "产品型号": "Recursor",
+    "CVE编号": "CVE-2024-25583",
+    "漏洞描述": "A crafted response from an upstream server the recursor has been configured to forward-recurse to can cause a Denial of Service in the Recursor. The default configuration of the Recursor does not use recursive forwarding and is not affected.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2024-02.html",
+      "http://www.openwall.com/lists/oss-security/2024/04/24/1"
+    ],
+    "受影响版本": [
+      "4.8.7",
+      "4.9.4",
+      "5.0.3"
+    ],
+    "公开日期": "2024年04月25日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2024-23327",
+    "漏洞描述": "Envoy is a high-performance edge/middle/service proxy. When PPv2 is enabled both on a listener and subsequent cluster, the Envoy instance will segfault when attempting to craft the upstream PPv2 header. This occurs when the downstream request has a command type of LOCAL and does not have the protocol block. This issue has been addressed in releases 1.29.1, 1.28.1, 1.27.3, and 1.26.7. Users are advised to upgrade. There are no known workarounds for this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-4h5x-x9vh-m29j",
+      "https://github.com/envoyproxy/envoy/commit/63895ea8e3cca9c5d3ab4c5c128ed1369969d54a"
+    ],
+    "受影响版本": [
+      ">= 1.29.0, < 1.29.1",
+      ">= 1.28.0, < 1.28.1",
+      ">= 1.27.0, < 1.27.3",
+      "< 1.26.7"
+    ],
+    "公开日期": "2024年02月09日"
+  },
+  {
+    "设备品牌": "",
+    "设备类型": "OTA",
+    "产品型号": "",
+    "CVE编号": "CVE-2024-10295",
+    "漏洞描述": "A flaw was found in Gateway. Sending a non-base64 'basic' auth with special characters can cause APICast to incorrectly authenticate a request. A malformed basic authentication header containing special characters bypasses authentication and allows unauthorized access to the backend. This issue can occur due to a failure in the base64 decoding process, which causes APICast to skip the rest of the authentication checks and proceed with routing the request upstream.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://access.redhat.com/security/cve/CVE-2024-10295",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2321258"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年10月24日"
+  },
+  {
+    "设备品牌": "Debian",
+    "设备类型": "OTA",
+    "产品型号": "Debian cpio",
+    "CVE编号": "CVE-2023-7207",
+    "漏洞描述": "Debian's cpio contains a path traversal vulnerability. This issue was introduced by reverting CVE-2015-1197 patches which had caused a regression in --no-absolute-filenames. Upstream has since provided a proper fix to --no-absolute-filenames.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://git.savannah.gnu.org/cgit/cpio.git/commit/?id=376d663340a9dc91c91a5849e5713f07571c1628",
+      "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1059163",
+      "https://www.openwall.com/lists/oss-security/2023/12/21/8",
+      "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-7207",
+      "http://www.openwall.com/lists/oss-security/2024/01/05/1"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年01月05日"
+  },
+  {
+    "设备品牌": "Red Hat",
+    "设备类型": "OTA",
+    "产品型号": "Red Hat Enterprise Linux 8",
+    "CVE编号": "CVE-2023-7008",
+    "漏洞描述": "A vulnerability was found in systemd-resolved. This issue may allow systemd-resolved to accept records of DNSSEC-signed domains even when they have no signature, allowing man-in-the-middles (or the upstream DNS resolver) to manipulate records.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://access.redhat.com/errata/RHSA-2024:2463",
+      "https://access.redhat.com/errata/RHSA-2024:3203",
+      "https://access.redhat.com/security/cve/CVE-2023-7008",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2222261",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2222672",
+      "https://github.com/systemd/systemd/issues/25676"
+    ],
+    "受影响版本": [
+      "0:239-82.el8"
+    ],
+    "公开日期": "2023年12月23日"
+  },
+  {
+    "设备品牌": "Cloudflare",
+    "设备类型": "OTA",
+    "产品型号": "zlib",
+    "CVE编号": "CVE-2023-6992",
+    "漏洞描述": "Cloudflare version of zlib library was found to be vulnerable to memory corruption issues affecting the deflation algorithm implementation (deflate.c). The issues resulted from improper input validation and heap-based buffer overflow.\nA local attacker could exploit the problem during compression using a crafted malicious file potentially leading to denial of service of the software.\nPatches: The issue has been patched in commit  8352d10 https://github.com/cloudflare/zlib/commit/8352d108c05db1bdc5ac3bdf834dad641694c13c . The upstream repository is not affected.\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://github.com/cloudflare/zlib",
+      "https://github.com/cloudflare/zlib/security/advisories/GHSA-vww9-j87r-4cqh"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年01月04日"
+  },
+  {
+    "设备品牌": "Red Hat",
+    "设备类型": "OTA",
+    "产品型号": "Red Hat Enterprise Linux 6",
+    "CVE编号": "CVE-2023-6270",
+    "漏洞描述": "A flaw was found in the ATA over Ethernet (AoE) driver in the Linux kernel. The aoecmd_cfg_pkts() function improperly updates the refcnt on `struct net_device`, and a use-after-free can be triggered by racing between the free on the struct and the access through the `skbtxq` global queue. This could lead to a denial of service condition or potential code execution.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://web.git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/drivers/block/aoe?h=v6.9&id=f98364e926626c678fb4b9004b75cacf92ff0662",
+      "https://access.redhat.com/security/cve/CVE-2023-6270",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2256786"
+    ],
+    "受影响版本": [],
+    "公开日期": "2024年01月04日"
+  },
+  {
+    "设备品牌": "go-git",
+    "设备类型": "OTA",
+    "产品型号": "go-git",
+    "CVE编号": "CVE-2023-49569",
+    "漏洞描述": "A path traversal vulnerability was discovered in go-git versions prior to v5.11. This vulnerability allows an attacker to create and amend files across the filesystem. In the worse case scenario, remote code execution could be achieved.\n\nApplications are only affected if they are using the  ChrootOS https://pkg.go.dev/github.com/go-git/go-billy/v5/osfs#ChrootOS , which is the default when using \"Plain\" versions of Open and Clone funcs (e.g. PlainClone). Applications using  BoundOS https://pkg.go.dev/github.com/go-git/go-billy/v5/osfs#BoundOS  or in-memory filesystems are not affected by this issue.\nThis is a go-git implementation issue and does not affect the upstream git cli.\n\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/go-git/go-git/security/advisories/GHSA-449p-3h89-pw88"
+    ],
+    "受影响版本": [
+      "5.11.0"
+    ],
+    "公开日期": "2024年01月12日"
+  },
+  {
+    "设备品牌": "go-git",
+    "设备类型": "OTA",
+    "产品型号": "go-git",
+    "CVE编号": "CVE-2023-49568",
+    "漏洞描述": "A denial of service (DoS) vulnerability was discovered in go-git versions prior to v5.11. This vulnerability allows an attacker to perform denial of service attacks by providing specially crafted responses from a Git server which triggers resource exhaustion in go-git clients.\n\nApplications using only the in-memory filesystem supported by go-git are not affected by this vulnerability.\nThis is a go-git implementation issue and does not affect the upstream git cli.\n\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/go-git/go-git/security/advisories/GHSA-mw99-9chc-xw7r"
+    ],
+    "受影响版本": [
+      "5.11.0"
+    ],
+    "公开日期": "2024年01月12日"
+  },
+  {
+    "设备品牌": "sigstore",
+    "设备类型": "OTA",
+    "产品型号": "gitsign",
+    "CVE编号": "CVE-2023-47122",
+    "漏洞描述": "Gitsign is software for keyless Git signing using Sigstore. In versions of gitsign starting with 0.6.0 and prior to 0.8.0, Rekor public keys were fetched via the Rekor API, instead of through the local TUF client. If the upstream Rekor server happened to be compromised, gitsign clients could potentially be tricked into trusting incorrect signatures. There is no known compromise the default public good instance (`rekor.sigstore.dev`) - anyone using this instance is unaffected. This issue was fixed in v0.8.0. No known workarounds are available.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/sigstore/gitsign/security/advisories/GHSA-xvrc-2wvh-49vc",
+      "https://github.com/sigstore/gitsign/pull/399",
+      "https://github.com/sigstore/gitsign/commit/cd66ccb03c86a3600955f0c15f6bfeb75f697236",
+      "https://docs.sigstore.dev/about/threat-model/#sigstore-threat-model"
+    ],
+    "受影响版本": [
+      ">= 0.6.0, < 0.8.0"
+    ],
+    "公开日期": "2023年11月10日"
+  },
+  {
+    "设备品牌": "Red Hat",
+    "设备类型": "OTA",
+    "产品型号": "Red Hat Enterprise Linux 9",
+    "CVE编号": "CVE-2023-4194",
+    "漏洞描述": "A flaw was found in the Linux kernel's TUN/TAP functionality. This issue could allow a local user to bypass network filters and gain unauthorized access to some resources. The original patches fixing CVE-2023-1076 are incorrect or incomplete. The problem is that the following upstream commits - a096ccca6e50 (\"tun: tun_chr_open(): correctly initialize socket uid\"), - 66b2c338adce (\"tap: tap_open(): correctly initialize socket uid\"), pass \"inode->i_uid\" to sock_init_data_uid() as the last parameter and that turns out to not be accurate.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://access.redhat.com/errata/RHSA-2023:6583",
+      "https://access.redhat.com/security/cve/CVE-2023-4194",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2229498",
+      "https://lore.kernel.org/all/20230731164237.48365-1-lersek@redhat.com/",
+      "https://lore.kernel.org/all/20230731164237.48365-2-lersek@redhat.com/",
+      "https://lore.kernel.org/all/20230731164237.48365-3-lersek@redhat.com/"
+    ],
+    "受影响版本": [
+      "0:5.14.0-362.8.1.el9_3"
+    ],
+    "公开日期": "2023年08月07日"
+  },
+  {
+    "设备品牌": "Red Hat",
+    "设备类型": "OTA",
+    "产品型号": "Red Hat Enterprise Linux 9",
+    "CVE编号": "CVE-2023-4001",
+    "漏洞描述": "An authentication bypass flaw was found in GRUB due to the way that GRUB uses the UUID of a device to search for the configuration file that contains the password hash for the GRUB password protection feature. An attacker capable of attaching an external drive such as a USB stick containing a file system with a duplicate UUID (the same as in the \"/boot/\" file system) can bypass the GRUB password protection feature on UEFI systems, which enumerate removable drives before non-removable ones. This issue was introduced in a downstream patch in Red Hat's version of grub2 and does not affect the upstream package.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://access.redhat.com/errata/RHSA-2024:0437",
+      "https://access.redhat.com/errata/RHSA-2024:0456",
+      "https://access.redhat.com/errata/RHSA-2024:0468",
+      "https://access.redhat.com/security/cve/CVE-2023-4001",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2224951",
+      "https://dfir.ru/2024/01/15/cve-2023-4001-a-vulnerability-in-the-downstream-grub-boot-manager/"
+    ],
+    "受影响版本": [
+      "1:2.06-70.el9_3.2"
+    ],
+    "公开日期": "2024年01月15日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2023-35945",
+    "漏洞描述": "Envoy is a cloud-native high-performance edge/middle/service proxy. Envoy’s HTTP/2 codec may leak a header map and bookkeeping structures upon receiving `RST_STREAM` immediately followed by the `GOAWAY` frames from an upstream server. In nghttp2, cleanup of pending requests due to receipt of the `GOAWAY` frame skips de-allocation of the bookkeeping structure and pending compressed header. The error return [code path] is taken if connection is already marked for not sending more requests due to `GOAWAY` frame. The clean-up code is right after the return statement, causing memory leak. Denial of service through memory exhaustion. This vulnerability was patched in versions(s) 1.26.3, 1.25.8, 1.24.9, 1.23.11.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-jfxv-29pc-x22r",
+      "https://github.com/nghttp2/nghttp2/blob/e7f59406556c80904b81b593d38508591bb7523a/lib/nghttp2_session.c#L3346"
+    ],
+    "受影响版本": [
+      ">= 1.26.0, < 1.26.3",
+      ">= 1.25.0, < 1.25.8",
+      ">= 1.24.0, < 1.24.9",
+      ">= 1.23.0, < 1.23.11"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "Xen",
+    "设备类型": "OTA",
+    "产品型号": "Xen",
+    "CVE编号": "CVE-2023-34325",
+    "漏洞描述": "\n[This CNA information record relates to multiple CVEs; the\ntext explains which aspects/vulnerabilities correspond to which CVE.]\n\nlibfsimage contains parsing code for several filesystems, most of them based on\ngrub-legacy code.  libfsimage is used by pygrub to inspect guest disks.\n\nPygrub runs as the same user as the toolstack (root in a priviledged domain).\n\nAt least one issue has been reported to the Xen Security Team that allows an\nattacker to trigger a stack buffer overflow in libfsimage.  After further\nanalisys the Xen Security Team is no longer confident in the suitability of\nlibfsimage when run against guest controlled input with super user priviledges.\n\nIn order to not affect current deployments that rely on pygrub patches are\nprovided in the resolution section of the advisory that allow running pygrub in\ndeprivileged mode.\n\nCVE-2023-4949 refers to the original issue in the upstream grub\nproject (\"An attacker with local access to a system (either through a\ndisk or external drive) can present a modified XFS partition to\ngrub-legacy in such a way to exploit a memory corruption in grub’s XFS\nfile system implementation.\")  CVE-2023-34325 refers specifically to\nthe vulnerabilities in Xen's copy of libfsimage, which is decended\nfrom a very old version of grub.\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://xenbits.xenproject.org/xsa/advisory-443.html"
+    ],
+    "受影响版本": [
+      "consult Xen advisory XSA-443"
+    ],
+    "公开日期": "2024年01月05日"
+  },
+  {
+    "设备品牌": "h2o",
+    "设备类型": "OTA",
+    "产品型号": "h2o",
+    "CVE编号": "CVE-2023-30847",
+    "漏洞描述": "H2O is an HTTP server. In versions 2.3.0-beta2 and prior, when the reverse proxy handler tries to processes a certain type of invalid HTTP request, it tries to build an upstream URL by reading from uninitialized pointer. This behavior can lead to crashes or leak of information to back end HTTP servers. Pull request  number 3229 fixes the issue. The pull request has been merged to the `master` branch in commit f010336. Users should upgrade to commit f010336 or later.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/h2o/h2o/security/advisories/GHSA-p5hj-phwj-hrvx",
+      "https://github.com/h2o/h2o/pull/3229",
+      "https://github.com/h2o/h2o/commit/f010336bab162839df43d9e87570897466c97e33"
+    ],
+    "受影响版本": [
+      "<= 2.3.0-beta2"
+    ],
+    "公开日期": "2023年04月27日"
+  },
+  {
+    "设备品牌": "cloud-hypervisor",
+    "设备类型": "OTA",
+    "产品型号": "cloud-hypervisor",
+    "CVE编号": "CVE-2023-30612",
+    "漏洞描述": "Cloud hypervisor is a Virtual Machine Monitor for Cloud workloads. This vulnerability allows users to close arbitrary open file descriptors in the Cloud Hypervisor process via sending malicious HTTP request through the HTTP API socket. As a result, the Cloud Hypervisor process can be easily crashed, causing Deny-of-Service (DoS). This can also be a potential Use-After-Free (UAF) vulnerability. Users require to have the write access to the API socket file to trigger this vulnerability.  Impacted versions of Cloud Hypervisor include upstream main branch, v31.0, and v30.0. The vulnerability was initially detected by our `http_api_fuzzer` via oss-fuzz. This issue has been addressed in versions 30.1 and 31.1. Users unable to upgrade may mitigate this issue by ensuring the write access to the API socket file is granted to trusted users only.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://github.com/cloud-hypervisor/cloud-hypervisor/security/advisories/GHSA-g6mw-f26h-4jgp",
+      "https://github.com/cloud-hypervisor/cloud-hypervisor/pull/5350",
+      "https://github.com/cloud-hypervisor/cloud-hypervisor/pull/5373",
+      "https://oss-fuzz.com/testcase-detail/5260873569796096",
+      "https://oss-fuzz.com/testcase-detail/5426283514560512"
+    ],
+    "受影响版本": [
+      ">= 30.0, < 30.1",
+      ">= 31.0, < 31.1"
+    ],
+    "公开日期": "2023年04月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-29491",
+    "漏洞描述": "ncurses before 6.4 20230408, when used by a setuid application, allows local users to trigger security-relevant memory corruption via malformed data in a terminfo database file that is found in $HOME/.terminfo or reached via the TERMINFO or TERM environment variable.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.openwall.com/lists/oss-security/2023/04/13/4",
+      "http://ncurses.scripts.mit.edu/?p=ncurses.git%3Ba=commit%3Bh=eb51b1ea1f75a0ec17c9c5937cb28df1e8eeec56",
+      "https://www.openwall.com/lists/oss-security/2023/04/12/5",
+      "http://www.openwall.com/lists/oss-security/2023/04/19/10",
+      "http://www.openwall.com/lists/oss-security/2023/04/19/11",
+      "https://security.netapp.com/advisory/ntap-20230517-0009/",
+      "https://support.apple.com/kb/HT213843",
+      "https://support.apple.com/kb/HT213844",
+      "https://support.apple.com/kb/HT213845",
+      "https://lists.debian.org/debian-lts-announce/2023/12/msg00004.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/LU4MYMKFEZQ5VSCVLRIZGDQOUW3T44GT/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年04月14日"
+  },
+  {
+    "设备品牌": "unpoly",
+    "设备类型": "OTA",
+    "产品型号": "unpoly-rails",
+    "CVE编号": "CVE-2023-28846",
+    "漏洞描述": "Unpoly is a JavaScript framework for server-side web applications. There is a possible Denial of Service (DoS) vulnerability in the `unpoly-rails` gem that implements the Unpoly server protocol for Rails applications. This issues affects Rails applications that operate as an upstream of a load balancer's that uses passive health checks. The `unpoly-rails` gem echoes the request URL as an `X-Up-Location` response header. By making a request with exceedingly long URLs (paths or query string), an attacker can cause unpoly-rails to write a exceedingly large response header.  If the response header is too large to be parsed by a load balancer downstream of the Rails application, it may cause the load balancer to remove the upstream from a load balancing group. This causes that application instance to become unavailable until a configured timeout is reached or until an active healthcheck succeeds. This issue has been fixed and released as version 2.7.2.2 which is available via RubyGems and GitHub. Users unable to upgrade may: Configure your load balancer to use active health checks, e.g. by periodically requesting a route with a known response that indicates healthiness; Configure your load balancer so the maximum size of response headers is at least twice the maximum size of a URL; or instead of changing your server configuration you may also configure your Rails application to delete redundant `X-Up-Location` headers set by unpoly-rails.\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/unpoly/unpoly-rails/security/advisories/GHSA-m875-3xf6-mf78",
+      "https://github.com/unpoly/unpoly-rails/commit/cd9ad0007daceeb3b2354fdcab4f88350427bf16",
+      "https://docs.nginx.com/nginx/admin-guide/load-balancer/http-health-check/#passive-health-checks",
+      "https://github.com/unpoly/unpoly-rails/",
+      "https://makandracards.com/operations/537537-nginx-proxy-buffer-tuning",
+      "https://tryhexadecimal.com/guides/http/414-request-uri-too-long",
+      "https://unpoly.com/up.protocol"
+    ],
+    "受影响版本": [
+      "< 2.7.2.2"
+    ],
+    "公开日期": "2023年03月30日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2023-27493",
+    "漏洞描述": "Envoy is an open source edge and service proxy designed for cloud-native applications. Prior to versions 1.26.0, 1.25.3, 1.24.4, 1.23.6, and 1.22.9, Envoy does not sanitize or escape request properties when generating request headers. This can lead to characters that are illegal in header values to be sent to the upstream service. In the worst case, it can cause upstream service to interpret the original request as two pipelined requests, possibly bypassing the intent of Envoy’s security policy. Versions 1.26.0, 1.25.3, 1.24.4, 1.23.6, and 1.22.9 contain a patch. As a workaround, disable adding request headers based on the downstream request properties, such as downstream certificate properties.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-w5w5-487h-qv8q"
+    ],
+    "受影响版本": [
+      ">= 1.25.0, < 1.25.3",
+      ">= 1.24.0, < 1.24.4",
+      ">= 1.23.0, < 1.23.6",
+      "< 1.22.9"
+    ],
+    "公开日期": "2023年04月04日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2023-27487",
+    "漏洞描述": "Envoy is an open source edge and service proxy designed for cloud-native applications. Prior to versions 1.26.0, 1.25.3, 1.24.4, 1.23.6, and 1.22.9, the client may bypass JSON Web Token (JWT) checks and forge fake original paths. The header `x-envoy-original-path` should be an internal header, but Envoy does not remove this header from the request at the beginning of request processing when it is sent from an untrusted client. The faked header would then be used for trace logs and grpc logs, as well as used in the URL used for `jwt_authn` checks if the `jwt_authn` filter is used, and any other upstream use of the x-envoy-original-path header. Attackers may forge a trusted `x-envoy-original-path` header. Versions 1.26.0, 1.25.3, 1.24.4, 1.23.6, and 1.22.9 have patches for this issue.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-5375-pq35-hf2g"
+    ],
+    "受影响版本": [
+      ">= 1.25.0, <1.25.3",
+      ">= 1.24.0, < 1.24.4",
+      ">= 1.23.0, < 1.23.6",
+      "< 1.22.9"
+    ],
+    "公开日期": "2023年04月04日"
+  },
+  {
+    "设备品牌": "argoproj",
+    "设备类型": "OTA",
+    "产品型号": "argo-cd",
+    "CVE编号": "CVE-2023-25163",
+    "漏洞描述": "Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes. All versions of Argo CD starting with v2.6.0-rc1 have an output sanitization bug which leaks repository access credentials in error messages. These error messages are visible to the user, and they are logged. The error message is visible when a user attempts to create or update an Application via the Argo CD API (and therefor the UI or CLI). The user must have `applications, create` or `applications, update` RBAC access to reach the code which may produce the error. The user is not guaranteed to be able to trigger the error message. They may attempt to spam the API with requests to trigger a rate limit error from the upstream repository. If the user has `repositories, update` access, they may edit an existing repository to introduce a URL typo or otherwise force an error message. But if they have that level of access, they are probably intended to have access to the credentials anyway. A patch for this vulnerability has been released in version 2.6.1. Users are advised to upgrade. There are no known workarounds for this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/argoproj/argo-cd/security/advisories/GHSA-mv6w-j4xc-qpfw",
+      "https://github.com/argoproj/argo-cd/issues/12309",
+      "https://github.com/argoproj/argo-cd/pull/12320",
+      "https://argo-cd.readthedocs.io/en/stable/operator-manual/rbac/"
+    ],
+    "受影响版本": [
+      ">= 2.6.0-rc1, < 2.6.1"
+    ],
+    "公开日期": "2023年02月08日"
+  },
+  {
+    "设备品牌": "",
+    "设备类型": "OTA",
+    "产品型号": "",
+    "CVE编号": "CVE-2023-2222",
+    "漏洞描述": "",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "无官方补丁，建议联系厂商或及时更新系统"
+    ],
+    "受影响版本": [],
+    "公开日期": ""
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2023-21106",
+    "漏洞描述": "In adreno_set_param of adreno_gpu.c, there is a possible memory corruption due to a double free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-265016072References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2023-05-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2023年05月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2023-20938",
+    "漏洞描述": "In binder_transaction_buffer_release of binder.c, there is a possible use after free due to improper input validation. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-257685302References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2023-02-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2023年02月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2023-20937",
+    "漏洞描述": "In several functions of the Android Linux kernel, there is a possible way to corrupt memory due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-257443051References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2023-02-01",
+      "http://packetstormsecurity.com/files/171239/Android-GKI-Kernels-Contain-Broken-Non-Upstream-Speculative-Page-Faults-MM-Code.html"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2023年02月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2023-20928",
+    "漏洞描述": "In binder_vma_close of binder.c, there is a possible use after free due to improper locking. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-254837884References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2023-01-01",
+      "http://packetstormsecurity.com/files/170855/Android-Binder-VMA-Management-Security-Issues.html"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2023年01月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-39028",
+    "漏洞描述": "telnetd in GNU Inetutils through 2.3, MIT krb5-appl through 1.0.3, and derivative works has a NULL pointer dereference via 0xff 0xf7 or 0xff 0xf8. In a typical installation, the telnetd application would crash but the telnet service would remain available through inetd. However, if the telnetd application has many crashes within a short time interval, the telnet service would become unavailable after inetd logs a \"telnet/tcp server failing (looping), service terminated\" error. NOTE: MIT krb5-appl is not supported upstream but is shipped by a few Linux distributions. The affected code was removed from the supported MIT Kerberos 5 (aka krb5) product many years ago, at version 1.8.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lists.gnu.org/archive/html/bug-inetutils/2022-08/msg00002.html",
+      "https://pierrekim.github.io/blog/2022-08-24-2-byte-dos-freebsd-netbsd-telnetd-netkit-telnetd-inetutils-telnetd-kerberos-telnetd.html",
+      "https://git.hadrons.org/cgit/debian/pkgs/inetutils.git/commit/?id=113da8021710d871c7dd72d2a4d5615d42d64289",
+      "https://lists.debian.org/debian-lts-announce/2022/11/msg00033.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年08月30日"
+  },
+  {
+    "设备品牌": "TYPO3",
+    "设备类型": "OTA",
+    "产品型号": "html-sanitizer",
+    "CVE编号": "CVE-2022-36020",
+    "漏洞描述": "The typo3/html-sanitizer package is an HTML sanitizer, written in PHP, aiming to provide XSS-safe markup based on explicitly allowed tags, attributes and values. Due to a parsing issue in the upstream package `masterminds/html5`, malicious markup used in a sequence with special HTML comments cannot be filtered and sanitized. This allows for a bypass of the cross-site scripting mechanism of `typo3/html-sanitizer`. This issue has been addressed in versions 1.0.7 and 2.0.16 of the `typo3/html-sanitizer` package. Users are advised to upgrade. There are no known workarounds for this issue.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/TYPO3/html-sanitizer/security/advisories/GHSA-47m6-46mj-p235",
+      "https://github.com/TYPO3/html-sanitizer/commit/60bfdc7f9b394d0236e16ee4cea8372a7defa493",
+      "https://packagist.org/packages/masterminds/html5",
+      "https://packagist.org/packages/typo3/html-sanitizer"
+    ],
+    "受影响版本": [
+      ">= 1.0.0, < 1.0.7",
+      ">= 2.0.0, < 2.0.16"
+    ],
+    "公开日期": "2022年09月13日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2022-29227",
+    "漏洞描述": "Envoy is a cloud-native high-performance edge/middle/service proxy. In versions prior to 1.22.1 if Envoy attempts to send an internal redirect of an HTTP request consisting of more than HTTP headers, there’s a lifetime bug which can be triggered. If while replaying the request Envoy sends a local reply when the redirect headers are processed, the downstream state indicates that the downstream stream is not complete. On sending the local reply, Envoy will attempt to reset the upstream stream, but as it is actually complete, and deleted, this result in a use-after-free. Users are advised to upgrade. Users unable to upgrade are advised to disable internal redirects if crashes are observed.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-rm2p-qvf6-pvr6",
+      "https://github.com/envoyproxy/envoy/commit/fe7c69c248f4fe5a9080c7ccb35275b5218bb5ab"
+    ],
+    "受影响版本": [
+      "< 1.22.1"
+    ],
+    "公开日期": "2022年06月09日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2022-29224",
+    "漏洞描述": "Envoy is a cloud-native high-performance proxy. Versions of envoy prior to 1.22.1 are subject to a segmentation fault in the GrpcHealthCheckerImpl. Envoy can perform various types of upstream health checking. One of them uses gRPC. Envoy also has a feature which can “hold” (prevent removal) upstream hosts obtained via service discovery until configured active health checking fails. If an attacker controls an upstream host and also controls service discovery of that host (via DNS, the EDS API, etc.), an attacker can crash Envoy by forcing removal of the host from service discovery, and then failing the gRPC health check request. This will crash Envoy via a null pointer dereference. Users are advised to upgrade to resolve this vulnerability. Users unable to upgrade may disable gRPC health checking and/or replace it with a different health checking type as a mitigation.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-m4j9-86g3-8f49",
+      "https://github.com/envoyproxy/envoy/commit/9b1c3962172a972bc0359398af6daa3790bb59db"
+    ],
+    "受影响版本": [
+      "< 1.22.1"
+    ],
+    "公开日期": "2022年06月09日"
+  },
+  {
+    "设备品牌": "sparklemotion",
+    "设备类型": "OTA",
+    "产品型号": "nekohtml",
+    "CVE编号": "CVE-2022-24839",
+    "漏洞描述": "org.cyberneko.html is an html parser written in Java. The fork of `org.cyberneko.html` used by Nokogiri (Rubygem) raises a `java.lang.OutOfMemoryError` exception when parsing ill-formed HTML markup. Users are advised to upgrade to `>= 1.9.22.noko2`. Note: The upstream library `org.cyberneko.html` is no longer maintained. Nokogiri uses its own fork of this library located at https://github.com/sparklemotion/nekohtml and this CVE applies only to that fork. Other forks of nekohtml may have a similar vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/sparklemotion/nekohtml/security/advisories/GHSA-9849-p7jc-9rmv",
+      "https://github.com/sparklemotion/nekohtml/commit/a800fce3b079def130ed42a408ff1d09f89e773d",
+      "https://www.oracle.com/security-alerts/cpujul2022.html"
+    ],
+    "受影响版本": [
+      "< 1.9.22.noko2"
+    ],
+    "公开日期": "2022年04月11日"
+  },
+  {
+    "设备品牌": "twisted",
+    "设备类型": "OTA",
+    "产品型号": "twisted",
+    "CVE编号": "CVE-2022-24801",
+    "漏洞描述": "Twisted is an event-based framework for internet applications, supporting Python 3.6+. Prior to version 22.4.0rc1, the Twisted Web HTTP 1.1 server, located in the `twisted.web.http` module, parsed several HTTP request constructs more leniently than permitted by RFC 7230. This non-conformant parsing can lead to desync if requests pass through multiple HTTP parsers, potentially resulting in HTTP request smuggling. Users who may be affected use Twisted Web's HTTP 1.1 server and/or proxy and also pass requests through a different HTTP server and/or proxy. The Twisted Web client is not affected. The HTTP 2.0 server uses a different parser, so it is not affected. The issue has been addressed in Twisted 22.4.0rc1. Two workarounds are available: Ensure any vulnerabilities in upstream proxies have been addressed, such as by upgrading them; or filter malformed requests by other means, such as configuration of an upstream proxy.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/twisted/twisted/security/advisories/GHSA-c2jg-hw38-jrqq",
+      "https://github.com/twisted/twisted/commit/592217e951363d60e9cd99c5bbfd23d4615043ac",
+      "https://github.com/twisted/twisted/releases/tag/twisted-22.4.0rc1",
+      "https://lists.debian.org/debian-lts-announce/2022/05/msg00003.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/GLKHA6WREIVAMBQD7KKWYHPHGGNKMAG6/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/7U6KYDTOLPICAVSR34G2WRYLFBD2YW5K/",
+      "https://www.oracle.com/security-alerts/cpujul2022.html"
+    ],
+    "受影响版本": [
+      "<= 22.2.0"
+    ],
+    "公开日期": "2022年04月04日"
+  },
+  {
+    "设备品牌": "wireapp",
+    "设备类型": "OTA",
+    "产品型号": "wire-server",
+    "CVE编号": "CVE-2022-23610",
+    "漏洞描述": "wire-server provides back end services for Wire, an open source messenger. In versions of wire-server prior to the 2022-01-27 release, it was possible to craft DSA Signatures to bypass SAML SSO and impersonate any Wire user with SAML credentials. In teams with SAML, but without SCIM, it was possible to create new accounts with fake SAML credentials. Under certain conditions that can be established by an attacker, an upstream library for parsing, rendering, signing, and validating SAML XML data was accepting public keys as trusted that were provided by the attacker in the signature. As a consequence, the attacker could login as any user in any Wire team with SAML SSO enabled. If SCIM was not enabled, the attacker could also create new users with new SAML NameIDs. In order to exploit this vulnerability, the attacker needs to know the SSO login code (distributed to all team members with SAML credentials and visible in the Team Management app), the SAML EntityID identifying the IdP (a URL not considered sensitive, but usually hard to guess, also visible in Team Management), and the SAML NameID of the user (usually an email address or a nick). The issue has been fixed in wire-server `2022-01-27` and is already deployed on all Wire managed services. On premise instances of wire-server need to be updated to `2022-01-27`, so that their backends are no longer affected. There are currently no known workarounds. More detailed information about how to reproduce the vulnerability and mitigation strategies is available in the GitHub Security Advisory.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/wireapp/wire-server/security/advisories/GHSA-9jg9-9g37-4424",
+      "https://github.com/wireapp/wire-server/releases/tag/v2022-01-27"
+    ],
+    "受影响版本": [
+      "< 2022-01-27",
+      "< 2.123.0"
+    ],
+    "公开日期": "2022年03月16日"
+  },
+  {
+    "设备品牌": "TYPO3",
+    "设备类型": "OTA",
+    "产品型号": "html-sanitizer",
+    "CVE编号": "CVE-2022-23499",
+    "漏洞描述": "HTML sanitizer is written in PHP, aiming to provide XSS-safe markup based on explicitly allowed tags, attributes and values. In versions prior to 1.5.0 or 2.1.1,  malicious markup used in a sequence with special HTML CDATA sections cannot be filtered and sanitized due to a parsing issue in the upstream package masterminds/html5. This allows bypassing the cross-site scripting mechanism of typo3/html-sanitizer. The upstream package masterminds/html5 provides HTML raw text elements (`script`, `style`, `noframes`, `noembed` and `iframe`) as DOMText nodes, which were not processed and sanitized further. None of the mentioned elements were defined in the default builder configuration, that's why only custom behaviors, using one of those tag names, were vulnerable to cross-site scripting. This issue has been fixed in versions 1.5.0 and 2.1.1.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/TYPO3/html-sanitizer/security/advisories/GHSA-hvwx-qh2h-xcfj"
+    ],
+    "受影响版本": [
+      ">= 1.0.0, < 1.5.0",
+      ">= 2.0.0, < 2.1.1"
+    ],
+    "公开日期": "2022年12月13日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2022-21657",
+    "漏洞描述": "Envoy is an open source edge and service proxy, designed for cloud-native applications. In affected versions Envoy does not restrict the set of certificates it accepts from the peer, either as a TLS client or a TLS server, to only those certificates that contain the necessary extendedKeyUsage (id-kp-serverAuth and id-kp-clientAuth, respectively). This means that a peer may present an e-mail certificate (e.g. id-kp-emailProtection), either as a leaf certificate or as a CA in the chain, and it will be accepted for TLS. This is particularly bad when combined with the issue described in pull request #630, in that it allows a Web PKI CA that is intended only for use with S/MIME, and thus exempted from audit or supervision, to issue TLS certificates that will be accepted by Envoy. As a result Envoy will trust upstream certificates that should not be trusted. There are no known workarounds to this issue. Users are advised to upgrade.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-837m-wjrv-vm5g",
+      "https://github.com/envoyproxy/envoy/pull/630"
+    ],
+    "受影响版本": [
+      ">= 1.20.0, < 1.20.2",
+      ">= 1.19.0, < 1.19.3",
+      "< 1.18.6"
+    ],
+    "公开日期": "2022年02月22日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2022-21656",
+    "漏洞描述": "Envoy is an open source edge and service proxy, designed for cloud-native applications. The default_validator.cc implementation used to implement the default certificate validation routines has a \"type confusion\" bug when processing subjectAltNames. This processing allows, for example, an rfc822Name or uniformResourceIndicator to be authenticated as a domain name. This confusion allows for the bypassing of nameConstraints, as processed by the underlying OpenSSL/BoringSSL implementation, exposing the possibility of impersonation of arbitrary servers. As a result Envoy will trust upstream certificates that should not be trusted.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-c9g7-xwcv-pjx2",
+      "https://github.com/envoyproxy/envoy/commit/bb95af848c939cfe5b5ee33c5b1770558077e64e"
+    ],
+    "受影响版本": [
+      "< 1.20.2"
+    ],
+    "公开日期": "2022年02月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products",
+    "CVE编号": "CVE-2022-21181",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00002.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20571",
+    "漏洞描述": "In extract_metadata of dm-android-verity.c, there is a possible way to corrupt kernel memory due to a use after free. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-234030265References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-12-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年12月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20568",
+    "漏洞描述": "In (TBD) of (TBD), there is a possible way to corrupt kernel memory due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-220738351References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-12-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年12月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20567",
+    "漏洞描述": "In pppol2tp_create of l2tp_ppp.c, there is a possible use after free due to a race condition. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-186777253References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-12-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年12月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20566",
+    "漏洞描述": "In l2cap_chan_put of l2cap_core, there is a possible use after free due to improper locking. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-165329981References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-12-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年12月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20423",
+    "漏洞描述": "In rndis_set_response of rndis.c, there is a possible out of bounds write due to an integer overflow. This could lead to local escalation of privilege if a malicious USB device is attached with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-239842288References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-10-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年10月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20422",
+    "漏洞描述": "In emulation_proc_handler of armv8_deprecated.c, there is a possible way to corrupt memory due to a race condition. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-237540956References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-10-01",
+      "https://lists.debian.org/debian-lts-announce/2022/11/msg00001.html"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年10月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20421",
+    "漏洞描述": "In binder_inc_ref_for_node of binder.c, there is a possible way to corrupt memory due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-239630375References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-10-01",
+      "https://www.debian.org/security/2022/dsa-5257",
+      "https://lists.debian.org/debian-lts-announce/2022/11/msg00001.html"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年10月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20409",
+    "漏洞描述": "In io_identity_cow of io_uring.c, there is a possible way to corrupt memory due to a use after free. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-238177383References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-10-01",
+      "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=2ee0cab11f6626071f8a64c7792406dabdd94c8d"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年10月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20399",
+    "漏洞描述": "In the SEPolicy configuration of system apps, there is a possible access to the 'ip' utility due to an insecure default value. This could lead to local information disclosure of network data with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-219808546References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-09-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年09月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20382",
+    "漏洞描述": "In (TBD) of (TBD), there is a possible out of bounds write due to kernel stack overflow. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-214245176References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-08-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20371",
+    "漏洞描述": "In dm_bow_dtr and related functions of dm-bow.c, there is a possible use after free due to a race condition. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-195565510References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-08-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20369",
+    "漏洞描述": "In v4l2_m2m_querybuf of v4l2-mem2mem.c, there is a possible out of bounds write due to improper input validation. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-223375145References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-08-01",
+      "https://lists.debian.org/debian-lts-announce/2022/12/msg00034.html"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20368",
+    "漏洞描述": "Product: AndroidVersions: Android kernelAndroid ID: A-224546354References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-08-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20227",
+    "漏洞描述": "In USB driver, there is a possible out of bounds read due to a heap buffer overflow. This could lead to local information disclosure with User execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-216825460References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-07-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年07月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20166",
+    "漏洞描述": "In various methods of kernel base drivers, there is a possible out of bounds write due to a heap buffer overflow. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-182388481References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-06-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年06月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20158",
+    "漏洞描述": "In bdi_put and bdi_unregister of backing-dev.c, there is a possible memory corruption due to a use after free. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-182815710References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-08-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20154",
+    "漏洞描述": "In lock_sock_nested of sock.c, there is a possible use after free due to a race condition. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-174846563References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-06-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年06月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20153",
+    "漏洞描述": "In rcu_cblist_dequeue of rcu_segcblist.c, there is a possible use-after-free due to improper locking. This could lead to local escalation of privilege in the kernel with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-222091980References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-06-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年06月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20148",
+    "漏洞描述": "In TBD of TBD, there is a possible use-after-free due to a race condition. This could lead to local escalation of privilege in the kernel with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-219513976References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-06-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年06月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20141",
+    "漏洞描述": "In ip_check_mc_rcu of igmp.c, there is a possible use after free due to improper locking. This could lead to local escalation of privilege when opening and closing inet sockets with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-112551163References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-06-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年06月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20132",
+    "漏洞描述": "In lg_probe and related functions of hid-lg.c and other USB HID files, there is a possible out of bounds read due to improper input validation. This could lead to local information disclosure if a malicious USB HID device were plugged in, with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-188677105References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-06-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年06月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20009",
+    "漏洞描述": "In various functions of the USB gadget subsystem, there is a possible out of bounds write due to a missing bounds check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-213172319References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-05-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年05月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20008",
+    "漏洞描述": "In mmc_blk_read_single of block.c, there is a possible way to read kernel heap memory due to uninitialized data. This could lead to local information disclosure if reading from an SD card that triggers errors, with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-216481035References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-05-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年05月10日"
+  },
+  {
+    "设备品牌": "",
+    "设备类型": "OTA",
+    "产品型号": "",
+    "CVE编号": "CVE-2022-0931",
+    "漏洞描述": "",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "无官方补丁，建议联系厂商或及时更新系统"
+    ],
+    "受影响版本": [],
+    "公开日期": ""
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-46790",
+    "漏洞描述": "ntfsck in NTFS-3G through 2021.8.22 has a heap-based buffer overflow involving buffer+512*3-2. NOTE: the upstream position is that ntfsck is deprecated; however, it is shipped by some Linux distributions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/tuxera/ntfs-3g/issues/16",
+      "http://www.openwall.com/lists/oss-security/2022/05/26/1",
+      "https://www.debian.org/security/2022/dsa-5160",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/7JPX6OUCQKZX4PN5DQPVDUFZCOOZUX7Z/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/ECDCISL24TYH4CTDFCUVF24WAKRSYF7F/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/FAXFYIJWT5SHHRNPOJETM77EIMJ6ZP6I/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/UEXHDCUSLJD2HSPMAAVZ5AWMPUOG6UI7/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年05月02日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products",
+    "CVE编号": "CVE-2021-44545",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00002.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2021-43826",
+    "漏洞描述": "Envoy is an open source edge and service proxy, designed for cloud-native applications. In affected versions of Envoy a crash occurs when configured for :ref:`upstream tunneling <envoy_v3_api_field_extensions.filters.network.tcp_proxy.v3.TcpProxy.tunneling_config>` and the downstream connection disconnects while the the upstream connection or http/2 stream is still being established. There are no workarounds for this issue. Users are advised to upgrade.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-cmx3-fvgf-83mf",
+      "https://github.com/envoyproxy/envoy/commit/ce0ae309057a216aba031aff81c445c90c6ef145"
+    ],
+    "受影响版本": [
+      "< 1.18.6",
+      ">= 1.19.0, < 1.19.3",
+      ">= 1.20.0, < 1.20.2",
+      ">= 1.21.0, < 1.21.1"
+    ],
+    "公开日期": "2022年02月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-42694",
+    "漏洞描述": "An issue was discovered in the character definitions of the Unicode Specification through 14.0. The specification allows an adversary to produce source code identifiers such as function names using homoglyphs that render visually identical to a target identifier. Adversaries can leverage this to inject code via adversarial identifier definitions in upstream software dependencies invoked deceptively in downstream software. NOTE: the Unicode Consortium offers the following alternative approach to presenting this concern. An issue is noted in the nature of international text that can affect applications that implement support for The Unicode Standard (all versions). Unless mitigated, an adversary could produce source code identifiers using homoglyph characters that render visually identical to but are distinct from a target identifier. In this way, an adversary could inject adversarial identifier definitions in upstream software that are not detected by human reviewers and are invoked deceptively in downstream software. The Unicode Consortium has documented this class of security vulnerability in its document, Unicode Technical Report #36, Unicode Security Considerations. The Unicode Consortium also provides guidance on mitigations for this class of issues in Unicode Technical Standard #39, Unicode Security Mechanisms.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://www.unicode.org/versions/Unicode14.0.0/",
+      "https://trojansource.codes",
+      "http://www.openwall.com/lists/oss-security/2021/11/01/1",
+      "http://www.openwall.com/lists/oss-security/2021/11/01/6",
+      "https://www.kb.cert.org/vuls/id/999008",
+      "https://www.scyon.nl/post/trojans-in-your-source-code",
+      "https://www.unicode.org/reports/tr36/",
+      "https://www.unicode.org/reports/tr39/",
+      "https://cwe.mitre.org/data/definitions/1007.html",
+      "https://security.gentoo.org/glsa/202210-09"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年11月01日"
+  },
+  {
+    "设备品牌": "elabftw",
+    "设备类型": "OTA",
+    "产品型号": "elabftw",
+    "CVE编号": "CVE-2021-41171",
+    "漏洞描述": "eLabFTW is an open source electronic lab notebook manager for research teams. In versions of eLabFTW before 4.1.0, it allows attackers to bypass a brute-force protection mechanism by using many different forged PHPSESSID values in HTTP Cookie header. This issue has been addressed by implementing brute force login protection, as recommended by Owasp with Device Cookies. This mechanism will not impact users and will effectively thwart any brute-force attempts at guessing passwords. The only correct way to address this is to upgrade to version 4.1.0. Adding rate limitation upstream of the eLabFTW service is of course a valid option, with or without upgrading.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/elabftw/elabftw/security/advisories/GHSA-q67h-5pc3-g6jv",
+      "https://github.com/elabftw/elabftw/commit/8e92afeec4c3a68dc88333881b7e6307f425706b",
+      "https://github.com/elabftw/elabftw/releases/tag/4.1.0",
+      "https://owasp.org/www-community/Slow_Down_Online_Guessing_Attacks_with_Device_Cookies",
+      "https://www.exploit-db.com/docs/50436"
+    ],
+    "受影响版本": [
+      "< 4.1.0"
+    ],
+    "公开日期": "2021年10月22日"
+  },
+  {
+    "设备品牌": "discourse",
+    "设备类型": "OTA",
+    "产品型号": "discourse",
+    "CVE编号": "CVE-2021-41163",
+    "漏洞描述": "Discourse is an open source platform for community discussion. In affected versions maliciously crafted requests could lead to remote code execution. This resulted from a lack of validation in subscribe_url values. This issue is patched in the latest stable, beta and tests-passed versions of Discourse. To workaround the issue without updating, requests with a path starting /webhooks/aws path could be blocked at an upstream proxy.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/discourse/discourse/security/advisories/GHSA-jcjx-pvpc-qgwq",
+      "https://github.com/discourse/discourse/commit/fa3c46cf079d28b086fe1025349bb00223a5d5e9"
+    ],
+    "受影响版本": [
+      "tests-passed < 2.8.0.beta7",
+      "beta < 2.8.0.beta7",
+      "stable < 2.7.9"
+    ],
+    "公开日期": "2021年10月20日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39802",
+    "漏洞描述": "In change_pte_range of mprotect.c , there is a possible way to make a shared mmap writable due to a permissions bypass. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-213339151References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-04-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年04月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39801",
+    "漏洞描述": "In ion_ioctl of ion-ioctl.c, there is a possible use after free due to improper locking. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-209791720References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-04-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年04月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39800",
+    "漏洞描述": "In ion_ioctl of ion-ioctl.c, there is a possible way to leak kernel head data due to a use after free. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-208277166References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-04-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年04月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39792",
+    "漏洞描述": "In usb_gadget_giveback_request of core.c, there is a possible use after free out of bounds read due to a race condition. This could lead to local information disclosure with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-161010552References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-03-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年03月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39715",
+    "漏洞描述": "In __show_regs of process.c, there is a possible leak of kernel memory and addresses due to log information disclosure. This could lead to local information disclosure with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-178379135References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-03-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年03月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39714",
+    "漏洞描述": "In ion_buffer_kmap_get of ion.c, there is a possible use-after-free due to an integer overflow. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-205573273References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-08-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年03月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39713",
+    "漏洞描述": "Product: AndroidVersions: Android kernelAndroid ID: A-173788806References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-03-01",
+      "http://packetstormsecurity.com/files/167386/Kernel-Live-Patch-Security-Notice-LSN-0086-1.html",
+      "https://lists.debian.org/debian-lts-announce/2022/07/msg00000.html"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年03月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39711",
+    "漏洞描述": "In bpf_prog_test_run_skb of test_run.c, there is a possible out of bounds read due to Incorrect Size Value. This could lead to local information disclosure with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-154175781References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-03-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年03月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39698",
+    "漏洞描述": "In aio_poll_complete_work of aio.c, there is a possible memory corruption due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-185125206References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-03-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年03月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39686",
+    "漏洞描述": "In several functions of binder.c, there is a possible way to represent the wrong domain to SELinux due to a race condition. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-200688826References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-03-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年03月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39685",
+    "漏洞描述": "In various setup methods of the USB gadget subsystem, there is a possible out of bounds write due to an incorrect flag check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-210292376References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-03-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年03月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39657",
+    "漏洞描述": "In ufshcd_eh_device_reset_handler of ufshcd.c, there is a possible out of bounds read due to a missing bounds check. This could lead to local information disclosure with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-194696049References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2021-12-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年12月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39656",
+    "漏洞描述": "In __configfs_open_file of file.c, there is a possible use-after-free due to improper locking. This could lead to local escalation of privilege in the kernel with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-174049066References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2021-12-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年12月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39648",
+    "漏洞描述": "In gadget_dev_desc_UDC_show of configfs.c, there is a possible disclosure of kernel heap memory due to a race condition. This could lead to local information disclosure with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-160822094References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2021-12-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年12月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39636",
+    "漏洞描述": "In do_ipt_get_ctl and do_ipt_set_ctl of ip_tables.c, there is a possible way to leak kernel information due to uninitialized data. This could lead to local information disclosure with system execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-120612905References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2021-12-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年12月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39634",
+    "漏洞描述": "In fs/eventpoll.c, there is a possible use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-204450605References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-01-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年01月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-39633",
+    "漏洞描述": "In gre_handle_offloads of ip_gre.c, there is a possible page fault due to an invalid memory access. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-150694665References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-01-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年01月14日"
+  },
+  {
+    "设备品牌": "pomerium",
+    "设备类型": "OTA",
+    "产品型号": "pomerium",
+    "CVE编号": "CVE-2021-39162",
+    "漏洞描述": "Pomerium is an open source identity-aware access proxy. Envoy, which Pomerium is based on, can abnormally terminate if an H/2 GOAWAY and SETTINGS frame are received in the same IO event. This can lead to a DoS in the presence of untrusted *upstream* servers. 0.15.1 contains an upgraded envoy binary with this vulnerability patched. If only trusted upstreams are configured, there is not substantial risk of this condition being triggered.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://groups.google.com/g/envoy-announce/c/5xBpsEZZDfE/m/wD05NZBbAgAJ",
+      "https://github.com/pomerium/pomerium/security/advisories/GHSA-gjcg-vrxg-xmgv",
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-j374-mjrw-vvp8"
+    ],
+    "受影响版本": [
+      ">= 0.15.0, < 0.15.1"
+    ],
+    "公开日期": "2021年09月09日"
+  },
+  {
+    "设备品牌": "tensorflow",
+    "设备类型": "OTA",
+    "产品型号": "tensorflow",
+    "CVE编号": "CVE-2021-37690",
+    "漏洞描述": "TensorFlow is an end-to-end open source platform for machine learning. In affected versions when running shape functions, some functions (such as `MutableHashTableShape`) produce extra output information in the form of a `ShapeAndType` struct. The shapes embedded in this struct are owned by an inference context that is cleaned up almost immediately; if the upstream code attempts to access this shape information, it can trigger a segfault. `ShapeRefiner` is mitigating this for normal output shapes by cloning them (and thus putting the newly created shape under ownership of an inference context that will not die), but we were not doing the same for shapes and types. This commit fixes that by doing similar logic on output shapes and types. We have patched the issue in GitHub commit ee119d4a498979525046fba1c3dd3f13a039fbb1. The fix will be included in TensorFlow 2.6.0. We will also cherrypick this commit on TensorFlow 2.5.1, TensorFlow 2.4.3, and TensorFlow 2.3.4, as these are also affected and still in supported range.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-3hxh-8cp2-g4hg",
+      "https://github.com/tensorflow/tensorflow/commit/ee119d4a498979525046fba1c3dd3f13a039fbb1"
+    ],
+    "受影响版本": [
+      ">= 2.5.0, < 2.5.1",
+      ">= 2.4.0, < 2.4.3",
+      "< 2.3.4"
+    ],
+    "公开日期": "2021年08月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products",
+    "CVE编号": "CVE-2021-37409",
+    "漏洞描述": "Improper access control for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00002.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "OTA",
+    "产品型号": "kernel",
+    "CVE编号": "CVE-2021-3444",
+    "漏洞描述": "The bpf verifier in the Linux kernel did not properly handle mod32 destination register truncation when the source register was known to be 0. A local attacker with the ability to load bpf programs could use this gain out-of-bounds reads in kernel memory leading to information disclosure (kernel memory), and possibly out-of-bounds writes that could potentially lead to code execution. This issue was addressed in the upstream kernel in commit 9b00f1b78809 (\"bpf: Fix truncation handling for mod32 dst reg wrt zero\") and in Linux stable kernels 5.11.2, 5.10.19, and 5.4.101.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9b00f1b78809",
+      "https://www.openwall.com/lists/oss-security/2021/03/23/2",
+      "http://www.openwall.com/lists/oss-security/2021/03/23/2",
+      "http://packetstormsecurity.com/files/162117/Kernel-Live-Patch-Security-Notice-LSN-0075-1.html",
+      "https://security.netapp.com/advisory/ntap-20210416-0006/",
+      "https://lists.debian.org/debian-lts-announce/2021/10/msg00010.html",
+      "http://packetstormsecurity.com/files/164950/Kernel-Live-Patch-Security-Notice-LSN-0082-1.html"
+    ],
+    "受影响版本": [
+      "trunk",
+      "5.11",
+      "5.10",
+      "5.4"
+    ],
+    "公开日期": "2021年03月23日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2021-32781",
+    "漏洞描述": "Envoy is an open source L7 proxy and communication bus designed for large modern service oriented architectures. In affected versions after Envoy sends a locally generated response it must stop further processing of request or response data. However when local response is generated due the internal buffer overflow while request or response is processed by the filter chain the operation may not be stopped completely and result in accessing a freed memory block. A specifically constructed request delivered by an untrusted downstream or upstream peer in the presence of extensions that modify and increase the size of request or response bodies resulting in a Denial of Service when using extensions that modify and increase the size of request or response bodies, such as decompressor filter. Envoy versions 1.19.1, 1.18.4, 1.17.4, 1.16.5 contain fixes to address incomplete termination of request processing after locally generated response. As a workaround disable Envoy's decompressor, json-transcoder or grpc-web extensions or proprietary extensions that modify and increase the size of request or response bodies, if feasible.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.envoyproxy.io/docs/envoy/v1.19.0/version_history/version_history",
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-5vhv-gp9v-42qv"
+    ],
+    "受影响版本": [
+      ">= 1.19.0, < 1.19.1",
+      ">= 1.18.0, < 1.18.4",
+      ">= 1.17.0, < 1.17.4",
+      ">= 1.16.0, < 1.16.5"
+    ],
+    "公开日期": "2021年08月24日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2021-32780",
+    "漏洞描述": "Envoy is an open source L7 proxy and communication bus designed for large modern service oriented architectures. In affected versions Envoy transitions a H/2 connection to the CLOSED state when it receives a GOAWAY frame without any streams outstanding. The connection state is transitioned to DRAINING when it receives a SETTING frame with the SETTINGS_MAX_CONCURRENT_STREAMS parameter set to 0. Receiving these two frames in the same I/O event results in abnormal termination of the Envoy process due to invalid state transition from CLOSED to DRAINING. A sequence of H/2 frames delivered by an untrusted upstream server will result in Denial of Service in the presence of untrusted **upstream** servers. Envoy versions 1.19.1, 1.18.4 contain fixes to stop processing of pending H/2 frames after connection transition to the CLOSED state.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.envoyproxy.io/docs/envoy/v1.19.0/version_history/version_history",
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-j374-mjrw-vvp8"
+    ],
+    "受影响版本": [
+      ">= 1.19.0, < 1.19.1",
+      ">= 1.18.0, < 1.18.4"
+    ],
+    "公开日期": "2021年08月24日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2021-32778",
+    "漏洞描述": "Envoy is an open source L7 proxy and communication bus designed for large modern service oriented architectures. In affected versions envoy’s procedure for resetting a HTTP/2 stream has O(N^2) complexity, leading to high CPU utilization when a large number of streams are reset. Deployments are susceptible to Denial of Service when Envoy is configured with high limit on H/2 concurrent streams. An attacker wishing to exploit this vulnerability would require a client opening and closing a large number of H/2 streams. Envoy versions 1.19.1, 1.18.4, 1.17.4, 1.16.5 contain fixes to reduce time complexity of resetting HTTP/2 streams. As a workaround users may limit the number of simultaneous HTTP/2 dreams for upstream and downstream peers to a low number, i.e. 100.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.envoyproxy.io/docs/envoy/v1.19.0/version_history/version_history",
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-3xh3-33v5-chcc"
+    ],
+    "受影响版本": [
+      ">= 1.19.0, < 1.19.1",
+      ">= 1.18.0, < 1.18.4",
+      ">= 1.17.0, < 1.17.4",
+      ">= 1.16.0, < 1.16.5"
+    ],
+    "公开日期": "2021年08月24日"
+  },
+  {
+    "设备品牌": "thinkjs",
+    "设备类型": "OTA",
+    "产品型号": "think-helper",
+    "CVE编号": "CVE-2021-32736",
+    "漏洞描述": "think-helper defines a set of helper functions for ThinkJS. In versions of think-helper prior to 1.1.3, the software receives input from an upstream component that specifies attributes that are to be initialized or updated in an object, but it does not properly control modifications of attributes of the object prototype. The vulnerability is patched in version 1.1.3.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/thinkjs/think-helper/security/advisories/GHSA-vr5m-3h59-7jcp"
+    ],
+    "受影响版本": [
+      "< 1.1.3"
+    ],
+    "公开日期": "2021年06月30日"
+  },
+  {
+    "设备品牌": "hyperium",
+    "设备类型": "OTA",
+    "产品型号": "hyper",
+    "CVE编号": "CVE-2021-32715",
+    "漏洞描述": "hyper is an HTTP library for rust. hyper's HTTP/1 server code had a flaw that incorrectly parses and accepts requests with a `Content-Length` header with a prefixed plus sign, when it should have been rejected as illegal. This combined with an upstream HTTP proxy that doesn't parse such `Content-Length` headers, but forwards them, can result in \"request smuggling\" or \"desync attacks\". The flaw exists in all prior versions of hyper prior to 0.14.10, if built with `rustc` v1.5.0 or newer. The vulnerability is patched in hyper version 0.14.10. Two workarounds exist: One may reject requests manually that contain a plus sign prefix in the `Content-Length` header or ensure any upstream proxy handles `Content-Length` headers with a plus sign prefix.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/hyperium/hyper/security/advisories/GHSA-f3pg-qwvg-p99c",
+      "https://github.com/rust-lang/rust/pull/28826/commits/123a83326fb95366e94a3be1a74775df4db97739"
+    ],
+    "受影响版本": [
+      "< 0.14.10"
+    ],
+    "公开日期": "2021年07月07日"
+  },
+  {
+    "设备品牌": "hyperium",
+    "设备类型": "OTA",
+    "产品型号": "hyper",
+    "CVE编号": "CVE-2021-32714",
+    "漏洞描述": "hyper is an HTTP library for Rust. In versions prior to 0.14.10, hyper's HTTP server and client code had a flaw that could trigger an integer overflow when decoding chunk sizes that are too big. This allows possible data loss, or if combined with an upstream HTTP proxy that allows chunk sizes larger than hyper does, can result in \"request smuggling\" or \"desync attacks.\" The vulnerability is patched in version 0.14.10. Two possible workarounds exist. One may reject requests manually that contain a `Transfer-Encoding` header or ensure any upstream proxy rejects `Transfer-Encoding` chunk sizes greater than what fits in 64-bit unsigned integers.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/hyperium/hyper/security/advisories/GHSA-5h46-h7hh-c6x9"
+    ],
+    "受影响版本": [
+      "< 0.14.10"
+    ],
+    "公开日期": "2021年07月07日"
+  },
+  {
+    "设备品牌": "me-and",
+    "设备类型": "OTA",
+    "产品型号": "Cygwin-Git",
+    "CVE编号": "CVE-2021-29468",
+    "漏洞描述": "Cygwin Git is a patch set for the git command line tool for the cygwin environment. A specially crafted repository that contains symbolic links as well as files with backslash characters in the file name may cause just-checked out code to be executed while checking out a repository using Git on Cygwin. The problem will be patched in the Cygwin Git v2.31.1-2 release. At time of writing, the vulnerability is present in the upstream Git source code; any Cygwin user who compiles Git for themselves from upstream sources should manually apply a patch to mitigate the vulnerability. As mitigation users should not clone or pull from repositories from untrusted sources. CVE-2019-1354 was an equivalent vulnerability in Git for Visual Studio.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/me-and/Cygwin-Git/security/advisories/GHSA-rmp3-wq55-f557",
+      "https://github.com/me-and/Cygwin-Git/blob/main/check-backslash-safety.patch",
+      "https://cygwin.com/pipermail/cygwin-announce/2021-April/010018.html",
+      "https://lore.kernel.org/git/CA+kUOa=juEdBMVr_gyTKjz7PkPt2DZHkXQyzcQmAWCsEHC_ssw%40mail.gmail.com/T/#u"
+    ],
+    "受影响版本": [
+      "< 2.31.1-2"
+    ],
+    "公开日期": "2021年04月29日"
+  },
+  {
+    "设备品牌": "Philips",
+    "设备类型": "OTA",
+    "产品型号": "Vue PACS",
+    "CVE编号": "CVE-2021-27493",
+    "漏洞描述": "Philips Vue PACS versions 12.2.x.x and prior does not ensure or incorrectly ensures structured messages or data are well formed and that certain security properties are met before being read from an upstream component or sent to a downstream component.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.cisa.gov/uscert/ics/advisories/icsma-21-187-01",
+      "http://www.philips.com/productsecurity"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年04月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-26720",
+    "漏洞描述": "avahi-daemon-check-dns.sh in the Debian avahi package through 0.8-4 is executed as root via /etc/network/if-up.d/avahi-daemon, and allows a local attacker to cause a denial of service or create arbitrary empty files via a symlink attack on files under /run/avahi-daemon. NOTE: this only affects the packaging for Debian GNU/Linux (used indirectly by SUSE), not the upstream Avahi product.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://packages.debian.org/buster/avahi-daemon",
+      "https://packages.debian.org/sid/avahi-daemon",
+      "https://packages.debian.org/bullseye/avahi-daemon",
+      "https://security-tracker.debian.org/tracker/CVE-2021-26720",
+      "https://bugs.launchpad.net/ubuntu/+source/avahi/+bug/1870824",
+      "https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog",
+      "https://www.openwall.com/lists/oss-security/2021/02/15/2",
+      "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796",
+      "https://bugzilla.suse.com/show_bug.cgi?id=1180827",
+      "https://lists.debian.org/debian-lts-announce/2022/06/msg00009.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products",
+    "CVE编号": "CVE-2021-23223",
+    "漏洞描述": "Improper initialization for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00002.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products",
+    "CVE编号": "CVE-2021-23168",
+    "漏洞描述": "Out of bounds read for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00002.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "oauth2-proxy",
+    "设备类型": "OTA",
+    "产品型号": "oauth2-proxy",
+    "CVE编号": "CVE-2021-21411",
+    "漏洞描述": "OAuth2-Proxy is an open source reverse proxy that provides authentication with Google, Github or other providers. The `--gitlab-group` flag for group-based authorization in the GitLab provider stopped working in the v7.0.0 release. Regardless of the flag settings, authorization wasn't restricted. Additionally, any authenticated users had whichever groups were set in `--gitlab-group` added to the new `X-Forwarded-Groups` header to the upstream application. While adding GitLab project based authorization support in #630, a bug was introduced where the user session's groups field was populated with the `--gitlab-group` config entries instead of pulling the individual user's group membership from the GitLab Userinfo endpoint. When the session groups where compared against the allowed groups for authorization, they matched improperly (since both lists were populated with the same data) so authorization was allowed. This impacts GitLab Provider users who relies on group membership for authorization restrictions. Any authenticated users in your GitLab environment can access your applications regardless of `--gitlab-group` membership restrictions. This is patched in v7.1.0. There is no workaround for the Group membership bug. But `--gitlab-project` can be set to use Project membership as the authorization checks instead of groups; it is not broken.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://pkg.go.dev/github.com/oauth2-proxy/oauth2-proxy/v7",
+      "https://github.com/oauth2-proxy/oauth2-proxy/security/advisories/GHSA-652x-m2gr-hppm",
+      "https://github.com/oauth2-proxy/oauth2-proxy/commit/0279fa7dff1752f1710707dbd1ffac839de8bbfc",
+      "https://docs.gitlab.com/ee/user/group/",
+      "https://github.com/oauth2-proxy/oauth2-proxy/releases/tag/v7.1.0"
+    ],
+    "受影响版本": [
+      ">= 7.0.0, < 7.1.0"
+    ],
+    "公开日期": "2021年03月26日"
+  },
+  {
+    "设备品牌": "hyperium",
+    "设备类型": "OTA",
+    "产品型号": "hyper",
+    "CVE编号": "CVE-2021-21299",
+    "漏洞描述": "hyper is an open-source HTTP library for Rust (crates.io). In hyper from version 0.12.0 and before versions 0.13.10 and 0.14.3 there is a vulnerability that can enable a request smuggling attack. The HTTP server code had a flaw that incorrectly understands some requests with multiple transfer-encoding headers to have a chunked payload, when it should have been rejected as illegal. This combined with an upstream HTTP proxy that understands the request payload boundary differently can result in \"request smuggling\" or \"desync attacks\". To determine if vulnerable, all these things must be true: 1) Using hyper as an HTTP server (the client is not affected), 2) Using HTTP/1.1 (HTTP/2 does not use transfer-encoding), 3) Using a vulnerable HTTP proxy upstream to hyper. If an upstream proxy correctly rejects the illegal transfer-encoding headers, the desync attack cannot succeed. If there is no proxy upstream of hyper, hyper cannot start the desync attack, as the client will repair the headers before forwarding. This is fixed in versions 0.14.3 and 0.13.10. As a workaround one can take the following options: 1) Reject requests that contain a `transfer-encoding` header, 2) Ensure any upstream proxy handles `transfer-encoding` correctly.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn",
+      "https://rustsec.org/advisories/RUSTSEC-2021-0020.html",
+      "https://github.com/hyperium/hyper/security/advisories/GHSA-6hfq-h8hq-87mf",
+      "https://crates.io/crates/hyper",
+      "https://github.com/hyperium/hyper/commit/8f93123efef5c1361086688fe4f34c83c89cec02"
+    ],
+    "受影响版本": [
+      "< 0.13.10",
+      ">= 0.14.0, < 0.14.3"
+    ],
+    "公开日期": "2021年02月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "httpd",
+    "CVE编号": "CVE-2021-20325",
+    "漏洞描述": "Missing fixes for CVE-2021-40438 and CVE-2021-26691 in the versions of httpd, as shipped in Red Hat Enterprise Linux 8.5.0, causes a security regression compared to the versions shipped in Red Hat Enterprise Linux 8.4. A user who installs or updates to Red Hat Enterprise Linux 8.5.0 would be vulnerable to the mentioned CVEs, even if they were properly fixed in Red Hat Enterprise Linux 8.4. CVE-2021-20325 was assigned to that Red Hat specific security regression and it does not affect the upstream versions of httpd.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2017321"
+    ],
+    "受影响版本": [
+      "httpd 2.4.47, httpd 2.4.49"
+    ],
+    "公开日期": "2022年02月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-1048",
+    "漏洞描述": "In ep_loop_check_proc of eventpoll.c, there is a possible way to corrupt memory due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-204573007References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2021-11-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年12月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-0941",
+    "漏洞描述": "In bpf_skb_change_head of filter.c, there is a possible out of bounds read due to a use after free. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-154177719References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2021-10-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年10月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-0938",
+    "漏洞描述": "In memzero_explicit of compiler-clang.h, there is a possible bypass of defense in depth due to uninitialized data. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-171418586References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2021-10-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年10月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-0936",
+    "漏洞描述": "In acc_read of f_accessory.c, there is a possible memory corruption due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-173789633References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2021-10-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年10月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-0935",
+    "漏洞描述": "In ip6_xmit of ip6_output.c, there is a possible out of bounds write due to a use after free. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-168607263References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2021-10-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年10月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-0929",
+    "漏洞描述": "In ion_dma_buf_end_cpu_access and related functions of ion.c, there is a possible way to corrupt memory due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-187527909References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2021-11-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年12月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-0924",
+    "漏洞描述": "In xhci_vendor_get_ops of xhci.c, there is a possible out of bounds read due to a missing bounds check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-194461020References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2021-11-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年12月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-0920",
+    "漏洞描述": "In unix_scm_to_skb of af_unix.c, there is a possible use after free bug due to a race condition. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-196926917References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2021-11-01",
+      "https://lists.debian.org/debian-lts-announce/2021/12/msg00012.html"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年12月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-0707",
+    "漏洞描述": "In dma_buf_release of dma-buf.c, there is a possible memory corruption due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-155756045References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-04-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年04月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-0695",
+    "漏洞描述": "In get_sock_stat of xt_qtaguid.c, there is a possible out of bounds read due to a use after free. This could lead to local information disclosure with User execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-184018316References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2021-09-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年10月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-0512",
+    "漏洞描述": "In __hidinput_change_resolution_multipliers of hid-input.c, there is a possible out of bounds write due to a heap buffer overflow. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-173843328References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2021-06-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年06月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-0399",
+    "漏洞描述": "In qtaguid_untag of xt_qtaguid.c, there is a possible memory corruption due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-176919394References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2021-03-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年03月10日"
+  },
+  {
+    "设备品牌": "github",
+    "设备类型": "OTA",
+    "产品型号": "cmark-gfm",
+    "CVE编号": "CVE-2020-5238",
+    "漏洞描述": "The table extension in GitHub Flavored Markdown before version 0.29.0.gfm.1 takes O(n * n) time to parse certain inputs. An attacker could craft a markdown table which would take an unreasonably long time to process, causing a denial of service. This issue does not affect the upstream cmark project. The issue has been fixed in version 0.29.0.gfm.1.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/github/cmark-gfm/security/advisories/GHSA-7gc6-9qr5-hc85",
+      "https://github.com/github/cmark-gfm/commit/85d895289c5ab67f988ca659493a64abb5fec7b4",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/TCDHBTUFIOYRIS5HAS6PZNBNMB7IOAX3/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/ZGJH2A4VAV54X6NSCNNGSEIGIIY5N2VR/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/WMQFOQQCWOAMQ4I2XIVCVOXXIJ75HDCW/"
+    ],
+    "受影响版本": [
+      "< 0.29.0.gfm.1"
+    ],
+    "公开日期": "2020年07月01日"
+  },
+  {
+    "设备品牌": "Philips",
+    "设备类型": "OTA",
+    "产品型号": "Interventional Workspot",
+    "CVE编号": "CVE-2020-27298",
+    "漏洞描述": "Philips Interventional Workspot (Release 1.3.2, 1.4.0, 1.4.1, 1.4.3, 1.4.5), Coronary Tools/Dynamic Coronary Roadmap/Stentboost Live (Release 1.0), ViewForum (Release 6.3V1L10). The software constructs all or part of an OS command using externally influenced input from an upstream component but does not neutralize or incorrectly neutralizes special elements that could modify the intended OS command when sent to a downstream component.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.cisa.gov/news-events/ics-medical-advisories/icsma-21-019-01",
+      "https://www.philips.com/a-w/security/security-advisories/product-security-2021.html#2021_archive"
+    ],
+    "受影响版本": [
+      "Release 1.3.2",
+      "Release 1.4.0",
+      "Release 1.4.1",
+      "Release 1.4.3",
+      "Release 1.4.5"
+    ],
+    "公开日期": "2021年01月20日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2020-27068",
+    "漏洞描述": "Product: AndroidVersions: Android kernelAndroid ID: A-127973231References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-06-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2020年12月15日"
+  },
+  {
+    "设备品牌": "jupyter-server",
+    "设备类型": "OTA",
+    "产品型号": "jupyter_server",
+    "CVE编号": "CVE-2020-26275",
+    "漏洞描述": "The Jupyter Server provides the backend (i.e. the core services, APIs, and REST endpoints) for Jupyter web applications like Jupyter notebook, JupyterLab, and Voila. In Jupyter Server before version 1.1.1, an open redirect vulnerability could cause the jupyter server to redirect the browser to a different malicious website. All jupyter servers running without a base_url prefix are technically affected, however, these maliciously crafted links can only be reasonably made for known jupyter server hosts. A link to your jupyter server may *appear* safe, but ultimately redirect to a spoofed server on the public internet. This same vulnerability was patched in upstream notebook v5.7.8. This is fixed in jupyter_server 1.1.1. If upgrade is not available, a workaround can be to run your server on a url prefix: \"jupyter server --ServerApp.base_url=/jupyter/\".",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/jupyter-server/jupyter_server/security/advisories/GHSA-9f66-54xg-pc2c",
+      "https://github.com/jupyter-server/jupyter_server/commit/85e4abccf6ea9321d29153f73b0bd72ccb3a6bca",
+      "https://pypi.org/project/jupyter-server/",
+      "https://advisory.checkmarx.net/advisory/CX-2020-4291"
+    ],
+    "受影响版本": [
+      "< 1.1.1"
+    ],
+    "公开日期": "2020年12月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "ImageMagick",
+    "CVE编号": "CVE-2020-25675",
+    "漏洞描述": "In the CropImage() and CropImageToTiles() routines of MagickCore/transform.c, rounding calculations performed on unconstrained pixel offsets was causing undefined behavior in the form of integer overflow and out-of-range values as reported by UndefinedBehaviorSanitizer. Such issues could cause a negative impact to application availability or other problems related to undefined behavior, in cases where ImageMagick processes untrusted input data. The upstream patch introduces functionality to constrain the pixel offsets and prevent these issues. This flaw affects ImageMagick versions prior to 7.0.9-0.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1891933",
+      "https://lists.debian.org/debian-lts-announce/2021/03/msg00030.html",
+      "https://lists.debian.org/debian-lts-announce/2023/03/msg00008.html"
+    ],
+    "受影响版本": [
+      "prior to 7.0.9-0"
+    ],
+    "公开日期": "2020年12月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-24588",
+    "漏洞描述": "The 802.11 standard that underpins Wi-Fi Protected Access (WPA, WPA2, and WPA3) and Wired Equivalent Privacy (WEP) doesn't require that the A-MSDU flag in the plaintext QoS header field is authenticated. Against devices that support receiving non-SSP A-MSDU frames (which is mandatory as part of 802.11n), an adversary can abuse this to inject arbitrary network packets.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00473.html",
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-wifi-faf-22epcEWu",
+      "https://www.fragattacks.com",
+      "https://github.com/vanhoefm/fragattacks/blob/master/SUMMARY.md",
+      "http://www.openwall.com/lists/oss-security/2021/05/11/12",
+      "https://lists.debian.org/debian-lts-announce/2021/06/msg00020.html",
+      "https://lists.debian.org/debian-lts-announce/2021/06/msg00019.html",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-913875.pdf",
+      "https://www.arista.com/en/support/advisories-notices/security-advisories/12602-security-advisory-63",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00002.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年05月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-24587",
+    "漏洞描述": "The 802.11 standard that underpins Wi-Fi Protected Access (WPA, WPA2, and WPA3) and Wired Equivalent Privacy (WEP) doesn't require that all fragments of a frame are encrypted under the same key. An adversary can abuse this to decrypt selected fragments when another device sends fragmented frames and the WEP, CCMP, or GCMP encryption key is periodically renewed.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00473.html",
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-wifi-faf-22epcEWu",
+      "https://www.fragattacks.com",
+      "https://github.com/vanhoefm/fragattacks/blob/master/SUMMARY.md",
+      "http://www.openwall.com/lists/oss-security/2021/05/11/12",
+      "https://lists.debian.org/debian-lts-announce/2021/06/msg00020.html",
+      "https://lists.debian.org/debian-lts-announce/2021/06/msg00019.html",
+      "https://www.arista.com/en/support/advisories-notices/security-advisories/12602-security-advisory-63",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00002.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年05月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-24586",
+    "漏洞描述": "The 802.11 standard that underpins Wi-Fi Protected Access (WPA, WPA2, and WPA3) and Wired Equivalent Privacy (WEP) doesn't require that received fragments be cleared from memory after (re)connecting to a network. Under the right circumstances, when another device sends fragmented frames encrypted using WEP, CCMP, or GCMP, this can be abused to inject arbitrary network packets and/or exfiltrate user data.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00473.html",
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-wifi-faf-22epcEWu",
+      "https://www.fragattacks.com",
+      "https://github.com/vanhoefm/fragattacks/blob/master/SUMMARY.md",
+      "http://www.openwall.com/lists/oss-security/2021/05/11/12",
+      "https://lists.debian.org/debian-lts-announce/2021/06/msg00020.html",
+      "https://lists.debian.org/debian-lts-announce/2021/06/msg00019.html",
+      "https://www.arista.com/en/support/advisories-notices/security-advisories/12602-security-advisory-63",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00002.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年05月11日"
+  },
+  {
+    "设备品牌": "Jenkins project",
+    "设备类型": "OTA",
+    "产品型号": "Jenkins Pipeline Maven Integration Plugin",
+    "CVE编号": "CVE-2020-2256",
+    "漏洞描述": "Jenkins Pipeline Maven Integration Plugin 3.9.2 and earlier does not escape the upstream job's display name shown as part of a build cause, resulting in a stored cross-site scripting (XSS) vulnerability exploitable by attackers with Job/Configure permission.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.jenkins.io/security/advisory/2020-09-16/#SECURITY-1976",
+      "http://www.openwall.com/lists/oss-security/2020/09/16/3"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年09月16日"
+  },
+  {
+    "设备品牌": "Jenkins project",
+    "设备类型": "OTA",
+    "产品型号": "Jenkins",
+    "CVE编号": "CVE-2020-2221",
+    "漏洞描述": "Jenkins 2.244 and earlier, LTS 2.235.1 and earlier does not escape the upstream job's display name shown as part of a build cause, resulting in a stored cross-site scripting vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jenkins.io/security/advisory/2020-07-15/#SECURITY-1901",
+      "http://www.openwall.com/lists/oss-security/2020/07/15/5"
+    ],
+    "受影响版本": [
+      "unspecified",
+      "unspecified"
+    ],
+    "公开日期": "2020年07月15日"
+  },
+  {
+    "设备品牌": "GNU Libc",
+    "设备类型": "OTA",
+    "产品型号": "glibc",
+    "CVE编号": "CVE-2020-1752",
+    "漏洞描述": "A use-after-free vulnerability introduced in glibc upstream version 2.14 was found in the way the tilde expansion was carried out. Directory paths containing an initial tilde followed by a valid username were affected by this issue. A local attacker could exploit this flaw by creating a specially crafted path that, when processed by the glob function, would potentially lead to arbitrary code execution. This was fixed in version 2.32.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-1752",
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=25414",
+      "https://sourceware.org/git/gitweb.cgi?p=glibc.git%3Bh=ddc650e9b3dc916eab417ce9f79e67337b05035c",
+      "https://security.netapp.com/advisory/ntap-20200511-0005/",
+      "https://usn.ubuntu.com/4416-1/",
+      "https://security.gentoo.org/glsa/202101-20",
+      "https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4%40%3Cissues.bookkeeper.apache.org%3E",
+      "https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b%40%3Cissues.bookkeeper.apache.org%3E",
+      "https://lists.debian.org/debian-lts-announce/2022/10/msg00021.html"
+    ],
+    "受影响版本": [
+      "Affected: versions 2.14 and later",
+      "Fixed: version 2.32"
+    ],
+    "公开日期": "2020年04月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-15811",
+    "漏洞描述": "An issue was discovered in Squid before 4.13 and 5.x before 5.0.4. Due to incorrect data validation, HTTP Request Splitting attacks may succeed against HTTP and HTTPS traffic. This leads to cache poisoning. This allows any client, including browser scripts, to bypass local security and poison the browser cache and any downstream caches with content from an arbitrary source. Squid uses a string search instead of parsing the Transfer-Encoding header to find chunked encoding. This allows an attacker to hide a second request inside Transfer-Encoding: it is interpreted by Squid as chunked and split out into a second request delivered upstream. Squid will then deliver two distinct responses to the client, corrupting any downstream caches.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/squid-cache/squid/security/advisories/GHSA-c7p8-xqhm-49wv",
+      "https://www.debian.org/security/2020/dsa-4751",
+      "https://usn.ubuntu.com/4477-1/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/HJJDI7JQFGQLVNCKMVY64LAFMKERAOK7/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/BMTFLVB7GLRF2CKGFPZ4G4R5DIIPHWI3/",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00012.html",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00017.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/BE6FKUN7IGTIR2MEEMWYDT7N5EJJLZI2/",
+      "https://usn.ubuntu.com/4551-1/",
+      "https://lists.debian.org/debian-lts-announce/2020/10/msg00005.html",
+      "https://security.netapp.com/advisory/ntap-20210219-0007/",
+      "https://security.netapp.com/advisory/ntap-20210226-0007/",
+      "https://security.netapp.com/advisory/ntap-20210226-0006/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月02日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-15810",
+    "漏洞描述": "An issue was discovered in Squid before 4.13 and 5.x before 5.0.4. Due to incorrect data validation, HTTP Request Smuggling attacks may succeed against HTTP and HTTPS traffic. This leads to cache poisoning. This allows any client, including browser scripts, to bypass local security and poison the proxy cache and any downstream caches with content from an arbitrary source. When configured for relaxed header parsing (the default), Squid relays headers containing whitespace characters to upstream servers. When this occurs as a prefix to a Content-Length header, the frame length specified will be ignored by Squid (allowing for a conflicting length to be used from another Content-Length header) but relayed upstream.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/squid-cache/squid/security/advisories/GHSA-3365-q9qx-f98m",
+      "https://www.debian.org/security/2020/dsa-4751",
+      "https://usn.ubuntu.com/4477-1/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/HJJDI7JQFGQLVNCKMVY64LAFMKERAOK7/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/BMTFLVB7GLRF2CKGFPZ4G4R5DIIPHWI3/",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00012.html",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00017.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/BE6FKUN7IGTIR2MEEMWYDT7N5EJJLZI2/",
+      "https://usn.ubuntu.com/4551-1/",
+      "https://lists.debian.org/debian-lts-announce/2020/10/msg00005.html",
+      "https://security.netapp.com/advisory/ntap-20210219-0007/",
+      "https://security.netapp.com/advisory/ntap-20210226-0007/",
+      "https://security.netapp.com/advisory/ntap-20210226-0006/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月02日"
+  },
+  {
+    "设备品牌": "Ubuntu",
+    "设备类型": "OTA",
+    "产品型号": "grub2 in Ubuntu",
+    "CVE编号": "CVE-2020-15707",
+    "漏洞描述": "Integer overflows were discovered in the functions grub_cmd_initrd and grub_initrd_init in the efilinux component of GRUB2, as shipped in Debian, Red Hat, and Ubuntu (the functionality is not included in GRUB2 upstream), leading to a heap-based buffer overflow. These could be triggered by an extremely large number of arguments to the initrd command on 32-bit architectures, or a crafted filesystem with very large files on any architecture. An attacker could use this to execute arbitrary code and bypass UEFI Secure Boot restrictions. This issue affects GRUB2 version 2.04 and prior versions.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.eclypsium.com/2020/07/29/theres-a-hole-in-the-boot/",
+      "https://wiki.ubuntu.com/SecurityTeam/KnowledgeBase/GRUB2SecureBootBypass",
+      "http://ubuntu.com/security/notices/USN-4432-1",
+      "https://www.debian.org/security/2020-GRUB-UEFI-SecureBoot",
+      "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV200011",
+      "https://access.redhat.com/security/vulnerabilities/grub2bootloader",
+      "https://www.suse.com/c/suse-addresses-grub2-secure-boot-issue/",
+      "https://www.suse.com/support/kb/doc/?id=000019673",
+      "https://www.openwall.com/lists/oss-security/2020/07/29/3",
+      "https://lists.gnu.org/archive/html/grub-devel/2020-07/msg00034.html",
+      "https://www.debian.org/security/2020/dsa-4735",
+      "http://www.openwall.com/lists/oss-security/2020/07/29/3",
+      "https://security.netapp.com/advisory/ntap-20200731-0008/",
+      "https://usn.ubuntu.com/4432-1/",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00017.html",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00016.html",
+      "https://security.gentoo.org/glsa/202104-05"
+    ],
+    "受影响版本": [
+      "20.04 LTS",
+      "18.04 LTS",
+      "16.04 LTS",
+      "14.04 ESM"
+    ],
+    "公开日期": "2020年07月29日"
+  },
+  {
+    "设备品牌": "envoyproxy",
+    "设备类型": "OTA",
+    "产品型号": "envoy",
+    "CVE编号": "CVE-2020-15104",
+    "漏洞描述": "In Envoy before versions 1.12.6, 1.13.4, 1.14.4, and 1.15.0 when validating TLS certificates, Envoy would incorrectly allow a wildcard DNS Subject Alternative Name apply to multiple subdomains. For example, with a SAN of *.example.com, Envoy would incorrectly allow nested.subdomain.example.com, when it should only allow subdomain.example.com. This defect applies to both validating a client TLS certificate in mTLS, and validating a server TLS certificate for upstream connections. This vulnerability is only applicable to situations where an untrusted entity can obtain a signed wildcard TLS certificate for a domain of which you only intend to trust a subdomain of. For example, if you intend to trust api.mysubdomain.example.com, and an untrusted actor can obtain a signed TLS certificate for *.example.com or *.com. Configurations are vulnerable if they use verify_subject_alt_name in any Envoy version, or if they use match_subject_alt_names in version 1.14 or later. This issue has been fixed in Envoy versions 1.12.6, 1.13.4, 1.14.4, 1.15.0.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-w5f5-6qhq-hhrg"
+    ],
+    "受影响版本": [
+      "< 1.12.6",
+      ">= 1.13.0, < 1.13.4",
+      ">= 1.14.0, < 1.14.4"
+    ],
+    "公开日期": "2020年07月14日"
+  },
+  {
+    "设备品牌": "The X11 Project",
+    "设备类型": "OTA",
+    "产品型号": "libX11",
+    "CVE编号": "CVE-2020-14344",
+    "漏洞描述": "An integer overflow leading to a heap-buffer overflow was found in The X Input Method (XIM) client was implemented in libX11 before version 1.6.10. As per upstream this is security relevant when setuid programs call XIM client functions while running with elevated privileges. No such programs are shipped with Red Hat Enterprise Linux.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://lists.x.org/archives/xorg-announce/2020-July/003050.html",
+      "https://www.openwall.com/lists/oss-security/2020/07/31/1",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-14344",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00014.html",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00015.html",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00024.html",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00031.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/XY4H2SIEF2362AMNX5ZKWAELGU7LKFJB/",
+      "https://security.gentoo.org/glsa/202008-18",
+      "https://usn.ubuntu.com/4487-1/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/4VDDSAYV7XGNRCXE7HCU23645MG74OFF/",
+      "https://usn.ubuntu.com/4487-2/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/7AVXCQOSCAPKYYHFIJAZ6E2C7LJBTLXF/"
+    ],
+    "受影响版本": [
+      "1.6.10"
+    ],
+    "公开日期": "2020年08月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-12663",
+    "漏洞描述": "Unbound before 1.10.1 has an infinite loop via malformed DNS answers received from upstream servers.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://nlnetlabs.nl/downloads/unbound/CVE-2020-12662_2020-12663.txt",
+      "http://www.openwall.com/lists/oss-security/2020/05/19/5",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/F5NFROI2OMCZLYRTCNGHGO3TUD32LCIQ/",
+      "https://www.debian.org/security/2020/dsa-4694",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/YJ42N2HBZ3DXMSEC56SWIIOFQGOS5M7I/",
+      "https://usn.ubuntu.com/4374-1/",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-06/msg00069.html",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-06/msg00067.html",
+      "https://security.FreeBSD.org/advisories/FreeBSD-SA-20:19.unbound.asc",
+      "https://lists.debian.org/debian-lts-announce/2021/02/msg00017.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年05月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-12658",
+    "漏洞描述": "gssproxy (aka gss-proxy) before 0.8.3 does not unlock cond_mutex before pthread exit in gp_worker_main() in gp_workers.c. NOTE: An upstream comment states \"We are already on a shutdown path when running the code in question, so a DoS there doesn't make any sense, and there has been no additional information provided us (as upstream) to indicate why this would be a problem.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://pagure.io/gssproxy/c/cb761412e299ef907f22cd7c4146d50c8a792003?branch=master",
+      "https://github.com/gssapi/gssproxy/compare/v0.8.2...v0.8.3",
+      "https://github.com/gssapi/gssproxy/commit/cb761412e299ef907f22cd7c4146d50c8a792003",
+      "https://lists.debian.org/debian-lts-announce/2021/01/msg00004.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Intel(R) Graphics Drivers for Windows* before version 26.20.100.7212 and",
+    "CVE编号": "CVE-2020-12364",
+    "漏洞描述": "Null pointer reference in some Intel(R) Graphics Drivers for Windows* before version 26.20.100.7212 and before version Linux kernel version 5.5 may allow a privileged user to potentially enable a denial of service via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00438.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00002.html"
+    ],
+    "受影响版本": [
+      "before version 26.20.100.7212 and before version Linux kernel version 5.5"
+    ],
+    "公开日期": "2021年02月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Intel(R) Graphics Drivers for Windows* before version 26.20.100.7212 and",
+    "CVE编号": "CVE-2020-12363",
+    "漏洞描述": "Improper input validation in some Intel(R) Graphics Drivers for Windows* before version 26.20.100.7212 and before Linux kernel version 5.5 may allow a privileged user to potentially enable a denial of service via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00438.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00002.html"
+    ],
+    "受影响版本": [
+      "before version 26.20.100.7212 and before Linux kernel version 5.5"
+    ],
+    "公开日期": "2021年02月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Intel(R) Graphics Drivers for Windows * before version 26.20.100.7212 and",
+    "CVE编号": "CVE-2020-12362",
+    "漏洞描述": "Integer overflow in the firmware for some Intel(R) Graphics Drivers for Windows * before version 26.20.100.7212 and before Linux kernel version 5.5 may allow a privileged user to potentially enable an escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00438.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00002.html"
+    ],
+    "受影响版本": [
+      "before version 26.20.100.7212 and before Linux kernel version 5.5"
+    ],
+    "公开日期": "2021年02月17日"
+  },
+  {
+    "设备品牌": "libvirt",
+    "设备类型": "OTA",
+    "产品型号": "libvirt",
+    "CVE编号": "CVE-2020-10703",
+    "漏洞描述": "A NULL pointer dereference was found in the libvirt API responsible introduced in upstream version 3.10.0, and fixed in libvirt 6.0.0, for fetching a storage pool based on its target path. In more detail, this flaw affects storage pools created without a target path such as network-based pools like gluster and RBD. Unprivileged users with a read-only connection could abuse this flaw to crash the libvirt daemon, resulting in a potential denial of service.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-10703",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1790725",
+      "https://libvirt.org/git/?p=libvirt.git%3Ba=commit%3Bh=dfff16a7c261f8d28e3abe60a47165f845fa952f",
+      "https://libvirt.org/git/?p=libvirt.git%3Ba=commit%3Bh=5d5c732d748d644ec14626bce448e84bdc4bd93e",
+      "https://libvirt.org/git/?p=libvirt.git%3Ba=commit%3Bh=7aa0e8c0cb8a6293d0c6f7e3d29c13b96dec2129",
+      "https://security.netapp.com/advisory/ntap-20200608-0005/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/D5GE6ISYUL3CIWO3FQRUGMKTKP2NYED2/",
+      "https://lists.debian.org/debian-lts-announce/2024/04/msg00000.html"
+    ],
+    "受影响版本": [
+      ">= 3.10.0, < 6.0.0"
+    ],
+    "公开日期": "2020年06月02日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2020-0466",
+    "漏洞描述": "In do_epoll_ctl and ep_loop_check_proc of eventpoll.c, there is a possible use after free due to a logic error. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-147802478References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2020-12-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2020年12月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2020-0465",
+    "漏洞描述": "In various methods of hid-multitouch.c, there is a possible out of bounds write due to a missing bounds check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-162844689References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2020-12-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2020年12月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2020-0444",
+    "漏洞描述": "In audit_free_lsm_field of auditfilter.c, there is a possible bad kfree due to a logic error in audit_data_to_entry. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-150693166References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2020-12-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2020年12月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2020-0404",
+    "漏洞描述": "In uvc_scan_chain_forward of uvc_driver.c, there is a possible linked list corruption due to an unusual root cause. This could lead to local escalation of privilege in the kernel with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-111893654References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2020-09-01",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00001.html",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00021.html",
+      "https://www.oracle.com/security-alerts/cpujul2022.html"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2020年09月17日"
+  },
+  {
+    "设备品牌": "JuliaRegistries",
+    "设备类型": "OTA",
+    "产品型号": "Registrator.jl",
+    "CVE编号": "CVE-2025-52483",
+    "漏洞描述": "Registrator is a GitHub app that automates creation of registration pull requests for julia packages to the General registry. Prior to version 1.9.5, if the clone URL returned by GitHub is malicious (or can be injected using upstream vulnerabilities) a shell script injection can occur within the `withpasswd` function. Alternatively, an argument injection is possible in the `gettreesha `function. either of these can then lead to a potential RCE. Users should upgrade immediately to v1.9.5 to receive a fix. All prior versions are vulnerable. No known workarounds are available.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/JuliaRegistries/Registrator.jl/security/advisories/GHSA-589r-g8hf-xx59",
+      "https://github.com/JuliaRegistries/Registrator.jl/pull/448"
+    ],
+    "受影响版本": [
+      "< 1.9.5"
+    ],
+    "公开日期": "2025年06月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2023-21102",
+    "漏洞描述": "In __efi_rt_asm_wrapper of efi-rt-wrapper.S, there is a possible bypass of shadow stack protection due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-260821414References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2023-05-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2023年05月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2023-20941",
+    "漏洞描述": "In acc_ctrlrequest_composite of f_accessory.c, there is a possible out of bounds write due to a missing bounds check. This could lead to physical escalation of privilege with no additional execution privileges needed. User interaction is needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-264029575References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2023-04-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2023年04月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20572",
+    "漏洞描述": "In verity_target of dm-verity-target.c, there is a possible way to modify read-only files due to a missing permission check. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-234475629References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2022-12-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年12月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-0961",
+    "漏洞描述": "In quota_proc_write of xt_quota2.c, there is a possible way to read kernel memory due to uninitialized data. This could lead to local information disclosure with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-196046570References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2021-12-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年12月15日"
+  }
+]

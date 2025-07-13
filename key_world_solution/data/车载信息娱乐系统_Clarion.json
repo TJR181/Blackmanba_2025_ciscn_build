@@ -1,0 +1,17 @@
+[
+  {
+    "设备品牌": "Yogesh Pawar, Clarion Technologies",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "Bulk Edit Post Titles",
+    "CVE编号": "CVE-2023-49754",
+    "漏洞描述": "Missing Authorization vulnerability in Yogesh Pawar, Clarion Technologies Bulk Edit Post Titles allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Bulk Edit Post Titles: from n/a through 5.0.0.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://patchstack.com/database/wordpress/plugin/bulk-edit-post-titles/vulnerability/wordpress-bulk-edit-post-titles-plugin-5-0-0-broken-access-control-vulnerability?_s_id=cve"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年12月09日"
+  }
+]

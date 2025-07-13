@@ -1,0 +1,181 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载音频系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2025-43925",
+    "漏洞描述": "An issue was discovered in Unicom Focal Point 7.6.1. The database is encrypted with a hardcoded key, making it easier to recover the cleartext data.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.unicomsi.com/products/focal-point/",
+      "https://www.unicomsi.com/security-advisory/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年06月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载音频系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2025-43924",
+    "漏洞描述": "Cross Site Scripting vulnerability was discovered in Unicom Focal Point 7.6.1. The val parameter in SettingController (for /fp/admin/settings/loginpage) and the rootserviceurl parameter in FriendsController (for /fp/admin/settings/friends), entered by an admin, allow stored XSS.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.unicomsi.com/products/focal-point/",
+      "https://www.unicomsi.com/security-advisory/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年06月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载音频系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2025-43923",
+    "漏洞描述": "An issue was discovered in ReportController in Unicom Focal Point 7.6.1. A user who has administrative privilege in Focal Point can perform SQL injection via the image parameter during a delete report image operation.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.unicomsi.com/products/focal-point/",
+      "https://www.unicomsi.com/security-advisory/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年06月03日"
+  },
+  {
+    "设备品牌": "apptainer",
+    "设备类型": "车载音频系统",
+    "产品型号": "apptainer",
+    "CVE编号": "CVE-2023-30549",
+    "漏洞描述": "Apptainer is an open source container platform for Linux. There is an ext4 use-after-free flaw that is exploitable through versions of Apptainer < 1.1.0 and installations that include apptainer-suid < 1.1.8 on older operating systems where that CVE has not been patched. That includes Red Hat Enterprise Linux 7, Debian 10 buster (unless the linux-5.10 package is installed), Ubuntu 18.04 bionic and Ubuntu 20.04 focal. Use-after-free flaws in the kernel can be used to attack the kernel for denial of service and potentially for privilege escalation.\n\nApptainer 1.1.8 includes a patch that by default disables mounting of extfs filesystem types in setuid-root mode, while continuing to allow mounting of extfs filesystems in non-setuid \"rootless\" mode using fuse2fs.\n\nSome workarounds are possible. Either do not install apptainer-suid (for versions 1.1.0 through 1.1.7) or set `allow setuid = no` in apptainer.conf.  This requires having unprivileged user namespaces enabled and except for apptainer 1.1.x versions will disallow mounting of sif files, extfs files, and squashfs files in addition to other, less significant impacts.  (Encrypted sif files are also not supported unprivileged in apptainer 1.1.x.). Alternatively, use the `limit containers` options in apptainer.conf/singularity.conf to limit sif files to trusted users, groups, and/or paths, and set `allow container extfs = no` to disallow mounting of extfs overlay files.  The latter option by itself does not disallow mounting of extfs overlay partitions inside SIF files, so that's why the former options are also needed.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://github.com/apptainer/apptainer/security/advisories/GHSA-j4rf-7357-f4cg",
+      "https://github.com/apptainer/apptainer/commit/5a4964f5ba9c8d89a0e353b97f51fd607670a9f7",
+      "https://github.com/torvalds/linux/commit/2220eaf90992c11d888fe771055d4de3303",
+      "https://github.com/torvalds/linux/commit/4f04351888a83e595571de672e0a4a8b74f",
+      "https://access.redhat.com/security/cve/cve-2022-1184",
+      "https://github.com/apptainer/apptainer/releases/tag/v1.1.8",
+      "https://lwn.net/Articles/932136/",
+      "https://lwn.net/Articles/932137/",
+      "https://security-tracker.debian.org/tracker/CVE-2022-1184",
+      "https://sylabs.io/2023/04/response-to-cve-2023-30549/",
+      "https://ubuntu.com/security/CVE-2022-1184",
+      "https://www.suse.com/security/cve/CVE-2022-1184.html",
+      "https://security.gentoo.org/glsa/202311-13"
+    ],
+    "受影响版本": [
+      "< 1.1.8"
+    ],
+    "公开日期": "2023年04月25日"
+  },
+  {
+    "设备品牌": "Ubuntu",
+    "设备类型": "车载音频系统",
+    "产品型号": "Linux kernel",
+    "CVE编号": "CVE-2021-3492",
+    "漏洞描述": "Shiftfs, an out-of-tree stacking file system included in Ubuntu Linux kernels, did not properly handle faults occurring during copy_from_user() correctly. These could lead to either a double-free situation or memory not being freed at all. An attacker could use this to cause a denial of service (kernel memory exhaustion) or gain privileges via executing arbitrary code. AKA ZDI-CAN-13562.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.openwall.com/lists/oss-security/2021/04/16/2",
+      "https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/focal/commit/?id=8fee52ab9da87d82bc6de9ebb3480fff9b4d53e6",
+      "https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/focal/commit/?id=25c891a949bf918b59cbc6e4932015ba4c35c333",
+      "https://ubuntu.com/security/notices/USN-4917-1",
+      "https://www.zerodayinitiative.com/advisories/ZDI-21-422/",
+      "http://packetstormsecurity.com/files/162614/Kernel-Live-Patch-Security-Notice-LSN-0077-1.html"
+    ],
+    "受影响版本": [
+      "5.4 kernel",
+      "5.8 kernel"
+    ],
+    "公开日期": "2021年04月17日"
+  },
+  {
+    "设备品牌": "Philips ",
+    "设备类型": "车载音频系统",
+    "产品型号": "Patient Information Center iX (PICiX)",
+    "CVE编号": "CVE-2020-16228",
+    "漏洞描述": "In Patient Information Center iX (PICiX) Versions C.02 and C.03, \nPerformanceBridge Focal Point Version A.01, IntelliVue patient monitors \nMX100, MX400-MX550, MX750, MX850, and IntelliVue X3 Versions N and \nprior, the software does not check or incorrectly checks the revocation \nstatus of a certificate, which may cause it to use a compromised \ncertificate.\n\n\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://us-cert.cisa.gov/ics/advisories/icsma-20-254-01",
+      "https://www.philips.com/productsecurity"
+    ],
+    "受影响版本": [
+      "C.02",
+      "C.03"
+    ],
+    "公开日期": "2020年09月11日"
+  },
+  {
+    "设备品牌": "Philips",
+    "设备类型": "车载音频系统",
+    "产品型号": "Patient Information Center iX (PICiX)",
+    "CVE编号": "CVE-2020-16222",
+    "漏洞描述": "In Patient Information Center iX (PICiX) Version B.02, C.02, C.03, and \nPerformanceBridge Focal Point Version A.01, when an actor claims to have\n a given identity, the software does not prove or insufficiently proves \nthe claim is correct.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://us-cert.cisa.gov/ics/advisories/icsma-20-254-01",
+      "https://www.philips.com/productsecurity"
+    ],
+    "受影响版本": [
+      "B.02",
+      "C.02",
+      "C.03"
+    ],
+    "公开日期": "2020年09月11日"
+  },
+  {
+    "设备品牌": "Philips ",
+    "设备类型": "车载音频系统",
+    "产品型号": "Patient Information Center iX (PICiX)",
+    "CVE编号": "CVE-2020-16220",
+    "漏洞描述": "In Patient Information Center iX (PICiX) Versions C.02, C.03, \nPerformanceBridge Focal Point Version A.01, the product receives input \nthat is expected to be well-formed (i.e., to comply with a certain \nsyntax) but it does not validate or incorrectly validates that the input\n complies with the syntax, causing the certificate enrollment service to\n crash. It does not impact monitoring but prevents new devices from \nenrolling.\n\n\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://us-cert.cisa.gov/ics/advisories/icsma-20-254-01",
+      "https://www.philips.com/productsecurity"
+    ],
+    "受影响版本": [
+      "C.02",
+      "C.03"
+    ],
+    "公开日期": "2020年09月11日"
+  },
+  {
+    "设备品牌": "Canonical",
+    "设备类型": "车载音频系统",
+    "产品型号": "Linux kernel",
+    "CVE编号": "CVE-2020-16119",
+    "漏洞描述": "Use-after-free vulnerability in the Linux kernel exploitable by a local attacker due to reuse of a DCCP socket with an attached dccps_hc_tx_ccid object as a listener after being released. Fixed in Ubuntu Linux kernel 5.4.0-51.56, 5.3.0-68.63, 4.15.0-121.123, 4.4.0-193.224, 3.13.0.182.191 and 3.2.0-149.196.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://launchpad.net/bugs/1883840",
+      "https://ubuntu.com/USN-4576-1",
+      "https://ubuntu.com/USN-4577-1",
+      "https://ubuntu.com/USN-4578-1",
+      "https://ubuntu.com/USN-4579-1",
+      "https://ubuntu.com/USN-4580-1",
+      "https://lore.kernel.org/netdev/20201013171849.236025-1-kleber.souza%40canonical.com/T/",
+      "https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/focal/commit/?id=01872cb896c76cedeabe93a08456976ab55ad695",
+      "https://security.netapp.com/advisory/ntap-20210304-0006/",
+      "https://www.debian.org/security/2021/dsa-4978",
+      "https://lists.debian.org/debian-lts-announce/2021/10/msg00010.html",
+      "https://lists.debian.org/debian-lts-announce/2021/12/msg00012.html"
+    ],
+    "受影响版本": [
+      "3.13 kernel",
+      "3.2 kernel",
+      "4.15 kernel",
+      "4.4 kernel",
+      "5.3 kernel",
+      "5.4 kernel"
+    ],
+    "公开日期": "2021年01月14日"
+  }
+]

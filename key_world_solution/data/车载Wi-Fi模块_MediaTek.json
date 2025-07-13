@@ -1,0 +1,1869 @@
+[
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-38240",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/mediatek: dp: drm_err => dev_err in HPD path to avoid NULL ptr\n\nThe function mtk_dp_wait_hpd_asserted() may be called before the\n`mtk_dp->drm_dev` pointer is assigned in mtk_dp_bridge_attach().\nSpecifically it can be called via this callpath:\n - mtk_edp_wait_hpd_asserted\n - [panel probe]\n - dp_aux_ep_probe\n\nUsing \"drm\" level prints anywhere in this callpath causes a NULL\npointer dereference. Change the error message directly in\nmtk_dp_wait_hpd_asserted() to dev_err() to avoid this. Also change the\nerror messages in mtk_dp_parse_capabilities(), which is called by\nmtk_dp_wait_hpd_asserted().\n\nWhile touching these prints, also add the error code to them to make\nfuture debugging easier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/13ec849fd2eab808ee8eba2625df7ebea3b85edf",
+      "https://git.kernel.org/stable/c/57a9fb47551b33cde7b76d17c0072c3b394f4620",
+      "https://git.kernel.org/stable/c/2fda391ef7a701748abd7fa32232981b522c1e07",
+      "https://git.kernel.org/stable/c/149a5c38436c229950cf1020992ce65c9549bc19",
+      "https://git.kernel.org/stable/c/106a6de46cf4887d535018185ec528ce822d6d84"
+    ],
+    "受影响版本": [
+      "7eacba9a083be65c0f251c19380ec01147c01ebc",
+      "7eacba9a083be65c0f251c19380ec01147c01ebc",
+      "7eacba9a083be65c0f251c19380ec01147c01ebc",
+      "7eacba9a083be65c0f251c19380ec01147c01ebc",
+      "7eacba9a083be65c0f251c19380ec01147c01ebc"
+    ],
+    "公开日期": "2025年04月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-37945",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: phy: allow MDIO bus PM ops to start/stop state machine for phylink-controlled PHY\n\nDSA has 2 kinds of drivers:\n\n1. Those who call dsa_switch_suspend() and dsa_switch_resume() from\n   their device PM ops: qca8k-8xxx, bcm_sf2, microchip ksz\n2. Those who don't: all others. The above methods should be optional.\n\nFor type 1, dsa_switch_suspend() calls dsa_user_suspend() -> phylink_stop(),\nand dsa_switch_resume() calls dsa_user_resume() -> phylink_start().\nThese seem good candidates for setting mac_managed_pm = true because\nthat is essentially its definition [1], but that does not seem to be the\nbiggest problem for now, and is not what this change focuses on.\n\nTalking strictly about the 2nd category of DSA drivers here (which\ndo not have MAC managed PM, meaning that for their attached PHYs,\nmdio_bus_phy_suspend() and mdio_bus_phy_resume() should run in full),\nI have noticed that the following warning from mdio_bus_phy_resume() is\ntriggered:\n\n\tWARN_ON(phydev->state != PHY_HALTED && phydev->state != PHY_READY &&\n\t\tphydev->state != PHY_UP);\n\nbecause the PHY state machine is running.\n\nIt's running as a result of a previous dsa_user_open() -> ... ->\nphylink_start() -> phy_start() having been initiated by the user.\n\nThe previous mdio_bus_phy_suspend() was supposed to have called\nphy_stop_machine(), but it didn't. So this is why the PHY is in state\nPHY_NOLINK by the time mdio_bus_phy_resume() runs.\n\nmdio_bus_phy_suspend() did not call phy_stop_machine() because for\nphylink, the phydev->adjust_link function pointer is NULL. This seems a\ntechnicality introduced by commit fddd91016d16 (\"phylib: fix PAL state\nmachine restart on resume\"). That commit was written before phylink\nexisted, and was intended to avoid crashing with consumer drivers which\ndon't use the PHY state machine - phylink always does, when using a PHY.\nBut phylink itself has historically not been developed with\nsuspend/resume in mind, and apparently not tested too much in that\nscenario, allowing this bug to exist unnoticed for so long. Plus, prior\nto the WARN_ON(), it would have likely been invisible.\n\nThis issue is not in fact restricted to type 2 DSA drivers (according to\nthe above ad-hoc classification), but can be extrapolated to any MAC\ndriver with phylink and MDIO-bus-managed PHY PM ops. DSA is just where\nthe issue was reported. Assuming mac_managed_pm is set correctly, a\nquick search indicates the following other drivers might be affected:\n\n$ grep -Zlr PHYLINK_NETDEV drivers/ | xargs -0 grep -L mac_managed_pm\ndrivers/net/ethernet/atheros/ag71xx.c\ndrivers/net/ethernet/microchip/sparx5/sparx5_main.c\ndrivers/net/ethernet/microchip/lan966x/lan966x_main.c\ndrivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c\ndrivers/net/ethernet/freescale/fs_enet/fs_enet-main.c\ndrivers/net/ethernet/freescale/dpaa/dpaa_eth.c\ndrivers/net/ethernet/freescale/ucc_geth.c\ndrivers/net/ethernet/freescale/enetc/enetc_pf_common.c\ndrivers/net/ethernet/marvell/mvpp2/mvpp2_main.c\ndrivers/net/ethernet/marvell/mvneta.c\ndrivers/net/ethernet/marvell/prestera/prestera_main.c\ndrivers/net/ethernet/mediatek/mtk_eth_soc.c\ndrivers/net/ethernet/altera/altera_tse_main.c\ndrivers/net/ethernet/wangxun/txgbe/txgbe_phy.c\ndrivers/net/ethernet/meta/fbnic/fbnic_phylink.c\ndrivers/net/ethernet/tehuti/tn40_phy.c\ndrivers/net/ethernet/mscc/ocelot_net.c\n\nMake the existing conditions dependent on the PHY device having a\nphydev->phy_link_change() implementation equal to the default\nphy_link_change() provided by phylib. Otherwise, we implicitly know that\nthe phydev has the phylink-provided phylink_phy_change() callback, and\nwhen phylink is used, the PHY state machine always needs to be stopped/\nstarted on the suspend/resume path. The code is structured as such that\nif phydev->phy_link_change() is absent, it is a matter of time until the\nkernel will crash - no need to further complicate the test.\n\nThus, for the situation where the PM is not managed b\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/a6ed6f8ec81b8ca7100dcd9e62bdbc0dff1b2259",
+      "https://git.kernel.org/stable/c/54e5d00a8de6c13f6c01a94ed48025e882cd15f7",
+      "https://git.kernel.org/stable/c/bd4037d51d3f6667636a1383e78e48a5b7b60755",
+      "https://git.kernel.org/stable/c/fc75ea20ffb452652f0d4033f38fe88d7cfdae35"
+    ],
+    "受影响版本": [
+      "744d23c71af39c7dc77ac7c3cac87ae86a181a85",
+      "744d23c71af39c7dc77ac7c3cac87ae86a181a85",
+      "744d23c71af39c7dc77ac7c3cac87ae86a181a85",
+      "744d23c71af39c7dc77ac7c3cac87ae86a181a85",
+      "47ac7b2f6a1ffef76e55a9ec146881a36673284b",
+      "7dc0ed411de3450e75b2a9600b5742cbf0908167"
+    ],
+    "公开日期": "2025年05月20日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-37935",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: ethernet: mtk_eth_soc: fix SER panic with 4GB+ RAM\n\nIf the mtk_poll_rx() function detects the MTK_RESETTING flag, it will\njump to release_desc and refill the high word of the SDP on the 4GB RFB.\nSubsequently, mtk_rx_clean will process an incorrect SDP, leading to a\npanic.\n\nAdd patch from MediaTek's SDK to resolve this.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/cb625f783f70dc6614f03612b8e64ad99cb0a13c",
+      "https://git.kernel.org/stable/c/317013d1ad13524be02d60b9e98f08fbd13f8c14",
+      "https://git.kernel.org/stable/c/67619cf69dec5d1d7792808dfa548616742dd51d",
+      "https://git.kernel.org/stable/c/6e0490fc36cdac696f96e57b61d93b9ae32e0f4c"
+    ],
+    "受影响版本": [
+      "2d75891ebc09ba9cf30697dfd54497ef0220308f",
+      "2d75891ebc09ba9cf30697dfd54497ef0220308f",
+      "2d75891ebc09ba9cf30697dfd54497ef0220308f",
+      "2d75891ebc09ba9cf30697dfd54497ef0220308f"
+    ],
+    "公开日期": "2025年05月20日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-37917",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: ethernet: mtk-star-emac: fix spinlock recursion issues on rx/tx poll\n\nUse spin_lock_irqsave and spin_unlock_irqrestore instead of spin_lock\nand spin_unlock in mtk_star_emac driver to avoid spinlock recursion\noccurrence that can happen when enabling the DMA interrupts again in\nrx/tx poll.\n\n```\nBUG: spinlock recursion on CPU#0, swapper/0/0\n lock: 0xffff00000db9cf20, .magic: dead4ead, .owner: swapper/0/0,\n    .owner_cpu: 0\nCPU: 0 UID: 0 PID: 0 Comm: swapper/0 Not tainted\n    6.15.0-rc2-next-20250417-00001-gf6a27738686c-dirty #28 PREEMPT\nHardware name: MediaTek MT8365 Open Platform EVK (DT)\nCall trace:\n show_stack+0x18/0x24 (C)\n dump_stack_lvl+0x60/0x80\n dump_stack+0x18/0x24\n spin_dump+0x78/0x88\n do_raw_spin_lock+0x11c/0x120\n _raw_spin_lock+0x20/0x2c\n mtk_star_handle_irq+0xc0/0x22c [mtk_star_emac]\n __handle_irq_event_percpu+0x48/0x140\n handle_irq_event+0x4c/0xb0\n handle_fasteoi_irq+0xa0/0x1bc\n handle_irq_desc+0x34/0x58\n generic_handle_domain_irq+0x1c/0x28\n gic_handle_irq+0x4c/0x120\n do_interrupt_handler+0x50/0x84\n el1_interrupt+0x34/0x68\n el1h_64_irq_handler+0x18/0x24\n el1h_64_irq+0x6c/0x70\n regmap_mmio_read32le+0xc/0x20 (P)\n _regmap_bus_reg_read+0x6c/0xac\n _regmap_read+0x60/0xdc\n regmap_read+0x4c/0x80\n mtk_star_rx_poll+0x2f4/0x39c [mtk_star_emac]\n __napi_poll+0x38/0x188\n net_rx_action+0x164/0x2c0\n handle_softirqs+0x100/0x244\n __do_softirq+0x14/0x20\n ____do_softirq+0x10/0x20\n call_on_irq_stack+0x24/0x64\n do_softirq_own_stack+0x1c/0x40\n __irq_exit_rcu+0xd4/0x10c\n irq_exit_rcu+0x10/0x1c\n el1_interrupt+0x38/0x68\n el1h_64_irq_handler+0x18/0x24\n el1h_64_irq+0x6c/0x70\n cpuidle_enter_state+0xac/0x320 (P)\n cpuidle_enter+0x38/0x50\n do_idle+0x1e4/0x260\n cpu_startup_entry+0x34/0x3c\n rest_init+0xdc/0xe0\n console_on_rootfs+0x0/0x6c\n __primary_switched+0x88/0x90\n```",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/bedd287fdd3142dffad7ae2ac6ef15f4a2ad0629",
+      "https://git.kernel.org/stable/c/94107259f972d2fd896dbbcaa176b3b2451ff9e5",
+      "https://git.kernel.org/stable/c/7cb10f17bddc415f30fbc00a4e2b490e0d94c462",
+      "https://git.kernel.org/stable/c/8d40bf73fa7f31eac2b0a7c9d85de67df82ee7f3",
+      "https://git.kernel.org/stable/c/d886f8d85494d12b2752fd7c6c32162d982d5dd5",
+      "https://git.kernel.org/stable/c/6fe0866014486736cc3ba1c6fd4606d3dbe55c9c"
+    ],
+    "受影响版本": [
+      "97da99868573b8861de83f7126a5981d896c1d6c",
+      "0a8bd81fd6aaace14979152e0540da8ff158a00a",
+      "0a8bd81fd6aaace14979152e0540da8ff158a00a",
+      "0a8bd81fd6aaace14979152e0540da8ff158a00a",
+      "0a8bd81fd6aaace14979152e0540da8ff158a00a",
+      "0a8bd81fd6aaace14979152e0540da8ff158a00a"
+    ],
+    "公开日期": "2025年05月20日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-37850",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\npwm: mediatek: Prevent divide-by-zero in pwm_mediatek_config()\n\nWith CONFIG_COMPILE_TEST && !CONFIG_HAVE_CLK, pwm_mediatek_config() has a\ndivide-by-zero in the following line:\n\n\tdo_div(resolution, clk_get_rate(pc->clk_pwms[pwm->hwpwm]));\n\ndue to the fact that the !CONFIG_HAVE_CLK version of clk_get_rate()\nreturns zero.\n\nThis is presumably just a theoretical problem: COMPILE_TEST overrides\nthe dependency on RALINK which would select COMMON_CLK.  Regardless it's\na good idea to check for the error explicitly to avoid divide-by-zero.\n\nFixes the following warning:\n\n  drivers/pwm/pwm-mediatek.o: warning: objtool: .text: unexpected end of section\n\n[ukleinek: s/CONFIG_CLK/CONFIG_HAVE_CLK/]",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/8b9f60725d74b72c238e4437c957d0217746b506",
+      "https://git.kernel.org/stable/c/e1206d8e1651c9f62e5640b69b14d925b1a0a00a",
+      "https://git.kernel.org/stable/c/e3cf0c38d3ce754ad63005102fcfeb0b7ff3290b",
+      "https://git.kernel.org/stable/c/f3e9cf266c2c103cf071e15d7a17e2c699fff3c5",
+      "https://git.kernel.org/stable/c/8ddbec73ea2598d8414e8f7103241b55cf877010",
+      "https://git.kernel.org/stable/c/4cb15042b5f3ec0474e91cf379120cc597625dbb",
+      "https://git.kernel.org/stable/c/c343856ff2689ce0afef823592732fc178ef4aac",
+      "https://git.kernel.org/stable/c/77fb96dbe350e8a5ae4965ff9f6e7049f3966a6b",
+      "https://git.kernel.org/stable/c/7ca59947b5fcf94e7ea4029d1bd0f7c41500a161"
+    ],
+    "受影响版本": [
+      "caf065f8fd583b43a3f95d84c8a0a0d07597963b",
+      "caf065f8fd583b43a3f95d84c8a0a0d07597963b",
+      "caf065f8fd583b43a3f95d84c8a0a0d07597963b",
+      "caf065f8fd583b43a3f95d84c8a0a0d07597963b",
+      "caf065f8fd583b43a3f95d84c8a0a0d07597963b",
+      "caf065f8fd583b43a3f95d84c8a0a0d07597963b",
+      "caf065f8fd583b43a3f95d84c8a0a0d07597963b",
+      "caf065f8fd583b43a3f95d84c8a0a0d07597963b",
+      "caf065f8fd583b43a3f95d84c8a0a0d07597963b"
+    ],
+    "公开日期": "2025年05月09日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-37748",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\niommu/mediatek: Fix NULL pointer deference in mtk_iommu_device_group\n\nCurrently, mtk_iommu calls during probe iommu_device_register before\nthe hw_list from driver data is initialized. Since iommu probing issue\nfix, it leads to NULL pointer dereference in mtk_iommu_device_group when\nhw_list is accessed with list_first_entry (not null safe).\n\nSo, change the call order to ensure iommu_device_register is called\nafter the driver data are initialized.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/2f75cb27bef43c8692b0f5e471e5632f6a9beb99",
+      "https://git.kernel.org/stable/c/6abd09bed43b8d83d461e0fb5b9a200a06aa8a27",
+      "https://git.kernel.org/stable/c/a0842539e8ef9386c070156103aff888e558a60c",
+      "https://git.kernel.org/stable/c/ce7d3b2f6f393fa35f0ea12861b83a1ca28b295c",
+      "https://git.kernel.org/stable/c/69f9d2d37d1207c5a73dac52a4ce1361ead707f5",
+      "https://git.kernel.org/stable/c/38e8844005e6068f336a3ad45451a562a0040ca1"
+    ],
+    "受影响版本": [
+      "9e3a2a64365318a743e3c0b028952d2cdbaf2b0c",
+      "9e3a2a64365318a743e3c0b028952d2cdbaf2b0c",
+      "9e3a2a64365318a743e3c0b028952d2cdbaf2b0c",
+      "9e3a2a64365318a743e3c0b028952d2cdbaf2b0c",
+      "9e3a2a64365318a743e3c0b028952d2cdbaf2b0c",
+      "9e3a2a64365318a743e3c0b028952d2cdbaf2b0c"
+    ],
+    "公开日期": "2025年05月01日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-23160",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: mediatek: vcodec: Fix a resource leak related to the scp device in FW initialization\n\nOn Mediatek devices with a system companion processor (SCP) the mtk_scp\nstructure has to be removed explicitly to avoid a resource leak.\nFree the structure in case the allocation of the firmware structure fails\nduring the firmware initialization.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/fd7bb97ede487b9f075707b7408a9073e0d474b1",
+      "https://git.kernel.org/stable/c/9f009fa823c54ca0857c81f7525ea5a5d32de29c",
+      "https://git.kernel.org/stable/c/d6cb086aa52bd51378a4c9e2b25d2def97770205",
+      "https://git.kernel.org/stable/c/ac94e1db4b2053059779472eb58a64d504964240",
+      "https://git.kernel.org/stable/c/4936cd5817af35d23e4d283f48fa59a18ef481e4"
+    ],
+    "受影响版本": [
+      "f066882293b5ad359e44c4ed24ab1811ffb0b354",
+      "53dbe08504442dc7ba4865c09b3bbf5fe849681b",
+      "53dbe08504442dc7ba4865c09b3bbf5fe849681b",
+      "53dbe08504442dc7ba4865c09b3bbf5fe849681b",
+      "53dbe08504442dc7ba4865c09b3bbf5fe849681b",
+      "eeb62bb4ca22db17f7dfe8fb8472e0442df3d92f",
+      "3a693c7e243b932faee5c1fb728efa73f0abc39b"
+    ],
+    "公开日期": "2025年05月01日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-21827",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: btusb: mediatek: Add locks for usb_driver_claim_interface()\n\nThe documentation for usb_driver_claim_interface() says that \"the\ndevice lock\" is needed when the function is called from places other\nthan probe(). This appears to be the lock for the USB interface\ndevice. The Mediatek btusb code gets called via this path:\n\n  Workqueue: hci0 hci_power_on [bluetooth]\n  Call trace:\n   usb_driver_claim_interface\n   btusb_mtk_claim_iso_intf\n   btusb_mtk_setup\n   hci_dev_open_sync\n   hci_power_on\n   process_scheduled_works\n   worker_thread\n   kthread\n\nWith the above call trace the device lock hasn't been claimed. Claim\nit.\n\nWithout this fix, we'd sometimes see the error \"Failed to claim iso\ninterface\". Sometimes we'd even see worse errors, like a NULL pointer\ndereference (where `intf->dev.driver` was NULL) with a trace like:\n\n  Call trace:\n   usb_suspend_both\n   usb_runtime_suspend\n   __rpm_callback\n   rpm_suspend\n   pm_runtime_work\n   process_scheduled_works\n\nBoth errors appear to be fixed with the proper locking.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/930e1790b99e5839e1af69d2f7fd808f1fba2df9",
+      "https://git.kernel.org/stable/c/4194766ec8756f4f654d595ae49962acbac49490",
+      "https://git.kernel.org/stable/c/e9087e828827e5a5c85e124ce77503f2b81c3491"
+    ],
+    "受影响版本": [
+      "ceac1cb0259de682d78f5c784ef8e0b13022e9d9",
+      "ceac1cb0259de682d78f5c784ef8e0b13022e9d9",
+      "ceac1cb0259de682d78f5c784ef8e0b13022e9d9"
+    ],
+    "公开日期": "2025年03月06日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-57926",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/mediatek: Set private->all_drm_private[i]->drm to NULL if mtk_drm_bind returns err\n\nThe pointer need to be set to NULL, otherwise KASAN complains about\nuse-after-free. Because in mtk_drm_bind, all private's drm are set\nas follows.\n\nprivate->all_drm_private[i]->drm = drm;\n\nAnd drm will be released by drm_dev_put in case mtk_drm_kms_init returns\nfailure. However, the shutdown path still accesses the previous allocated\nmemory in drm_atomic_helper_shutdown.\n\n[   84.874820] watchdog: watchdog0: watchdog did not stop!\n[   86.512054] ==================================================================\n[   86.513162] BUG: KASAN: use-after-free in drm_atomic_helper_shutdown+0x33c/0x378\n[   86.514258] Read of size 8 at addr ffff0000d46fc068 by task shutdown/1\n[   86.515213]\n[   86.515455] CPU: 1 UID: 0 PID: 1 Comm: shutdown Not tainted 6.13.0-rc1-mtk+gfa1a78e5d24b-dirty #55\n[   86.516752] Hardware name: Unknown Product/Unknown Product, BIOS 2022.10 10/01/2022\n[   86.517960] Call trace:\n[   86.518333]  show_stack+0x20/0x38 (C)\n[   86.518891]  dump_stack_lvl+0x90/0xd0\n[   86.519443]  print_report+0xf8/0x5b0\n[   86.519985]  kasan_report+0xb4/0x100\n[   86.520526]  __asan_report_load8_noabort+0x20/0x30\n[   86.521240]  drm_atomic_helper_shutdown+0x33c/0x378\n[   86.521966]  mtk_drm_shutdown+0x54/0x80\n[   86.522546]  platform_shutdown+0x64/0x90\n[   86.523137]  device_shutdown+0x260/0x5b8\n[   86.523728]  kernel_restart+0x78/0xf0\n[   86.524282]  __do_sys_reboot+0x258/0x2f0\n[   86.524871]  __arm64_sys_reboot+0x90/0xd8\n[   86.525473]  invoke_syscall+0x74/0x268\n[   86.526041]  el0_svc_common.constprop.0+0xb0/0x240\n[   86.526751]  do_el0_svc+0x4c/0x70\n[   86.527251]  el0_svc+0x4c/0xc0\n[   86.527719]  el0t_64_sync_handler+0x144/0x168\n[   86.528367]  el0t_64_sync+0x198/0x1a0\n[   86.528920]\n[   86.529157] The buggy address belongs to the physical page:\n[   86.529972] page: refcount:0 mapcount:0 mapping:0000000000000000 index:0xffff0000d46fd4d0 pfn:0x1146fc\n[   86.531319] flags: 0xbfffc0000000000(node=0|zone=2|lastcpupid=0xffff)\n[   86.532267] raw: 0bfffc0000000000 0000000000000000 dead000000000122 0000000000000000\n[   86.533390] raw: ffff0000d46fd4d0 0000000000000000 00000000ffffffff 0000000000000000\n[   86.534511] page dumped because: kasan: bad access detected\n[   86.535323]\n[   86.535559] Memory state around the buggy address:\n[   86.536265]  ffff0000d46fbf00: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff\n[   86.537314]  ffff0000d46fbf80: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff\n[   86.538363] >ffff0000d46fc000: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff\n[   86.544733]                                                           ^\n[   86.551057]  ffff0000d46fc080: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff\n[   86.557510]  ffff0000d46fc100: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff\n[   86.563928] ==================================================================\n[   86.571093] Disabling lock debugging due to kernel taint\n[   86.577642] Unable to handle kernel paging request at virtual address e0e9c0920000000b\n[   86.581834] KASAN: maybe wild-memory-access in range [0x0752049000000058-0x075204900000005f]\n...",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/7083b93e9755d60f0c2bcaa9d064308108280534",
+      "https://git.kernel.org/stable/c/078b2ff7da200b7532398e668eef723ad40fb516",
+      "https://git.kernel.org/stable/c/36684e9d88a2e2401ae26715a2e217cb4295cea7"
+    ],
+    "受影响版本": [
+      "1ef7ed48356cd5f9af2b7671956991b658d8c2ba",
+      "1ef7ed48356cd5f9af2b7671956991b658d8c2ba",
+      "1ef7ed48356cd5f9af2b7671956991b658d8c2ba"
+    ],
+    "公开日期": "2025年01月19日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-56757",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: btusb: mediatek: add intf release flow when usb disconnect\n\nMediaTek claim an special usb intr interface for ISO data transmission.\nThe interface need to be released before unregistering hci device when\nusb disconnect. Removing BT usb dongle without properly releasing the\ninterface may cause Kernel panic while unregister hci device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/cc569d791ab2a0de74f76e470515d25d24c9b84b",
+      "https://git.kernel.org/stable/c/489304e67087abddc2666c5af0159cb95afdcf59"
+    ],
+    "受影响版本": [
+      "ceac1cb0259de682d78f5c784ef8e0b13022e9d9",
+      "ceac1cb0259de682d78f5c784ef8e0b13022e9d9"
+    ],
+    "公开日期": "2025年01月06日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-56685",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nASoC: mediatek: Check num_codecs is not zero to avoid panic during probe\n\nFollowing commit 13f58267cda3 (\"ASoC: soc.h: don't create dummy\nComponent via COMP_DUMMY()\"), COMP_DUMMY() became an array with zero\nlength, and only gets populated with the dummy struct after the card is\nregistered. Since the sound card driver's probe happens before the card\nregistration, accessing any of the members of a dummy component during\nprobe will result in undefined behavior.\n\nThis can be observed in the mt8188 and mt8195 machine sound drivers. By\nomitting a dai link subnode in the sound card's node in the Devicetree,\nthe default uninitialized dummy codec is used, and when its dai_name\npointer gets passed to strcmp() it results in a null pointer dereference\nand a kernel panic.\n\nIn addition to that, set_card_codec_info() in the generic helpers file,\nmtk-soundcard-driver.c, will populate a dai link with a dummy codec when\na dai link node is present in DT but with no codec property.\n\nThe result is that at probe time, a dummy codec can either be\nuninitialized with num_codecs = 0, or be an initialized dummy codec,\nwith num_codecs = 1 and dai_name = \"snd-soc-dummy-dai\". In order to\naccommodate for both situations, check that num_codecs is not zero\nbefore accessing the codecs' fields but still check for the codec's dai\nname against \"snd-soc-dummy-dai\" as needed.\n\nWhile at it, also drop the check that dai_name is not null in the mt8192\ndriver, introduced in commit 4d4e1b6319e5 (\"ASoC: mediatek: mt8192:\nCheck existence of dai_name before dereferencing\"), as it is actually\nredundant given the preceding num_codecs != 0 check.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/376f4800f34a28def026ff5c5d4fc5e54e1744ff",
+      "https://git.kernel.org/stable/c/550279449ff54c5aa28cfca5c567308cbfb145f0",
+      "https://git.kernel.org/stable/c/2f2020327cc8561d7c520d2f2d9acea84fa7b3a3"
+    ],
+    "受影响版本": [
+      "13f58267cda3d6946c8f4de368ad5d4a003baa61",
+      "13f58267cda3d6946c8f4de368ad5d4a003baa61",
+      "13f58267cda3d6946c8f4de368ad5d4a003baa61"
+    ],
+    "公开日期": "2024年12月28日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-53238",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: btmtk: adjust the position to init iso data anchor\n\nMediaTek iso data anchor init should be moved to where MediaTek\nclaims iso data interface.\nIf there is an unexpected BT usb disconnect during setup flow,\nit will cause a NULL pointer crash issue when releasing iso\nanchor since the anchor wasn't been init yet. Adjust the position\nto do iso data anchor init.\n\n[   17.137991] pc : usb_kill_anchored_urbs+0x60/0x168\n[   17.137998] lr : usb_kill_anchored_urbs+0x44/0x168\n[   17.137999] sp : ffffffc0890cb5f0\n[   17.138000] x29: ffffffc0890cb5f0 x28: ffffff80bb6c2e80\n[   17.144081] gpio gpiochip0: registered chardev handle for 1 lines\n[   17.148421]  x27: 0000000000000000\n[   17.148422] x26: ffffffd301ff4298 x25: 0000000000000003 x24: 00000000000000f0\n[   17.148424] x23: 0000000000000000 x22: 00000000ffffffff x21: 0000000000000001\n[   17.148425] x20: ffffffffffffffd8 x19: ffffff80c0f25560 x18: 0000000000000000\n[   17.148427] x17: ffffffd33864e408 x16: ffffffd33808f7c8 x15: 0000000000200000\n[   17.232789] x14: e0cd73cf80ffffff x13: 50f2137c0a0338c9 x12: 0000000000000001\n[   17.239912] x11: 0000000080150011 x10: 0000000000000002 x9 : 0000000000000001\n[   17.247035] x8 : 0000000000000000 x7 : 0000000000008080 x6 : 8080000000000000\n[   17.254158] x5 : ffffffd33808ebc0 x4 : fffffffe033dcf20 x3 : 0000000080150011\n[   17.261281] x2 : ffffff8087a91400 x1 : 0000000000000000 x0 : ffffff80c0f25588\n[   17.268404] Call trace:\n[   17.270841]  usb_kill_anchored_urbs+0x60/0x168\n[   17.275274]  btusb_mtk_release_iso_intf+0x2c/0xd8 [btusb (HASH:5afe 6)]\n[   17.284226]  btusb_mtk_disconnect+0x14/0x28 [btusb (HASH:5afe 6)]\n[   17.292652]  btusb_disconnect+0x70/0x140 [btusb (HASH:5afe 6)]\n[   17.300818]  usb_unbind_interface+0xc4/0x240\n[   17.305079]  device_release_driver_internal+0x18c/0x258\n[   17.310296]  device_release_driver+0x1c/0x30\n[   17.314557]  bus_remove_device+0x140/0x160\n[   17.318643]  device_del+0x1c0/0x330\n[   17.322121]  usb_disable_device+0x80/0x180\n[   17.326207]  usb_disconnect+0xec/0x300\n[   17.329948]  hub_quiesce+0x80/0xd0\n[   17.333339]  hub_disconnect+0x44/0x190\n[   17.337078]  usb_unbind_interface+0xc4/0x240\n[   17.341337]  device_release_driver_internal+0x18c/0x258\n[   17.346551]  device_release_driver+0x1c/0x30\n[   17.350810]  usb_driver_release_interface+0x70/0x88\n[   17.355677]  proc_ioctl+0x13c/0x228\n[   17.359157]  proc_ioctl_default+0x50/0x80\n[   17.363155]  usbdev_ioctl+0x830/0xd08\n[   17.366808]  __arm64_sys_ioctl+0x94/0xd0\n[   17.370723]  invoke_syscall+0x6c/0xf8\n[   17.374377]  el0_svc_common+0x84/0xe0\n[   17.378030]  do_el0_svc+0x20/0x30\n[   17.381334]  el0_svc+0x34/0x60\n[   17.384382]  el0t_64_sync_handler+0x88/0xf0\n[   17.388554]  el0t_64_sync+0x180/0x188\n[   17.392208] Code: f9400677 f100a2f4 54fffea0 d503201f (b8350288)\n[   17.398289] ---[ end trace 0000000000000000 ]---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/d8bd79f0eea9c07d90ce870a714ab5c10afaa4b3",
+      "https://git.kernel.org/stable/c/1219c211ccd061cde002cc5708692efca515a7a0",
+      "https://git.kernel.org/stable/c/61c5a3def90ac729a538e5ca5ff7f461cff72776"
+    ],
+    "受影响版本": [
+      "ceac1cb0259de682d78f5c784ef8e0b13022e9d9",
+      "ceac1cb0259de682d78f5c784ef8e0b13022e9d9",
+      "ceac1cb0259de682d78f5c784ef8e0b13022e9d9"
+    ],
+    "公开日期": "2024年12月27日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-53056",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/mediatek: Fix potential NULL dereference in mtk_crtc_destroy()\n\nIn mtk_crtc_create(), if the call to mbox_request_channel() fails then we\nset the \"mtk_crtc->cmdq_client.chan\" pointer to NULL.  In that situation,\nwe do not call cmdq_pkt_create().\n\nDuring the cleanup, we need to check if the \"mtk_crtc->cmdq_client.chan\"\nis NULL first before calling cmdq_pkt_destroy().  Calling\ncmdq_pkt_destroy() is unnecessary if we didn't call cmdq_pkt_create() and\nit will result in a NULL pointer dereference.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/c60583a87cb4a85b69d1f448f0be5eb6ec62cbb2",
+      "https://git.kernel.org/stable/c/4018651ba5c409034149f297d3dd3328b91561fd"
+    ],
+    "受影响版本": [
+      "7627122fd1c06800a1fe624e9fb3c269796115e8",
+      "7627122fd1c06800a1fe624e9fb3c269796115e8",
+      "2c4396693698e876e559768d3d3a150c672ec384"
+    ],
+    "公开日期": "2024年11月19日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-47754",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: mediatek: vcodec: Fix H264 multi stateless decoder smatch warning\n\nFix a smatch static checker warning on vdec_h264_req_multi_if.c.\nWhich leads to a kernel crash when fb is NULL.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/d48890ef8765001caff732ac6ec80a3b2e470215",
+      "https://git.kernel.org/stable/c/588bcce9e64cc5138858ab562268eb3943c5b06c",
+      "https://git.kernel.org/stable/c/47b3b97930913ca74a595cc12bdbb650259afc6e",
+      "https://git.kernel.org/stable/c/301f7778263116388c20521a1a641067647ab31c",
+      "https://git.kernel.org/stable/c/9be85491619f1953b8a29590ca630be571941ffa"
+    ],
+    "受影响版本": [
+      "397edc703a10f670a2692e492a245f6be1fe279a",
+      "397edc703a10f670a2692e492a245f6be1fe279a",
+      "397edc703a10f670a2692e492a245f6be1fe279a",
+      "397edc703a10f670a2692e492a245f6be1fe279a",
+      "397edc703a10f670a2692e492a245f6be1fe279a"
+    ],
+    "公开日期": "2024年10月21日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-47753",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: mediatek: vcodec: Fix VP8 stateless decoder smatch warning\n\nFix a smatch static checker warning on vdec_vp8_req_if.c.\nWhich leads to a kernel crash when fb is NULL.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/4e0713c79cf5d0b549fa855e230ade1ff83c27d7",
+      "https://git.kernel.org/stable/c/dbe5b7373801c261f3ea118145fbb2caac5f9324",
+      "https://git.kernel.org/stable/c/35cc704622b3a9bc02a4755d5ba80238eee3cdc2",
+      "https://git.kernel.org/stable/c/3167aa42941b68405a092df114453ef0f1b09c2c",
+      "https://git.kernel.org/stable/c/b113bc7c0e83b32f4dd2d291a2b6c4803e0a2c44"
+    ],
+    "受影响版本": [
+      "7a7ae26fd458397d04421756dd19e5b8cf29a08f",
+      "7a7ae26fd458397d04421756dd19e5b8cf29a08f",
+      "7a7ae26fd458397d04421756dd19e5b8cf29a08f",
+      "7a7ae26fd458397d04421756dd19e5b8cf29a08f",
+      "7a7ae26fd458397d04421756dd19e5b8cf29a08f"
+    ],
+    "公开日期": "2024年10月21日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-47752",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: mediatek: vcodec: Fix H264 stateless decoder smatch warning\n\nFix a smatch static checker warning on vdec_h264_req_if.c.\nWhich leads to a kernel crash when fb is NULL.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/c6b9f971b43980de8893610f606d751131fb5d86",
+      "https://git.kernel.org/stable/c/18181b0c1c5bd43846e5e0ae3d61a4a1adceab03",
+      "https://git.kernel.org/stable/c/790d1848fac5ac3b1c474f66162598ab07a20c21",
+      "https://git.kernel.org/stable/c/7878d3a385efab560dce793b595447867fb163f2"
+    ],
+    "受影响版本": [
+      "06fa5f757dc5a5687e1cdd13097c3265735f60bf",
+      "06fa5f757dc5a5687e1cdd13097c3265735f60bf",
+      "06fa5f757dc5a5687e1cdd13097c3265735f60bf",
+      "06fa5f757dc5a5687e1cdd13097c3265735f60bf"
+    ],
+    "公开日期": "2024年10月21日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-43831",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: mediatek: vcodec: Handle invalid decoder vsi\n\nHandle an invalid decoder vsi in vpu_dec_init to ensure the decoder vsi\nis valid for future use.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/dbd3e4adb98e50ede74f00b3fa956fa29ef95e6c",
+      "https://git.kernel.org/stable/c/1c109f23b271a02b9bb195c173fab41e3285a8db",
+      "https://git.kernel.org/stable/c/cdf05ae76198c513836bde4eb55f099c44773280",
+      "https://git.kernel.org/stable/c/59d438f8e02ca641c58d77e1feffa000ff809e9f"
+    ],
+    "受影响版本": [
+      "590577a4e5257ac3ed72999a94666ad6ba8f24bc",
+      "590577a4e5257ac3ed72999a94666ad6ba8f24bc",
+      "590577a4e5257ac3ed72999a94666ad6ba8f24bc",
+      "590577a4e5257ac3ed72999a94666ad6ba8f24bc"
+    ],
+    "公开日期": "2024年08月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-42282",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: mediatek: Fix potential NULL pointer dereference in dummy net_device handling\n\nMove the freeing of the dummy net_device from mtk_free_dev() to\nmtk_remove().\n\nPreviously, if alloc_netdev_dummy() failed in mtk_probe(),\neth->dummy_dev would be NULL. The error path would then call\nmtk_free_dev(), which in turn called free_netdev() assuming dummy_dev\nwas allocated (but it was not), potentially causing a NULL pointer\ndereference.\n\nBy moving free_netdev() to mtk_remove(), we ensure it's only called when\nmtk_probe() has succeeded and dummy_dev is fully allocated. This\naddresses a potential NULL pointer dereference detected by Smatch[1].",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/af6bd5c9901b13a26eaf4d57d97a813297791596",
+      "https://git.kernel.org/stable/c/16f3a28cf5f876a7f3550d8f4c870a7b41bcfaef"
+    ],
+    "受影响版本": [
+      "b209bd6d0bffb8991aba568e2d9a892c86a1a43c",
+      "b209bd6d0bffb8991aba568e2d9a892c86a1a43c"
+    ],
+    "公开日期": "2024年08月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-42144",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nthermal/drivers/mediatek/lvts_thermal: Check NULL ptr on lvts_data\n\nVerify that lvts_data is not NULL before using it.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/79ef1a5593fdb8aa4dbccf6085c48f1739338bc9",
+      "https://git.kernel.org/stable/c/fd7ae1cabfedd727be5bee774c87acbc7b10b886",
+      "https://git.kernel.org/stable/c/a1191a77351e25ddf091bb1a231cae12ee598b5d"
+    ],
+    "受影响版本": [
+      "f5f633b18234cecb0e6ee6e5fbb358807dda15c3",
+      "f5f633b18234cecb0e6ee6e5fbb358807dda15c3",
+      "f5f633b18234cecb0e6ee6e5fbb358807dda15c3"
+    ],
+    "公开日期": "2024年07月30日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-42088",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nASoC: mediatek: mt8195: Add platform entry for ETDM1_OUT_BE dai link\n\nCommit e70b8dd26711 (\"ASoC: mediatek: mt8195: Remove afe-dai component\nand rework codec link\") removed the codec entry for the ETDM1_OUT_BE\ndai link entirely instead of replacing it with COMP_EMPTY(). This worked\nby accident as the remaining COMP_EMPTY() platform entry became the codec\nentry, and the platform entry became completely empty, effectively the\nsame as COMP_DUMMY() since snd_soc_fill_dummy_dai() doesn't do anything\nfor platform entries.\n\nThis causes a KASAN out-of-bounds warning in mtk_soundcard_common_probe()\nin sound/soc/mediatek/common/mtk-soundcard-driver.c:\n\n\tfor_each_card_prelinks(card, i, dai_link) {\n\t\tif (adsp_node && !strncmp(dai_link->name, \"AFE_SOF\", strlen(\"AFE_SOF\")))\n\t\t\tdai_link->platforms->of_node = adsp_node;\n\t\telse if (!dai_link->platforms->name && !dai_link->platforms->of_node)\n\t\t\tdai_link->platforms->of_node = platform_node;\n\t}\n\nwhere the code expects the platforms array to have space for at least one entry.\n\nAdd an COMP_EMPTY() entry so that dai_link->platforms has space.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/42b9ab7a4d7e6c5efd71847541e4fcc213585aad",
+      "https://git.kernel.org/stable/c/282a4482e198e03781c152c88aac8aa382ef9a55"
+    ],
+    "受影响版本": [
+      "e70b8dd26711704b1ff1f1b4eb3d048ba69e29da",
+      "e70b8dd26711704b1ff1f1b4eb3d048ba69e29da"
+    ],
+    "公开日期": "2024年07月29日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-41054",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: ufs: core: Fix ufshcd_clear_cmd racing issue\n\nWhen ufshcd_clear_cmd is racing with the completion ISR, the completed tag\nof the request's mq_hctx pointer will be set to NULL by the ISR.  And\nufshcd_clear_cmd's call to ufshcd_mcq_req_to_hwq will get NULL pointer KE.\nReturn success when the request is completed by ISR because sq does not\nneed cleanup.\n\nThe racing flow is:\n\nThread A\nufshcd_err_handler\t\t\t\t\tstep 1\n\tufshcd_try_to_abort_task\n\t\tufshcd_cmd_inflight(true)\t\tstep 3\n\t\tufshcd_clear_cmd\n\t\t\t...\n\t\t\tufshcd_mcq_req_to_hwq\n\t\t\tblk_mq_unique_tag\n\t\t\t\trq->mq_hctx->queue_num\tstep 5\n\nThread B\nufs_mtk_mcq_intr(cq complete ISR)\t\t\tstep 2\n\tscsi_done\n\t\t...\n\t\t__blk_mq_free_request\n\t\t\trq->mq_hctx = NULL;\t\tstep 4\n\nBelow is KE back trace:\n\n  ufshcd_try_to_abort_task: cmd pending in the device. tag = 6\n  Unable to handle kernel NULL pointer dereference at virtual address 0000000000000194\n   pc : [0xffffffd589679bf8] blk_mq_unique_tag+0x8/0x14\n   lr : [0xffffffd5862f95b4] ufshcd_mcq_sq_cleanup+0x6c/0x1cc [ufs_mediatek_mod_ise]\n   Workqueue: ufs_eh_wq_0 ufshcd_err_handler [ufs_mediatek_mod_ise]\n   Call trace:\n    dump_backtrace+0xf8/0x148\n    show_stack+0x18/0x24\n    dump_stack_lvl+0x60/0x7c\n    dump_stack+0x18/0x3c\n    mrdump_common_die+0x24c/0x398 [mrdump]\n    ipanic_die+0x20/0x34 [mrdump]\n    notify_die+0x80/0xd8\n    die+0x94/0x2b8\n    __do_kernel_fault+0x264/0x298\n    do_page_fault+0xa4/0x4b8\n    do_translation_fault+0x38/0x54\n    do_mem_abort+0x58/0x118\n    el1_abort+0x3c/0x5c\n    el1h_64_sync_handler+0x54/0x90\n    el1h_64_sync+0x68/0x6c\n    blk_mq_unique_tag+0x8/0x14\n    ufshcd_clear_cmd+0x34/0x118 [ufs_mediatek_mod_ise]\n    ufshcd_try_to_abort_task+0x2c8/0x5b4 [ufs_mediatek_mod_ise]\n    ufshcd_err_handler+0xa7c/0xfa8 [ufs_mediatek_mod_ise]\n    process_one_work+0x208/0x4fc\n    worker_thread+0x228/0x438\n    kthread+0x104/0x1d4\n    ret_from_fork+0x10/0x20",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/bed0896008334eeee4b4bfd7150491ca098cbf72",
+      "https://git.kernel.org/stable/c/11d81233f4ebe6907b12c79ad7d8787aa4db0633",
+      "https://git.kernel.org/stable/c/9307a998cb9846a2557fdca286997430bee36a2a"
+    ],
+    "受影响版本": [
+      "8d7290348992f27242dd6a696fa2eede709f0b14",
+      "8d7290348992f27242dd6a696fa2eede709f0b14",
+      "8d7290348992f27242dd6a696fa2eede709f0b14"
+    ],
+    "公开日期": "2024年07月29日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-41053",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: ufs: core: Fix ufshcd_abort_one racing issue\n\nWhen ufshcd_abort_one is racing with the completion ISR, the completed tag\nof the request's mq_hctx pointer will be set to NULL by ISR.  Return\nsuccess when request is completed by ISR because ufshcd_abort_one does not\nneed to do anything.\n\nThe racing flow is:\n\nThread A\nufshcd_err_handler\t\t\t\t\tstep 1\n\t...\n\tufshcd_abort_one\n\t\tufshcd_try_to_abort_task\n\t\t\tufshcd_cmd_inflight(true)\tstep 3\n\t\tufshcd_mcq_req_to_hwq\n\t\t\tblk_mq_unique_tag\n\t\t\t\trq->mq_hctx->queue_num\tstep 5\n\nThread B\nufs_mtk_mcq_intr(cq complete ISR)\t\t\tstep 2\n\tscsi_done\n\t\t...\n\t\t__blk_mq_free_request\n\t\t\trq->mq_hctx = NULL;\t\tstep 4\n\nBelow is KE back trace.\n  ufshcd_try_to_abort_task: cmd at tag 41 not pending in the device.\n  ufshcd_try_to_abort_task: cmd at tag=41 is cleared.\n  Aborting tag 41 / CDB 0x28 succeeded\n  Unable to handle kernel NULL pointer dereference at virtual address 0000000000000194\n  pc : [0xffffffddd7a79bf8] blk_mq_unique_tag+0x8/0x14\n  lr : [0xffffffddd6155b84] ufshcd_mcq_req_to_hwq+0x1c/0x40 [ufs_mediatek_mod_ise]\n   do_mem_abort+0x58/0x118\n   el1_abort+0x3c/0x5c\n   el1h_64_sync_handler+0x54/0x90\n   el1h_64_sync+0x68/0x6c\n   blk_mq_unique_tag+0x8/0x14\n   ufshcd_err_handler+0xae4/0xfa8 [ufs_mediatek_mod_ise]\n   process_one_work+0x208/0x4fc\n   worker_thread+0x228/0x438\n   kthread+0x104/0x1d4\n   ret_from_fork+0x10/0x20",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/c3111b3cf3889bfa7b73ebff83d7397db9b7e5e0",
+      "https://git.kernel.org/stable/c/b5a6ac887256762758bfe7f2918cb0233aa544f4",
+      "https://git.kernel.org/stable/c/74736103fb4123c71bf11fb7a6abe7c884c5269e"
+    ],
+    "受影响版本": [
+      "ff7699d3620763b0dfe2ff93df4528880bf903a8",
+      "93e6c0e19d5bb12b49534a411c85e21d333731fa",
+      "93e6c0e19d5bb12b49534a411c85e21d333731fa"
+    ],
+    "公开日期": "2024年07月29日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-38592",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/mediatek: Init `ddp_comp` with devm_kcalloc()\n\nIn the case where `conn_routes` is true we allocate an extra slot in\nthe `ddp_comp` array but mtk_drm_crtc_create() never seemed to\ninitialize it in the test case I ran. For me, this caused a later\ncrash when we looped through the array in mtk_drm_crtc_mode_valid().\nThis showed up for me when I booted with `slub_debug=FZPUA` which\npoisons the memory initially. Without `slub_debug` I couldn't\nreproduce, presumably because the later code handles the value being\nNULL and in most cases (not guaranteed in all cases) the memory the\nallocator returned started out as 0.\n\nIt really doesn't hurt to initialize the array with devm_kcalloc()\nsince the array is small and the overhead of initting a handful of\nelements to 0 is small. In general initting memory to zero is a safer\npractice and usually it's suggested to only use the non-initting alloc\nfunctions if you really need to.\n\nLet's switch the function to use an allocation function that zeros the\nmemory. For me, this avoids the crash.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/cf69d0af7db917b82aceaa44b7b1b9376609da22",
+      "https://git.kernel.org/stable/c/9fe2cc3fa44f7ad7ba5f29c1a68b2b924c17b9b1",
+      "https://git.kernel.org/stable/c/01a2c5123e27b3c4685bf2fc4c2e879f6e0c7b33"
+    ],
+    "受影响版本": [
+      "01389b324c97ff8f04e9c33b9ee246084f9f6dd2",
+      "01389b324c97ff8f04e9c33b9ee246084f9f6dd2",
+      "01389b324c97ff8f04e9c33b9ee246084f9f6dd2"
+    ],
+    "公开日期": "2024年06月19日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-38551",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nASoC: mediatek: Assign dummy when codec not specified for a DAI link\n\nMediaTek sound card drivers are checking whether a DAI link is present\nand used on a board to assign the correct parameters and this is done\nby checking the codec DAI names at probe time.\n\nIf no real codec is present, assign the dummy codec to the DAI link\nto avoid NULL pointer during string comparison.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/87b8dca6e06f9b1681bc52bf7bfa85c663a11158",
+      "https://git.kernel.org/stable/c/cbbcabc7f0979f6542372cf88d7a9da7143a4226",
+      "https://git.kernel.org/stable/c/0c052b1c11d8119f3048b1f7b3c39a90500cacf9",
+      "https://git.kernel.org/stable/c/5f39231888c63f0a7708abc86b51b847476379d8"
+    ],
+    "受影响版本": [
+      "4302187d955f166c03b4fa7c993b89ffbabfca4e",
+      "4302187d955f166c03b4fa7c993b89ffbabfca4e",
+      "4302187d955f166c03b4fa7c993b89ffbabfca4e",
+      "4302187d955f166c03b4fa7c993b89ffbabfca4e"
+    ],
+    "公开日期": "2024年06月19日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-38549",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/mediatek: Add 0 size check to mtk_drm_gem_obj\n\nAdd a check to mtk_drm_gem_init if we attempt to allocate a GEM object\nof 0 bytes. Currently, no such check exists and the kernel will panic if\na userspace application attempts to allocate a 0x0 GBM buffer.\n\nTested by attempting to allocate a 0x0 GBM buffer on an MT8188 and\nverifying that we now return EINVAL.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/79078880795478d551a05acc41f957700030d364",
+      "https://git.kernel.org/stable/c/be34a1b351ea7faeb15dde8c44fe89de3980ae67",
+      "https://git.kernel.org/stable/c/d17b75ee9c2e44d3a3682c4ea5ab713ea6073350",
+      "https://git.kernel.org/stable/c/0e3b6f9123726858cac299e1654e3d20424cabe4",
+      "https://git.kernel.org/stable/c/13562c2d48c9ee330de1077d00146742be368f05",
+      "https://git.kernel.org/stable/c/af26ea99019caee1500bf7e60c861136c0bf8594",
+      "https://git.kernel.org/stable/c/9489951e3ae505534c4013db4e76b1b5a3151ac7",
+      "https://git.kernel.org/stable/c/fb4aabdb1b48c25d9e1ee28f89440fd2ce556405",
+      "https://git.kernel.org/stable/c/1e4350095e8ab2577ee05f8c3b044e661b5af9a0"
+    ],
+    "受影响版本": [
+      "119f5173628aa7a0c3cf9db83460d40709e8241d",
+      "119f5173628aa7a0c3cf9db83460d40709e8241d",
+      "119f5173628aa7a0c3cf9db83460d40709e8241d",
+      "119f5173628aa7a0c3cf9db83460d40709e8241d",
+      "119f5173628aa7a0c3cf9db83460d40709e8241d",
+      "119f5173628aa7a0c3cf9db83460d40709e8241d",
+      "119f5173628aa7a0c3cf9db83460d40709e8241d",
+      "119f5173628aa7a0c3cf9db83460d40709e8241d",
+      "119f5173628aa7a0c3cf9db83460d40709e8241d"
+    ],
+    "公开日期": "2024年06月19日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-36965",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nremoteproc: mediatek: Make sure IPI buffer fits in L2TCM\n\nThe IPI buffer location is read from the firmware that we load to the\nSystem Companion Processor, and it's not granted that both the SRAM\n(L2TCM) size that is defined in the devicetree node is large enough\nfor that, and while this is especially true for multi-core SCP, it's\nstill useful to check on single-core variants as well.\n\nFailing to perform this check may make this driver perform R/W\noperations out of the L2TCM boundary, resulting (at best) in a\nkernel panic.\n\nTo fix that, check that the IPI buffer fits, otherwise return a\nfailure and refuse to boot the relevant SCP core (or the SCP at\nall, if this is single core).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/00548ac6b14428719c970ef90adae2b3b48c0cdf",
+      "https://git.kernel.org/stable/c/1d9e2de24533daca36cbf09e8d8596bf72b526b2",
+      "https://git.kernel.org/stable/c/26c6d7dc8c6a9fde9d362ab2eef6390efeff145e",
+      "https://git.kernel.org/stable/c/838b49e211d59fa827ff9df062d4020917cffbdf",
+      "https://git.kernel.org/stable/c/36c79eb4845551e9f6d28c663b38ce0ab03b84a9",
+      "https://git.kernel.org/stable/c/331f91d86f71d0bb89a44217cc0b2a22810bbd42"
+    ],
+    "受影响版本": [
+      "3efa0ea743b77d1611501f7d8b4f320d032d73ae",
+      "3efa0ea743b77d1611501f7d8b4f320d032d73ae",
+      "3efa0ea743b77d1611501f7d8b4f320d032d73ae",
+      "3efa0ea743b77d1611501f7d8b4f320d032d73ae",
+      "3efa0ea743b77d1611501f7d8b4f320d032d73ae",
+      "3efa0ea743b77d1611501f7d8b4f320d032d73ae"
+    ],
+    "公开日期": "2024年06月08日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-35921",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: mediatek: vcodec: Fix oops when HEVC init fails\n\nThe stateless HEVC decoder saves the instance pointer in the context\nregardless if the initialization worked or not. This caused a use after\nfree, when the pointer is freed in case of a failure in the deinit\nfunction.\nOnly store the instance pointer when the initialization was successful,\nto solve this issue.\n\n Hardware name: Acer Tomato (rev3 - 4) board (DT)\n pstate: 80400009 (Nzcv daif +PAN -UAO -TCO -DIT -SSBS BTYPE=--)\n pc : vcodec_vpu_send_msg+0x4c/0x190 [mtk_vcodec_dec]\n lr : vcodec_send_ap_ipi+0x78/0x170 [mtk_vcodec_dec]\n sp : ffff80008750bc20\n x29: ffff80008750bc20 x28: ffff1299f6d70000 x27: 0000000000000000\n x26: 0000000000000000 x25: 0000000000000000 x24: 0000000000000000\n x23: ffff80008750bc98 x22: 000000000000a003 x21: ffffd45c4cfae000\n x20: 0000000000000010 x19: ffff1299fd668310 x18: 000000000000001a\n x17: 000000040044ffff x16: ffffd45cb15dc648 x15: 0000000000000000\n x14: ffff1299c08da1c0 x13: ffffd45cb1f87a10 x12: ffffd45cb2f5fe80\n x11: 0000000000000001 x10: 0000000000001b30 x9 : ffffd45c4d12b488\n x8 : 1fffe25339380d81 x7 : 0000000000000001 x6 : ffff1299c9c06c00\n x5 : 0000000000000132 x4 : 0000000000000000 x3 : 0000000000000000\n x2 : 0000000000000010 x1 : ffff80008750bc98 x0 : 0000000000000000\n Call trace:\n  vcodec_vpu_send_msg+0x4c/0x190 [mtk_vcodec_dec]\n  vcodec_send_ap_ipi+0x78/0x170 [mtk_vcodec_dec]\n  vpu_dec_deinit+0x1c/0x30 [mtk_vcodec_dec]\n  vdec_hevc_slice_deinit+0x30/0x98 [mtk_vcodec_dec]\n  vdec_if_deinit+0x38/0x68 [mtk_vcodec_dec]\n  mtk_vcodec_dec_release+0x20/0x40 [mtk_vcodec_dec]\n  fops_vcodec_release+0x64/0x118 [mtk_vcodec_dec]\n  v4l2_release+0x7c/0x100\n  __fput+0x80/0x2d8\n  __fput_sync+0x58/0x70\n  __arm64_sys_close+0x40/0x90\n  invoke_syscall+0x50/0x128\n  el0_svc_common.constprop.0+0x48/0xf0\n  do_el0_svc+0x24/0x38\n  el0_svc+0x38/0xd8\n  el0t_64_sync_handler+0xc0/0xc8\n  el0t_64_sync+0x1a8/0x1b0\n Code: d503201f f9401660 b900127f b900227f (f9400400)",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/ec25fc3c2c1e8958a51abcfed614f81446d918c4",
+      "https://git.kernel.org/stable/c/521ce0ea7418298d754494fe53263c23c4c78a8e",
+      "https://git.kernel.org/stable/c/97c75ee5de060d271d80109b0c47cb6008439e5b"
+    ],
+    "受影响版本": [
+      "2674486aac7d9c95ceb77daf7c30f862d4295c1c",
+      "2674486aac7d9c95ceb77daf7c30f862d4295c1c",
+      "2674486aac7d9c95ceb77daf7c30f862d4295c1c"
+    ],
+    "公开日期": "2024年05月19日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-35920",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: mediatek: vcodec: adding lock to protect decoder context list\n\nAdd a lock for the ctx_list, to avoid accessing a NULL pointer\nwithin the 'vpu_dec_ipi_handler' function when the ctx_list has\nbeen deleted due to an unexpected behavior on the SCP IP block.\n\nHardware name: Google juniper sku16 board (DT)\npstate: 20400005 (nzCv daif +PAN -UAO -TCO BTYPE=--)\npc : vpu_dec_ipi_handler+0x58/0x1f8 [mtk_vcodec_dec]\nlr : scp_ipi_handler+0xd0/0x194 [mtk_scp]\nsp : ffffffc0131dbbd0\nx29: ffffffc0131dbbd0 x28: 0000000000000000\nx27: ffffff9bb277f348 x26: ffffff9bb242ad00\nx25: ffffffd2d440d3b8 x24: ffffffd2a13ff1d4\nx23: ffffff9bb7fe85a0 x22: ffffffc0133fbdb0\nx21: 0000000000000010 x20: ffffff9b050ea328\nx19: ffffffc0131dbc08 x18: 0000000000001000\nx17: 0000000000000000 x16: ffffffd2d461c6e0\nx15: 0000000000000242 x14: 000000000000018f\nx13: 000000000000004d x12: 0000000000000000\nx11: 0000000000000001 x10: fffffffffffffff0\nx9 : ffffff9bb6e793a8 x8 : 0000000000000000\nx7 : 0000000000000000 x6 : 000000000000003f\nx5 : 0000000000000040 x4 : fffffffffffffff0\nx3 : 0000000000000020 x2 : ffffff9bb6e79080\nx1 : 0000000000000010 x0 : ffffffc0131dbc08\nCall trace:\nvpu_dec_ipi_handler+0x58/0x1f8 [mtk_vcodec_dec (HASH:6c3f 2)]\nscp_ipi_handler+0xd0/0x194 [mtk_scp (HASH:7046 3)]\nmt8183_scp_irq_handler+0x44/0x88 [mtk_scp (HASH:7046 3)]\nscp_irq_handler+0x48/0x90 [mtk_scp (HASH:7046 3)]\nirq_thread_fn+0x38/0x94\nirq_thread+0x100/0x1c0\nkthread+0x140/0x1fc\nret_from_fork+0x10/0x30\nCode: 54000088 f94ca50a eb14015f 54000060 (f9400108)\n---[ end trace ace43ce36cbd5c93 ]---\nKernel panic - not syncing: Oops: Fatal exception\nSMP: stopping secondary CPUs\nKernel Offset: 0x12c4000000 from 0xffffffc010000000\nPHYS_OFFSET: 0xffffffe580000000\nCPU features: 0x08240002,2188200c\nMemory Limit: none",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/0a2dc707aa42214f9c4827bd57e344e29a0841d6",
+      "https://git.kernel.org/stable/c/23aaf824121055ba81b55f75444355bd83c8eb38",
+      "https://git.kernel.org/stable/c/6467cda18c9f9b5f2f9a0aa1e2861c653e41f382"
+    ],
+    "受影响版本": [
+      "655b86e52eacdce79c2e02c5ec7258a97fcc2e4a",
+      "655b86e52eacdce79c2e02c5ec7258a97fcc2e4a",
+      "655b86e52eacdce79c2e02c5ec7258a97fcc2e4a"
+    ],
+    "公开日期": "2024年05月19日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-35919",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: mediatek: vcodec: adding lock to protect encoder context list\n\nAdd a lock for the ctx_list, to avoid accessing a NULL pointer\nwithin the 'vpu_enc_ipi_handler' function when the ctx_list has\nbeen deleted due to an unexpected behavior on the SCP IP block.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/41671f0c0182b2bae74ca7e3b0f155559e3e2fc5",
+      "https://git.kernel.org/stable/c/51c84a8aac6e3b59af2b0e92ba63cabe2e641a2d",
+      "https://git.kernel.org/stable/c/afaaf3a0f647a24a7bf6a2145d8ade37baaf75ad"
+    ],
+    "受影响版本": [
+      "1972e32431ed14682909ad568c6fd660572ae6ab",
+      "1972e32431ed14682909ad568c6fd660572ae6ab",
+      "1972e32431ed14682909ad568c6fd660572ae6ab"
+    ],
+    "公开日期": "2024年05月19日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-35856",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: btusb: mediatek: Fix double free of skb in coredump\n\nhci_devcd_append() would free the skb on error so the caller don't\nhave to free it again otherwise it would cause the double free of skb.\n\nReported-by : Dan Carpenter <dan.carpenter@linaro.org>",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/80dfef128cb9f1b1ef67c0fe8c8deb4ea7ad30c1",
+      "https://git.kernel.org/stable/c/e20093c741d8da9f6390dd45d75b779861547035",
+      "https://git.kernel.org/stable/c/18bdb386a1a30e7a3d7732a98e45e69cf6b5710d"
+    ],
+    "受影响版本": [
+      "0b70151328781a89c89e4cf3fae21fc0e98d869e",
+      "0b70151328781a89c89e4cf3fae21fc0e98d869e",
+      "0b70151328781a89c89e4cf3fae21fc0e98d869e"
+    ],
+    "公开日期": "2024年05月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-35842",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nASoC: mediatek: sof-common: Add NULL check for normal_link string\n\nIt's not granted that all entries of struct sof_conn_stream declare\na `normal_link` (a non-SOF, direct link) string, and this is the case\nfor SoCs that support only SOF paths (hence do not support both direct\nand SOF usecases).\n\nFor example, in the case of MT8188 there is no normal_link string in\nany of the sof_conn_stream entries and there will be more drivers\ndoing that in the future.\n\nTo avoid possible NULL pointer KPs, add a NULL check for `normal_link`.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/cad471227a37c0c7c080bfc9ed01b53750e82afe",
+      "https://git.kernel.org/stable/c/b1d3db6740d0997ffc6e5a0d96ef7cbd62b35fdd",
+      "https://git.kernel.org/stable/c/cde6ca5872bf67744dffa875a7cb521ab007b7ef",
+      "https://git.kernel.org/stable/c/e3b3ec967a7d93b9010a5af9a2394c8b5c8f31ed"
+    ],
+    "受影响版本": [
+      "0caf1120c58395108344d5df4e09359b67e95094",
+      "0caf1120c58395108344d5df4e09359b67e95094",
+      "0caf1120c58395108344d5df4e09359b67e95094",
+      "0caf1120c58395108344d5df4e09359b67e95094"
+    ],
+    "公开日期": "2024年05月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-27433",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nclk: mediatek: mt7622-apmixedsys: Fix an error handling path in clk_mt8135_apmixed_probe()\n\n'clk_data' is allocated with mtk_devm_alloc_clk_data(). So calling\nmtk_free_clk_data() explicitly in the remove function would lead to a\ndouble-free.\n\nRemove the redundant call.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/de3340533bd68a7b3d6be1841b8eb3fa6c762fe6",
+      "https://git.kernel.org/stable/c/f3633fed984f1db106ff737a0bb52fadb2d89ac7",
+      "https://git.kernel.org/stable/c/fa761ce7a1d15cca1a306b3635f81a22b15fee5b",
+      "https://git.kernel.org/stable/c/a32e88f2b20259f5fe4f8eed598bbc85dc4879ed"
+    ],
+    "受影响版本": [
+      "c50e2ea6507bcf5a4475f821fc03dd1fdcb894a7",
+      "c50e2ea6507bcf5a4475f821fc03dd1fdcb894a7",
+      "c50e2ea6507bcf5a4475f821fc03dd1fdcb894a7",
+      "c50e2ea6507bcf5a4475f821fc03dd1fdcb894a7"
+    ],
+    "公开日期": "2024年05月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-27432",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: ethernet: mtk_eth_soc: fix PPE hanging issue\n\nA patch to resolve an issue was found in MediaTek's GPL-licensed SDK:\nIn the mtk_ppe_stop() function, the PPE scan mode is not disabled before\ndisabling the PPE. This can potentially lead to a hang during the process\nof disabling the PPE.\n\nWithout this patch, the PPE may experience a hang during the reboot test.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/9fcadd125044007351905d40c405fadc2d3bb6d6",
+      "https://git.kernel.org/stable/c/f78807362828ad01db2a9ed005bf79501b620f27",
+      "https://git.kernel.org/stable/c/943c14ece95eb1cf98d477462aebcbfdfd714633",
+      "https://git.kernel.org/stable/c/49202a8256fc50517ef06fd5e2084c4febde6369",
+      "https://git.kernel.org/stable/c/09a1907433865b7c8ee6777e507f5126bdd38c0f",
+      "https://git.kernel.org/stable/c/ea80e3ed09ab2c2b75724faf5484721753e92c31"
+    ],
+    "受影响版本": [
+      "ba37b7caf1ed2395cc84d8f823ff933975f1f789",
+      "ba37b7caf1ed2395cc84d8f823ff933975f1f789",
+      "ba37b7caf1ed2395cc84d8f823ff933975f1f789",
+      "ba37b7caf1ed2395cc84d8f823ff933975f1f789",
+      "ba37b7caf1ed2395cc84d8f823ff933975f1f789",
+      "ba37b7caf1ed2395cc84d8f823ff933975f1f789"
+    ],
+    "公开日期": "2024年05月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-27068",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nthermal/drivers/mediatek/lvts_thermal: Fix a memory leak in an error handling path\n\nIf devm_krealloc() fails, then 'efuse' is leaking.\nSo free it to avoid a leak.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/2db869da91afd48e5b9ec76814709be49662b07d",
+      "https://git.kernel.org/stable/c/a37f3652bee468f879d35fe2da9ede3f1dcbb7be",
+      "https://git.kernel.org/stable/c/9b02197596671800dd934609384b1aca7c6ad218",
+      "https://git.kernel.org/stable/c/ca93bf607a44c1f009283dac4af7df0d9ae5e357"
+    ],
+    "受影响版本": [
+      "f5f633b18234cecb0e6ee6e5fbb358807dda15c3",
+      "f5f633b18234cecb0e6ee6e5fbb358807dda15c3",
+      "f5f633b18234cecb0e6ee6e5fbb358807dda15c3",
+      "f5f633b18234cecb0e6ee6e5fbb358807dda15c3"
+    ],
+    "公开日期": "2024年05月01日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-27002",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nclk: mediatek: Do a runtime PM get on controllers during probe\n\nmt8183-mfgcfg has a mutual dependency with genpd during the probing\nstage, which leads to a deadlock in the following call stack:\n\nCPU0:  genpd_lock --> clk_prepare_lock\ngenpd_power_off_work_fn()\n genpd_lock()\n generic_pm_domain::power_off()\n    clk_unprepare()\n      clk_prepare_lock()\n\nCPU1: clk_prepare_lock --> genpd_lock\nclk_register()\n  __clk_core_init()\n    clk_prepare_lock()\n    clk_pm_runtime_get()\n      genpd_lock()\n\nDo a runtime PM get at the probe function to make sure clk_register()\nwon't acquire the genpd lock. Instead of only modifying mt8183-mfgcfg,\ndo this on all mediatek clock controller probings because we don't\nbelieve this would cause any regression.\n\nVerified on MT8183 and MT8192 Chromebooks.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/165d226472575b213dd90dfda19d1605dd7c19a8",
+      "https://git.kernel.org/stable/c/c0dcd5c072e2a3fff886f673e6a5d9bf8090c4cc",
+      "https://git.kernel.org/stable/c/b62ed25feb342eab052822eff0c554873799a4f5",
+      "https://git.kernel.org/stable/c/2f7b1d8b5505efb0057cd1ab85fca206063ea4c3"
+    ],
+    "受影响版本": [
+      "acddfc2c261b3653ab1c1b567a427299bac20d31",
+      "acddfc2c261b3653ab1c1b567a427299bac20d31",
+      "acddfc2c261b3653ab1c1b567a427299bac20d31",
+      "acddfc2c261b3653ab1c1b567a427299bac20d31"
+    ],
+    "公开日期": "2024年05月01日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-26874",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/mediatek: Fix a null pointer crash in mtk_drm_crtc_finish_page_flip\n\nIt's possible that mtk_crtc->event is NULL in\nmtk_drm_crtc_finish_page_flip().\n\npending_needs_vblank value is set by mtk_crtc->event, but in\nmtk_drm_crtc_atomic_flush(), it's is not guarded by the same\nlock in mtk_drm_finish_page_flip(), thus a race condition happens.\n\nConsider the following case:\n\nCPU1                              CPU2\nstep 1:\nmtk_drm_crtc_atomic_begin()\nmtk_crtc->event is not null,\n                                  step 1:\n                                  mtk_drm_crtc_atomic_flush:\n                                  mtk_drm_crtc_update_config(\n                                      !!mtk_crtc->event)\nstep 2:\nmtk_crtc_ddp_irq ->\nmtk_drm_finish_page_flip:\nlock\nmtk_crtc->event set to null,\npending_needs_vblank set to false\nunlock\n                                  pending_needs_vblank set to true,\n\n                                  step 2:\n                                  mtk_crtc_ddp_irq ->\n                                  mtk_drm_finish_page_flip called again,\n                                  pending_needs_vblank is still true\n                                  //null pointer\n\nInstead of guarding the entire mtk_drm_crtc_atomic_flush(), it's more\nefficient to just check if mtk_crtc->event is null before use.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/accdac6b71d5a2b84040c3d2234f53a60edc398e",
+      "https://git.kernel.org/stable/c/dfde84cc6c589f2a9f820f12426d97365670b731",
+      "https://git.kernel.org/stable/c/4688be96d20ffa49d2186523ee84f475f316fd49",
+      "https://git.kernel.org/stable/c/9beec711a17245b853d64488fd5b739031612340",
+      "https://git.kernel.org/stable/c/d2bd30c710475b2e29288827d2c91f9e6e2b91d7",
+      "https://git.kernel.org/stable/c/a3dd12b64ae8373a41a216a0b621df224210860a",
+      "https://git.kernel.org/stable/c/9acee29a38b4d4b70f1f583e5ef9a245db4db710",
+      "https://git.kernel.org/stable/c/3fc88b246a2fc16014e374040fc15af1d3752535",
+      "https://git.kernel.org/stable/c/c958e86e9cc1b48cac004a6e245154dfba8e163b"
+    ],
+    "受影响版本": [
+      "119f5173628aa7a0c3cf9db83460d40709e8241d",
+      "119f5173628aa7a0c3cf9db83460d40709e8241d",
+      "119f5173628aa7a0c3cf9db83460d40709e8241d",
+      "119f5173628aa7a0c3cf9db83460d40709e8241d",
+      "119f5173628aa7a0c3cf9db83460d40709e8241d",
+      "119f5173628aa7a0c3cf9db83460d40709e8241d",
+      "119f5173628aa7a0c3cf9db83460d40709e8241d",
+      "119f5173628aa7a0c3cf9db83460d40709e8241d",
+      "119f5173628aa7a0c3cf9db83460d40709e8241d"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-26842",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: ufs: core: Fix shift issue in ufshcd_clear_cmd()\n\nWhen task_tag >= 32 (in MCQ mode) and sizeof(unsigned int) == 4, 1U <<\ntask_tag will out of bounds for a u32 mask. Fix this up to prevent\nSHIFT_ISSUE (bitwise shifts that are out of bounds for their data type).\n\n[name:debug_monitors&]Unexpected kernel BRK exception at EL1\n[name:traps&]Internal error: BRK handler: 00000000f2005514 [#1] PREEMPT SMP\n[name:mediatek_cpufreq_hw&]cpufreq stop DVFS log done\n[name:mrdump&]Kernel Offset: 0x1ba5800000 from 0xffffffc008000000\n[name:mrdump&]PHYS_OFFSET: 0x80000000\n[name:mrdump&]pstate: 22400005 (nzCv daif +PAN -UAO)\n[name:mrdump&]pc : [0xffffffdbaf52bb2c] ufshcd_clear_cmd+0x280/0x288\n[name:mrdump&]lr : [0xffffffdbaf52a774] ufshcd_wait_for_dev_cmd+0x3e4/0x82c\n[name:mrdump&]sp : ffffffc0081471b0\n<snip>\nWorkqueue: ufs_eh_wq_0 ufshcd_err_handler\nCall trace:\n dump_backtrace+0xf8/0x144\n show_stack+0x18/0x24\n dump_stack_lvl+0x78/0x9c\n dump_stack+0x18/0x44\n mrdump_common_die+0x254/0x480 [mrdump]\n ipanic_die+0x20/0x30 [mrdump]\n notify_die+0x15c/0x204\n die+0x10c/0x5f8\n arm64_notify_die+0x74/0x13c\n do_debug_exception+0x164/0x26c\n el1_dbg+0x64/0x80\n el1h_64_sync_handler+0x3c/0x90\n el1h_64_sync+0x68/0x6c\n ufshcd_clear_cmd+0x280/0x288\n ufshcd_wait_for_dev_cmd+0x3e4/0x82c\n ufshcd_exec_dev_cmd+0x5bc/0x9ac\n ufshcd_verify_dev_init+0x84/0x1c8\n ufshcd_probe_hba+0x724/0x1ce0\n ufshcd_host_reset_and_restore+0x260/0x574\n ufshcd_reset_and_restore+0x138/0xbd0\n ufshcd_err_handler+0x1218/0x2f28\n process_one_work+0x5fc/0x1140\n worker_thread+0x7d8/0xe20\n kthread+0x25c/0x468\n ret_from_fork+0x10/0x20",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/7ac9e18f5d66087cd22751c5c5bf0090eb0038fe",
+      "https://git.kernel.org/stable/c/a992425d18e5f7c48931121993c6c69426f2a8fb",
+      "https://git.kernel.org/stable/c/b513d30d59bb383a6a5d6b533afcab2cee99a8f8"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52888",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: mediatek: vcodec: Only free buffer VA that is not NULL\n\nIn the MediaTek vcodec driver, while mtk_vcodec_mem_free() is mostly\ncalled only when the buffer to free exists, there are some instances\nthat didn't do the check and triggered warnings in practice.\n\nWe believe those checks were forgotten unintentionally. Add the checks\nback to fix the warnings.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/5c217253c76c94f76d1df31d0bbdcb88dc07be91",
+      "https://git.kernel.org/stable/c/303d01082edaf817ee2df53a40dca9da637a2c04",
+      "https://git.kernel.org/stable/c/eb005c801ec70ff4307727bd3bd6e8280169ef32"
+    ],
+    "受影响版本": [
+      "590577a4e5257ac3ed72999a94666ad6ba8f24bc",
+      "590577a4e5257ac3ed72999a94666ad6ba8f24bc",
+      "590577a4e5257ac3ed72999a94666ad6ba8f24bc"
+    ],
+    "公开日期": "2024年07月30日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52876",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nclk: mediatek: clk-mt7629-eth: Add check for mtk_alloc_clk_data\n\nAdd the check for the return value of mtk_alloc_clk_data() in order to\navoid NULL pointer dereference.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/cfa68e0ac5dcde43577adadf6f0f26f3b365ad68",
+      "https://git.kernel.org/stable/c/96e9544a0c4faca616b3f9f4034dcd83a14e7f22",
+      "https://git.kernel.org/stable/c/c4070ada5d5155c8d4d17ea64bd246949889f25b",
+      "https://git.kernel.org/stable/c/a540ca0aeae83c2f3964bcb4e383f64ce2ec1783",
+      "https://git.kernel.org/stable/c/b20cfe007a46f8c165d42a05c50a8d3d893e6592",
+      "https://git.kernel.org/stable/c/1639072f6260babd017556e9f236ca2ad589d1e7",
+      "https://git.kernel.org/stable/c/0884393c63cc9a1772f7121a6645ba7bd76feeb9"
+    ],
+    "受影响版本": [
+      "3b5e748615e714711220b2a95d19bd25a037db09",
+      "3b5e748615e714711220b2a95d19bd25a037db09",
+      "3b5e748615e714711220b2a95d19bd25a037db09",
+      "3b5e748615e714711220b2a95d19bd25a037db09",
+      "3b5e748615e714711220b2a95d19bd25a037db09",
+      "3b5e748615e714711220b2a95d19bd25a037db09",
+      "3b5e748615e714711220b2a95d19bd25a037db09"
+    ],
+    "公开日期": "2024年05月21日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52875",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nclk: mediatek: clk-mt2701: Add check for mtk_alloc_clk_data\n\nAdd the check for the return value of mtk_alloc_clk_data() in order to\navoid NULL pointer dereference.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/6fccee2af400edaed9cf349d506c5971d4762739",
+      "https://git.kernel.org/stable/c/1953e62366da5460dc712e045f94fb0d8918999d",
+      "https://git.kernel.org/stable/c/d1461f0c9ca0827c03730fe9652ebbf6316a2a95",
+      "https://git.kernel.org/stable/c/001e5def774fa1a8f2b29567c0b0cd3e3a859a96",
+      "https://git.kernel.org/stable/c/d1175cf4bd2b4c5f7c43f677ea1ce9ad2c18d055",
+      "https://git.kernel.org/stable/c/2a18dd653284550900b02107c3c7b3ac5e0eb802",
+      "https://git.kernel.org/stable/c/e61934720af4a58ffd43a63ffdd6f3a0bd7d7b47",
+      "https://git.kernel.org/stable/c/1bf9c204aef4cc55ce46a7ff2d4dc7e5f86551a7",
+      "https://git.kernel.org/stable/c/0d6e24b422a2166a9297a8286ff2e6ab9a5e8cd3"
+    ],
+    "受影响版本": [
+      "e9862118272aa528e35e54ef9f1e35c217870fd7",
+      "e9862118272aa528e35e54ef9f1e35c217870fd7",
+      "e9862118272aa528e35e54ef9f1e35c217870fd7",
+      "e9862118272aa528e35e54ef9f1e35c217870fd7",
+      "e9862118272aa528e35e54ef9f1e35c217870fd7",
+      "e9862118272aa528e35e54ef9f1e35c217870fd7",
+      "e9862118272aa528e35e54ef9f1e35c217870fd7",
+      "e9862118272aa528e35e54ef9f1e35c217870fd7",
+      "e9862118272aa528e35e54ef9f1e35c217870fd7"
+    ],
+    "公开日期": "2024年05月21日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52873",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nclk: mediatek: clk-mt6779: Add check for mtk_alloc_clk_data\n\nAdd the check for the return value of mtk_alloc_clk_data() in order to\navoid NULL pointer dereference.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/fbe466f06d4ea18745da0d57540539b7b36936ae",
+      "https://git.kernel.org/stable/c/3994387ba3564976731179c4d4a6d7850ddda71a",
+      "https://git.kernel.org/stable/c/ca6d565a2319d69d9766e6ecbb5af827fc4afb2b",
+      "https://git.kernel.org/stable/c/df1c4a9efa3f5b6fb5e0ae63890230dbe2190b7e",
+      "https://git.kernel.org/stable/c/a90239551abc181687f8c0ba60b276f7d75c141e",
+      "https://git.kernel.org/stable/c/f6a7c51cf07a399ec067d39f0a22f1817c5c7d2b",
+      "https://git.kernel.org/stable/c/1f57f78fbacf630430bf954e5a84caafdfea30c0"
+    ],
+    "受影响版本": [
+      "710774e048614c761a39a98e8d0fa75f688c83b6",
+      "710774e048614c761a39a98e8d0fa75f688c83b6",
+      "710774e048614c761a39a98e8d0fa75f688c83b6",
+      "710774e048614c761a39a98e8d0fa75f688c83b6",
+      "710774e048614c761a39a98e8d0fa75f688c83b6",
+      "710774e048614c761a39a98e8d0fa75f688c83b6",
+      "710774e048614c761a39a98e8d0fa75f688c83b6"
+    ],
+    "公开日期": "2024年05月21日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52870",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nclk: mediatek: clk-mt6765: Add check for mtk_alloc_clk_data\n\nAdd the check for the return value of mtk_alloc_clk_data() in order to\navoid NULL pointer dereference.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/2617aa8ceaf30e41d3eb7f5fef3445542bef193a",
+      "https://git.kernel.org/stable/c/533ca5153ad6c7b7d47ae0114b14d0333964b946",
+      "https://git.kernel.org/stable/c/dd1f30d68fa98eb672c0a259297b761656a9025f",
+      "https://git.kernel.org/stable/c/10cc81124407d862f0f747db4baa9c006510b480",
+      "https://git.kernel.org/stable/c/b5ff3e89b4e7f46ad2aa0de7e08d18e6f87d71bc",
+      "https://git.kernel.org/stable/c/b82681042724924ae3ba0f2f2eeec217fa31e830"
+    ],
+    "受影响版本": [
+      "1aca9939bf72893887cb7e3455e44c864bada2f9",
+      "1aca9939bf72893887cb7e3455e44c864bada2f9",
+      "1aca9939bf72893887cb7e3455e44c864bada2f9",
+      "1aca9939bf72893887cb7e3455e44c864bada2f9",
+      "1aca9939bf72893887cb7e3455e44c864bada2f9",
+      "1aca9939bf72893887cb7e3455e44c864bada2f9"
+    ],
+    "公开日期": "2024年05月21日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52865",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nclk: mediatek: clk-mt6797: Add check for mtk_alloc_clk_data\n\nAdd the check for the return value of mtk_alloc_clk_data() in order to\navoid NULL pointer dereference.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/c26feedbc561f2a3cee1a4f717e61bdbdfb4fa92",
+      "https://git.kernel.org/stable/c/4c79cbfb8e9e2311be77182893fda5ea4068c836",
+      "https://git.kernel.org/stable/c/2705c5b97f504e831ae1935c05f0e44f80dfa6b3",
+      "https://git.kernel.org/stable/c/81b16286110728674dcf81137be0687c5055e7bf",
+      "https://git.kernel.org/stable/c/3aefc6fcfbada57fac27f470602d5565e5b76cb4",
+      "https://git.kernel.org/stable/c/357df1c2f6ace96defd557fad709ed1f9f70e16c",
+      "https://git.kernel.org/stable/c/be3f12f16038a558f08fa93cc32fa715746a5235",
+      "https://git.kernel.org/stable/c/122ac6496e4975ddd7ec1edba4f6fc1e15e39478",
+      "https://git.kernel.org/stable/c/606f6366a35a3329545e38129804d65ef26ed7d2"
+    ],
+    "受影响版本": [
+      "96596aa06628e86ea0e1c08c34b0ccc7619e43ac",
+      "96596aa06628e86ea0e1c08c34b0ccc7619e43ac",
+      "96596aa06628e86ea0e1c08c34b0ccc7619e43ac",
+      "96596aa06628e86ea0e1c08c34b0ccc7619e43ac",
+      "96596aa06628e86ea0e1c08c34b0ccc7619e43ac",
+      "96596aa06628e86ea0e1c08c34b0ccc7619e43ac",
+      "96596aa06628e86ea0e1c08c34b0ccc7619e43ac",
+      "96596aa06628e86ea0e1c08c34b0ccc7619e43ac",
+      "96596aa06628e86ea0e1c08c34b0ccc7619e43ac"
+    ],
+    "公开日期": "2024年05月21日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52858",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nclk: mediatek: clk-mt7629: Add check for mtk_alloc_clk_data\n\nAdd the check for the return value of mtk_alloc_clk_data() in order to\navoid NULL pointer dereference.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/e8ae4b49dd9cfde69d8de8c0c0cd7cf1b004482e",
+      "https://git.kernel.org/stable/c/4f861b63945e076f9f003a5fad958174096df1ee",
+      "https://git.kernel.org/stable/c/e964d21dc034b650d719c4ea39564bec72b42f94",
+      "https://git.kernel.org/stable/c/a836efc21ef04608333d6d05753e558ebd1f85d0",
+      "https://git.kernel.org/stable/c/1d89430fc3158f872d492f1b88d07262f48290c0",
+      "https://git.kernel.org/stable/c/5fbea47eebff5daeca7d918c99289bcd3ae4dc8d",
+      "https://git.kernel.org/stable/c/2befa515c1bb6cdd33c262b909d93d1973a219aa"
+    ],
+    "受影响版本": [
+      "3b5e748615e714711220b2a95d19bd25a037db09",
+      "3b5e748615e714711220b2a95d19bd25a037db09",
+      "3b5e748615e714711220b2a95d19bd25a037db09",
+      "3b5e748615e714711220b2a95d19bd25a037db09",
+      "3b5e748615e714711220b2a95d19bd25a037db09",
+      "3b5e748615e714711220b2a95d19bd25a037db09",
+      "3b5e748615e714711220b2a95d19bd25a037db09"
+    ],
+    "公开日期": "2024年05月21日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52857",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/mediatek: Fix coverity issue with unintentional integer overflow\n\n1. Instead of multiplying 2 variable of different types. Change to\nassign a value of one variable and then multiply the other variable.\n\n2. Add a int variable for multiplier calculation instead of calculating\ndifferent types multiplier with dma_addr_t variable directly.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/a12bd675100531f9fb4508fd4430dd1632325a0e",
+      "https://git.kernel.org/stable/c/0d8a1df39d3fc34560e2cc663b5c340d06a25396",
+      "https://git.kernel.org/stable/c/96312a251d4dcee5d36e32edba3002bfde0ddd9c",
+      "https://git.kernel.org/stable/c/b0b0d811eac6b4c52cb9ad632fa6384cf48869e7"
+    ],
+    "受影响版本": [
+      "1a64a7aff8da352c9419de3d5c34343682916411",
+      "1a64a7aff8da352c9419de3d5c34343682916411",
+      "1a64a7aff8da352c9419de3d5c34343682916411",
+      "1a64a7aff8da352c9419de3d5c34343682916411",
+      "73e81f7219aa582d8e55a7b6552f607a8e5a9724"
+    ],
+    "公开日期": "2024年05月21日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52645",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\npmdomain: mediatek: fix race conditions with genpd\n\nIf the power domains are registered first with genpd and *after that*\nthe driver attempts to power them on in the probe sequence, then it is\npossible that a race condition occurs if genpd tries to power them on\nin the same time.\nThe same is valid for powering them off before unregistering them\nfrom genpd.\nAttempt to fix race conditions by first removing the domains from genpd\nand *after that* powering down domains.\nAlso first power up the domains and *after that* register them\nto genpd.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/475426ad1ae0bfdfd8f160ed9750903799392438",
+      "https://git.kernel.org/stable/c/339ddc983bc1622341d95f244c361cda3da3a4ff",
+      "https://git.kernel.org/stable/c/f83b9abee9faa4868a6fac4669b86f4c215dae25",
+      "https://git.kernel.org/stable/c/3cd1d92ee1dbf3e8f988767eb75f26207397792b",
+      "https://git.kernel.org/stable/c/c41336f4d69057cbf88fed47951379b384540df5"
+    ],
+    "受影响版本": [
+      "59b644b01cf48d6042f3c5983d464921a4920845",
+      "59b644b01cf48d6042f3c5983d464921a4920845",
+      "59b644b01cf48d6042f3c5983d464921a4920845",
+      "59b644b01cf48d6042f3c5983d464921a4920845",
+      "59b644b01cf48d6042f3c5983d464921a4920845"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52584",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nspmi: mediatek: Fix UAF on device remove\n\nThe pmif driver data that contains the clocks is allocated along with\nspmi_controller.\nOn device remove, spmi_controller will be freed first, and then devres\n, including the clocks, will be cleanup.\nThis leads to UAF because putting the clocks will access the clocks in\nthe pmif driver data, which is already freed along with spmi_controller.\n\nThis can be reproduced by enabling DEBUG_TEST_DRIVER_REMOVE and\nbuilding the kernel with KASAN.\n\nFix the UAF issue by using unmanaged clk_bulk_get() and putting the\nclocks before freeing spmi_controller.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/521f28eedd6b14228c46e3b81e3bf9b90c2818d8",
+      "https://git.kernel.org/stable/c/f8dcafcb54632536684336161da8bdd52120f95e",
+      "https://git.kernel.org/stable/c/9a3881b1f07db1bb55cb0108e6f05cfd027eaf2e",
+      "https://git.kernel.org/stable/c/e821d50ab5b956ed0effa49faaf29912fd4106d9"
+    ],
+    "受影响版本": [
+      "b45b3ccef8c063d21eb746d85337eaf71f6b5f07",
+      "b45b3ccef8c063d21eb746d85337eaf71f6b5f07",
+      "b45b3ccef8c063d21eb746d85337eaf71f6b5f07",
+      "b45b3ccef8c063d21eb746d85337eaf71f6b5f07"
+    ],
+    "公开日期": "2024年03月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Kernel",
+    "CVE编号": "CVE-2023-3317",
+    "漏洞描述": "A use-after-free flaw was found in mt7921_check_offload_capability in drivers/net/wireless/mediatek/mt76/mt7921/init.c in wifi mt76/mt7921 sub-component in the Linux Kernel. This flaw could allow an attacker to crash the system after 'features' memory release. This vulnerability could even lead to a kernel information leak problem.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://patchwork.kernel.org/project/linux-wireless/patch/51fd8f76494348aa9ecbf0abc471ebe47a983dfd.1679502607.git.lorenzo%40kernel.org/"
+    ],
+    "受影响版本": [
+      "KErnel version prior to  6.3-rc6"
+    ],
+    "公开日期": "2023年06月23日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-50154",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nPCI: mediatek-gen3: Fix refcount leak in mtk_pcie_init_irq_domains()\n\nof_get_child_by_name() returns a node pointer with refcount incremented, so\nwe should use of_node_put() on it when we don't need it anymore.\n\nAdd missing of_node_put() to avoid refcount leak.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/0675fe20da7fa69b1ba80c23470c1433a2356c03",
+      "https://git.kernel.org/stable/c/2aa166c39d5a8221e6e22ab1a583656d4c8dc7f7",
+      "https://git.kernel.org/stable/c/e593e22786edd9eca058cf054d6a2e12c138da67",
+      "https://git.kernel.org/stable/c/bf038503d5fe90189743124233fe7aeb0984e961"
+    ],
+    "受影响版本": [
+      "814cceebba9b7d1306b8d49587ffb0e81f7b73af",
+      "814cceebba9b7d1306b8d49587ffb0e81f7b73af",
+      "814cceebba9b7d1306b8d49587ffb0e81f7b73af",
+      "814cceebba9b7d1306b8d49587ffb0e81f7b73af"
+    ],
+    "公开日期": "2025年06月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-50123",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nASoC: mediatek: mt8173: Fix refcount leak in mt8173_rt5650_rt5676_dev_probe\n\nof_parse_phandle() returns a node pointer with refcount\nincremented, we should use of_node_put() on it when not need anymore.\nFix missing of_node_put() in error paths.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/aa668f8e93199cda8fa1612eb49ff70f5ecd8c92",
+      "https://git.kernel.org/stable/c/fab5eb31819a2693b0c3d6f3df6a0d193af9a089",
+      "https://git.kernel.org/stable/c/d6d41f04640db0f946e2c3f7963bb2774afc7a0d",
+      "https://git.kernel.org/stable/c/aa1214ece37944e4dbbb5cfb1d02bf37e4d89b02",
+      "https://git.kernel.org/stable/c/540c7b7385fb110740703888b4b2bbfa06c7f79c",
+      "https://git.kernel.org/stable/c/769399bce8825e1dcc5050dab78e15ab578baf4f",
+      "https://git.kernel.org/stable/c/58567ed2878f70e0ded242cb529fb4a7618ea9f8",
+      "https://git.kernel.org/stable/c/ae4f11c1ed2d67192fdf3d89db719ee439827c11"
+    ],
+    "受影响版本": [
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79",
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79",
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79",
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79",
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79",
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79",
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79",
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79"
+    ],
+    "公开日期": "2025年06月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-50122",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nASoC: mediatek: mt8173-rt5650: Fix refcount leak in mt8173_rt5650_dev_probe\n\nof_parse_phandle() returns a node pointer with refcount\nincremented, we should use of_node_put() on it when not need anymore.\nFix refcount leak in some error paths.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/06ace427953f5036b64aed658f0055f65d76fd27",
+      "https://git.kernel.org/stable/c/e024a24fb264523149658c10c76bb363b3d0004d",
+      "https://git.kernel.org/stable/c/79f566907d27abbd7600cebe51def5081d5796b5",
+      "https://git.kernel.org/stable/c/403d46971936f9f704b91cecffe66e44aa39e915",
+      "https://git.kernel.org/stable/c/994f2edeeb2114bb22b62741cb8fb030fc7e5441",
+      "https://git.kernel.org/stable/c/e38e4952ac7a316c9002af30980d6aa850214474",
+      "https://git.kernel.org/stable/c/5ec83aa7a9e5bcca80ccd49978916feb4e0ffc07",
+      "https://git.kernel.org/stable/c/efe2178d1a32492f99e7f1f2568eea5c88a85729"
+    ],
+    "受影响版本": [
+      "0f83f9296d5c91d08cf46cf1ba8a17fb870dedf0",
+      "0f83f9296d5c91d08cf46cf1ba8a17fb870dedf0",
+      "0f83f9296d5c91d08cf46cf1ba8a17fb870dedf0",
+      "0f83f9296d5c91d08cf46cf1ba8a17fb870dedf0",
+      "0f83f9296d5c91d08cf46cf1ba8a17fb870dedf0",
+      "0f83f9296d5c91d08cf46cf1ba8a17fb870dedf0",
+      "0f83f9296d5c91d08cf46cf1ba8a17fb870dedf0",
+      "0f83f9296d5c91d08cf46cf1ba8a17fb870dedf0"
+    ],
+    "公开日期": "2025年06月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49517",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nASoC: mediatek: Fix missing of_node_put in mt2701_wm8960_machine_probe\n\nThis node pointer is returned by of_parse_phandle() with\nrefcount incremented in this function.\nCalling of_node_put() to avoid the refcount leak.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/bc2afecaabd2a2c9f17e43b4793a30e3461bfb29",
+      "https://git.kernel.org/stable/c/9345122f5fb9f97a206f440f38bb656e53f46912",
+      "https://git.kernel.org/stable/c/c71494f5f2b444adfd992a7359a0d2a791642b39",
+      "https://git.kernel.org/stable/c/f279c49f17ce10866087ea6c0c57382158974b63",
+      "https://git.kernel.org/stable/c/61a85a20e8df5e0a92cfe169c92425c7bae0753b",
+      "https://git.kernel.org/stable/c/318afb1442eeef089fe7f8a8297d97c0302ff6f6",
+      "https://git.kernel.org/stable/c/94587aa17abf8b26f543d2b29c44abc21bc36836",
+      "https://git.kernel.org/stable/c/05654431a18fe24e5e46a375d98904134628a102"
+    ],
+    "受影响版本": [
+      "8625c1dbd87631572f8e2c05bc67736b73d6f02f",
+      "8625c1dbd87631572f8e2c05bc67736b73d6f02f",
+      "8625c1dbd87631572f8e2c05bc67736b73d6f02f",
+      "8625c1dbd87631572f8e2c05bc67736b73d6f02f",
+      "8625c1dbd87631572f8e2c05bc67736b73d6f02f",
+      "8625c1dbd87631572f8e2c05bc67736b73d6f02f",
+      "8625c1dbd87631572f8e2c05bc67736b73d6f02f",
+      "8625c1dbd87631572f8e2c05bc67736b73d6f02f"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49514",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nASoC: mediatek: Fix error handling in mt8173_max98090_dev_probe\n\nCall of_node_put(platform_node) to avoid refcount leak in\nthe error path.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/0a1901f34f775b83ea4b8dbb5ed992147b9b8531",
+      "https://git.kernel.org/stable/c/1e932aba3c7628c9f880ee9c2cfcc2ae3ba0c01e",
+      "https://git.kernel.org/stable/c/cc43b9fdca519c5b13be6a717bacbebccd628cf6",
+      "https://git.kernel.org/stable/c/23f340ed906c758cec6527376768e3bc1474ac30",
+      "https://git.kernel.org/stable/c/fb66e0512e5ccc093070e21cf88cce8d98c181b5",
+      "https://git.kernel.org/stable/c/48889eb3cce91d7f58e02bc07277b7f724b7a54a",
+      "https://git.kernel.org/stable/c/ebd5cb4f1f3f10b839e7575219e0f17b60c23113",
+      "https://git.kernel.org/stable/c/98d5afe868df998b0244f4c229ab758b4083684a",
+      "https://git.kernel.org/stable/c/4f4e0454e226de3bf4efd7e7924d1edc571c52d5"
+    ],
+    "受影响版本": [
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79",
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79",
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79",
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79",
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79",
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79",
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79",
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79",
+      "94319ba10ecabc8f28129566d1f5793e3e7a0a79"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49506",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/mediatek: Add vblank register/unregister callback functions\n\nWe encountered a kernel panic issue that callback data will be NULL when\nit's using in ovl irq handler. There is a timing issue between\nmtk_disp_ovl_irq_handler() and mtk_ovl_disable_vblank().\n\nTo resolve this issue, we use the flow to register/unregister vblank cb:\n- Register callback function and callback data when crtc creates.\n- Unregister callback function and callback data when crtc destroies.\n\nWith this solution, we can assure callback data will not be NULL when\nvblank is disable.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/8a2dbdeccef6de47565638abdf3c25f41cdffc37",
+      "https://git.kernel.org/stable/c/8a265d9838bc3c63579002d55c2b2c655c4f8f26",
+      "https://git.kernel.org/stable/c/3a4027b5971fe2a94e32754f007d9d3c12c68ad1",
+      "https://git.kernel.org/stable/c/b74d921b900b6ce38c6247c0a1c86be9f3746493"
+    ],
+    "受影响版本": [
+      "9b0704988b151824a51133dc4c921f4273c5d839",
+      "9b0704988b151824a51133dc4c921f4273c5d839",
+      "9b0704988b151824a51133dc4c921f4273c5d839",
+      "9b0704988b151824a51133dc4c921f4273c5d839"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49496",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: mediatek: vcodec: prevent kernel crash when rmmod mtk-vcodec-dec.ko\n\nIf the driver support subdev mode, the parameter \"dev->pm.dev\" will be\nNULL in mtk_vcodec_dec_remove. Kernel will crash when try to rmmod\nmtk-vcodec-dec.ko.\n\n[ 4380.702726] pc : do_raw_spin_trylock+0x4/0x80\n[ 4380.707075] lr : _raw_spin_lock_irq+0x90/0x14c\n[ 4380.711509] sp : ffff80000819bc10\n[ 4380.714811] x29: ffff80000819bc10 x28: ffff3600c03e4000 x27: 0000000000000000\n[ 4380.721934] x26: 0000000000000000 x25: 0000000000000000 x24: 0000000000000000\n[ 4380.729057] x23: ffff3600c0f34930 x22: ffffd5e923549000 x21: 0000000000000220\n[ 4380.736179] x20: 0000000000000208 x19: ffffd5e9213e8ebc x18: 0000000000000020\n[ 4380.743298] x17: 0000002000000000 x16: ffffd5e9213e8e90 x15: 696c346f65646976\n[ 4380.750420] x14: 0000000000000000 x13: 0000000000000001 x12: 0000000000000040\n[ 4380.757542] x11: 0000000000000000 x10: 0000000000000000 x9 : 0000000000000000\n[ 4380.764664] x8 : 0000000000000000 x7 : ffff3600c7273ae8 x6 : ffffd5e9213e8ebc\n[ 4380.771786] x5 : 0000000000000000 x4 : 0000000000000001 x3 : 0000000000000000\n[ 4380.778908] x2 : 0000000000000000 x1 : ffff3600c03e4000 x0 : 0000000000000208\n[ 4380.786031] Call trace:\n[ 4380.788465]  do_raw_spin_trylock+0x4/0x80\n[ 4380.792462]  __pm_runtime_disable+0x2c/0x1b0\n[ 4380.796723]  mtk_vcodec_dec_remove+0x5c/0xa0 [mtk_vcodec_dec]\n[ 4380.802466]  platform_remove+0x2c/0x60\n[ 4380.806204]  __device_release_driver+0x194/0x250\n[ 4380.810810]  driver_detach+0xc8/0x15c\n[ 4380.814462]  bus_remove_driver+0x5c/0xb0\n[ 4380.818375]  driver_unregister+0x34/0x64\n[ 4380.822288]  platform_driver_unregister+0x18/0x24\n[ 4380.826979]  mtk_vcodec_dec_driver_exit+0x1c/0x888 [mtk_vcodec_dec]\n[ 4380.833240]  __arm64_sys_delete_module+0x190/0x224\n[ 4380.838020]  invoke_syscall+0x48/0x114\n[ 4380.841760]  el0_svc_common.constprop.0+0x60/0x11c\n[ 4380.846540]  do_el0_svc+0x28/0x90\n[ 4380.849844]  el0_svc+0x4c/0x100\n[ 4380.852975]  el0t_64_sync_handler+0xec/0xf0\n[ 4380.857148]  el0t_64_sync+0x190/0x194\n[ 4380.860801] Code: 94431515 17ffffca d503201f d503245f (b9400004)",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/1fa37b00dc55a061a3eb82e378849862b4aeca9d",
+      "https://git.kernel.org/stable/c/c10c0086db688c95bb4e0e378e523818dff1551d"
+    ],
+    "受影响版本": [
+      "590577a4e5257ac3ed72999a94666ad6ba8f24bc",
+      "590577a4e5257ac3ed72999a94666ad6ba8f24bc"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49454",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nPCI: mediatek: Fix refcount leak in mtk_pcie_subsys_powerup()\n\nThe of_find_compatible_node() function returns a node pointer with\nrefcount incremented, We should use of_node_put() on it when done\nAdd the missing of_node_put() to release the refcount.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/ad1c9d13e04509ae24fae8dd2897148657323519",
+      "https://git.kernel.org/stable/c/4cef4237d6c37257cb6ddc397723e9c0dded0efe",
+      "https://git.kernel.org/stable/c/09b2d906d78ddf5042b1f3e0091835fc6997e8a4",
+      "https://git.kernel.org/stable/c/214e0d8fe4a813ae6ffd62bc2dfe7544c20914f4"
+    ],
+    "受影响版本": [
+      "87e8657ba99cac87b84c7f8ead91b44d88345504",
+      "87e8657ba99cac87b84c7f8ead91b44d88345504",
+      "87e8657ba99cac87b84c7f8ead91b44d88345504",
+      "87e8657ba99cac87b84c7f8ead91b44d88345504"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49427",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\niommu/mediatek: Remove clk_disable in mtk_iommu_remove\n\nAfter the commit b34ea31fe013 (\"iommu/mediatek: Always enable the clk on\nresume\"), the iommu clock is controlled by the runtime callback.\nthus remove the clk control in the mtk_iommu_remove.\n\nOtherwise, it will warning like:\n\necho 14018000.iommu > /sys/bus/platform/drivers/mtk-iommu/unbind\n\n[   51.413044] ------------[ cut here ]------------\n[   51.413648] vpp0_smi_iommu already disabled\n[   51.414233] WARNING: CPU: 2 PID: 157 at */v5.15-rc1/kernel/mediatek/\n                          drivers/clk/clk.c:952 clk_core_disable+0xb0/0xb8\n[   51.417174] Hardware name: MT8195V/C(ENG) (DT)\n[   51.418635] pc : clk_core_disable+0xb0/0xb8\n[   51.419177] lr : clk_core_disable+0xb0/0xb8\n...\n[   51.429375] Call trace:\n[   51.429694]  clk_core_disable+0xb0/0xb8\n[   51.430193]  clk_core_disable_lock+0x24/0x40\n[   51.430745]  clk_disable+0x20/0x30\n[   51.431189]  mtk_iommu_remove+0x58/0x118\n[   51.431705]  platform_remove+0x28/0x60\n[   51.432197]  device_release_driver_internal+0x110/0x1f0\n[   51.432873]  device_driver_detach+0x18/0x28\n[   51.433418]  unbind_store+0xd4/0x108\n[   51.433886]  drv_attr_store+0x24/0x38\n[   51.434363]  sysfs_kf_write+0x40/0x58\n[   51.434843]  kernfs_fop_write_iter+0x164/0x1e0",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/053465ab20dcd324a43a1811ee98e5721e6a3e65",
+      "https://git.kernel.org/stable/c/9b3bd97acb4f8954b8a43a5d63ed9050d463b4e1",
+      "https://git.kernel.org/stable/c/6eaa046c696c83542c56765cdde564d9818ff1fb",
+      "https://git.kernel.org/stable/c/98df772bdd1c4ce717a26289efea15cbbe4b64ed"
+    ],
+    "受影响版本": [
+      "b34ea31fe013569d42b7e8681ef3f717f77c5b72",
+      "b34ea31fe013569d42b7e8681ef3f717f77c5b72",
+      "b34ea31fe013569d42b7e8681ef3f717f77c5b72",
+      "b34ea31fe013569d42b7e8681ef3f717f77c5b72",
+      "5cad9e2caa9613fdcd246bd4ebf0ffbec1cba2ca"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49424",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\niommu/mediatek: Fix NULL pointer dereference when printing dev_name\n\nWhen larbdev is NULL (in the case I hit, the node is incorrectly set\niommus = <&iommu NUM>), it will cause device_link_add() fail and\nkernel crashes when we try to print dev_name(larbdev).\n\nLet's fail the probe if a larbdev is NULL to avoid invalid inputs from\ndts.\n\nIt should work for normal correct setting and avoid the crash caused\nby my incorrect setting.\n\nError log:\n[   18.189042][  T301] Unable to handle kernel NULL pointer dereference at virtual address 0000000000000050\n...\n[   18.344519][  T301] pstate: a0400005 (NzCv daif +PAN -UAO)\n[   18.345213][  T301] pc : mtk_iommu_probe_device+0xf8/0x118 [mtk_iommu]\n[   18.346050][  T301] lr : mtk_iommu_probe_device+0xd0/0x118 [mtk_iommu]\n[   18.346884][  T301] sp : ffffffc00a5635e0\n[   18.347392][  T301] x29: ffffffc00a5635e0 x28: ffffffd44a46c1d8\n[   18.348156][  T301] x27: ffffff80c39a8000 x26: ffffffd44a80cc38\n[   18.348917][  T301] x25: 0000000000000000 x24: ffffffd44a80cc38\n[   18.349677][  T301] x23: ffffffd44e4da4c6 x22: ffffffd44a80cc38\n[   18.350438][  T301] x21: ffffff80cecd1880 x20: 0000000000000000\n[   18.351198][  T301] x19: ffffff80c439f010 x18: ffffffc00a50d0c0\n[   18.351959][  T301] x17: ffffffffffffffff x16: 0000000000000004\n[   18.352719][  T301] x15: 0000000000000004 x14: ffffffd44eb5d420\n[   18.353480][  T301] x13: 0000000000000ad2 x12: 0000000000000003\n[   18.354241][  T301] x11: 00000000fffffad2 x10: c0000000fffffad2\n[   18.355003][  T301] x9 : a0d288d8d7142d00 x8 : a0d288d8d7142d00\n[   18.355763][  T301] x7 : ffffffd44c2bc640 x6 : 0000000000000000\n[   18.356524][  T301] x5 : 0000000000000080 x4 : 0000000000000001\n[   18.357284][  T301] x3 : 0000000000000000 x2 : 0000000000000005\n[   18.358045][  T301] x1 : 0000000000000000 x0 : 0000000000000000\n[   18.360208][  T301] Hardware name: MT6873 (DT)\n[   18.360771][  T301] Call trace:\n[   18.361168][  T301]  dump_backtrace+0xf8/0x1f0\n[   18.361737][  T301]  dump_stack_lvl+0xa8/0x11c\n[   18.362305][  T301]  dump_stack+0x1c/0x2c\n[   18.362816][  T301]  mrdump_common_die+0x184/0x40c [mrdump]\n[   18.363575][  T301]  ipanic_die+0x24/0x38 [mrdump]\n[   18.364230][  T301]  atomic_notifier_call_chain+0x128/0x2b8\n[   18.364937][  T301]  die+0x16c/0x568\n[   18.365394][  T301]  __do_kernel_fault+0x1e8/0x214\n[   18.365402][  T301]  do_page_fault+0xb8/0x678\n[   18.366934][  T301]  do_translation_fault+0x48/0x64\n[   18.368645][  T301]  do_mem_abort+0x68/0x148\n[   18.368652][  T301]  el1_abort+0x40/0x64\n[   18.368660][  T301]  el1h_64_sync_handler+0x54/0x88\n[   18.368668][  T301]  el1h_64_sync+0x68/0x6c\n[   18.368673][  T301]  mtk_iommu_probe_device+0xf8/0x118 [mtk_iommu]\n...",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/c3c2734e28d7fac50228c4d2b8896e8695adf304",
+      "https://git.kernel.org/stable/c/e9c63c0f73a1bbfd02624f5eae7e881df8b6830f",
+      "https://git.kernel.org/stable/c/8837c2682b9b2eed83e6212bcf79850c593a6fee",
+      "https://git.kernel.org/stable/c/de78657e16f41417da9332f09c2d67d100096939"
+    ],
+    "受影响版本": [
+      "77fbe028d5a3f7fc6060c4454ead9510533acd1e",
+      "18ea450ed1b60c1bb336f5efe874f61909ce7bec",
+      "635319a4a7444ca97124d781cd96deb277ff4d40",
+      "635319a4a7444ca97124d781cd96deb277ff4d40",
+      "b7bf68272b6ae7c469854e2e054db1db1d158999"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49244",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nASoC: mediatek: mt8192-mt6359: Fix error handling in mt8192_mt6359_dev_probe\n\nThe device_node pointer is returned by of_parse_phandle()  with refcount\nincremented. We should use of_node_put() on it when done.\n\nThis function only calls of_node_put() in the regular path.\nAnd it will cause refcount leak in error paths.\nFix this by calling of_node_put() in error handling too.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/87e04a89c31e792eef62bcba6ebb77fd323d28a1",
+      "https://git.kernel.org/stable/c/d5a38629f1aaf397fd471b27e49d55289ddc0656",
+      "https://git.kernel.org/stable/c/1765787ec02e824f4f5e672cf269280a5da09d2f",
+      "https://git.kernel.org/stable/c/e45ac7831ff3e2934d58cce319c17c8ec763c95c"
+    ],
+    "受影响版本": [
+      "286c6f7b28fab19d649c2e1f3bc18fdecdbadfe5",
+      "d1be8577f0b2f679095d237aaf281dca344f06c4",
+      "4e28491a7a198c668437f2be8a91a76aa52f20eb",
+      "4e28491a7a198c668437f2be8a91a76aa52f20eb"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49240",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nASoC: mediatek: mt8195: Fix error handling in mt8195_mt6359_rt1019_rt5682_dev_probe\n\nThe device_node pointer is returned by of_parse_phandle()  with refcount\nincremented. We should use of_node_put() on it when done.\n\nThis function only calls of_node_put() in the regular path.\nAnd it will cause refcount leak in error path.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/c652f8f0875b569f8afa80b8cf9762828fd6187b",
+      "https://git.kernel.org/stable/c/c4b7174fe5bb875a09a78674a14a1589d1a672f3"
+    ],
+    "受影响版本": [
+      "082482a5022780d42180a394fe6843e71fe963d8",
+      "082482a5022780d42180a394fe6843e71fe963d8"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49161",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nASoC: mediatek: Fix error handling in mt8183_da7219_max98357_dev_probe\n\nThe device_node pointer is returned by of_parse_phandle()  with refcount\nincremented. We should use of_node_put() on it when done.\n\nThis function only calls of_node_put() in the regular path.\nAnd it will cause refcount leak in error paths.\nFix this by calling of_node_put() in error handling too.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/9b9f6227e8d0c7c46b6d9d7b8a5c4e0536049fcf",
+      "https://git.kernel.org/stable/c/28a265a1ee11febeec5ea73a804f30dcec3181ca"
+    ],
+    "受影响版本": [
+      "11c0269017b212fd47c593307d2dc3eb9713b2d0",
+      "11c0269017b212fd47c593307d2dc3eb9713b2d0"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49108",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nclk: mediatek: Fix memory leaks on probe\n\nHandle the error branches to free memory where required.\n\nAddresses-Coverity-ID: 1491825 (\"Resource leak\")",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/c6a0b413398588fc2d8b174a79ea715b66413fca",
+      "https://git.kernel.org/stable/c/02742d1d5c95cff8b6e9379aae4ab12674f7265d",
+      "https://git.kernel.org/stable/c/7a688c91d3fd54c53e7a9edd6052cdae98dd99d8"
+    ],
+    "受影响版本": [
+      "710573dee31b4ca34abeb384c6e3db499c0af65f",
+      "710573dee31b4ca34abeb384c6e3db499c0af65f",
+      "710573dee31b4ca34abeb384c6e3db499c0af65f"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Kernel",
+    "CVE编号": "CVE-2022-3636",
+    "漏洞描述": "A vulnerability, which was classified as critical, was found in Linux Kernel. This affects the function __mtk_ppe_check_skb of the file drivers/net/ethernet/mediatek/mtk_ppe.c of the component Ethernet Handler. The manipulation leads to use after free. It is recommended to apply a patch to fix this issue. The associated identifier of this vulnerability is VDB-211935.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://git.kernel.org/pub/scm/linux/kernel/git/pabeni/net-next.git/commit/?id=17a5f6a78dc7b8db385de346092d7d9f9dc24df6",
+      "https://www.debian.org/security/2023/dsa-5333"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年10月21日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2021-47540",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmt76: mt7915: fix NULL pointer dereference in mt7915_get_phy_mode\n\nFix the following NULL pointer dereference in mt7915_get_phy_mode\nroutine adding an ibss interface to the mt7915 driver.\n\n[  101.137097] wlan0: Trigger new scan to find an IBSS to join\n[  102.827039] wlan0: Creating new IBSS network, BSSID 26:a4:50:1a:6e:69\n[  103.064756] Unable to handle kernel NULL pointer dereference at virtual address 0000000000000000\n[  103.073670] Mem abort info:\n[  103.076520]   ESR = 0x96000005\n[  103.079614]   EC = 0x25: DABT (current EL), IL = 32 bits\n[  103.084934]   SET = 0, FnV = 0\n[  103.088042]   EA = 0, S1PTW = 0\n[  103.091215] Data abort info:\n[  103.094104]   ISV = 0, ISS = 0x00000005\n[  103.098041]   CM = 0, WnR = 0\n[  103.101044] user pgtable: 4k pages, 39-bit VAs, pgdp=00000000460b1000\n[  103.107565] [0000000000000000] pgd=0000000000000000, p4d=0000000000000000, pud=0000000000000000\n[  103.116590] Internal error: Oops: 96000005 [#1] SMP\n[  103.189066] CPU: 1 PID: 333 Comm: kworker/u4:3 Not tainted 5.10.75 #0\n[  103.195498] Hardware name: MediaTek MT7622 RFB1 board (DT)\n[  103.201124] Workqueue: phy0 ieee80211_iface_work [mac80211]\n[  103.206695] pstate: 20000005 (nzCv daif -PAN -UAO -TCO BTYPE=--)\n[  103.212705] pc : mt7915_get_phy_mode+0x68/0x120 [mt7915e]\n[  103.218103] lr : mt7915_mcu_add_bss_info+0x11c/0x760 [mt7915e]\n[  103.223927] sp : ffffffc011cdb9e0\n[  103.227235] x29: ffffffc011cdb9e0 x28: ffffff8006563098\n[  103.232545] x27: ffffff8005f4da22 x26: ffffff800685ac40\n[  103.237855] x25: 0000000000000001 x24: 000000000000011f\n[  103.243165] x23: ffffff8005f4e260 x22: ffffff8006567918\n[  103.248475] x21: ffffff8005f4df80 x20: ffffff800685ac58\n[  103.253785] x19: ffffff8006744400 x18: 0000000000000000\n[  103.259094] x17: 0000000000000000 x16: 0000000000000001\n[  103.264403] x15: 000899c3a2d9d2e4 x14: 000899bdc3c3a1c8\n[  103.269713] x13: 0000000000000000 x12: 0000000000000000\n[  103.275024] x11: ffffffc010e30c20 x10: 0000000000000000\n[  103.280333] x9 : 0000000000000050 x8 : ffffff8006567d88\n[  103.285642] x7 : ffffff8006563b5c x6 : ffffff8006563b44\n[  103.290952] x5 : 0000000000000002 x4 : 0000000000000001\n[  103.296262] x3 : 0000000000000001 x2 : 0000000000000001\n[  103.301572] x1 : 0000000000000000 x0 : 0000000000000011\n[  103.306882] Call trace:\n[  103.309328]  mt7915_get_phy_mode+0x68/0x120 [mt7915e]\n[  103.314378]  mt7915_bss_info_changed+0x198/0x200 [mt7915e]\n[  103.319941]  ieee80211_bss_info_change_notify+0x128/0x290 [mac80211]\n[  103.326360]  __ieee80211_sta_join_ibss+0x308/0x6c4 [mac80211]\n[  103.332171]  ieee80211_sta_create_ibss+0x8c/0x10c [mac80211]\n[  103.337895]  ieee80211_ibss_work+0x3dc/0x614 [mac80211]\n[  103.343185]  ieee80211_iface_work+0x388/0x3f0 [mac80211]\n[  103.348495]  process_one_work+0x288/0x690\n[  103.352499]  worker_thread+0x70/0x464\n[  103.356157]  kthread+0x144/0x150\n[  103.359380]  ret_from_fork+0x10/0x18\n[  103.362952] Code: 394008c3 52800220 394000e4 7100007f (39400023)",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/932b338f4e5c4cb0c2ed640da3bced1e63620198",
+      "https://git.kernel.org/stable/c/14b03b8cebdf18ff13c39d58501b625411314de2",
+      "https://git.kernel.org/stable/c/6e53d6d26920d5221d3f4d4f5ffdd629ea69aa5c"
+    ],
+    "受影响版本": [
+      "e57b7901469fc0b021930b83a8094baaf3d81b09",
+      "e57b7901469fc0b021930b83a8094baaf3d81b09",
+      "e57b7901469fc0b021930b83a8094baaf3d81b09"
+    ],
+    "公开日期": "2024年05月24日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2021-47108",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/mediatek: hdmi: Perform NULL pointer check for mtk_hdmi_conf\n\nIn commit 41ca9caaae0b\n(\"drm/mediatek: hdmi: Add check for CEA modes only\") a check\nfor CEA modes was added to function mtk_hdmi_bridge_mode_valid()\nin order to address possible issues on MT8167;\nmoreover, with commit c91026a938c2\n(\"drm/mediatek: hdmi: Add optional limit on maximal HDMI mode clock\")\nanother similar check was introduced.\n\nUnfortunately though, at the time of writing, MT8173 does not provide\nany mtk_hdmi_conf structure and this is crashing the kernel with NULL\npointer upon entering mtk_hdmi_bridge_mode_valid(), which happens as\nsoon as a HDMI cable gets plugged in.\n\nTo fix this regression, add a NULL pointer check for hdmi->conf in the\nsaid function, restoring HDMI functionality and avoiding NULL pointer\nkernel panics.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/71d07ebc5000b9c1d140e99e7493b0bafa954776",
+      "https://git.kernel.org/stable/c/3b8e19a0aa3933a785be9f1541afd8d398c4ec69"
+    ],
+    "受影响版本": [
+      "41ca9caaae0bfc959b22dbcd59d88a7107707e17",
+      "41ca9caaae0bfc959b22dbcd59d88a7107707e17"
+    ],
+    "公开日期": "2024年03月04日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2021-47083",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\npinctrl: mediatek: fix global-out-of-bounds issue\n\nWhen eint virtual eint number is greater than gpio number,\nit maybe produce 'desc[eint_n]' size globle-out-of-bounds issue.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/f373298e1bf0c6ea097c0bcc558dc43ad53e421f",
+      "https://git.kernel.org/stable/c/441d3873664d170982922c5d2fc01fa89d9439ed",
+      "https://git.kernel.org/stable/c/fb563baa3eb8e7a15f2cff3c2695e2cca0493e69",
+      "https://git.kernel.org/stable/c/2d5446da5acecf9c67db1c9d55ae2c3e5de01f8d"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2024年03月04日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2021-47025",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\niommu/mediatek: Always enable the clk on resume\n\nIn mtk_iommu_runtime_resume always enable the clk, even\nif m4u_dom is null. Otherwise the 'suspend' cb might\ndisable the clk which is already disabled causing the warning:\n\n[    1.586104] infra_m4u already disabled\n[    1.586133] WARNING: CPU: 0 PID: 121 at drivers/clk/clk.c:952 clk_core_disable+0xb0/0xb8\n[    1.594391] mtk-iommu 10205000.iommu: bound 18001000.larb (ops mtk_smi_larb_component_ops)\n[    1.598108] Modules linked in:\n[    1.598114] CPU: 0 PID: 121 Comm: kworker/0:2 Not tainted 5.12.0-rc5 #69\n[    1.609246] mtk-iommu 10205000.iommu: bound 14027000.larb (ops mtk_smi_larb_component_ops)\n[    1.617487] Hardware name: Google Elm (DT)\n[    1.617491] Workqueue: pm pm_runtime_work\n[    1.620545] mtk-iommu 10205000.iommu: bound 19001000.larb (ops mtk_smi_larb_component_ops)\n\n[    1.627229] pstate: 60000085 (nZCv daIf -PAN -UAO -TCO BTYPE=--)\n[    1.659297] pc : clk_core_disable+0xb0/0xb8\n[    1.663475] lr : clk_core_disable+0xb0/0xb8\n[    1.667652] sp : ffff800011b9bbe0\n[    1.670959] x29: ffff800011b9bbe0 x28: 0000000000000000\n[    1.676267] x27: ffff800011448000 x26: ffff8000100cfd98\n[    1.681574] x25: ffff800011b9bd48 x24: 0000000000000000\n[    1.686882] x23: 0000000000000000 x22: ffff8000106fad90\n[    1.692189] x21: 000000000000000a x20: ffff0000c0048500\n[    1.697496] x19: ffff0000c0048500 x18: ffffffffffffffff\n[    1.702804] x17: 0000000000000000 x16: 0000000000000000\n[    1.708112] x15: ffff800011460300 x14: fffffffffffe0000\n[    1.713420] x13: ffff8000114602d8 x12: 0720072007200720\n[    1.718727] x11: 0720072007200720 x10: 0720072007200720\n[    1.724035] x9 : ffff800011b9bbe0 x8 : ffff800011b9bbe0\n[    1.729342] x7 : 0000000000000009 x6 : ffff8000114b8328\n[    1.734649] x5 : 0000000000000000 x4 : 0000000000000000\n[    1.739956] x3 : 00000000ffffffff x2 : ffff800011460298\n[    1.745263] x1 : 1af1d7de276f4500 x0 : 0000000000000000\n[    1.750572] Call trace:\n[    1.753010]  clk_core_disable+0xb0/0xb8\n[    1.756840]  clk_core_disable_lock+0x24/0x40\n[    1.761105]  clk_disable+0x20/0x30\n[    1.764501]  mtk_iommu_runtime_suspend+0x88/0xa8\n[    1.769114]  pm_generic_runtime_suspend+0x2c/0x48\n[    1.773815]  __rpm_callback+0xe0/0x178\n[    1.777559]  rpm_callback+0x24/0x88\n[    1.781041]  rpm_suspend+0xdc/0x470\n[    1.784523]  rpm_idle+0x12c/0x170\n[    1.787831]  pm_runtime_work+0xa8/0xc0\n[    1.791573]  process_one_work+0x1e8/0x360\n[    1.795580]  worker_thread+0x44/0x478\n[    1.799237]  kthread+0x150/0x158\n[    1.802460]  ret_from_fork+0x10/0x30\n[    1.806034] ---[ end trace 82402920ef64573b ]---\n[    1.810728] ------------[ cut here ]------------\n\nIn addition, we now don't need to enable the clock from the\nfunction mtk_iommu_hw_init since it is already enabled by the resume.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/5cad9e2caa9613fdcd246bd4ebf0ffbec1cba2ca",
+      "https://git.kernel.org/stable/c/b34ea31fe013569d42b7e8681ef3f717f77c5b72"
+    ],
+    "受影响版本": [
+      "c0b57581b73be7b43f39e0dff201c93413f6a668",
+      "c0b57581b73be7b43f39e0dff201c93413f6a668"
+    ],
+    "公开日期": "2024年02月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-41788",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-12-13 and other devices, mishandle attempts at Wi-Fi authentication flooding. (Affected Chipsets MT7603E, MT7612, MT7613, MT7615, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 7.4.0.0).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064369/Security-Advisory-for-WiFi-Authentication-Flooding-Vulnerabilities-on-Multiple-Products-PSV-2021-0299-PSV-2021-0301",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37584",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle the WPS (Wi-Fi Protected Setup) protocol. (Affected Chipsets MT7603E, MT7610, MT7612, MT7613, MT7615, MT7620, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 7.4.0.0; Out-of-bounds write).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37583",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle IEEE 1905 protocols. (Affected Chipsets MT7603E, MT7613, MT7615, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 2.0.2; Out-of-bounds write).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37572",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle IEEE 1905 protocols. (Affected Chipsets MT7603E, MT7613, MT7615, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 2.0.2; Missing authorization).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37571",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle IEEE 1905 protocols. (Affected Chipsets MT7603E, MT7613, MT7615, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 2.0.2; Out-of-bounds write).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37570",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle IEEE 1905 protocols. (Affected Chipsets MT7603E, MT7613, MT7615, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 2.0.2; Out-of-bounds read).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37569",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle IEEE 1905 protocols. (Affected Chipsets MT7603E, MT7613, MT7615, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 2.0.2; Out-of-bounds write).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37568",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle IEEE 1905 protocols. (Affected Chipsets MT7603E, MT7613, MT7615, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 2.0.2; Out-of-bounds write).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37567",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle IEEE 1905 protocols. (Affected Chipsets MT7603E, MT7613, MT7615, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 2.0.2; Out-of-bounds read).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37566",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle IEEE 1905 protocols. (Affected Chipsets MT7603E, MT7610, MT7613, MT7615, MT7620, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 2.0.2; Out-of-bounds write).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37565",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle IEEE 1905 protocols. (Affected Chipsets MT7603E, MT7613, MT7615, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 2.0.2; Out-of-bounds read).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37564",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle IEEE 1905 protocols. (Affected Chipsets MT7603E, MT7613, MT7615, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 2.0.2; Out-of-bounds read).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37563",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle the WPS (Wi-Fi Protected Setup) protocol. (Affected Chipsets MT7603E, MT7610, MT7612, MT7613, MT7615, MT7620, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 7.4.0.0; Out-of-bounds write).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37562",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle the WPS (Wi-Fi Protected Setup) protocol. (Affected Chipsets MT7603E, MT7610, MT7612, MT7613, MT7615, MT7620, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 7.4.0.0; Out-of-bounds read).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37561",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle the WPS (Wi-Fi Protected Setup) protocol. (Affected Chipsets MT7603E, MT7610, MT7612, MT7613, MT7615, MT7620, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 7.4.0.0; Out-of-bounds write).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37560",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle the WPS (Wi-Fi Protected Setup) protocol. (Affected Chipsets MT7603E, MT7610, MT7612, MT7613, MT7615, MT7620, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 7.4.0.0; Out-of-bounds write).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-35055",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle the WPS (Wi-Fi Protected Setup) protocol. (Affected Chipsets MT7603E, MT7610, MT7612, MT7613, MT7615, MT7620, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 7.4.0.0; Out-of-bounds write).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-32469",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle the WPS (Wi-Fi Protected Setup) protocol. (Affected Chipsets MT7603E, MT7610, MT7612, MT7613, MT7615, MT7620, MT7622, MT7628, MT7629, MT7915 Affected Software Versions 7.4.0.0; Out-of-bounds read).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-32468",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle the WPS (Wi-Fi Protected Setup) protocol. (Affected Chipsets MT7603E, MT7610, MT7612, MT7613, MT7615, MT7620, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 7.4.0.0; Out-of-bounds read).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-32467",
+    "漏洞描述": "MediaTek microchips, as used in NETGEAR devices through 2021-11-11 and other devices, mishandle the WPS (Wi-Fi Protected Setup) protocol. (Affected Chipsets MT7603E, MT7610, MT7612, MT7613, MT7615, MT7620, MT7622, MT7628, MT7629, MT7915; Affected Software Versions 7.4.0.0; Out-of-bounds read).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000064368/Security-Advisory-for-WiFi-WPS-and-IEEE-1905-Vulnerabilities-on-Multiple-Products-PSV-2021-0298-PSV-2021-0300",
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-30636",
+    "漏洞描述": "In MediaTek LinkIt SDK before 4.6.1, there is a possible memory corruption due to an integer overflow during mishandled memory allocation by pvPortCalloc and pvPortRealloc.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-21-119-04"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年01月24日"
+  },
+  {
+    "设备品牌": "Samsung Mobile",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Samsung Mobile Devices",
+    "CVE编号": "CVE-2021-25477",
+    "漏洞描述": "An improper error handling in Mediatek RRC Protocol stack prior to SMR Oct-2021 Release 1 allows modem crash and remote denial of service.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.samsungmobile.com/securityUpdate.smsb?year=2021&month=10"
+    ],
+    "受影响版本": [
+      "P(9.0), Q(10.0), R(11.0)"
+    ],
+    "公开日期": "2021年10月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-25280",
+    "漏洞描述": "An issue was discovered on Samsung mobile devices with Q(10.0) (Exynos and MediaTek chipsets) software. Unauthenticated attackers can execute LTE/5G commands by sending a debugging command over USB. The Samsung ID is SVE-2020-16979 (September 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://security.samsungmobile.com/securityUpdate.smsb"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-12465",
+    "漏洞描述": "An array overflow was discovered in mt76_add_fragment in drivers/net/wireless/mediatek/mt76/dma.c in the Linux kernel before 5.5.10, aka CID-b102f0c522cf. An oversized packet with too many rx fragments can corrupt memory of adjacent pages.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/torvalds/linux/commit/b102f0c522cf668c8382c56a4f771b37d011cda2",
+      "https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=b102f0c522cf668c8382c56a4f771b37d011cda2",
+      "https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.5.10",
+      "https://security.netapp.com/advisory/ntap-20200608-0001/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年04月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2020-0069",
+    "漏洞描述": "In the ioctl handlers of the Mediatek Command Queue driver, there is a possible out of bounds write due to insufficient input sanitization and missing SELinux restrictions. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-147882143References: M-ALPS04356754",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2020-03-01",
+      "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200527-01-mtk-en"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2020年03月10日"
+  }
+]

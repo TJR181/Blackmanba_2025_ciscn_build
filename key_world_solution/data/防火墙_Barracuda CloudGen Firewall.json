@@ -1,0 +1,20 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-26213",
+    "漏洞描述": "On Barracuda CloudGen WAN Private Edge Gateway devices before 8 webui-sdwan-1089-8.3.1-174141891, an OS command injection vulnerability exists in /ajax/update_certificate - a crafted HTTP request allows an authenticated attacker to execute arbitrary commands. For example, a name field can contain :password and a password field can contain shell metacharacters.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.barracuda.com/products/network-security/cloudgen-wan",
+      "http://seclists.org/fulldisclosure/2023/Mar/2",
+      "https://sec-consult.com/vulnerability-lab/advisory/os-command-injection-in-barracuda-cloudgen-wan/",
+      "https://campus.barracuda.com/product/cloudgenwan/doc/96024723/release-notes-8-3-1/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年03月03日"
+  }
+]

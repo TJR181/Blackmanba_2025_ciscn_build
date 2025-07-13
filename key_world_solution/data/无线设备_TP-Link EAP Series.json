@@ -1,0 +1,259 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-53375",
+    "漏洞描述": "An Authenticated Remote Code Execution (RCE) vulnerability affects the TP-Link Archer router series. A vulnerability exists in the \"tmp_get_sites\" function of the HomeShield functionality provided by TP-Link. This vulnerability is still exploitable without the activation of the HomeShield functionality.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/ThottySploity/CVE-2024-53375",
+      "https://thottysploity.github.io/posts/cve-2024-53375/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年12月02日"
+  },
+  {
+    "设备品牌": "Tp-Link",
+    "设备类型": "无线设备",
+    "产品型号": "ER7206 Omada Gigabit VPN Router",
+    "CVE编号": "CVE-2024-21827",
+    "漏洞描述": "A leftover debug code vulnerability exists in the cli_server debug functionality of Tp-Link ER7206 Omada Gigabit VPN Router 1.4.1 Build 20240117 Rel.57421. A specially crafted series of network requests can lead to arbitrary command execution. An attacker can send a sequence of requests to trigger this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2024-1947"
+    ],
+    "受影响版本": [
+      "1.4.1 Build 20240117 Rel.57421"
+    ],
+    "公开日期": "2024年06月25日"
+  },
+  {
+    "设备品牌": "Tp-Link",
+    "设备类型": "无线设备",
+    "产品型号": "AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3)",
+    "CVE编号": "CVE-2023-49913",
+    "漏洞描述": "A stack-based buffer overflow vulnerability exists in the web interface Radio Scheduling functionality of Tp-Link AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3) v5.1.0 Build 20220926. A specially crafted series of HTTP requests can lead to remote code execution. An attacker can make an authenticated HTTP request to trigger this vulnerability.This vulnerability refers specifically to the overflow that occurs via the `action` parameter at offset `0x422448` of the `httpd` binary shipped with v5.0.4 Build 20220216 of the EAP115.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2023-1888"
+    ],
+    "受影响版本": [
+      "v5.1.0 Build 20220926"
+    ],
+    "公开日期": "2024年04月09日"
+  },
+  {
+    "设备品牌": "Tp-Link",
+    "设备类型": "无线设备",
+    "产品型号": "AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3)",
+    "CVE编号": "CVE-2023-49912",
+    "漏洞描述": "A stack-based buffer overflow vulnerability exists in the web interface Radio Scheduling functionality of Tp-Link AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3) v5.1.0 Build 20220926. A specially crafted series of HTTP requests can lead to remote code execution. An attacker can make an authenticated HTTP request to trigger this vulnerability.This vulnerability refers specifically to the overflow that occurs via the `profile` parameter at offset `0x4224b0` of the `httpd` binary shipped with v5.0.4 Build 20220216 of the EAP115.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2023-1888"
+    ],
+    "受影响版本": [
+      "v5.1.0 Build 20220926"
+    ],
+    "公开日期": "2024年04月09日"
+  },
+  {
+    "设备品牌": "Tp-Link",
+    "设备类型": "无线设备",
+    "产品型号": "AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3)",
+    "CVE编号": "CVE-2023-49911",
+    "漏洞描述": "A stack-based buffer overflow vulnerability exists in the web interface Radio Scheduling functionality of Tp-Link AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3) v5.1.0 Build 20220926. A specially crafted series of HTTP requests can lead to remote code execution. An attacker can make an authenticated HTTP request to trigger this vulnerability.This vulnerability refers specifically to the overflow that occurs via the `band` parameter at offset `0x422420` of the `httpd` binary shipped with v5.0.4 Build 20220216 of the EAP115.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2023-1888"
+    ],
+    "受影响版本": [
+      "v5.1.0 Build 20220926"
+    ],
+    "公开日期": "2024年04月09日"
+  },
+  {
+    "设备品牌": "Tp-Link",
+    "设备类型": "无线设备",
+    "产品型号": "AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3)",
+    "CVE编号": "CVE-2023-49910",
+    "漏洞描述": "A stack-based buffer overflow vulnerability exists in the web interface Radio Scheduling functionality of Tp-Link AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3) v5.1.0 Build 20220926. A specially crafted series of HTTP requests can lead to remote code execution. An attacker can make an authenticated HTTP request to trigger this vulnerability.This vulnerability refers specifically to the overflow that occurs via the `ssid` parameter at offset `0x42247c` of the `httpd` binary shipped with v5.0.4 Build 20220216 of the EAP115.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2023-1888"
+    ],
+    "受影响版本": [
+      "v5.1.0 Build 20220926"
+    ],
+    "公开日期": "2024年04月09日"
+  },
+  {
+    "设备品牌": "Tp-Link",
+    "设备类型": "无线设备",
+    "产品型号": "AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3)",
+    "CVE编号": "CVE-2023-49909",
+    "漏洞描述": "A stack-based buffer overflow vulnerability exists in the web interface Radio Scheduling functionality of Tp-Link AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3) v5.1.0 Build 20220926. A specially crafted series of HTTP requests can lead to remote code execution. An attacker can make an authenticated HTTP request to trigger this vulnerability.This vulnerability refers specifically to the overflow that occurs via the `action` parameter at offset `0x0045ab38` of the `httpd_portal` binary shipped with v5.1.0 Build 20220926 of the EAP225.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2023-1888"
+    ],
+    "受影响版本": [
+      "v5.1.0 Build 20220926"
+    ],
+    "公开日期": "2024年04月09日"
+  },
+  {
+    "设备品牌": "Tp-Link",
+    "设备类型": "无线设备",
+    "产品型号": "AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3)",
+    "CVE编号": "CVE-2023-49908",
+    "漏洞描述": "A stack-based buffer overflow vulnerability exists in the web interface Radio Scheduling functionality of Tp-Link AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3) v5.1.0 Build 20220926. A specially crafted series of HTTP requests can lead to remote code execution. An attacker can make an authenticated HTTP request to trigger this vulnerability.This vulnerability refers specifically to the overflow that occurs via the `profile` parameter at offset `0x0045abc8` of the `httpd_portal` binary shipped with v5.1.0 Build 20220926 of the EAP225.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2023-1888"
+    ],
+    "受影响版本": [
+      "v5.1.0 Build 20220926"
+    ],
+    "公开日期": "2024年04月09日"
+  },
+  {
+    "设备品牌": "Tp-Link",
+    "设备类型": "无线设备",
+    "产品型号": "AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3)",
+    "CVE编号": "CVE-2023-49907",
+    "漏洞描述": "A stack-based buffer overflow vulnerability exists in the web interface Radio Scheduling functionality of Tp-Link AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3) v5.1.0 Build 20220926. A specially crafted series of HTTP requests can lead to remote code execution. An attacker can make an authenticated HTTP request to trigger this vulnerability.This vulnerability refers specifically to the overflow that occurs via the `band` parameter at offset `0x0045aad8` of the `httpd_portal` binary shipped with v5.1.0 Build 20220926 of the EAP225.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2023-1888"
+    ],
+    "受影响版本": [
+      "v5.1.0 Build 20220926"
+    ],
+    "公开日期": "2024年04月09日"
+  },
+  {
+    "设备品牌": "Tp-Link",
+    "设备类型": "无线设备",
+    "产品型号": "AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3)",
+    "CVE编号": "CVE-2023-49906",
+    "漏洞描述": "A stack-based buffer overflow vulnerability exists in the web interface Radio Scheduling functionality of Tp-Link AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3) v5.1.0 Build 20220926. A specially crafted series of HTTP requests can lead to remote code execution. An attacker can make an authenticated HTTP request to trigger this vulnerability.This vulnerability refers specifically to the overflow that occurs via the `ssid` parameter at offset `0x0045ab7c` of the `httpd_portal` binary shipped with v5.1.0 Build 20220926 of the EAP225.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2023-1888"
+    ],
+    "受影响版本": [
+      "v5.1.0 Build 20220926"
+    ],
+    "公开日期": "2024年04月09日"
+  },
+  {
+    "设备品牌": "Tp-Link",
+    "设备类型": "无线设备",
+    "产品型号": "AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3)",
+    "CVE编号": "CVE-2023-49134",
+    "漏洞描述": "A command execution vulnerability exists in the tddpd enable_test_mode functionality of Tp-Link AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3) v5.1.0 Build 20220926 and Tp-Link N300 Wireless Access Point (EAP115 V4) v5.0.4 Build 20220216. A specially crafted series of network requests can lead to arbitrary command execution. An attacker can send a sequence of unauthenticated packets to trigger this vulnerability.This vulnerability impacts `uclited` on the EAP115(V4) 5.0.4 Build 20220216 of the N300 Wireless Gigabit Access Point.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2023-1862"
+    ],
+    "受影响版本": [
+      "v5.1.0 Build 20220926"
+    ],
+    "公开日期": "2024年04月09日"
+  },
+  {
+    "设备品牌": "Tp-Link",
+    "设备类型": "无线设备",
+    "产品型号": "AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3)",
+    "CVE编号": "CVE-2023-49133",
+    "漏洞描述": "A command execution vulnerability exists in the tddpd enable_test_mode functionality of Tp-Link AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3) v5.1.0 Build 20220926 and Tp-Link N300 Wireless Access Point (EAP115 V4) v5.0.4 Build 20220216. A specially crafted series of network requests can lead to arbitrary command execution. An attacker can send a sequence of unauthenticated packets to trigger this vulnerability.This vulnerability impacts `uclited` on the EAP225(V3) 5.1.0 Build 20220926 of the AC1350 Wireless MU-MIMO Gigabit Access Point.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2023-1862"
+    ],
+    "受影响版本": [
+      "v5.1.0 Build 20220926"
+    ],
+    "公开日期": "2024年04月09日"
+  },
+  {
+    "设备品牌": "Tp-Link",
+    "设备类型": "无线设备",
+    "产品型号": "AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3)",
+    "CVE编号": "CVE-2023-49074",
+    "漏洞描述": "A denial of service vulnerability exists in the TDDP functionality of Tp-Link AC1350 Wireless MU-MIMO Gigabit Access Point (EAP225 V3) v5.1.0 Build 20220926. A specially crafted series of network requests can lead to reset to factory settings. An attacker can send a sequence of unauthenticated packets to trigger this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2023-1861"
+    ],
+    "受影响版本": [
+      "v5.1.0 Build 20220926"
+    ],
+    "公开日期": "2024年04月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-38902",
+    "漏洞描述": "A command injection vulnerability in RG-EW series home routers and repeaters v.EW_3.0(1)B11P219, RG-NBS and RG-S1930 series switches v.SWITCH_3.0(1)B11P219, RG-EG series business VPN routers v.EG_3.0(1)B11P219, EAP and RAP series wireless access points v.AP_3.0(1)B11P219, and NBC series wireless controllers v.AC_3.0(1)B11P219 allows an authorized attacker to execute arbitrary commands on remote devices by sending a POST request to /cgi-bin/luci/api/cmd via the remoteIp field.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://gist.github.com/ZIKH26/18693c67ee7d2f8d2c60231b19194c37"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年08月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-34644",
+    "漏洞描述": "Remote code execution vulnerability in Ruijie Networks Product: RG-EW series home routers and repeaters EW_3.0(1)B11P204, RG-NBS and RG-S1930 series switches SWITCH_3.0(1)B11P218, RG-EG series business VPN routers EG_3.0(1)B11P216, EAP and RAP series wireless access points AP_3.0(1)B11P218, NBC series wireless controllers AC_3.0(1)B11P86 allows unauthorized remote attackers to gain the highest privileges via crafted POST request to /cgi-bin/luci/api/auth.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.ruijie.com.cn/gy/xw-aqtg-gw/91389/",
+      "https://www.ruijienetworks.com/support/securityBulletins/cybersecurity_bulletins/10001"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年07月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-28877",
+    "漏洞描述": "Buffer overflow in in the copy_msg_element function for the devDiscoverHandle server in the TP-Link WR and WDR series, including WDR7400, WDR7500, WDR7660, WDR7800, WDR8400, WDR8500, WDR8600, WDR8620, WDR8640, WDR8660, WR880N, WR886N, WR890N, WR890N, WR882N, and WR708N.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/peanuts62/TP-Link-poc"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月20日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-12475",
+    "漏洞描述": "TP-Link Omada Controller Software 3.2.6 allows Directory Traversal for reading arbitrary files via com.tp_link.eap.web.portal.PortalController.getAdvertiseFile in /opt/tplink/EAPController/lib/eap-web-3.2.6.jar.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://sovietw0rm.wordpress.com/2020/04/29/tp-link-omada-controller-directory-traversal-vulnerability/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年05月04日"
+  }
+]

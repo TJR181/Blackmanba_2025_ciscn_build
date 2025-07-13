@@ -1,0 +1,604 @@
+[
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-38479",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndmaengine: fsl-edma: free irq correctly in remove path\n\nAdd fsl_edma->txirq/errirq check to avoid below warning because no\nerrirq at i.MX9 platform. Otherwise there will be kernel dump:\nWARNING: CPU: 0 PID: 11 at kernel/irq/devres.c:144 devm_free_irq+0x74/0x80\nModules linked in:\nCPU: 0 UID: 0 PID: 11 Comm: kworker/u8:0 Not tainted 6.12.0-rc7#18\nHardware name: NXP i.MX93 11X11 EVK board (DT)\nWorkqueue: events_unbound deferred_probe_work_func\npstate: 60400009 (nZCv daif +PAN -UAO -TCO -DIT -SSBS BTYPE=--)\npc : devm_free_irq+0x74/0x80\nlr : devm_free_irq+0x48/0x80\nCall trace:\n devm_free_irq+0x74/0x80 (P)\n devm_free_irq+0x48/0x80 (L)\n fsl_edma_remove+0xc4/0xc8\n platform_remove+0x28/0x44\n device_remove+0x4c/0x80",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/55e2dbe2ba787d4fc2306f6bb2f43fb32176e184",
+      "https://git.kernel.org/stable/c/38ff8769074db27387cb2323aaa751e59d168e6a",
+      "https://git.kernel.org/stable/c/f3834d2d68749e4760c27325149765930ad876fd",
+      "https://git.kernel.org/stable/c/fa70c4c3c580c239a0f9e83a14770ab026e8d820"
+    ],
+    "受影响版本": [
+      "44eb827264de4f14d8317692441e13f5e2aadbf2"
+    ],
+    "公开日期": "2025年04月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-38152",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nremoteproc: core: Clear table_sz when rproc_shutdown\n\nThere is case as below could trigger kernel dump:\nUse U-Boot to start remote processor(rproc) with resource table\npublished to a fixed address by rproc. After Kernel boots up,\nstop the rproc, load a new firmware which doesn't have resource table\n,and start rproc.\n\nWhen starting rproc with a firmware not have resource table,\n`memcpy(loaded_table, rproc->cached_table, rproc->table_sz)` will\ntrigger dump, because rproc->cache_table is set to NULL during the last\nstop operation, but rproc->table_sz is still valid.\n\nThis issue is found on i.MX8MP and i.MX9.\n\nDump as below:\nUnable to handle kernel NULL pointer dereference at virtual address 0000000000000000\nMem abort info:\n  ESR = 0x0000000096000004\n  EC = 0x25: DABT (current EL), IL = 32 bits\n  SET = 0, FnV = 0\n  EA = 0, S1PTW = 0\n  FSC = 0x04: level 0 translation fault\nData abort info:\n  ISV = 0, ISS = 0x00000004, ISS2 = 0x00000000\n  CM = 0, WnR = 0, TnD = 0, TagAccess = 0\n  GCS = 0, Overlay = 0, DirtyBit = 0, Xs = 0\nuser pgtable: 4k pages, 48-bit VAs, pgdp=000000010af63000\n[0000000000000000] pgd=0000000000000000, p4d=0000000000000000\nInternal error: Oops: 0000000096000004 [#1] PREEMPT SMP\nModules linked in:\nCPU: 2 UID: 0 PID: 1060 Comm: sh Not tainted 6.14.0-rc7-next-20250317-dirty #38\nHardware name: NXP i.MX8MPlus EVK board (DT)\npstate: a0000005 (NzCv daif -PAN -UAO -TCO -DIT -SSBS BTYPE=--)\npc : __pi_memcpy_generic+0x110/0x22c\nlr : rproc_start+0x88/0x1e0\nCall trace:\n __pi_memcpy_generic+0x110/0x22c (P)\n rproc_boot+0x198/0x57c\n state_store+0x40/0x104\n dev_attr_store+0x18/0x2c\n sysfs_kf_write+0x7c/0x94\n kernfs_fop_write_iter+0x120/0x1cc\n vfs_write+0x240/0x378\n ksys_write+0x70/0x108\n __arm64_sys_write+0x1c/0x28\n invoke_syscall+0x48/0x10c\n el0_svc_common.constprop.0+0xc0/0xe0\n do_el0_svc+0x1c/0x28\n el0_svc+0x30/0xcc\n el0t_64_sync_handler+0x10c/0x138\n el0t_64_sync+0x198/0x19c\n\nClear rproc->table_sz to address the issue.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/6e66bca8cd51ebedd5d32426906a38e4a3c69c5f",
+      "https://git.kernel.org/stable/c/e6015ca453b82ec54aec9682dcc38773948fcc48",
+      "https://git.kernel.org/stable/c/7c6bb82a6f3da6ab2d3fbea03901482231708b98",
+      "https://git.kernel.org/stable/c/2df19f5f6f72da6f6ebab7cdb3a3b9f7686bb476",
+      "https://git.kernel.org/stable/c/8e0fd2a3b9852ac3cf540edb06ccc0153b38b5af",
+      "https://git.kernel.org/stable/c/068f6648ff5b0c7adeb6c363fae7fb188aa178fa",
+      "https://git.kernel.org/stable/c/efdde3d73ab25cef4ff2d06783b0aad8b093c0e4"
+    ],
+    "受影响版本": [
+      "9dc9507f1880fb6225e3e058cb5219b152cbf198"
+    ],
+    "公开日期": "2025年04月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-22102",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: btnxpuart: Fix kernel panic during FW release\n\nThis fixes a kernel panic seen during release FW in a stress test\nscenario where WLAN and BT FW download occurs simultaneously, and due to\na HW bug, chip sends out only 1 bootloader signatures.\n\nWhen driver receives the bootloader signature, it enters FW download\nmode, but since no consequtive bootloader signatures seen, FW file is\nnot requested.\n\nAfter 60 seconds, when FW download times out, release_firmware causes a\nkernel panic.\n\n[ 2601.949184] Unable to handle kernel paging request at virtual address 0000312e6f006573\n[ 2601.992076] user pgtable: 4k pages, 48-bit VAs, pgdp=0000000111802000\n[ 2601.992080] [0000312e6f006573] pgd=0000000000000000, p4d=0000000000000000\n[ 2601.992087] Internal error: Oops: 0000000096000021 [#1] PREEMPT SMP\n[ 2601.992091] Modules linked in: algif_hash algif_skcipher af_alg btnxpuart(O) pciexxx(O) mlan(O) overlay fsl_jr_uio caam_jr caamkeyblob_desc caamhash_desc caamalg_desc crypto_engine authenc libdes crct10dif_ce polyval_ce snd_soc_fsl_easrc snd_soc_fsl_asoc_card imx8_media_dev(C) snd_soc_fsl_micfil polyval_generic snd_soc_fsl_xcvr snd_soc_fsl_sai snd_soc_imx_audmux snd_soc_fsl_asrc snd_soc_imx_card snd_soc_imx_hdmi snd_soc_fsl_aud2htx snd_soc_fsl_utils imx_pcm_dma dw_hdmi_cec flexcan can_dev\n[ 2602.001825] CPU: 2 PID: 20060 Comm: hciconfig Tainted: G         C O       6.6.23-lts-next-06236-gb586a521770e #1\n[ 2602.010182] Hardware name: NXP i.MX8MPlus EVK board (DT)\n[ 2602.010185] pstate: 60000005 (nZCv daif -PAN -UAO -TCO -DIT -SSBS BTYPE=--)\n[ 2602.010191] pc : _raw_spin_lock+0x34/0x68\n[ 2602.010201] lr : free_fw_priv+0x20/0xfc\n[ 2602.020561] sp : ffff800089363b30\n[ 2602.020563] x29: ffff800089363b30 x28: ffff0000d0eb5880 x27: 0000000000000000\n[ 2602.020570] x26: 0000000000000000 x25: ffff0000d728b330 x24: 0000000000000000\n[ 2602.020577] x23: ffff0000dc856f38\n[ 2602.033797] x22: ffff800089363b70 x21: ffff0000dc856000\n[ 2602.033802] x20: ff00312e6f006573 x19: ffff0000d0d9ea80 x18: 0000000000000000\n[ 2602.033809] x17: 0000000000000000 x16: 0000000000000000 x15: 0000aaaad80dd480\n[ 2602.083320] x14: 0000000000000000 x13: 00000000000001b9 x12: 0000000000000002\n[ 2602.083326] x11: 0000000000000000 x10: 0000000000000a60 x9 : ffff800089363a30\n[ 2602.083333] x8 : ffff0001793d75c0 x7 : ffff0000d6dbc400 x6 : 0000000000000000\n[ 2602.083339] x5 : 00000000410fd030 x4 : 0000000000000000 x3 : 0000000000000001\n[ 2602.083346] x2 : 0000000000000000 x1 : 0000000000000001 x0 : ff00312e6f006573\n[ 2602.083354] Call trace:\n[ 2602.083356]  _raw_spin_lock+0x34/0x68\n[ 2602.083364]  release_firmware+0x48/0x6c\n[ 2602.083370]  nxp_setup+0x3c4/0x540 [btnxpuart]\n[ 2602.083383]  hci_dev_open_sync+0xf0/0xa34\n[ 2602.083391]  hci_dev_open+0xd8/0x178\n[ 2602.083399]  hci_sock_ioctl+0x3b0/0x590\n[ 2602.083405]  sock_do_ioctl+0x60/0x118\n[ 2602.083413]  sock_ioctl+0x2f4/0x374\n[ 2602.091430]  __arm64_sys_ioctl+0xac/0xf0\n[ 2602.091437]  invoke_syscall+0x48/0x110\n[ 2602.091445]  el0_svc_common.constprop.0+0xc0/0xe0\n[ 2602.091452]  do_el0_svc+0x1c/0x28\n[ 2602.091457]  el0_svc+0x40/0xe4\n[ 2602.091465]  el0t_64_sync_handler+0x120/0x12c\n[ 2602.091470]  el0t_64_sync+0x190/0x194",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/a0a736d9857cadd87ae48b151d787e28954ea831",
+      "https://git.kernel.org/stable/c/d22496de5049d9b8f5b6d8623682a56b3c3d7e18",
+      "https://git.kernel.org/stable/c/6749cf49eff7ce6dadcb603c5c8db70b28079a5d",
+      "https://git.kernel.org/stable/c/1f77c05408c96bc0b58ae476a9cadc9e5b9cfd0f"
+    ],
+    "受影响版本": [
+      "689ca16e523278470c38832a3010645a78c544d8"
+    ],
+    "公开日期": "2025年04月16日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-58054",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nstaging: media: max96712: fix kernel oops when removing module\n\nThe following kernel oops is thrown when trying to remove the max96712\nmodule:\n\nUnable to handle kernel paging request at virtual address 00007375746174db\nMem abort info:\n  ESR = 0x0000000096000004\n  EC = 0x25: DABT (current EL), IL = 32 bits\n  SET = 0, FnV = 0\n  EA = 0, S1PTW = 0\n  FSC = 0x04: level 0 translation fault\nData abort info:\n  ISV = 0, ISS = 0x00000004, ISS2 = 0x00000000\n  CM = 0, WnR = 0, TnD = 0, TagAccess = 0\n  GCS = 0, Overlay = 0, DirtyBit = 0, Xs = 0\nuser pgtable: 4k pages, 48-bit VAs, pgdp=000000010af89000\n[00007375746174db] pgd=0000000000000000, p4d=0000000000000000\nInternal error: Oops: 0000000096000004 [#1] PREEMPT SMP\nModules linked in: crct10dif_ce polyval_ce mxc_jpeg_encdec flexcan\n    snd_soc_fsl_sai snd_soc_fsl_asoc_card snd_soc_fsl_micfil dwc_mipi_csi2\n    imx_csi_formatter polyval_generic v4l2_jpeg imx_pcm_dma can_dev\n    snd_soc_imx_audmux snd_soc_wm8962 snd_soc_imx_card snd_soc_fsl_utils\n    max96712(C-) rpmsg_ctrl rpmsg_char pwm_fan fuse\n    [last unloaded: imx8_isi]\nCPU: 0 UID: 0 PID: 754 Comm: rmmod\n\t    Tainted: G         C    6.12.0-rc6-06364-g327fec852c31 #17\nTainted: [C]=CRAP\nHardware name: NXP i.MX95 19X19 board (DT)\npstate: 60400009 (nZCv daif +PAN -UAO -TCO -DIT -SSBS BTYPE=--)\npc : led_put+0x1c/0x40\nlr : v4l2_subdev_put_privacy_led+0x48/0x58\nsp : ffff80008699bbb0\nx29: ffff80008699bbb0 x28: ffff00008ac233c0 x27: 0000000000000000\nx26: 0000000000000000 x25: 0000000000000000 x24: 0000000000000000\nx23: ffff000080cf1170 x22: ffff00008b53bd00 x21: ffff8000822ad1c8\nx20: ffff000080ff5c00 x19: ffff00008b53be40 x18: 0000000000000000\nx17: 0000000000000000 x16: 0000000000000000 x15: 0000000000000000\nx14: 0000000000000004 x13: ffff0000800f8010 x12: 0000000000000000\nx11: ffff000082acf5c0 x10: ffff000082acf478 x9 : ffff0000800f8010\nx8 : 0101010101010101 x7 : 7f7f7f7f7f7f7f7f x6 : fefefeff6364626d\nx5 : 8080808000000000 x4 : 0000000000000020 x3 : 00000000553a3dc1\nx2 : ffff00008ac233c0 x1 : ffff00008ac233c0 x0 : ff00737574617473\nCall trace:\n led_put+0x1c/0x40\n v4l2_subdev_put_privacy_led+0x48/0x58\n v4l2_async_unregister_subdev+0x2c/0x1a4\n max96712_remove+0x1c/0x38 [max96712]\n i2c_device_remove+0x2c/0x9c\n device_remove+0x4c/0x80\n device_release_driver_internal+0x1cc/0x228\n driver_detach+0x4c/0x98\n bus_remove_driver+0x6c/0xbc\n driver_unregister+0x30/0x60\n i2c_del_driver+0x54/0x64\n max96712_i2c_driver_exit+0x18/0x1d0 [max96712]\n __arm64_sys_delete_module+0x1a4/0x290\n invoke_syscall+0x48/0x10c\n el0_svc_common.constprop.0+0xc0/0xe0\n do_el0_svc+0x1c/0x28\n el0_svc+0x34/0xd8\n el0t_64_sync_handler+0x120/0x12c\n el0t_64_sync+0x190/0x194\nCode: f9000bf3 aa0003f3 f9402800 f9402000 (f9403400)\n---[ end trace 0000000000000000 ]---\n\nThis happens because in v4l2_i2c_subdev_init(), the i2c_set_cliendata()\nis called again and the data is overwritten to point to sd, instead of\npriv. So, in remove(), the wrong pointer is passed to\nv4l2_async_unregister_subdev(), leading to a crash.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/3311c5395e7322298b659b8addc704b39fb3a59c",
+      "https://git.kernel.org/stable/c/dfde3d63afbaae664c4d36e53cfb4045d5374561",
+      "https://git.kernel.org/stable/c/278a98f6d8a7bbe1110433b057333536e4490edf",
+      "https://git.kernel.org/stable/c/1556b9149b81cc549c13f5e56e81e89404d8a666",
+      "https://git.kernel.org/stable/c/ee1b5046d5cd892a0754ab982aeaaad3702083a5"
+    ],
+    "受影响版本": [
+      "5814f32fef137e34577c4f053272c53e7ca33cd9"
+    ],
+    "公开日期": "2025年03月06日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-57914",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nusb: typec: tcpci: fix NULL pointer issue on shared irq case\n\nThe tcpci_irq() may meet below NULL pointer dereference issue:\n\n[    2.641851] Unable to handle kernel NULL pointer dereference at virtual address 0000000000000010\n[    2.641951] status 0x1, 0x37f\n[    2.650659] Mem abort info:\n[    2.656490]   ESR = 0x0000000096000004\n[    2.660230]   EC = 0x25: DABT (current EL), IL = 32 bits\n[    2.665532]   SET = 0, FnV = 0\n[    2.668579]   EA = 0, S1PTW = 0\n[    2.671715]   FSC = 0x04: level 0 translation fault\n[    2.676584] Data abort info:\n[    2.679459]   ISV = 0, ISS = 0x00000004, ISS2 = 0x00000000\n[    2.684936]   CM = 0, WnR = 0, TnD = 0, TagAccess = 0\n[    2.689980]   GCS = 0, Overlay = 0, DirtyBit = 0, Xs = 0\n[    2.695284] [0000000000000010] user address but active_mm is swapper\n[    2.701632] Internal error: Oops: 0000000096000004 [#1] PREEMPT SMP\n[    2.707883] Modules linked in:\n[    2.710936] CPU: 1 UID: 0 PID: 87 Comm: irq/111-2-0051 Not tainted 6.12.0-rc6-06316-g7f63786ad3d1-dirty #4\n[    2.720570] Hardware name: NXP i.MX93 11X11 EVK board (DT)\n[    2.726040] pstate: 60400009 (nZCv daif +PAN -UAO -TCO -DIT -SSBS BTYPE=--)\n[    2.732989] pc : tcpci_irq+0x38/0x318\n[    2.736647] lr : _tcpci_irq+0x14/0x20\n[    2.740295] sp : ffff80008324bd30\n[    2.743597] x29: ffff80008324bd70 x28: ffff800080107894 x27: ffff800082198f70\n[    2.750721] x26: ffff0000050e6680 x25: ffff000004d172ac x24: ffff0000050f0000\n[    2.757845] x23: ffff000004d17200 x22: 0000000000000001 x21: ffff0000050f0000\n[    2.764969] x20: ffff000004d17200 x19: 0000000000000000 x18: 0000000000000001\n[    2.772093] x17: 0000000000000000 x16: ffff80008183d8a0 x15: ffff00007fbab040\n[    2.779217] x14: ffff00007fb918c0 x13: 0000000000000000 x12: 000000000000017a\n[    2.786341] x11: 0000000000000001 x10: 0000000000000a90 x9 : ffff80008324bd00\n[    2.793465] x8 : ffff0000050f0af0 x7 : ffff00007fbaa840 x6 : 0000000000000031\n[    2.800589] x5 : 000000000000017a x4 : 0000000000000002 x3 : 0000000000000002\n[    2.807713] x2 : ffff80008324bd3a x1 : 0000000000000010 x0 : 0000000000000000\n[    2.814838] Call trace:\n[    2.817273]  tcpci_irq+0x38/0x318\n[    2.820583]  _tcpci_irq+0x14/0x20\n[    2.823885]  irq_thread_fn+0x2c/0xa8\n[    2.827456]  irq_thread+0x16c/0x2f4\n[    2.830940]  kthread+0x110/0x114\n[    2.834164]  ret_from_fork+0x10/0x20\n[    2.837738] Code: f9426420 f9001fe0 d2800000 52800201 (f9400a60)\n\nThis may happen on shared irq case. Such as two Type-C ports share one\nirq. After the first port finished tcpci_register_port(), it may trigger\ninterrupt. However, if the interrupt comes by chance the 2nd port finishes\ndevm_request_threaded_irq(), the 2nd port interrupt handler will run at\nfirst. Then the above issue happens due to tcpci is still a NULL pointer\nin tcpci_irq() when dereference to regmap.\n\n  devm_request_threaded_irq()\n\t\t\t\t<-- port1 irq comes\n  disable_irq(client->irq);\n  tcpci_register_port()\n\nThis will restore the logic to the state before commit (77e85107a771 \"usb:\ntypec: tcpci: support edge irq\").\n\nHowever, moving tcpci_register_port() earlier creates a problem when use\nedge irq because tcpci_init() will be called before\ndevm_request_threaded_irq(). The tcpci_init() writes the ALERT_MASK to\nthe hardware to tell it to start generating interrupts but we're not ready\nto deal with them yet, then the ALERT events may be missed and ALERT line\nwill not recover to high level forever. To avoid the issue, this will also\nset ALERT_MASK register after devm_request_threaded_irq() return.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/8586d6ea623e48b2bd38304bbc52b0b8228816ff",
+      "https://git.kernel.org/stable/c/862a9c0f68487fd6ced15622d9cdcec48f8b5aaa"
+    ],
+    "受影响版本": [
+      "77e85107a7717ecb755cf77a2752a2aadd28c4e3"
+    ],
+    "公开日期": "2025年01月19日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-57809",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nPCI: imx6: Fix suspend/resume support on i.MX6QDL\n\nThe suspend/resume functionality is currently broken on the i.MX6QDL\nplatform, as documented in the NXP errata (ERR005723):\n\n  https://www.nxp.com/docs/en/errata/IMX6DQCE.pdf\n\nThis patch addresses the issue by sharing most of the suspend/resume\nsequences used by other i.MX devices, while avoiding modifications to\ncritical registers that disrupt the PCIe functionality. It targets the\nsame problem as the following downstream commit:\n\n  https://github.com/nxp-imx/linux-imx/commit/4e92355e1f79d225ea842511fcfd42b343b32995\n\nUnlike the downstream commit, this patch also resets the connected PCIe\ndevice if possible. Without this reset, certain drivers, such as ath10k\nor iwlwifi, will crash on resume. The device reset is also done by the\ndriver on other i.MX platforms, making this patch consistent with\nexisting practices.\n\nUpon resuming, the kernel will hang and display an error. Here's an\nexample of the error encountered with the ath10k driver:\n\n  ath10k_pci 0000:01:00.0: Unable to change power state from D3hot to D0, device inaccessible\n  Unhandled fault: imprecise external abort (0x1406) at 0x0106f944\n\nWithout this patch, suspend/resume will fail on i.MX6QDL devices if a\nPCIe device is connected.\n\n[kwilczynski: commit log, added tag for stable releases]",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/ac43ea3d27a8f9beadf3af66c9ea4a566ebfff1f",
+      "https://git.kernel.org/stable/c/0a726f542d7c8cc0f9c5ed7df5a4bd4b59ac21b3"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2025年01月11日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-56575",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: imx-jpeg: Ensure power suppliers be suspended before detach them\n\nThe power suppliers are always requested to suspend asynchronously,\ndev_pm_domain_detach() requires the caller to ensure proper\nsynchronization of this function with power management callbacks.\notherwise the detach may led to kernel panic, like below:\n\n[ 1457.107934] Unable to handle kernel NULL pointer dereference at virtual address 0000000000000040\n[ 1457.116777] Mem abort info:\n[ 1457.119589]   ESR = 0x0000000096000004\n[ 1457.123358]   EC = 0x25: DABT (current EL), IL = 32 bits\n[ 1457.128692]   SET = 0, FnV = 0\n[ 1457.131764]   EA = 0, S1PTW = 0\n[ 1457.134920]   FSC = 0x04: level 0 translation fault\n[ 1457.139812] Data abort info:\n[ 1457.142707]   ISV = 0, ISS = 0x00000004, ISS2 = 0x00000000\n[ 1457.148196]   CM = 0, WnR = 0, TnD = 0, TagAccess = 0\n[ 1457.153256]   GCS = 0, Overlay = 0, DirtyBit = 0, Xs = 0\n[ 1457.158563] user pgtable: 4k pages, 48-bit VAs, pgdp=00000001138b6000\n[ 1457.165000] [0000000000000040] pgd=0000000000000000, p4d=0000000000000000\n[ 1457.171792] Internal error: Oops: 0000000096000004 [#1] PREEMPT SMP\n[ 1457.178045] Modules linked in: v4l2_jpeg wave6_vpu_ctrl(-) [last unloaded: mxc_jpeg_encdec]\n[ 1457.186383] CPU: 0 PID: 51938 Comm: kworker/0:3 Not tainted 6.6.36-gd23d64eea511 #66\n[ 1457.194112] Hardware name: NXP i.MX95 19X19 board (DT)\n[ 1457.199236] Workqueue: pm pm_runtime_work\n[ 1457.203247] pstate: 60400009 (nZCv daif +PAN -UAO -TCO -DIT -SSBS BTYPE=--)\n[ 1457.210188] pc : genpd_runtime_suspend+0x20/0x290\n[ 1457.214886] lr : __rpm_callback+0x48/0x1d8\n[ 1457.218968] sp : ffff80008250bc50\n[ 1457.222270] x29: ffff80008250bc50 x28: 0000000000000000 x27: 0000000000000000\n[ 1457.229394] x26: 0000000000000000 x25: 0000000000000008 x24: 00000000000f4240\n[ 1457.236518] x23: 0000000000000000 x22: ffff00008590f0e4 x21: 0000000000000008\n[ 1457.243642] x20: ffff80008099c434 x19: ffff00008590f000 x18: ffffffffffffffff\n[ 1457.250766] x17: 5300326563697665 x16: 645f676e696c6f6f x15: 63343a6d726f6674\n[ 1457.257890] x14: 0000000000000004 x13: 00000000000003a4 x12: 0000000000000002\n[ 1457.265014] x11: 0000000000000000 x10: 0000000000000a60 x9 : ffff80008250bbb0\n[ 1457.272138] x8 : ffff000092937200 x7 : ffff0003fdf6af80 x6 : 0000000000000000\n[ 1457.279262] x5 : 00000000410fd050 x4 : 0000000000200000 x3 : 0000000000000000\n[ 1457.286386] x2 : 0000000000000000 x1 : 0000000000000000 x0 : ffff00008590f000\n[ 1457.293510] Call trace:\n[ 1457.295946]  genpd_runtime_suspend+0x20/0x290\n[ 1457.300296]  __rpm_callback+0x48/0x1d8\n[ 1457.304038]  rpm_callback+0x6c/0x78\n[ 1457.307515]  rpm_suspend+0x10c/0x570\n[ 1457.311077]  pm_runtime_work+0xc4/0xc8\n[ 1457.314813]  process_one_work+0x138/0x248\n[ 1457.318816]  worker_thread+0x320/0x438\n[ 1457.322552]  kthread+0x110/0x114\n[ 1457.325767]  ret_from_fork+0x10/0x20",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/f3c4e088ec01cae45931a18ddf7cae0f4d72e1c5",
+      "https://git.kernel.org/stable/c/12914fd765ba4f9d6a9a50439e8dd2e9f91423f2",
+      "https://git.kernel.org/stable/c/b7a830bbc25da0f641e3ef2bac3b1766b2777a8b",
+      "https://git.kernel.org/stable/c/2f86d104539fab9181ea7b5721f40e7b92a8bf67",
+      "https://git.kernel.org/stable/c/fd0af4cd35da0eb550ef682b71cda70a4e36f6b9"
+    ],
+    "受影响版本": [
+      "2db16c6ed72ce644d5639b3ed15e5817442db4ba"
+    ],
+    "公开日期": "2024年12月27日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-53046",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\narm64: dts: imx8ulp: correct the flexspi compatible string\n\nThe flexspi on imx8ulp only has 16 LUTs, and imx8mm flexspi has\n32 LUTs, so correct the compatible string here, otherwise will\nmeet below error:\n\n[    1.119072] ------------[ cut here ]------------\n[    1.123926] WARNING: CPU: 0 PID: 1 at drivers/spi/spi-nxp-fspi.c:855 nxp_fspi_exec_op+0xb04/0xb64\n[    1.133239] Modules linked in:\n[    1.136448] CPU: 0 UID: 0 PID: 1 Comm: swapper/0 Not tainted 6.11.0-rc6-next-20240902-00001-g131bf9439dd9 #69\n[    1.146821] Hardware name: NXP i.MX8ULP EVK (DT)\n[    1.151647] pstate: 40000005 (nZcv daif -PAN -UAO -TCO -DIT -SSBS BTYPE=--)\n[    1.158931] pc : nxp_fspi_exec_op+0xb04/0xb64\n[    1.163496] lr : nxp_fspi_exec_op+0xa34/0xb64\n[    1.168060] sp : ffff80008002b2a0\n[    1.171526] x29: ffff80008002b2d0 x28: 0000000000000000 x27: 0000000000000000\n[    1.179002] x26: ffff2eb645542580 x25: ffff800080610014 x24: ffff800080610000\n[    1.186480] x23: ffff2eb645548080 x22: 0000000000000006 x21: ffff2eb6455425e0\n[    1.193956] x20: 0000000000000000 x19: ffff80008002b5e0 x18: ffffffffffffffff\n[    1.201432] x17: ffff2eb644467508 x16: 0000000000000138 x15: 0000000000000002\n[    1.208907] x14: 0000000000000000 x13: ffff2eb6400d8080 x12: 00000000ffffff00\n[    1.216378] x11: 0000000000000000 x10: ffff2eb6400d8080 x9 : ffff2eb697adca80\n[    1.223850] x8 : ffff2eb697ad3cc0 x7 : 0000000100000000 x6 : 0000000000000001\n[    1.231324] x5 : 0000000000000000 x4 : 0000000000000000 x3 : 00000000000007a6\n[    1.238795] x2 : 0000000000000000 x1 : 00000000000001ce x0 : 00000000ffffff92\n[    1.246267] Call trace:\n[    1.248824]  nxp_fspi_exec_op+0xb04/0xb64\n[    1.253031]  spi_mem_exec_op+0x3a0/0x430\n[    1.257139]  spi_nor_read_id+0x80/0xcc\n[    1.261065]  spi_nor_scan+0x1ec/0xf10\n[    1.264901]  spi_nor_probe+0x108/0x2fc\n[    1.268828]  spi_mem_probe+0x6c/0xbc\n[    1.272574]  spi_probe+0x84/0xe4\n[    1.275958]  really_probe+0xbc/0x29c\n[    1.279713]  __driver_probe_device+0x78/0x12c\n[    1.284277]  driver_probe_device+0xd8/0x15c\n[    1.288660]  __device_attach_driver+0xb8/0x134\n[    1.293316]  bus_for_each_drv+0x88/0xe8\n[    1.297337]  __device_attach+0xa0/0x190\n[    1.301353]  device_initial_probe+0x14/0x20\n[    1.305734]  bus_probe_device+0xac/0xb0\n[    1.309752]  device_add+0x5d0/0x790\n[    1.313408]  __spi_add_device+0x134/0x204\n[    1.317606]  of_register_spi_device+0x3b4/0x590\n[    1.322348]  spi_register_controller+0x47c/0x754\n[    1.327181]  devm_spi_register_controller+0x4c/0xa4\n[    1.332289]  nxp_fspi_probe+0x1cc/0x2b0\n[    1.336307]  platform_probe+0x68/0xc4\n[    1.340145]  really_probe+0xbc/0x29c\n[    1.343893]  __driver_probe_device+0x78/0x12c\n[    1.348457]  driver_probe_device+0xd8/0x15c\n[    1.352838]  __driver_attach+0x90/0x19c\n[    1.356857]  bus_for_each_dev+0x7c/0xdc\n[    1.360877]  driver_attach+0x24/0x30\n[    1.364624]  bus_add_driver+0xe4/0x208\n[    1.368552]  driver_register+0x5c/0x124\n[    1.372573]  __platform_driver_register+0x28/0x34\n[    1.377497]  nxp_fspi_driver_init+0x1c/0x28\n[    1.381888]  do_one_initcall+0x80/0x1c8\n[    1.385908]  kernel_init_freeable+0x1c4/0x28c\n[    1.390472]  kernel_init+0x20/0x1d8\n[    1.394138]  ret_from_fork+0x10/0x20\n[    1.397885] ---[ end trace 0000000000000000 ]---\n[    1.407908] ------------[ cut here ]------------",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/e3fb0e6afcc399660770428a35162b4880e2e14e",
+      "https://git.kernel.org/stable/c/c3c02fa6a560b3af7999a067cd387970f4b3f1fa",
+      "https://git.kernel.org/stable/c/409dc5196d5b6eb67468a06bf4d2d07d7225a67b"
+    ],
+    "受影响版本": [
+      "ef89fd56bdfcf5d8039bb64c76d2f8c9ac908ca7"
+    ],
+    "公开日期": "2024年11月19日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-49885",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmm, slub: avoid zeroing kmalloc redzone\n\nSince commit 946fa0dbf2d8 (\"mm/slub: extend redzone check to extra\nallocated kmalloc space than requested\"), setting orig_size treats\nthe wasted space (object_size - orig_size) as a redzone. However with\ninit_on_free=1 we clear the full object->size, including the redzone.\n\nAdditionally we clear the object metadata, including the stored orig_size,\nmaking it zero, which makes check_object() treat the whole object as a\nredzone.\n\nThese issues lead to the following BUG report with \"slub_debug=FUZ\ninit_on_free=1\":\n\n[    0.000000] =============================================================================\n[    0.000000] BUG kmalloc-8 (Not tainted): kmalloc Redzone overwritten\n[    0.000000] -----------------------------------------------------------------------------\n[    0.000000]\n[    0.000000] 0xffff000010032858-0xffff00001003285f @offset=2136. First byte 0x0 instead of 0xcc\n[    0.000000] FIX kmalloc-8: Restoring kmalloc Redzone 0xffff000010032858-0xffff00001003285f=0xcc\n[    0.000000] Slab 0xfffffdffc0400c80 objects=36 used=23 fp=0xffff000010032a18 flags=0x3fffe0000000200(workingset|node=0|zone=0|lastcpupid=0x1ffff)\n[    0.000000] Object 0xffff000010032858 @offset=2136 fp=0xffff0000100328c8\n[    0.000000]\n[    0.000000] Redzone  ffff000010032850: cc cc cc cc cc cc cc cc                          ........\n[    0.000000] Object   ffff000010032858: cc cc cc cc cc cc cc cc                          ........\n[    0.000000] Redzone  ffff000010032860: cc cc cc cc cc cc cc cc                          ........\n[    0.000000] Padding  ffff0000100328b4: 00 00 00 00 00 00 00 00 00 00 00 00              ............\n[    0.000000] CPU: 0 UID: 0 PID: 0 Comm: swapper/0 Not tainted 6.11.0-rc3-next-20240814-00004-g61844c55c3f4 #144\n[    0.000000] Hardware name: NXP i.MX95 19X19 board (DT)\n[    0.000000] Call trace:\n[    0.000000]  dump_backtrace+0x90/0xe8\n[    0.000000]  show_stack+0x18/0x24\n[    0.000000]  dump_stack_lvl+0x74/0x8c\n[    0.000000]  dump_stack+0x18/0x24\n[    0.000000]  print_trailer+0x150/0x218\n[    0.000000]  check_object+0xe4/0x454\n[    0.000000]  free_to_partial_list+0x2f8/0x5ec\n\nTo address the issue, use orig_size to clear the used area. And restore\nthe value of orig_size after clear the remaining area.\n\nWhen CONFIG_SLUB_DEBUG not defined, (get_orig_size()' directly returns\ns->object_size. So when using memset to init the area, the size can simply\nbe orig_size, as orig_size returns object_size when CONFIG_SLUB_DEBUG not\nenabled. And orig_size can never be bigger than object_size.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/7a2e823a19746d54052c625faecf0d2d6c52ee0a",
+      "https://git.kernel.org/stable/c/83f0440b2f92227fcce9898118ca7fe7e0d64b1f",
+      "https://git.kernel.org/stable/c/59090e479ac78ae18facd4c58eb332562a23020e"
+    ],
+    "受影响版本": [
+      "946fa0dbf2d8923a587f7348adf16563d59f1b3d"
+    ],
+    "公开日期": "2024年10月21日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-46853",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nspi: nxp-fspi: fix the KASAN report out-of-bounds bug\n\nChange the memcpy length to fix the out-of-bounds issue when writing the\ndata that is not 4 byte aligned to TX FIFO.\n\nTo reproduce the issue, write 3 bytes data to NOR chip.\n\ndd if=3b of=/dev/mtd0\n[   36.926103] ==================================================================\n[   36.933409] BUG: KASAN: slab-out-of-bounds in nxp_fspi_exec_op+0x26ec/0x2838\n[   36.940514] Read of size 4 at addr ffff00081037c2a0 by task dd/455\n[   36.946721]\n[   36.948235] CPU: 3 UID: 0 PID: 455 Comm: dd Not tainted 6.11.0-rc5-gc7b0e37c8434 #1070\n[   36.956185] Hardware name: Freescale i.MX8QM MEK (DT)\n[   36.961260] Call trace:\n[   36.963723]  dump_backtrace+0x90/0xe8\n[   36.967414]  show_stack+0x18/0x24\n[   36.970749]  dump_stack_lvl+0x78/0x90\n[   36.974451]  print_report+0x114/0x5cc\n[   36.978151]  kasan_report+0xa4/0xf0\n[   36.981670]  __asan_report_load_n_noabort+0x1c/0x28\n[   36.986587]  nxp_fspi_exec_op+0x26ec/0x2838\n[   36.990800]  spi_mem_exec_op+0x8ec/0xd30\n[   36.994762]  spi_mem_no_dirmap_read+0x190/0x1e0\n[   36.999323]  spi_mem_dirmap_write+0x238/0x32c\n[   37.003710]  spi_nor_write_data+0x220/0x374\n[   37.007932]  spi_nor_write+0x110/0x2e8\n[   37.011711]  mtd_write_oob_std+0x154/0x1f0\n[   37.015838]  mtd_write_oob+0x104/0x1d0\n[   37.019617]  mtd_write+0xb8/0x12c\n[   37.022953]  mtdchar_write+0x224/0x47c\n[   37.026732]  vfs_write+0x1e4/0x8c8\n[   37.030163]  ksys_write+0xec/0x1d0\n[   37.033586]  __arm64_sys_write+0x6c/0x9c\n[   37.037539]  invoke_syscall+0x6c/0x258\n[   37.041327]  el0_svc_common.constprop.0+0x160/0x22c\n[   37.046244]  do_el0_svc+0x44/0x5c\n[   37.049589]  el0_svc+0x38/0x78\n[   37.052681]  el0t_64_sync_handler+0x13c/0x158\n[   37.057077]  el0t_64_sync+0x190/0x194\n[   37.060775]\n[   37.062274] Allocated by task 455:\n[   37.065701]  kasan_save_stack+0x2c/0x54\n[   37.069570]  kasan_save_track+0x20/0x3c\n[   37.073438]  kasan_save_alloc_info+0x40/0x54\n[   37.077736]  __kasan_kmalloc+0xa0/0xb8\n[   37.081515]  __kmalloc_noprof+0x158/0x2f8\n[   37.085563]  mtd_kmalloc_up_to+0x120/0x154\n[   37.089690]  mtdchar_write+0x130/0x47c\n[   37.093469]  vfs_write+0x1e4/0x8c8\n[   37.096901]  ksys_write+0xec/0x1d0\n[   37.100332]  __arm64_sys_write+0x6c/0x9c\n[   37.104287]  invoke_syscall+0x6c/0x258\n[   37.108064]  el0_svc_common.constprop.0+0x160/0x22c\n[   37.112972]  do_el0_svc+0x44/0x5c\n[   37.116319]  el0_svc+0x38/0x78\n[   37.119401]  el0t_64_sync_handler+0x13c/0x158\n[   37.123788]  el0t_64_sync+0x190/0x194\n[   37.127474]\n[   37.128977] The buggy address belongs to the object at ffff00081037c2a0\n[   37.128977]  which belongs to the cache kmalloc-8 of size 8\n[   37.141177] The buggy address is located 0 bytes inside of\n[   37.141177]  allocated 3-byte region [ffff00081037c2a0, ffff00081037c2a3)\n[   37.153465]\n[   37.154971] The buggy address belongs to the physical page:\n[   37.160559] page: refcount:1 mapcount:0 mapping:0000000000000000 index:0x0 pfn:0x89037c\n[   37.168596] flags: 0xbfffe0000000000(node=0|zone=2|lastcpupid=0x1ffff)\n[   37.175149] page_type: 0xfdffffff(slab)\n[   37.179021] raw: 0bfffe0000000000 ffff000800002500 dead000000000122 0000000000000000\n[   37.186788] raw: 0000000000000000 0000000080800080 00000001fdffffff 0000000000000000\n[   37.194553] page dumped because: kasan: bad access detected\n[   37.200144]\n[   37.201647] Memory state around the buggy address:\n[   37.206460]  ffff00081037c180: fa fc fc fc fa fc fc fc fa fc fc fc fa fc fc fc\n[   37.213701]  ffff00081037c200: fa fc fc fc 05 fc fc fc 03 fc fc fc 02 fc fc fc\n[   37.220946] >ffff00081037c280: 06 fc fc fc 03 fc fc fc fc fc fc fc fc fc fc fc\n[   37.228186]                                ^\n[   37.232473]  ffff00081037c300: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc\n[   37.239718]  ffff00081037c380: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc\n[   37.246962] ==============================================================\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/aa05db44db5f409f6d91c27b5737efb49fb45d9f",
+      "https://git.kernel.org/stable/c/609260542cf86b459c57618b8cdec8020394b7ad",
+      "https://git.kernel.org/stable/c/491f9646f7ac31af5fca71be1a3e5eb8aa7663ad",
+      "https://git.kernel.org/stable/c/09af8b0ba70072be831f3ec459f4063d570f9e24",
+      "https://git.kernel.org/stable/c/af9ca9ca3e44f48b2a191e100d452fbf850c3d87",
+      "https://git.kernel.org/stable/c/d1a1dfcec77c57b1181da93d11a3db1bc4eefa97",
+      "https://git.kernel.org/stable/c/2a8787c1cdc7be24fdd8953ecd1a8743a1006235"
+    ],
+    "受影响版本": [
+      "a5356aef6a907c2e2aed0caaa2b88b6021394471"
+    ],
+    "公开日期": "2024年09月27日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-44962",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: btnxpuart: Shutdown timer and prevent rearming when driver unloading\n\nWhen unload the btnxpuart driver, its associated timer will be deleted.\nIf the timer happens to be modified at this moment, it leads to the\nkernel call this timer even after the driver unloaded, resulting in\nkernel panic.\nUse timer_shutdown_sync() instead of del_timer_sync() to prevent rearming.\n\npanic log:\n  Internal error: Oops: 0000000086000007 [#1] PREEMPT SMP\n  Modules linked in: algif_hash algif_skcipher af_alg moal(O) mlan(O) crct10dif_ce polyval_ce polyval_generic   snd_soc_imx_card snd_soc_fsl_asoc_card snd_soc_imx_audmux mxc_jpeg_encdec v4l2_jpeg snd_soc_wm8962 snd_soc_fsl_micfil   snd_soc_fsl_sai flexcan snd_soc_fsl_utils ap130x rpmsg_ctrl imx_pcm_dma can_dev rpmsg_char pwm_fan fuse [last unloaded:   btnxpuart]\n  CPU: 5 PID: 723 Comm: memtester Tainted: G           O       6.6.23-lts-next-06207-g4aef2658ac28 #1\n  Hardware name: NXP i.MX95 19X19 board (DT)\n  pstate: 20400009 (nzCv daif +PAN -UAO -TCO -DIT -SSBS BTYPE=--)\n  pc : 0xffff80007a2cf464\n  lr : call_timer_fn.isra.0+0x24/0x80\n...\n  Call trace:\n   0xffff80007a2cf464\n   __run_timers+0x234/0x280\n   run_timer_softirq+0x20/0x40\n   __do_softirq+0x100/0x26c\n   ____do_softirq+0x10/0x1c\n   call_on_irq_stack+0x24/0x4c\n   do_softirq_own_stack+0x1c/0x2c\n   irq_exit_rcu+0xc0/0xdc\n   el0_interrupt+0x54/0xd8\n   __el0_irq_handler_common+0x18/0x24\n   el0t_64_irq_handler+0x10/0x1c\n   el0t_64_irq+0x190/0x194\n  Code: ???????? ???????? ???????? ???????? (????????)\n  ---[ end trace 0000000000000000 ]---\n  Kernel panic - not syncing: Oops: Fatal exception in interrupt\n  SMP: stopping secondary CPUs\n  Kernel Offset: disabled\n  CPU features: 0x0,c0000000,40028143,1000721b\n  Memory Limit: none\n  ---[ end Kernel panic - not syncing: Oops: Fatal exception in interrupt ]---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/4d9adcb94d55e9be8a3e464d9f2ff7d27e2ed016",
+      "https://git.kernel.org/stable/c/28bbb5011a9723700006da67bdb57ab6a914452b",
+      "https://git.kernel.org/stable/c/0d0df1e750bac0fdaa77940e711c1625cff08d33"
+    ],
+    "受影响版本": [
+      "689ca16e523278470c38832a3010645a78c544d8"
+    ],
+    "公开日期": "2024年09月04日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-41094",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/fbdev-dma: Only set smem_start is enable per module option\n\nOnly export struct fb_info.fix.smem_start if that is required by the\nuser and the memory does not come from vmalloc().\n\nSetting struct fb_info.fix.smem_start breaks systems where DMA\nmemory is backed by vmalloc address space. An example error is\nshown below.\n\n[    3.536043] ------------[ cut here ]------------\n[    3.540716] virt_to_phys used for non-linear address: 000000007fc4f540 (0xffff800086001000)\n[    3.552628] WARNING: CPU: 4 PID: 61 at arch/arm64/mm/physaddr.c:12 __virt_to_phys+0x68/0x98\n[    3.565455] Modules linked in:\n[    3.568525] CPU: 4 PID: 61 Comm: kworker/u12:5 Not tainted 6.6.23-06226-g4986cc3e1b75-dirty #250\n[    3.577310] Hardware name: NXP i.MX95 19X19 board (DT)\n[    3.582452] Workqueue: events_unbound deferred_probe_work_func\n[    3.588291] pstate: 60400009 (nZCv daif +PAN -UAO -TCO -DIT -SSBS BTYPE=--)\n[    3.595233] pc : __virt_to_phys+0x68/0x98\n[    3.599246] lr : __virt_to_phys+0x68/0x98\n[    3.603276] sp : ffff800083603990\n[    3.677939] Call trace:\n[    3.680393]  __virt_to_phys+0x68/0x98\n[    3.684067]  drm_fbdev_dma_helper_fb_probe+0x138/0x238\n[    3.689214]  __drm_fb_helper_initial_config_and_unlock+0x2b0/0x4c0\n[    3.695385]  drm_fb_helper_initial_config+0x4c/0x68\n[    3.700264]  drm_fbdev_dma_client_hotplug+0x8c/0xe0\n[    3.705161]  drm_client_register+0x60/0xb0\n[    3.709269]  drm_fbdev_dma_setup+0x94/0x148\n\nAdditionally, DMA memory is assumed to by contiguous in physical\naddress space, which is not guaranteed by vmalloc().\n\nResolve this by checking the module flag drm_leak_fbdev_smem when\nDRM allocated the instance of struct fb_info. Fbdev-dma then only\nsets smem_start only if required (via FBINFO_HIDE_SMEM_START). Also\nguarantee that the framebuffer is not located in vmalloc address\nspace.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/f29fcfbf6067c0d8c83f84a045da9276c08deac5",
+      "https://git.kernel.org/stable/c/00702cfa8432ac67a72f56de5e1d278ddea2ebde",
+      "https://git.kernel.org/stable/c/d92a7580392ad4681b1d4f9275d00b95375ebe01"
+    ],
+    "受影响版本": [
+      "a51c7663f144606a5f08e772fa3e1e4f2277a614"
+    ],
+    "公开日期": "2024年07月29日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-38594",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: stmmac: move the EST lock to struct stmmac_priv\n\nReinitialize the whole EST structure would also reset the mutex\nlock which is embedded in the EST structure, and then trigger\nthe following warning. To address this, move the lock to struct\nstmmac_priv. We also need to reacquire the mutex lock when doing\nthis initialization.\n\nDEBUG_LOCKS_WARN_ON(lock->magic != lock)\nWARNING: CPU: 3 PID: 505 at kernel/locking/mutex.c:587 __mutex_lock+0xd84/0x1068\n Modules linked in:\n CPU: 3 PID: 505 Comm: tc Not tainted 6.9.0-rc6-00053-g0106679839f7-dirty #29\n Hardware name: NXP i.MX8MPlus EVK board (DT)\n pstate: 60000005 (nZCv daif -PAN -UAO -TCO -DIT -SSBS BTYPE=--)\n pc : __mutex_lock+0xd84/0x1068\n lr : __mutex_lock+0xd84/0x1068\n sp : ffffffc0864e3570\n x29: ffffffc0864e3570 x28: ffffffc0817bdc78 x27: 0000000000000003\n x26: ffffff80c54f1808 x25: ffffff80c9164080 x24: ffffffc080d723ac\n x23: 0000000000000000 x22: 0000000000000002 x21: 0000000000000000\n x20: 0000000000000000 x19: ffffffc083bc3000 x18: ffffffffffffffff\n x17: ffffffc08117b080 x16: 0000000000000002 x15: ffffff80d2d40000\n x14: 00000000000002da x13: ffffff80d2d404b8 x12: ffffffc082b5a5c8\n x11: ffffffc082bca680 x10: ffffffc082bb2640 x9 : ffffffc082bb2698\n x8 : 0000000000017fe8 x7 : c0000000ffffefff x6 : 0000000000000001\n x5 : ffffff8178fe0d48 x4 : 0000000000000000 x3 : 0000000000000027\n x2 : ffffff8178fe0d50 x1 : 0000000000000000 x0 : 0000000000000000\n Call trace:\n  __mutex_lock+0xd84/0x1068\n  mutex_lock_nested+0x28/0x34\n  tc_setup_taprio+0x118/0x68c\n  stmmac_setup_tc+0x50/0xf0\n  taprio_change+0x868/0xc9c",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/b538fefeb1026aad9dcdcbb410c42b56dff8aae9",
+      "https://git.kernel.org/stable/c/487f9030b1ef34bab123f2df2a4ccbe01ba84416",
+      "https://git.kernel.org/stable/c/6f476aff2d8da1a189621c4c16a76a6c534e4312",
+      "https://git.kernel.org/stable/c/36ac9e7f2e5786bd37c5cd91132e1f39c29b8197"
+    ],
+    "受影响版本": [
+      "5ce4cc16d47186f0b76254e6f27beea25bafc1d9",
+      "b2091d47a14e8e6b3f03d792c1b25255d60b3219",
+      "b2aae654a4794ef898ad33a179f341eb610f6b85"
+    ],
+    "公开日期": "2024年06月19日"
+  },
+  {
+    "设备品牌": "usbarmory",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "mxs-dcp",
+    "CVE编号": "CVE-2024-38532",
+    "漏洞描述": "The NXP Data Co-Processor (DCP) is a built-in hardware module for specific NXP SoCs¹ that implements a dedicated AES cryptographic engine for encryption/decryption operations. The dcp_tool reference implementation included in the repository selected the test key, regardless of its `-t` argument. This issue has been patched in commit 26a7.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/usbarmory/mxs-dcp/security/advisories/GHSA-g85c-rh49-p8cq",
+      "https://github.com/usbarmory/mxs-dcp/commit/e5a99cb3d9429e6145495da7d01525c75af426a7"
+    ],
+    "受影响版本": [
+      ">= commit 6151, < commit 26a7"
+    ],
+    "公开日期": "2024年06月28日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-53048",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nusb: typec: tcpm: fix warning when handle discover_identity message\n\nSince both source and sink device can send discover_identity message in\nPD3, kernel may dump below warning:\n\n------------[ cut here ]------------\nWARNING: CPU: 0 PID: 169 at drivers/usb/typec/tcpm/tcpm.c:1446 tcpm_queue_vdm+0xe0/0xf0\nModules linked in:\nCPU: 0 PID: 169 Comm: 1-0050 Not tainted 6.1.1-00038-g6a3c36cf1da2-dirty #567\nHardware name: NXP i.MX8MPlus EVK board (DT)\npstate: 20000005 (nzCv daif -PAN -UAO -TCO -DIT -SSBS BTYPE=--)\npc : tcpm_queue_vdm+0xe0/0xf0\nlr : tcpm_queue_vdm+0x2c/0xf0\nsp : ffff80000c19bcd0\nx29: ffff80000c19bcd0 x28: 0000000000000001 x27: ffff0000d11c8ab8\nx26: ffff0000d11cc000 x25: 0000000000000000 x24: 00000000ff008081\nx23: 0000000000000001 x22: 00000000ff00a081 x21: ffff80000c19bdbc\nx20: 0000000000000000 x19: ffff0000d11c8080 x18: ffffffffffffffff\nx17: 0000000000000000 x16: 0000000000000000 x15: ffff0000d716f580\nx14: 0000000000000001 x13: ffff0000d716f507 x12: 0000000000000001\nx11: 0000000000000000 x10: 0000000000000020 x9 : 00000000000ee098\nx8 : 00000000ffffffff x7 : 000000000000001c x6 : ffff0000d716f580\nx5 : 0000000000000000 x4 : 0000000000000000 x3 : 0000000000000000\nx2 : ffff80000c19bdbc x1 : 00000000ff00a081 x0 : 0000000000000004\nCall trace:\ntcpm_queue_vdm+0xe0/0xf0\ntcpm_pd_rx_handler+0x340/0x1ab0\nkthread_worker_fn+0xcc/0x18c\nkthread+0x10c/0x110\nret_from_fork+0x10/0x20\n---[ end trace 0000000000000000 ]---\n\nBelow sequences may trigger this warning:\n\ntcpm_send_discover_work(work)\n  tcpm_send_vdm(port, USB_SID_PD, CMD_DISCOVER_IDENT, NULL, 0);\n   tcpm_queue_vdm(port, header, data, count);\n    port->vdm_state = VDM_STATE_READY;\n\nvdm_state_machine_work(work);\n\t\t\t<-- received discover_identity from partner\n vdm_run_state_machine(port);\n  port->vdm_state = VDM_STATE_SEND_MESSAGE;\n   mod_vdm_delayed_work(port, x);\n\ntcpm_pd_rx_handler(work);\n tcpm_pd_data_request(port, msg);\n  tcpm_handle_vdm_request(port, msg->payload, cnt);\n   tcpm_queue_vdm(port, response[0], &response[1], rlen - 1);\n--> WARN_ON(port->vdm_state > VDM_STATE_DONE);\n\nFor this case, the state machine could still send out discover\nidentity message later if we skip current discover_identity message.\nSo we should handle the received message firstly and override the pending\ndiscover_identity message without warning in this case. Then, a delayed\nsend_discover work will send discover_identity message again.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/bb579b3f75c60bf488a7c36e092e8be583407d53",
+      "https://git.kernel.org/stable/c/d55ca2d2ea1a7ec553213986993fba8c0257381c",
+      "https://git.kernel.org/stable/c/e37d2c489d71e94ed4a39529bc9520a7fd983d42",
+      "https://git.kernel.org/stable/c/abfc4fa28f0160df61c7149567da4f6494dfb488"
+    ],
+    "受影响版本": [
+      "e00943e916782ae17ca05d654779a84f09481ab8"
+    ],
+    "公开日期": "2025年05月02日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52647",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: nxp: imx8-isi: Check whether crossbar pad is non-NULL before access\n\nWhen translating source to sink streams in the crossbar subdev, the\ndriver tries to locate the remote subdev connected to the sink pad. The\nremote pad may be NULL, if userspace tries to enable a stream that ends\nat an unconnected crossbar sink. When that occurs, the driver\ndereferences the NULL pad, leading to a crash.\n\nPrevent the crash by checking if the pad is NULL before using it, and\nreturn an error if it is.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/c95318607fbe8fdd44991a8dad2e44118e6b8812",
+      "https://git.kernel.org/stable/c/c4bd29bf5b7f67925bc1abd16069f22dadf5f061",
+      "https://git.kernel.org/stable/c/91c8ce42fcde09f1da24acab9013b3e19cb88a4e",
+      "https://git.kernel.org/stable/c/eb2f932100288dbb881eadfed02e1459c6b9504c"
+    ],
+    "受影响版本": [
+      "cf21f328fcafacf4f96e7a30ef9dceede1076378"
+    ],
+    "公开日期": "2024年05月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-39902",
+    "漏洞描述": "A software vulnerability has been identified in the U-Boot Secondary Program Loader (SPL) before 2023.07 on select NXP i.MX 8M family processors. Under certain conditions, a crafted Flattened Image Tree (FIT) format structure can be used to overwrite SPL memory, allowing unauthenticated software to execute on the target, leading to privilege escalation. This affects i.MX 8M, i.MX 8M Mini, i.MX 8M Nano, and i.MX 8M Plus.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://nxp.com",
+      "https://community.nxp.com/t5/i-MX-Security/U-Boot-Secondary-Program-Loader-Authentication-Vulnerability-CVE/ta-p/1736196"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年10月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-50152",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nusb: ohci-nxp: Fix refcount leak in ohci_hcd_nxp_probe\n\nof_parse_phandle() returns a node pointer with refcount\nincremented, we should use of_node_put() on it when not need anymore.\nAdd missing of_node_put() to avoid refcount leak.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/591ab8dbf6c21927f23f83ddb90691f48b86d136",
+      "https://git.kernel.org/stable/c/4db00c2fa6f8c9876a7e20511dccf43b50be9006",
+      "https://git.kernel.org/stable/c/65d36ec409b635dfc2f95f0d7c5877c9d0cb7630",
+      "https://git.kernel.org/stable/c/d35903e9650f4fa79426ce390db8678dbf5ac432",
+      "https://git.kernel.org/stable/c/59026d5cc615da28e0c9806a71bf07065c906464",
+      "https://git.kernel.org/stable/c/a0fbac3bf26a11f084233519ddf3fd5e5bb28939",
+      "https://git.kernel.org/stable/c/50238c4b54c2ac6c2da7a84a4a2b0a570e3da0e2",
+      "https://git.kernel.org/stable/c/302970b4cad3ebfda2c05ce06c322ccdc447d17e"
+    ],
+    "受影响版本": [
+      "73108aa90cbfc663649885a06fe5c1235307de1c"
+    ],
+    "公开日期": "2025年06月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49923",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnfc: nxp-nci: Fix potential memory leak in nxp_nci_send()\n\nnxp_nci_send() will call nxp_nci_i2c_write(), and only free skb when\nnxp_nci_i2c_write() failed. However, even if the nxp_nci_i2c_write()\nrun succeeds, the skb will not be freed in nxp_nci_i2c_write(). As the\nresult, the skb will memleak. nxp_nci_send() should also free the skb\nwhen nxp_nci_i2c_write() succeeds.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/9ae2c9a91ff068f4c3e392f47e8e26a1c9f85ebb",
+      "https://git.kernel.org/stable/c/3cba1f061bfe23fece2841129ca2862cdec29d5c",
+      "https://git.kernel.org/stable/c/3ecf0f4227029b2c42e036b10ff6e5d09e20821e",
+      "https://git.kernel.org/stable/c/7bf1ed6aff0f70434bd0cdd45495e83f1dffb551"
+    ],
+    "受影响版本": [
+      "dece45855a8b0d1dcf48eb01d0822070ded6a4c8"
+    ],
+    "公开日期": "2025年05月01日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-48660",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ngpiolib: cdev: Set lineevent_state::irq after IRQ register successfully\n\nWhen running gpio test on nxp-ls1028 platform with below command\ngpiomon --num-events=3 --rising-edge gpiochip1 25\nThere will be a warning trace as below:\nCall trace:\nfree_irq+0x204/0x360\nlineevent_free+0x64/0x70\ngpio_ioctl+0x598/0x6a0\n__arm64_sys_ioctl+0xb4/0x100\ninvoke_syscall+0x5c/0x130\n......\nel0t_64_sync+0x1a0/0x1a4\nThe reason of this issue is that calling request_threaded_irq()\nfunction failed, and then lineevent_free() is invoked to release\nthe resource. Since the lineevent_state::irq was already set, so\nthe subsequent invocation of free_irq() would trigger the above\nwarning call trace. To fix this issue, set the lineevent_state::irq\nafter the IRQ register successfully.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/657803b918e097e47d99d1489da83a603c36bcdd",
+      "https://git.kernel.org/stable/c/97da736cd11ae73bdf2f5e21e24446b8349e0168",
+      "https://git.kernel.org/stable/c/b1489043d3b9004dd8d5a0357b08b5f0e6691c43",
+      "https://git.kernel.org/stable/c/69bef19d6b9700e96285f4b4e28691cda3dcd0d1"
+    ],
+    "受影响版本": [
+      "468242724143a8e732f82f664b1e77432d149618"
+    ],
+    "公开日期": "2024年04月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-45163",
+    "漏洞描述": "An information-disclosure vulnerability exists on select NXP devices when configured in Serial Download Protocol (SDP) mode: i.MX RT 1010, i.MX RT 1015, i.MX RT 1020, i.MX RT 1050, i.MX RT 1060, i.MX 6 Family, i.MX 7Dual/Solo, i.MX 7ULP, i.MX 8M Quad, i.MX 8M Mini, and Vybrid. In a device security-enabled configuration, memory contents could potentially leak to physically proximate attackers via the respective SDP port in cold and warm boot attacks. (The recommended mitigation is to completely disable the SDP mode by programming a one-time programmable eFUSE. Customers can contact NXP for additional information.)",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://research.nccgroup.com/category/technical-advisory/",
+      "https://nxp.com",
+      "https://research.nccgroup.com/2022/11/17/cve-2022-45163/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年11月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-22819",
+    "漏洞描述": "NXP LPC55S66JBD64, LPC55S66JBD100, LPC55S66JEV98, LPC55S69JBD64, LPC55S69JBD100, and LPC55S69JEV98 microcontrollers (ROM version 1B) have a buffer overflow in parsing SB2 updates before the signature is verified. This can allow an attacker to achieve non-persistent code execution via a crafted unsigned update.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nxp.com",
+      "https://oxide.computer/blog/another-vulnerability-in-the-lpc55s69-rom"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年03月23日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2021-47268",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nusb: typec: tcpm: cancel vdm and state machine hrtimer when unregister tcpm port\n\nA pending hrtimer may expire after the kthread_worker of tcpm port\nis destroyed, see below kernel dump when do module unload, fix it\nby cancel the 2 hrtimers.\n\n[  111.517018] Unable to handle kernel paging request at virtual address ffff8000118cb880\n[  111.518786] blk_update_request: I/O error, dev sda, sector 60061185 op 0x0:(READ) flags 0x0 phys_seg 1 prio class 0\n[  111.526594] Mem abort info:\n[  111.526597]   ESR = 0x96000047\n[  111.526600]   EC = 0x25: DABT (current EL), IL = 32 bits\n[  111.526604]   SET = 0, FnV = 0\n[  111.526607]   EA = 0, S1PTW = 0\n[  111.526610] Data abort info:\n[  111.526612]   ISV = 0, ISS = 0x00000047\n[  111.526615]   CM = 0, WnR = 1\n[  111.526619] swapper pgtable: 4k pages, 48-bit VAs, pgdp=0000000041d75000\n[  111.526623] [ffff8000118cb880] pgd=10000001bffff003, p4d=10000001bffff003, pud=10000001bfffe003, pmd=10000001bfffa003, pte=0000000000000000\n[  111.526642] Internal error: Oops: 96000047 [#1] PREEMPT SMP\n[  111.526647] Modules linked in: dwc3_imx8mp dwc3 phy_fsl_imx8mq_usb [last unloaded: tcpci]\n[  111.526663] CPU: 0 PID: 0 Comm: swapper/0 Not tainted 5.13.0-rc4-00927-gebbe9dbd802c-dirty #36\n[  111.526670] Hardware name: NXP i.MX8MPlus EVK board (DT)\n[  111.526674] pstate: 800000c5 (Nzcv daIF -PAN -UAO -TCO BTYPE=--)\n[  111.526681] pc : queued_spin_lock_slowpath+0x1a0/0x390\n[  111.526695] lr : _raw_spin_lock_irqsave+0x88/0xb4\n[  111.526703] sp : ffff800010003e20\n[  111.526706] x29: ffff800010003e20 x28: ffff00017f380180\n[  111.537156] buffer_io_error: 6 callbacks suppressed\n[  111.537162] Buffer I/O error on dev sda1, logical block 60040704, async page read\n[  111.539932]  x27: ffff00017f3801c0\n[  111.539938] x26: ffff800010ba2490 x25: 0000000000000000 x24: 0000000000000001\n[  111.543025] blk_update_request: I/O error, dev sda, sector 60061186 op 0x0:(READ) flags 0x0 phys_seg 7 prio class 0\n[  111.548304]\n[  111.548306] x23: 00000000000000c0 x22: ffff0000c2a9f184 x21: ffff00017f380180\n[  111.551374] Buffer I/O error on dev sda1, logical block 60040705, async page read\n[  111.554499]\n[  111.554503] x20: ffff0000c5f14210 x19: 00000000000000c0 x18: 0000000000000000\n[  111.557391] Buffer I/O error on dev sda1, logical block 60040706, async page read\n[  111.561218]\n[  111.561222] x17: 0000000000000000 x16: 0000000000000000 x15: 0000000000000000\n[  111.564205] Buffer I/O error on dev sda1, logical block 60040707, async page read\n[  111.570887] x14: 00000000000000f5 x13: 0000000000000001 x12: 0000000000000040\n[  111.570902] x11: ffff0000c05ac6d8\n[  111.583420] Buffer I/O error on dev sda1, logical block 60040708, async page read\n[  111.588978]  x10: 0000000000000000 x9 : 0000000000040000\n[  111.588988] x8 : 0000000000000000\n[  111.597173] Buffer I/O error on dev sda1, logical block 60040709, async page read\n[  111.605766]  x7 : ffff00017f384880 x6 : ffff8000118cb880\n[  111.605777] x5 : ffff00017f384880\n[  111.611094] Buffer I/O error on dev sda1, logical block 60040710, async page read\n[  111.617086]  x4 : 0000000000000000 x3 : ffff0000c2a9f184\n[  111.617096] x2 : ffff8000118cb880\n[  111.622242] Buffer I/O error on dev sda1, logical block 60040711, async page read\n[  111.626927]  x1 : ffff8000118cb880 x0 : ffff00017f384888\n[  111.626938] Call trace:\n[  111.626942]  queued_spin_lock_slowpath+0x1a0/0x390\n[  111.795809]  kthread_queue_work+0x30/0xc0\n[  111.799828]  state_machine_timer_handler+0x20/0x30\n[  111.804624]  __hrtimer_run_queues+0x140/0x1e0\n[  111.808990]  hrtimer_interrupt+0xec/0x2c0\n[  111.813004]  arch_timer_handler_phys+0x38/0x50\n[  111.817456]  handle_percpu_devid_irq+0x88/0x150\n[  111.821991]  __handle_domain_irq+0x80/0xe0\n[  111.826093]  gic_handle_irq+0xc0/0x140\n[  111.829848]  el1_irq+0xbc/0x154\n[  111.832991]  arch_cpu_idle+0x1c/0x2c\n[  111.836572]  default_idle_call+0x24/0x6c\n[  111.840497]  do_idle+0x238/0x2ac\n[  1\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/18eaf0de50eadeeb395b83310b259b21ad8ed0a6",
+      "https://git.kernel.org/stable/c/d0a06696a8a4d99f649240b6f9b8a2e55452ecf5",
+      "https://git.kernel.org/stable/c/3a13ff7ef4349d70d1d18378d661117dd5af8efe"
+    ],
+    "受影响版本": [
+      "3ed8e1c2ac9914a2fcb08ec13476b85319536cea"
+    ],
+    "公开日期": "2024年05月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-44479",
+    "漏洞描述": "NXP Kinetis K82 devices have a buffer over-read via a crafted wlength value in a GET Status-Other request during use of USB In-System Programming (ISP) mode. This discloses protected flash memory.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.darkmatter.ae/xen1thlabs/published-advisories/",
+      "https://github.com/Xen1thLabs-AE/CVE-2021-40154"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-44149",
+    "漏洞描述": "An issue was discovered in Trusted Firmware OP-TEE Trusted OS through 3.15.0. The OPTEE-OS CSU driver for NXP i.MX6UL SoC devices lacks security access configuration for wakeup-related registers, resulting in TrustZone bypass because the NonSecure World can perform arbitrary memory read/write operations on Secure World memory. This involves a v cycle.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/OP-TEE/optee_os/tags",
+      "https://github.com/f-secure-foundry/advisories/blob/master/Security_Advisory-Ref_FSC-HWSEC-VR2021-0002-OP-TEE_TrustZone_bypass_at_wakeup.txt"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-40154",
+    "漏洞描述": "NXP LPC55S69 devices before A3 have a buffer over-read via a crafted wlength value in a GET Descriptor Configuration request during use of USB In-System Programming (ISP) mode. This discloses protected flash memory.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.darkmatter.ae/xen1thlabs/published-advisories/",
+      "https://github.com/Xen1thLabs-AE/CVE-2021-40154"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-38260",
+    "漏洞描述": "NXP MCUXpresso SDK v2.7.0 was discovered to contain a buffer overflow in the function USB_HostParseDeviceConfigurationDescriptor().",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://mcusec.github.io/vulnerabilities_details#nxp_usb"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年10月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-38258",
+    "漏洞描述": "NXP MCUXpresso SDK v2.7.0 was discovered to contain a buffer overflow in the function USB_HostProcessCallback().",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://mcusec.github.io/vulnerabilities_details#nxp_usb"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年10月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-36133",
+    "漏洞描述": "The OPTEE-OS CSU driver for NXP i.MX SoC devices lacks security access configuration for several models, resulting in TrustZone bypass because the NonSecure World can perform arbitrary memory read/write operations on Secure World memory. This involves a DMA capable peripheral.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/f-secure-foundry/advisories/blob/master/Security_Advisory-Ref_FSC-HWSEC-VR2021-0001-OP-TEE_TrustZone_bypass.txt"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-33881",
+    "漏洞描述": "On NXP MIFARE Ultralight and NTAG cards, an attacker can interrupt a write operation (aka conduct a \"tear off\" attack) over RFID to bypass a Monotonic Counter protection mechanism. The impact depends on how the anti tear-off feature is used in specific applications such as public transportation, physical access control, etc.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://blog.quarkslab.com/rfid-monotonic-counter-anti-tearing-defeated.html",
+      "https://www.nxp.com/docs/en/application-note/AN13089.pdf",
+      "https://www.nxp.com/docs/en/application-note/AN11340.pdf",
+      "https://www.sstic.org/2021/presentation/eeprom_it_will_all_end_in_tears/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年06月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-31532",
+    "漏洞描述": "NXP LPC55S6x microcontrollers (0A and 1B), i.MX RT500 (silicon rev B1 and B2), i.MX RT600 (silicon rev A0, B0), LPC55S6x, LPC55S2x, LPC552x (silicon rev 0A, 1B), LPC55S1x, LPC551x (silicon rev 0A) and LPC55S0x, LPC550x (silicon rev 0A) include an undocumented ROM patch peripheral that allows unsigned, non-persistent modification of the internal ROM.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nxp.com",
+      "https://oxide.computer/blog/lpc55/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年05月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-3011",
+    "漏洞描述": "An electromagnetic-wave side-channel issue was discovered on NXP SmartMX / P5x security microcontrollers and A7x secure authentication microcontrollers, with CryptoLib through v2.9. It allows attackers to extract the ECDSA private key after extensive physical access (and consequently produce a clone). This was demonstrated on the Google Titan Security Key, based on an NXP A7005a chip. Other FIDO U2F security keys are also impacted (Yubico YubiKey Neo and Feitian K9, K13, K21, and K40) as well as several NXP JavaCard smartcards (J3A081, J2A081, J3A041, J3D145_M59, J2D145_M59, J3D120_M60, J3D082_M60, J2D120_M60, J2D082_M60, J3D081_M59, J2D081_M59, J3D081_M61, J2D081_M61, J3D081_M59_DF, J3D081_M61_DF, J3E081_M64, J3E081_M66, J2E081_M64, J3E041_M66, J3E016_M66, J3E016_M64, J3E041_M64, J3E145_M64, J3E120_M65, J3E082_M65, J2E145_M64, J2E120_M65, J2E082_M65, J3E081_M64_DF, J3E081_M66_DF, J3E041_M66_DF, J3E016_M66_DF, J3E041_M64_DF, and J3E016_M64_DF).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://ninjalab.io/wp-content/uploads/2021/01/a_side_journey_to_titan.pdf",
+      "https://ninjalab.io/a-side-journey-to-titan/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年01月07日"
+  },
+  {
+    "设备品牌": "NXP",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "MCUXpresso SDK",
+    "CVE编号": "CVE-2021-27421",
+    "漏洞描述": "NXP MCUXpresso SDK versions prior to 2.8.2 are vulnerable to integer overflow in SDK_Malloc function, which could allow to access memory locations outside the bounds of a specified array, leading to unexpected behavior such segmentation fault when assigning a particular block of memory from the heap via malloc.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-21-119-04",
+      "https://mcuxpresso.nxp.com/en/welcome"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年05月03日"
+  },
+  {
+    "设备品牌": "NXP",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "MQX",
+    "CVE编号": "CVE-2021-22680",
+    "漏洞描述": "NXP MQX Versions 5.1 and prior are vulnerable to integer overflow in mem_alloc, _lwmem_alloc and _partition functions. This unverified memory assignment can lead to arbitrary memory allocation, resulting in unexpected behavior such as a crash or a remote code injection/execution.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-21-119-04"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年05月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载电源管理模块",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2021-0462",
+    "漏洞描述": "In the NXP NFC firmware, there is a possible insecure firmware update due to a logic error. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-168799695",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/pixel/2021-03-01",
+      "https://source.android.com/security/bulletin/pixel/2021-08-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2021年03月10日"
+  }
+]

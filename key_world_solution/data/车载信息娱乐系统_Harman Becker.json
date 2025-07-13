@@ -1,0 +1,17 @@
+[
+  {
+    "设备品牌": "Harman Becker",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "MGU21",
+    "CVE编号": "CVE-2025-3885",
+    "漏洞描述": "Harman Becker MGU21 Bluetooth Improper Input Validation Denial-of-Service Vulnerability. This vulnerability allows network-adjacent attackers to create a denial-of-service condition on affected installations of Harman Becker MGU21 devices. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the Bluetooth stack of the BCM89359 chipset. The issue results from the lack of proper validation of Bluetooth frames. An attacker can leverage this vulnerability to create a denial-of-service condition on the system. Was ZDI-CAN-23942.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-251/"
+    ],
+    "受影响版本": [
+      "MGU21_22-07 firmware with BCM89359 wireless chipset; LMP Version: 5.0 (0x9); LMP Subversion: 0x420d"
+    ],
+    "公开日期": "2025年05月22日"
+  }
+]

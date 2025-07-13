@@ -1,0 +1,396 @@
+[
+  {
+    "设备品牌": "Canon USA Inc.",
+    "设备类型": "车载摄像头",
+    "产品型号": "Canon EOS Webcam Utility Pro",
+    "CVE编号": "CVE-2025-5995",
+    "漏洞描述": "Canon EOS Webcam Utility Pro for MAC OS version 2.3d\n(2.3.29) and earlier contains an improper directory permissions vulnerability.\nExploitation of this vulnerability requires administrator access by a malicious\nuser. An attacker could modify the directory, potentially resulting in code\nexecution and ultimately leading to privilege escalation.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.usa.canon.com/about-us/to-our-customers/vulnerability-mitigation-remediation-for-canon-eos-webcam-utility-pro-for-mac-os",
+      "https://www.canon-europe.com/psirt/advisory-information"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年06月26日"
+  },
+  {
+    "设备品牌": "Canon Inc.",
+    "设备类型": "车载摄像头",
+    "产品型号": "Canon IJ NW Tool",
+    "CVE编号": "CVE-2023-1764",
+    "漏洞描述": "Canon IJ Network Tool/Ver.4.7.5 and earlier (supported OS: OS X 10.9.5-macOS 13),IJ Network Tool/Ver.4.7.3 and earlier (supported OS: OS X 10.7.5-OS X 10.8) allows an attacker to acquire sensitive information on the Wi-Fi connection setup of the printer from the communication of the software.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.canon/advisory-information/cp2023-002/",
+      "https://psirt.canon/hardening/"
+    ],
+    "受影响版本": [
+      "Ver.4.7.5 and earlier (supported OS: OS X 10.9.5-macOS 13),Ver.4.7.3 and earlier (supported OS: OS X 10.7.5-OS X 10.8)"
+    ],
+    "公开日期": "2023年05月17日"
+  },
+  {
+    "设备品牌": "Canon Inc.",
+    "设备类型": "车载摄像头",
+    "产品型号": "Canon IJ NW Tool",
+    "CVE编号": "CVE-2023-1763",
+    "漏洞描述": "Canon IJ Network Tool/Ver.4.7.5 and earlier (supported OS: OS X 10.9.5-macOS 13),IJ Network Tool/Ver.4.7.3 and earlier (supported OS: OS X 10.7.5-OS X 10.8) allows an attacker to acquire sensitive information on the Wi-Fi connection setup of the printer from the software.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.canon/advisory-information/cp2023-002/",
+      "https://psirt.canon/hardening/"
+    ],
+    "受影响版本": [
+      "Ver.4.7.5 and earlier (supported OS: OS X 10.9.5-macOS 13),Ver.4.7.3 and earlier (supported OS: OS X 10.7.5-OS X 10.8)"
+    ],
+    "公开日期": "2023年05月17日"
+  },
+  {
+    "设备品牌": "Canon",
+    "设备类型": "车载摄像头",
+    "产品型号": "imageCLASS MF644Cdw",
+    "CVE编号": "CVE-2022-43608",
+    "漏洞描述": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Canon imageCLASS MF644Cdw 10.03 printers. Authentication is not required to exploit this vulnerability. The specific flaw exists within the BJNP service. The issue results from the lack of proper validation of user-supplied data, which can result in an integer overflow before allocating a buffer. An attacker can leverage this vulnerability to execute code in the context of root. Was ZDI-CAN-16032.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-22-1666/",
+      "https://www.psirt.canon/advisory-information/cve-2022-43608_20221125"
+    ],
+    "受影响版本": [
+      "10.03"
+    ],
+    "公开日期": "2023年03月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-38765",
+    "漏洞描述": "Canon Medical Informatics Vitrea Vision 7.7.76.1 does not adequately enforce access controls. An authenticated user is able to gain unauthorized access to imaging records by tampering with the vitrea-view/studies/search patientId parameter.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.vitalimages.com/customer-success-support-program/vital-images-software-security-updates/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年12月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-37461",
+    "漏洞描述": "Multiple cross-site scripting (XSS) vulnerabilities in Canon Medical Vitrea View 7.x before 7.7.6 allow remote attackers to inject arbitrary web script or HTML via (1) the input after the error subdirectory to the /vitrea-view/error/ subdirectory, or the (2) groupID, (3) offset, or (4) limit parameter to an Administrative Panel (Group and Users) page. There is a risk of an attacker retrieving patient information.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.vitalimages.com/vitrea-vision/vitrea-view/",
+      "https://www.trustwave.com/en-us/resources/security-resources/security-advisories/?fid=30693",
+      "https://www.vitalimages.com/customer-success-support-program/vital-images-software-security-updates/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年09月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-26320",
+    "漏洞描述": "The Rambus SafeZone Basic Crypto Module before 10.4.0, as used in certain Fujifilm (formerly Fuji Xerox) devices before 2022-03-01, Canon imagePROGRAF and imageRUNNER devices through 2022-03-14, and potentially many other devices, generates RSA keys that can be broken with Fermat's factorization method. This allows efficient calculation of private RSA keys from the public key of a TLS certificate.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://global.canon/en/support/security/index.html",
+      "https://fermatattack.secvuln.info",
+      "https://www.fujifilm.com/fbglobal/eng/company/news/notice/2022/0302_rsakey_announce.html",
+      "https://www.rambus.com/security/response-center/advisories/rmbs-2021-01/",
+      "https://web.archive.org/web/20220922042721/https://safezoneswupdate.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年03月14日"
+  },
+  {
+    "设备品牌": "Canon",
+    "设备类型": "车载摄像头",
+    "产品型号": "imageCLASS MF644Cdw",
+    "CVE编号": "CVE-2022-24674",
+    "漏洞描述": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Canon imageCLASS MF644Cdw 10.02 printers. Authentication is not required to exploit this vulnerability. The specific flaw exists within the privet API. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a fixed-length stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of root. Was ZDI-CAN-15834.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-22-516/",
+      "https://www.usa.canon.com/internet/portal/us/home/support/product-advisories/detail/canon-laser-printer-and-small-office-multifunctional-printer-measure-against-buffer-overflow/"
+    ],
+    "受影响版本": [
+      "10.02"
+    ],
+    "公开日期": "2023年03月28日"
+  },
+  {
+    "设备品牌": "Canon",
+    "设备类型": "车载摄像头",
+    "产品型号": "imageCLASS MF644Cdw",
+    "CVE编号": "CVE-2022-24673",
+    "漏洞描述": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Canon imageCLASS MF644Cdw 10.02 printers. Authentication is not required to exploit this vulnerability. The specific flaw exists within the implementation of the SLP protocol. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a fixed-length stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of root. Was ZDI-CAN-15845.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-22-515/",
+      "https://www.usa.canon.com/support/canon-product-advisories/canon-laser-printer-inkjet-printer-and-small-office-multifunctional-printer-measure-against-buffer-overflow"
+    ],
+    "受影响版本": [
+      "10.02"
+    ],
+    "公开日期": "2023年03月28日"
+  },
+  {
+    "设备品牌": "Canon",
+    "设备类型": "车载摄像头",
+    "产品型号": "imageCLASS MF644Cdw",
+    "CVE编号": "CVE-2022-24672",
+    "漏洞描述": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Canon imageCLASS MF644Cdw 10.02 printers. Authentication is not required to exploit this vulnerability. The specific flaw exists within the CADM service. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a fixed-length heap-based buffer. An attacker can leverage this vulnerability to execute code in the context of the service account. Was ZDI-CAN-15802.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-22-514/",
+      "https://www.usa.canon.com/support/canon-product-advisories/canon-laser-printer-inkjet-printer-and-small-office-multifunctio"
+    ],
+    "受影响版本": [
+      "10.02"
+    ],
+    "公开日期": "2023年03月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-43471",
+    "漏洞描述": "In Canon LBP223 printers, the System Manager Mode login does not require an account password or PIN. An attacker can remotely shut down the device after entering the background, creating a denial of service vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/cxaqhq/cve-1"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-39368",
+    "漏洞描述": "Canon Oce Print Exec Workgroup 1.3.2 allows XSS via the lang parameter.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/IthacaLabs/Canon/tree/main/OCE_Print_Exec_Workgroup_Version_1_3_2/XSS_HTMLi"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-39367",
+    "漏洞描述": "Canon Oce Print Exec Workgroup 1.3.2 allows Host header injection.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/IthacaLabs/Canon/tree/main/OCE_Print_Exec_Workgroup_Version_1_3_2/HHI"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-38154",
+    "漏洞描述": "Certain Canon devices manufactured in 2012 through 2020 (such as imageRUNNER ADVANCE iR-ADV C5250), when Catwalk Server is enabled for HTTP access, allow remote attackers to modify an e-mail address setting, and thus cause the device to send sensitive information through e-mail to the attacker. For example, an incoming FAX may be sent through e-mail to the attacker. This occurs when a PIN is not required for General User Mode, as exploited in the wild in August 2021.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.usa.canon.com/internet/portal/us/home/support/product-advisories",
+      "https://protocolpolice.nl/CVE-2021-38154_Protocol_Police_Catwalk_Alert"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-38085",
+    "漏洞描述": "The Canon TR150 print driver through 3.71.2.10 is vulnerable to a privilege escalation issue. During the add printer process, a local attacker can overwrite CNMurGE.dll and, if timed properly, the overwritten DLL will be loaded into a SYSTEM process resulting in escalation of privileges. This occurs because the driver drops a world-writable DLL into a CanonBJ %PROGRAMDATA% location that gets loaded by printisolationhost (a system process).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://defcon.org/html/defcon-29/dc-29-speakers.html#baines",
+      "http://packetstormsecurity.com/files/163795/Canon-TR150-Driver-3.71.2.10-Privilege-Escalation.html",
+      "https://raw.githubusercontent.com/jacob-baines/vuln_disclosure/main/vuln_2021_03.txt",
+      "https://www.youtube.com/watch?v=vdesswZYz-8"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月11日"
+  },
+  {
+    "设备品牌": "Canon",
+    "设备类型": "车载摄像头",
+    "产品型号": "Canon laser printers and small office multifunctional printers",
+    "CVE编号": "CVE-2021-20877",
+    "漏洞描述": "Cross-site scripting vulnerability in Canon laser printers and small office multifunctional printers (LBP162L/LBP162, MF4890dw, MF269dw/MF265dw/MF264dw/MF262dw, MF249dw/MF245dw/MF244dw/MF242dw/MF232w, and MF229dw/MF224dw/MF222dw sold in Japan, imageCLASS MF Series (MF113W/MF212W/MF217W/MF227DW/MF229DW, MF232W/MF244DW/MF247DW/MF249DW, MF264DW/MF267DW/MF269DW/MF269DW VP, and MF4570DN/MF4570DW/MF4770N/MF4880DW/MF4890DW) and imageCLASS LBP Series (LBP113W/LBP151DW/LBP162DW ) sold in the US, and iSENSYS (LBP162DW, LBP113W, LBP151DW, MF269dw, MF267dw, MF264dw, MF113w, MF249dw, MF247dw, MF244dw, MF237w, MF232w, MF229dw, MF217w, MF212w, MF4780w, and MF4890dw) and imageRUNNER (2206IF, 2204N, and 2204F) sold in Europe) allows remote attackers to inject an arbitrary script via unspecified vectors.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://cweb.canon.jp/e-support/info/211221xss.html",
+      "https://www.usa.canon.com/internet/portal/us/home/support/product-advisories/detail/Service-Notice-Canon-Laser-Printer-and-Small-Office-Multifunctional-Printer-related-to-cross-site-scripting",
+      "https://www.canon-europe.com/support/product-security-latest-news/",
+      "https://jvn.jp/en/jp/JVN64806328/index.html",
+      "https://jvn.jp/jp/JVN64806328/index.html"
+    ],
+    "受影响版本": [
+      "LBP162L/LBP162, MF4890dw, MF269dw/MF265dw/MF264dw/MF262dw, MF249dw/MF245dw/MF244dw/MF242dw/MF232w, and MF229dw/MF224dw/MF222dw sold in Japan, imageCLASS MF Series(MF113W/MF212W/MF217W/MF227DW/MF229DW, MF232W/MF244DW/MF247DW/MF249DW, MF264DW/MF267DW/MF269DW/MF269DW VP, and MF4570DN/MF4570DW/MF4770N/MF4880DW/MF4890DW) and imageCLASS LBP Series(LBP113W/LBP151DW/LBP162DW ) sold in the US, and iSENSYS(LBP162DW, LBP113W, LBP151DW, MF269dw, MF267dw, MF264dw, MF113w, MF249dw, MF247dw, MF244dw, MF237w, MF232w, MF229dw, MF217w, MF212w, MF4780w, and MF4890dw) and imageRUNNER(2206IF, 2204N, and 2204F) sold in Europe"
+    ],
+    "公开日期": "2022年02月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-26508",
+    "漏洞描述": "The WebTools component on Canon Oce ColorWave 3500 5.1.1.0 devices allows attackers to retrieve stored SMB credentials via the export feature, even though these are intentionally inaccessible in the UI.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.syss.de/pentest-blog/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-16849",
+    "漏洞描述": "An issue was discovered on Canon MF237w 06.07 devices. An \"Improper Handling of Length Parameter Inconsistency\" issue in the IPv4/ICMPv4 component, when handling a packet sent by an unauthenticated network attacker, may expose Sensitive Information.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.canon-europe.com/support/product-security/",
+      "https://blog.scadafence.com/vulnerability-report-cve-2020-16849"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-13114",
+    "漏洞描述": "An issue was discovered in libexif before 0.6.22. An unrestricted size in handling Canon EXIF MakerNote data could lead to consumption of large amounts of compute time for decoding EXIF data.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/libexif/libexif/commit/e6a38a1a23ba94d139b1fa2cd4519fdcfe3c9bab",
+      "https://lists.debian.org/debian-lts-announce/2020/05/msg00025.html",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-06/msg00017.html",
+      "https://usn.ubuntu.com/4396-1/",
+      "https://security.gentoo.org/glsa/202007-05"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年05月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10671",
+    "漏洞描述": "The Canon Oce Colorwave 500 4.0.0.0 printer's web application is missing any form of CSRF protections. This is a system-wide issue. An attacker could perform administrative actions by targeting a logged-in administrative user. NOTE: this is fixed in the latest version.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.redtimmy.com/red-teaming/hacking-the-oce-colorwave-printer-when-a-quick-security-assessment-determines-the-success-of-a-red-team-exercise/",
+      "http://packetstormsecurity.com/files/156833/Oce-Colorwave-500-CSRF-XSS-Authentication-Bypass.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年03月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10670",
+    "漏洞描述": "The web application exposed by the Canon Oce Colorwave 500 4.0.0.0 printer is vulnerable to Reflected XSS in the parameter settingId of the settingDialogContent.jsp page. NOTE: this is fixed in the latest version.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.redtimmy.com/red-teaming/hacking-the-oce-colorwave-printer-when-a-quick-security-assessment-determines-the-success-of-a-red-team-exercise/",
+      "http://packetstormsecurity.com/files/156833/Oce-Colorwave-500-CSRF-XSS-Authentication-Bypass.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年03月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10669",
+    "漏洞描述": "The web application exposed by the Canon Oce Colorwave 500 4.0.0.0 printer is vulnerable to authentication bypass on the page /home.jsp. An unauthenticated attacker able to connect to the device's web interface can get a copy of the documents uploaded by any users. NOTE: this is fixed in the latest version.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.redtimmy.com/red-teaming/hacking-the-oce-colorwave-printer-when-a-quick-security-assessment-determines-the-success-of-a-red-team-exercise/",
+      "http://packetstormsecurity.com/files/156833/Oce-Colorwave-500-CSRF-XSS-Authentication-Bypass.html",
+      "http://seclists.org/fulldisclosure/2020/Mar/24"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年03月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10668",
+    "漏洞描述": "The web application exposed by the Canon Oce Colorwave 500 4.0.0.0 printer is vulnerable to Reflected XSS in /home.jsp. The vulnerable parameter is openSI. NOTE: this is fixed in the latest version.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.redtimmy.com/red-teaming/hacking-the-oce-colorwave-printer-when-a-quick-security-assessment-determines-the-success-of-a-red-team-exercise/",
+      "http://packetstormsecurity.com/files/156833/Oce-Colorwave-500-CSRF-XSS-Authentication-Bypass.html",
+      "http://seclists.org/fulldisclosure/2020/Mar/24"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年03月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10667",
+    "漏洞描述": "The web application exposed by the Canon Oce Colorwave 500 4.0.0.0 printer is vulnerable to Stored XSS in /TemplateManager/indexExternalLocation.jsp. The vulnerable parameter is map(template_name). NOTE: this is fixed in the latest version.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.redtimmy.com/red-teaming/hacking-the-oce-colorwave-printer-when-a-quick-security-assessment-determines-the-success-of-a-red-team-exercise/",
+      "http://packetstormsecurity.com/files/156833/Oce-Colorwave-500-CSRF-XSS-Authentication-Bypass.html",
+      "http://seclists.org/fulldisclosure/2020/Mar/24"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年03月19日"
+  }
+]

@@ -1,0 +1,866 @@
+[
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-37945",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: phy: allow MDIO bus PM ops to start/stop state machine for phylink-controlled PHY\n\nDSA has 2 kinds of drivers:\n\n1. Those who call dsa_switch_suspend() and dsa_switch_resume() from\n   their device PM ops: qca8k-8xxx, bcm_sf2, microchip ksz\n2. Those who don't: all others. The above methods should be optional.\n\nFor type 1, dsa_switch_suspend() calls dsa_user_suspend() -> phylink_stop(),\nand dsa_switch_resume() calls dsa_user_resume() -> phylink_start().\nThese seem good candidates for setting mac_managed_pm = true because\nthat is essentially its definition [1], but that does not seem to be the\nbiggest problem for now, and is not what this change focuses on.\n\nTalking strictly about the 2nd category of DSA drivers here (which\ndo not have MAC managed PM, meaning that for their attached PHYs,\nmdio_bus_phy_suspend() and mdio_bus_phy_resume() should run in full),\nI have noticed that the following warning from mdio_bus_phy_resume() is\ntriggered:\n\n\tWARN_ON(phydev->state != PHY_HALTED && phydev->state != PHY_READY &&\n\t\tphydev->state != PHY_UP);\n\nbecause the PHY state machine is running.\n\nIt's running as a result of a previous dsa_user_open() -> ... ->\nphylink_start() -> phy_start() having been initiated by the user.\n\nThe previous mdio_bus_phy_suspend() was supposed to have called\nphy_stop_machine(), but it didn't. So this is why the PHY is in state\nPHY_NOLINK by the time mdio_bus_phy_resume() runs.\n\nmdio_bus_phy_suspend() did not call phy_stop_machine() because for\nphylink, the phydev->adjust_link function pointer is NULL. This seems a\ntechnicality introduced by commit fddd91016d16 (\"phylib: fix PAL state\nmachine restart on resume\"). That commit was written before phylink\nexisted, and was intended to avoid crashing with consumer drivers which\ndon't use the PHY state machine - phylink always does, when using a PHY.\nBut phylink itself has historically not been developed with\nsuspend/resume in mind, and apparently not tested too much in that\nscenario, allowing this bug to exist unnoticed for so long. Plus, prior\nto the WARN_ON(), it would have likely been invisible.\n\nThis issue is not in fact restricted to type 2 DSA drivers (according to\nthe above ad-hoc classification), but can be extrapolated to any MAC\ndriver with phylink and MDIO-bus-managed PHY PM ops. DSA is just where\nthe issue was reported. Assuming mac_managed_pm is set correctly, a\nquick search indicates the following other drivers might be affected:\n\n$ grep -Zlr PHYLINK_NETDEV drivers/ | xargs -0 grep -L mac_managed_pm\ndrivers/net/ethernet/atheros/ag71xx.c\ndrivers/net/ethernet/microchip/sparx5/sparx5_main.c\ndrivers/net/ethernet/microchip/lan966x/lan966x_main.c\ndrivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c\ndrivers/net/ethernet/freescale/fs_enet/fs_enet-main.c\ndrivers/net/ethernet/freescale/dpaa/dpaa_eth.c\ndrivers/net/ethernet/freescale/ucc_geth.c\ndrivers/net/ethernet/freescale/enetc/enetc_pf_common.c\ndrivers/net/ethernet/marvell/mvpp2/mvpp2_main.c\ndrivers/net/ethernet/marvell/mvneta.c\ndrivers/net/ethernet/marvell/prestera/prestera_main.c\ndrivers/net/ethernet/mediatek/mtk_eth_soc.c\ndrivers/net/ethernet/altera/altera_tse_main.c\ndrivers/net/ethernet/wangxun/txgbe/txgbe_phy.c\ndrivers/net/ethernet/meta/fbnic/fbnic_phylink.c\ndrivers/net/ethernet/tehuti/tn40_phy.c\ndrivers/net/ethernet/mscc/ocelot_net.c\n\nMake the existing conditions dependent on the PHY device having a\nphydev->phy_link_change() implementation equal to the default\nphy_link_change() provided by phylib. Otherwise, we implicitly know that\nthe phydev has the phylink-provided phylink_phy_change() callback, and\nwhen phylink is used, the PHY state machine always needs to be stopped/\nstarted on the suspend/resume path. The code is structured as such that\nif phydev->phy_link_change() is absent, it is a matter of time until the\nkernel will crash - no need to further complicate the test.\n\nThus, for the situation where the PM is not managed b\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/a6ed6f8ec81b8ca7100dcd9e62bdbc0dff1b2259",
+      "https://git.kernel.org/stable/c/54e5d00a8de6c13f6c01a94ed48025e882cd15f7",
+      "https://git.kernel.org/stable/c/bd4037d51d3f6667636a1383e78e48a5b7b60755",
+      "https://git.kernel.org/stable/c/fc75ea20ffb452652f0d4033f38fe88d7cfdae35"
+    ],
+    "受影响版本": [
+      "744d23c71af39c7dc77ac7c3cac87ae86a181a85",
+      "744d23c71af39c7dc77ac7c3cac87ae86a181a85",
+      "744d23c71af39c7dc77ac7c3cac87ae86a181a85",
+      "744d23c71af39c7dc77ac7c3cac87ae86a181a85",
+      "47ac7b2f6a1ffef76e55a9ec146881a36673284b",
+      "7dc0ed411de3450e75b2a9600b5742cbf0908167"
+    ],
+    "公开日期": "2025年05月20日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-37815",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmisc: microchip: pci1xxxx: Fix Kernel panic during IRQ handler registration\n\nResolve kernel panic while accessing IRQ handler associated with the\ngenerated IRQ. This is done by acquiring the spinlock and storing the\ncurrent interrupt state before handling the interrupt request using\ngeneric_handle_irq.\n\nA previous fix patch was submitted where 'generic_handle_irq' was\nreplaced with 'handle_nested_irq'. However, this change also causes\nthe kernel panic where after determining which GPIO triggered the\ninterrupt and attempting to call handle_nested_irq with the mapped\nIRQ number, leads to a failure in locating the registered handler.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/1263d5f581908602c618c6665e683c4436383a09",
+      "https://git.kernel.org/stable/c/62957f58ab3aa7fa792dc6ff3575624062539a4d",
+      "https://git.kernel.org/stable/c/12cc2193f2b9548e8ea5fbce8201b44158222edf",
+      "https://git.kernel.org/stable/c/4e02059dc91068bc5017b8546f9ec3b930f6d6a6",
+      "https://git.kernel.org/stable/c/18eb77c75ed01439f96ae5c0f33461eb5134b907"
+    ],
+    "受影响版本": [
+      "79aef6187e16b2d32307c8ff610e9e04f7f86e1f",
+      "25692750c0259c5b65afec467d97201a485e8a00",
+      "47d3749ec0cb56b7b98917c190a8c10cb54216fd",
+      "194f9f94a5169547d682e9bbcc5ae6d18a564735",
+      "194f9f94a5169547d682e9bbcc5ae6d18a564735"
+    ],
+    "公开日期": "2025年05月08日"
+  },
+  {
+    "设备品牌": "Microchip",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "TimeProvider 4100",
+    "CVE编号": "CVE-2024-9054",
+    "漏洞描述": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection'), Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Microchip TimeProvider 4100 (Configuration modules) allows Command Injection.This issue affects TimeProvider 4100: from 1.0 before 2.4.7.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.microchip.com/en-us/solutions/technologies/embedded-security/how-to-report-potential-product-security-vulnerabilities/timeprovider-4100-grandmaster-rce-through-configuration-file",
+      "https://www.gruppotim.it/it/footer/red-team.html"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2024年10月04日"
+  },
+  {
+    "设备品牌": "Microchip",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "TimeProvider 4100",
+    "CVE编号": "CVE-2024-7801",
+    "漏洞描述": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Microchip TimeProvider 4100 (Data plot modules) allows SQL Injection.This issue affects TimeProvider 4100: from 1.0 before 2.4.7.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.microchip.com/en-us/solutions/technologies/embedded-security/how-to-report-potential-product-security-vulnerabilities/timeprovider-4100-grandmaster-unathenticated-sql-injection",
+      "https://www.gruppotim.it/it/footer/red-team.html"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2024年10月04日"
+  },
+  {
+    "设备品牌": "Microchip Techology",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Advanced Software Framework",
+    "CVE编号": "CVE-2024-7490",
+    "漏洞描述": "Improper Input Validation vulnerability in Microchip Techology Advanced Software Framework example DHCP server can cause remote code execution through a buffer overflow.\n This vulnerability is associated with program files tinydhcpserver.C and program routines lwip_dhcp_find_option.\n\nThis issue affects Advanced Software Framework: through 3.52.0.2574.\n\n\nASF is no longer being supported. Apply provided workaround or migrate to an actively maintained framework.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.microchip.com/en-us/tools-resources/develop/libraries/advanced-software-framework"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年08月08日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-57916",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmisc: microchip: pci1xxxx: Resolve kernel panic during GPIO IRQ handling\n\nResolve kernel panic caused by improper handling of IRQs while\naccessing GPIO values. This is done by replacing generic_handle_irq with\nhandle_nested_irq.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/79aef6187e16b2d32307c8ff610e9e04f7f86e1f",
+      "https://git.kernel.org/stable/c/25692750c0259c5b65afec467d97201a485e8a00",
+      "https://git.kernel.org/stable/c/47d3749ec0cb56b7b98917c190a8c10cb54216fd",
+      "https://git.kernel.org/stable/c/194f9f94a5169547d682e9bbcc5ae6d18a564735"
+    ],
+    "受影响版本": [
+      "1f4d8ae231f47c7d890198cd847055a96482a443",
+      "1f4d8ae231f47c7d890198cd847055a96482a443",
+      "1f4d8ae231f47c7d890198cd847055a96482a443",
+      "1f4d8ae231f47c7d890198cd847055a96482a443"
+    ],
+    "公开日期": "2025年01月19日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-50084",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: microchip: vcap api: Fix memory leaks in vcap_api_encode_rule_test()\n\nCommit a3c1e45156ad (\"net: microchip: vcap: Fix use-after-free error in\nkunit test\") fixed the use-after-free error, but introduced below\nmemory leaks by removing necessary vcap_free_rule(), add it to fix it.\n\n\tunreferenced object 0xffffff80ca58b700 (size 192):\n\t  comm \"kunit_try_catch\", pid 1215, jiffies 4294898264\n\t  hex dump (first 32 bytes):\n\t    00 12 7a 00 05 00 00 00 0a 00 00 00 64 00 00 00  ..z.........d...\n\t    00 00 00 00 00 00 00 00 00 04 0b cc 80 ff ff ff  ................\n\t  backtrace (crc 9c09c3fe):\n\t    [<0000000052a0be73>] kmemleak_alloc+0x34/0x40\n\t    [<0000000043605459>] __kmalloc_cache_noprof+0x26c/0x2f4\n\t    [<0000000040a01b8d>] vcap_alloc_rule+0x3cc/0x9c4\n\t    [<000000003fe86110>] vcap_api_encode_rule_test+0x1ac/0x16b0\n\t    [<00000000b3595fc4>] kunit_try_run_case+0x13c/0x3ac\n\t    [<0000000010f5d2bf>] kunit_generic_run_threadfn_adapter+0x80/0xec\n\t    [<00000000c5d82c9a>] kthread+0x2e8/0x374\n\t    [<00000000f4287308>] ret_from_fork+0x10/0x20\n\tunreferenced object 0xffffff80cc0b0400 (size 64):\n\t  comm \"kunit_try_catch\", pid 1215, jiffies 4294898265\n\t  hex dump (first 32 bytes):\n\t    80 04 0b cc 80 ff ff ff 18 b7 58 ca 80 ff ff ff  ..........X.....\n\t    39 00 00 00 02 00 00 00 06 05 04 03 02 01 ff ff  9...............\n\t  backtrace (crc daf014e9):\n\t    [<0000000052a0be73>] kmemleak_alloc+0x34/0x40\n\t    [<0000000043605459>] __kmalloc_cache_noprof+0x26c/0x2f4\n\t    [<000000000ff63fd4>] vcap_rule_add_key+0x2cc/0x528\n\t    [<00000000dfdb1e81>] vcap_api_encode_rule_test+0x224/0x16b0\n\t    [<00000000b3595fc4>] kunit_try_run_case+0x13c/0x3ac\n\t    [<0000000010f5d2bf>] kunit_generic_run_threadfn_adapter+0x80/0xec\n\t    [<00000000c5d82c9a>] kthread+0x2e8/0x374\n\t    [<00000000f4287308>] ret_from_fork+0x10/0x20\n\tunreferenced object 0xffffff80cc0b0700 (size 64):\n\t  comm \"kunit_try_catch\", pid 1215, jiffies 4294898265\n\t  hex dump (first 32 bytes):\n\t    80 07 0b cc 80 ff ff ff 28 b7 58 ca 80 ff ff ff  ........(.X.....\n\t    3c 00 00 00 00 00 00 00 01 2f 03 b3 ec ff ff ff  <......../......\n\t  backtrace (crc 8d877792):\n\t    [<0000000052a0be73>] kmemleak_alloc+0x34/0x40\n\t    [<0000000043605459>] __kmalloc_cache_noprof+0x26c/0x2f4\n\t    [<000000006eadfab7>] vcap_rule_add_action+0x2d0/0x52c\n\t    [<00000000323475d1>] vcap_api_encode_rule_test+0x4d4/0x16b0\n\t    [<00000000b3595fc4>] kunit_try_run_case+0x13c/0x3ac\n\t    [<0000000010f5d2bf>] kunit_generic_run_threadfn_adapter+0x80/0xec\n\t    [<00000000c5d82c9a>] kthread+0x2e8/0x374\n\t    [<00000000f4287308>] ret_from_fork+0x10/0x20\n\tunreferenced object 0xffffff80cc0b0900 (size 64):\n\t  comm \"kunit_try_catch\", pid 1215, jiffies 4294898266\n\t  hex dump (first 32 bytes):\n\t    80 09 0b cc 80 ff ff ff 80 06 0b cc 80 ff ff ff  ................\n\t    7d 00 00 00 01 00 00 00 00 00 00 00 ff 00 00 00  }...............\n\t  backtrace (crc 34181e56):\n\t    [<0000000052a0be73>] kmemleak_alloc+0x34/0x40\n\t    [<0000000043605459>] __kmalloc_cache_noprof+0x26c/0x2f4\n\t    [<000000000ff63fd4>] vcap_rule_add_key+0x2cc/0x528\n\t    [<00000000991e3564>] vcap_val_rule+0xcf0/0x13e8\n\t    [<00000000fc9868e5>] vcap_api_encode_rule_test+0x678/0x16b0\n\t    [<00000000b3595fc4>] kunit_try_run_case+0x13c/0x3ac\n\t    [<0000000010f5d2bf>] kunit_generic_run_threadfn_adapter+0x80/0xec\n\t    [<00000000c5d82c9a>] kthread+0x2e8/0x374\n\t    [<00000000f4287308>] ret_from_fork+0x10/0x20\n\tunreferenced object 0xffffff80cc0b0980 (size 64):\n\t  comm \"kunit_try_catch\", pid 1215, jiffies 4294898266\n\t  hex dump (first 32 bytes):\n\t    18 b7 58 ca 80 ff ff ff 00 09 0b cc 80 ff ff ff  ..X.............\n\t    67 00 00 00 00 00 00 00 01 01 74 88 c0 ff ff ff  g.........t.....\n\t  backtrace (crc 275fd9be):\n\t    [<0000000052a0be73>] kmemleak_alloc+0x34/0x40\n\t    [<0000000043605459>] __kmalloc_cache_noprof+0x26c/0x2f4\n\t    [<000000000ff63fd4>] vcap_rule_add_key+0x2cc/0x528\n\t    [<000000001396a1a2>] test_add_de\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/20b5342de51bda794791e013b90754774003a515",
+      "https://git.kernel.org/stable/c/170792097bb21e5da77443b6a03d35489813eabe",
+      "https://git.kernel.org/stable/c/217a3d98d1e9891a8b1438a27dfbc64ddf01f691"
+    ],
+    "受影响版本": [
+      "b0804c286ccfcf5f5c004d5bf8a54c0508b5e86b",
+      "a3c1e45156ad39f225cd7ddae0f81230a3b1e657",
+      "a3c1e45156ad39f225cd7ddae0f81230a3b1e657",
+      "f7fe95f40c85311c98913fe6ae2c56adb7f767a7"
+    ],
+    "公开日期": "2024年10月29日"
+  },
+  {
+    "设备品牌": "Microchip",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "SAME70",
+    "CVE编号": "CVE-2024-4760",
+    "漏洞描述": "A voltage glitch during the startup of EEFC NVM controllers on Microchip SAM E70/S70/V70/V71, SAM G55, SAM 4C/4S/4N/4E, and SAM 3S/3N/3U microcontrollers allows access to the memory bus via the debug interface even if the security bit is set.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://www.0x01team.com/hw_security/bypassing-microchip-atmel-sam-e70-s70-v70-v71-security/",
+      "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/SupportingCollateral/Security-Advisory-CVE-2024-4760.pdf"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年05月16日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-46831",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: microchip: vcap: Fix use-after-free error in kunit test\n\nThis is a clear use-after-free error. We remove it, and rely on checking\nthe return code of vcap_del_rule.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/b0804c286ccfcf5f5c004d5bf8a54c0508b5e86b",
+      "https://git.kernel.org/stable/c/f7fe95f40c85311c98913fe6ae2c56adb7f767a7",
+      "https://git.kernel.org/stable/c/a3c1e45156ad39f225cd7ddae0f81230a3b1e657"
+    ],
+    "受影响版本": [
+      "c956b9b318d9036701c471dd458f9ed31defc629",
+      "c956b9b318d9036701c471dd458f9ed31defc629",
+      "c956b9b318d9036701c471dd458f9ed31defc629"
+    ],
+    "公开日期": "2024年09月27日"
+  },
+  {
+    "设备品牌": "Microchip",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "TimeProvider 4100",
+    "CVE编号": "CVE-2024-43687",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation (XSS or 'Cross-site Scripting') vulnerability in Microchip TimeProvider 4100 (banner config modules) allows Cross-Site Scripting (XSS).This issue affects TimeProvider 4100: from 1.0 before 2.4.7.",
+    "攻击向量": "ADJACENT",
+    "厂商补丁链接": [
+      "https://www.microchip.com/en-us/solutions/technologies/embedded-security/how-to-report-potential-product-security-vulnerabilities/timeprovider-4100-grandmaster-stored-xss-vulnerability-in-banner",
+      "https://www.gruppotim.it/it/footer/red-team.html"
+    ],
+    "受影响版本": [
+      "1.0",
+      "2.4.16"
+    ],
+    "公开日期": "2024年10月04日"
+  },
+  {
+    "设备品牌": "Microchip",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "TimeProvider 4100",
+    "CVE编号": "CVE-2024-43686",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation (XSS or 'Cross-site Scripting') vulnerability in Microchip TimeProvider 4100 (data plot modules) allows Reflected XSS.This issue affects TimeProvider 4100: from 1.0 before 2.4.7.",
+    "攻击向量": "ADJACENT",
+    "厂商补丁链接": [
+      "https://www.microchip.com/en-us/solutions/technologies/embedded-security/how-to-report-potential-product-security-vulnerabilities/timeprovider-4100-grandmaster-reflected-xss-vulnerability",
+      "https://www.gruppotim.it/it/footer/red-team.html"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2024年10月04日"
+  },
+  {
+    "设备品牌": "Microchip",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "TimeProvider 4100",
+    "CVE编号": "CVE-2024-43685",
+    "漏洞描述": "Improper Authentication vulnerability in Microchip TimeProvider 4100 (login modules) allows Session Hijacking.This issue affects TimeProvider 4100: from 1.0 before 2.4.7.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.microchip.com/en-us/solutions/technologies/embedded-security/how-to-report-potential-product-security-vulnerabilities/timeprovider-4100-grandmaster-session-token-fixation",
+      "https://www.gruppotim.it/it/footer/red-team.html"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2024年10月04日"
+  },
+  {
+    "设备品牌": "Microchip",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "TimeProvider 4100",
+    "CVE编号": "CVE-2024-43684",
+    "漏洞描述": "Cross-Site Request Forgery (CSRF) vulnerability in Microchip TimeProvider 4100 allows Cross Site Request Forgery, Cross-Site Scripting (XSS).This issue affects TimeProvider 4100: from 1.0.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.gruppotim.it/it/footer/red-team.html",
+      "https://www.microchip.com/en-us/solutions/technologies/embedded-security/how-to-report-potential-product-security-vulnerabilities/timeprovider-4100-grandmaster-cross-site-request-forgery"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2024年10月04日"
+  },
+  {
+    "设备品牌": "Microchip",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "TimeProvider 4100",
+    "CVE编号": "CVE-2024-43683",
+    "漏洞描述": "URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Microchip TimeProvider 4100 allows XSS Through HTTP Headers.This issue affects TimeProvider 4100: from 1.0.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.microchip.com/en-us/solutions/technologies/embedded-security/how-to-report-potential-product-security-vulnerabilities/timeprovider-4100-grandmaster-improper-verification-of-host-header",
+      "https://www.gruppotim.it/it/footer/red-team.html"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2024年10月04日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-42279",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nspi: microchip-core: ensure TX and RX FIFOs are empty at start of a transfer\n\nWhile transmitting with rx_len == 0, the RX FIFO is not going to be\nemptied in the interrupt handler. A subsequent transfer could then\nread crap from the previous transfer out of the RX FIFO into the\nstart RX buffer. The core provides a register that will empty the RX and\nTX FIFOs, so do that before each transfer.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/3feda3677e8bbe833c3a62a4091377a08f015b80",
+      "https://git.kernel.org/stable/c/45e03d35229b680b79dfea1103a1f2f07d0b5d75",
+      "https://git.kernel.org/stable/c/9cf71eb0faef4bff01df4264841b8465382d7927"
+    ],
+    "受影响版本": [
+      "9ac8d17694b66d54b13e9718b25c14ca36dbebbd",
+      "9ac8d17694b66d54b13e9718b25c14ca36dbebbd",
+      "9ac8d17694b66d54b13e9718b25c14ca36dbebbd"
+    ],
+    "公开日期": "2024年08月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-36973",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmisc: microchip: pci1xxxx: fix double free in the error handling of gp_aux_bus_probe()\n\nWhen auxiliary_device_add() returns error and then calls\nauxiliary_device_uninit(), callback function\ngp_auxiliary_device_release() calls ida_free() and\nkfree(aux_device_wrapper) to free memory. We should't\ncall them again in the error handling path.\n\nFix this by skipping the redundant cleanup functions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/34ae447b138680b5ed3660f7d935ff3faf88ba1a",
+      "https://git.kernel.org/stable/c/86c9713602f786f441630c4ee02891987f8618b9",
+      "https://git.kernel.org/stable/c/1efe551982297924d05a367aa2b6ec3d275d5742",
+      "https://git.kernel.org/stable/c/086c6cbcc563c81d55257f9b27e14faf1d0963d3"
+    ],
+    "受影响版本": [
+      "393fc2f5948fd340d016a9557eea6e1ac2f6c60c",
+      "393fc2f5948fd340d016a9557eea6e1ac2f6c60c",
+      "393fc2f5948fd340d016a9557eea6e1ac2f6c60c",
+      "393fc2f5948fd340d016a9557eea6e1ac2f6c60c"
+    ],
+    "公开日期": "2024年06月17日"
+  },
+  {
+    "设备品牌": "Microchip",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "RN4870",
+    "CVE编号": "CVE-2024-29155",
+    "漏洞描述": "On Microchip RN4870 devices, when more than one consecutive PairReqNoInputNoOutput request is \nreceived, the device becomes incapable of completing the pairing \nprocess. A third party can inject a second PairReqNoInputNoOutput request \njust after a real one, causing the pair request to be blocked.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.microchip.com/en-us/product/rn4870",
+      "https://ww1.microchip.com/downloads/aemDocuments/documents/WSG/ProductDocuments/SoftwareLibraries/Firmware/RN4870-71-Firmware-1.44.zip"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年10月16日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-27053",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: wilc1000: fix RCU usage in connect path\n\nWith lockdep enabled, calls to the connect function from cfg802.11 layer\nlead to the following warning:\n\n=============================\nWARNING: suspicious RCU usage\n6.7.0-rc1-wt+ #333 Not tainted\n-----------------------------\ndrivers/net/wireless/microchip/wilc1000/hif.c:386\nsuspicious rcu_dereference_check() usage!\n[...]\nstack backtrace:\nCPU: 0 PID: 100 Comm: wpa_supplicant Not tainted 6.7.0-rc1-wt+ #333\nHardware name: Atmel SAMA5\n unwind_backtrace from show_stack+0x18/0x1c\n show_stack from dump_stack_lvl+0x34/0x48\n dump_stack_lvl from wilc_parse_join_bss_param+0x7dc/0x7f4\n wilc_parse_join_bss_param from connect+0x2c4/0x648\n connect from cfg80211_connect+0x30c/0xb74\n cfg80211_connect from nl80211_connect+0x860/0xa94\n nl80211_connect from genl_rcv_msg+0x3fc/0x59c\n genl_rcv_msg from netlink_rcv_skb+0xd0/0x1f8\n netlink_rcv_skb from genl_rcv+0x2c/0x3c\n genl_rcv from netlink_unicast+0x3b0/0x550\n netlink_unicast from netlink_sendmsg+0x368/0x688\n netlink_sendmsg from ____sys_sendmsg+0x190/0x430\n ____sys_sendmsg from ___sys_sendmsg+0x110/0x158\n ___sys_sendmsg from sys_sendmsg+0xe8/0x150\n sys_sendmsg from ret_fast_syscall+0x0/0x1c\n\nThis warning is emitted because in the connect path, when trying to parse\ntarget BSS parameters, we dereference a RCU pointer whithout being in RCU\ncritical section.\nFix RCU dereference usage by moving it to a RCU read critical section. To\navoid wrapping the whole wilc_parse_join_bss_param under the critical\nsection, just use the critical section to copy ies data",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/e556006de4ea93abe2b46cba202a2556c544b8b2",
+      "https://git.kernel.org/stable/c/b4bbf38c350acb6500cbe667b1e2e68f896e4b38",
+      "https://git.kernel.org/stable/c/d80fc436751cfa6b02a8eda74eb6cce7dadfe5a2",
+      "https://git.kernel.org/stable/c/745003b5917b610352f52fe0d11ef658d6471ec2",
+      "https://git.kernel.org/stable/c/4bfd20d5f5c62b5495d6c0016ee6933bd3add7ce",
+      "https://git.kernel.org/stable/c/5800ec78775c0cd646f71eb9bf8402fb794807de",
+      "https://git.kernel.org/stable/c/dd50d3ead6e3707bb0a5df7cc832730c93ace3a7",
+      "https://git.kernel.org/stable/c/205c50306acf58a335eb19fa84e40140f4fe814f"
+    ],
+    "受影响版本": [
+      "c460495ee072fc01a9b1e8d72c179510418cafac",
+      "c460495ee072fc01a9b1e8d72c179510418cafac",
+      "c460495ee072fc01a9b1e8d72c179510418cafac",
+      "c460495ee072fc01a9b1e8d72c179510418cafac",
+      "c460495ee072fc01a9b1e8d72c179510418cafac",
+      "c460495ee072fc01a9b1e8d72c179510418cafac",
+      "c460495ee072fc01a9b1e8d72c179510418cafac",
+      "c460495ee072fc01a9b1e8d72c179510418cafac"
+    ],
+    "公开日期": "2024年05月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-22216",
+    "漏洞描述": "In default installations of Microchip maxView Storage Manager (for Adaptec Smart Storage Controllers) where Redfish server is configured for remote system management, unauthorized access can occur, with data modification and information disclosure. This affects 3.00.23484 through 4.14.00.26064 (except for the patched versions 3.07.23980 and 4.07.00.25339).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.microchip.com/en-us/solutions/embedded-security/how-to-report-potential-product-security-vulnerabilities/maxview-storage-manager-redfish-server-vulnerability"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年01月08日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-50157",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nPCI: microchip: Fix refcount leak in mc_pcie_init_irq_domains()\n\nof_get_next_child() returns a node pointer with refcount incremented, so we\nshould use of_node_put() on it when we don't need it anymore.\n\nmc_pcie_init_irq_domains() only calls of_node_put() in the normal path,\nmissing it in some error paths.  Add missing of_node_put() to avoid\nrefcount leak.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/c0ad5c7e68d10f6f8ffb0f4329e3c19404fbca58",
+      "https://git.kernel.org/stable/c/6cd5f93b5c6a66c68a91dbc604a78207252ecd43",
+      "https://git.kernel.org/stable/c/880ece912b958a0c92cc0baa8e906fb9b49a4b53",
+      "https://git.kernel.org/stable/c/f030304fdeb87ec8f1b518c73703214aec6cc24a"
+    ],
+    "受影响版本": [
+      "6f15a9c9f94133bee0d861a4bf25e10aaa95219d",
+      "6f15a9c9f94133bee0d861a4bf25e10aaa95219d",
+      "6f15a9c9f94133bee0d861a4bf25e10aaa95219d",
+      "6f15a9c9f94133bee0d861a4bf25e10aaa95219d"
+    ],
+    "公开日期": "2025年06月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49851",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nriscv: fix reserved memory setup\n\nCurrently, RISC-V sets up reserved memory using the \"early\" copy of the\ndevice tree. As a result, when trying to get a reserved memory region\nusing of_reserved_mem_lookup(), the pointer to reserved memory regions\nis using the early, pre-virtual-memory address which causes a kernel\npanic when trying to use the buffer's name:\n\n Unable to handle kernel paging request at virtual address 00000000401c31ac\n Oops [#1]\n Modules linked in:\n CPU: 0 PID: 0 Comm: swapper Not tainted 6.0.0-rc1-00001-g0d9d6953d834 #1\n Hardware name: Microchip PolarFire-SoC Icicle Kit (DT)\n epc : string+0x4a/0xea\n  ra : vsnprintf+0x1e4/0x336\n epc : ffffffff80335ea0 ra : ffffffff80338936 sp : ffffffff81203be0\n  gp : ffffffff812e0a98 tp : ffffffff8120de40 t0 : 0000000000000000\n  t1 : ffffffff81203e28 t2 : 7265736572203a46 s0 : ffffffff81203c20\n  s1 : ffffffff81203e28 a0 : ffffffff81203d22 a1 : 0000000000000000\n  a2 : ffffffff81203d08 a3 : 0000000081203d21 a4 : ffffffffffffffff\n  a5 : 00000000401c31ac a6 : ffff0a00ffffff04 a7 : ffffffffffffffff\n  s2 : ffffffff81203d08 s3 : ffffffff81203d00 s4 : 0000000000000008\n  s5 : ffffffff000000ff s6 : 0000000000ffffff s7 : 00000000ffffff00\n  s8 : ffffffff80d9821a s9 : ffffffff81203d22 s10: 0000000000000002\n  s11: ffffffff80d9821c t3 : ffffffff812f3617 t4 : ffffffff812f3617\n  t5 : ffffffff812f3618 t6 : ffffffff81203d08\n status: 0000000200000100 badaddr: 00000000401c31ac cause: 000000000000000d\n [<ffffffff80338936>] vsnprintf+0x1e4/0x336\n [<ffffffff80055ae2>] vprintk_store+0xf6/0x344\n [<ffffffff80055d86>] vprintk_emit+0x56/0x192\n [<ffffffff80055ed8>] vprintk_default+0x16/0x1e\n [<ffffffff800563d2>] vprintk+0x72/0x80\n [<ffffffff806813b2>] _printk+0x36/0x50\n [<ffffffff8068af48>] print_reserved_mem+0x1c/0x24\n [<ffffffff808057ec>] paging_init+0x528/0x5bc\n [<ffffffff808031ae>] setup_arch+0xd0/0x592\n [<ffffffff8080070e>] start_kernel+0x82/0x73c\n\nearly_init_fdt_scan_reserved_mem() takes no arguments as it operates on\ninitial_boot_params, which is populated by early_init_dt_verify(). On\nRISC-V, early_init_dt_verify() is called twice. Once, directly, in\nsetup_arch() if CONFIG_BUILTIN_DTB is not enabled and once indirectly,\nvery early in the boot process, by parse_dtb() when it calls\nearly_init_dt_scan_nodes().\n\nThis first call uses dtb_early_va to set initial_boot_params, which is\nnot usable later in the boot process when\nearly_init_fdt_scan_reserved_mem() is called. On arm64 for example, the\ncorresponding call to early_init_dt_scan_nodes() uses fixmap addresses\nand doesn't suffer the same fate.\n\nMove early_init_fdt_scan_reserved_mem() further along the boot sequence,\nafter the direct call to early_init_dt_verify() in setup_arch() so that\nthe names use the correct virtual memory addresses. The above supposed\nthat CONFIG_BUILTIN_DTB was not set, but should work equally in the case\nwhere it is - unflatted_and_copy_device_tree() also updates\ninitial_boot_params.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/94ab8f88feb75e3b1486102c0c9c550f37d9d137",
+      "https://git.kernel.org/stable/c/518e49f0590de66555503aabe199ba8d3f2e24ac",
+      "https://git.kernel.org/stable/c/93598deb101540c4f9e7de15099ea8255b965fc2",
+      "https://git.kernel.org/stable/c/50e63dd8ed92045eb70a72d7ec725488320fb68b"
+    ],
+    "受影响版本": [
+      "922b0375fc93fb1a20c5617e37c389c26bbccb70",
+      "922b0375fc93fb1a20c5617e37c389c26bbccb70",
+      "922b0375fc93fb1a20c5617e37c389c26bbccb70",
+      "922b0375fc93fb1a20c5617e37c389c26bbccb70",
+      "f18ed5bee7bb8a0e99e1c7e7d45e0e51d3497248"
+    ],
+    "公开日期": "2025年05月01日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49806",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: microchip: sparx5: Fix potential null-ptr-deref in sparx_stats_init() and sparx5_start()\n\nsparx_stats_init() calls create_singlethread_workqueue() and not\nchecked the ret value, which may return NULL. And a null-ptr-deref may\nhappen:\n\nsparx_stats_init()\n    create_singlethread_workqueue() # failed, sparx5->stats_queue is NULL\n    queue_delayed_work()\n        queue_delayed_work_on()\n            __queue_delayed_work()  # warning here, but continue\n                __queue_work()      # access wq->flags, null-ptr-deref\n\nCheck the ret value and return -ENOMEM if it is NULL. So as\nsparx5_start().",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/80e590aeb132887102c3fa79d99b338f099dc952",
+      "https://git.kernel.org/stable/c/456327e565dc49d18b2f595f39f47df8a36f1057",
+      "https://git.kernel.org/stable/c/639f5d006e36bb303f525d9479448c412b720c39"
+    ],
+    "受影响版本": [
+      "b37a1bae742f92cc9b1f777d54e04ee3d86bbfc2",
+      "b37a1bae742f92cc9b1f777d54e04ee3d86bbfc2",
+      "b37a1bae742f92cc9b1f777d54e04ee3d86bbfc2"
+    ],
+    "公开日期": "2025年05月01日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49591",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: dsa: microchip: ksz_common: Fix refcount leak bug\n\nIn ksz_switch_register(), we should call of_node_put() for the\nreference returned by of_get_child_by_name() which has increased\nthe refcount.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/88ec2ff42da3ac93b2437dc52fe25cd4372148e6",
+      "https://git.kernel.org/stable/c/4165e02716518bbbe9c9104b39530d40928bc7ce",
+      "https://git.kernel.org/stable/c/a14bd7475452c51835dd5a0cee4c8fa48dd0b539"
+    ],
+    "受影响版本": [
+      "912aae27c6af6605eae967ab540c5e26bd76d421",
+      "912aae27c6af6605eae967ab540c5e26bd76d421",
+      "912aae27c6af6605eae967ab540c5e26bd76d421"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-47521",
+    "漏洞描述": "An issue was discovered in the Linux kernel before 6.0.11. Missing validation of IEEE80211_P2P_ATTR_CHANNEL_LIST in drivers/net/wireless/microchip/wilc1000/cfg80211.c in the WILC1000 wireless driver can trigger a heap-based buffer overflow when parsing the operating channel attribute from Wi-Fi management frames.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lore.kernel.org/r/20221123153543.8568-4-philipturnbull%40github.com",
+      "https://github.com/torvalds/linux/commit/f9b62f9843c7b0afdaecabbcebf1dbba18599408",
+      "https://lists.debian.org/debian-lts-announce/2022/12/msg00031.html",
+      "https://security.netapp.com/advisory/ntap-20230113-0007/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年12月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-47520",
+    "漏洞描述": "An issue was discovered in the Linux kernel before 6.0.11. Missing offset validation in drivers/net/wireless/microchip/wilc1000/hif.c in the WILC1000 wireless driver can trigger an out-of-bounds read when parsing a Robust Security Network (RSN) information element from a Netlink packet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lore.kernel.org/r/20221123153543.8568-2-philipturnbull%40github.com",
+      "https://github.com/torvalds/linux/commit/cd21d99e595ec1d8721e1058dcdd4f1f7de1d793",
+      "https://lists.debian.org/debian-lts-announce/2022/12/msg00031.html",
+      "https://security.netapp.com/advisory/ntap-20230113-0007/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年12月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-47519",
+    "漏洞描述": "An issue was discovered in the Linux kernel before 6.0.11. Missing validation of IEEE80211_P2P_ATTR_OPER_CHANNEL in drivers/net/wireless/microchip/wilc1000/cfg80211.c in the WILC1000 wireless driver can trigger an out-of-bounds write when parsing the channel list attribute from Wi-Fi management frames.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lore.kernel.org/r/20221123153543.8568-3-philipturnbull%40github.com",
+      "https://github.com/torvalds/linux/commit/051ae669e4505abbe05165bebf6be7922de11f41",
+      "https://lists.debian.org/debian-lts-announce/2022/12/msg00031.html",
+      "https://security.netapp.com/advisory/ntap-20230113-0007/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年12月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-47518",
+    "漏洞描述": "An issue was discovered in the Linux kernel before 6.0.11. Missing validation of the number of channels in drivers/net/wireless/microchip/wilc1000/cfg80211.c in the WILC1000 wireless driver can trigger a heap-based buffer overflow when copying the list of operating channels from Wi-Fi management frames.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lore.kernel.org/r/20221123153543.8568-5-philipturnbull%40github.com",
+      "https://github.com/torvalds/linux/commit/0cdfa9e6f0915e3d243e2393bfa8a22e12d553b0",
+      "https://lists.debian.org/debian-lts-announce/2022/12/msg00031.html",
+      "https://security.netapp.com/advisory/ntap-20230113-0007/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年12月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-46403",
+    "漏洞描述": "The Microchip RN4870 module firmware 1.43 (and the Microchip PIC LightBlue Explorer Demo 4.2 DT100112) mishandles reject messages.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.computer.org/csdl/proceedings/sp/2023/1He7WWuJExG",
+      "https://www.computer.org/csdl/proceedings-article/sp/2023/933600a521/1He7Yja1AYM",
+      "https://microchip.com",
+      "https://www.microchip.com/en-us/products/wireless-connectivity/software-vulnerability-response/deviating-behaviors-in-bluetooth-le"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年12月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-46402",
+    "漏洞描述": "The Microchip RN4870 module firmware 1.43 (and the Microchip PIC LightBlue Explorer Demo 4.2 DT100112) accepts PairCon_rmSend with incorrect values.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.computer.org/csdl/proceedings/sp/2023/1He7WWuJExG",
+      "https://www.computer.org/csdl/proceedings-article/sp/2023/933600a521/1He7Yja1AYM",
+      "https://microchip.com",
+      "https://www.microchip.com/en-us/products/wireless-connectivity/software-vulnerability-response/deviating-behaviors-in-bluetooth-le"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年12月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-46401",
+    "漏洞描述": "The Microchip RN4870 module firmware 1.43 (and the Microchip PIC LightBlue Explorer Demo 4.2 DT100112) accepts PauseEncReqPlainText before pairing is complete.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.computer.org/csdl/proceedings/sp/2023/1He7WWuJExG",
+      "https://www.computer.org/csdl/proceedings-article/sp/2023/933600a521/1He7Yja1AYM",
+      "https://microchip.com",
+      "https://www.microchip.com/en-us/products/wireless-connectivity/software-vulnerability-response/deviating-behaviors-in-bluetooth-le"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年12月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-46400",
+    "漏洞描述": "The Microchip RN4870 module firmware 1.43 (and the Microchip PIC LightBlue Explorer Demo 4.2 DT100112) allows attackers to bypass passkey entry in legacy pairing.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.computer.org/csdl/proceedings/sp/2023/1He7WWuJExG",
+      "https://www.computer.org/csdl/proceedings-article/sp/2023/933600a521/1He7Yja1AYM",
+      "https://microchip.com",
+      "https://www.microchip.com/en-us/products/wireless-connectivity/software-vulnerability-response/deviating-behaviors-in-bluetooth-le"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年12月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-46399",
+    "漏洞描述": "The Microchip RN4870 module firmware 1.43 (and the Microchip PIC LightBlue Explorer Demo 4.2 DT100112) is unresponsive with ConReqTimeoutZero.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.computer.org/csdl/proceedings/sp/2023/1He7WWuJExG",
+      "https://www.computer.org/csdl/proceedings-article/sp/2023/933600a521/1He7Yja1AYM",
+      "https://microchip.com",
+      "https://www.microchip.com/en-us/products/wireless-connectivity/software-vulnerability-response/deviating-behaviors-in-bluetooth-le"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年12月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-45192",
+    "漏洞描述": "An issue was discovered on Microchip RN4870 1.43 devices. An attacker within BLE radio range can cause a denial of service by sending a cleartext encryption pause request.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://blediff.github.io/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年02月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-45191",
+    "漏洞描述": "An issue was discovered on Microchip RN4870 1.43 devices. An attacker within BLE radio range can cause a denial of service by sending a pair confirm message with wrong values.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.microchip.com/en-us/support/product-change-notification"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年02月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-45190",
+    "漏洞描述": "An issue was discovered on Microchip RN4870 1.43 devices. An attacker within BLE radio range can bypass passkey entry in the legacy pairing of the device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://blediff.github.io/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年02月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-40480",
+    "漏洞描述": "Nordic Semiconductor, Microchip Technology NRF5340-DK DT100112 was discovered to contain an issue which allows attackers to cause a Denial of Service (DoS) via a crafted ConReq packet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://blediff.github.io/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年02月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-40022",
+    "漏洞描述": "Microchip Technology (Microsemi) SyncServer S650 was discovered to contain a command injection vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.microsemi.com/document-portal/doc_download/135737-datasheet-syncserver-s650",
+      "https://www.microsemi.com/campaigns/network-time-servers/syncserver-s600/?url=",
+      "https://www.microsemi.com/campaigns/network-time-servers/S650p/%3Fgd%3D1&id=5&gclid=Cj0KCQjwjbyYBhCdARIsAArC6LL-202ej5YfDB5lMIMSZ2735qjo5yaj2i-PrvLv2Cnh_kIJtFJ0oF8aAlMpEALw_wcB",
+      "https://www.securifera.com/advisories/CVE-2022-40022/",
+      "http://packetstormsecurity.com/files/172907/Symmetricom-SyncServer-Unauthenticated-Remote-Command-Execution.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年02月13日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2021-47440",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: encx24j600: check error in devm_regmap_init_encx24j600\n\ndevm_regmap_init may return error which caused by like out of memory,\nthis will results in null pointer dereference later when reading\nor writing register:\n\ngeneral protection fault in encx24j600_spi_probe\nKASAN: null-ptr-deref in range [0x0000000000000090-0x0000000000000097]\nCPU: 0 PID: 286 Comm: spi-encx24j600- Not tainted 5.15.0-rc2-00142-g9978db750e31-dirty #11 9c53a778c1306b1b02359f3c2bbedc0222cba652\nHardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.13.0-1ubuntu1.1 04/01/2014\nRIP: 0010:regcache_cache_bypass drivers/base/regmap/regcache.c:540\nCode: 54 41 89 f4 55 53 48 89 fb 48 83 ec 08 e8 26 94 a8 fe 48 8d bb a0 00 00 00 48 b8 00 00 00 00 00 fc ff df 48 89 fa 48 c1 ea 03 <80> 3c 02 00 0f 85 4a 03 00 00 4c 8d ab b0 00 00 00 48 8b ab a0 00\nRSP: 0018:ffffc900010476b8 EFLAGS: 00010207\nRAX: dffffc0000000000 RBX: fffffffffffffff4 RCX: 0000000000000000\nRDX: 0000000000000012 RSI: ffff888002de0000 RDI: 0000000000000094\nRBP: ffff888013c9a000 R08: 0000000000000000 R09: fffffbfff3f9cc6a\nR10: ffffc900010476e8 R11: fffffbfff3f9cc69 R12: 0000000000000001\nR13: 000000000000000a R14: ffff888013c9af54 R15: ffff888013c9ad08\nFS:  00007ffa984ab580(0000) GS:ffff88801fe00000(0000) knlGS:0000000000000000\nCS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\nCR2: 000055a6384136c8 CR3: 000000003bbe6003 CR4: 0000000000770ef0\nDR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000\nDR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400\nPKRU: 55555554\nCall Trace:\n encx24j600_spi_probe drivers/net/ethernet/microchip/encx24j600.c:459\n spi_probe drivers/spi/spi.c:397\n really_probe drivers/base/dd.c:517\n __driver_probe_device drivers/base/dd.c:751\n driver_probe_device drivers/base/dd.c:782\n __device_attach_driver drivers/base/dd.c:899\n bus_for_each_drv drivers/base/bus.c:427\n __device_attach drivers/base/dd.c:971\n bus_probe_device drivers/base/bus.c:487\n device_add drivers/base/core.c:3364\n __spi_add_device drivers/spi/spi.c:599\n spi_add_device drivers/spi/spi.c:641\n spi_new_device drivers/spi/spi.c:717\n new_device_store+0x18c/0x1f1 [spi_stub 4e02719357f1ff33f5a43d00630982840568e85e]\n dev_attr_store drivers/base/core.c:2074\n sysfs_kf_write fs/sysfs/file.c:139\n kernfs_fop_write_iter fs/kernfs/file.c:300\n new_sync_write fs/read_write.c:508 (discriminator 4)\n vfs_write fs/read_write.c:594\n ksys_write fs/read_write.c:648\n do_syscall_64 arch/x86/entry/common.c:50\n entry_SYSCALL_64_after_hwframe arch/x86/entry/entry_64.S:113\n\nAdd error check in devm_regmap_init_encx24j600 to avoid this situation.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/66358471fa75a713fd76bc8a4bd74cb14cd50a4f",
+      "https://git.kernel.org/stable/c/f043fac1133a6c5ef960a8422c0f6dd711dee462",
+      "https://git.kernel.org/stable/c/fddc7f678d7fb93caa0d7bc512f968ff1e2bddbc",
+      "https://git.kernel.org/stable/c/5e5494e6fc8a29c927e0478bec4a078a40da8901",
+      "https://git.kernel.org/stable/c/4c2eb80fc90b05559ce6ed1b8dfb2348420b5644",
+      "https://git.kernel.org/stable/c/e19c10d6e07c59c96e90fe053a72683ad8b0397e",
+      "https://git.kernel.org/stable/c/322c0e53496309e634d9db7349678eaad1d25b55",
+      "https://git.kernel.org/stable/c/f03dca0c9e2297c84a018e306f8a9cd534ee4287"
+    ],
+    "受影响版本": [
+      "04fbfce7a222327b97ca165294ef19f0faa45960",
+      "04fbfce7a222327b97ca165294ef19f0faa45960",
+      "04fbfce7a222327b97ca165294ef19f0faa45960",
+      "04fbfce7a222327b97ca165294ef19f0faa45960",
+      "04fbfce7a222327b97ca165294ef19f0faa45960",
+      "04fbfce7a222327b97ca165294ef19f0faa45960",
+      "04fbfce7a222327b97ca165294ef19f0faa45960",
+      "04fbfce7a222327b97ca165294ef19f0faa45960"
+    ],
+    "公开日期": "2024年05月22日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2021-47439",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: dsa: microchip: Added the condition for scheduling ksz_mib_read_work\n\nWhen the ksz module is installed and removed using rmmod, kernel crashes\nwith null pointer dereferrence error. During rmmod, ksz_switch_remove\nfunction tries to cancel the mib_read_workqueue using\ncancel_delayed_work_sync routine and unregister switch from dsa.\n\nDuring dsa_unregister_switch it calls ksz_mac_link_down, which in turn\nreschedules the workqueue since mib_interval is non-zero.\nDue to which queue executed after mib_interval and it tries to access\ndp->slave. But the slave is unregistered in the ksz_switch_remove\nfunction. Hence kernel crashes.\n\nTo avoid this crash, before canceling the workqueue, resetted the\nmib_interval to 0.\n\nv1 -> v2:\n-Removed the if condition in ksz_mib_read_work",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/f2e1de075018cf71bcd7d628e9f759cb8540b0c3",
+      "https://git.kernel.org/stable/c/383239a33cf29ebee9ce0d4e0e5c900b77a16148",
+      "https://git.kernel.org/stable/c/ef1100ef20f29aec4e62abeccdb5bdbebba1e378"
+    ],
+    "受影响版本": [
+      "469b390e1ba330e888175e55d78573db2e9a8cb4",
+      "469b390e1ba330e888175e55d78573db2e9a8cb4",
+      "469b390e1ba330e888175e55d78573db2e9a8cb4"
+    ],
+    "公开日期": "2024年05月22日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2021-47231",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ncan: mcba_usb: fix memory leak in mcba_usb\n\nSyzbot reported memory leak in SocketCAN driver for Microchip CAN BUS\nAnalyzer Tool. The problem was in unfreed usb_coherent.\n\nIn mcba_usb_start() 20 coherent buffers are allocated and there is\nnothing, that frees them:\n\n1) In callback function the urb is resubmitted and that's all\n2) In disconnect function urbs are simply killed, but URB_FREE_BUFFER\n   is not set (see mcba_usb_start) and this flag cannot be used with\n   coherent buffers.\n\nFail log:\n| [ 1354.053291][ T8413] mcba_usb 1-1:0.0 can0: device disconnected\n| [ 1367.059384][ T8420] kmemleak: 20 new suspected memory leaks (see /sys/kernel/debug/kmem)\n\nSo, all allocated buffers should be freed with usb_free_coherent()\nexplicitly\n\nNOTE:\nThe same pattern for allocating and freeing coherent buffers\nis used in drivers/net/can/usb/kvaser_usb/kvaser_usb_core.c",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/89df95ce32be204eef2e7d4b2f6fb552fb191a68",
+      "https://git.kernel.org/stable/c/a115198caaab6d663bef75823a3c5f0802306d60",
+      "https://git.kernel.org/stable/c/6f87c0e21ad20dd3d22108e33db1c552dfa352a0",
+      "https://git.kernel.org/stable/c/6bd3d80d1f019cefa7011056c54b323f1d8b8e83",
+      "https://git.kernel.org/stable/c/d0760a4ef85697bc756d06eae17ae27f3f055401",
+      "https://git.kernel.org/stable/c/91c02557174be7f72e46ed7311e3bea1939840b0"
+    ],
+    "受影响版本": [
+      "51f3baad7de943780ce0c17bd7975df567dd6e14",
+      "51f3baad7de943780ce0c17bd7975df567dd6e14",
+      "51f3baad7de943780ce0c17bd7975df567dd6e14",
+      "51f3baad7de943780ce0c17bd7975df567dd6e14",
+      "51f3baad7de943780ce0c17bd7975df567dd6e14",
+      "51f3baad7de943780ce0c17bd7975df567dd6e14"
+    ],
+    "公开日期": "2024年05月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37605",
+    "漏洞描述": "In version 6.5 Microchip MiWi software and all previous versions including legacy products, the stack is validating only two out of four Message Integrity Check (MIC) bytes.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.microchip.com/product-change-notifications/#/",
+      "https://www.microchip.com/en-us/products/wireless-connectivity/sub-ghz/miwi-protocol",
+      "https://ww1.microchip.com/downloads/en/DeviceDoc/asf-release-notes-3.50.0.100-readme.pdf",
+      "https://www.microchip.com/en-us/development-tools-tools-and-software/libraries-code-examples-and-more/advanced-software-framework-for-sam-devices#Downloads",
+      "https://ww1.microchip.com/downloads/en/DeviceDoc/asf-release-notes-3.51.0.101-readme.pdf",
+      "https://www.microchip.com/en-us/products/wireless-connectivity/software-vulnerability-response/miwi-software-vulnerability"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37604",
+    "漏洞描述": "In version 6.5 of Microchip MiWi software and all previous versions including legacy products, there is a possibility of frame counters being validated/updated prior to the message authentication. With this vulnerability in place, an attacker may increment the incoming frame counter values by injecting messages with a sufficiently large frame counter value and invalid payload. This results in denial of service/valid packets in the network. There is also a possibility of a replay attack in the stack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.microchip.com/product-change-notifications/#/",
+      "https://www.microchip.com/en-us/products/wireless-connectivity/sub-ghz/miwi-protocol",
+      "https://ww1.microchip.com/downloads/en/DeviceDoc/asf-release-notes-3.50.0.100-readme.pdf",
+      "https://www.microchip.com/en-us/development-tools-tools-and-software/libraries-code-examples-and-more/advanced-software-framework-for-sam-devices#Downloads",
+      "https://www.microchip.com/en-us/products/wireless-connectivity/software-vulnerability-response/miwi-software-vulnerability"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-27636",
+    "漏洞描述": "In Microchip MPLAB Net 3.6.1, TCP ISNs are improperly random.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.forescout.com",
+      "https://www.cisa.gov/news-events/ics-advisories/icsa-21-042-01",
+      "https://www.forescout.com/resources/numberjack-weak-isn-generation-in-embedded-tcpip-stacks/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年10月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-20950",
+    "漏洞描述": "Bleichenbacher's attack on PKCS #1 v1.5 padding for RSA in Microchip Libraries for Applications 2018-11-26 All up to 2018-11-26. The vulnerability can allow one to use Bleichenbacher's oracle attack to decrypt an encrypted ciphertext by making successive queries to the server using the vulnerable library, resulting in remote information disclosure.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://archiv.infsec.ethz.ch/education/fs08/secsem/bleichenbacher98.pdf",
+      "http://microchip.com",
+      "https://www.microchip.com/mplab/microchip-libraries-for-applications",
+      "https://bi-zone.medium.com/silence-will-fall-or-how-it-can-take-2-years-to-get-your-vuln-registered-e6134846f5bb"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年01月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-12789",
+    "漏洞描述": "The Secure Monitor in Microchip Atmel ATSAMA5 products use a hardcoded key to encrypt and authenticate secure applets.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://labs.f-secure.com/advisories/microchip-atsama5-soc-multiple-vulnerabilities/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-12788",
+    "漏洞描述": "CMAC verification functionality in Microchip Atmel ATSAMA5 products is vulnerable to vulnerable to timing and power analysis attacks.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://labs.f-secure.com/advisories/microchip-atsama5-soc-multiple-vulnerabilities/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-12787",
+    "漏洞描述": "Microchip Atmel ATSAMA5 products in Secure Mode allow an attacker to bypass existing security mechanisms related to applet handling.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://labs.f-secure.com/advisories/microchip-atsama5-soc-multiple-vulnerabilities/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月14日"
+  }
+]

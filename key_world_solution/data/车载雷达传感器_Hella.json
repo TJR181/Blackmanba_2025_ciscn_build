@@ -1,0 +1,82 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载雷达传感器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2025-30117",
+    "漏洞描述": "An issue was discovered on the Forvia Hella HELLA Driving Recorder DR 820. Managing Settings and Obtaining Sensitive Data and Sabotaging the Car Battery can be performed by unauthorized parties. After bypassing the device pairing, an attacker can obtain sensitive user and vehicle information through the settings interface. Remote attackers can modify power management settings, disable recording, delete stored footage, and turn off battery protection, leading to potential denial-of-service conditions and vehicle battery drainage.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://medium.com/@geochen/cve-draft-hella-driving-recorder-dr-820-ff8c4e2cca26",
+      "https://github.com/geo-chen/Hella"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年03月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载雷达传感器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2025-30116",
+    "漏洞描述": "An issue was discovered on the Forvia Hella HELLA Driving Recorder DR 820. Remotely Dumping of Video Footage and the Live Video Stream can occur. It allows remote attackers to access and download recorded video footage from the SD card via port 9091. Additionally, attackers can connect to port 9092 to stream the live video feed by bypassing the challenge-response authentication mechanism. This exposes sensitive location and personal data.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://medium.com/@geochen/cve-draft-hella-driving-recorder-dr-820-ff8c4e2cca26",
+      "https://github.com/geo-chen/Hella"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年03月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载雷达传感器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2025-30115",
+    "漏洞描述": "An issue was discovered on the Forvia Hella HELLA Driving Recorder DR 820. Default Credentials Cannot Be Changed. It uses a fixed default SSID and password (\"qwertyuiop\"), which cannot be modified by users. The SSID is continuously broadcast, allowing unauthorized access to the device network.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://medium.com/@geochen/cve-draft-hella-driving-recorder-dr-820-ff8c4e2cca26",
+      "https://github.com/geo-chen/Hella"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年03月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载雷达传感器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2025-30114",
+    "漏洞描述": "An issue was discovered on the Forvia Hella HELLA Driving Recorder DR 820. Bypassing of Device Pairing can occur. The pairing mechanism relies solely on the connecting device's MAC address. By obtaining the MAC address through network scanning and spoofing it, an attacker can bypass the authentication process and gain full access to the dashcam's features without proper authorization.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://medium.com/@geochen/cve-draft-hella-driving-recorder-dr-820-ff8c4e2cca26",
+      "https://github.com/geo-chen/Hella"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年03月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载雷达传感器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2025-30113",
+    "漏洞描述": "An issue was discovered on the Forvia Hella HELLA Driving Recorder DR 820. Hardcoded Credentials exist in the APK for Ports 9091 and 9092. The dashcam's Android application contains hardcoded credentials that allow unauthorized access to device settings through ports 9091 and 9092. These credentials, stored in cleartext, can be exploited by an attacker who gains access to the dashcam's network.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://medium.com/@geochen/cve-draft-hella-driving-recorder-dr-820-ff8c4e2cca26",
+      "https://github.com/geo-chen/Hella"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年03月18日"
+  }
+]

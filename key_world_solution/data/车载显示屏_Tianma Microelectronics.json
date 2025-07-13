@@ -1,0 +1,48 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-30400",
+    "漏洞描述": "An issue was discovered in Anyka Microelectronics AK3918EV300 MCU v18. A command injection vulnerability in the network configuration script within the MCU's operating system allows attackers to perform arbitrary command execution via a crafted wifi SSID or password.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/Nemobi/ak3918ev300v18",
+      "https://arxiv.org/abs/2306.00610"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年06月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-13471",
+    "漏洞描述": "Apex Microelectronics APM32F103 devices allow physical attackers to execute arbitrary code via a power glitch and a specific flash patch/breakpoint unit configuration.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.usenix.org/system/files/woot20-paper-obermaier.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-13463",
+    "漏洞描述": "The flash memory readout protection in Apex Microelectronics APM32F103 devices allows physical attackers to extract firmware via the debug interface and exception handling.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.usenix.org/system/files/woot20-paper-obermaier.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月31日"
+  }
+]

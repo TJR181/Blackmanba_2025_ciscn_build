@@ -1,0 +1,1390 @@
+[
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "SuperSign CMS",
+    "CVE编号": "CVE-2024-6179",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in LG Electronics SuperSign CMS allows Reflected XSS. This issue affects SuperSign CMS: from 4.1.3 before < 4.3.1.",
+    "攻击向量": "ADJACENT",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/idproducts#updateDetails"
+    ],
+    "受影响版本": [
+      "4.1.3"
+    ],
+    "公开日期": "2024年06月20日"
+  },
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "SuperSign CMS",
+    "CVE编号": "CVE-2024-6178",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in LG Electronics SuperSign CMS allows Reflected XSS. This issue affects SuperSign CMS: from 4.1.3 before < 4.3.1.",
+    "攻击向量": "ADJACENT",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/idproducts#updateDetails"
+    ],
+    "受影响版本": [
+      "4.1.3"
+    ],
+    "公开日期": "2024年06月20日"
+  },
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "SuperSign CMS",
+    "CVE编号": "CVE-2024-6177",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation (XSS or 'Cross-site Scripting') vulnerability in LG Electronics SuperSign CMS allows Reflected XSS. This issue affects SuperSign CMS: from 4.1.3 before < 4.3.1.",
+    "攻击向量": "ADJACENT",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/idproducts#updateDetails"
+    ],
+    "受影响版本": [
+      "4.1.3"
+    ],
+    "公开日期": "2024年06月20日"
+  },
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "LG SuperSign CMS",
+    "CVE编号": "CVE-2024-6176",
+    "漏洞描述": "Allocation of Resources Without Limits or Throttling vulnerability in LG Electronics LG SuperSign CMS allows Port Scanning.This issue affects LG SuperSign CMS: from 4.1.3 before < 4.3.1.",
+    "攻击向量": "ADJACENT",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/idproducts#updateDetails"
+    ],
+    "受影响版本": [
+      "4.1.3"
+    ],
+    "公开日期": "2024年06月20日"
+  },
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "LG LED Assistant",
+    "CVE编号": "CVE-2024-2863",
+    "漏洞描述": "This vulnerability allows remote attackers to traverse paths via file upload on the affected LG LED Assistant.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/idproducts#updateDetails"
+    ],
+    "受影响版本": [
+      "2.1.65"
+    ],
+    "公开日期": "2024年03月25日"
+  },
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "LG LED Assistant",
+    "CVE编号": "CVE-2024-2862",
+    "漏洞描述": "\nThis vulnerability allows remote attackers to reset the password of anonymous users without authorization on the affected LG LED Assistant.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/idproducts#updateDetails"
+    ],
+    "受影响版本": [
+      "2.1.65"
+    ],
+    "公开日期": "2024年03月25日"
+  },
+  {
+    "设备品牌": "awordpresslife",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Photo Gallery – Responsive Photo Gallery, Image Gallery, Portfolio Gallery, Logo Gallery And Team Gallery",
+    "CVE编号": "CVE-2024-1896",
+    "漏洞描述": "The Photo Gallery – Responsive Photo Gallery, Image Gallery, Portfolio Gallery, Logo Gallery And Team Gallery plugin for WordPress is vulnerable to PHP Object Injection in all versions up to, and including, 1.4.1 via deserialization via shortcode of untrusted input from the 'awl_lg_settings_' attribute. This makes it possible for authenticated attackers, with contributor access and above, to inject a PHP Object. No POP chain is present in the vulnerable plugin. If a POP chain is present via an additional plugin or theme installed on the target system, it could allow the attacker to delete arbitrary files, retrieve sensitive data, or execute code.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.wordfence.com/threat-intel/vulnerabilities/id/14894c36-f657-4368-bc7f-60121ec08c13?source=cve",
+      "https://plugins.trac.wordpress.org/browser/new-photo-gallery/tags/1.4.0/shortcode.php"
+    ],
+    "受影响版本": [
+      "*"
+    ],
+    "公开日期": "2024年05月02日"
+  },
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "LG Signage",
+    "CVE编号": "CVE-2024-1886",
+    "漏洞描述": "\n\n\nThis vulnerability allows remote attackers to traverse the directory on the affected webOS of LG Signage.\n\n\n\n",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/idproducts#updateDetails"
+    ],
+    "受影响版本": [
+      "6.0.0-56"
+    ],
+    "公开日期": "2024年02月26日"
+  },
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "LG Signage",
+    "CVE编号": "CVE-2024-1885",
+    "漏洞描述": "This vulnerability allows remote attackers to execute arbitrary code on the affected webOS of LG Signage.\n",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/idproducts#updateDetails"
+    ],
+    "受影响版本": [
+      "6.0.0-56"
+    ],
+    "公开日期": "2024年02月26日"
+  },
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "LG-LED Assistant",
+    "CVE编号": "CVE-2023-4616",
+    "漏洞描述": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of LG LED Assistant. Authentication is not required to exploit this vulnerability. The specific flaw exists within the /api/thumbnail endpoint. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to disclose information in the context of the current user.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/idproducts#updateDetails",
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1223/"
+    ],
+    "受影响版本": [
+      "2.1.45"
+    ],
+    "公开日期": "2023年09月04日"
+  },
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "LG-LED Assistant",
+    "CVE编号": "CVE-2023-4615",
+    "漏洞描述": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of LG LED Assistant. Authentication is not required to exploit this vulnerability. The specific flaw exists within the /api/download/updateFile endpoint. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to disclose information in the context of the current user.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/idproducts#updateDetails",
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1224/"
+    ],
+    "受影响版本": [
+      "2.1.45"
+    ],
+    "公开日期": "2023年09月04日"
+  },
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "LG-LED Assistant",
+    "CVE编号": "CVE-2023-4614",
+    "漏洞描述": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of LG LED Assistant. Authentication is not required to exploit this vulnerability. The specific flaw exists within the /api/installation/setThumbnailRc endpoint. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to execute code in the context of the current user.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/idproducts#updateDetails",
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1222/"
+    ],
+    "受影响版本": [
+      "2.1.45"
+    ],
+    "公开日期": "2023年09月04日"
+  },
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "LG-LED Assistant",
+    "CVE编号": "CVE-2023-4613",
+    "漏洞描述": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of LG LED Assistant. Authentication is not required to exploit this vulnerability. The specific flaw exists within the /api/settings/upload endpoint. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to execute code in the context of the current user.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/idproducts#updateDetails",
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1221/"
+    ],
+    "受影响版本": [
+      "2.1.45"
+    ],
+    "公开日期": "2023年09月04日"
+  },
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "LG V60 Thin Q 5G(LMV600VM)",
+    "CVE编号": "CVE-2023-44129",
+    "漏洞描述": "The vulnerability is that the Messaging (\"com.android.mms\") app patched by LG forwards attacker-controlled intents back to the attacker in the exported \"com.android.mms.ui.QClipIntentReceiverActivity\" activity. The attacker can abuse this functionality by launching this activity and then sending a broadcast with the \"com.lge.message.action.QCLIP\" action. The attacker can send, e.g., their own data/clipdata and set Intent.FLAG_GRANT_* flags. After the attacker received that intent in the \"onActivityResult()\" method, they would have access to arbitrary content providers that have the `android:grantUriPermissions=\"true\"` flag set.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/mobile#updateDetails"
+    ],
+    "受影响版本": [
+      "Android 12"
+    ],
+    "公开日期": "2023年09月27日"
+  },
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "LG V60 Thin Q 5G(LMV600VM)",
+    "CVE编号": "CVE-2023-44127",
+    "漏洞描述": "he vulnerability is that the Call management (\"com.android.server.telecom\") app patched by LG launches implicit intents that disclose sensitive data to all third-party apps installed on the same device. Those intents include data such as contact details and phone numbers.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/mobile#updateDetails"
+    ],
+    "受影响版本": [
+      "Android 8"
+    ],
+    "公开日期": "2023年09月27日"
+  },
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "LG V60 Thin Q 5G(LMV600VM)",
+    "CVE编号": "CVE-2023-44126",
+    "漏洞描述": "The vulnerability is that the Call management (\"com.android.server.telecom\") app patched by LG sends a lot of LG-owned implicit broadcasts that disclose sensitive data to all third-party apps installed on the same device. Those intents include data such as call states, durations, called numbers, contacts info, etc.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/mobile#updateDetails"
+    ],
+    "受影响版本": [
+      "Android 8"
+    ],
+    "公开日期": "2023年09月27日"
+  },
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "LG V60 Thin Q 5G(LMV600VM)",
+    "CVE编号": "CVE-2023-44121",
+    "漏洞描述": "The vulnerability is an intent redirection in LG ThinQ Service (\"com.lge.lms2\") in the \"com/lge/lms/things/ui/notification/NotificationManager.java\" file. This vulnerability could be exploited by a third-party app installed on an LG device by sending a broadcast with the action \"com.lge.lms.things.notification.ACTION\". Additionally, this vulnerability is very dangerous because LG ThinQ Service is a system app (having android:sharedUserId=\"android.uid.system\" setting). Intent redirection in this app leads to accessing arbitrary not exported activities of absolutely all apps.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/mobile#updateDetails"
+    ],
+    "受影响版本": [
+      "Android 9"
+    ],
+    "公开日期": "2023年09月27日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "SuperSign Media Editor",
+    "CVE编号": "CVE-2023-41181",
+    "漏洞描述": "LG SuperSign Media Editor getSubFolderList Directory Traversal Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of LG SuperSign Media Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the getSubFolderList method. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to disclose information in the context of SYSTEM. Was ZDI-CAN-20330.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1220/"
+    ],
+    "受影响版本": [
+      "3.11.3_20171108"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "SuperSign Media Editor",
+    "CVE编号": "CVE-2023-40517",
+    "漏洞描述": "LG SuperSign Media Editor ContentRestController getObject Directory Traversal Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of LG SuperSign Media Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the getObject method implemented in the ContentRestController class. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to disclose information in the context of SYSTEM. Was ZDI-CAN-20328.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1219/"
+    ],
+    "受影响版本": [
+      "3.11.3_20171108"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40516",
+    "漏洞描述": "LG Simple Editor Incorrect Permission Assignment Local Privilege Escalation Vulnerability. This vulnerability allows local attackers to escalate privileges on affected installations of LG Simple Editor. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.\n\nThe specific flaw exists within the product installer. The product sets incorrect permissions on folders. An attacker can leverage this vulnerability to escalate privileges and execute arbitrary code in the context of SYSTEM. Was ZDI-CAN-20327.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1218/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40515",
+    "漏洞描述": "LG Simple Editor joinAddUser Improper Input Validation Denial-of-Service Vulnerability. This vulnerability allows remote attackers to create a denial-of-service condition on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the joinAddUser method. The issue results from improper input validation. An attacker can leverage this vulnerability to create a denial-of-service condition on the system.\n. Was ZDI-CAN-20048.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1197/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40514",
+    "漏洞描述": "LG Simple Editor FileManagerController getImageByFilename Directory Traversal Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of LG Simple Editor. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed.\n\nThe specific flaw exists within the getImageByFilename method in the FileManagerController class. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to disclose information in the context of SYSTEM.\n. Was ZDI-CAN-20016.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1196/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40513",
+    "漏洞描述": "LG Simple Editor UserManageController getImageByFilename Directory Traversal Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of LG Simple Editor. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed.\n\nThe specific flaw exists within the getImageByFilename method in the UserManageController class. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to disclose information in the context of SYSTEM.\n. Was ZDI-CAN-20015.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1195/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40512",
+    "漏洞描述": "LG Simple Editor PlayerController getImageByFilename Directory Traversal Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of LG Simple Editor. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed.\n\nThe specific flaw exists within the getImageByFilename method in the PlayerController class. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to disclose information in the context of SYSTEM.\n. Was ZDI-CAN-20014.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1216/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40511",
+    "漏洞描述": "LG Simple Editor checkServer Authentication Bypass Vulnerability. This vulnerability allows remote attackers to bypass authentication on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the checkServer method. The issue results from the exposure of plaintext credentials. An attacker can leverage this vulnerability to bypass authentication on the system.\n. Was ZDI-CAN-20013.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1215/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40510",
+    "漏洞描述": "LG Simple Editor getServerSetting Authentication Bypass Vulnerability. This vulnerability allows remote attackers to bypass authentication on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the getServerSetting method. The issue results from the exposure of plaintext credentials. An attacker can leverage this vulnerability to bypass authentication on the system.\n. Was ZDI-CAN-20012.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1214/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40509",
+    "漏洞描述": "LG Simple Editor deleteCanvas Directory Traversal Arbitrary File Deletion Vulnerability. This vulnerability allows remote attackers to delete arbitrary files on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the deleteCanvas method. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to delete files in the context of SYSTEM.\n. Was ZDI-CAN-20011.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1213/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40508",
+    "漏洞描述": "LG Simple Editor putCanvasDB Directory Traversal Arbitrary File Deletion Vulnerability. This vulnerability allows remote attackers to delete arbitrary files on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the putCanvasDB method. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to delete files in the context of SYSTEM.\n. Was ZDI-CAN-20010.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1212/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40507",
+    "漏洞描述": "LG Simple Editor copyContent XML External Entity Processing Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the implementation of the copyContent command. Due to the improper restriction of XML External Entity (XXE) references, a crafted document specifying a URI causes the XML parser to access the URI and embed the contents back into the XML document for further processing. An attacker can leverage this vulnerability to disclose information in the context of SYSTEM.\n. Was ZDI-CAN-20006.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1211/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40506",
+    "漏洞描述": "LG Simple Editor copyContent XML External Entity Processing Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the implementation of the copyContent command. Due to the improper restriction of XML External Entity (XXE) references, a crafted document specifying a URI causes the XML parser to access the URI and embed the contents back into the XML document for further processing. An attacker can leverage this vulnerability to disclose information in the context of SYSTEM.\n. Was ZDI-CAN-20005.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1210/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40505",
+    "漏洞描述": "LG Simple Editor createThumbnailByMovie Command Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the createThumbnailByMovie method. The issue results from the lack of proper validation of a user-supplied string before using it to execute a system call. An attacker can leverage this vulnerability to execute code in the context of SYSTEM.\n. Was ZDI-CAN-19978.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1209/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40504",
+    "漏洞描述": "LG Simple Editor readVideoInfo Command Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the readVideoInfo method. The issue results from the lack of proper validation of a user-supplied string before using it to execute a system call. An attacker can leverage this vulnerability to execute code in the context of SYSTEM.\n. Was ZDI-CAN-19953.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1208/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40503",
+    "漏洞描述": "LG Simple Editor saveXmlFile XML External Entity Processing Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the saveXmlFile method. Due to the improper restriction of XML External Entity (XXE) references, a crafted document specifying a URI causes the XML parser to access the URI and embed the contents back into the XML document for further processing. An attacker can leverage this vulnerability to disclose information in the context of SYSTEM.\n. Was ZDI-CAN-19952.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1207/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40502",
+    "漏洞描述": "LG Simple Editor cropImage Directory Traversal Arbitrary File Deletion Vulnerability. This vulnerability allows remote attackers to delete arbitrary files on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the implementation of the cropImage command. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to delete files in the context of SYSTEM.\n. Was ZDI-CAN-19951.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1194/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40501",
+    "漏洞描述": "LG Simple Editor copyContent Exposed Dangerous Function Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the implementation of the copyContent command. The issue results from an exposed dangerous function. An attacker can leverage this vulnerability to execute code in the context of SYSTEM.\n. Was ZDI-CAN-19945.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1217/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40500",
+    "漏洞描述": "LG Simple Editor copyContent Exposed Dangerous Function Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the implementation of the copyContent command. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to execute code in the context of SYSTEM.\n. Was ZDI-CAN-19944.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1206/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40499",
+    "漏洞描述": "LG Simple Editor mkdir Directory Traversal Arbitrary File Deletion Vulnerability. This vulnerability allows remote attackers to delete arbitrary files on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the mkdir command implemented in the makeDetailContent method. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to delete files in the context of SYSTEM.\n. Was ZDI-CAN-19926.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1205/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40498",
+    "漏洞描述": "LG Simple Editor cp Command Directory Traversal Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the cp command implemented in the makeDetailContent method. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to execute code in the context of SYSTEM.\n. Was ZDI-CAN-19925.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1204/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40497",
+    "漏洞描述": "LG Simple Editor saveXml Directory Traversal Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the saveXml command implemented in the makeDetailContent method. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to execute code in the context of SYSTEM.\n. Was ZDI-CAN-19924.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1203/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40496",
+    "漏洞描述": "LG Simple Editor copyStickerContent Directory Traversal Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the implementation of the copyStickerContent command. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to disclose information in the context of SYSTEM.\n. Was ZDI-CAN-19923.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1202/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40495",
+    "漏洞描述": "LG Simple Editor copyTemplateAll Directory Traversal Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the copyTemplateAll method. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to disclose information in the context of SYSTEM.\n. Was ZDI-CAN-19922.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1201/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40494",
+    "漏洞描述": "LG Simple Editor deleteFolder Directory Traversal Arbitrary File Deletion Vulnerability. This vulnerability allows remote attackers to delete arbitrary files on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the deleteFolder method. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to delete files in the context of SYSTEM.\n. Was ZDI-CAN-19921.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1200/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40493",
+    "漏洞描述": "LG Simple Editor copySessionFolder Directory Traversal Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the implementation of the copySessionFolder command. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to execute code in the context of SYSTEM.\n. Was ZDI-CAN-19920.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1199/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "LG",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Simple Editor",
+    "CVE编号": "CVE-2023-40492",
+    "漏洞描述": "LG Simple Editor deleteCheckSession Directory Traversal Arbitrary File Deletion Vulnerability. This vulnerability allows remote attackers to delete arbitrary files on affected installations of LG Simple Editor. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the deleteCheckSession method. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to delete files in the context of SYSTEM.\n. Was ZDI-CAN-19919.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1198/"
+    ],
+    "受影响版本": [
+      "LG Simple Editor 3.21.0"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49529",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdgpu/pm: fix the null pointer while the smu is disabled\n\nIt needs to check if the pp_funcs is initialized while release the\ncontext, otherwise it will trigger null pointer panic while the software\nsmu is not enabled.\n\n[ 1109.404555] BUG: kernel NULL pointer dereference, address: 0000000000000078\n[ 1109.404609] #PF: supervisor read access in kernel mode\n[ 1109.404638] #PF: error_code(0x0000) - not-present page\n[ 1109.404657] PGD 0 P4D 0\n[ 1109.404672] Oops: 0000 [#1] PREEMPT SMP NOPTI\n[ 1109.404701] CPU: 7 PID: 9150 Comm: amdgpu_test Tainted: G           OEL    5.16.0-custom #1\n[ 1109.404732] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006\n[ 1109.404765] RIP: 0010:amdgpu_dpm_force_performance_level+0x1d/0x170 [amdgpu]\n[ 1109.405109] Code: 5d c3 44 8b a3 f0 80 00 00 eb e5 66 90 0f 1f 44 00 00 55 48 89 e5 41 57 41 56 41 55 41 54 53 48 83 ec 08 4c 8b b7 f0 7d 00 00 <49> 83 7e 78 00 0f 84 f2 00 00 00 80 bf 87 80 00 00 00 48 89 fb 0f\n[ 1109.405176] RSP: 0018:ffffaf3083ad7c20 EFLAGS: 00010282\n[ 1109.405203] RAX: 0000000000000000 RBX: ffff9796b1c14600 RCX: 0000000002862007\n[ 1109.405229] RDX: ffff97968591c8c0 RSI: 0000000000000001 RDI: ffff9796a3700000\n[ 1109.405260] RBP: ffffaf3083ad7c50 R08: ffffffff9897de00 R09: ffff979688d9db60\n[ 1109.405286] R10: 0000000000000000 R11: ffff979688d9db90 R12: 0000000000000001\n[ 1109.405316] R13: ffff9796a3700000 R14: 0000000000000000 R15: ffff9796a3708fc0\n[ 1109.405345] FS:  00007ff055cff180(0000) GS:ffff9796bfdc0000(0000) knlGS:0000000000000000\n[ 1109.405378] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\n[ 1109.405400] CR2: 0000000000000078 CR3: 000000000a394000 CR4: 00000000000506e0\n[ 1109.405434] Call Trace:\n[ 1109.405445]  <TASK>\n[ 1109.405456]  ? delete_object_full+0x1d/0x20\n[ 1109.405480]  amdgpu_ctx_set_stable_pstate+0x7c/0xa0 [amdgpu]\n[ 1109.405698]  amdgpu_ctx_fini.part.0+0xcb/0x100 [amdgpu]\n[ 1109.405911]  amdgpu_ctx_do_release+0x71/0x80 [amdgpu]\n[ 1109.406121]  amdgpu_ctx_ioctl+0x52d/0x550 [amdgpu]\n[ 1109.406327]  ? _raw_spin_unlock+0x1a/0x30\n[ 1109.406354]  ? drm_gem_handle_delete+0x81/0xb0 [drm]\n[ 1109.406400]  ? amdgpu_ctx_get_entity+0x2c0/0x2c0 [amdgpu]\n[ 1109.406609]  drm_ioctl_kernel+0xb6/0x140 [drm]",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/49ec3441aa5e5940f3e82dd2f0205b9c856e399d",
+      "https://git.kernel.org/stable/c/eea5c7b3390c6e006ba4cbd906447dd8cea8cfbf"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "LG PC",
+    "CVE编号": "CVE-2022-45422",
+    "漏洞描述": "When LG SmartShare is installed, local privilege escalation is possible through DLL Hijacking attack. The LG ID is LVE-HOT-220005.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/pc"
+    ],
+    "受影响版本": [
+      "LG PC with SmartShare S/W installed"
+    ],
+    "公开日期": "2022年11月21日"
+  },
+  {
+    "设备品牌": "Mozilla",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Firefox",
+    "CVE编号": "CVE-2022-34480",
+    "漏洞描述": "Within the <code>lg_init()</code> function, if several allocations succeed but then one fails, an uninitialized pointer would have been freed despite never being allocated. This vulnerability affects Firefox < 102.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.mozilla.org/security/advisories/mfsa2022-24/",
+      "https://bugzilla.mozilla.org/show_bug.cgi?id=1454072"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年12月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "LG mobile devices",
+    "CVE编号": "CVE-2022-23729",
+    "漏洞描述": "When the device is in factory state, it can be access the shell without adb authentication process. The LG ID is LVE-SMP-210010.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/mobile"
+    ],
+    "受影响版本": [
+      "All up to Android version 11 (Except for Android 11 with mainline applied)"
+    ],
+    "公开日期": "2022年03月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "LG mobile devices",
+    "CVE编号": "CVE-2022-23728",
+    "漏洞描述": "Attacker can reset the device with AT Command in the process of rebooting the device. The LG ID is LVE-SMP-210011.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/bulletins/mobile"
+    ],
+    "受影响版本": [
+      "Prior device to Android OS version 11"
+    ],
+    "公开日期": "2022年01月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2022-20132",
+    "漏洞描述": "In lg_probe and related functions of hid-lg.c and other USB HID files, there is a possible out of bounds read due to improper input validation. This could lead to local information disclosure if a malicious USB HID device were plugged in, with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-188677105References: Upstream kernel",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2022-06-01"
+    ],
+    "受影响版本": [
+      "Android kernel"
+    ],
+    "公开日期": "2022年06月15日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2021-46938",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndm rq: fix double free of blk_mq_tag_set in dev remove after table load fails\n\nWhen loading a device-mapper table for a request-based mapped device,\nand the allocation/initialization of the blk_mq_tag_set for the device\nfails, a following device remove will cause a double free.\n\nE.g. (dmesg):\n  device-mapper: core: Cannot initialize queue for request-based dm-mq mapped device\n  device-mapper: ioctl: unable to set up device queue for new table.\n  Unable to handle kernel pointer dereference in virtual kernel address space\n  Failing address: 0305e098835de000 TEID: 0305e098835de803\n  Fault in home space mode while using kernel ASCE.\n  AS:000000025efe0007 R3:0000000000000024\n  Oops: 0038 ilc:3 [#1] SMP\n  Modules linked in: ... lots of modules ...\n  Supported: Yes, External\n  CPU: 0 PID: 7348 Comm: multipathd Kdump: loaded Tainted: G        W      X    5.3.18-53-default #1 SLE15-SP3\n  Hardware name: IBM 8561 T01 7I2 (LPAR)\n  Krnl PSW : 0704e00180000000 000000025e368eca (kfree+0x42/0x330)\n             R:0 T:1 IO:1 EX:1 Key:0 M:1 W:0 P:0 AS:3 CC:2 PM:0 RI:0 EA:3\n  Krnl GPRS: 000000000000004a 000000025efe5230 c1773200d779968d 0000000000000000\n             000000025e520270 000000025e8d1b40 0000000000000003 00000007aae10000\n             000000025e5202a2 0000000000000001 c1773200d779968d 0305e098835de640\n             00000007a8170000 000003ff80138650 000000025e5202a2 000003e00396faa8\n  Krnl Code: 000000025e368eb8: c4180041e100       lgrl    %r1,25eba50b8\n             000000025e368ebe: ecba06b93a55       risbg   %r11,%r10,6,185,58\n            #000000025e368ec4: e3b010000008       ag      %r11,0(%r1)\n            >000000025e368eca: e310b0080004       lg      %r1,8(%r11)\n             000000025e368ed0: a7110001           tmll    %r1,1\n             000000025e368ed4: a7740129           brc     7,25e369126\n             000000025e368ed8: e320b0080004       lg      %r2,8(%r11)\n             000000025e368ede: b904001b           lgr     %r1,%r11\n  Call Trace:\n   [<000000025e368eca>] kfree+0x42/0x330\n   [<000000025e5202a2>] blk_mq_free_tag_set+0x72/0xb8\n   [<000003ff801316a8>] dm_mq_cleanup_mapped_device+0x38/0x50 [dm_mod]\n   [<000003ff80120082>] free_dev+0x52/0xd0 [dm_mod]\n   [<000003ff801233f0>] __dm_destroy+0x150/0x1d0 [dm_mod]\n   [<000003ff8012bb9a>] dev_remove+0x162/0x1c0 [dm_mod]\n   [<000003ff8012a988>] ctl_ioctl+0x198/0x478 [dm_mod]\n   [<000003ff8012ac8a>] dm_ctl_ioctl+0x22/0x38 [dm_mod]\n   [<000000025e3b11ee>] ksys_ioctl+0xbe/0xe0\n   [<000000025e3b127a>] __s390x_sys_ioctl+0x2a/0x40\n   [<000000025e8c15ac>] system_call+0xd8/0x2c8\n  Last Breaking-Event-Address:\n   [<000000025e52029c>] blk_mq_free_tag_set+0x6c/0xb8\n  Kernel panic - not syncing: Fatal exception: panic_on_oops\n\nWhen allocation/initialization of the blk_mq_tag_set fails in\ndm_mq_init_request_queue(), it is uninitialized/freed, but the pointer\nis not reset to NULL; so when dev_remove() later gets into\ndm_mq_cleanup_mapped_device() it sees the pointer and tries to\nuninitialize and free it again.\n\nFix this by setting the pointer to NULL in dm_mq_init_request_queue()\nerror-handling. Also set it to NULL in dm_mq_cleanup_mapped_device().",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/8ae0185255eaf05bd66f4215c81e99bf01140fd9",
+      "https://git.kernel.org/stable/c/b42c0a33dfdd451d9be62dd5de58c39f2750b6e3",
+      "https://git.kernel.org/stable/c/772b9f59657665af3b68d24d12b9d172d31f0dfb",
+      "https://git.kernel.org/stable/c/a992a283c0b77d0a7c2c348add0e6a21fb1dab67",
+      "https://git.kernel.org/stable/c/1cb02dc76f4c0a2749a02b26469512d6984252e9",
+      "https://git.kernel.org/stable/c/6086f957416a6e87236c06079fcaba7a3998aeca",
+      "https://git.kernel.org/stable/c/d757bf4c69cda3c3ab7f775dfabbf5a80e2f6f9d",
+      "https://git.kernel.org/stable/c/8e947c8f4a5620df77e43c9c75310dc510250166"
+    ],
+    "受影响版本": [
+      "1c357a1e86a4227a6b6059f2de118ae47659cebc"
+    ],
+    "公开日期": "2024年02月27日"
+  },
+  {
+    "设备品牌": "sileht",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "bird-lg",
+    "CVE编号": "CVE-2021-4274",
+    "漏洞描述": "A vulnerability, which was classified as problematic, has been found in sileht bird-lg. This issue affects some unknown processing of the file templates/layout.html. The manipulation of the argument request_args leads to cross site scripting. The attack may be initiated remotely. The name of the patch is ef6b32c527478fefe7a4436e10b96ee28ed5b308. It is recommended to apply a patch to fix this issue. The associated identifier of this vulnerability is VDB-216479.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/sileht/bird-lg/pull/82",
+      "https://github.com/sileht/bird-lg/commit/ef6b32c527478fefe7a4436e10b96ee28ed5b308"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年12月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-38591",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS P and Q software for mt6762/mt6765/mt6883. Attackers can change some of the NvRAM content by leveraging the misconfiguration of a debug command. The LG ID is LVE-SMP-210005 (August 2021).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-38306",
+    "漏洞描述": "Network Attached Storage on LG N1T1*** 10124 devices allows an unauthenticated attacker to gain root access via OS command injection in the en/ajp/plugins/access.ssh/checkInstall.php destServer parameter.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.lg.com/uk/support/product/lg-N1T1DD1",
+      "https://www.lg.com/us/burners-drives/lg-N1T1-network-attached-storage",
+      "https://zerosecuritypenetrationtesting.com/?page_id=306"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-3022",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 10 software. There was no write protection for the MTK protect2 partition. The LG ID is LVE-SMP-200028 (January 2021).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年01月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-30162",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 4.4 through 11 software. Attackers can leverage ISMS services to bypass access control on specific content providers. The LG ID is LVE-SMP-210003 (April 2021).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年04月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-30161",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 11 software. Attackers can bypass the lockscreen protection mechanism after an incoming call has been terminated. The LG ID is LVE-SMP-210002 (April 2021).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年04月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-27901",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 11 software. They mishandle fingerprint recognition because local high beam mode (LHBM) does not function properly during bright illumination. The LG ID is LVE-SMP-210001 (March 2021).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年03月02日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-26689",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 8.0, 8.1, 9.0, and 10 software. The USB laf gadget has a use-after-free. The LG ID is LVE-SMP-200031 (February 2021).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-26688",
+    "漏洞描述": "An issue was discovered on LG Wing mobile devices with Android OS 10 software. The biometric sensor has weak security properties. The LG ID is LVE-SMP-200030 (February 2021).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-26687",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 8.0, 8.1, 9.0, and 10 software. In preloaded applications, the HostnameVerified default is mishandled. The LG ID is LVE-SMP-200029 (February 2021).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-9759",
+    "漏洞描述": "A Vulnerability of LG Electronic web OS TV Emulator could allow an attacker to escalate privileges and overwrite certain files. This vulnerability is due to wrong environment setting. An attacker could exploit this vulnerability through crafted configuration files and executable files.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://blog.recurity-labs.com/2021-02-03/webOS_Pt1.html",
+      "https://lists.debian.org/debian-lts-announce/2021/09/msg00018.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年03月23日"
+  },
+  {
+    "设备品牌": "LG Electronics",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "(LGPCSuite_Setup), (IPSFULLHD, LG_ULTRAWIDE, ULTRA_HD_Driver Setup)",
+    "CVE编号": "CVE-2020-7807",
+    "漏洞描述": "A vulnerability that can hijack a DLL file that is loaded during products(LGPCSuite_Setup, IPSFULLHD, LG_ULTRAWIDE, ULTRA_HD_Driver Setup) installation into a DLL file that the hacker wants. Missing Support for Integrity Check vulnerability in ____COMPONENT____ of LG Electronics (LGPCSuite_Setup), (IPSFULLHD, LG_ULTRAWIDE, ULTRA_HD_Driver Setup) allows ____ATTACKER/ATTACK____ to cause ____IMPACT____. This issue affects: LG Electronics; LGPCSuite_Setup : 1.0.0.3 on Windows(x86, x64); IPSFULLHD, LG_ULTRAWIDE, ULTRA_HD_Driver Setup : 1.0.0.9 on Windows(x86, x64).",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/",
+      "https://www.boho.or.kr/krcert/secNoticeView.do?bulletin_writing_sequence=35587"
+    ],
+    "受影响版本": [
+      "IPSFULLHD, LG_ULTRAWIDE, ULTRA_HD_Driver Setup.exe 1.0.0.3",
+      "LGPCSuite_Setup.exe 1.0.0.9"
+    ],
+    "公开日期": "2020年09月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-35555",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 10 software. When a dual-screen configuration is supported, the device does not lock upon disconnection of a call with the cover closed. The LG ID is LVE-SMP-200027 (December 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-35554",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 8.0, 8.1, 9.0, and 10 software. There is a WebView SSL error-handler vulnerability. The LG ID is LVE-SMP-200026 (December 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-28345",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 10 software. The Wi-Fi subsystem may crash because of the lack of a NULL parameter check. The LG ID is LVE-SMP-200025 (November 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-28344",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 8.0, 8.1, 9.0, and 10 software. System services may crash because of the lack of a NULL parameter check. The LG ID is LVE-SMP-200024 (November 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-26598",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 8.0, 8.1, and 9.0 software. The Network Management component could allow an unauthorized actor to kill a TCP connection. The LG ID is LVE-SMP-200023 (October 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年10月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-26597",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 9.0 and 10 software. The Wi-Fi subsystem has incorrect input validation, leading to a crash. The LG ID is LVE-SMP-200022 (October 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年10月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-25283",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 8.0, 8.1, 9.0, and 10 software. BT manager allows attackers to bypass intended access restrictions on a certain mode. The LG ID is LVE-SMP-200021 (September 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-25282",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 10 software. The lguicc software (for the LG Universal Integrated Circuit Card) allows attackers to bypass intended access restrictions on property values. The LG ID is LVE-SMP-200020 (September 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-25281",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 7.0, 7.1, 7.2, 8.0, and 8.1 software. Applications with sensitive security settings (such as the package verifier application) mishandle unknown-source installations. The LG ID is LVE-SMP-190002 (September 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-25065",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 4.4, 5.0, 5.1, 6.0, 7.0, 7.1, 8.0, 8.1, 9.0, and 10 software. Key logging may occur because of an obsolete API. The LG ID is LVE-SMP-170010 (August 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-25064",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 4.4, 5.0, 5.1, 6.0, 7.0, 7.1, 8.0, 8.1, 9.0, and 10 software. Certain automated testing is mishandled. The LG ID is LVE-SMP-200019 (August 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-25063",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 7.2, 8.0, 8.1, 9, and 10 software. An application crash can occur because of incorrect application-level input validation. The LG ID is LVE-SMP-200018 (July 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-25062",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 9 and 10 software. LGTelephonyProvider allows a bypass of intended privilege restrictions. The LG ID is LVE-SMP-200017 (July 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-25061",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 9 and 10 software on the VZW network. lge_property allows property overwrites. The LG ID is LVE-SMP-200016 (July 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-25060",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 7.2, 8.0, 8.1, 9, and 10 software. Local users can gain privileges because of LAF and SBL1 flaws. The LG ID is LVE-SMP-200015 (July 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-25059",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 7.2, 8.0, 8.1, 9, and 10 software. A service crash may occur because of incorrect input validation. The LG ID is LVE-SMP-200013 (July 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-25058",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 8.0, 8.1, 9, and 10 software. The network_management service does not properly restrict configuration changes. The LG ID is LVE-SMP-200012 (July 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-25057",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 10 software. MDMService does not properly restrict APK installations. The LG ID is LVE-SMP-200011 (July 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-13843",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS software before 2020-06-01. Local users can cause a denial of service because checking of the userdata partition is mishandled. The LG ID is LVE-SMP-200014 (June 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-13842",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 7.2, 8.0, 8.1, 9, and 10 (MTK chipsets). A dangerous AT command was made available even though it is unused. The LG ID is LVE-SMP-200010 (June 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-13841",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 9 and 10 (MTK chipsets). An AT command handler allows attackers to bypass intended access restrictions. The LG ID is LVE-SMP-200009 (June 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-13840",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 7.2, 8.0, 8.1, 9, and 10 (MTK chipsets). Code execution can occur via an MTK AT command handler buffer overflow. The LG ID is LVE-SMP-200008 (June 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-13839",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 7.2, 8.0, 8.1, 9, and 10 (MTK chipsets). Code execution can occur via a custom AT command handler buffer overflow. The LG ID is LVE-SMP-200007 (June 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-12754",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 7.2, 8.0, 8.1, 9, and 10 software. A crafted application can obtain control of device input via the window system service. The LG ID is LVE-SMP-170011 (May 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年05月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-12753",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 7.2, 8.0, 8.1, 9, and 10 software. Arbitrary code execution can occur via the bootloader because of an EL1/EL3 coldboot vulnerability involving raw_resources. The LG ID is LVE-SMP-200006 (May 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/",
+      "https://www.zdnet.com/article/new-cold-boot-attack-affects-seven-years-of-lg-android-smartphones/",
+      "https://douevenknow.us/post/619763074822520832/an-el1el3-coldboot-vulnerability"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年05月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-11875",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 8.0, 8.1, 9.0, and 10.0 (MTK chipsets) software. The MTK kernel does not properly implement exception handling, allowing an attacker to gain privileges. The LG ID is LVE-SMP-200001 (February 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/",
+      "https://cwe.mitre.org/data/definitions/755.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年04月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-11874",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 8.0, 8.1, 9, and 10 software. Attackers can bypass Factory Reset Protection (FRP). The LG ID is LVE-SMP-200004 (March 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年04月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-11873",
+    "漏洞描述": "An issue was discovered on LG mobile devices with Android OS 7.2, 8.0, 8.1, 9, and 10 software. A stack-based buffer overflow in the logging tool could allow an attacker to gain privileges. The LG ID is LVE-SMP-200005 (April 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://lgsecurity.lge.com/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年04月17日"
+  }
+]

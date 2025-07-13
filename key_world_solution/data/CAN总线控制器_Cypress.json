@@ -1,0 +1,250 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2025-44557",
+    "漏洞描述": "A state machine transition flaw in the Bluetooth Low Energy (BLE) stack of Cypress PSoC4 v3.66 allows attackers to bypass the pairing process and authentication via a crafted pairing_failed packet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.infineon.com/cms/en/design-support/tools/sdk/psoc-software/psoc-4-components/psoc-creator-component-datasheet-bluetooth-low-energy-ble/",
+      "https://github.com/yangting111/BLE_TEST/blob/main/result/PoC/Cypress/Auth_bypass.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年06月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-48289",
+    "漏洞描述": "An issue in the Bluetooth Low Energy implementation of Cypress Bluetooth SDK v3.66 allows attackers to cause a Denial of Service (DoS) via supplying a crafted LL_PAUSE_ENC_REQ packet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://community.infineon.com/t5/PSoC-4/BLE-SDK-Integer-Overflow/m-p/888037#M49108"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年11月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-47415",
+    "漏洞描述": "Cypress Solutions CTM-200 v2.7.1.5600 and below was discovered to contain an OS command injection vulnerability via the cli_text parameter.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://ctm-200.com",
+      "http://cypress.com",
+      "https://gitlab.com/loudmouth-security/vulnerability-disclosures/cve-2023-47415"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年03月07日"
+  },
+  {
+    "设备品牌": "simonsmith",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "cypress-image-snapshot",
+    "CVE编号": "CVE-2023-38695",
+    "漏洞描述": "cypress-image-snapshot shows visual regressions in Cypress with jest-image-snapshot. Prior to version 8.0.2, it's possible for a user to pass a relative file path for the snapshot name and reach outside of the project directory into the machine running the test. This issue has been patched in version 8.0.2.\n\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/simonsmith/cypress-image-snapshot/security/advisories/GHSA-vxjg-hchx-cc4g",
+      "https://github.com/simonsmith/cypress-image-snapshot/issues/15",
+      "https://github.com/simonsmith/cypress-image-snapshot/commit/ef49519795daf5183f4fac6f3136e194f20f39f4",
+      "https://github.com/simonsmith/cypress-image-snapshot/releases/tag/8.0.2"
+    ],
+    "受影响版本": [
+      "<= 8.0.1"
+    ],
+    "公开日期": "2023年08月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-31364",
+    "漏洞描述": "Cypress : https://www.infineon.com/ Cypress Bluetooth Mesh SDK BSA0107_05.01.00-BX8-AMESH-08 is affected by: Buffer Overflow. The impact is: execute arbitrary code (remote). The component is: affected function is lower_transport_layer_on_seg. ¶¶ In Cypress Bluetooth Mesh SDK, there is an out-of-bound write vulnerability that can be triggered by sending a series of segmented packets with inconsistent SegN.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://docs.google.com/document/d/1tCJg1uBYtfx4SNvewWPNXd7PB6Z__iiG/edit"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年02月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-31363",
+    "漏洞描述": "Cypress : https://www.infineon.com/ Cypress Bluetooth Mesh SDK BSA0107_05.01.00-BX8-AMESH-08 is affected by: Buffer Overflow. The impact is: execute arbitrary code (remote). The component is: affected function is pb_transport_handle_frag_. ¶¶ In Cypress Bluetooth Mesh SDK, there is an out-of-bound write vulnerability that can be triggered during mesh provisioning. Because there is no check for mismatched SegN and TotalLength in Transaction Start PDU.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://docs.google.com/document/d/1iSZze8Ig6HZVsrldmXw0bibZLGMMTU5w/edit"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年02月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-34148",
+    "漏洞描述": "The Bluetooth Classic implementation in the Cypress WICED BT stack through 2.9.0 for CYW20735B1 devices does not properly handle the reception of LMP_max_slot with a greater ACL Length after completion of the LMP setup procedure, allowing attackers in radio range to trigger a denial of service (firmware crash) via a crafted LMP packet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.cypress.com/documentation/datasheets/cyw20735b1-single-chip-bluetooth-transceiver-wireless-input-devices",
+      "https://dl.packetstormsecurity.net/papers/general/braktooth.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-34147",
+    "漏洞描述": "The Bluetooth Classic implementation in the Cypress WICED BT stack through 2.9.0 for CYW20735B1 does not properly handle the reception of a malformed LMP timing accuracy response followed by multiple reconnections to the link slave, allowing attackers to exhaust device BT resources and eventually trigger a crash via multiple attempts of sending a crafted LMP timing accuracy response followed by a sudden reconnection with a random BDAddress.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.cypress.com/documentation/datasheets/cyw20735b1-single-chip-bluetooth-transceiver-wireless-input-devices",
+      "https://dl.packetstormsecurity.net/papers/general/braktooth.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-34146",
+    "漏洞描述": "The Bluetooth Classic implementation in the Cypress CYW920735Q60EVB does not properly handle the reception of continuous unsolicited LMP responses, allowing attackers in radio range to trigger a denial of service and restart (crash) of the device by flooding it with LMP_AU_Rand packets after the paging procedure.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.cypress.com/documentation/datasheets/cyw20735b1-single-chip-bluetooth-transceiver-wireless-input-devices",
+      "https://dl.packetstormsecurity.net/papers/general/braktooth.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-34145",
+    "漏洞描述": "The Bluetooth Classic implementation in the Cypress WICED BT stack through 2.9.0 for CYW20735B1 devices does not properly handle the reception of LMP_max_slot with an invalid Baseband packet type (and LT_ADDRESS and LT_ADDR) after completion of the LMP setup procedure, allowing attackers in radio range to trigger a denial of service (firmware crash) via a crafted LMP packet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.cypress.com/documentation/datasheets/cyw20735b1-single-chip-bluetooth-transceiver-wireless-input-devices",
+      "https://dl.packetstormsecurity.net/papers/general/braktooth.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-11957",
+    "漏洞描述": "The Bluetooth Low Energy implementation in Cypress PSoC Creator BLE 4.2 component versions before 3.64 generates a random number (Pairing Random) with significantly less entropy than the specified 128 bits during BLE pairing. This is the case for both authenticated and unauthenticated pairing with both LE Secure Connections as well as LE Legacy Pairing. A predictable or brute-forceable random number allows an attacker (in radio range) to perform a MITM attack during BLE pairing.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.cypress.com/file/504466/download"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10370",
+    "漏洞描述": "Certain Cypress (and Broadcom) Wireless Combo chips such as CYW43455, when a 2021-01-26 Bluetooth firmware update is not present, allow a Bluetooth outage via a \"Spectra\" attack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.informatik.tu-darmstadt.de/seemoo/team_seemoo/jiska_classen/index.en.jsp",
+      "https://github.com/RPi-Distro/bluez-firmware/commit/8445a53ce2c51a77472b908a0c8f6f8e1fa5c37a",
+      "https://security-tracker.debian.org/tracker/CVE-2020-10370",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2052676",
+      "https://www.informatik.tu-darmstadt.de/fb20/aktuelles_fb20/fb20_neuigkeiten/neuigkeiten_fb20_details_203136.de.jsp"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年11月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10369",
+    "漏洞描述": "Certain Cypress (and Broadcom) Wireless Combo chips, when a January 2021 firmware update is not present, allow inferences about memory content via a \"Spectra\" attack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.informatik.tu-darmstadt.de/seemoo/team_seemoo/jiska_classen/index.en.jsp",
+      "https://github.com/RPi-Distro/bluez-firmware/commit/8445a53ce2c51a77472b908a0c8f6f8e1fa5c37a",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2052676",
+      "https://www.informatik.tu-darmstadt.de/fb20/aktuelles_fb20/fb20_neuigkeiten/neuigkeiten_fb20_details_203136.de.jsp"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年11月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10368",
+    "漏洞描述": "Certain Cypress (and Broadcom) Wireless Combo chips, when a January 2021 firmware update is not present, allow memory read access via a \"Spectra\" attack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.informatik.tu-darmstadt.de/seemoo/team_seemoo/jiska_classen/index.en.jsp",
+      "https://github.com/RPi-Distro/bluez-firmware/commit/8445a53ce2c51a77472b908a0c8f6f8e1fa5c37a",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2052676",
+      "https://www.informatik.tu-darmstadt.de/fb20/aktuelles_fb20/fb20_neuigkeiten/neuigkeiten_fb20_details_203136.de.jsp"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年11月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10367",
+    "漏洞描述": "Certain Cypress (and Broadcom) Wireless Combo chips, when a January 2021 firmware update is not present, allow memory access via a \"Spectra\" attack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.informatik.tu-darmstadt.de/seemoo/team_seemoo/jiska_classen/index.en.jsp",
+      "https://github.com/RPi-Distro/bluez-firmware/commit/8445a53ce2c51a77472b908a0c8f6f8e1fa5c37a",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2052676",
+      "https://www.informatik.tu-darmstadt.de/fb20/aktuelles_fb20/fb20_neuigkeiten/neuigkeiten_fb20_details_203136.de.jsp"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年11月10日"
+  }
+]

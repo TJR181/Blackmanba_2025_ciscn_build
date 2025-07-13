@@ -1,0 +1,17 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-22650",
+    "漏洞描述": "A memory leak vulnerability in sim-organizer.c of AlienVault Ossim v5 causes a denial of service (DOS) via a system crash triggered by the occurrence of a large number of alarm events.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/jpalanco/alienvault-ossim/issues/4"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年07月19日"
+  }
+]

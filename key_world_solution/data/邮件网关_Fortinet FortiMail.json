@@ -1,0 +1,169 @@
+[
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "邮件网关",
+    "产品型号": "FortiVoice",
+    "CVE编号": "CVE-2025-32756",
+    "漏洞描述": "A stack-based buffer overflow vulnerability [CWE-121] in Fortinet FortiVoice versions 7.2.0, 7.0.0 through 7.0.6, 6.4.0 through 6.4.10, FortiRecorder versions 7.2.0 through 7.2.3, 7.0.0 through 7.0.5, 6.4.0 through 6.4.5, FortiMail versions 7.6.0 through 7.6.2, 7.4.0 through 7.4.4, 7.2.0 through 7.2.7, 7.0.0 through 7.0.8, FortiNDR versions 7.6.0, 7.4.0 through 7.4.7, 7.2.0 through 7.2.4, 7.0.0 through 7.0.6, FortiCamera versions 2.1.0 through 2.1.3, 2.0 all versions, 1.1 all versions, allows a remote unauthenticated attacker to execute arbitrary code or commands via sending HTTP requests with specially crafted hash cookie.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://fortiguard.fortinet.com/psirt/FG-IR-25-254"
+    ],
+    "受影响版本": [
+      "6.4.0",
+      "7.0.0",
+      "7.2.0"
+    ],
+    "公开日期": "2025年05月13日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "邮件网关",
+    "产品型号": "FortiMail",
+    "CVE编号": "CVE-2024-56497",
+    "漏洞描述": "An improper neutralization of special elements used in an os command ('os command injection') in Fortinet FortiMail versions 7.2.0 through 7.2.4 and 7.0.0 through 7.0.6 and 6.4.0 through 6.4.7, FortiRecorder versions 7.0.0 and 6.4.0 through 6.4.4 allows attacker to execute unauthorized code or commands via the CLI.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://fortiguard.fortinet.com/psirt/FG-IR-23-170"
+    ],
+    "受影响版本": [
+      "6.4.0",
+      "7.0.0",
+      "7.2.0"
+    ],
+    "公开日期": "2025年01月14日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "邮件网关",
+    "产品型号": "FortiMail",
+    "CVE编号": "CVE-2024-46663",
+    "漏洞描述": "A stack-buffer overflow vulnerability [CWE-121] in Fortinet FortiMail CLI version 7.6.0 through 7.6.1 and before 7.4.3 allows a privileged attacker to execute arbitrary code or commands via specifically crafted CLI commands.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://fortiguard.fortinet.com/psirt/FG-IR-24-331"
+    ],
+    "受影响版本": [
+      "6.4.0",
+      "7.0.0",
+      "7.2.0",
+      "7.4.0",
+      "7.6.0"
+    ],
+    "公开日期": "2025年03月11日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "邮件网关",
+    "产品型号": "FortiNDR",
+    "CVE编号": "CVE-2023-33302",
+    "漏洞描述": "A buffer copy without checking size of input ('classic buffer overflow') in Fortinet  FortiMail webmail and administrative interface version 6.4.0 through 6.4.4 and before 6.2.6 and FortiNDR administrative interface version 7.2.0 and before 7.1.0 allows an authenticated attacker with regular webmail access to trigger a buffer overflow and to possibly execute unauthorized code or commands via specifically crafted HTTP requests.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://fortiguard.fortinet.com/psirt/FG-IR-21-023"
+    ],
+    "受影响版本": [
+      "1.1.0",
+      "1.2.0",
+      "1.3.0",
+      "1.4.0",
+      "1.5.0",
+      "7.0.0",
+      "7.1.0",
+      "7.2.0"
+    ],
+    "公开日期": "2025年03月31日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "邮件网关",
+    "产品型号": "FortiMail",
+    "CVE编号": "CVE-2022-29056",
+    "漏洞描述": "A improper restriction of excessive authentication attempts vulnerability [CWE-307] in Fortinet FortiMail version 6.4.0, version 6.2.0 through 6.2.4 and before 6.0.9 allows  a remote unauthenticated attacker to partially exhaust CPU and memory via sending numerous HTTP requests to the login form.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://fortiguard.com/psirt/FG-IR-20-078"
+    ],
+    "受影响版本": [
+      "5.4.0",
+      "6.0.0",
+      "6.2.1",
+      "6.4.0"
+    ],
+    "公开日期": "2023年03月09日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "邮件网关",
+    "产品型号": "FortiVoice",
+    "CVE编号": "CVE-2022-27488",
+    "漏洞描述": "A cross-site request forgery (CSRF) in Fortinet FortiVoiceEnterprise version 6.4.x, 6.0.x, FortiSwitch version 7.0.0 through 7.0.4, 6.4.0 through 6.4.10, 6.2.0 through 6.2.7, 6.0.x, FortiMail version 7.0.0 through 7.0.3, 6.4.0 through 6.4.6, 6.2.x, 6.0.x FortiRecorder version 6.4.0 through 6.4.2, 6.0.x, 2.7.x, 2.6.x, FortiNDR version 1.x.x allows a remote unauthenticated attacker to execute commands on the CLI via tricking an authenticated administrator to execute malicious GET requests.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://fortiguard.com/psirt/FG-IR-22-038"
+    ],
+    "受影响版本": [
+      "6.0.0",
+      "6.4.0"
+    ],
+    "公开日期": "2023年12月13日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "邮件网关",
+    "产品型号": "FortiTester",
+    "CVE编号": "CVE-2022-23439",
+    "漏洞描述": "A externally controlled reference to a resource in another sphere in Fortinet FortiManager before version 7.4.3, FortiMail before version 7.0.3, FortiAnalyzer before version 7.4.3, FortiVoice version 7.0.0, 7.0.1 and before 6.4.8, FortiProxy before version 7.0.4, FortiRecorder version 6.4.0 through 6.4.2 and before 6.0.10, FortiAuthenticator version 6.4.0 through 6.4.1 and before 6.3.3, FortiNDR version 7.2.0 before 7.1.0, FortiWLC before version 8.6.4, FortiPortal before version 6.0.9, FortiOS version 7.2.0 and before 7.0.5, FortiADC version 7.0.0 through 7.0.1 and before 6.2.3 , FortiDDoS before version 5.5.1, FortiDDoS-F before version 6.3.3, FortiTester before version 7.2.1, FortiSOAR before version 7.2.2 and FortiSwitch before version 6.3.3 allows attacker to poison web caches via crafted HTTP requests, where the `Host` header points to an arbitrary webserver",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://fortiguard.com/psirt/FG-IR-21-254"
+    ],
+    "受影响版本": [
+      "3.3.0",
+      "3.4.0",
+      "3.5.0",
+      "3.6.0",
+      "3.7.0",
+      "3.8.0",
+      "3.9.0",
+      "4.0.0",
+      "4.1.0",
+      "4.2.0",
+      "7.0.0",
+      "7.1.0",
+      "7.2.0"
+    ],
+    "公开日期": "2025年01月22日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "邮件网关",
+    "产品型号": "Fortinet FortiMail",
+    "CVE编号": "CVE-2021-43062",
+    "漏洞描述": "A improper neutralization of input during web page generation ('cross-site scripting') in Fortinet FortiMail version 7.0.1 and 7.0.0, version 6.4.5 and below, version 6.3.7 and below, version 6.0.11 and below allows attacker to execute unauthorized code or commands via crafted HTTP GET requests to the FortiGuard URI protection service.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://fortiguard.com/advisory/FG-IR-21-185",
+      "http://packetstormsecurity.com/files/166055/Fortinet-Fortimail-7.0.1-Cross-Site-Scripting.html"
+    ],
+    "受影响版本": [
+      "FortiMail 7.0.1, 7.0.0, 6.4.5, 6.4.4, 6.4.3, 6.4.2, 6.4.1, 6.4.0, 6.2.7, 6.2.6, 6.2.5, 6.2.4, 6.2.3, 6.2.2, 6.2.1, 6.2.0, 6.0.11, 6.0.10, 6.0.9, 6.0.8, 6.0.7, 6.0.6, 6.0.5, 6.0.4, 6.0.3, 6.0.2, 6.0.1, 6.0.0"
+    ],
+    "公开日期": "2022年02月02日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "邮件网关",
+    "产品型号": "Fortinet FortiMail",
+    "CVE编号": "CVE-2020-15933",
+    "漏洞描述": "A exposure of sensitive information to an unauthorized actor in Fortinet FortiMail versions 6.0.9 and below, FortiMail versions 6.2.4 and below FortiMail versions 6.4.1 and 6.4.0 allows attacker to obtain potentially sensitive software-version information via client-side resources inspection.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://fortiguard.com/psirt/FG-IR-20-105"
+    ],
+    "受影响版本": [
+      "FortiMail 6.4.1, 6.4.0, 6.2.4, 6.2.3, 6.2.2, 6.2.1, 6.2.0, 6.0.9, 6.0.8, 6.0.7, 6.0.6, 6.0.5, 6.0.4, 6.0.3, 6.0.2, 6.0.1, 6.0.0, 5.4.12, 5.4.11, 5.4.10, 5.4.9, 5.4.8, 5.4.7, 5.4.6, 5.4.5, 5.4.4, 5.4.3, 5.4.2, 5.4.1, 5.4.0, 5.3.13, 5.3.12, 5.3.10, 5.3.9, 5.3.8, 5.3.7, 5.3.6, 5.3.5, 5.3.4, 5.3.3, 5.3.2, 5.3.1, 5.3.0, 5.2.10, 5.2.9, 5.2.8, 5.2.7, 5.2.6, 5.2.5, 5.2.4, 5.2.3, 5.2.2, 5.2.1, 5.2.0, 5.1.7, 5.1.6, 5.1.5, 5.1.4, 5.1.3, 5.1.2, 5.1.1, 5.1.0, 5.0.11, 5.0.10, 5.0.9, 5.0.8, 5.0.7, 5.0.6, 5.0.5, 5.0.4, 5.0.3, 5.0.2, 5.0.1, 5.0.0, 4.3.9, 4.3.8, 4.3.7, 4.3.6, 4.3.5, 4.3.4, 4.3.3, 4.3.2, 4.3.1, 4.3.0, 4.2.4, 4.2.3, 4.2.2, 4.2.1, 4.2.0, 4.1.3, 4.1.2, 4.1.1, 4.1.0, 4.0.5, 4.0.4, 4.0.3, 4.0.1"
+    ],
+    "公开日期": "2022年01月05日"
+  }
+]

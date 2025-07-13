@@ -1,0 +1,924 @@
+[
+  {
+    "设备品牌": "Silicon Labs",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko OS",
+    "CVE编号": "CVE-2025-2838",
+    "漏洞描述": "Silicon Labs Gecko OS DNS Response Processing Infinite Loop Denial-of-Service Vulnerability. This vulnerability allows network-adjacent attackers to create a denial-of-service condition on affected installations of Silicon Labs Gecko OS. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the processing of DNS responses. The issue results from a logic error that can lead to an infinite loop. An attacker can leverage this vulnerability to create a denial-of-service condition on the system. Was ZDI-CAN-23392.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-872/",
+      "https://community.silabs.com/a45Vm0000000Atp"
+    ],
+    "受影响版本": [
+      "1.0.46"
+    ],
+    "公开日期": "2025年03月26日"
+  },
+  {
+    "设备品牌": "Silicon Labs",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko OS",
+    "CVE编号": "CVE-2025-2837",
+    "漏洞描述": "Silicon Labs Gecko OS HTTP Request Handling Stack-based Buffer Overflow Remote Code Execution Vulnerability. This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Silicon Labs Gecko OS. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the handling of HTTP requests. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of the device. Was ZDI-CAN-23245.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-871/",
+      "https://community.silabs.com/a45Vm0000000Atp"
+    ],
+    "受影响版本": [
+      "1.0.46"
+    ],
+    "公开日期": "2025年03月26日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Silicon Labs IDE (8-bit)",
+    "CVE编号": "CVE-2024-9490",
+    "漏洞描述": "DLL hijacking vulnerabilities, caused by an uncontrolled search path in Silicon Labs (8-bit) IDE installer can lead to privilege escalation and arbitrary code execution when running the impacted installer.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://community.silabs.com/068Vm00000JUQwd"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月24日"
+  },
+  {
+    "设备品牌": "Silicon Labs",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Simplicity SDK",
+    "CVE编号": "CVE-2024-9055",
+    "漏洞描述": "The DPA countermeasures on Silicon Labs' Series 2 devices are not reseeded periodically as they should be. This may allow an attacker to eventually extract secret keys through a DPA attack.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://community.silabs.com/069Vm00000LJMlfIAH"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年03月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-50931",
+    "漏洞描述": "Silicon Labs Z-Wave Series 500 v6.84.0 was discovered to contain insecure permissions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/CNK2100/2024-CVE/blob/main/README.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年12月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-50930",
+    "漏洞描述": "An issue in Silicon Labs Z-Wave Series 500 v6.84.0 allows attackers to execute arbitrary code.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/CNK2100/2024-CVE/blob/main/README.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年12月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-50929",
+    "漏洞描述": "Insecure permissions in Silicon Labs (SiLabs) Z-Wave Series 700 and 800 v7.21.1 allow attackers to arbitrarily change the device type in the controller's memory, leading to a Denial of Service (DoS).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/CNK2100/2024-CVE/blob/main/README.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年12月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-50928",
+    "漏洞描述": "Insecure permissions in Silicon Labs (SiLabs) Z-Wave Series 700 and 800 v7.21.1 allow attackers to change the wakeup interval of end devices in controller memory, disrupting the device's communications with the controller.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/CNK2100/2024-CVE/blob/main/README.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年12月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-50924",
+    "漏洞描述": "Insecure permissions in Silicon Labs (SiLabs) Z-Wave Series 700 and 800 v7.21.1 allow attackers to cause disrupt communications between the controller and the device itself via repeatedly sending crafted packets to the controller.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/CNK2100/2024-CVE/blob/main/README.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年12月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-50921",
+    "漏洞描述": "Insecure permissions in Silicon Labs (SiLabs) Z-Wave Series 700 and 800 v7.21.1 allow attackers to cause a Denial of Service (DoS) via repeatedly sending crafted packets to the controller.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/CNK2100/2024-CVE/blob/main/README.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年12月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-50920",
+    "漏洞描述": "Insecure permissions in Silicon Labs (SiLabs) Z-Wave Series 700 and 800 v7.21.1 allow attackers to create a fake node via supplying crafted packets.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/CNK2100/2024-CVE/blob/main/README.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年12月10日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "SiSDK",
+    "CVE编号": "CVE-2024-3017",
+    "漏洞描述": "In a \n\nSilicon Labs  multi-protocol gateway, a corrupt pointer to buffered data on a multi-protocol radio co-processor (RCP) causes the OpenThread Border Router(OTBR) application task running on the host platform to crash, allowing an attacker to cause a temporary denial-of-service.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/simplicity_sdk",
+      "https://community.silabs.com/069Vm000007UEhZIAW"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年06月27日"
+  },
+  {
+    "设备品牌": "Silicon Labs",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko OS",
+    "CVE编号": "CVE-2024-24731",
+    "漏洞描述": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Silicon Labs Gecko OS. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the implementation of the http_download command. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of the device.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-870/",
+      "https://community.silabs.com/a45Vm0000000Atp"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2025年01月30日"
+  },
+  {
+    "设备品牌": "Silicon Labs",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko OS",
+    "CVE编号": "CVE-2024-23973",
+    "漏洞描述": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Silicon Labs Gecko OS. Authentication is not required to exploit this vulnerability. \n\nThe specific flaw exists within the handling of HTTP GET requests. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of the device.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-873/",
+      "https://community.silabs.com/a45Vm0000000Atp"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2025年01月30日"
+  },
+  {
+    "设备品牌": "Silicon Labs",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko OS",
+    "CVE编号": "CVE-2024-23938",
+    "漏洞描述": "Silicon Labs Gecko OS Debug Interface Stack-based Buffer Overflow Remote Code Execution Vulnerability. This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Silicon Labs Gecko OS. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the debug interface. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of the device.\n\nWas ZDI-CAN-23184",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-868/",
+      "https://community.silabs.com/a45Vm0000000Atp"
+    ],
+    "受影响版本": [
+      "1.0.46"
+    ],
+    "公开日期": "2024年09月28日"
+  },
+  {
+    "设备品牌": "Silicon Labs",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko OS",
+    "CVE编号": "CVE-2024-23937",
+    "漏洞描述": "This vulnerability allows network-adjacent attackers to disclose sensitive information on affected installations of Silicon Labs Gecko OS. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the debug interface. The issue results from the lack of proper validation of a user-supplied string before using it as a format specifier. An attacker can leverage this in conjunction with other vulnerabilities to execute arbitrary code in the context of the device.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-869/",
+      "https://community.silabs.com/a45Vm0000000Atp"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2025年01月31日"
+  },
+  {
+    "设备品牌": "Silicon Labs",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Z-Wave SDK",
+    "CVE编号": "CVE-2024-22472",
+    "漏洞描述": "\nA buffer Overflow vulnerability in Silicon Labs 500 Series Z-Wave devices may allow Denial of Service, and potential Remote Code execution\n\nThis issue affects all versions of Silicon Labs 500 Series SDK prior to v6.85.2\n\nrunning on Silicon Labs 500 series Z-wave devices.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://community.silabs.com/068Vm000004rZwm"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年05月07日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "GSDK",
+    "CVE编号": "CVE-2024-0240",
+    "漏洞描述": "A memory leak in the Silicon Labs' Bluetooth stack for EFR32 products may cause memory to be exhausted when sending notifications to multiple clients, this results in all Bluetooth operations, such as advertising and scanning, to stop.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk",
+      "https://community.silabs.com/069Vm000001AjEfIAK"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年02月15日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko SDK",
+    "CVE编号": "CVE-2023-5310",
+    "漏洞描述": "A denial of service vulnerability exists in all Silicon Labs Z-Wave controller and endpoint devices running Z-Wave SDK v7.20.3 (Gecko SDK v4.3.3) and earlier. This attack can be carried out only by devices on the network sending a stream of packets to the device.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk/releases",
+      "https://siliconlabs.lightning.force.com/sfc/servlet.shepherd/document/download/069Vm0000005E7EIAU?%20operationContext=S1"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年12月15日"
+  },
+  {
+    "设备品牌": "Silicon Labs",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Z-Wave SDK",
+    "CVE编号": "CVE-2023-51395",
+    "漏洞描述": "The vulnerability described by CVE-2023-0972 has been additionally discovered in Silicon Labs Z-Wave end devices. This vulnerability may allow an unauthenticated attacker within Z-Wave range to overflow a stack buffer, leading to arbitrary code execution.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://community.silabs.com/068Vm0000029Xq5"
+    ],
+    "受影响版本": [
+      "7.17.5",
+      "7.18.8",
+      "7.19.3",
+      "7.20.0"
+    ],
+    "公开日期": "2024年03月07日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Ember ZNet SDK",
+    "CVE编号": "CVE-2023-51394",
+    "漏洞描述": "High traffic environments may result in NULL Pointer Dereference vulnerability in Silicon Labs's Ember ZNet SDK before v7.4.0, causing a system crash.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://community.silabs.com/068Vm000001NL4u"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年02月23日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Ember ZNet SDK",
+    "CVE编号": "CVE-2023-51393",
+    "漏洞描述": "Due to an allocation of resources without limits, an uncontrolled resource consumption vulnerability exists in Silicon Labs Ember ZNet SDK prior to v7.4.0.0 (delivered as part of Silicon Labs Gecko SDK v4.4.0) which may enable attackers to trigger a bus fault and crash of the device, requiring a reboot in order to rejoin the network.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://community.silabs.com/068Vm000001NaAM"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年02月23日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "GSDK",
+    "CVE编号": "CVE-2023-5138",
+    "漏洞描述": "Glitch detection is not enabled by default for the CortexM33 core in Silicon Labs secure vault high parts EFx32xG2xB, except EFR32xG21B.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk",
+      "https://community.silabs.com/069Vm0000004f6DIAQ"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2024年01月03日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Z/IP Gateway SDK",
+    "CVE编号": "CVE-2023-4489",
+    "漏洞描述": "The first S0 encryption key is generated with an uninitialized PRNG in Z/IP Gateway products running Silicon Labs Z/IP Gateway SDK v7.18.3 and earlier. This makes the first S0 key generated at startup predictable, potentially allowing network key prediction and unauthorized S0 network access.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://siliconlabs.lightning.force.com/sfc/servlet.shepherd/document/download/0698Y00000buWj0QAE?operationContext=S1",
+      "https://github.com/SiliconLabs/gecko_sdk"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年12月14日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "GSDK",
+    "CVE编号": "CVE-2023-4280",
+    "漏洞描述": "An unvalidated input in Silicon Labs TrustZone implementation in v4.3.x and earlier of the Gecko SDK allows an attacker to access the trusted region of memory from the untrusted region.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk",
+      "https://community.silabs.com/069Vm0000004NinIAE"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2024年01月02日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Ember ZNet SDK",
+    "CVE编号": "CVE-2023-41096",
+    "漏洞描述": "Missing Encryption of Security Keys vulnerability in Silicon Labs Ember ZNet SDK on 32 bit, ARM (SecureVault High modules)\n allows potential modification or extraction of network credentials stored in flash.\n\n\nThis issue affects Silicon Labs Ember ZNet SDK: 7.3.1 and earlier.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://siliconlabs.lightning.force.com/sfc/servlet.shepherd/document/download/0698Y00000ZkKh7QAF?operationContext=S1"
+    ],
+    "受影响版本": [
+      "7.3.2"
+    ],
+    "公开日期": "2023年10月26日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "OpenThread SDK",
+    "CVE编号": "CVE-2023-41095",
+    "漏洞描述": "Missing Encryption of Security Keys vulnerability in Silicon Labs OpenThread SDK on 32 bit, ARM (SecureVault High modules) allows potential modification or extraction of network credentials stored in flash.\nThis issue affects Silicon Labs OpenThread SDK: 2.3.1 and earlier.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://siliconlabs.lightning.force.com/sfc/servlet.shepherd/document/download/0698Y00000ZkKh7QAF?operationContext=S1"
+    ],
+    "受影响版本": [
+      "2.3.2"
+    ],
+    "公开日期": "2023年10月26日"
+  },
+  {
+    "设备品牌": "Silicon Labs",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Simplicity SDK",
+    "CVE编号": "CVE-2023-41093",
+    "漏洞描述": "Use After Free vulnerability in Silicon Labs Bluetooth SDK on 32 bit, ARM may allow an attacker with precise timing capabilities to intercept a small number of packets intended for a recipient that has left the network.This issue affects Silabs Bluetooth SDK: through 8.0.0.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://community.silabs.com/068Vm000007v4HP"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年07月12日"
+  },
+  {
+    "设备品牌": "Silicon Labs",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko Bootloader",
+    "CVE编号": "CVE-2023-4041",
+    "漏洞描述": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow'), Out-of-bounds Write, Download of Code Without Integrity Check vulnerability in Silicon Labs Gecko Bootloader on ARM (Firmware Update File Parser modules) allows Code Injection, Authentication Bypass.This issue affects \"Standalone\" and \"Application\" versions of Gecko Bootloader.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://siliconlabs.lightning.force.com/sfc/servlet.shepherd/document/download/0698Y00000XT8GsQAL?operationContext=S1"
+    ],
+    "受影响版本": [
+      "0",
+      "4.2.4",
+      "4.3.2"
+    ],
+    "公开日期": "2023年08月23日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "GSDK",
+    "CVE编号": "CVE-2023-4020",
+    "漏洞描述": "An unvalidated input in a library function responsible for communicating between secure and non-secure memory in Silicon Labs TrustZone implementation allows reading/writing of memory in the secure region of memory from the non-secure region of memory.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk/releases",
+      "https://community.silabs.com/069Vm0000004b95IAA"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2023年12月15日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko Bootloader",
+    "CVE编号": "CVE-2023-3488",
+    "漏洞描述": "Uninitialized buffer in GBL parser in Silicon Labs GSDK v4.3.0 and earlier allows attacker to leak data from Secure stack via malformed GBL file.\n\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk/releases",
+      "https://community.silabs.com/sfc/servlet.shepherd/document/download/0698Y00000Wi3HwQAJ?operationContext=S1"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年07月28日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "GSDK",
+    "CVE编号": "CVE-2023-3487",
+    "漏洞描述": "An integer overflow in Silicon Labs Gecko Bootloader version 4.3.1 and earlier allows unbounded memory access when reading from or writing to storage slots.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk/releases",
+      "https://community.silabs.com/s/contentdocument/0698Y00000ZmXqLQAV"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2023年10月20日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko Platform",
+    "CVE编号": "CVE-2023-32100",
+    "漏洞描述": "\nCompiler removal of buffer clearing in \n\nsli_se_driver_mac_compute\n\nin Silicon Labs Gecko Platform SDK v4.2.1 and earlier results in key material duplication to RAM.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk",
+      "https://community.silabs.com/sfc/servlet.shepherd/document/download/0698Y00000U19lGQAR?operationContext=S1"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月18日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko Platform",
+    "CVE编号": "CVE-2023-32099",
+    "漏洞描述": "\nCompiler removal of buffer clearing in \n\n\n\n\n\n\n\nsli_se_sign_hash in Silicon Labs Gecko Platform SDK v4.2.1 and earlier results in key material duplication to RAM.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk",
+      "https://community.silabs.com/sfc/servlet.shepherd/document/download/0698Y00000U19lGQAR?operationContext=S1"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月18日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko Platform",
+    "CVE编号": "CVE-2023-32098",
+    "漏洞描述": "\nCompiler removal of buffer clearing in \n\n\n\n\n\n\n\nsli_se_sign_message\n\n\n\n\n in Silicon Labs Gecko Platform SDK v4.2.1 and earlier results in key material duplication to RAM.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk",
+      "https://community.silabs.com/sfc/servlet.shepherd/document/download/0698Y00000U19lGQAR?operationContext=S1"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月18日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko Platform",
+    "CVE编号": "CVE-2023-32097",
+    "漏洞描述": "\nCompiler removal of buffer clearing in \n\n\n\n\n\nsli_crypto_transparent_aead_decrypt_tag\n\n\n\n in Silicon Labs Gecko Platform SDK v4.2.1 and earlier results in key material duplication to RAM.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk",
+      "https://community.silabs.com/sfc/servlet.shepherd/document/download/0698Y00000U19lGQAR?operationContext=S1"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月18日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko Platform",
+    "CVE编号": "CVE-2023-32096",
+    "漏洞描述": "\nCompiler removal of buffer clearing in \n\n\n\n\n\nsli_crypto_transparent_aead_encrypt_tag\n\n\n\n in Silicon Labs Gecko Platform SDK v4.2.1 and earlier results in key material duplication to RAM.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk",
+      "https://community.silabs.com/sfc/servlet.shepherd/document/download/0698Y00000U19lGQAR?operationContext=S1"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月18日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko SDK",
+    "CVE编号": "CVE-2023-2687",
+    "漏洞描述": "Buffer overflow in Platform CLI component in Silicon Labs Gecko SDK v4.2.1 and earlier allows user to overwrite limited structures on the heap.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk/releases",
+      "https://community.silabs.com/sfc/servlet.shepherd/document/download/0698Y00000U2sWXQAZ?operationContext=S1"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年06月02日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko Platform",
+    "CVE编号": "CVE-2023-2686",
+    "漏洞描述": "Buffer overflow in Wi-Fi Commissioning MicriumOS example in Silicon Labs Gecko SDK v4.2.3 or earlier allows connected device to write payload onto the stack.\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk/releases",
+      "https://community.silabs.com/sfc/servlet.shepherd/document/download/0698Y00000U2sFvQAJ?operationContext=S1"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年06月15日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko Platform",
+    "CVE编号": "CVE-2023-2481",
+    "漏洞描述": "\nCompiler removal of buffer clearing in \n\n\n\nsli_se_opaque_import_key\n\n\n in Silicon Labs Gecko Platform SDK v4.2.1 and earlier results in key material duplication to RAM.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk",
+      "https://community.silabs.com/sfc/servlet.shepherd/document/download/0698Y00000U19lGQAR?operationContext=S1"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月18日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Wi-SUN Linux Border Router",
+    "CVE编号": "CVE-2023-1262",
+    "漏洞描述": "\nMissing MAC layer security in Silicon Labs Wi-SUN Linux Border Router v1.5.2 and earlier allows malicious node to route malicious messages through network.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/wisun-br-linux",
+      "https://community.silabs.com/sfc/servlet.shepherd/document/download/0698Y00000SMyfRQAT?operationContext=S1"
+    ],
+    "受影响版本": [
+      "1.0.0"
+    ],
+    "公开日期": "2023年03月21日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Wi-SUN SDK",
+    "CVE编号": "CVE-2023-1261",
+    "漏洞描述": "\nMissing MAC layer security in Silicon Labs Wi-SUN SDK v1.5.0 and earlier allows malicious node to route malicious messages through network.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk",
+      "https://community.silabs.com/sfc/servlet.shepherd/document/download/0698Y00000SMyfRQAT?operationContext=S1"
+    ],
+    "受影响版本": [
+      "1.0.0"
+    ],
+    "公开日期": "2023年03月21日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko Platform",
+    "CVE编号": "CVE-2023-1132",
+    "漏洞描述": "\nCompiler removal of buffer clearing in \n\nsli_se_driver_key_agreement\n\n in Silicon Labs Gecko Platform SDK v4.2.1 and earlier results in key material duplication to RAM.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk",
+      "https://community.silabs.com/sfc/servlet.shepherd/document/download/0698Y00000U19lGQAR?operationContext=S1"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月18日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko Platform",
+    "CVE编号": "CVE-2023-0965",
+    "漏洞描述": "\nCompiler removal of buffer clearing in sli_cryptoacc_transparent_key_agreement in Silicon Labs Gecko Platform SDK v4.2.1 and earlier results in key material duplication to RAM.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/SiliconLabs/gecko_sdk",
+      "https://community.silabs.com/sfc/servlet.shepherd/document/download/0698Y00000U19lGQAR?operationContext=S1"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月18日"
+  },
+  {
+    "设备品牌": "Silicon Labs",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Ember ZNet",
+    "CVE编号": "CVE-2022-24937",
+    "漏洞描述": "Improper Restriction of Operations within the Bounds of a Memory Buffer vulnerability in Silicon Labs Ember ZNet allows Overflow Buffers.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://siliconlabs.lightning.force.com/sfc/servlet.shepherd/document/download/0698Y00000HbLj2QAF?operationContext=S1",
+      "https://github.com/SiliconLabs/gecko_sdk"
+    ],
+    "受影响版本": [
+      "1.0.0"
+    ],
+    "公开日期": "2022年11月14日"
+  },
+  {
+    "设备品牌": "silabs.com",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "Gecko Bootloader",
+    "CVE编号": "CVE-2022-24936",
+    "漏洞描述": "Out-of-Bounds error in GBL parser in Silicon Labs Gecko Bootloader version 4.0.1 and earlier allows attacker to overwrite flash Sign key and OTA decryption key via malicious bootloader upgrade.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://community.silabs.com/sfc/servlet.shepherd/document/download/0698Y00000Gdop4QAB?operationContext=S1",
+      "https://github.com/SiliconLabs/gecko_sdk/blame/2e82050dc8823c9fe0e8908c1b2666fb83056230/platform/bootloader/core/btl_bootload.c"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2022年11月02日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-24611",
+    "漏洞描述": "Denial of Service (DoS) in the Z-Wave S0 NonceGet protocol specification in Silicon Labs Z-Wave 500 series allows local attackers to block S0/S2 protected Z-Wave network via crafted S0 NonceGet Z-Wave packages, utilizing included but absent NodeIDs.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://z-wave.com",
+      "https://github.com/ITSecLab-HSEL/CVE-2022-24611"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年05月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-31609",
+    "漏洞描述": "The Bluetooth Classic implementation in Silicon Labs iWRAP 6.3.0 and earlier does not properly handle the reception of an oversized LMP packet greater than 17 bytes, allowing attackers in radio range to trigger a crash in WT32i via a crafted LMP packet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.silabs.com/wireless/bluetooth/bluegiga-classic-legacy-modules/device.wt32i-a",
+      "https://dl.packetstormsecurity.net/papers/general/braktooth.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月07日"
+  },
+  {
+    "设备品牌": "ZooZ",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "ZST10",
+    "CVE编号": "CVE-2020-9061",
+    "漏洞描述": "Z-Wave devices using Silicon Labs 500 and 700 series chipsets, including but not likely limited to the SiLabs UZB-7 version 7.00, ZooZ ZST10 version 6.04, Aeon Labs ZW090-A version 3.95, and Samsung STH-ETH-200 version 6.04, are susceptible to denial of service via malformed routing messages.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://kb.cert.org/vuls/id/142629",
+      "https://ieeexplore.ieee.org/document/9663293",
+      "https://github.com/CNK2100/VFuzz-public",
+      "https://doi.org/10.1109/ACCESS.2021.3138768",
+      "https://www.kb.cert.org/vuls/id/142629"
+    ],
+    "受影响版本": [
+      "6.04"
+    ],
+    "公开日期": "2022年01月07日"
+  },
+  {
+    "设备品牌": "ZooZ",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "ZEN25",
+    "CVE编号": "CVE-2020-9060",
+    "漏洞描述": "Z-Wave devices based on Silicon Labs 500 series chipsets using S2, including but likely not limited to the ZooZ ZST10 version 6.04, ZooZ ZEN20 version 5.03, ZooZ ZEN25 version 5.03, Aeon Labs ZW090-A version 3.95, and Fibaro FGWPB-111 version 4.3, are susceptible to denial of service and resource exhaustion via malformed SECURITY NONCE GET, SECURITY NONCE GET 2, NO OPERATION, or NIF REQUEST messages.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://kb.cert.org/vuls/id/142629",
+      "https://ieeexplore.ieee.org/document/9663293",
+      "https://github.com/CNK2100/VFuzz-public",
+      "https://doi.org/10.1109/ACCESS.2021.3138768",
+      "https://www.kb.cert.org/vuls/id/142629"
+    ],
+    "受影响版本": [
+      "5.03"
+    ],
+    "公开日期": "2022年01月07日"
+  },
+  {
+    "设备品牌": "Schlage",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "BE468",
+    "CVE编号": "CVE-2020-9059",
+    "漏洞描述": "Z-Wave devices based on Silicon Labs 500 series chipsets using S0 authentication are susceptible to uncontrolled resource consumption leading to battery exhaustion. As an example, the Schlage BE468 version 3.42 door lock is vulnerable and fails open at a low battery level.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://kb.cert.org/vuls/id/142629",
+      "https://ieeexplore.ieee.org/document/9663293",
+      "https://github.com/CNK2100/VFuzz-public",
+      "https://doi.org/10.1109/ACCESS.2021.3138768",
+      "https://www.kb.cert.org/vuls/id/142629"
+    ],
+    "受影响版本": [
+      "3.42"
+    ],
+    "公开日期": "2022年01月07日"
+  },
+  {
+    "设备品牌": "Linear",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "LB60Z-1",
+    "CVE编号": "CVE-2020-9058",
+    "漏洞描述": "Z-Wave devices based on Silicon Labs 500 series chipsets using CRC-16 encapsulation, including but likely not limited to the Linear LB60Z-1 version 3.5, Dome DM501 version 4.26, and Jasco ZW4201 version 4.05, do not implement encryption or replay protection.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://kb.cert.org/vuls/id/142629",
+      "https://ieeexplore.ieee.org/document/9663293",
+      "https://github.com/CNK2100/VFuzz-public",
+      "https://doi.org/10.1109/ACCESS.2021.3138768",
+      "https://www.kb.cert.org/vuls/id/142629"
+    ],
+    "受影响版本": [
+      "3.5"
+    ],
+    "公开日期": "2022年01月07日"
+  },
+  {
+    "设备品牌": "Linear",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "WADWAZ-1",
+    "CVE编号": "CVE-2020-9057",
+    "漏洞描述": "Z-Wave devices based on Silicon Labs 100, 200, and 300 series chipsets do not support encryption, allowing an attacker within radio range to take control of or cause a denial of service to a vulnerable device. An attacker can also capture and replay Z-Wave traffic. Firmware upgrades cannot directly address this vulnerability as it is an issue with the Z-Wave specification for these legacy chipsets. One way to protect against this vulnerability is to use 500 or 700 series chipsets that support Security 2 (S2) encryption. As examples, the Linear WADWAZ-1 version 3.43 and WAPIRZ-1 version 3.43 (with 300 series chipsets) are vulnerable.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://kb.cert.org/vuls/id/142629",
+      "https://ieeexplore.ieee.org/document/9663293",
+      "https://github.com/CNK2100/VFuzz-public",
+      "https://doi.org/10.1109/ACCESS.2021.3138768",
+      "https://www.kb.cert.org/vuls/id/142629"
+    ],
+    "受影响版本": [
+      "3.43"
+    ],
+    "公开日期": "2022年01月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-27630",
+    "漏洞描述": "In Silicon Labs uC/TCP-IP 3.6.0, TCP ISNs are improperly random.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.forescout.com",
+      "https://www.cisa.gov/news-events/ics-advisories/icsa-21-042-01",
+      "https://www.forescout.com/resources/numberjack-weak-isn-generation-in-embedded-tcpip-stacks/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年10月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-15532",
+    "漏洞描述": "Silicon Labs Bluetooth Low Energy SDK before 2.13.3 has a buffer overflow via packet data. This is an over-the-air denial of service vulnerability in Bluetooth LE in EFR32 SoCs and associated modules running Bluetooth SDK, supporting Central or Observer roles.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.blackhat.com/us-20/briefings/schedule/#finding-new-bluetooth-low-energy-exploits-via-reverse-engineering-multiple-vendors-firmwares-19655",
+      "https://github.com/darkmentorllc/publications/tree/master/2020/TI_SILABS_BLE_RCEs",
+      "https://github.com/darkmentorllc/jackbnimble/blob/master/host/pocs/silabs_efr32_extadv_dos.py"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-15531",
+    "漏洞描述": "Silicon Labs Bluetooth Low Energy SDK before 2.13.3 has a buffer overflow via packet data. This is an over-the-air remote code execution vulnerability in Bluetooth LE in EFR32 SoCs and associated modules running Bluetooth SDK, supporting Central or Observer roles.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.blackhat.com/us-20/briefings/schedule/#finding-new-bluetooth-low-energy-exploits-via-reverse-engineering-multiple-vendors-firmwares-19655",
+      "https://github.com/darkmentorllc/jackbnimble/blob/master/host/pocs/silabs_efr32_extadv_rce.py",
+      "https://www.youtube.com/watch?v=saoTr1NwdzM",
+      "https://github.com/darkmentorllc/publications/tree/master/2020/TI_SILABS_BLE_RCEs"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月19日"
+  },
+  {
+    "设备品牌": "Silicon Labs",
+    "设备类型": "车载蓝牙模块",
+    "产品型号": "UZB-7",
+    "CVE编号": "CVE-2020-10137",
+    "漏洞描述": "Z-Wave devices based on Silicon Labs 700 series chipsets using S2 do not adequately authenticate or encrypt FIND_NODE_IN_RANGE frames, allowing a remote, unauthenticated attacker to inject a FIND_NODE_IN_RANGE frame with an invalid random payload, denying service by blocking the processing of upcoming events.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://kb.cert.org/vuls/id/142629",
+      "https://ieeexplore.ieee.org/document/9663293",
+      "https://github.com/CNK2100/VFuzz-public",
+      "https://doi.org/10.1109/ACCESS.2021.3138768",
+      "https://www.kb.cert.org/vuls/id/142629"
+    ],
+    "受影响版本": [
+      "7.00"
+    ],
+    "公开日期": "2022年01月09日"
+  }
+]

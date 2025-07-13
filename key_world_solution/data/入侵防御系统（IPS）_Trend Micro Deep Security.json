@@ -1,0 +1,272 @@
+[
+  {
+    "设备品牌": "Trend Micro, Inc.",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security",
+    "CVE编号": "CVE-2025-30642",
+    "漏洞描述": "A link following vulnerability in Trend Micro Deep Security 20.0 agents could allow a local attacker to create a denial of service (DoS) situation on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/en-US/solution/KA-0019344",
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-241/"
+    ],
+    "受影响版本": [
+      "20"
+    ],
+    "公开日期": "2025年06月17日"
+  },
+  {
+    "设备品牌": "Trend Micro, Inc.",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security",
+    "CVE编号": "CVE-2025-30641",
+    "漏洞描述": "A link following vulnerability in the anti-malware solution portion of Trend Micro Deep Security 20.0 agents could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/en-US/solution/KA-0019344",
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-240/"
+    ],
+    "受影响版本": [
+      "20"
+    ],
+    "公开日期": "2025年06月17日"
+  },
+  {
+    "设备品牌": "Trend Micro, Inc.",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security",
+    "CVE编号": "CVE-2025-30640",
+    "漏洞描述": "A link following vulnerability in Trend Micro Deep Security 20.0 agents could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/en-US/solution/KA-0019344",
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-239/"
+    ],
+    "受影响版本": [
+      "20"
+    ],
+    "公开日期": "2025年06月17日"
+  },
+  {
+    "设备品牌": "Trend Micro, Inc.",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security",
+    "CVE编号": "CVE-2024-55955",
+    "漏洞描述": "An incorrect permissions assignment vulnerability in Trend Micro Deep Security 20.0 agents between versions 20.0.1-9400 and 20.0.1-23340 could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/en-US/solution/KA-0018571"
+    ],
+    "受影响版本": [
+      "20"
+    ],
+    "公开日期": "2024年12月31日"
+  },
+  {
+    "设备品牌": "Trend Micro, Inc.",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security",
+    "CVE编号": "CVE-2024-51503",
+    "漏洞描述": "A security agent manual scan command injection vulnerability in the Trend Micro Deep Security 20 Agent could allow an attacker to escalate privileges and execute arbitrary code on an affected machine.  In certain circumstances, attackers that have legitimate access to the domain may be able to remotely inject commands to other machines in the same domain.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability locally and must have domain user privileges to affect other machines.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/en-US/solution/KA-0018154",
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-1516/"
+    ],
+    "受影响版本": [
+      "20"
+    ],
+    "公开日期": "2024年11月19日"
+  },
+  {
+    "设备品牌": "Trend Micro, Inc.",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security Agent",
+    "CVE编号": "CVE-2024-48903",
+    "漏洞描述": "An improper access control vulnerability in Trend Micro Deep Security Agent 20 could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/en-US/solution/KA-0017997",
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-1419/"
+    ],
+    "受影响版本": [
+      "20"
+    ],
+    "公开日期": "2024年10月22日"
+  },
+  {
+    "设备品牌": "Trend Micro, Inc.",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security Agent",
+    "CVE编号": "CVE-2024-36358",
+    "漏洞描述": "A link following vulnerability in Trend Micro Deep Security 20.x agents below build 20.0.1-3180 could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/dcx/s/solution/000298151",
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-575/"
+    ],
+    "受影响版本": [
+      "20"
+    ],
+    "公开日期": "2024年06月10日"
+  },
+  {
+    "设备品牌": "Trend Micro, Inc.",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security Agent",
+    "CVE编号": "CVE-2023-52338",
+    "漏洞描述": "A link following vulnerability in the Trend Micro Deep Security 20.0 and Trend Micro Cloud One - Endpoint and Workload Security Agent could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/dcx/s/solution/000296337?language=en_US",
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-076/"
+    ],
+    "受影响版本": [
+      "20.0"
+    ],
+    "公开日期": "2024年01月23日"
+  },
+  {
+    "设备品牌": "Trend Micro, Inc.",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security Agent",
+    "CVE编号": "CVE-2023-52337",
+    "漏洞描述": "An improper access control vulnerability in Trend Micro Deep Security 20.0 and Trend Micro Cloud One - Endpoint and Workload Security Agent could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/dcx/s/solution/000296337?language=en_US",
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-075/"
+    ],
+    "受影响版本": [
+      "20.0"
+    ],
+    "公开日期": "2024年01月23日"
+  },
+  {
+    "设备品牌": "Trend Micro",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security",
+    "CVE编号": "CVE-2022-40710",
+    "漏洞描述": "A link following vulnerability in Trend Micro Deep Security 20 and Cloud One - Workload Security Agent for Windows could allow a local attacker to escalate privileges on affected installations. Please note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/solution/000291590",
+      "https://www.zerodayinitiative.com/advisories/ZDI-22-1296/"
+    ],
+    "受影响版本": [
+      "20.0"
+    ],
+    "公开日期": "2022年09月28日"
+  },
+  {
+    "设备品牌": "Trend Micro",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security",
+    "CVE编号": "CVE-2022-40709",
+    "漏洞描述": "An Out-of-bounds read vulnerability in Trend Micro Deep Security 20 and Cloud One - Workload Security Agent for Windows could allow a local attacker to disclose sensitive information on affected installations. Please note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit these vulnerabilities. This vulnerability is similar to, but not identical to CVE-2022-40707 and 40708.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/solution/000291590",
+      "https://www.zerodayinitiative.com/advisories/ZDI-22-1299/"
+    ],
+    "受影响版本": [
+      "20"
+    ],
+    "公开日期": "2022年09月28日"
+  },
+  {
+    "设备品牌": "Trend Micro",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security",
+    "CVE编号": "CVE-2022-40708",
+    "漏洞描述": "An Out-of-bounds read vulnerability in Trend Micro Deep Security 20 and Cloud One - Workload Security Agent for Windows could allow a local attacker to disclose sensitive information on affected installations. Please note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit these vulnerabilities. This vulnerability is similar to, but not identical to CVE-2022-40707.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/solution/000291590",
+      "https://www.zerodayinitiative.com/advisories/ZDI-22-1298/"
+    ],
+    "受影响版本": [
+      "20"
+    ],
+    "公开日期": "2022年09月28日"
+  },
+  {
+    "设备品牌": "Trend Micro",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security",
+    "CVE编号": "CVE-2022-40707",
+    "漏洞描述": "An Out-of-bounds read vulnerability in Trend Micro Deep Security 20 and Cloud One - Workload Security Agent for Windows could allow a local attacker to disclose sensitive information on affected installations. Please note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit these vulnerabilities. This vulnerability is similar to, but not identical to CVE-2022-40708.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/solution/000291590",
+      "https://www.zerodayinitiative.com/advisories/ZDI-22-1297/"
+    ],
+    "受影响版本": [
+      "20"
+    ],
+    "公开日期": "2022年09月28日"
+  },
+  {
+    "设备品牌": "Trend Micro",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security Agent for Linux",
+    "CVE编号": "CVE-2022-23120",
+    "漏洞描述": "A code injection vulnerability in Trend Micro Deep Security and Cloud One - Workload Security Agent for Linux version 20 and below could allow an attacker to escalate privileges and run arbitrary code in the context of root. Please note: an attacker must first obtain access to the target agent in an un-activated and unconfigured state in order to exploit this vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/solution/000290104",
+      "https://www.modzero.com/advisories/MZ-21-02-Trendmicro.txt"
+    ],
+    "受影响版本": [
+      "20, 12, 11, 10"
+    ],
+    "公开日期": "2022年01月20日"
+  },
+  {
+    "设备品牌": "Trend Micro",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security Agent for Linux",
+    "CVE编号": "CVE-2022-23119",
+    "漏洞描述": "A directory traversal vulnerability in Trend Micro Deep Security and Cloud One - Workload Security Agent for Linux version 20 and below could allow an attacker to read arbitrary files from the file system. Please note: an attacker must first obtain compromised access to the target Deep Security Manager (DSM) or the target agent must be not yet activated or configured in order to exploit this vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/solution/000290104",
+      "https://www.modzero.com/advisories/MZ-21-02-Trendmicro.txt"
+    ],
+    "受影响版本": [
+      "20, 12, 11, 10"
+    ],
+    "公开日期": "2022年01月20日"
+  },
+  {
+    "设备品牌": "Trend Micro",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security",
+    "CVE编号": "CVE-2020-8602",
+    "漏洞描述": "A vulnerability in the management consoles of Trend Micro Deep Security 10.0-12.0 and Trend Micro Vulnerability Protection 2.0 SP2 may allow an authenticated attacker with full control privileges to bypass file integrity checks, leading to remote code execution.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/solution/000252039"
+    ],
+    "受影响版本": [
+      "10.0, 11.0, 12.0"
+    ],
+    "公开日期": "2020年08月27日"
+  },
+  {
+    "设备品牌": "Trend Micro",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trend Micro Deep Security",
+    "CVE编号": "CVE-2020-15601",
+    "漏洞描述": "If LDAP authentication is enabled, an LDAP authentication bypass vulnerability in Trend Micro Deep Security 10.x-12.x could allow an unauthenticated attacker with prior knowledge of the targeted organization to bypass manager authentication. Enabling multi-factor authentication prevents this attack. Installations using manager native authentication or SAML authentication are not impacted by this vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/solution/000252039",
+      "https://www.zerodayinitiative.com/advisories/ZDI-20-1077/"
+    ],
+    "受影响版本": [
+      "10.0, 11.0, 12.0"
+    ],
+    "公开日期": "2020年08月27日"
+  }
+]

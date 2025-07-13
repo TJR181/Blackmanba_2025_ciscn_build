@@ -1,0 +1,62 @@
+[
+  {
+    "设备品牌": "Dahua",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "IPC-HFW1200S",
+    "CVE编号": "CVE-2024-13130",
+    "漏洞描述": "A vulnerability was found in Dahua IPC-HFW1200S, IPC-HFW2300R-Z, IPC-HFW5220E-Z and IPC-HDW1200S up to 20241222. It has been rated as problematic. Affected by this issue is some unknown functionality of the file ../mtd/Config/Sha1Account1 of the component Web Interface. The manipulation leads to path traversal: '../filedir'. The attack may be launched remotely. The exploit has been disclosed to the public and may be used.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://netsecfish.notion.site/Path-Traversal-Vulnerability-in-IntelBras-IP-Cameras-mtd-Config-Sha1Account1-and-mtd-Confi-15e6b683e67c80809442ee3425f753b7?pvs=4"
+    ],
+    "受影响版本": [
+      "20241222"
+    ],
+    "公开日期": "2025年01月05日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "Cisco AnyConnect Secure Mobility Client",
+    "CVE编号": "CVE-2021-34788",
+    "漏洞描述": "A vulnerability in the shared library loading mechanism of Cisco AnyConnect Secure Mobility Client for Linux and Mac OS could allow an authenticated, local attacker to perform a shared library hijacking attack on an affected device if the VPN Posture (HostScan) Module is installed on the AnyConnect client. This vulnerability is due to a race condition in the signature verification process for shared library files that are loaded on an affected device. An attacker could exploit this vulnerability by sending a series of crafted interprocess communication (IPC) messages to the AnyConnect process. A successful exploit could allow the attacker to execute arbitrary code on the affected device with root privileges. To exploit this vulnerability, the attacker must have a valid account on the system.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-anyconnect-lib-hija-cAFB7x4q"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年10月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "Harmony/Magelis iPC Series (All Versions), Vijeo Designer (All Versions prior to V6.2 SP11 Multiple HotFix 4), Vijeo Designer Basic (All Versions prior to V1.2.1)",
+    "CVE编号": "CVE-2021-22817",
+    "漏洞描述": "A CWE-276: Incorrect Default Permissions vulnerability exists that could cause unauthorized access to the base installation directory leading to local privilege escalation. Affected Product: Harmony/Magelis iPC Series (All Versions), Vijeo Designer (All Versions prior to V6.2 SP11 Multiple HotFix 4), Vijeo Designer Basic (All Versions prior to V1.2.1)",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2022-039-06"
+    ],
+    "受影响版本": [
+      "Harmony/Magelis iPC Series (All Versions), Vijeo Designer (All Versions prior to V6.2 SP11 Multiple HotFix 4), Vijeo Designer Basic (All Versions prior to V1.2.1)"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "Cisco AnyConnect Secure Mobility Client",
+    "CVE编号": "CVE-2021-1567",
+    "漏洞描述": "A vulnerability in the DLL loading mechanism of Cisco AnyConnect Secure Mobility Client for Windows could allow an authenticated, local attacker to perform a DLL hijacking attack on an affected device if the VPN Posture (HostScan) Module is installed on the AnyConnect client. This vulnerability is due to a race condition in the signature verification process for DLL files that are loaded on an affected device. An attacker could exploit this vulnerability by sending a series of crafted interprocess communication (IPC) messages to the AnyConnect process. A successful exploit could allow the attacker to execute arbitrary code on the affected device with SYSTEM privileges. To exploit this vulnerability, the attacker must have valid credentials on the Windows system.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-anyconnect-pos-dll-ff8j6dFv"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年06月16日"
+  }
+]

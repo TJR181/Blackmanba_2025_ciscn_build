@@ -1,0 +1,108 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "负载均衡器",
+    "产品型号": "Citrix ADC, Citrix Gateway",
+    "CVE编号": "CVE-2021-22920",
+    "漏洞描述": "A vulnerability has been discovered in Citrix ADC (formerly known as NetScaler ADC) and Citrix Gateway (formerly known as NetScaler Gateway), and Citrix SD-WAN WANOP Edition models 4000-WO, 4100-WO, 5000-WO, and 5100-WO. These vulnerabilities, if exploited, could lead to a phishing attack through a SAML authentication hijack to steal a valid user session.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.citrix.com/article/CTX319135"
+    ],
+    "受影响版本": [
+      "Citrix ADC and Citrix Gateway 13.0-82.45 and later releases of 13.0",
+      "Citrix ADC and Citrix Gateway 12.1-62.27 and later releases of 12.1"
+    ],
+    "公开日期": "2021年08月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "负载均衡器",
+    "产品型号": "Citrix ADC, Citrix Gateway, Citrix SD-WAN WANOP",
+    "CVE编号": "CVE-2021-22919",
+    "漏洞描述": "A vulnerability has been discovered in Citrix ADC (formerly known as NetScaler ADC) and Citrix Gateway (formerly known as NetScaler Gateway), and Citrix SD-WAN WANOP Edition models 4000-WO, 4100-WO, 5000-WO, and 5100-WO. These vulnerabilities, if exploited, could lead to the limited available disk space on the appliances being fully consumed.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.citrix.com/article/CTX319135"
+    ],
+    "受影响版本": [
+      "Citrix ADC and Citrix Gateway 13.0-82.45 and later releases of 13.0 Citrix ADC and Citrix Gateway 12.1-62.27 and later releases of 12.1 Citrix ADC and NetScaler Gateway 11.1-65.22 and later releases of 11.1 Citrix ADC 12.1-FIPS 12.1-55.247 and later releases of 12.1-FIPS Citrix SD-WAN WANOP Edition 11.4.0a and later releases of 11.4 Citrix SD-WAN WANOP Edition 11.3.2a and later releases of 11.3 Citrix SD-WAN WANOP Edition 11.2.3b and later releases of 11.2 Citrix SD-WAN WANOP Edition 10.2.9b and later releases of 10.2"
+    ],
+    "公开日期": "2021年08月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "负载均衡器",
+    "产品型号": "Citrix ADC, Citrix Gateway",
+    "CVE编号": "CVE-2020-8300",
+    "漏洞描述": "Citrix ADC and Citrix/NetScaler Gateway before 13.0-82.41, 12.1-62.23, 11.1-65.20 and Citrix ADC 12.1-FIPS before 12.1-55.238 suffer from improper access control allowing SAML authentication hijack through a phishing attack to steal a valid user session. Note that Citrix ADC or Citrix Gateway must be configured as a SAML SP or a SAML IdP for this to be possible.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.citrix.com/article/CTX297155"
+    ],
+    "受影响版本": [
+      "Fixed in Citrix ADC and Citrix Gateway 13.0 before 13.0-82.41, Citrix ADC and Citrix Gateway 12.1 before 12.1-62.23, Citrix ADC and NetScaler Gateway 11.1 before 11.1-65.20, Citrix ADC 12.1-FIPS before 12.1-55.238"
+    ],
+    "公开日期": "2021年06月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "负载均衡器",
+    "产品型号": "Citrix ADC, Citrix Gateway, Citrix SD-WAN WANOP Edition",
+    "CVE编号": "CVE-2020-8299",
+    "漏洞描述": "Citrix ADC and Citrix/NetScaler Gateway 13.0 before 13.0-76.29, 12.1-61.18, 11.1-65.20, Citrix ADC 12.1-FIPS before 12.1-55.238, and Citrix SD-WAN WANOP Edition before 11.4.0, 11.3.2, 11.3.1a, 11.2.3a, 11.1.2c, 10.2.9a suffers from uncontrolled resource consumption by way of a network-based denial-of-service from within the same Layer 2 network segment. Note that the attacker must be in the same Layer 2 network segment as the vulnerable appliance.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.citrix.com/article/CTX297155"
+    ],
+    "受影响版本": [
+      "Fixed in Citrix ADC and Citrix Gateway 13.0-76.29 and later releases of 13.0, Citrix ADC and Citrix Gateway 12.1-61.18 and later releases of 12.1, Citrix ADC and NetScaler Gateway 11.1-65.20 and later releases of 11.1, Citrix ADC 12.1-FIPS 12.1-55.238 and later releases of 12.1-FIPS, Citrix SD-WAN WANOP 11.4.0 and later releases of 11.4, Citrix SD-WAN WANOP 11.3.2 and later releases of 11.3, Citrix SD-WAN WANOP 11.3.1a and later releases of 11.3, Citrix SD-WAN WANOP 11.2.3a and later releases of 11.2, Citrix SD-WAN WANOP 11.1.2c and later releases of 11.1, Citrix SD-WAN WANOP 10.2.9a and later releases of 10.2"
+    ],
+    "公开日期": "2021年06月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "负载均衡器",
+    "产品型号": "Citrix ADC, Citrix Gateway, Citrix SDWAN WAN-OP",
+    "CVE编号": "CVE-2020-8247",
+    "漏洞描述": "Citrix ADC and Citrix Gateway 13.0 before 13.0-64.35, Citrix ADC and NetScaler Gateway 12.1 before 12.1-58.15, Citrix ADC 12.1-FIPS before 12.1-55.187, Citrix ADC and NetScaler Gateway 12.0, Citrix ADC and NetScaler Gateway 11.1 before 11.1-65.12, Citrix SD-WAN WANOP 11.2 before 11.2.1a, Citrix SD-WAN WANOP 11.1 before 11.1.2a, Citrix SD-WAN WANOP 11.0 before 11.0.3f, Citrix SD-WAN WANOP 10.2 before 10.2.7b are vulnerable to escalation of privileges on the management interface.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.citrix.com/article/CTX281474"
+    ],
+    "受影响版本": [
+      "Citrix ADC and Citrix Gateway 13.0 before 13.0-64.35, Citrix ADC and NetScaler Gateway 12.1 before 12.1-58.15, Citrix ADC 12.1-FIPS before 12.1-55.187, Citrix ADC and NetScaler Gateway 12.0, Citrix ADC and NetScaler Gateway 11.1 before 11.1-65.12, Citrix SD-WAN WANOP 11.2 before 11.2.1a, Citrix SD-WAN WANOP 11.1 before 11.1.2a, Citrix SD-WAN WANOP 11.0 before 11.0.3f, Citrix SD-WAN WANOP 10.2 before 10.2.7b"
+    ],
+    "公开日期": "2020年09月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "负载均衡器",
+    "产品型号": "Citrix ADC, Citrix Gateway, Citrix SDWAN WAN-OP ",
+    "CVE编号": "CVE-2020-8246",
+    "漏洞描述": "Citrix ADC and Citrix Gateway 13.0 before 13.0-64.35, Citrix ADC and NetScaler Gateway 12.1 before 12.1-58.15, Citrix ADC 12.1-FIPS before 12.1-55.187, Citrix ADC and NetScaler Gateway 12.0, Citrix ADC and NetScaler Gateway 11.1 before 11.1-65.12, Citrix SD-WAN WANOP 11.2 before 11.2.1a, Citrix SD-WAN WANOP 11.1 before 11.1.2a, Citrix SD-WAN WANOP 11.0 before 11.0.3f, Citrix SD-WAN WANOP 10.2 before 10.2.7b are vulnerable to a denial of service attack originating from the management network.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.citrix.com/article/CTX281474"
+    ],
+    "受影响版本": [
+      "Citrix ADC and Citrix Gateway 13.0 before 13.0-64.35, Citrix ADC and NetScaler Gateway 12.1 before 12.1-58.15, Citrix ADC 12.1-FIPS before 12.1-55.187, Citrix ADC and NetScaler Gateway 12.0, Citrix ADC and NetScaler Gateway 11.1 before 11.1-65.12, Citrix SD-WAN WANOP 11.2 before 11.2.1a, Citrix SD-WAN WANOP 11.1 before 11.1.2a, Citrix SD-WAN WANOP 11.0 before 11.0.3f, Citrix SD-WAN WANOP 10.2 before 10.2.7b"
+    ],
+    "公开日期": "2020年09月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "负载均衡器",
+    "产品型号": "Citrix ADC, Citrix Gateway",
+    "CVE编号": "CVE-2020-8245",
+    "漏洞描述": "Improper Input Validation on Citrix ADC and Citrix Gateway 13.0 before 13.0-64.35, Citrix ADC and NetScaler Gateway 12.1 before 12.1-58.15, Citrix ADC 12.1-FIPS before 12.1-55.187, Citrix ADC and NetScaler Gateway 12.0, Citrix ADC and NetScaler Gateway 11.1 before 11.1-65.12, Citrix SD-WAN WANOP 11.2 before 11.2.1a, Citrix SD-WAN WANOP 11.1 before 11.1.2a, Citrix SD-WAN WANOP 11.0 before 11.0.3f, Citrix SD-WAN WANOP 10.2 before 10.2.7b leads to an HTML Injection attack against the SSL VPN web portal.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.citrix.com/article/CTX281474"
+    ],
+    "受影响版本": [
+      "Citrix ADC and Citrix Gateway 13.0 before 13.0-64.35, Citrix ADC and NetScaler Gateway 12.1 before 12.1-58.15, Citrix ADC 12.1-FIPS before 12.1-55.187, Citrix ADC and NetScaler Gateway 12.0, Citrix ADC and NetScaler Gateway 11.1 before 11.1-65.12, Citrix SD-WAN WANOP 11.2 before 11.2.1a, Citrix SD-WAN WANOP 11.1 before 11.1.2a, Citrix SD-WAN WANOP 11.0 before 11.0.3f, Citrix SD-WAN WANOP 10.2 before 10.2.7b"
+    ],
+    "公开日期": "2020年09月18日"
+  }
+]

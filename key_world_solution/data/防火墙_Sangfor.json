@@ -1,0 +1,155 @@
+[
+  {
+    "设备品牌": "Sangfor",
+    "设备类型": "防火墙",
+    "产品型号": "aTrust",
+    "CVE编号": "CVE-2025-52923",
+    "漏洞描述": "Sangfor aTrust through 2.4.10 allows users to modify the ExecStartPre command.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://github.com/r00t7oo2jm/cVetest/blob/main/p0c.sh",
+      "https://github.com/r00t7oo2jm/cVetest/blob/main/sangf0r-poc.pdf",
+      "https://marketplace.huaweicloud.com/intl/contents/10d76e5f-57b5-4780-9c0c-58af8f7f71e6",
+      "https://community.sangfor.com/forum.php?mod=viewthread&tid=10842"
+    ],
+    "受影响版本": [
+      "2.4.10"
+    ],
+    "公开日期": "2025年06月22日"
+  },
+  {
+    "设备品牌": "Sangfor",
+    "设备类型": "防火墙",
+    "产品型号": "零信任访问控制系统 aTrust",
+    "CVE编号": "CVE-2025-5129",
+    "漏洞描述": "A vulnerability has been found in Sangfor 零信任访问控制系统 aTrust 2.3.10.60 and classified as critical. Affected by this vulnerability is an unknown functionality in the library MSASN1.dll. The manipulation leads to uncontrolled search path. Local access is required to approach this attack. The complexity of an attack is rather high. The exploitation appears to be difficult. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.notion.so/Sangfor-Zero-Trust-Access-Control-System-ATrust-Privilege-Escalation-Vulnerability-1eab06dd544b802b87cdd6ba6b70cce9",
+      "https://drive.google.com/file/d/1_zGvKXIFLdh5RtxauvNYSa52YONJmY9q/view"
+    ],
+    "受影响版本": [
+      "2.3.10.60"
+    ],
+    "公开日期": "2025年05月24日"
+  },
+  {
+    "设备品牌": "Sangfor Technologies Co., Ltd.",
+    "设备类型": "防火墙",
+    "产品型号": "Endpoint Detection and Response Platform",
+    "CVE编号": "CVE-2025-34041",
+    "漏洞描述": "An OS command injection vulnerability exists in the Chinese versions of Sangfor Endpoint Detection and Response (EDR) management platform versions 3.2.16, 3.2.17, and 3.2.19. The vulnerability allows unauthenticated attackers to construct and send malicious HTTP requests to the EDR Manager interface, leading to arbitrary command execution with elevated privileges. This flaw only affects the Chinese-language EDR builds.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.sangfor.com/blog/cybersecurity/sangfor-endpoint-secure-remote-command-execution-vulnerability",
+      "https://www.cnvd.org.cn/flaw/show/CNVD-2020-46552",
+      "https://vulncheck.com/advisories/sangfor-edr-command-injection"
+    ],
+    "受影响版本": [
+      "3.2.16",
+      "3.2.17",
+      "3.2.19"
+    ],
+    "公开日期": "2025年06月24日"
+  },
+  {
+    "设备品牌": "Sangfor",
+    "设备类型": "防火墙",
+    "产品型号": "Net-Gen Application Firewall",
+    "CVE编号": "CVE-2023-30806",
+    "漏洞描述": "The Sangfor Next-Gen Application Firewall version NGAF8.0.17 is vulnerable to an operating system command injection vulnerability. A remote and unauthenticated attacker can execute arbitrary commands by sending a crafted HTTP POST request to the /cgi-bin/login.cgi endpoint. This is due to mishandling of shell meta-characters in the PHPSESSID cookie.\n\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://labs.watchtowr.com/yet-more-unauth-remote-command-execution-vulns-in-firewalls-sangfor-edition/",
+      "https://vulncheck.com/advisories/sangfor-ngaf-sessid-rce",
+      "https://aws.amazon.com/marketplace/pp/prodview-uujwjffddxzp4"
+    ],
+    "受影响版本": [
+      "8.0.17"
+    ],
+    "公开日期": "2023年10月10日"
+  },
+  {
+    "设备品牌": "Sangfor",
+    "设备类型": "防火墙",
+    "产品型号": "Net-Gen Application Firewall",
+    "CVE编号": "CVE-2023-30805",
+    "漏洞描述": "The Sangfor Next-Gen Application Firewall version NGAF8.0.17 is vulnerable to an operating system command injection vulnerability. A remote and unauthenticated attacker can execute arbitrary commands by sending a crafted HTTP POST request to the /LogInOut.php endpoint. This is due to mishandling of shell meta-characters in the \"un\" parameter.\n\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://labs.watchtowr.com/yet-more-unauth-remote-command-execution-vulns-in-firewalls-sangfor-edition/",
+      "https://vulncheck.com/advisories/sangfor-ngaf-username-rce",
+      "https://aws.amazon.com/marketplace/pp/prodview-uujwjffddxzp4"
+    ],
+    "受影响版本": [
+      "8.0.17"
+    ],
+    "公开日期": "2023年10月10日"
+  },
+  {
+    "设备品牌": "Sangfor",
+    "设备类型": "防火墙",
+    "产品型号": "Net-Gen Application Firewall",
+    "CVE编号": "CVE-2023-30804",
+    "漏洞描述": "The Sangfor Next-Gen Application Firewall version NGAF8.0.17 is vulnerable to an authenticated file disclosure vulnerability. A remote and authenticated attacker can read arbitrary system files using the svpn_html/loadfile.php endpoint. This issue is exploitable by a remote and unauthenticated attacker when paired with CVE-2023-30803.\n\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://labs.watchtowr.com/yet-more-unauth-remote-command-execution-vulns-in-firewalls-sangfor-edition/",
+      "https://vulncheck.com/advisories/sangfor-ngaf-auth-file-disclosure",
+      "https://aws.amazon.com/marketplace/pp/prodview-uujwjffddxzp4"
+    ],
+    "受影响版本": [
+      "8.0.17"
+    ],
+    "公开日期": "2023年10月10日"
+  },
+  {
+    "设备品牌": "Sangfor",
+    "设备类型": "防火墙",
+    "产品型号": "Net-Gen Application Firewall",
+    "CVE编号": "CVE-2023-30803",
+    "漏洞描述": "The Sangfor Next-Gen Application Firewall version NGAF8.0.17 is vulnerable to an authentication bypass vulnerability. A remote and unauthenticated attacker can bypass authentication and access administrative functionality by sending HTTP requests using a crafted Y-forwarded-for header.\n\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://labs.watchtowr.com/yet-more-unauth-remote-command-execution-vulns-in-firewalls-sangfor-edition/",
+      "https://vulncheck.com/advisories/sangfor-ngaf-auth-bypass",
+      "https://aws.amazon.com/marketplace/pp/prodview-uujwjffddxzp4"
+    ],
+    "受影响版本": [
+      "8.0.17"
+    ],
+    "公开日期": "2023年10月10日"
+  },
+  {
+    "设备品牌": "Sangfor",
+    "设备类型": "防火墙",
+    "产品型号": "Net-Gen Application Firewall",
+    "CVE编号": "CVE-2023-30802",
+    "漏洞描述": "The Sangfor Next-Gen Application Firewall version NGAF8.0.17 is vulnerable to a source code disclosure vulnerability. A remote and unauthenticated attacker can obtain PHP source code by sending an HTTP request with an invalid Content-Length field.\n\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://labs.watchtowr.com/yet-more-unauth-remote-command-execution-vulns-in-firewalls-sangfor-edition/",
+      "https://vulncheck.com/advisories/sangfor-ngaf-source",
+      "https://aws.amazon.com/marketplace/pp/prodview-uujwjffddxzp4"
+    ],
+    "受影响版本": [
+      "8.0.17"
+    ],
+    "公开日期": "2023年10月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-22908",
+    "漏洞描述": "SangforCSClient.exe in Sangfor VDI Client 5.4.2.1006 allows attackers, when they are able to read process memory, to discover the contents of the Username and Password fields.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/NF-Security-Team/CVEs/tree/main/CVE-2022-22908"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年02月26日"
+  }
+]

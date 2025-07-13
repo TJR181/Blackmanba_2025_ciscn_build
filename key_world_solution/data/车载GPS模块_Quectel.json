@@ -1,0 +1,123 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-54984",
+    "漏洞描述": "An issue in Quectel BG96 BG96MAR02A08M1G allows attackers to bypass authentication via a crafted NAS message. NOTE: this is disputed by the supplier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/haroldfeng/nbiot-va/blob/master/Quecctel_BG96_Message_Auth_Bypass.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年12月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-54983",
+    "漏洞描述": "An issue in Quectel BC95-CNV V100R001C00SPC051 allows attackers to bypass authentication via a crafted NAS message.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/haroldfeng/nbiot-va/blob/master/Quecctel_BC95-CNV_Message_Auth_Bypass.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年12月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-54982",
+    "漏洞描述": "An issue in Quectel BC25 with firmware version BC25PAR01A06 allows attackers to bypass authentication via a crafted NAS message. NOTE: Quectel disputes this because the issue is in the chipset supply chain and is not localized to one or more Quectel products.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/haroldfeng/nbiot-va/blob/master/Quectel_BC25_Subscriber_Auth_Bypass.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年12月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-37816",
+    "漏洞描述": "Quectel EC25-EUX EC25EUXGAR08A05M1G was discovered to contain a stack overflow.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://quectel.com",
+      "https://github.com/quectel-official/Quectel-Security"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年11月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-26921",
+    "漏洞描述": "OS Command Injection vulnerability in quectel AG550QCN allows attackers to execute arbitrary commands via ql_atfwd.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/closethe/AG550QCN_CommandInjection_ql_atfwd/blob/main/README.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年04月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-26147",
+    "漏洞描述": "The Quectel RG502Q-EA modem before 2022-02-23 allow OS Command Injection.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://nns.ee/blog/2022/06/21/modem-rce2.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年06月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-45815",
+    "漏洞描述": "Quectel UC20 UMTS/HSPA+ UC20 6.3.14 is affected by a Cross Site Scripting (XSS) vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://drive.google.com/file/d/1SizrkduiRFzjDcld4e9F_RV6N9DcIOQE/view?usp=sharing"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-31698",
+    "漏洞描述": "Quectel EG25-G devices through 202006130814 allow executing arbitrary code remotely by using an AT command to place shell metacharacters in quectel_handle_fumo_cfg input in atfwd_daemon.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://nns.ee/blog/2021/04/03/modem-rce.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月12日"
+  }
+]

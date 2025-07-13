@@ -1,0 +1,92 @@
+[
+  {
+    "设备品牌": "Visteon",
+    "设备类型": "车载通信网关",
+    "产品型号": "Infotainment",
+    "CVE编号": "CVE-2024-8360",
+    "漏洞描述": "Visteon Infotainment REFLASH_DDU_ExtractFile Command Injection Remote Code Execution Vulnerability. This vulnerability allows physically present attackers to execute arbitrary code on affected installations of Visteon Infotainment systems. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the REFLASH_DDU_ExtractFile function. A crafted software update file can trigger execution of a system call composed from a user-supplied string. An attacker can leverage this vulnerability to execute code in the context of the device. Was ZDI-CAN-23421.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-1192/"
+    ],
+    "受影响版本": [
+      "cmu150_NA_74.00.324A"
+    ],
+    "公开日期": "2024年11月22日"
+  },
+  {
+    "设备品牌": "Visteon",
+    "设备类型": "车载通信网关",
+    "产品型号": "Infotainment",
+    "CVE编号": "CVE-2024-8359",
+    "漏洞描述": "Visteon Infotainment REFLASH_DDU_FindFile Command Injection Remote Code Execution Vulnerability. This vulnerability allows physically present attackers to execute arbitrary code on affected installations of Visteon Infotainment systems. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the REFLASH_DDU_FindFile function. A crafted software update file can trigger execution of a system call composed from a user-supplied string. An attacker can leverage this vulnerability to execute code in the context of the device. Was ZDI-CAN-23420.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-1191/"
+    ],
+    "受影响版本": [
+      "cmu150_NA_74.00.324A"
+    ],
+    "公开日期": "2024年11月22日"
+  },
+  {
+    "设备品牌": "Visteon",
+    "设备类型": "车载通信网关",
+    "产品型号": "Infotainment",
+    "CVE编号": "CVE-2024-8358",
+    "漏洞描述": "Visteon Infotainment UPDATES_ExtractFile Command Injection Remote Code Execution Vulnerability. This vulnerability allows physically present attackers to execute arbitrary code on affected installations of Visteon Infotainment systems. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the UPDATES_ExtractFile function. A crafted software update file can trigger execution of a system call composed from a user-supplied string. An attacker can leverage this vulnerability to execute code in the context of the device. Was ZDI-CAN-23422.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-1190/"
+    ],
+    "受影响版本": [
+      "cmu150_NA_74.00.324A"
+    ],
+    "公开日期": "2024年11月22日"
+  },
+  {
+    "设备品牌": "Visteon",
+    "设备类型": "车载通信网关",
+    "产品型号": "Infotainment",
+    "CVE编号": "CVE-2024-8357",
+    "漏洞描述": "Visteon Infotainment App SoC Missing Immutable Root of Trust in Hardware Local Privilege Escalation Vulnerability. This vulnerability allows local attackers to escalate privileges on affected installations of Visteon Infotainment systems. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed.\n\nThe specific flaw exists within the configuration of the application system-on-chip (SoC). The issue results from the lack of properly configured hardware root of trust. An attacker can leverage this vulnerability to escalate privileges and execute arbitrary code in the context of the boot process. Was ZDI-CAN-23759.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-1189/"
+    ],
+    "受影响版本": [
+      "cmu150_NA_74.00.324A"
+    ],
+    "公开日期": "2024年11月22日"
+  },
+  {
+    "设备品牌": "Visteon",
+    "设备类型": "车载通信网关",
+    "产品型号": "Infotainment",
+    "CVE编号": "CVE-2024-8356",
+    "漏洞描述": "Visteon Infotainment VIP MCU Code Insufficient Validation of Data Authenticity Local Privilege Escalation Vulnerability. This vulnerability allows local attackers to escalate privileges on affected installations of Visteon Infotainment systems. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.\n\nThe specific flaw exists within the firmware update process of the VIP microcontroller. The process does not properly verify authenticity of the supplied firmware image before programming it into internal memory. An attacker can leverage this vulnerability to escalate privileges execute arbitrary code in the context of the VIP MCU. Was ZDI-CAN-23758.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-1188/"
+    ],
+    "受影响版本": [
+      "cmu150_NA_74.00.324A"
+    ],
+    "公开日期": "2024年11月22日"
+  },
+  {
+    "设备品牌": "Visteon",
+    "设备类型": "车载通信网关",
+    "产品型号": "Infotainment",
+    "CVE编号": "CVE-2024-8355",
+    "漏洞描述": "Visteon Infotainment System DeviceManager iAP Serial Number SQL Injection Vulnerability. This vulnerability allows physically present attackers to execute arbitrary code on affected installations of Visteon Infotainment system. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the DeviceManager. When parsing the iAP Serial number, the process does not properly validate a user-supplied string before using it to construct SQL queries. An attacker can leverage this vulnerability to execute code in the context of root. Was ZDI-CAN-20112.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-1208/"
+    ],
+    "受影响版本": [
+      "74.00.311A"
+    ],
+    "公开日期": "2024年11月22日"
+  }
+]

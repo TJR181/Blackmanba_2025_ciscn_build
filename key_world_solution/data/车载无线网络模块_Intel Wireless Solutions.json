@@ -1,0 +1,1962 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi Software for Windows",
+    "CVE编号": "CVE-2025-20618",
+    "漏洞描述": "Stack-based buffer overflow for some Intel(R) PROSet/Wireless WiFi Software for Windows before version 23.100 may allow a privileged user to potentially enable denial of service via local access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://intel.com/content/www/us/en/security-center/advisory/intel-sa-01270.html"
+    ],
+    "受影响版本": [
+      "before version 23.100"
+    ],
+    "公开日期": "2025年05月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi Software for Windows",
+    "CVE编号": "CVE-2025-20062",
+    "漏洞描述": "Use after free for some Intel(R) PROSet/Wireless WiFi Software for Windows before version 23.100 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://intel.com/content/www/us/en/security-center/advisory/intel-sa-01270.html"
+    ],
+    "受影响版本": [
+      "before version 23.100"
+    ],
+    "公开日期": "2025年05月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi Software for Windows",
+    "CVE编号": "CVE-2025-20046",
+    "漏洞描述": "Use after free for some Intel(R) PROSet/Wireless WiFi Software for Windows before version 23.100 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://intel.com/content/www/us/en/security-center/advisory/intel-sa-01270.html"
+    ],
+    "受影响版本": [
+      "before version 23.100"
+    ],
+    "公开日期": "2025年05月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi Software for Windows",
+    "CVE编号": "CVE-2025-20039",
+    "漏洞描述": "Race condition for some Intel(R) PROSet/Wireless WiFi Software for Windows before version 23.100 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://intel.com/content/www/us/en/security-center/advisory/intel-sa-01270.html"
+    ],
+    "受影响版本": [
+      "before version 23.100"
+    ],
+    "公开日期": "2025年05月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi Software for Windows",
+    "CVE编号": "CVE-2025-20032",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless WiFi Software for Windows before version 23.100 may allow a privileged user to potentially enable denial of service via local access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://intel.com/content/www/us/en/security-center/advisory/intel-sa-01270.html"
+    ],
+    "受影响版本": [
+      "before version 23.100"
+    ],
+    "公开日期": "2025年05月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi Software for Windows",
+    "CVE编号": "CVE-2025-20026",
+    "漏洞描述": "Out-of-bounds read for some Intel(R) PROSet/Wireless WiFi Software for Windows before version 23.100 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://intel.com/content/www/us/en/security-center/advisory/intel-sa-01270.html"
+    ],
+    "受影响版本": [
+      "before version 23.100"
+    ],
+    "公开日期": "2025年05月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi Software for Windows",
+    "CVE编号": "CVE-2025-20006",
+    "漏洞描述": "Use after free for some Intel(R) PROSet/Wireless WiFi Software for Windows before version 23.100 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://intel.com/content/www/us/en/security-center/advisory/intel-sa-01270.html"
+    ],
+    "受影响版本": [
+      "before version 23.100"
+    ],
+    "公开日期": "2025年05月13日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-56607",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: ath12k: fix atomic calls in ath12k_mac_op_set_bitrate_mask()\n\nWhen I try to manually set bitrates:\n\niw wlan0 set bitrates legacy-2.4 1\n\nI get sleeping from invalid context error, see below. Fix that by switching to\nuse recently introduced ieee80211_iterate_stations_mtx().\n\nDo note that WCN6855 firmware is still crashing, I'm not sure if that firmware\neven supports bitrate WMI commands and should we consider disabling\nath12k_mac_op_set_bitrate_mask() for WCN6855? But that's for another patch.\n\nBUG: sleeping function called from invalid context at drivers/net/wireless/ath/ath12k/wmi.c:420\nin_atomic(): 0, irqs_disabled(): 0, non_block: 0, pid: 2236, name: iw\npreempt_count: 0, expected: 0\nRCU nest depth: 1, expected: 0\n3 locks held by iw/2236:\n #0: ffffffffabc6f1d8 (cb_lock){++++}-{3:3}, at: genl_rcv+0x14/0x40\n #1: ffff888138410810 (&rdev->wiphy.mtx){+.+.}-{3:3}, at: nl80211_pre_doit+0x54d/0x800 [cfg80211]\n #2: ffffffffab2cfaa0 (rcu_read_lock){....}-{1:2}, at: ieee80211_iterate_stations_atomic+0x2f/0x200 [mac80211]\nCPU: 3 UID: 0 PID: 2236 Comm: iw Not tainted 6.11.0-rc7-wt-ath+ #1772\nHardware name: Intel(R) Client Systems NUC8i7HVK/NUC8i7HVB, BIOS HNKBLi70.86A.0067.2021.0528.1339 05/28/2021\nCall Trace:\n <TASK>\n dump_stack_lvl+0xa4/0xe0\n dump_stack+0x10/0x20\n __might_resched+0x363/0x5a0\n ? __alloc_skb+0x165/0x340\n __might_sleep+0xad/0x160\n ath12k_wmi_cmd_send+0xb1/0x3d0 [ath12k]\n ? ath12k_wmi_init_wcn7850+0xa40/0xa40 [ath12k]\n ? __netdev_alloc_skb+0x45/0x7b0\n ? __asan_memset+0x39/0x40\n ? ath12k_wmi_alloc_skb+0xf0/0x150 [ath12k]\n ? reacquire_held_locks+0x4d0/0x4d0\n ath12k_wmi_set_peer_param+0x340/0x5b0 [ath12k]\n ath12k_mac_disable_peer_fixed_rate+0xa3/0x110 [ath12k]\n ? ath12k_mac_vdev_stop+0x4f0/0x4f0 [ath12k]\n ieee80211_iterate_stations_atomic+0xd4/0x200 [mac80211]\n ath12k_mac_op_set_bitrate_mask+0x5d2/0x1080 [ath12k]\n ? ath12k_mac_vif_chan+0x320/0x320 [ath12k]\n drv_set_bitrate_mask+0x267/0x470 [mac80211]\n ieee80211_set_bitrate_mask+0x4cc/0x8a0 [mac80211]\n ? __this_cpu_preempt_check+0x13/0x20\n nl80211_set_tx_bitrate_mask+0x2bc/0x530 [cfg80211]\n ? nl80211_parse_tx_bitrate_mask+0x2320/0x2320 [cfg80211]\n ? trace_contention_end+0xef/0x140\n ? rtnl_unlock+0x9/0x10\n ? nl80211_pre_doit+0x557/0x800 [cfg80211]\n genl_family_rcv_msg_doit+0x1f0/0x2e0\n ? genl_family_rcv_msg_attrs_parse.isra.0+0x250/0x250\n ? ns_capable+0x57/0xd0\n genl_family_rcv_msg+0x34c/0x600\n ? genl_family_rcv_msg_dumpit+0x310/0x310\n ? __lock_acquire+0xc62/0x1de0\n ? he_set_mcs_mask.isra.0+0x8d0/0x8d0 [cfg80211]\n ? nl80211_parse_tx_bitrate_mask+0x2320/0x2320 [cfg80211]\n ? cfg80211_external_auth_request+0x690/0x690 [cfg80211]\n genl_rcv_msg+0xa0/0x130\n netlink_rcv_skb+0x14c/0x400\n ? genl_family_rcv_msg+0x600/0x600\n ? netlink_ack+0xd70/0xd70\n ? rwsem_optimistic_spin+0x4f0/0x4f0\n ? genl_rcv+0x14/0x40\n ? down_read_killable+0x580/0x580\n ? netlink_deliver_tap+0x13e/0x350\n ? __this_cpu_preempt_check+0x13/0x20\n genl_rcv+0x23/0x40\n netlink_unicast+0x45e/0x790\n ? netlink_attachskb+0x7f0/0x7f0\n netlink_sendmsg+0x7eb/0xdb0\n ? netlink_unicast+0x790/0x790\n ? __this_cpu_preempt_check+0x13/0x20\n ? selinux_socket_sendmsg+0x31/0x40\n ? netlink_unicast+0x790/0x790\n __sock_sendmsg+0xc9/0x160\n ____sys_sendmsg+0x620/0x990\n ? kernel_sendmsg+0x30/0x30\n ? __copy_msghdr+0x410/0x410\n ? __kasan_check_read+0x11/0x20\n ? mark_lock+0xe6/0x1470\n ___sys_sendmsg+0xe9/0x170\n ? copy_msghdr_from_user+0x120/0x120\n ? __lock_acquire+0xc62/0x1de0\n ? do_fault_around+0x2c6/0x4e0\n ? do_user_addr_fault+0x8c1/0xde0\n ? reacquire_held_locks+0x220/0x4d0\n ? do_user_addr_fault+0x8c1/0xde0\n ? __kasan_check_read+0x11/0x20\n ? __fdget+0x4e/0x1d0\n ? sockfd_lookup_light+0x1a/0x170\n __sys_sendmsg+0xd2/0x180\n ? __sys_sendmsg_sock+0x20/0x20\n ? reacquire_held_locks+0x4d0/0x4d0\n ? debug_smp_processor_id+0x17/0x20\n __x64_sys_sendmsg+0x72/0xb0\n ? lockdep_hardirqs_on+0x7d/0x100\n x64_sys_call+0x894/0x9f0\n do_syscall_64+0x64/0x130\n entry_SYSCALL_64_after_\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/3ed6b2daa4e9029987885f86835ffbc003d11c01",
+      "https://git.kernel.org/stable/c/2093f062b26805789b73f2af214691475d9baa29",
+      "https://git.kernel.org/stable/c/8fac3266c68a8e647240b8ac8d0b82f1821edf85"
+    ],
+    "受影响版本": [
+      "d889913205cf7ebda905b1e62c5867ed4e39f6c2",
+      "d889913205cf7ebda905b1e62c5867ed4e39f6c2",
+      "d889913205cf7ebda905b1e62c5867ed4e39f6c2"
+    ],
+    "公开日期": "2024年12月27日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-47673",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: iwlwifi: mvm: pause TCM when the firmware is stopped\n\nNot doing so will make us send a host command to the transport while the\nfirmware is not alive, which will trigger a WARNING.\n\nbad state = 0\nWARNING: CPU: 2 PID: 17434 at drivers/net/wireless/intel/iwlwifi/iwl-trans.c:115 iwl_trans_send_cmd+0x1cb/0x1e0 [iwlwifi]\nRIP: 0010:iwl_trans_send_cmd+0x1cb/0x1e0 [iwlwifi]\nCall Trace:\n <TASK>\n iwl_mvm_send_cmd+0x40/0xc0 [iwlmvm]\n iwl_mvm_config_scan+0x198/0x260 [iwlmvm]\n iwl_mvm_recalc_tcm+0x730/0x11d0 [iwlmvm]\n iwl_mvm_tcm_work+0x1d/0x30 [iwlmvm]\n process_one_work+0x29e/0x640\n worker_thread+0x2df/0x690\n ? rescuer_thread+0x540/0x540\n kthread+0x192/0x1e0\n ? set_kthread_struct+0x90/0x90\n ret_from_fork+0x22/0x30",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/a15df5f37fa3a8b7a8ec7a339d1e897bc524e28f",
+      "https://git.kernel.org/stable/c/5948a191906b54e10f02f6b7a7670243a39f99f4",
+      "https://git.kernel.org/stable/c/2c61b561baf92a2860c76c2302a62169e22c21cc",
+      "https://git.kernel.org/stable/c/55086c97a55d781b04a2667401c75ffde190135c",
+      "https://git.kernel.org/stable/c/0668ebc8c2282ca1e7eb96092a347baefffb5fe7"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2024年10月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi software for Windows",
+    "CVE编号": "CVE-2024-41168",
+    "漏洞描述": "Use after free in some Intel(R) PROSet/Wireless WiFi and Killerâ„¢ WiFi software for Windows before version 23.80 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://intel.com/content/www/us/en/security-center/advisory/intel-sa-01224.html"
+    ],
+    "受影响版本": [
+      "before version 23.80"
+    ],
+    "公开日期": "2025年02月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi software for Windows",
+    "CVE编号": "CVE-2024-41166",
+    "漏洞描述": "Stack-based buffer overflow in some Intel(R) PROSet/Wireless WiFi and Killerâ„¢ WiFi software for Windows before version 23.80 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://intel.com/content/www/us/en/security-center/advisory/intel-sa-01224.html"
+    ],
+    "受影响版本": [
+      "before version 23.80"
+    ],
+    "公开日期": "2025年02月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi software for Windows",
+    "CVE编号": "CVE-2024-40887",
+    "漏洞描述": "Race condition in some Intel(R) PROSet/Wireless WiFi and Killerâ„¢ WiFi software for Windows before version 23.80 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://intel.com/content/www/us/en/security-center/advisory/intel-sa-01224.html"
+    ],
+    "受影响版本": [
+      "before version 23.80"
+    ],
+    "公开日期": "2025年02月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi software for Windows",
+    "CVE编号": "CVE-2024-39606",
+    "漏洞描述": "Improper input validation in some Intel(R) PROSet/Wireless WiFi and Killerâ„¢ WiFi software for Windows before version 23.80 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://intel.com/content/www/us/en/security-center/advisory/intel-sa-01224.html"
+    ],
+    "受影响版本": [
+      "before version 23.80"
+    ],
+    "公开日期": "2025年02月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi software for Windows",
+    "CVE编号": "CVE-2024-39356",
+    "漏洞描述": "NULL pointer dereference in some Intel(R) PROSet/Wireless WiFi and Killerâ„¢ WiFi software for Windows before version 23.80 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://intel.com/content/www/us/en/security-center/advisory/intel-sa-01224.html"
+    ],
+    "受影响版本": [
+      "before version 23.80"
+    ],
+    "公开日期": "2025年02月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi software",
+    "CVE编号": "CVE-2024-39271",
+    "漏洞描述": "Improper restriction of communication channel to intended endpoints in some Intel(R) PROSet/Wireless WiFi and Killerâ„¢ WiFi software before version 23.80 may allow an unauthenticated user to potentially enable information disclosure via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://intel.com/content/www/us/en/security-center/advisory/intel-sa-01224.html"
+    ],
+    "受影响版本": [
+      "before version 23.80"
+    ],
+    "公开日期": "2025年02月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi software for Windows",
+    "CVE编号": "CVE-2024-36285",
+    "漏洞描述": "Race condition in some Intel(R) PROSet/Wireless WiFi and Killerâ„¢ WiFi software for Windows before version 23.80 may allow an authenticated user to potentially enable denial of service via local access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://intel.com/content/www/us/en/security-center/advisory/intel-sa-01224.html"
+    ],
+    "受影响版本": [
+      "before version 23.80"
+    ],
+    "公开日期": "2025年02月12日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-35913",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: iwlwifi: mvm: pick the version of SESSION_PROTECTION_NOTIF\n\nWhen we want to know whether we should look for the mac_id or the\nlink_id in struct iwl_mvm_session_prot_notif, we should look at the\nversion of SESSION_PROTECTION_NOTIF.\n\nThis causes WARNINGs:\n\nWARNING: CPU: 0 PID: 11403 at drivers/net/wireless/intel/iwlwifi/mvm/time-event.c:959 iwl_mvm_rx_session_protect_notif+0x333/0x340 [iwlmvm]\nRIP: 0010:iwl_mvm_rx_session_protect_notif+0x333/0x340 [iwlmvm]\nCode: 00 49 c7 84 24 48 07 00 00 00 00 00 00 41 c6 84 24 78 07 00 00 ff 4c 89 f7 e8 e9 71 54 d9 e9 7d fd ff ff 0f 0b e9 23 fe ff ff <0f> 0b e9 1c fe ff ff 66 0f 1f 44 00 00 90 90 90 90 90 90 90 90 90\nRSP: 0018:ffffb4bb00003d40 EFLAGS: 00010202\nRAX: 0000000000000000 RBX: ffff9ae63a361000 RCX: ffff9ae4a98b60d4\nRDX: ffff9ae4588499c0 RSI: 0000000000000305 RDI: ffff9ae4a98b6358\nRBP: ffffb4bb00003d68 R08: 0000000000000003 R09: 0000000000000010\nR10: ffffb4bb00003d00 R11: 000000000000000f R12: ffff9ae441399050\nR13: ffff9ae4761329e8 R14: 0000000000000001 R15: 0000000000000000\nFS:  0000000000000000(0000) GS:ffff9ae7af400000(0000) knlGS:0000000000000000\nCS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\nCR2: 000055fb75680018 CR3: 00000003dae32006 CR4: 0000000000f70ef0\nPKRU: 55555554\nCall Trace:\n <IRQ>\n ? show_regs+0x69/0x80\n ? __warn+0x8d/0x150\n ? iwl_mvm_rx_session_protect_notif+0x333/0x340 [iwlmvm]\n ? report_bug+0x196/0x1c0\n ? handle_bug+0x45/0x80\n ? exc_invalid_op+0x1c/0xb0\n ? asm_exc_invalid_op+0x1f/0x30\n ? iwl_mvm_rx_session_protect_notif+0x333/0x340 [iwlmvm]\n iwl_mvm_rx_common+0x115/0x340 [iwlmvm]\n iwl_mvm_rx_mq+0xa6/0x100 [iwlmvm]\n iwl_pcie_rx_handle+0x263/0xa10 [iwlwifi]\n iwl_pcie_napi_poll_msix+0x32/0xd0 [iwlwifi]",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/222abd95f503e28c0404e596291fe472fe90929c",
+      "https://git.kernel.org/stable/c/bbe806c294c9c4cd1221140d96e5f367673e393a"
+    ],
+    "受影响版本": [
+      "085d33c53012866b6c088b69b603af7cf69c0a53",
+      "085d33c53012866b6c088b69b603af7cf69c0a53"
+    ],
+    "公开日期": "2024年05月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi software for Windows",
+    "CVE编号": "CVE-2024-35245",
+    "漏洞描述": "Uncontrolled search path element in some Intel(R) PROSet/Wireless WiFi software for Windows before version 23.60 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01167.html"
+    ],
+    "受影响版本": [
+      "before version 23.60"
+    ],
+    "公开日期": "2024年11月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi software for Windows",
+    "CVE编号": "CVE-2024-33624",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless WiFi software for Windows before version 23.60 may allow an unauthenticated user to potentially enable denial of service via network access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01167.html"
+    ],
+    "受影响版本": [
+      "before version 23.60"
+    ],
+    "公开日期": "2024年11月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi software for Windows",
+    "CVE编号": "CVE-2024-33611",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless WiFi software for Windows before version 23.60 may allow a privileged user to potentially enable denial of service via local access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01167.html"
+    ],
+    "受影响版本": [
+      "before version 23.60"
+    ],
+    "公开日期": "2024年11月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Software and Intel(R) Killer(TM) Wi-Fi wireless products",
+    "CVE编号": "CVE-2024-28049",
+    "漏洞描述": "Improper input validation in firmware for some Intel(R) PROSet/Wireless Software and Intel(R) Killer(TM) Wi-Fi wireless products before version 23.40 may allow an unauthenticated user to enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01108.html"
+    ],
+    "受影响版本": [
+      "before version 23.40"
+    ],
+    "公开日期": "2024年11月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Software and Intel(R) Killer(TM) Wi-Fi",
+    "CVE编号": "CVE-2024-25563",
+    "漏洞描述": "Improper initialization in firmware for some Intel(R) PROSet/Wireless Software and Intel(R) Killer(TM) Wi-Fi before version 23.40 may allow a privileged user to potentially enable information disclosure via local access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01108.html"
+    ],
+    "受影响版本": [
+      "before version 23.40"
+    ],
+    "公开日期": "2024年11月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth(R) products for Windows",
+    "CVE编号": "CVE-2024-24984",
+    "漏洞描述": "Improper input validation for some Intel(R) Wireless Bluetooth(R) products for Windows before version 23.40 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01108.html"
+    ],
+    "受影响版本": [
+      "before version 23.40"
+    ],
+    "公开日期": "2024年11月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Software and Intel(R) Killer(TM) Wi-Fi products",
+    "CVE编号": "CVE-2024-23198",
+    "漏洞描述": "Improper input validation in firmware for some Intel(R) PROSet/Wireless Software and Intel(R) Killer(TM) Wi-Fi products before version 23.40 may allow an unauthenticated user to enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01108.html"
+    ],
+    "受影响版本": [
+      "before version 23.40"
+    ],
+    "公开日期": "2024年11月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth products for Windows",
+    "CVE编号": "CVE-2023-47859",
+    "漏洞描述": "Improper access control for some Intel(R) Wireless Bluetooth products for Windows before version 23.20 may allow an authenticated user to potentially enable denial of service via local access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01039.html"
+    ],
+    "受影响版本": [
+      "before version 23.20"
+    ],
+    "公开日期": "2024年05月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi software for linux",
+    "CVE编号": "CVE-2023-47210",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless WiFi software for linux before version 23.20 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01039.html"
+    ],
+    "受影响版本": [
+      "before version 23.20"
+    ],
+    "公开日期": "2024年05月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth(R) products for Windows",
+    "CVE编号": "CVE-2023-45845",
+    "漏洞描述": "Improper conditions check for some Intel(R) Wireless Bluetooth(R) products for Windows before version 23.20 may allow a privileged user to potentially enable denial of service via local access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01039.html"
+    ],
+    "受影响版本": [
+      "before version 23.20"
+    ],
+    "公开日期": "2024年05月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi software for Windows",
+    "CVE编号": "CVE-2023-40536",
+    "漏洞描述": "Race condition for some some Intel(R) PROSet/Wireless WiFi software for Windows before version 23.20 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01039.html"
+    ],
+    "受影响版本": [
+      "before version 23.20"
+    ],
+    "公开日期": "2024年05月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "some Intel(R) PROSet/Wireless WiFi software for Windows",
+    "CVE编号": "CVE-2023-38654",
+    "漏洞描述": "Improper input validation for some some Intel(R) PROSet/Wireless WiFi software for Windows before version 23.20 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01039.html"
+    ],
+    "受影响版本": [
+      "before version 23.20"
+    ],
+    "公开日期": "2024年05月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi software",
+    "CVE编号": "CVE-2023-38417",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless WiFi software before version 23.20 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01039.html"
+    ],
+    "受影响版本": [
+      "before version 23.20"
+    ],
+    "公开日期": "2024年05月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software",
+    "CVE编号": "CVE-2023-35061",
+    "漏洞描述": "Improper initialization for the Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software before version 22.240 may allow an unauthenticated user to potentially enable information disclosure via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00999.html"
+    ],
+    "受影响版本": [
+      "before version 22.240"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software",
+    "CVE编号": "CVE-2023-34983",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software before version 22.240 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00947.html"
+    ],
+    "受影响版本": [
+      "before version 22.240"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software",
+    "CVE编号": "CVE-2023-33875",
+    "漏洞描述": "Improper access control for some Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software before version 22.240 may allow an unauthenticated user to potentially enable denial of service via local access..",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00947.html"
+    ],
+    "受影响版本": [
+      "before version 22.240"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software",
+    "CVE编号": "CVE-2023-32651",
+    "漏洞描述": "Improper validation of specified type of input for some Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software before version 22.240 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00947.html"
+    ],
+    "受影响版本": [
+      "before version 22.240"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software",
+    "CVE编号": "CVE-2023-32644",
+    "漏洞描述": "Protection mechanism failure for some Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software before version 22.240 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00947.html"
+    ],
+    "受影响版本": [
+      "before version 22.240"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software",
+    "CVE编号": "CVE-2023-32642",
+    "漏洞描述": "Insufficient adherence to expected conventions for some Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software before version 22.240 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00947.html"
+    ],
+    "受影响版本": [
+      "before version 22.240"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software",
+    "CVE编号": "CVE-2023-28720",
+    "漏洞描述": "Improper initialization for some Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software before version 22.240 may allow an unauthenticated user to potentially enable denial of service via adjacent access..",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00947.html"
+    ],
+    "受影响版本": [
+      "before version 22.240"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi software for Windows",
+    "CVE编号": "CVE-2023-28714",
+    "漏洞描述": "Improper access control in firmware for some Intel(R) PROSet/Wireless WiFi software for Windows before version 22.220 HF (Hot Fix) may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "http://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00872.html"
+    ],
+    "受影响版本": [
+      "before version 22.220 HF (Hot Fix)"
+    ],
+    "公开日期": "2023年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software",
+    "CVE编号": "CVE-2023-28374",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software before version 22.240 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00947.html"
+    ],
+    "受影响版本": [
+      "before version 22.240"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software",
+    "CVE编号": "CVE-2023-26586",
+    "漏洞描述": "Uncaught exception for some Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software before version 22.240 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00947.html"
+    ],
+    "受影响版本": [
+      "before version 22.240"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software",
+    "CVE编号": "CVE-2023-25951",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless and Intel(R) Killer(TM) Wi-Fi software before version 22.240 may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00947.html"
+    ],
+    "受影响版本": [
+      "before version 22.240"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi software",
+    "CVE编号": "CVE-2022-46329",
+    "漏洞描述": "Protection mechanism failure for some Intel(R) PROSet/Wireless WiFi software may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "http://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00766.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/K24OJT4AVMNND7LBTC2ZDDTE6DJHAKB4/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HUCYUR4WBTELCRHELISJ3RMZVHKIV5TN/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y76A3PLHIQCEPESB4XVBV5SRRXQEZ5JY/",
+      "https://lists.debian.org/debian-lts-announce/2023/09/msg00043.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2023年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi software",
+    "CVE编号": "CVE-2022-40964",
+    "漏洞描述": "Improper access control for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi software may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "http://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00766.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/K24OJT4AVMNND7LBTC2ZDDTE6DJHAKB4/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HUCYUR4WBTELCRHELISJ3RMZVHKIV5TN/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y76A3PLHIQCEPESB4XVBV5SRRXQEZ5JY/",
+      "https://lists.debian.org/debian-lts-announce/2023/09/msg00043.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2023年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi software",
+    "CVE编号": "CVE-2022-38076",
+    "漏洞描述": "Improper input validation in some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi software may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "http://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00766.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/K24OJT4AVMNND7LBTC2ZDDTE6DJHAKB4/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HUCYUR4WBTELCRHELISJ3RMZVHKIV5TN/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y76A3PLHIQCEPESB4XVBV5SRRXQEZ5JY/",
+      "https://lists.debian.org/debian-lts-announce/2023/09/msg00043.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2023年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(r) NUC Kit Wireless Adapter drivers for Windows 10",
+    "CVE编号": "CVE-2022-36400",
+    "漏洞描述": "Path traversal in the installer software for some Intel(r) NUC Kit Wireless Adapter drivers for Windows 10 before version 22.40 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00747.html"
+    ],
+    "受影响版本": [
+      "before version 22.40"
+    ],
+    "公开日期": "2022年11月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(r) NUC Kit Wireless Adapter drivers for Windows 10",
+    "CVE编号": "CVE-2022-36384",
+    "漏洞描述": "Unquoted search path in the installer software for some Intel(r) NUC Kit Wireless Adapter drivers for Windows 10 before version 22.40 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00747.html"
+    ],
+    "受影响版本": [
+      "before version 22.40"
+    ],
+    "公开日期": "2022年11月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(r) NUC Kit Wireless Adapter drivers for Windows 10",
+    "CVE编号": "CVE-2022-36380",
+    "漏洞描述": "Uncontrolled search path in the installer software for some Intel(r) NUC Kit Wireless Adapter drivers for Windows 10 before version 22.40 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00747.html"
+    ],
+    "受影响版本": [
+      "before version 22.40"
+    ],
+    "公开日期": "2022年11月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Adapter Driver installation software for Intel(R) NUC Kits & Mini PCs",
+    "CVE编号": "CVE-2022-36377",
+    "漏洞描述": "Insecure inherited permissions in some Intel(R) Wireless Adapter Driver installation software for Intel(R) NUC Kits & Mini PCs before version 22.190.0.3 for Windows may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00908.html"
+    ],
+    "受影响版本": [
+      "before version 22.190.0.3 for Windows"
+    ],
+    "公开日期": "2022年11月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi software",
+    "CVE编号": "CVE-2022-36351",
+    "漏洞描述": "Improper input validation in some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi software may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "http://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00766.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/K24OJT4AVMNND7LBTC2ZDDTE6DJHAKB4/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HUCYUR4WBTELCRHELISJ3RMZVHKIV5TN/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y76A3PLHIQCEPESB4XVBV5SRRXQEZ5JY/",
+      "https://lists.debian.org/debian-lts-announce/2023/09/msg00043.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2023年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi software",
+    "CVE编号": "CVE-2022-28667",
+    "漏洞描述": "Out-of-bounds write for some Intel(R) PROSet/Wireless WiFi software before version 22.140 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00687.html"
+    ],
+    "受影响版本": [
+      "before version 22.140"
+    ],
+    "公开日期": "2022年11月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi software",
+    "CVE编号": "CVE-2022-27635",
+    "漏洞描述": "Improper access control for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi software may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "http://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00766.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/K24OJT4AVMNND7LBTC2ZDDTE6DJHAKB4/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HUCYUR4WBTELCRHELISJ3RMZVHKIV5TN/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y76A3PLHIQCEPESB4XVBV5SRRXQEZ5JY/",
+      "https://lists.debian.org/debian-lts-announce/2023/09/msg00043.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2023年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi, Intel vPro(R) CSME WiFi and Killer(TM) WiFi products",
+    "CVE编号": "CVE-2022-26047",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless WiFi, Intel vPro(R) CSME WiFi and Killer(TM) WiFi products may allow unauthenticated user to potentially enable denial of service via local access.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00699.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年11月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi products",
+    "CVE编号": "CVE-2022-21240",
+    "漏洞描述": "Out of bounds read for some Intel(R) PROSet/Wireless WiFi products may allow a privileged user to potentially enable information disclosure via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi products",
+    "CVE编号": "CVE-2022-21212",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless WiFi products may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi products",
+    "CVE编号": "CVE-2022-21197",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless WiFi products may allow an unauthenticated user to potentially enable denial of service via network access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products",
+    "CVE编号": "CVE-2022-21181",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00002.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi products",
+    "CVE编号": "CVE-2022-21172",
+    "漏洞描述": "Out of bounds write for some Intel(R) PROSet/Wireless WiFi products may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi products",
+    "CVE编号": "CVE-2022-21160",
+    "漏洞描述": "Improper buffer restrictions for some Intel(R) PROSet/Wireless WiFi products may allow an unauthenticated user to potentially enable denial of service via network access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products",
+    "CVE编号": "CVE-2022-21140",
+    "漏洞描述": "Improper access control for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products may allow a privileged user to potentially enable information disclosure via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi products",
+    "CVE编号": "CVE-2022-21139",
+    "漏洞描述": "Inadequate encryption strength for some Intel(R) PROSet/Wireless WiFi products may allow an unauthenticated user to potentially enable escalation of privilege via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products",
+    "CVE编号": "CVE-2021-44545",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00002.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products",
+    "CVE编号": "CVE-2021-37409",
+    "漏洞描述": "Improper access control for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00002.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth(R) and Killer(TM) Bluetooth(R) products",
+    "CVE编号": "CVE-2021-33847",
+    "漏洞描述": "Improper buffer restrictions in firmware for some Intel(R) Wireless Bluetooth(R) and Killer(TM) Bluetooth(R) products before version 22.120 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00628.html"
+    ],
+    "受影响版本": [
+      "before version 22.120"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth(R) and Killer(TM) Bluetooth(R) products",
+    "CVE编号": "CVE-2021-33155",
+    "漏洞描述": "Improper input validation in firmware for some Intel(R) Wireless Bluetooth(R) and Killer(TM) Bluetooth(R) products before version 22.100 may allow an authenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00604.html"
+    ],
+    "受影响版本": [
+      "before version 22.100"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth(R) and Killer(TM) Bluetooth(R) products",
+    "CVE编号": "CVE-2021-33139",
+    "漏洞描述": "Improper conditions check in firmware for some Intel(R) Wireless Bluetooth(R) and Killer(TM) Bluetooth(R) products before version 22.100 may allow an authenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00604.html"
+    ],
+    "受影响版本": [
+      "before version 22.100"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi in UEFI",
+    "CVE编号": "CVE-2021-33115",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless WiFi in UEFI may allow an unauthenticated user to potentially enable escalation of privilege via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00582.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi in multiple operating systems and Killer(TM) WiFi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-33114",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless WiFi in multiple operating systems and Killer(TM) WiFi in Windows 10 and 11 may allow an authenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00582.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi in multiple operating systems and Killer(TM) WiFi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-33113",
+    "漏洞描述": "Improper input validation for some Intel(R) PROSet/Wireless WiFi in multiple operating systems and Killer(TM) WiFi in Windows 10 and 11 may allow an unauthenticated user to potentially enable denial of service or information disclosure via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00582.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth(R) products and Killer(TM) Bluetooth(R) products in Windows 10 and 11",
+    "CVE编号": "CVE-2021-33110",
+    "漏洞描述": "Improper input validation for some Intel(R) Wireless Bluetooth(R) products and Killer(TM) Bluetooth(R) products in Windows 10 and 11 before version 22.80 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00581.html"
+    ],
+    "受影响版本": [
+      "before version 22.80"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth(R) and Killer(TM) Bluetooth(R) products",
+    "CVE编号": "CVE-2021-26950",
+    "漏洞描述": "Out of bounds read in firmware for some Intel(R) Wireless Bluetooth(R) and Killer(TM) Bluetooth(R) products before version 22.120 may allow an authenticated user to potentially enable denial of service via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00628.html"
+    ],
+    "受影响版本": [
+      "before version 22.120"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth(R) and Killer(TM) Bluetooth(R) products",
+    "CVE编号": "CVE-2021-26257",
+    "漏洞描述": "Improper buffer restrictions in firmware for some Intel(R) Wireless Bluetooth(R) and Killer(TM) Bluetooth(R) products before version 22.120 may allow an authenticated user to potentially enable denial of service via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00628.html"
+    ],
+    "受影响版本": [
+      "before version 22.120"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products",
+    "CVE编号": "CVE-2021-26254",
+    "漏洞描述": "Out of bounds read for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products may allow a privileged user to potentially enable denial of service via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products",
+    "CVE编号": "CVE-2021-23223",
+    "漏洞描述": "Improper initialization for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00002.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products",
+    "CVE编号": "CVE-2021-23188",
+    "漏洞描述": "Improper access control for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products may allow an authenticated user to potentially enable information disclosure via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth(R) and Killer(TM) Bluetooth(R) products",
+    "CVE编号": "CVE-2021-23179",
+    "漏洞描述": "Out of bounds read in firmware for some Intel(R) Wireless Bluetooth(R) and Killer(TM) Bluetooth(R) products before version 22.120 may allow a privileged user to potentially enable information disclosure via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00628.html"
+    ],
+    "受影响版本": [
+      "before version 22.120"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products",
+    "CVE编号": "CVE-2021-23168",
+    "漏洞描述": "Out of bounds read for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi products may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00621.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00002.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年08月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0183",
+    "漏洞描述": "Improper Validation of Specified Index, Position, or Offset in Input in software for some Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi and Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0179",
+    "漏洞描述": "Improper Use of Validation Framework in software for Intel(R) PROSet/Wireless Wi-Fi and Killer(TM) Wi-Fi in Windows 10 and 11 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi and Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0178",
+    "漏洞描述": "Improper input validation in software for Intel(R) PROSet/Wireless Wi-Fi and Killer(TM) Wi-Fi in Windows 10 and 11 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi and Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0177",
+    "漏洞描述": "Improper Validation of Consistency within input in software for Intel(R) PROSet/Wireless Wi-Fi and Killer(TM) Wi-Fi in Windows 10 and 11 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0176",
+    "漏洞描述": "Improper input validation in firmware for some Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11 may allow a privileged user to potentially enable denial of service via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0175",
+    "漏洞描述": "Improper Validation of Specified Index, Position, or Offset in Input in firmware for some Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0174",
+    "漏洞描述": "Improper Use of Validation Framework in firmware for some Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11 may allow a unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0173",
+    "漏洞描述": "Improper Validation of Consistency within input in firmware for some Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11 may allow a unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0172",
+    "漏洞描述": "Improper input validation in firmware for some Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi and Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0171",
+    "漏洞描述": "Improper access control in software for Intel(R) PROSet/Wireless Wi-Fi and Killer(TM) Wi-Fi in Windows 10 and 11 may allow an authenticated user to potentially enable information disclosure via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0170",
+    "漏洞描述": "Exposure of Sensitive Information to an Unauthorized Actor in firmware for some Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11 may allow an authenticated user to potentially enable information disclosure via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0169",
+    "漏洞描述": "Uncontrolled Search Path Element in software for Intel(R) PROSet/Wireless Wi-Fi in Windows 10 and 11 may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0168",
+    "漏洞描述": "Improper input validation in firmware for some Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11 may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi and Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0167",
+    "漏洞描述": "Improper access control in software for Intel(R) PROSet/Wireless Wi-Fi and Killer(TM) Wi-Fi in Windows 10 and 11 may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0166",
+    "漏洞描述": "Exposure of Sensitive Information to an Unauthorized Actor in firmware for some Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11 may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0165",
+    "漏洞描述": "Improper input validation in firmware for Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and Killer(TM) Wi-Fi in Windows 10 and 11 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0164",
+    "漏洞描述": "Improper access control in firmware for Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and Killer(TM) Wi-Fi in Windows 10 and 11 may allow an unauthenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi and Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0163",
+    "漏洞描述": "Improper Validation of Consistency within input in software for Intel(R) PROSet/Wireless Wi-Fi and Killer(TM) Wi-Fi in Windows 10 and 11 may allow an unauthenticated user to potentially enable escalation of privilege via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi and Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0162",
+    "漏洞描述": "Improper input validation in software for Intel(R) PROSet/Wireless Wi-Fi and Killer(TM) Wi-Fi in Windows 10 and 11 may allow an unauthenticated user to potentially enable escalation of privilege via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0161",
+    "漏洞描述": "Improper input validation in firmware for Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and Killer(TM) Wi-Fi in Windows 10 and 11 may allow a privileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth(R) and Killer(TM) Bluetooth(R) products in Windows 10",
+    "CVE编号": "CVE-2021-0152",
+    "漏洞描述": "Improper verification of cryptographic signature in the installer for some Intel(R) Wireless Bluetooth(R) and Killer(TM) Bluetooth(R) products in Windows 10 may allow an authenticated user to potentially enable denial of service via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00540.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2021年11月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth(R) and Killer(TM) Bluetooth(R) products in Windows 10",
+    "CVE编号": "CVE-2021-0151",
+    "漏洞描述": "Improper access control in the installer for some Intel(R) Wireless Bluetooth(R) and Killer(TM) Bluetooth(R) products in Windows 10 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00540.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2021年11月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) ProSet/Wireless WiFi drivers",
+    "CVE编号": "CVE-2021-0105",
+    "漏洞描述": "Insecure inherited permissions in some Intel(R) ProSet/Wireless WiFi drivers may allow an authenticated user to potentially enable information disclosure and denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00472.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2021年06月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi in Windows 10",
+    "CVE编号": "CVE-2021-0082",
+    "漏洞描述": "Uncontrolled search path in software installer for Intel(R) PROSet/Wireless WiFi in Windows 10 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00509.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2021年11月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi in Windows 10",
+    "CVE编号": "CVE-2021-0079",
+    "漏洞描述": "Improper input validation in software for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi in Windows 10 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00509.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2021年11月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi in Windows 10",
+    "CVE编号": "CVE-2021-0078",
+    "漏洞描述": "Improper input validation in software for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi in Windows 10 may allow an unauthenticated user to potentially enable denial of service or information disclosure via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00509.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2021年11月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0076",
+    "漏洞描述": "Improper Validation of Specified Index, Position, or Offset in Input in firmware for some Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11 may allow a privileged user to potentially enable denial of service via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi in multiple operating systems and some Killer(TM) WiFi in Windows 10",
+    "CVE编号": "CVE-2021-0075",
+    "漏洞描述": "Out-of-bounds write in firmware for some Intel(R) PROSet/Wireless WiFi in multiple operating systems and some Killer(TM) WiFi in Windows 10 may allow a privileged user to potentially enable denial of service via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00509.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2021年11月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0072",
+    "漏洞描述": "Improper input validation in firmware for some Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and some Killer(TM) Wi-Fi in Windows 10 and 11 may allow a privileged user to potentially enable information disclosure via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi in UEFI",
+    "CVE编号": "CVE-2021-0071",
+    "漏洞描述": "Improper input validation in firmware for some Intel(R) PROSet/Wireless WiFi in UEFI may allow an unauthenticated user to potentially enable escalation of privilege via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00509.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2021年11月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi in multiple operating systems and some Killer(TM) WiFi in Windows 10",
+    "CVE编号": "CVE-2021-0069",
+    "漏洞描述": "Improper input validation in firmware for some Intel(R) PROSet/Wireless WiFi in multiple operating systems and some Killer(TM) WiFi in Windows 10 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00509.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2021年11月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and Killer(TM) Wi-Fi in Windows 10 and 11",
+    "CVE编号": "CVE-2021-0066",
+    "漏洞描述": "Improper input validation in firmware for Intel(R) PROSet/Wireless Wi-Fi in multiple operating systems and Killer(TM) Wi-Fi in Windows 10 and 11 may allow an unauthenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00539.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2022年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi software installer for Windows 10",
+    "CVE编号": "CVE-2021-0065",
+    "漏洞描述": "Incorrect default permissions in the Intel(R) PROSet/Wireless WiFi software installer for Windows 10 before version 22.40 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00509.html"
+    ],
+    "受影响版本": [
+      "before version 22.40"
+    ],
+    "公开日期": "2021年11月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi software installer for Windows 10",
+    "CVE编号": "CVE-2021-0064",
+    "漏洞描述": "Insecure inherited permissions in the Intel(R) PROSet/Wireless WiFi software installer for Windows 10 before version 22.40 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00509.html"
+    ],
+    "受影响版本": [
+      "before version 22.40"
+    ],
+    "公开日期": "2021年11月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi in Windows 10",
+    "CVE编号": "CVE-2021-0063",
+    "漏洞描述": "Improper input validation in firmware for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi in Windows 10 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00509.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2021年11月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi in Windows 10",
+    "CVE编号": "CVE-2021-0053",
+    "漏洞描述": "Improper initialization in firmware for some Intel(R) PROSet/Wireless WiFi and Killer(TM) WiFi in Windows 10 may allow an authenticated user to potentially enable information disclosure via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00509.html"
+    ],
+    "受影响版本": [
+      "See references"
+    ],
+    "公开日期": "2021年11月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless for Open Source Advisory",
+    "CVE编号": "CVE-2020-8689",
+    "漏洞描述": "Improper buffer restrictions in the Intel(R) Wireless for Open Source before version 1.5 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00379.html"
+    ],
+    "受影响版本": [
+      "before version 1.5 Advisory"
+    ],
+    "公开日期": "2020年08月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi and Killer (TM) drivers",
+    "CVE编号": "CVE-2020-24458",
+    "漏洞描述": "Incomplete cleanup in some Intel(R) PROSet/Wireless WiFi and Killer (TM) drivers before version 22.0 may allow a privileged user to potentially enable information disclosure and denial of service<b>&nbsp;</b>via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00448.html"
+    ],
+    "受影响版本": [
+      "before version 22.0"
+    ],
+    "公开日期": "2021年02月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth(R)",
+    "CVE编号": "CVE-2020-12322",
+    "漏洞描述": "Improper input validation in some Intel(R) Wireless Bluetooth(R) products before version 21.110 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00403"
+    ],
+    "受影响版本": [
+      "before version 21.110"
+    ],
+    "公开日期": "2020年11月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth(R)",
+    "CVE编号": "CVE-2020-12321",
+    "漏洞描述": "Improper buffer restriction in some Intel(R) Wireless Bluetooth(R) products before version 21.110 may allow an unauthenticated user to potentially enable escalation of privilege via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00403"
+    ],
+    "受影响版本": [
+      "before version 21.110"
+    ],
+    "公开日期": "2020年11月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi",
+    "CVE编号": "CVE-2020-12319",
+    "漏洞描述": "Insufficient control flow management in some Intel(R) PROSet/Wireless WiFi products before version 21.110 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00402"
+    ],
+    "受影响版本": [
+      "before version 21.110"
+    ],
+    "公开日期": "2020年11月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi",
+    "CVE编号": "CVE-2020-12318",
+    "漏洞描述": "Protection mechanism failure in some Intel(R) PROSet/Wireless WiFi products before version 21.110 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00402"
+    ],
+    "受影响版本": [
+      "before version 21.110"
+    ],
+    "公开日期": "2020年11月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi",
+    "CVE编号": "CVE-2020-12317",
+    "漏洞描述": "Improper buffer restriction in some Intel(R) PROSet/Wireless WiFi products before version 21.110 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00402"
+    ],
+    "受影响版本": [
+      "before version 21.110"
+    ],
+    "公开日期": "2020年11月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi",
+    "CVE编号": "CVE-2020-12314",
+    "漏洞描述": "Improper input validation in some Intel(R) PROSet/Wireless WiFi products before version 21.110 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00402"
+    ],
+    "受影响版本": [
+      "before version 21.110"
+    ],
+    "公开日期": "2020年11月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi",
+    "CVE编号": "CVE-2020-12313",
+    "漏洞描述": "Insufficient control flow management in some Intel(R) PROSet/Wireless WiFi products before version 21.110 may allow an unauthenticated user to potentially enable escalation of privilege via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00402"
+    ],
+    "受影响版本": [
+      "before version 21.110"
+    ],
+    "公开日期": "2020年11月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi products on Windows 10",
+    "CVE编号": "CVE-2020-0569",
+    "漏洞描述": "Out of bounds write in Intel(R) PROSet/Wireless WiFi products on Windows 10 may allow an authenticated user to potentially enable denial of service via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00338.html"
+    ],
+    "受影响版本": [
+      "before version 21.70"
+    ],
+    "公开日期": "2020年11月23日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi Advisory",
+    "CVE编号": "CVE-2020-0559",
+    "漏洞描述": "Insecure inherited permissions in some Intel(R) PROSet/Wireless WiFi products on Windows* 7 and 8.1 before version 21.40.5.1 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00355.html",
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00360.html"
+    ],
+    "受影响版本": [
+      "Before version 21.40.5.1"
+    ],
+    "公开日期": "2020年08月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi Software",
+    "CVE编号": "CVE-2020-0558",
+    "漏洞描述": "Improper buffer restrictions in kernel mode driver for Intel(R) PROSet/Wireless WiFi products before version 21.70 on Windows 10 may allow an unprivileged user to potentially enable denial of service via adjacent access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00338.html"
+    ],
+    "受影响版本": [
+      "Before version 21.70"
+    ],
+    "公开日期": "2020年04月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) PROSet/Wireless WiFi Software",
+    "CVE编号": "CVE-2020-0557",
+    "漏洞描述": "Insecure inherited permissions in Intel(R) PROSet/Wireless WiFi products before version 21.70 on Windows 10 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00338.html"
+    ],
+    "受影响版本": [
+      "Before version 21.70"
+    ],
+    "公开日期": "2020年04月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth(R) Advisory",
+    "CVE编号": "CVE-2020-0555",
+    "漏洞描述": "Improper input validation for some Intel(R) Wireless Bluetooth(R) products may allow an authenticated user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00337.html"
+    ],
+    "受影响版本": [
+      "See provided reference"
+    ],
+    "公开日期": "2020年08月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth(R) Advisory",
+    "CVE编号": "CVE-2020-0554",
+    "漏洞描述": "Race condition in software installer for some Intel(R) Wireless Bluetooth(R) products on Windows* 7, 8.1 and 10 may allow an unprivileged user to potentially enable escalation of privilege via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00337.html"
+    ],
+    "受影响版本": [
+      "See provided reference"
+    ],
+    "公开日期": "2020年08月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Intel(R) Wireless Bluetooth(R) Advisory",
+    "CVE编号": "CVE-2020-0553",
+    "漏洞描述": "Out-of-bounds read in kernel mode driver for some Intel(R) Wireless Bluetooth(R) products on Windows* 10, may allow a privileged user to potentially enable information disclosure via local access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00337.html"
+    ],
+    "受影响版本": [
+      "See provided reference"
+    ],
+    "公开日期": "2020年08月13日"
+  }
+]

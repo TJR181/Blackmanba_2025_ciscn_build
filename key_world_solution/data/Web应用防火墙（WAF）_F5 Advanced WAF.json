@@ -1,0 +1,131 @@
+[
+  {
+    "设备品牌": "F5",
+    "设备类型": "Web应用防火墙（WAF）",
+    "产品型号": "BIG-IP LTM, Advanced WAF, ASM, and APM",
+    "CVE编号": "CVE-2022-29491",
+    "漏洞描述": "On F5 BIG-IP LTM, Advanced WAF, ASM, or APM 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5, 14.1.x versions prior to 14.1.4.6, and all versions of 13.1.x, 12.1.x, and 11.6.x, when a virtual server is configured with HTTP, TCP on one side (client/server), and DTLS on the other (server/client), undisclosed requests can cause the TMM process to terminate. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K14229426"
+    ],
+    "受影响版本": [
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "Web应用防火墙（WAF）",
+    "产品型号": "BIG-IP (Advanced WAF, APM, ASM)",
+    "CVE编号": "CVE-2022-27806",
+    "漏洞描述": "On all versions of 16.1.x, 15.1.x, 14.1.x, 13.1.x, 12.1.x, and 11.6.x of F5 BIG-IP Advanced WAF, ASM, and ASM, and F5 BIG-IP Guided Configuration (GC) all versions prior to 9.0, when running in Appliance mode, an authenticated attacker assigned the Administrator role may be able to bypass Appliance mode restrictions, utilizing command injection vulnerabilities in undisclosed URIs in F5 BIG-IP Guided Configuration. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K68647001"
+    ],
+    "受影响版本": [
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "Web应用防火墙（WAF）",
+    "产品型号": "BIG-IP Advanced WAF, ASM, and APM",
+    "CVE编号": "CVE-2022-26890",
+    "漏洞描述": "On F5 BIG-IP Advanced WAF, ASM, and APM 16.1.x versions prior to 16.1.2.1, 15.1.x versions prior to 15.1.5, 14.1.x versions prior to 14.1.4.6, and 13.1.x versions prior to 13.1.5, when ASM or Advanced WAF, as well as APM, are configured on a virtual server, the ASM policy is configured with Session Awareness, and the \"Use APM Username and Session ID\" option is enabled, undisclosed requests can cause the bd process to terminate. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K03442392"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "Web应用防火墙（WAF）",
+    "产品型号": "BIG-IP (Advanced WAF, APM, ASM)",
+    "CVE编号": "CVE-2022-25946",
+    "漏洞描述": "On all versions of 16.1.x, 15.1.x, 14.1.x, 13.1.x, 12.1.x, and 11.6.x of F5 BIG-IP Advanced WAF, ASM, and ASM, and F5 BIG-IP Guided Configuration (GC) all versions prior to 9.0, when running in Appliance mode, an authenticated attacker with Administrator role privilege may be able to bypass Appliance mode restrictions due to a missing integrity check in F5 BIG-IP Guided Configuration. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K52322100"
+    ],
+    "受影响版本": [
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "Web应用防火墙（WAF）",
+    "产品型号": "BIG-IP FPS, ASM, and Advanced WAF",
+    "CVE编号": "CVE-2022-23031",
+    "漏洞描述": "On BIG-IP FPS, ASM, and Advanced WAF versions 16.1.x before 16.1.1, 15.1.x before 15.1.4, and 14.1.x before 14.1.4.4, an XML External Entity (XXE) vulnerability exists in an undisclosed page of the F5 Advanced Web Application Firewall (Advanced WAF) and BIG-IP ASM Traffic Management User Interface (TMUI), also referred to as the Configuration utility, that allows an authenticated high-privileged attacker to read local files and force BIG-IP to send HTTP requests. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K61112120"
+    ],
+    "受影响版本": [
+      "16.1.x before 16.1.1, 15.1.x before 15.1.4, and 14.1.x before 14.1.4.4"
+    ],
+    "公开日期": "2022年01月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "Web应用防火墙（WAF）",
+    "产品型号": "BIG-IP Advanced WAF and BIG-IP ASM",
+    "CVE编号": "CVE-2021-23029",
+    "漏洞描述": "On version 16.0.x before 16.0.1.2, insufficient permission checks may allow authenticated users with guest privileges to perform Server-Side Request Forgery (SSRF) attacks through F5 Advanced Web Application Firewall (WAF) and the BIG-IP ASM Configuration utility. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K52420610"
+    ],
+    "受影响版本": [
+      "16.0.x before 16.0.1.2"
+    ],
+    "公开日期": "2021年09月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "Web应用防火墙（WAF）",
+    "产品型号": "BIG-IP Advanced WAF and BIG-IP ASM",
+    "CVE编号": "CVE-2021-23028",
+    "漏洞描述": "On version 16.0.x before 16.0.1.2, 15.1.x before 15.1.3.1, 14.1.x before 14.1.4.2, and 13.1.x before 13.1.4, when JSON content profiles are configured for URLs as part of an F5 Advanced Web Application Firewall (WAF)/BIG-IP ASM security policy and applied to a virtual server, undisclosed requests may cause the BIG-IP ASM bd process to terminate. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K00602225"
+    ],
+    "受影响版本": [
+      "16.0.x before 16.0.1.2, 15.1.x before 15.1.3.1, 14.1.x before 14.1.4.2, and 13.1.x before 13.1.4"
+    ],
+    "公开日期": "2021年09月14日"
+  }
+]

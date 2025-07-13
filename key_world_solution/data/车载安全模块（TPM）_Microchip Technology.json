@@ -1,0 +1,36 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载安全模块（TPM）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-40480",
+    "漏洞描述": "Nordic Semiconductor, Microchip Technology NRF5340-DK DT100112 was discovered to contain an issue which allows attackers to cause a Denial of Service (DoS) via a crafted ConReq packet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://blediff.github.io/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年02月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载安全模块（TPM）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-40022",
+    "漏洞描述": "Microchip Technology (Microsemi) SyncServer S650 was discovered to contain a command injection vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.microsemi.com/document-portal/doc_download/135737-datasheet-syncserver-s650",
+      "https://www.microsemi.com/campaigns/network-time-servers/syncserver-s600/?url=",
+      "https://www.microsemi.com/campaigns/network-time-servers/S650p/%3Fgd%3D1&id=5&gclid=Cj0KCQjwjbyYBhCdARIsAArC6LL-202ej5YfDB5lMIMSZ2735qjo5yaj2i-PrvLv2Cnh_kIJtFJ0oF8aAlMpEALw_wcB",
+      "https://www.securifera.com/advisories/CVE-2022-40022/",
+      "http://packetstormsecurity.com/files/172907/Symmetricom-SyncServer-Unauthenticated-Remote-Command-Execution.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年02月13日"
+  }
+]

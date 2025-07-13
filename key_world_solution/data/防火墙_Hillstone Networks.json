@@ -1,0 +1,32 @@
+[
+  {
+    "设备品牌": "Hillstone Networks",
+    "设备类型": "防火墙",
+    "产品型号": "Hillstone Next Generation FireWall",
+    "CVE编号": "CVE-2025-2239",
+    "漏洞描述": "Generation of Error Message Containing Sensitive Information vulnerability in Hillstone Networks Hillstone Next Generation FireWall.This issue affects Hillstone Next Generation FireWall: from 5.5R8P1 before 5.5R8P23.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.hillstonenet.com.cn/security-notification/2025/02/17/stoneosjd/"
+    ],
+    "受影响版本": [
+      "5.5R8P1"
+    ],
+    "公开日期": "2025年03月12日"
+  },
+  {
+    "设备品牌": "Hillstone Networks",
+    "设备类型": "防火墙",
+    "产品型号": "Hillstone Networks Web Application Firewall",
+    "CVE编号": "CVE-2024-8073",
+    "漏洞描述": "Improper Input Validation vulnerability in Hillstone Networks Hillstone Networks Web Application Firewall on 5.5R6 allows Command Injection.This issue affects Hillstone Networks Web Application Firewall: from 5.5R6-2.6.7 through 5.5R6-2.8.13.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.hillstonenet.com.cn/security-notification/2024/08/21/mlzrld-2/"
+    ],
+    "受影响版本": [
+      "2.6.7"
+    ],
+    "公开日期": "2024年08月26日"
+  }
+]

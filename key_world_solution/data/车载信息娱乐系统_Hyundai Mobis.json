@@ -1,0 +1,104 @@
+[
+  {
+    "设备品牌": " Hyundai",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "model (2017)",
+    "CVE编号": "CVE-2023-39373",
+    "漏洞描述": "\n A Hyundai model (2017) - CWE-294: Authentication Bypass by Capture-replay.\n\n\n",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.gov.il/en/Departments/faq/cve_advisories"
+    ],
+    "受影响版本": [
+      "model (2017)"
+    ],
+    "公开日期": "2023年09月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-26246",
+    "漏洞描述": "An issue was discovered in the Hyundai Gen5W_L in-vehicle infotainment system AE_E_PE_EUR.S5W_L001.001.211214. The AppUpgrade binary file, which is used during the firmware installation process, can be modified by an attacker to bypass the digital signature check. This indirectly allows an attacker to install custom firmware in the IVI system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://sowhat.iit.cnr.it",
+      "https://sowhat.iit.cnr.it:8443/can-work/chimaera/-/blob/main/Report/IIT-01-2023.pdf",
+      "https://sowhat.iit.cnr.it:8443/can-work/chimaera"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年04月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-26245",
+    "漏洞描述": "An issue was discovered in the Hyundai Gen5W_L in-vehicle infotainment system AE_E_PE_EUR.S5W_L001.001.211214. The AppUpgrade binary file, which is used during the firmware installation process, can be modified by an attacker to bypass the version check in order to install any firmware version (e.g., newer, older, or customized). This indirectly allows an attacker to install custom firmware in the IVI system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://sowhat.iit.cnr.it",
+      "https://sowhat.iit.cnr.it:8443/can-work/chimaera/-/blob/main/Report/IIT-01-2023.pdf",
+      "https://sowhat.iit.cnr.it:8443/can-work/chimaera"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年04月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-26244",
+    "漏洞描述": "An issue was discovered in the Hyundai Gen5W_L in-vehicle infotainment system AE_E_PE_EUR.S5W_L001.001.211214. The AppDMClient binary file, which is used during the firmware installation process, can be modified by an attacker to bypass the digital signature check of AppUpgrade and .lge.upgrade.xml files, which are used during the firmware installation process. This indirectly allows an attacker to use a custom version of AppUpgrade and .lge.upgrade.xml files.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://sowhat.iit.cnr.it",
+      "https://sowhat.iit.cnr.it:8443/can-work/chimaera/-/blob/main/Report/IIT-01-2023.pdf",
+      "https://sowhat.iit.cnr.it:8443/can-work/chimaera"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年04月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-26243",
+    "漏洞描述": "An issue was discovered in the Hyundai Gen5W_L in-vehicle infotainment system AE_E_PE_EUR.S5W_L001.001.211214. The decryption binary used to decrypt firmware files has an information leak that allows an attacker to read the AES key and initialization vector from memory. An attacker may exploit this to create custom firmware that may be installed in the IVI system. Then, an attacker may be able to install a backdoor in the IVI system that may allow him to control it, if it is connected to the Internet through Wi-Fi.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://sowhat.iit.cnr.it",
+      "https://sowhat.iit.cnr.it:8443/can-work/chimaera/-/blob/main/Report/IIT-01-2023.pdf",
+      "https://sowhat.iit.cnr.it:8443/can-work/chimaera"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年04月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-37418",
+    "漏洞描述": "The Remote Keyless Entry (RKE) receiving unit on certain Nissan, Kia, and Hyundai vehicles through 2017 allows remote attackers to perform unlock operations and force a resynchronization after capturing two consecutive valid key fob signals over the radio, aka a RollBack attack. The attacker retains the ability to unlock indefinitely.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.blackhat.com/us-22/briefings/schedule/#rollback---a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems-27185",
+      "https://medium.com/codex/rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems-df5f99ba9490",
+      "https://www.youtube.com/playlist?list=PLYodcy84oQL1gxwiuRm13xRXxTQL9cO5t",
+      "https://www.pcmag.com/news/is-your-car-key-fob-vulnerable-to-this-simple-replay-attack",
+      "https://hackaday.com/2022/08/17/rollback-breaks-into-your-car/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年08月24日"
+  }
+]

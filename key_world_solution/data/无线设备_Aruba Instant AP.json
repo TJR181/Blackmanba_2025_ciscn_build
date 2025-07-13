@@ -1,0 +1,789 @@
+[
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "无线设备",
+    "产品型号": "AOS-10 AP",
+    "CVE编号": "CVE-2025-27079",
+    "漏洞描述": "A vulnerability in the file creation process on the command line interface of AOS-8 Instant and AOS-10 AP could allow an authenticated remote attacker to perform remote code execution (RCE). Successful exploitation could allow an attacker to execute arbitrary operating system commands on the underlying operating system leading to potential system compromise.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw04844en_us&docLocale=en_US"
+    ],
+    "受影响版本": [
+      "10.7.0.0",
+      "10.4.0.0",
+      "8.12.0.0",
+      "8.10.0.0"
+    ],
+    "公开日期": "2025年04月08日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "无线设备",
+    "产品型号": "AOS-10 AP",
+    "CVE编号": "CVE-2025-27078",
+    "漏洞描述": "A vulnerability in a system binary of AOS-8 Instant and AOS-10 AP could allow an authenticated remote attacker to inject commands into the underlying operating system while using the CLI. Successful exploitation could lead to complete system compromise.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw04844en_us&docLocale=en_US"
+    ],
+    "受影响版本": [
+      "10.7.0.0",
+      "10.4.0.0",
+      "8.12.0.0",
+      "8.10.0.0"
+    ],
+    "公开日期": "2025年04月08日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "无线设备",
+    "产品型号": "AOS-8 Instant and AOS-10 AP",
+    "CVE编号": "CVE-2024-31472",
+    "漏洞描述": "There are command injection vulnerabilities in the underlying Soft AP Daemon service that could lead to unauthenticated remote code execution by sending specially crafted packets destined to the PAPI (Aruba's Access Point management protocol) UDP port (8211). Successful exploitation of these vulnerabilities result in the ability to execute arbitrary code as a privileged user on the underlying operating system.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw04647en_us&docLocale=en_US"
+    ],
+    "受影响版本": [
+      "10.5.0.0",
+      "10.4.0.0",
+      "8.11.0.0",
+      "8.10.0.0",
+      "8.6.0.0"
+    ],
+    "公开日期": "2024年05月14日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Mobility Conductor (formerly Mobility Master); Aruba Mobility Controllers; WLAN Gateways and SD-WAN Gateways managed by Aruba Central",
+    "CVE编号": "CVE-2022-37897",
+    "漏洞描述": "There is a command injection vulnerability that could lead to unauthenticated remote code execution by sending specially crafted packets destined to the PAPI (Aruba Networks AP management protocol) UDP port (8211). Successful exploitation of this vulnerability results in the ability to execute arbitrary code as a privileged user on the underlying operating system.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2022-016.txt"
+    ],
+    "受影响版本": [
+      "ArubaOS 6.5.4.x: 6.5.4.23 and above; ArubaOS 8.6.x: 8.6.0.18 and above; ArubaOS 8.7.x: 8.7.1.10 and above; ArubaOS 8.10.x: 8.10.0.0 and above; ArubaOS 10.3.x: 10.3.0.1 and above; SD-WAN-2.3.0.x: 8.7.0.0-2.3.0.7 and above"
+    ],
+    "公开日期": "2022年11月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Access Points: 100 Series; 103 Series; 110 Series; 120 Series; 130 Series; 200 Series; 207 Series; 210 Series; 220 Series; 260 Series; 300 Series; 303 Series; 310 Series; 318 Series Hardened Access Points; 320 Series; 330 Series; 340 Series; 370 Series; 500 Series; 510 Series; 530 Series; 550 Series; 630 Series; 650 Series;",
+    "CVE编号": "CVE-2022-37895",
+    "漏洞描述": "An unauthenticated Denial of Service (DoS) vulnerability exists in the handling of certain SSID strings by Aruba InstantOS and ArubaOS 10. Successful exploitation of this vulnerability results in the ability to interrupt the normal operation of the affected AP of Aruba InstantOS 6.4.x: 6.4.4.8-4.2.4.20 and below; Aruba InstantOS 6.5.x: 6.5.4.23 and below; Aruba InstantOS 8.6.x: 8.6.0.18 and below; Aruba InstantOS 8.7.x: 8.7.1.9 and below; Aruba InstantOS 8.10.x: 8.10.0.1 and below; ArubaOS 10.3.x: 10.3.1.0 and below; Aruba has released upgrades for Aruba InstantOS that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2022-014.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-506569.pdf"
+    ],
+    "受影响版本": [
+      "Aruba InstantOS 6.4.x:  6.4.4.8-4.2.4.20 and below",
+      "Aruba InstantOS 6.5.x:  6.5.4.23 and below",
+      "Aruba InstantOS 8.6.x:  8.6.0.18 and below",
+      "Aruba InstantOS 8.7.x:  8.7.1.9 and below",
+      "Aruba InstantOS 8.10.x: 8.10.0.1 and below",
+      "ArubaOS 10.3.x:  10.3.1.0 and below"
+    ],
+    "公开日期": "2022年10月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Access Points: 100 Series; 103 Series; 110 Series; 120 Series; 130 Series; 200 Series; 207 Series; 210 Series; 220 Series; 260 Series; 300 Series; 303 Series; 310 Series; 318 Series Hardened Access Points; 320 Series; 330 Series; 340 Series; 370 Series; 500 Series; 510 Series; 530 Series; 550 Series; 630 Series; 650 Series;",
+    "CVE编号": "CVE-2022-37894",
+    "漏洞描述": "An unauthenticated Denial of Service (DoS) vulnerability exists in the handling of certain SSID strings by Aruba InstantOS and ArubaOS 10. Successful exploitation of this vulnerability results in the ability to interrupt the normal operation of the affected AP of Aruba InstantOS 6.4.x: 6.4.4.8-4.2.4.20 and below; Aruba InstantOS 6.5.x: 6.5.4.23 and below; Aruba InstantOS 8.6.x: 8.6.0.18 and below; Aruba InstantOS 8.7.x: 8.7.1.9 and below; Aruba InstantOS 8.10.x: 8.10.0.1 and below; ArubaOS 10.3.x: 10.3.1.0 and below; Aruba has released upgrades for Aruba InstantOS that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2022-014.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-506569.pdf"
+    ],
+    "受影响版本": [
+      "Aruba InstantOS 6.4.x:  6.4.4.8-4.2.4.20 and below",
+      "Aruba InstantOS 6.5.x:  6.5.4.23 and below",
+      "Aruba InstantOS 8.6.x:  8.6.0.18 and below",
+      "Aruba InstantOS 8.7.x:  8.7.1.9 and below",
+      "Aruba InstantOS 8.10.x: 8.10.0.1 and below",
+      "ArubaOS 10.3.x:  10.3.1.0 and below"
+    ],
+    "公开日期": "2022年10月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Access Points: 100 Series; 103 Series; 110 Series; 120 Series; 130 Series; 200 Series; 207 Series; 210 Series; 220 Series; 260 Series; 300 Series; 303 Series; 310 Series; 318 Series Hardened Access Points; 320 Series; 330 Series; 340 Series; 370 Series; 500 Series; 510 Series; 530 Series; 550 Series; 630 Series; 650 Series;",
+    "CVE编号": "CVE-2022-37889",
+    "漏洞描述": "There are buffer overflow vulnerabilities in multiple underlying services that could lead to unauthenticated remote code execution by sending specially crafted packets destined to the PAPI (Aruba Networks AP management protocol) UDP port (8211). Successful exploitation of these vulnerabilities results in the ability to execute arbitrary code as a privileged user on the underlying operating system of Aruba InstantOS 6.4.x: 6.4.4.8-4.2.4.20 and below; Aruba InstantOS 6.5.x: 6.5.4.23 and below; Aruba InstantOS 8.6.x: 8.6.0.18 and below; Aruba InstantOS 8.7.x: 8.7.1.9 and below; Aruba InstantOS 8.10.x: 8.10.0.1 and below; ArubaOS 10.3.x: 10.3.1.0 and below; Aruba has released upgrades for Aruba InnstantOS that address these security vulnerabilities.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2022-014.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-506569.pdf"
+    ],
+    "受影响版本": [
+      "Aruba InstantOS 6.4.x:  6.4.4.8-4.2.4.20 and below",
+      "Aruba InstantOS 6.5.x:  6.5.4.23 and below",
+      "Aruba InstantOS 8.6.x:  8.6.0.18 and below",
+      "Aruba InstantOS 8.7.x:  8.7.1.9 and below",
+      "Aruba InstantOS 8.10.x: 8.10.0.1 and below",
+      "ArubaOS 10.3.x:  10.3.1.0 and below"
+    ],
+    "公开日期": "2022年10月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Access Points: 100 Series; 103 Series; 110 Series; 120 Series; 130 Series; 200 Series; 207 Series; 210 Series; 220 Series; 260 Series; 300 Series; 303 Series; 310 Series; 318 Series Hardened Access Points; 320 Series; 330 Series; 340 Series; 370 Series; 500 Series; 510 Series; 530 Series; 550 Series; 630 Series; 650 Series;",
+    "CVE编号": "CVE-2022-37888",
+    "漏洞描述": "There are buffer overflow vulnerabilities in multiple underlying services that could lead to unauthenticated remote code execution by sending specially crafted packets destined to the PAPI (Aruba Networks AP management protocol) UDP port (8211). Successful exploitation of these vulnerabilities results in the ability to execute arbitrary code as a privileged user on the underlying operating system of Aruba InstantOS 6.4.x: 6.4.4.8-4.2.4.20 and below; Aruba InstantOS 6.5.x: 6.5.4.23 and below; Aruba InstantOS 8.6.x: 8.6.0.18 and below; Aruba InstantOS 8.7.x: 8.7.1.9 and below; Aruba InstantOS 8.10.x: 8.10.0.1 and below; ArubaOS 10.3.x: 10.3.1.0 and below; Aruba has released upgrades for Aruba InnstantOS that address these security vulnerabilities.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2022-014.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-506569.pdf"
+    ],
+    "受影响版本": [
+      "Aruba InstantOS 6.4.x:  6.4.4.8-4.2.4.20 and below",
+      "Aruba InstantOS 6.5.x:  6.5.4.23 and below",
+      "Aruba InstantOS 8.6.x:  8.6.0.18 and below",
+      "Aruba InstantOS 8.7.x:  8.7.1.9 and below",
+      "Aruba InstantOS 8.10.x: 8.10.0.1 and below",
+      "ArubaOS  10.3.x:  10.3.1.0 and below"
+    ],
+    "公开日期": "2022年10月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Access Points: 100 Series; 103 Series; 110 Series; 120 Series; 130 Series; 200 Series; 207 Series; 210 Series; 220 Series; 260 Series; 300 Series; 303 Series; 310 Series; 318 Series Hardened Access Points; 320 Series; 330 Series; 340 Series; 370 Series; 500 Series; 510 Series; 530 Series; 550 Series; 630 Series; 650 Series;",
+    "CVE编号": "CVE-2022-37887",
+    "漏洞描述": "There are buffer overflow vulnerabilities in multiple underlying services that could lead to unauthenticated remote code execution by sending specially crafted packets destined to the PAPI (Aruba Networks AP management protocol) UDP port (8211). Successful exploitation of these vulnerabilities results in the ability to execute arbitrary code as a privileged user on the underlying operating system of Aruba InstantOS 6.4.x: 6.4.4.8-4.2.4.20 and below; Aruba InstantOS 6.5.x: 6.5.4.23 and below; Aruba InstantOS 8.6.x: 8.6.0.18 and below; Aruba InstantOS 8.7.x: 8.7.1.9 and below; Aruba InstantOS 8.10.x: 8.10.0.1 and below; ArubaOS 10.3.x: 10.3.1.0 and below; Aruba has released upgrades for Aruba InnstantOS that address these security vulnerabilities.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2022-014.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-506569.pdf"
+    ],
+    "受影响版本": [
+      "Aruba InstantOS 6.4.x:  6.4.4.8-4.2.4.20 and below",
+      "Aruba InstantOS 6.5.x:  6.5.4.23 and below",
+      "Aruba InstantOS 8.6.x:  8.6.0.18 and below",
+      "Aruba InstantOS 8.7.x:  8.7.1.9 and below",
+      "Aruba InstantOS 8.10.x: 8.10.0.1 and below",
+      "ArubaOS  10.3.x:  10.3.1.0 and below"
+    ],
+    "公开日期": "2022年10月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Access Points: 100 Series; 103 Series; 110 Series; 120 Series; 130 Series; 200 Series; 207 Series; 210 Series; 220 Series; 260 Series; 300 Series; 303 Series; 310 Series; 318 Series Hardened Access Points; 320 Series; 330 Series; 340 Series; 370 Series; 500 Series; 510 Series; 530 Series; 550 Series; 630 Series; 650 Series;",
+    "CVE编号": "CVE-2022-37886",
+    "漏洞描述": "There are buffer overflow vulnerabilities in multiple underlying services that could lead to unauthenticated remote code execution by sending specially crafted packets destined to the PAPI (Aruba Networks AP management protocol) UDP port (8211). Successful exploitation of these vulnerabilities results in the ability to execute arbitrary code as a privileged user on the underlying operating system of Aruba InstantOS 6.4.x: 6.4.4.8-4.2.4.20 and below; Aruba InstantOS 6.5.x: 6.5.4.23 and below; Aruba InstantOS 8.6.x: 8.6.0.18 and below; Aruba InstantOS 8.7.x: 8.7.1.9 and below; Aruba InstantOS 8.10.x: 8.10.0.1 and below; ArubaOS 10.3.x: 10.3.1.0 and below; Aruba has released upgrades for Aruba InnstantOS that address these security vulnerabilities.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2022-014.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-506569.pdf"
+    ],
+    "受影响版本": [
+      "Aruba InstantOS 6.4.x:  6.4.4.8-4.2.4.20 and below",
+      "Aruba InstantOS 6.5.x:  6.5.4.23 and below",
+      "Aruba InstantOS 8.6.x:  8.6.0.18 and below",
+      "Aruba InstantOS 8.7.x:  8.7.1.9 and below",
+      "Aruba InstantOS 8.10.x: 8.10.0.1 and below",
+      "ArubaOS  10.3.x:  10.3.1.0 and below"
+    ],
+    "公开日期": "2022年10月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Access Points; 100 Series; 103 Series; 110 Series; 120 Series; 130 Series; 200 Series; 207 Series; 210 Series; 220 Series; 260 Series; 300 Series; 303 Series; 310 Series; 318 Series Hardened Access Points; 320 Series; 330 Series; 340 Series; 370 Series; 500 Series; 510 Series; 530 Series; 550 Series; 630 Series; 650 Series;",
+    "CVE编号": "CVE-2022-37885",
+    "漏洞描述": "There are buffer overflow vulnerabilities in multiple underlying services that could lead to unauthenticated remote code execution by sending specially crafted packets destined to the PAPI (Aruba Networks AP management protocol) UDP port (8211). Successful exploitation of these vulnerabilities results in the ability to execute arbitrary code as a privileged user on the underlying operating system of Aruba InstantOS 6.4.x: 6.4.4.8-4.2.4.20 and below; Aruba InstantOS 6.5.x: 6.5.4.23 and below; Aruba InstantOS 8.6.x: 8.6.0.18 and below; Aruba InstantOS 8.7.x: 8.7.1.9 and below; Aruba InstantOS 8.10.x: 8.10.0.1 and below; ArubaOS 10.3.x: 10.3.1.0 and below; Aruba has released upgrades for Aruba InnstantOS that address these security vulnerabilities.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2022-014.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-506569.pdf"
+    ],
+    "受影响版本": [
+      "Aruba InstantOS 6.4.x:  6.4.4.8-4.2.4.20 and below",
+      "Aruba InstantOS 6.5.x:  6.5.4.23 and below",
+      "Aruba InstantOS 8.6.x:  8.6.0.18 and below",
+      "Aruba InstantOS 8.7.x:  8.7.1.9 and below",
+      "Aruba InstantOS 8.10.x: 8.10.0.1 and below",
+      "ArubaOS  10.3.x:  10.3.1.0 and below"
+    ],
+    "公开日期": "2022年10月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant On 1930 Switch Series",
+    "CVE编号": "CVE-2021-41005",
+    "漏洞描述": "A remote vulnerability was discovered in Aruba Instant On 1930 Switch Series version(s): Firmware below v1.0.7.0.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbnw04270en_us"
+    ],
+    "受影响版本": [
+      "Firmware below v1.0.7.0"
+    ],
+    "公开日期": "2022年04月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant On 1930 Switch Series",
+    "CVE编号": "CVE-2021-41004",
+    "漏洞描述": "A remote vulnerability was discovered in Aruba Instant On 1930 Switch Series version(s): Firmware below v1.0.7.0.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbnw04270en_us"
+    ],
+    "受影响版本": [
+      "Firmware below v1.0.7.0"
+    ],
+    "公开日期": "2022年04月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "HPE Aruba Instant (IAP)",
+    "CVE编号": "CVE-2021-37735",
+    "漏洞描述": "A remote denial of service vulnerability was discovered in Aruba Instant version(s): Aruba Instant 6.5.x.x: 6.5.4.18 and below; Aruba Instant 8.5.x.x: 8.5.0.10 and below; Aruba Instant 8.6.x.x: 8.6.0.4 and below. Aruba has released patches for Aruba Instant (IAP) that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-017.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-917476.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.5.x.x: 6.5.4.18 and below",
+      "Aruba Instant 8.5.x.x: 8.5.0.10 and below",
+      "Aruba Instant 8.6.x.x: 8.6.0.4 and below"
+    ],
+    "公开日期": "2021年10月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "HPE Aruba Instant (IAP)",
+    "CVE编号": "CVE-2021-37734",
+    "漏洞描述": "A remote unauthorized read access to files vulnerability was discovered in Aruba Instant version(s): 6.4.x.x: 6.4.4.8-4.2.4.18 and below; Aruba Instant 6.5.x.x: 6.5.4.19 and below; Aruba Instant 8.5.x.x: 8.5.0.12 and below; Aruba Instant 8.6.x.x: 8.6.0.11 and below; Aruba Instant 8.7.x.x: 8.7.1.3 and below; Aruba Instant 8.8.x.x: 8.8.0.0 and below. Aruba has released patches for Aruba Instant (IAP) that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-017.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-917476.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x.x: 6.4.4.8-4.2.4.18 and below",
+      "Aruba Instant 6.5.x.x: 6.5.4.19 and below",
+      "Aruba Instant 8.5.x.x: 8.5.0.12 and below",
+      "Aruba Instant 8.6.x.x: 8.6.0.11 and below",
+      "Aruba Instant 8.7.x.x: 8.7.1.3 and below",
+      "Aruba Instant 8.8.x.x: 8.8.0.0 and below"
+    ],
+    "公开日期": "2021年10月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "HPE Aruba Instant (IAP)",
+    "CVE编号": "CVE-2021-37732",
+    "漏洞描述": "A remote arbitrary command execution vulnerability was discovered in HPE Aruba Instant (IAP) version(s): Aruba Instant 6.4.x.x: 6.4.4.8-4.2.4.17 and below; Aruba Instant 6.5.x.x: 6.5.4.18 and below; Aruba Instant 8.5.x.x: 8.5.0.11 and below; Aruba Instant 8.6.x.x: 8.6.0.6 and below; Aruba Instant 8.7.x.x: 8.7.1.0 and below. Aruba has released patches for Aruba Instant (IAP) that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-017.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-917476.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x.x: 6.4.4.8-4.2.4.17 and below",
+      "Aruba Instant 6.5.x.x: 6.5.4.18 and below",
+      "Aruba Instant 8.5.x.x: 8.5.0.11 and below",
+      "Aruba Instant 8.6.x.x: 8.6.0.6 and below",
+      "Aruba Instant 8.7.x.x: 8.7.1.0 and below"
+    ],
+    "公开日期": "2021年10月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "HPE Aruba Instant (IAP)",
+    "CVE编号": "CVE-2021-37730",
+    "漏洞描述": "A remote arbitrary command execution vulnerability was discovered in HPE Aruba Instant (IAP) version(s): Aruba Instant 6.4.x.x: 6.4.4.8-4.2.4.18 and below; Aruba Instant 6.5.x.x: 6.5.4.20 and below; Aruba Instant 8.5.x.x: 8.5.0.12 and below; Aruba Instant 8.6.x.x: 8.6.0.11 and below; Aruba Instant 8.7.x.x: 8.7.1.3 and below. Aruba has released patches for Aruba Instant (IAP) that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-017.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-917476.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x.x: 6.4.4.8-4.2.4.18 and below",
+      "Aruba Instant 6.5.x.x: 6.5.4.20 and below",
+      "Aruba Instant 8.5.x.x: 8.5.0.12 and below",
+      "Aruba Instant 8.6.x.x: 8.6.0.11 and below",
+      "Aruba Instant 8.7.x.x: 8.7.1.3 and below"
+    ],
+    "公开日期": "2021年10月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "HPE Aruba Instant (IAP)",
+    "CVE编号": "CVE-2021-37727",
+    "漏洞描述": "A remote arbitrary command execution vulnerability was discovered in HPE Aruba Instant (IAP) version(s): 6.4.x.x: 6.4.4.8-4.2.4.18 and below; Aruba Instant 6.5.x.x: 6.5.4.20 and below; Aruba Instant 8.5.x.x: 8.5.0.12 and below; Aruba Instant 8.6.x.x: 8.6.0.11 and below; Aruba Instant 8.7.x.x: 8.7.1.3 and below. Aruba has released patches for Aruba Instant (IAP) that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-017.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-917476.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x.x: 6.4.4.8-4.2.4.18 and below",
+      "Aruba Instant 6.5.x.x: 6.5.4.20 and below",
+      "Aruba Instant 8.5.x.x: 8.5.0.12 and below",
+      "Aruba Instant 8.6.x.x: 8.6.0.11 and below",
+      "Aruba Instant 8.7.x.x: 8.7.1.3 and below"
+    ],
+    "公开日期": "2021年10月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "HPE Aruba Instant (IAP)",
+    "CVE编号": "CVE-2021-37726",
+    "漏洞描述": "A remote buffer overflow vulnerability was discovered in HPE Aruba Instant (IAP) version(s): Aruba Instant 8.7.x.x: 8.7.0.0 through 8.7.1.2. Aruba has released patches for Aruba Instant (IAP) that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-017.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-917476.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 8.7.x.x: 8.7.0.0 through 8.7.1.2"
+    ],
+    "公开日期": "2021年10月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-34618",
+    "漏洞描述": "A remote denial of service (DoS) vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.4.x: 6.4.4.8-4.2.4.18 and below; Aruba Instant 6.5.x: 6.5.4.18 and below; Aruba Instant 8.3.x: 8.3.0.14 and below; Aruba Instant 8.4.x: All versions; Aruba Instant 8.5.x: 8.5.0.11 and below; Aruba Instant 8.6.x: 8.6.0.7 and below; Aruba Instant 8.7.x: 8.7.1.1 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x: 6.4.4.8-4.2.4.18 and below",
+      "Aruba Instant 6.5.x: 6.5.4.18 and below",
+      "Aruba Instant 8.3.x: 8.3.0.14 and below",
+      "Aruba Instant 8.4.x: All versions",
+      "Aruba Instant 8.5.x: 8.5.0.11 and below",
+      "Aruba Instant 8.6.x: 8.6.0.7 and below",
+      "Aruba Instant 8.7.x: 8.7.1.1 and below"
+    ],
+    "公开日期": "2021年07月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-34617",
+    "漏洞描述": "A remote cross-site scripting (XSS) vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.4.x: 6.4.4.8-4.2.4.13 and below; Aruba Instant 6.5.x: 6.5.4.13 and below; Aruba Instant 8.3.x: 8.3.0.7 and below; Aruba Instant 8.4.x: 8.4.0.5 and below; Aruba Instant 8.5.x: 8.5.0.0 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x: 6.4.4.8-4.2.4.13 and below",
+      "Aruba Instant 6.5.x: 6.5.4.13 and below",
+      "Aruba Instant 8.3.x: 8.3.0.7 and below",
+      "Aruba Instant 8.4.x: 8.4.0.5 and below",
+      "Aruba Instant 8.5.x: 8.5.0.0 and below"
+    ],
+    "公开日期": "2021年07月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-25162",
+    "漏洞描述": "A remote execution of arbitrary commands vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below; Aruba Instant 6.5.x: 6.5.4.18 and below; Aruba Instant 8.3.x: 8.3.0.14 and below; Aruba Instant 8.5.x: 8.5.0.11 and below; Aruba Instant 8.6.x: 8.6.0.7 and below; Aruba Instant 8.7.x: 8.7.1.1 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf",
+      "http://packetstormsecurity.com/files/163522/Aruba-Instant-IAP-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below",
+      "Aruba Instant 6.5.x: 6.5.4.18 and below",
+      "Aruba Instant 8.3.x: 8.3.0.14 and below",
+      "Aruba Instant 8.5.x: 8.5.0.11 and below",
+      "Aruba Instant 8.6.x: 8.6.0.7 and below",
+      "Aruba Instant 8.7.x: 8.7.1.1 and below"
+    ],
+    "公开日期": "2021年03月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-25161",
+    "漏洞描述": "A remote cross-site scripting (xss) vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below; Aruba Instant 6.5.x: 6.5.4.18 and below; Aruba Instant 8.3.x: 8.3.0.14 and below; Aruba Instant 8.5.x: 8.5.0.11 and below; Aruba Instant 8.6.x: 8.6.0.7 and below; Aruba Instant 8.7.x: 8.7.1.1 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf",
+      "http://packetstormsecurity.com/files/163522/Aruba-Instant-IAP-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below",
+      "Aruba Instant 6.5.x: 6.5.4.18 and below",
+      "Aruba Instant 8.3.x: 8.3.0.14 and below",
+      "Aruba Instant 8.5.x: 8.5.0.11 and below",
+      "Aruba Instant 8.6.x: 8.6.0.7 and below",
+      "Aruba Instant 8.7.x: 8.7.1.1 and below"
+    ],
+    "公开日期": "2021年03月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-25160",
+    "漏洞描述": "A remote arbitrary file modification vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below; Aruba Instant 6.5.x: 6.5.4.18 and below; Aruba Instant 8.3.x: 8.3.0.14 and below; Aruba Instant 8.5.x: 8.5.0.11 and below; Aruba Instant 8.6.x: 8.6.0.7 and below; Aruba Instant 8.7.x: 8.7.1.1 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf",
+      "http://packetstormsecurity.com/files/163522/Aruba-Instant-IAP-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below",
+      "Aruba Instant 6.5.x: 6.5.4.18 and below",
+      "Aruba Instant 8.3.x: 8.3.0.14 and below",
+      "Aruba Instant 8.5.x: 8.5.0.11 and below",
+      "Aruba Instant 8.6.x: 8.6.0.7 and below",
+      "Aruba Instant 8.7.x: 8.7.1.1 and below"
+    ],
+    "公开日期": "2021年03月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-25159",
+    "漏洞描述": "A remote arbitrary file modification vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below; Aruba Instant 6.5.x: 6.5.4.18 and below; Aruba Instant 8.3.x: 8.3.0.14 and below; Aruba Instant 8.5.x: 8.5.0.11 and below; Aruba Instant 8.6.x: 8.6.0.7 and below; Aruba Instant 8.7.x: 8.7.1.1 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf",
+      "http://packetstormsecurity.com/files/163522/Aruba-Instant-IAP-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below",
+      "Aruba Instant 6.5.x: 6.5.4.18 and below",
+      "Aruba Instant 8.3.x: 8.3.0.14 and below",
+      "Aruba Instant 8.5.x: 8.5.0.11 and below",
+      "Aruba Instant 8.6.x: 8.6.0.7 and below",
+      "Aruba Instant 8.7.x: 8.7.1.1 and below"
+    ],
+    "公开日期": "2021年03月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-25158",
+    "漏洞描述": "A remote arbitrary file read vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.5.x: 6.5.4.18 and below; Aruba Instant 8.3.x: 8.3.0.14 and below; Aruba Instant 8.5.x: 8.5.0.11 and below; Aruba Instant 8.6.x: 8.6.0.7 and below; Aruba Instant 8.7.x: 8.7.1.1 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf",
+      "http://packetstormsecurity.com/files/163522/Aruba-Instant-IAP-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.5.x: 6.5.4.18 and below",
+      "Aruba Instant 8.3.x: 8.3.0.14 and below",
+      "Aruba Instant 8.5.x: 8.5.0.11 and below",
+      "Aruba Instant 8.6.x: 8.6.0.7 and below",
+      "Aruba Instant 8.7.x: 8.7.1.1 and below"
+    ],
+    "公开日期": "2021年03月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-25157",
+    "漏洞描述": "A remote arbitrary file read vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below; Aruba Instant 6.5.x: 6.5.4.18 and below; Aruba Instant 8.3.x: 8.3.0.14 and below; Aruba Instant 8.5.x: 8.5.0.11 and below; Aruba Instant 8.6.x: 8.6.0.6 and below; Aruba Instant 8.7.x: 8.7.1.0 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf",
+      "http://packetstormsecurity.com/files/163522/Aruba-Instant-IAP-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below",
+      "Aruba Instant 6.5.x: 6.5.4.18 and below",
+      "Aruba Instant 8.3.x: 8.3.0.14 and below",
+      "Aruba Instant 8.5.x: 8.5.0.11 and below",
+      "Aruba Instant 8.6.x: 8.6.0.6 and below",
+      "Aruba Instant 8.7.x: 8.7.1.0 and below"
+    ],
+    "公开日期": "2021年03月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-25156",
+    "漏洞描述": "A remote arbitrary directory create vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below; Aruba Instant 6.5.x: 6.5.4.18 and below; Aruba Instant 8.3.x: 8.3.0.14 and below; Aruba Instant 8.5.x: 8.5.0.11 and below; Aruba Instant 8.6.x: 8.6.0.6 and below; Aruba Instant 8.7.x: 8.7.1.0 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf",
+      "http://packetstormsecurity.com/files/163522/Aruba-Instant-IAP-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below",
+      "Aruba Instant 6.5.x: 6.5.4.18 and below",
+      "Aruba Instant 8.3.x: 8.3.0.14 and below",
+      "Aruba Instant 8.5.x: 8.5.0.11 and below",
+      "Aruba Instant 8.6.x: 8.6.0.6 and below",
+      "Aruba Instant 8.7.x: 8.7.1.0 and below"
+    ],
+    "公开日期": "2021年03月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-25155",
+    "漏洞描述": "A remote arbitrary file modification vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below; Aruba Instant 6.5.x: 6.5.4.18 and below; Aruba Instant 8.3.x: 8.3.0.14 and below; Aruba Instant 8.5.x: 8.5.0.11 and below; Aruba Instant 8.6.x: 8.6.0.6 and below; Aruba Instant 8.7.x: 8.7.1.0 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf",
+      "http://packetstormsecurity.com/files/163524/Aruba-Instant-8.7.1.0-Arbitrary-File-Modification.html",
+      "http://packetstormsecurity.com/files/163522/Aruba-Instant-IAP-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below",
+      "Aruba Instant 6.5.x: 6.5.4.18 and below",
+      "Aruba Instant 8.3.x: 8.3.0.14 and below",
+      "Aruba Instant 8.5.x: 8.5.0.11 and below",
+      "Aruba Instant 8.6.x: 8.6.0.6 and below",
+      "Aruba Instant 8.7.x: 8.7.1.0 and below"
+    ],
+    "公开日期": "2021年03月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-25150",
+    "漏洞描述": "A remote execution of arbitrary commands vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.5.x: 6.5.4.17 and below; Aruba Instant 8.3.x: 8.3.0.13 and below; Aruba Instant 8.5.x: 8.5.0.10 and below; Aruba Instant 8.6.x: 8.6.0.4 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.5.x: 6.5.4.17 and below",
+      "Aruba Instant 8.3.x: 8.3.0.13 and below",
+      "Aruba Instant 8.5.x: 8.5.0.10 and below",
+      "Aruba Instant 8.6.x: 8.6.0.4 and below"
+    ],
+    "公开日期": "2021年03月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-25149",
+    "漏洞描述": "A remote buffer overflow vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below; Aruba Instant 6.5.x: 6.5.4.16 and below; Aruba Instant 8.3.x: 8.3.0.12 and below; Aruba Instant 8.5.x: 8.5.0.6 and below; Aruba Instant 8.6.x: 8.6.0.2 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below",
+      "Aruba Instant 6.5.x: 6.5.4.16 and below",
+      "Aruba Instant 8.3.x: 8.3.0.12 and below",
+      "Aruba Instant 8.5.x: 8.5.0.6 and below",
+      "Aruba Instant 8.6.x: 8.6.0.2 and below"
+    ],
+    "公开日期": "2021年03月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-25148",
+    "漏洞描述": "A remote arbitrary file modification vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.5.x: 6.5.4.17 and below; Aruba Instant 8.3.x: 8.3.0.13 and below; Aruba Instant 8.5.x: 8.5.0.10 and below; Aruba Instant 8.6.x: 8.6.0.4 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.5.x: 6.5.4.17 and below",
+      "Aruba Instant 8.3.x: 8.3.0.13 and below",
+      "Aruba Instant 8.5.x: 8.5.0.10 and below",
+      "Aruba Instant 8.6.x: 8.6.0.4 and below"
+    ],
+    "公开日期": "2021年03月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-25146",
+    "漏洞描述": "A remote execution of arbitrary commands vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.5.x: 6.5.4.17 and below; Aruba Instant 8.3.x: 8.3.0.13 and below; Aruba Instant 8.5.x: 8.5.0.10 and below; Aruba Instant 8.6.x: 8.6.0.5 and below; Aruba Instant 8.7.x: 8.7.0.0 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.5.x: 6.5.4.17 and below",
+      "Aruba Instant 8.3.x: 8.3.0.13 and below",
+      "Aruba Instant 8.5.x: 8.5.0.10 and below",
+      "Aruba Instant 8.6.x: 8.6.0.5 and below",
+      "Aruba Instant 8.7.x: 8.7.0.0 and below"
+    ],
+    "公开日期": "2021年03月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-25145",
+    "漏洞描述": "A remote unauthorized disclosure of information vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.4.x: 6.4.4.8-4.2.4.18 and below; Aruba Instant 6.5.x: 6.5.4.18 and below; Aruba Instant 8.3.x: 8.3.0.14 and below; Aruba Instant 8.5.x: 8.5.0.10 and below; Aruba Instant 8.6.x: 8.6.0.5 and below; Aruba Instant 8.7.x: 8.7.0.0 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x: 6.4.4.8-4.2.4.18 and below",
+      "Aruba Instant 6.5.x: 6.5.4.18 and below",
+      "Aruba Instant 8.3.x: 8.3.0.14 and below",
+      "Aruba Instant 8.5.x: 8.5.0.10 and below",
+      "Aruba Instant 8.6.x: 8.6.0.5 and below",
+      "Aruba Instant 8.7.x: 8.7.0.0 and below"
+    ],
+    "公开日期": "2021年03月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-25144",
+    "漏洞描述": "A remote buffer overflow vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below; Aruba Instant 6.5.x: 6.5.4.16 and below; Aruba Instant 8.3.x: 8.3.0.12 and below; Aruba Instant 8.5.x: 8.5.0.6 and below; Aruba Instant 8.6.x: 8.6.0.2 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.4.x: 6.4.4.8-4.2.4.17 and below",
+      "Aruba Instant 6.5.x: 6.5.4.16 and below",
+      "Aruba Instant 8.3.x: 8.3.0.12 and below",
+      "Aruba Instant 8.5.x: 8.5.0.6 and below",
+      "Aruba Instant 8.6.x: 8.6.0.2 and below"
+    ],
+    "公开日期": "2021年03月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2021-25143",
+    "漏洞描述": "A remote denial of service (dos) vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 8.3.x: 8.3.0.12 and below; Aruba Instant 8.5.x: 8.5.0.9 and below; Aruba Instant 8.6.x: 8.6.0.4 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 8.3.x: 8.3.0.12 and below",
+      "Aruba Instant 8.5.x: 8.5.0.9 and below",
+      "Aruba Instant 8.6.x: 8.6.0.4 and below"
+    ],
+    "公开日期": "2021年03月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2020-24636",
+    "漏洞描述": "A remote execution of arbitrary commands vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.5.x: 6.5.4.17 and below; Aruba Instant 8.3.x: 8.3.0.13 and below; Aruba Instant 8.5.x: 8.5.0.10 and below; Aruba Instant 8.6.x: 8.6.0.5 and below; Aruba Instant 8.7.x: 8.7.0.0 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.5.x: 6.5.4.17 and below",
+      "Aruba Instant 8.3.x: 8.3.0.13 and below",
+      "Aruba Instant 8.5.x: 8.5.0.10 and below",
+      "Aruba Instant 8.6.x: 8.6.0.5 and below",
+      "Aruba Instant 8.7.x: 8.7.0.0 and below"
+    ],
+    "公开日期": "2021年03月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba Instant Access Points",
+    "CVE编号": "CVE-2020-24635",
+    "漏洞描述": "A remote execution of arbitrary commands vulnerability was discovered in some Aruba Instant Access Point (IAP) products in version(s): Aruba Instant 6.5.x: 6.5.4.17 and below; Aruba Instant 8.3.x: 8.3.0.13 and below; Aruba Instant 8.5.x: 8.5.0.10 and below; Aruba Instant 8.6.x: 8.6.0.5 and below; Aruba Instant 8.7.x: 8.7.0.0 and below. Aruba has released patches for Aruba Instant that address this security vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2021-007.txt",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-723417.pdf"
+    ],
+    "受影响版本": [
+      "Aruba Instant 6.5.x: 6.5.4.17 and below",
+      "Aruba Instant 8.3.x: 8.3.0.13 and below",
+      "Aruba Instant 8.5.x: 8.5.0.10 and below",
+      "Aruba Instant 8.6.x: 8.6.0.5 and below",
+      "Aruba Instant 8.7.x: 8.7.0.0 and below"
+    ],
+    "公开日期": "2021年03月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba 9000 Gateway",
+    "CVE编号": "CVE-2020-24634",
+    "漏洞描述": "An attacker is able to remotely inject arbitrary commands by sending especially crafted packets destined to the PAPI (Aruba Networks AP Management protocol) UDP port (8211) of access-pointsor controllers in Aruba 9000 Gateway; Aruba 7000 Series Mobility Controllers; Aruba 7200 Series Mobility Controllers version(s): 2.1.0.1, 2.2.0.0 and below; 6.4.4.23, 6.5.4.17, 8.2.2.9, 8.3.0.13, 8.5.0.10, 8.6.0.5, 8.7.0.0 and below ; 6.4.4.23, 6.5.4.17, 8.2.2.9, 8.3.0.13, 8.5.0.10, 8.6.0.5, 8.7.0.0 and below.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbnw04072en_us"
+    ],
+    "受影响版本": [
+      "2.1.0.1",
+      "2.2.0.0 and below"
+    ],
+    "公开日期": "2020年12月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "Aruba 9000 Gateway",
+    "CVE编号": "CVE-2020-24633",
+    "漏洞描述": "There are multiple buffer overflow vulnerabilities that could lead to unauthenticated remote code execution by sending especially crafted packets destined to the PAPI (Aruba Networks AP management protocol) UDP port (8211) of access-points or controllers in Aruba 9000 Gateway; Aruba 7000 Series Mobility Controllers; Aruba 7200 Series Mobility Controllers version(s): 2.1.0.1, 2.2.0.0 and below; 6.4.4.23, 6.5.4.17, 8.2.2.9, 8.3.0.13, 8.5.0.10, 8.6.0.5, 8.7.0.0 and below; 6.4.4.23, 6.5.4.17, 8.2.2.9, 8.3.0.13, 8.5.0.10, 8.6.0.5, 8.7.0.0 and below.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbnw04072en_us"
+    ],
+    "受影响版本": [
+      "2.1.0.1",
+      "2.2.0.0 and below"
+    ],
+    "公开日期": "2020年12月11日"
+  }
+]

@@ -1,0 +1,81 @@
+[
+  {
+    "设备品牌": "A10",
+    "设备类型": "负载均衡器",
+    "产品型号": "Thunder ADC",
+    "CVE编号": "CVE-2024-30369",
+    "漏洞描述": "A10 Thunder ADC Incorrect Permission Assignment Local Privilege Escalation Vulnerability. This vulnerability allows local attackers to escalate privileges on affected installations of A10 Thunder ADC. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.\n\nThe specific flaw exists within the installer. The issue results from incorrect permissions on a file. An attacker can leverage this vulnerability to escalate privileges and execute arbitrary code in the context of root. Was ZDI-CAN-22754.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-525/",
+      "https://support.a10networks.com/support/security_advisory/cve-2024-30368-cve-2024-30369"
+    ],
+    "受影响版本": [
+      "6.0.2, build 68"
+    ],
+    "公开日期": "2024年06月06日"
+  },
+  {
+    "设备品牌": "A10",
+    "设备类型": "负载均衡器",
+    "产品型号": "Thunder ADC",
+    "CVE编号": "CVE-2024-30368",
+    "漏洞描述": "A10 Thunder ADC CsrRequestView Command Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of A10 Thunder ADC. Authentication is required to exploit this vulnerability.\n\nThe specific flaw exists within the CsrRequestView class. The issue results from the lack of proper validation of a user-supplied string before using it to execute a system call. An attacker can leverage this vulnerability to execute code in the context of a10user. Was ZDI-CAN-22517.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-524/",
+      "https://support.a10networks.com/support/security_advisory/cve-2024-30368-cve-2024-30369"
+    ],
+    "受影响版本": [
+      "6.0.2, build 68"
+    ],
+    "公开日期": "2024年06月06日"
+  },
+  {
+    "设备品牌": "A10",
+    "设备类型": "负载均衡器",
+    "产品型号": "Thunder ADC",
+    "CVE编号": "CVE-2023-42130",
+    "漏洞描述": "A10 Thunder ADC FileMgmtExport Directory Traversal Arbitrary File Read and Deletion Vulnerability. This vulnerability allows remote attackers to read and delete arbitrary files on affected installations of A10 Thunder ADC. Authentication is required to exploit this vulnerability.\n\nThe specific flaw exists within the FileMgmtExport class. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to read and delete files in the context of the service account.\n. Was ZDI-CAN-17905.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1496/",
+      "https://support.a10networks.com/support/security_advisory/a10-acos-file-access-vulnerability/"
+    ],
+    "受影响版本": [
+      "vThunder 5.2.1-p3, build 70"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "A10",
+    "设备类型": "负载均衡器",
+    "产品型号": "Thunder ADC",
+    "CVE编号": "CVE-2023-42129",
+    "漏洞描述": "A10 Thunder ADC ShowTechDownloadView Directory Traversal Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of A10 Thunder ADC. Authentication is required to exploit this vulnerability.\n\nThe specific flaw exists within the ShowTechDownloadView class. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to disclose information in the context of the service account.\n. Was ZDI-CAN-17899.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1495/",
+      "https://support.a10networks.com/support/security_advisory/a10-acos-file-access-vulnerability/"
+    ],
+    "受影响版本": [
+      "5.2.1-p3, build 70"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "负载均衡器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-24384",
+    "漏洞描述": "A10 Networks ACOS and aGalaxy management Graphical User Interfaces (GUIs) have an unauthenticated Remote Code Execution (RCE) vulnerability that could be used to compromise affected ACOS systems. ACOS versions 3.2.x (including and after 3.2.2), 4.x, and 5.1.x are affected. aGalaxy versions 3.0.x, 3.2.x, and 5.0.x are affected.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.a10networks.com/support/security_advisory/acos-agalaxy-gui-rce-vulnerability-cve-2020-24384"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月10日"
+  }
+]

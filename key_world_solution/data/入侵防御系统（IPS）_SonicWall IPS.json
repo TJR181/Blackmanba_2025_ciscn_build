@@ -1,0 +1,2364 @@
+[
+  {
+    "设备品牌": "rennf93",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "fastapi-guard",
+    "CVE编号": "CVE-2025-46814",
+    "漏洞描述": "FastAPI Guard is a security library for FastAPI that provides middleware to control IPs, log requests, and detect penetration attempts. An HTTP header injection vulnerability has been identified in versions prior to 2.0.0. By manipulating the X-Forwarded-For header, an attacker can potentially inject arbitrary IP addresses into the request. This vulnerability can allow attackers to bypass IP-based access controls, mislead logging systems, and impersonate trusted clients. It is especially impactful when the application relies on the X-Forwarded-For header for IP-based authorization or authentication. Users should upgrade to FastAPI Guard version 2.0.0 to receive a fix.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/rennf93/fastapi-guard/security/advisories/GHSA-77q8-qmj7-x7pp",
+      "https://github.com/rennf93/fastapi-guard/commit/0b003fda4c678c1b514e95f319aee88113e9bf4b"
+    ],
+    "受影响版本": [
+      "< 2.0.0"
+    ],
+    "公开日期": "2025年05月06日"
+  },
+  {
+    "设备品牌": "Beward",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "N100 IP Camera",
+    "CVE编号": "CVE-2025-34042",
+    "漏洞描述": "An authenticated command injection vulnerability exists in the Beward N100 IP Camera firmware version M2.1.6.04C014 via the ServerName and TimeZone parameters in the servetest CGI page. An attacker with access to the web interface can inject arbitrary system commands into these parameters, which are unsafely embedded into backend system calls without proper input sanitization. Successful exploitation results in remote code execution with root privileges.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.beward.net",
+      "https://www.zeroscience.mk/en/vulnerabilities/ZSL-2019-5512.php",
+      "https://www.fortiguard.com/encyclopedia/ips/48618",
+      "https://s4e.io/tools/beward-n100-h264-vga-ip-camera-arbitrary-file-disclosure",
+      "https://packetstorm.news/files/id/151531",
+      "https://cxsecurity.com/issue/WLB-2019020042",
+      "https://vulncheck.com/advisories/beward-n100-remote-command-execution"
+    ],
+    "受影响版本": [
+      "M2.1.6.04C014"
+    ],
+    "公开日期": "2025年06月26日"
+  },
+  {
+    "设备品牌": "sar2html",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "sar2html",
+    "CVE编号": "CVE-2025-34030",
+    "漏洞描述": "An OS command injection vulnerability exists in sar2html version 3.2.2 and prior via the plot parameter in index.php. The application fails to sanitize user-supplied input before using it in a system-level context. Remote, unauthenticated attackers can inject shell commands by appending them to the plot parameter (e.g., ?plot=;id) in a crafted GET request. The output of the command is displayed in the application's interface after interacting with the host selection UI. Successful exploitation leads to arbitrary command execution on the underlying system.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/cemtan/sar2html",
+      "https://www.exploit-db.com/exploits/47204",
+      "https://www.fortiguard.com/encyclopedia/ips/48624",
+      "https://vulncheck.com/advisories/sar2html-command-injection"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年06月20日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Connect Tunnel",
+    "CVE编号": "CVE-2025-32817",
+    "漏洞描述": "A Improper Link Resolution vulnerability (CWE-59) in the SonicWall Connect Tunnel Windows (32 and 64 bit) client, this results in unauthorized file overwrite, potentially leading to denial of service or file corruption.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0007"
+    ],
+    "受影响版本": [
+      "12.4.3.283 and earlier versions"
+    ],
+    "公开日期": "2025年04月16日"
+  },
+  {
+    "设备品牌": "NotFound",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Limit Max IPs Per User",
+    "CVE编号": "CVE-2025-31455",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in NotFound Limit Max IPs Per User allows DOM-Based XSS. This issue affects Limit Max IPs Per User: from n/a through 1.5.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://patchstack.com/database/wordpress/plugin/limit-max-ips-per-user/vulnerability/wordpress-limit-max-ips-per-user-plugin-1-5-reflected-cross-site-scripting-xss-vulnerability?_s_id=cve"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年04月01日"
+  },
+  {
+    "设备品牌": "MiniDVBLinux",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "MiniDVBLinux",
+    "CVE编号": "CVE-2025-25038",
+    "漏洞描述": "An OS command injection vulnerability exists in MiniDVBLinux version 5.4 and earlier. The system’s web-based management interface fails to properly sanitize user-supplied input before passing it to operating system commands. A remote unauthenticated attacker can exploit this vulnerability to execute arbitrary commands as the root user, potentially compromising the entire device.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.zeroscience.mk/en/vulnerabilities/ZSL-2022-5717.php",
+      "https://www.exploit-db.com/exploits/51096",
+      "https://www.fortiguard.com/encyclopedia/ips/52454",
+      "https://cxsecurity.com/issue/WLB-2022100039",
+      "https://packetstormsecurity.com/files/168744/",
+      "https://www.minidvblinux.de",
+      "https://vulncheck.com/advisories/minidvblinux-command-injection"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年06月20日"
+  },
+  {
+    "设备品牌": "Aquatronica",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Aquatronica Controller System",
+    "CVE编号": "CVE-2025-25037",
+    "漏洞描述": "An information disclosure vulnerability exists in Aquatronica Controller System firmware versions <= 5.1.6 and web interface versions <= 2.0. The tcp.php endpoint fails to restrict unauthenticated access, allowing remote attackers to issue crafted POST requests and retrieve sensitive configuration data, including plaintext administrative credentials. Exploitation of this flaw can lead to full compromise of the system, enabling unauthorized manipulation of connected devices and aquarium parameters.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.zeroscience.mk/en/vulnerabilities/ZSL-2024-5824.php",
+      "https://www.exploit-db.com/exploits/52028",
+      "https://fortiguard.fortinet.com/encyclopedia/ips/56008",
+      "https://www.aquatronica.com",
+      "https://vulncheck.com/advisories/aquatronica-controller-system-credential-leak"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年06月20日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2025-24312",
+    "漏洞描述": "When BIG-IP AFM is provisioned with IPS module enabled and protocol inspection profile is configured on a virtual server or firewall rule or policy, undisclosed traffic can cause an increase in CPU resource utilization.  \n\nNote: Software versions which have reached End of Technical Support (EoTS) are not evaluated.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://my.f5.com/manage/s/article/K000141380"
+    ],
+    "受影响版本": [
+      "17.1.0",
+      "16.1.0",
+      "15.1.0"
+    ],
+    "公开日期": "2025年02月05日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "NetExtender",
+    "CVE编号": "CVE-2025-23010",
+    "漏洞描述": "An Improper Link Resolution Before File Access ('Link Following') vulnerability in SonicWall NetExtender Windows (32 and 64 bit) client which allows an attacker to manipulate file paths.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0006"
+    ],
+    "受影响版本": [
+      "10.3.1 and earlier versions"
+    ],
+    "公开日期": "2025年04月10日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "NetExtender",
+    "CVE编号": "CVE-2025-23009",
+    "漏洞描述": "A local privilege escalation vulnerability in SonicWall NetExtender Windows (32 and 64 bit) client which allows an attacker to trigger an arbitrary file deletion.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0006"
+    ],
+    "受影响版本": [
+      "10.3.1 and earlier versions"
+    ],
+    "公开日期": "2025年04月10日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "NetExtender",
+    "CVE编号": "CVE-2025-23008",
+    "漏洞描述": "An improper privilege management vulnerability in the SonicWall NetExtender Windows (32 and 64 bit) client allows a low privileged attacker to modify configurations.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0006"
+    ],
+    "受影响版本": [
+      "10.3.1 and earlier versions"
+    ],
+    "公开日期": "2025年04月10日"
+  },
+  {
+    "设备品牌": "secupress",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SecuPress Free — WordPress Security",
+    "CVE编号": "CVE-2024-9019",
+    "漏洞描述": "The SecuPress Free — WordPress Security plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the plugin's secupress_check_ban_ips_form shortcode in all versions up to, and including, 2.2.5.3 due to insufficient input sanitization and output escaping on user supplied attributes. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.wordfence.com/threat-intel/vulnerabilities/id/56e842c8-61ac-4281-8c4a-9cb1f8ecc062?source=cve",
+      "https://plugins.trac.wordpress.org/browser/secupress/trunk/free/common.php#L238"
+    ],
+    "受影响版本": [
+      "*"
+    ],
+    "公开日期": "2025年02月28日"
+  },
+  {
+    "设备品牌": "Trellix",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Intrusion Prevention System (IPS) Manager",
+    "CVE编号": "CVE-2024-5956",
+    "漏洞描述": "This vulnerability allows unauthenticated remote attackers to bypass authentication and gain partial data access to the vulnerable Trellix IPS Manager with garbage data in response mostly",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://thrive.trellix.com/s/article/000013870"
+    ],
+    "受影响版本": [
+      "11.1.7.97"
+    ],
+    "公开日期": "2024年09月05日"
+  },
+  {
+    "设备品牌": "Trellix",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Intrusion Prevention System (IPS) Manager",
+    "CVE编号": "CVE-2024-5731",
+    "漏洞描述": "A vulnerability in the IPS Manager, Central Manager, and Local Manager communication workflow allows an attacker to control the destination of a request by manipulating the parameter, thereby leveraging sensitive information.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://thrive.trellix.com/s/article/000013623"
+    ],
+    "受影响版本": [
+      "Prior to 11.1.x"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "Trellix",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Intrusion Prevention System (IPS) Manager",
+    "CVE编号": "CVE-2024-5671",
+    "漏洞描述": "Insecure Deserialization in some workflows of the IPS Manager allows unauthenticated remote attackers to perform arbitrary code execution and access to the vulnerable Trellix IPS Manager.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://thrive.trellix.com/s/article/000013623"
+    ],
+    "受影响版本": [
+      "Prior to 11.1.x"
+    ],
+    "公开日期": "2024年06月14日"
+  },
+  {
+    "设备品牌": "OISF",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "suricata",
+    "CVE编号": "CVE-2024-55629",
+    "漏洞描述": "Suricata is a network Intrusion Detection System, Intrusion Prevention System and Network Security Monitoring engine. Prior to 7.0.8, TCP streams with TCP urgent data (out of band data) can lead to Suricata analyzing data differently than the applications at the TCP endpoints, leading to possible evasions. Suricata 7.0.8 includes options to allow users to configure how to handle TCP urgent data. In IPS mode, you can use a rule such as drop tcp any any -> any any (sid:1; tcp.flags:U*;) to drop all the packets with urgent flag set.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/OISF/suricata/security/advisories/GHSA-69wr-vhwg-84h2",
+      "https://github.com/OISF/suricata/commit/6882bcb3e51bd3cf509fb6569cc30f48d7bb53d7",
+      "https://github.com/OISF/suricata/commit/779f9d8ba35c3f9b5abfa327d3a4209861bd2eb8",
+      "https://redmine.openinfosecfoundation.org/issues/7411"
+    ],
+    "受影响版本": [
+      "< 7.0.8"
+    ],
+    "公开日期": "2025年01月06日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2024-53703",
+    "漏洞描述": "A vulnerability in the SonicWall SMA100 SSLVPN firmware 10.2.1.13-72sv and earlier versions mod_httprp library loaded by the Apache web server allows remote attackers to cause Stack-based buffer overflow and potentially lead to code execution.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0018"
+    ],
+    "受影响版本": [
+      "10.2.1.13-72sv and earlier versions"
+    ],
+    "公开日期": "2024年12月05日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2024-53702",
+    "漏洞描述": "Use of cryptographically weak pseudo-random number generator (PRNG) vulnerability in the SonicWall SMA100 SSLVPN backup code generator that, in certain cases, can be predicted by an attacker, potentially exposing the generated secret.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0018"
+    ],
+    "受影响版本": [
+      "10.2.1.13-72sv and earlier versions"
+    ],
+    "公开日期": "2024年12月05日"
+  },
+  {
+    "设备品牌": "pglombardo",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PasswordPusher",
+    "CVE编号": "CVE-2024-52796",
+    "漏洞描述": "Password Pusher, an open source application to communicate sensitive information over the web, comes with a configurable rate limiter.  In versions prior to v1.49.0, the rate limiter could be bypassed by forging proxy headers allowing bad actors to send unlimited traffic to the site potentially causing a denial of service. In v1.49.0, a fix was implemented to only authorize proxies on local IPs which resolves this issue. As a workaround, one may add rules to one's proxy and/or firewall to not accept external proxy headers such as `X-Forwarded-*` from clients.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/pglombardo/PasswordPusher/security/advisories/GHSA-ffp2-8p2h-4m5j",
+      "https://docs.pwpush.com/docs/proxies/#trusted-proxies",
+      "https://github.com/pglombardo/PasswordPusher/releases/tag/v1.49.0"
+    ],
+    "受影响版本": [
+      "< 1.49.0"
+    ],
+    "公开日期": "2024年11月20日"
+  },
+  {
+    "设备品牌": "misskey-dev",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "misskey",
+    "CVE编号": "CVE-2024-52579",
+    "漏洞描述": "Misskey is an open source, federated social media platform. Some APIs using `HttpRequestService` do not properly check the target host. This vulnerability allows an attacker to send POST or GET requests to the internal server, which may result in a SSRF attack.It allows an attacker to send POST or GET requests (with some controllable URL parameters) to private IPs, enabling further attacks on internal servers. This issue has been addressed in version 2024.11.0-alpha.3. Users are advised to upgrade. There are no known workarounds for this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/misskey-dev/misskey/security/advisories/GHSA-5q3h-wpfw-hjjw"
+    ],
+    "受影响版本": [
+      "< 2024.11.0-alpha.3"
+    ],
+    "公开日期": "2024年12月18日"
+  },
+  {
+    "设备品牌": "symfony",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "symfony",
+    "CVE编号": "CVE-2024-50342",
+    "漏洞描述": "symfony/http-client is a module for the Symphony PHP framework which provides powerful methods to fetch HTTP resources synchronously or asynchronously. When using the `NoPrivateNetworkHttpClient`, some internal information is still leaking during host resolution, which leads to possible IP/port enumeration. As of versions 5.4.46, 6.4.14, and 7.1.7 the `NoPrivateNetworkHttpClient` now filters blocked IPs earlier to prevent such leaks. All users are advised to upgrade. There are no known workarounds for this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/symfony/symfony/security/advisories/GHSA-9c3x-r3wp-mgxm",
+      "https://github.com/symfony/symfony/commit/296d4b34a33b1a6ca5475c6040b3203622520f5b"
+    ],
+    "受影响版本": [
+      "< 5.4.46",
+      ">= 6.0.0, < 6.4.14",
+      ">= 7.0.0, < 7.1.7"
+    ],
+    "公开日期": "2024年11月06日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-46870",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amd/display: Disable DMCUB timeout for DCN35\n\n[Why]\nDMCUB can intermittently take longer than expected to process commands.\n\nOld ASIC policy was to continue while logging a diagnostic error - which\nworks fine for ASIC without IPS, but with IPS this could lead to a race\ncondition where we attempt to access DCN state while it's inaccessible,\nleading to a system hang when the NIU port is not disabled or register\naccesses that timeout and the display configuration in an undefined\nstate.\n\n[How]\nWe need to investigate why these accesses take longer than expected, but\nfor now we should disable the timeout on DCN35 to avoid this race\ncondition. Since the waits happen only at lower interrupt levels the\nrisk of taking too long at higher IRQ and causing a system watchdog\ntimeout are minimal.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/31c254c9cd4b122a10db297124f867107a696d83",
+      "https://git.kernel.org/stable/c/7c70e60fbf4bff1123f0e8d5cb1ae71df6164d7f"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2024年10月09日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2024-45319",
+    "漏洞描述": "A vulnerability in the SonicWall SMA100 SSLVPN \n\nfirmware 10.2.1.13-72sv and earlier versions allows a remote authenticated attacker can circumvent the certificate requirement during authentication.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0018"
+    ],
+    "受影响版本": [
+      "10.2.1.13-72sv and earlier versions"
+    ],
+    "公开日期": "2024年12月05日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2024-45318",
+    "漏洞描述": "A vulnerability in the SonicWall SMA100 SSLVPN web management interface allows remote attackers to cause Stack-based buffer overflow and potentially lead to code execution.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0018"
+    ],
+    "受影响版本": [
+      "10.2.1.13-72sv and earlier versions"
+    ],
+    "公开日期": "2024年12月05日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Connect Tunnel",
+    "CVE编号": "CVE-2024-45316",
+    "漏洞描述": "The Improper link resolution before file access ('Link Following') vulnerability in SonicWall Connect Tunnel (version 12.4.3.271 and earlier of Windows client) allows users with standard privileges to delete arbitrary folders and files, potentially leading to local privilege escalation attack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0017"
+    ],
+    "受影响版本": [
+      "12.4.3.271 and earlier versions"
+    ],
+    "公开日期": "2024年10月11日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Connect Tunnel",
+    "CVE编号": "CVE-2024-45315",
+    "漏洞描述": "The Improper link resolution before file access ('Link Following') vulnerability in SonicWall Connect Tunnel (version 12.4.3.271 and earlier of Windows client) allows users with standard privileges to create arbitrary folders and files, potentially leading to local Denial of Service (DoS) attack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0017"
+    ],
+    "受影响版本": [
+      "12.4.3.271 and earlier versions"
+    ],
+    "公开日期": "2024年10月11日"
+  },
+  {
+    "设备品牌": "ckan",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "ckan",
+    "CVE编号": "CVE-2024-43371",
+    "漏洞描述": "CKAN is an open-source data management system for powering data hubs and data portals. There are a number of CKAN plugins, including XLoader, DataPusher, Resource proxy and ckanext-archiver, that work by downloading the contents of local or remote files in order to perform some actions with their contents (e.g. pushing to the DataStore, streaming contents or saving a local copy). All of them use the resource URL, and there are currently no checks to limit what URLs can be requested. This means that a malicious (or unaware) user can create a resource with a URL pointing to a place where they should not have access in order for one of the previous tools to retrieve it (known as a Server Side Request Forgery). Users wanting to protect against these kinds of attacks can use one or a combination of the following approaches: (1) Use a separate HTTP proxy like Squid that can be used to allow / disallow IPs, domains etc as needed, and make CKAN extensions aware of this setting via the ckan.download_proxy config option. (2) Implement custom firewall rules to prevent access to restricted resources. (3) Use custom validators on the resource url field to block/allow certain domains or IPs. All latest versions of the plugins listed above support the ckan.download_proxy settings. Support for this setting in the Resource Proxy plugin was included in CKAN 2.10.5 and 2.11.0.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/ckan/ckan/security/advisories/GHSA-g9ph-j5vj-f8wm"
+    ],
+    "受影响版本": [
+      "< 2.10.5"
+    ],
+    "公开日期": "2024年08月21日"
+  },
+  {
+    "设备品牌": "thinkst",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "canarytokens",
+    "CVE编号": "CVE-2024-41664",
+    "漏洞描述": "Canarytokens help track activity and actions on a network. Prior to `sha-8ea5315`, Canarytokens.org was vulnerable to a blind SSRF in the Webhook alert feature. When a Canarytoken is created, users choose to receive alerts either via email or via a webhook. If a webhook is supplied when a  Canarytoken is first created, the site will make a test request to the supplied URL to ensure it accepts alert notification HTTP requests. No safety checks were performed on the URL, leading to a Server-Side Request Forgery vulnerability. The SSRF is Blind because the content of the response is not displayed to the creating user; they are simply told whether an error occurred in making the test request. Using the Blind SSRF, it was possible to map out open ports for IPs inside the Canarytokens.org infrastructure. This issue is now patched on Canarytokens.org. Users of self-hosted Canarytokens installations can update by pulling the latest Docker image, or any Docker image after `sha-097d91a`.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/thinkst/canarytokens/security/advisories/GHSA-g6h5-pf7p-qmvj"
+    ],
+    "受影响版本": [
+      "< sha-8ea5315"
+    ],
+    "公开日期": "2024年07月23日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicOS",
+    "CVE编号": "CVE-2024-40766",
+    "漏洞描述": "An improper access control vulnerability has been identified in the SonicWall SonicOS management access, potentially leading to unauthorized resource access and in specific conditions, causing the firewall to crash. This issue affects SonicWall Firewall Gen 5 and Gen 6 devices, as well as Gen 7 devices running SonicOS 7.0.1-5035 and older versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0015"
+    ],
+    "受影响版本": [
+      "5.9.2.14-12o and older versions",
+      "6.5.4.14-109n and older versions",
+      "7.0.1-5035 and older versions"
+    ],
+    "公开日期": "2024年08月23日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2024-40763",
+    "漏洞描述": "Heap-based buffer overflow vulnerability in the SonicWall SMA100 SSLVPN due to the use of strcpy. This allows remote authenticated attackers to cause Heap-based buffer overflow and potentially lead to code execution.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0018"
+    ],
+    "受影响版本": [
+      "10.2.1.13-72sv and earlier versions"
+    ],
+    "公开日期": "2024年12月05日"
+  },
+  {
+    "设备品牌": "SoftEtherVPN",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SoftEtherVPN",
+    "CVE编号": "CVE-2024-38520",
+    "漏洞描述": "SoftEtherVPN is a an open-source cross-platform multi-protocol VPN Program. When SoftEtherVPN is deployed with L2TP enabled on a device, it introduces the possibility of the host being used for amplification/reflection traffic generation because it will respond to every packet with two response packets that are larger than the request packet size. These sorts of techniques are used by external actors who generate spoofed source IPs to target a destination on the internet. This vulnerability has been patched in version 5.02.5185.\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/SoftEtherVPN/SoftEtherVPN/security/advisories/GHSA-j35p-p8pj-vqxq",
+      "https://github.com/SoftEtherVPN/SoftEtherVPN/commit/c2a7aa548137dc80c6aafdc645cf4dc34e0dc764",
+      "https://github.com/SoftEtherVPN/SoftEtherVPN/releases/tag/5.02.5185"
+    ],
+    "受影响版本": [
+      "<= 5.02.5183"
+    ],
+    "公开日期": "2024年06月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-30163",
+    "漏洞描述": "Invision Community before 4.7.16 allow SQL injection via the applications/nexus/modules/front/store/store.php IPS\\nexus\\modules\\front\\store\\_store::_categoryView() method, where user input passed through the filter request parameter is not properly sanitized before being used to execute SQL queries. This can be exploited by unauthenticated attackers to carry out Blind SQL Injection attacks.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://invisioncommunity.com/release-notes/4716-r128/",
+      "http://seclists.org/fulldisclosure/2024/Apr/20"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年06月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-30162",
+    "漏洞描述": "Invision Community through 4.7.16 allows remote code execution via the applications/core/modules/admin/editor/toolbar.php IPS\\core\\modules\\admin\\editor\\_toolbar::addPlugin() method. This method handles uploaded ZIP files that are extracted into the applications/core/interface/ckeditor/ckeditor/plugins/ directory without properly verifying their content. This can be exploited by admin users (with the toolbar_manage permission) to write arbitrary PHP files into that directory, leading to execution of arbitrary PHP code in the context of the web server user.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://invisioncommunity.com",
+      "http://seclists.org/fulldisclosure/2024/Apr/21"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年06月07日"
+  },
+  {
+    "设备品牌": "moby",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "moby",
+    "CVE编号": "CVE-2024-29018",
+    "漏洞描述": "Moby is an open source container framework that is a key component of Docker Engine, Docker Desktop, and other distributions of container tooling or runtimes. Moby's networking implementation allows for many networks, each with their own IP address range and gateway, to be defined. This feature is frequently referred to as custom networks, as each network can have a different driver, set of parameters and thus behaviors. When creating a network, the `--internal` flag is used to designate a network as _internal_. The `internal` attribute in a docker-compose.yml file may also be used to mark a network _internal_, and other API clients may specify the `internal` parameter as well.\n\nWhen containers with networking are created, they are assigned unique network interfaces and IP addresses. The host serves as a router for non-internal networks, with a gateway IP that provides SNAT/DNAT to/from container IPs.\n\nContainers on an internal network may communicate between each other, but are precluded from communicating with any networks the host has access to (LAN or WAN) as no default route is configured, and firewall rules are set up to drop all outgoing traffic. Communication with the gateway IP address (and thus appropriately configured host services) is possible, and the host may communicate with any container IP directly.\n\nIn addition to configuring the Linux kernel's various networking features to enable container networking, `dockerd` directly provides some services to container networks. Principal among these is serving as a resolver, enabling service discovery, and resolution of names from an upstream resolver.\n\nWhen a DNS request for a name that does not correspond to a container is received, the request is forwarded to the configured upstream resolver. This request is made from the container's network namespace: the level of access and routing of traffic is the same as if the request was made by the container itself.\n\nAs a consequence of this design, containers solely attached to an internal network will be unable to resolve names using the upstream resolver, as the container itself is unable to communicate with that nameserver. Only the names of containers also attached to the internal network are able to be resolved.\n\nMany systems run a local forwarding DNS resolver. As the host and any containers have separate loopback devices, a consequence of the design described above is that containers are unable to resolve names from the host's configured resolver, as they cannot reach these addresses on the host loopback device. To bridge this gap, and to allow containers to properly resolve names even when a local forwarding resolver is used on a loopback address, `dockerd` detects this scenario and instead forward DNS requests from the host namework namespace. The loopback resolver then forwards the requests to its configured upstream resolvers, as expected.\n\nBecause `dockerd` forwards DNS requests to the host loopback device, bypassing the container network namespace's normal routing semantics entirely, internal networks can unexpectedly forward DNS requests to an external nameserver. By registering a domain for which they control the authoritative nameservers, an attacker could arrange for a compromised container to exfiltrate data by encoding it in DNS queries that will eventually be answered by their nameservers.\n\nDocker Desktop is not affected, as Docker Desktop always runs an internal resolver on a RFC 1918 address.\n\nMoby releases 26.0.0, 25.0.4, and 23.0.11 are patched to prevent forwarding any DNS requests from internal networks. As a workaround, run containers intended to be solely attached to internal networks with a custom upstream address, which will force all upstream DNS queries to be resolved from the container's network namespace.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/moby/moby/security/advisories/GHSA-mq39-4gv4-mvpx",
+      "https://github.com/moby/moby/pull/46609"
+    ],
+    "受影响版本": [
+      ">= 26.0.0-rc1, < 26.0.0-rc3",
+      ">= 25.0.0, < 25.0.5",
+      "< 23.0.11"
+    ],
+    "公开日期": "2024年03月20日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "NetExtender",
+    "CVE编号": "CVE-2024-29014",
+    "漏洞描述": "Vulnerability in SonicWall SMA100 NetExtender Windows (32 and 64-bit) client 10.2.339 and earlier versions allows an attacker to arbitrary code execution when processing an EPC Client update.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0011"
+    ],
+    "受影响版本": [
+      "10.2.339 and earlier versions"
+    ],
+    "公开日期": "2024年07月18日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Email Security",
+    "CVE编号": "CVE-2024-22398",
+    "漏洞描述": "An improper Limitation of a Pathname to a Restricted Directory (Path Traversal) vulnerability in SonicWall Email Security Appliance could allow a remote attacker with administrative privileges to conduct a directory traversal attack and delete arbitrary files from the appliance file system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0006"
+    ],
+    "受影响版本": [
+      "10.0.26.7807 and earlier versions"
+    ],
+    "公开日期": "2024年03月14日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicOS",
+    "CVE编号": "CVE-2024-22394",
+    "漏洞描述": "An improper authentication vulnerability has been identified in SonicWall SonicOS SSL-VPN feature, which in specific conditions could allow a remote attacker to bypass authentication. \n\nThis issue affects only firmware version SonicOS 7.1.1-7040.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0003"
+    ],
+    "受影响版本": [
+      "SonicOS 7.1.1-7040"
+    ],
+    "公开日期": "2024年02月08日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2024-21771",
+    "漏洞描述": "\nFor unspecified traffic patterns, BIG-IP AFM IPS engine may spend an excessive amount of time matching the traffic against signatures, resulting in Traffic Management Microkernel (TMM) restarting and traffic disruption.  Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://my.f5.com/manage/s/article/K000137595"
+    ],
+    "受影响版本": [
+      "17.1.0",
+      "16.1.0",
+      "15.1.0"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cisco UTD SNORT IPS Engine Software",
+    "CVE编号": "CVE-2024-20508",
+    "漏洞描述": "A vulnerability in Cisco Unified Threat Defense (UTD) Snort Intrusion Prevention System (IPS) Engine for Cisco IOS XE Software could allow an unauthenticated, remote attacker to bypass configured security policies or cause a denial of service (DoS) condition on an affected device.\r\n\r\nThis vulnerability is due to insufficient validation of HTTP requests when they are processed by Cisco UTD Snort IPS Engine. An attacker could exploit this vulnerability by sending a crafted HTTP request through an affected device. A successful exploit could allow the attacker to trigger a reload of the Snort process.  If the action in case of Cisco UTD Snort IPS Engine failure is set to the default, fail-open, successful exploitation of this vulnerability could allow the attacker to bypass configured security policies. If the action in case of Cisco UTD Snort IPS Engine failure is set to fail-close, successful exploitation of this vulnerability could cause traffic that is configured to be inspected by Cisco UTD Snort IPS Engine to be dropped.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-utd-snort3-dos-bypas-b4OUEwxD"
+    ],
+    "受影响版本": [
+      "17.12.1a",
+      "17.12.2",
+      "17.13.1a",
+      "17.12.3",
+      "17.12.3a",
+      "17.15.1a",
+      "17.9.5a",
+      "17.6.1a",
+      "17.8.1a",
+      "17.6.2",
+      "17.7.2",
+      "17.12.4",
+      "17.14.1a",
+      "17.11.1a",
+      "17.7.1a",
+      "17.6.6"
+    ],
+    "公开日期": "2024年09月25日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cisco Firepower Threat Defense Software",
+    "CVE编号": "CVE-2024-20363",
+    "漏洞描述": "Multiple Cisco products are affected by a vulnerability in the Snort Intrusion Prevention System (IPS) rule engine that could allow an unauthenticated, remote attacker to bypass the configured rules on an affected system. This vulnerability is due to incorrect HTTP packet handling. An attacker could exploit this vulnerability by sending crafted HTTP packets through an affected device. A successful exploit could allow the attacker to bypass configured IPS rules and allow uninspected traffic onto the network.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-snort3-ips-bypass-uE69KBMd"
+    ],
+    "受影响版本": [
+      "7.4.0"
+    ],
+    "公开日期": "2024年05月22日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicOS",
+    "CVE编号": "CVE-2024-12802",
+    "漏洞描述": "SSL-VPN MFA Bypass in SonicWALL SSL-VPN can arise in specific cases due to the separate handling of UPN (User Principal Name) and SAM (Security Account Manager) account names when integrated with Microsoft Active Directory, allowing MFA to be configured independently for each login method and potentially enabling attackers to bypass MFA by exploiting the alternative account name.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0001"
+    ],
+    "受影响版本": [
+      "6.5.4.4-44v-21-2457 and older versions",
+      "6.5.4.15-117n and older versions",
+      "7.0.1-5161 and older versions",
+      "7.1.1-7058 and older versions",
+      "7.1.2-7019",
+      "8.0.0-8035"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "mintplex-labs",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "mintplex-labs/anything-llm",
+    "CVE编号": "CVE-2024-0759",
+    "漏洞描述": "Should an instance of AnythingLLM be hosted on an internal network and the attacked be explicitly granted a permission level of manager or admin, they could link-scrape internally resolving IPs of other services that are on the same network as AnythingLLM.\n\nThis would require the attacker also be able to guess these internal IPs as `/*` ranging is not possible, but could be brute forced.\n\nThere is a duty of care that other services on the same network would not be fully open and accessible via a simple CuRL with zero authentication as it is not possible to set headers or access via the link collector.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://huntr.com/bounties/9a978edd-ac94-41fc-8e3e-c35441bdd12b",
+      "https://github.com/mintplex-labs/anything-llm/commit/0db6c3b2aa1787a7054ffdaba975474f122c20eb"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2024年02月27日"
+  },
+  {
+    "设备品牌": "mcitar",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Anti-Spam: Spam Protection | Block Spam Users, Comments, Forms",
+    "CVE编号": "CVE-2023-7065",
+    "漏洞描述": "The Stop Spammers Security | Block Spam Users, Comments, Forms plugin for WordPress is vulnerable to Cross-Site Request Forgery in all versions up to, and including, 2024.4. This is due to missing or incorrect nonce validation on the sfs_process AJAX action. This makes it possible for unauthenticated attackers to add arbitrary IPs to the plugin's allowlist and blocklist via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.wordfence.com/threat-intel/vulnerabilities/id/1998cadb-2eb3-4819-aa7c-59e4f777c7f8?source=cve",
+      "https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=3080581%40stop-spammer-registrations-plugin&new=3080581%40stop-spammer-registrations-plugin&sfp_email=&sfph_mail="
+    ],
+    "受影响版本": [
+      "*"
+    ],
+    "公开日期": "2024年05月04日"
+  },
+  {
+    "设备品牌": "Software AG",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "WebMethods",
+    "CVE编号": "CVE-2023-6578",
+    "漏洞描述": "A vulnerability classified as critical has been found in Software AG WebMethods 10.11.x/10.15.x. Affected is an unknown function of the file wm.server/connect/. The manipulation leads to improper access controls. It is possible to launch the attack remotely. To access a file like /assets/ a popup may request username and password. By just clicking CANCEL you will be redirected to the directory. If you visited /invoke/wm.server/connect, you'll be able to see details like internal IPs, ports, and versions. In some cases if access to /assets/ is refused, you may enter /assets/x as a wrong value, then come back to /assets/ which we will show the requested data. It appears that insufficient access control is depending on referrer header data. VDB-247158 is the identifier assigned to this vulnerability. NOTE: The vendor was contacted early about this disclosure but did not respond in any way.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "无官方补丁，建议联系厂商或及时更新系统"
+    ],
+    "受影响版本": [
+      "10.11.x",
+      "10.15.x"
+    ],
+    "公开日期": "2023年12月07日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Capture Client",
+    "CVE编号": "CVE-2023-6340",
+    "漏洞描述": "SonicWall Capture Client version 3.7.10, NetExtender client version 10.2.337 and earlier versions are installed with sfpmonitor.sys driver.  The driver has been found to be vulnerable to Denial-of-Service (DoS) caused by Stack-based Buffer Overflow vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0019"
+    ],
+    "受影响版本": [
+      "3.7.10 and earlier versions"
+    ],
+    "公开日期": "2024年01月17日"
+  },
+  {
+    "设备品牌": "Honeywell",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Experion Server",
+    "CVE编号": "CVE-2023-5398",
+    "漏洞描述": "Server receiving a malformed message based on a list of IPs resulting in heap corruption causing a denial of service. See Honeywell Security Notification for recommendations on upgrading and versioning.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://process.honeywell.com"
+    ],
+    "受影响版本": [
+      "520.2",
+      "510.1",
+      "520.1",
+      "511.1"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52927",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnetfilter: allow exp not to be removed in nf_ct_find_expectation\n\nCurrently nf_conntrack_in() calling nf_ct_find_expectation() will\nremove the exp from the hash table. However, in some scenario, we\nexpect the exp not to be removed when the created ct will not be\nconfirmed, like in OVS and TC conntrack in the following patches.\n\nThis patch allows exp not to be removed by setting IPS_CONFIRMED\nin the status of the tmpl.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/3fa58a6fbd1e9e5682d09cdafb08fba004cb12ec",
+      "https://git.kernel.org/stable/c/4914109a8e1e494c6aa9852f9e84ec77a5fc643f"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2025年03月14日"
+  },
+  {
+    "设备品牌": "Bright Plugins",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Block IPs for Gravity Forms",
+    "CVE编号": "CVE-2023-51358",
+    "漏洞描述": "Cross-Site Request Forgery (CSRF) vulnerability in Bright Plugins Block IPs for Gravity Forms.This issue affects Block IPs for Gravity Forms: from n/a through 1.0.1.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://patchstack.com/database/vulnerability/gf-block-ips/wordpress-block-ips-for-gravity-forms-plugin-1-0-1-cross-site-request-forgery-csrf-vulnerability?_s_id=cve"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年12月29日"
+  },
+  {
+    "设备品牌": "Unknown",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "DoLogin Security",
+    "CVE编号": "CVE-2023-4800",
+    "漏洞描述": "The DoLogin Security WordPress plugin before 3.7.1 does not restrict the access of a widget that shows the IPs of failed logins to low privileged users.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://wpscan.com/vulnerability/7eae1434-8c7a-4291-912d-a4a07b73ee56"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年10月16日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "NetExtender",
+    "CVE编号": "CVE-2023-44220",
+    "漏洞描述": "SonicWall NetExtender Windows (32-bit and 64-bit) client 10.2.336 and earlier versions have a DLL Search Order Hijacking vulnerability in the start-up DLL component. Successful exploitation via a local attacker could result in command execution in the target system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0017"
+    ],
+    "受影响版本": [
+      "10.2.336 and earlier versions"
+    ],
+    "公开日期": "2023年10月27日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Directory Services Connector",
+    "CVE编号": "CVE-2023-44219",
+    "漏洞描述": "A local privilege escalation vulnerability in SonicWall Directory Services Connector Windows MSI client 4.1.21 and earlier versions allows a local low-privileged user to gain system privileges through running the recovery feature.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0016"
+    ],
+    "受影响版本": [
+      "4.1.21 and earlier versions"
+    ],
+    "公开日期": "2023年10月27日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "NetExtender",
+    "CVE编号": "CVE-2023-44218",
+    "漏洞描述": "\nA flaw within the SonicWall NetExtender Pre-Logon feature enables an unauthorized user to gain access to the host Windows operating system with 'SYSTEM' level privileges, leading to a local privilege escalation (LPE) vulnerability.\n\n",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0014"
+    ],
+    "受影响版本": [
+      "10.2.336 and earlier versions"
+    ],
+    "公开日期": "2023年10月03日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "NetExtender",
+    "CVE编号": "CVE-2023-44217",
+    "漏洞描述": "\nA local privilege escalation vulnerability in SonicWall Net Extender MSI client for Windows 10.2.336 and earlier versions allows a local low-privileged user to gain system privileges through running repair functionality.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0013"
+    ],
+    "受影响版本": [
+      "10.2.336 and earlier versions"
+    ],
+    "公开日期": "2023年10月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-43618",
+    "漏洞描述": "An issue was discovered in Croc through 9.6.5. The protocol requires a sender to provide its local IP addresses in cleartext via an ips? message.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.openwall.com/lists/oss-security/2023/09/08/2",
+      "https://github.com/schollz/croc/issues/597",
+      "http://www.openwall.com/lists/oss-security/2023/09/21/5"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年09月20日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "IPS Engine",
+    "CVE编号": "CVE-2023-40718",
+    "漏洞描述": "A interpretation conflict in Fortinet IPS Engine versions 7.321, 7.166 and 6.158 allows attacker to evade IPS features via crafted TCP packets.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://fortiguard.com/psirt/FG-IR-23-090"
+    ],
+    "受影响版本": [
+      "7.321",
+      "7.166",
+      "6.158"
+    ],
+    "公开日期": "2023年10月10日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34137",
+    "漏洞描述": "SonicWall GMS and Analytics CAS Web Services application use static values for authentication without proper checks leading to authentication bypass vulnerability. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34136",
+    "漏洞描述": "Vulnerability in SonicWall GMS and Analytics allows unauthenticated attacker to upload files to a restricted location not controlled by the attacker. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34135",
+    "漏洞描述": "Path Traversal vulnerability in SonicWall GMS and Analytics allows a remote authenticated attacker to read arbitrary files from the underlying file system via web service. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34134",
+    "漏洞描述": "Exposure of sensitive information to an unauthorized actor vulnerability in SonicWall GMS and Analytics allows authenticated attacker to read administrator password hash via a web service call. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34133",
+    "漏洞描述": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in SonicWall GMS and Analytics allows an unauthenticated attacker to extract sensitive information from the application database. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060",
+      "http://packetstormsecurity.com/files/174571/Sonicwall-GMS-9.9.9320-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34132",
+    "漏洞描述": "Use of password hash instead of password for authentication vulnerability in SonicWall GMS and Analytics allows Pass-the-Hash attacks. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060",
+      "http://packetstormsecurity.com/files/174571/Sonicwall-GMS-9.9.9320-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34131",
+    "漏洞描述": "Exposure of sensitive information to an unauthorized actor vulnerability in SonicWall GMS and Analytics enables an unauthenticated attacker to access restricted web pages. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34130",
+    "漏洞描述": "SonicWall GMS and Analytics use outdated Tiny Encryption Algorithm (TEA) with a hardcoded key to encrypt sensitive data. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34129",
+    "漏洞描述": "Improper limitation of a pathname to a restricted directory ('Path Traversal') vulnerability in SonicWall GMS and Analytics allows an authenticated remote attacker to traverse the directory and extract arbitrary files using Zip Slip method to any location on the underlying filesystem with root privileges. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34128",
+    "漏洞描述": "Tomcat application credentials are hardcoded in SonicWall GMS and Analytics configuration file. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34127",
+    "漏洞描述": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability in SonicWall GMS, SonicWall Analytics enables an authenticated attacker to execute arbitrary code with root privileges. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060",
+      "http://packetstormsecurity.com/files/174571/Sonicwall-GMS-9.9.9320-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34126",
+    "漏洞描述": "Vulnerability in SonicWall GMS and Analytics allows an authenticated attacker to upload files on the underlying filesystem with root privileges. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34124",
+    "漏洞描述": "The authentication mechanism in SonicWall GMS and Analytics Web Services had insufficient checks, allowing authentication bypass. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060",
+      "http://packetstormsecurity.com/files/174571/Sonicwall-GMS-9.9.9320-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34123",
+    "漏洞描述": "Use of Hard-coded Cryptographic Key vulnerability in SonicWall GMS, SonicWall Analytics. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月12日"
+  },
+  {
+    "设备品牌": "matrix-org",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "synapse",
+    "CVE编号": "CVE-2023-32683",
+    "漏洞描述": "Synapse is a Matrix protocol homeserver written in Python with the Twisted framework. A discovered oEmbed or image URL can bypass the `url_preview_url_blacklist` setting potentially allowing server side request forgery or bypassing network policies. Impact is limited to IP addresses allowed by the `url_preview_ip_range_blacklist` setting (by default this only allows public IPs) and by the limited information returned to the client: 1. For discovered oEmbed URLs, any non-JSON response or a JSON response which includes non-oEmbed information is discarded. 2. For discovered image URLs, any non-image response is discarded. Systems which have URL preview disabled (via the `url_preview_enabled` setting) or have not configured a `url_preview_url_blacklist` are not affected. This issue has been addressed in version 1.85.0. Users are advised to upgrade. User unable to upgrade may also disable URL previews.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/matrix-org/synapse/security/advisories/GHSA-98px-6486-j7qc",
+      "https://github.com/matrix-org/synapse/pull/15601",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/X6DH5A5YEB5LRIPP32OUW25FCGZFCZU2/"
+    ],
+    "受影响版本": [
+      "< 1.85.0"
+    ],
+    "公开日期": "2023年06月06日"
+  },
+  {
+    "设备品牌": "nextcloud",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "security-advisories",
+    "CVE编号": "CVE-2023-28645",
+    "漏洞描述": "Nextcloud richdocuments is a Nextcloud app integrating the office suit Collabora Online. In affected versions the secure view feature of the rich documents app can be bypassed by using unprotected internal API endpoint of the rich documents app. It is recommended that the Nextcloud Office app (richdocuments) is upgraded to 8.0.0-beta.1, 7.0.2 or 6.3.2. Users unable to upgrade may mitigate the issue by taking steps to restrict the ability to download documents. This includes ensuring that the `WOPI configuration` is configured to only serve documents between Nextcloud and Collabora. It is highly recommended to define the list of Collabora server IPs as the allow list within the Office admin settings of Nextcloud.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/nextcloud/security-advisories/security/advisories/GHSA-95j6-p5cj-5hh5",
+      "https://github.com/nextcloud/richdocuments/pull/2604",
+      "https://docs.nextcloud.com/server/latest/admin_manual/office/configuration.html#wopi-settings"
+    ],
+    "受影响版本": [
+      ">= 7.0.0, < 7.0.2",
+      "< 6.3.2"
+    ],
+    "公开日期": "2023年03月31日"
+  },
+  {
+    "设备品牌": "Western Digital",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "My Cloud OS 5 Mobile App",
+    "CVE编号": "CVE-2023-22813",
+    "漏洞描述": "\n\n\n\n\n\n\n\n\n\nA device API\nendpoint was missing access controls on Western Digital My Cloud OS 5 iOS and Anroid Mobile Apps, My Cloud Home iOS and Android Mobile Apps, SanDisk ibi iOS and Android Mobile Apps, My Cloud OS 5 Web App, My Cloud Home Web App and the SanDisk ibi Web App. Due to a permissive CORS policy\nand missing authentication requirement for private IPs, a remote attacker on\nthe same network as the device could obtain device information by convincing a\nvictim user to visit an attacker-controlled server and issue a cross-site\nrequest.\n\n\n\nThis issue affects\nMy Cloud OS 5 Mobile App: before 4.21.0; My Cloud Home Mobile App: before 4.21.0; ibi Mobile App: before 4.21.0; My\nCloud OS 5 Web App: before 4.26.0-6126; My Cloud Home Web App: before 4.26.0-6126;\nibi Web App: before 4.26.0-6126.\n\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.westerndigital.com/support/product-security/wdc-23004-western-digital-my-cloud-os-5-my-cloud-home-sandisk-ibi-and-wd-cloud-mobile-and-web-app-update"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年05月08日"
+  },
+  {
+    "设备品牌": "Juniper Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Junos OS",
+    "CVE编号": "CVE-2023-22409",
+    "漏洞描述": "An Unchecked Input for Loop Condition vulnerability in a NAT library of Juniper Networks Junos OS allows a local authenticated attacker with low privileges to cause a Denial of Service (DoS). When an inconsistent \"deterministic NAT\" configuration is present on an SRX, or MX with SPC3 and then a specific CLI command is issued the SPC will crash and restart. Repeated execution of this command will lead to a sustained DoS. Such a configuration is characterized by the total number of port blocks being greater than the total number of hosts. An example for such configuration is: [ services nat source pool TEST-POOL address x.x.x.0/32 to x.x.x.15/32 ] [ services nat source pool TEST-POOL port deterministic block-size 1008 ] [ services nat source pool TEST-POOL port deterministic host address y.y.y.0/24] [ services nat source pool TEST-POOL port deterministic include-boundary-addresses] where according to the following calculation: 65536-1024=64512 (number of usable ports per IP address, implicit) 64512/1008=64 (number of port blocks per Nat IP) x.x.x.0/32 to x.x.x.15/32 = 16 (NAT IP addresses available in NAT pool) total port blocks in NAT Pool = 64 blocks per IP * 16 IPs = 1024 Port blocks host address y.y.y.0/24 = 256 hosts (with include-boundary-addresses) If the port block size is configured to be 4032, then the total port blocks are (64512/4032) * 16 = 256 which is equivalent to the total host addresses of 256, and the issue will not be seen. This issue affects Juniper Networks Junos OS on SRX Series, and MX Series with SPC3: All versions prior to 19.4R3-S10; 20.1 version 20.1R1 and later versions; 20.2 versions prior to 20.2R3-S6; 20.3 versions prior to 20.3R3-S6; 20.4 versions prior to 20.4R3-S5; 21.1 versions prior to 21.1R3-S4; 21.2 versions prior to 21.2R3-S3; 21.3 versions prior to 21.3R3-S3; 21.4 versions prior to 21.4R3-S1; 22.1 versions prior to 22.1R2-S2, 22.1R3; 22.2 versions prior to 22.2R2.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://kb.juniper.net/JSA70205"
+    ],
+    "受影响版本": [
+      "unspecified",
+      "20.1R1",
+      "20.2",
+      "20.3",
+      "20.4",
+      "21.1",
+      "21.2",
+      "21.3",
+      "21.4",
+      "22.1",
+      "22.2"
+    ],
+    "公开日期": "2023年01月12日"
+  },
+  {
+    "设备品牌": "Oracle Corporation",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Solaris Operating System",
+    "CVE编号": "CVE-2023-21928",
+    "漏洞描述": "",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.oracle.com/security-alerts/cpuapr2023.html"
+    ],
+    "受影响版本": [
+      "11"
+    ],
+    "公开日期": "2023年04月18日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall Email Security",
+    "CVE编号": "CVE-2023-0655",
+    "漏洞描述": "SonicWall Email Security contains a vulnerability that could permit a remote unauthenticated attacker access to an error page that includes sensitive information about users email addresses.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0002"
+    ],
+    "受影响版本": [
+      "10.0.19.7431 and earlier versions"
+    ],
+    "公开日期": "2023年02月14日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49539",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nrtw89: ser: fix CAM leaks occurring in L2 reset\n\nThe CAM, meaning address CAM and bssid CAM here, will get leaks during\nSER (system error recover) L2 reset process and ieee80211_restart_hw()\nwhich is called by L2 reset process eventually.\n\nThe normal flow would be like\n-> add interface (acquire 1)\n-> enter ips (release 1)\n-> leave ips (acquire 1)\n-> connection (occupy 1) <(A) 1 leak after L2 reset if non-sec connection>\n\nThe ieee80211_restart_hw() flow (under connection)\n-> ieee80211 reconfig\n-> add interface (acquire 1)\n-> leave ips (acquire 1)\n-> connection (occupy (A) + 2) <(B) 1 more leak>\n\nOriginally, CAM is released before HW restart only if connection is under\nsecurity. Now, release CAM whatever connection it is to fix leak in (A).\nOTOH, check if CAM is already valid to avoid acquiring multiple times to\nfix (B).\n\nBesides, if AP mode, release address CAM of all stations before HW restart.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/f6aff772c9978844529618d86aafb53e5d3ae161",
+      "https://git.kernel.org/stable/c/b169f877f001a474fb89939842c390518160bcc5"
+    ],
+    "受影响版本": [
+      "e3ec7017f6a20d12ddd9fe23d345ebb7b8c104dd",
+      "e3ec7017f6a20d12ddd9fe23d345ebb7b8c104dd"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "DSS Professional、DSS Express、DHI-DSS7016D-S2/DHI-DSS7016DR-S2、DHI-DSS4004-S2",
+    "CVE编号": "CVE-2022-45432",
+    "漏洞描述": "Some Dahua software products have a vulnerability of unauthenticated search for devices. After bypassing the firewall access control policy, by sending a specific crafted packet to the vulnerable interface, an attacker could unauthenticated search for devices in range of IPs from remote DSS Server.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.dahuasecurity.com/support/cybersecurity/details/1137"
+    ],
+    "受影响版本": [
+      "V8.0.2, V8.0.4, V8.1"
+    ],
+    "公开日期": "2022年12月27日"
+  },
+  {
+    "设备品牌": "Atlassian",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Crowd Data Center",
+    "CVE编号": "CVE-2022-43782",
+    "漏洞描述": "Affected versions of Atlassian Crowd allow an attacker to authenticate as the crowd application via security misconfiguration and subsequent ability to call privileged endpoints in Crowd's REST API under the {{usermanagement}} path.\n\nThis vulnerability can only be exploited by IPs specified under the crowd application allowlist in the Remote Addresses configuration, which is {{none}} by default.\n\nThe affected versions are all versions 3.x.x, versions 4.x.x before version 4.4.4, and versions 5.x.x before 5.0.3",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jira.atlassian.com/browse/CWD-5888"
+    ],
+    "受影响版本": [
+      "before 3.0.0",
+      "before 4.4.4",
+      "before 5.0.3"
+    ],
+    "公开日期": "2022年11月17日"
+  },
+  {
+    "设备品牌": "discourse",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "discourse",
+    "CVE编号": "CVE-2022-39241",
+    "漏洞描述": "Discourse is a platform for community discussion. A malicious admin could use this vulnerability to perform port enumeration on the local host or other hosts on the internal network, as well as against hosts on the Internet. Latest `stable`, `beta`, and `test-passed` versions are now patched. As a workaround, self-hosters can use `DISCOURSE_BLOCKED_IP_BLOCKS` env var (which overrides `blocked_ip_blocks` setting) to stop webhooks from accessing private IPs.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/discourse/discourse/security/advisories/GHSA-rcc5-28r3-23rr"
+    ],
+    "受影响版本": [
+      "<= 2.8.9",
+      "<= 2.9.0.beta10"
+    ],
+    "公开日期": "2022年11月02日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Ivanti Connect Secure (ICS), Ivanti Policy Secure (IPS), and Ivanti Neurons for Zero Trust Access Gateway",
+    "CVE编号": "CVE-2022-35258",
+    "漏洞描述": "An unauthenticated attacker can cause a denial-of-service to the following products: Ivanti Connect Secure (ICS) in versions prior to 9.1R14.3, 9.1R15.2, 9.1R16.2, and 22.2R4, Ivanti Policy Secure (IPS) in versions prior to 9.1R17 and 22.3R1, and Ivanti Neurons for Zero-Trust Access in versions prior to 22.3R1.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA45520/?kA23Z000000GH5OSAW"
+    ],
+    "受影响版本": [
+      "ICS Prior to 9.1R14.3,9.1R15.2,9.1R16.2 and 22.2R4, IPS Prior to 9.1R17 and 22.3R1, Ivanti Neurons for Zero Trust Access Gateway Prior to 22.3R1"
+    ],
+    "公开日期": "2022年12月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Ivanti Connect Secure (ICS), Ivanti Policy Secure (IPS), and Ivanti Neurons for Zero Trust Access Gateway",
+    "CVE编号": "CVE-2022-35254",
+    "漏洞描述": "An unauthenticated attacker can cause a denial-of-service to the following products: Ivanti Connect Secure (ICS) in versions prior to 9.1R14.3, 9.1R15.2, 9.1R16.2, and 22.2R4, Ivanti Policy Secure (IPS) in versions prior to 9.1R17 and 22.3R1, and Ivanti Neurons for Zero-Trust Access in versions prior to 22.3R1.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA45520/?kA23Z000000GH5OSAW"
+    ],
+    "受影响版本": [
+      "ICS Prior to 9.1R14.3,9.1R15.2,9.1R16.2 and 22.2R4 and 22.2R1, IPS Prior to 9.1R17 and 22.3R1, Ivanti Neurons for Zero Trust Access Gateway Prior to 22.3R1"
+    ],
+    "公开日期": "2022年12月05日"
+  },
+  {
+    "设备品牌": "Trellix",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Trellix IPS Manager",
+    "CVE编号": "CVE-2022-3340",
+    "漏洞描述": "XML External Entity (XXE) vulnerability in Trellix IPS Manager prior to 10.1 M8 allows a remote authenticated administrator to perform XXE attack in the administrator interface part of the interface, which allows a saved XML configuration file to be imported.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kcm.trellix.com/corporate/index?page=content&id=SB10388"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年11月04日"
+  },
+  {
+    "设备品牌": "Unknown",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Login Block IPs",
+    "CVE编号": "CVE-2022-3098",
+    "漏洞描述": "The Login Block IPs WordPress plugin through 1.0.0 does not have CSRF check in place when updating its settings, which could allow attackers to make a logged in admin change them via a CSRF attack",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://wpscan.com/vulnerability/f4fcf41b-c05d-4236-8e67-a52d0f94c80a"
+    ],
+    "受影响版本": [
+      "1.0.0"
+    ],
+    "公开日期": "2022年09月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-30494",
+    "漏洞描述": "In oretnom23 Automotive Shop Management System v1.0, the first and last name user fields suffer from a stored XSS Injection Vulnerability allowing remote attackers to gain admin access and view internal IPs.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/nsparker1337/OpenSource/blob/main/exploit_xss_asms.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年05月26日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2022-2915",
+    "漏洞描述": "A Heap-based Buffer Overflow vulnerability in the SonicWall SMA100 appliance allows a remote authenticated attacker to cause Denial of Service (DoS) on the appliance or potentially lead to code execution. This vulnerability impacts 10.2.1.5-34sv and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0019"
+    ],
+    "受影响版本": [
+      "10.2.1.5-34sv and earlier"
+    ],
+    "公开日期": "2022年08月26日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Fortinet FortiOS",
+    "CVE编号": "CVE-2022-27491",
+    "漏洞描述": "A improper verification of source of a communication channel in Fortinet FortiOS with IPS engine version 7.201 through 7.214, 7.001 through 7.113, 6.001 through 6.121, 5.001 through 5.258 and before 4.086 allows a remote and unauthenticated attacker to trigger the sending of \"blocked page\" HTML data to an arbitrary victim via crafted TCP requests, potentially flooding the victim.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://fortiguard.com/psirt/FG-IR-22-073"
+    ],
+    "受影响版本": [
+      "FortiOS 7.2.0, 7.0.5, 7.0.4, 7.0.3, 7.0.2, 7.0.1, 7.0.0, 6.4.9, 6.4.8, 6.4.7, 6.4.6, 6.4.5, 6.4.4, 6.4.3, 6.4.2, 6.4.1, 6.4.0, 6.2.10, 6.2.9, 6.2.8, 6.2.7, 6.2.6, 6.2.5, 6.2.4, 6.2.3, 6.2.2, 6.2.1, 6.2.0, 6.0.14, 6.0.13, 6.0.12, 6.0.11, 6.0.10, 6.0.9, 6.0.8, 6.0.7, 6.0.6, 6.0.5, 6.0.4, 6.0.3, 6.0.2, 6.0.1, 6.0.0"
+    ],
+    "公开日期": "2022年09月06日"
+  },
+  {
+    "设备品牌": "Mattermost",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Mattermost",
+    "CVE编号": "CVE-2022-2366",
+    "漏洞描述": "Incorrect default configuration for trusted IP header in Mattermost version 6.7.0 and earlier allows attacker to bypass some of the rate limitations in place or use manipulated IPs for audit logging via manipulating the request headers.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://mattermost.com/security-updates/"
+    ],
+    "受影响版本": [
+      "6.7.x 6.7.0",
+      "6.x",
+      "6.5.x",
+      "6.6.x"
+    ],
+    "公开日期": "2022年07月11日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall Email Security",
+    "CVE编号": "CVE-2022-2324",
+    "漏洞描述": "Improperly Implemented Security Check vulnerability in the SonicWall Hosted Email Security leads to bypass of Capture ATP security service in the appliance. This vulnerability impacts 10.0.17.7319 and earlier versions",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0014"
+    ],
+    "受影响版本": [
+      "10.0.17.7319 and earlier"
+    ],
+    "公开日期": "2022年07月29日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall Switch",
+    "CVE编号": "CVE-2022-2323",
+    "漏洞描述": "Improper neutralization of special elements used in a user input allows an authenticated malicious user to perform remote code execution in the host system. This vulnerability impacts SonicWall Switch 1.1.1.0-2s and earlier versions",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0013"
+    ],
+    "受影响版本": [
+      "1.1.1.0-2s and earlier"
+    ],
+    "公开日期": "2022年07月29日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall SMA1000",
+    "CVE编号": "CVE-2022-22282",
+    "漏洞描述": "SonicWall SMA1000 series firmware 12.4.0, 12.4.1-02965 and earlier versions incorrectly restricts access to a resource using HTTP connections from an unauthorized actor leading to Improper Access Control vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0009"
+    ],
+    "受影响版本": [
+      "12.4.0",
+      "12.4.1"
+    ],
+    "公开日期": "2022年05月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall NetExtender Windows (32 and 64 bit) Client",
+    "CVE编号": "CVE-2022-22281",
+    "漏洞描述": "A buffer overflow vulnerability in the SonicWall SSL-VPN NetExtender Windows Client (32 and 64 bit) in 10.2.322 and earlier versions, allows an attacker to potentially execute arbitrary code in the host windows operating system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0008"
+    ],
+    "受影响版本": [
+      "10.2.322 and earlier versions"
+    ],
+    "公开日期": "2022年05月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall GMS",
+    "CVE编号": "CVE-2022-22280",
+    "漏洞描述": "Improper Neutralization of Special Elements used in an SQL Command leading to Unauthenticated SQL Injection vulnerability, impacting SonicWall GMS 9.3.1-SP2-Hotfix1, Analytics On-Prem 2.5.0.3-2520 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0007"
+    ],
+    "受影响版本": [
+      "9.3.1-SP2-Hotfix1 and earlier"
+    ],
+    "公开日期": "2022年07月29日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2022-1703",
+    "漏洞描述": "Improper neutralization of special elements in the SonicWall SSL-VPN SMA100 series management interface allows a remote authenticated attacker to inject OS Commands which potentially leads to remote command execution vulnerability or denial of service (DoS) attack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0010"
+    ],
+    "受影响版本": [
+      "10.2.1.4-31sv and earlier",
+      "10.2.0.9-41sv and earlier"
+    ],
+    "公开日期": "2022年06月03日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall SMA1000",
+    "CVE编号": "CVE-2022-1702",
+    "漏洞描述": "SonicWall SMA1000 series firmware 12.4.0, 12.4.1-02965 and earlier versions accept a user-controlled input that specifies a link to an external site and uses that link in a redirect which leads to Open redirection vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0009"
+    ],
+    "受影响版本": [
+      "12.4.0",
+      "12.4.1"
+    ],
+    "公开日期": "2022年05月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall SMA1000",
+    "CVE编号": "CVE-2022-1701",
+    "漏洞描述": "SonicWall SMA1000 series firmware 12.4.0, 12.4.1-02965 and earlier versions uses a shared and hard-coded encryption key to store data.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0009"
+    ],
+    "受影响版本": [
+      "12.4.0",
+      "12.4.1"
+    ],
+    "公开日期": "2022年05月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-40604",
+    "漏洞描述": "A Server-Side Request Forgery (SSRF) vulnerability in IPS Community Suite before 4.6.2 allows remote authenticated users to request arbitrary URLs or trigger deserialization via phar protocol when generating class names dynamically. In some cases an exploitation is possible by an unauthenticated user.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://invisioncommunity.com/release-notes/462-r99/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年06月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-39250",
+    "漏洞描述": "Invision Community (aka IPS Community Suite or IP-Board) before 4.6.5.1 allows stored XSS, with resultant code execution, because an uploaded file can be placed in an IFRAME element within user-generated content. For code execution, the attacker can rely on the ability of an admin to install widgets, disclosure of the admin session ID in a Referer header, and the ability of an admin to use the templating engine (e.g., Edit HTML).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://ssd-disclosure.com/ssd-advisory-ip-board-stored-xss-to-rce-chain/",
+      "https://invisioncommunity.com/release-notes/4651-r102/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-39249",
+    "漏洞描述": "Invision Community (aka IPS Community Suite or IP-Board) before 4.6.5.1 allows reflected XSS because the filenames of uploaded files become predictable through a brute-force attack against the PHP mt_rand function.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://ssd-disclosure.com/ssd-advisory-ip-board-stored-xss-to-rce-chain/",
+      "https://invisioncommunity.com/release-notes/4651-r102/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月17日"
+  },
+  {
+    "设备品牌": "istio",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "istio",
+    "CVE编号": "CVE-2021-39155",
+    "漏洞描述": "Istio is an open source platform for providing a uniform way to integrate microservices, manage traffic flow across microservices, enforce policies and aggregate telemetry data. According to [RFC 4343](https://datatracker.ietf.org/doc/html/rfc4343), Istio authorization policy should compare the hostname in the HTTP Host header in a case insensitive way, but currently the comparison is case sensitive. The proxy will route the request hostname in a case-insensitive way which means the authorization policy could be bypassed. As an example, the user may have an authorization policy that rejects request with hostname \"httpbin.foo\" for some source IPs, but the attacker can bypass this by sending the request with hostname \"Httpbin.Foo\". Patches are available in Istio 1.11.1, Istio 1.10.4 and Istio 1.9.8. As a work around a Lua filter may be written to normalize Host header before the authorization check. This is similar to the Path normalization presented in the [Security Best Practices](https://istio.io/latest/docs/ops/best-practices/security/#case-normalization) guide.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/istio/istio/security/advisories/GHSA-7774-7vr3-cc8j",
+      "https://datatracker.ietf.org/doc/html/rfc4343"
+    ],
+    "受影响版本": [
+      "<= 1.9.8",
+      ">= 1.10.0, < 1.10.4",
+      ">= 1.11.0, < 1.11.1"
+    ],
+    "公开日期": "2021年08月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "IIPS Module;NGFW Module;NIP6600;S12700;S1700;S2700;S5700;S6700;S7700;S9700;USG9500",
+    "CVE编号": "CVE-2021-37129",
+    "漏洞描述": "There is an out of bounds write vulnerability in some Huawei products. The vulnerability is caused by a function of a module that does not properly verify input parameter. Successful exploit could cause out of bounds write leading to a denial of service condition.Affected product versions include:IPS Module V500R005C00,V500R005C20;NGFW Module V500R005C00;NIP6600 V500R005C00,V500R005C20;S12700 V200R010C00SPC600,V200R011C10SPC500,V200R011C10SPC600,V200R013C00SPC500,V200R019C00SPC200,V200R019C00SPC500,V200R019C10SPC200,V200R020C00,V200R020C10;S1700 V200R010C00SPC600,V200R011C10SPC500,V200R011C10SPC600;S2700 V200R010C00SPC600,V200R011C10SPC500,V200R011C10SPC600;S5700 V200R010C00SPC600,V200R010C00SPC700,V200R011C10SPC500,V200R011C10SPC600,V200R019C00SPC500;S6700 V200R010C00SPC600,V200R011C10SPC500,V200R011C10SPC600;S7700 V200R010C00SPC600,V200R010C00SPC700,V200R011C10SPC500,V200R011C10SPC600;S9700 V200R010C00SPC600,V200R011C10SPC500,V200R011C10SPC600;USG9500 V500R005C00,V500R005C20.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20211020-01-outofwrite-en"
+    ],
+    "受影响版本": [
+      "V500R005C00,V500R005C20",
+      "V500R005C00",
+      "V200R010C00SPC600,V200R011C10SPC500,V200R011C10SPC600,V200R013C00SPC500,V200R019C00SPC200,V200R019C00SPC500,V200R019C10SPC200,V200R020C00,V200R020C10",
+      "V200R010C00SPC600,V200R011C10SPC500,V200R011C10SPC600",
+      "V200R010C00SPC600,V200R010C00SPC700,V200R011C10SPC500,V200R011C10SPC600,V200R019C00SPC500",
+      "V200R010C00SPC600,V200R010C00SPC700,V200R011C10SPC500,V200R011C10SPC600"
+    ],
+    "公开日期": "2021年10月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-32924",
+    "漏洞描述": "Invision Community (aka IPS Community Suite) before 4.6.0 allows eval-based PHP code injection by a moderator because the IPS\\cms\\modules\\front\\pages\\_builder::previewBlock method interacts unsafely with the IPS\\_Theme::runProcessFunction method.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://hackerone.com/reports/1092574",
+      "https://invisioncommunity.com/features/security/",
+      "http://seclists.org/fulldisclosure/2021/May/80",
+      "http://packetstormsecurity.com/files/162868/IPS-Community-Suite-4.5.4.2-PHP-Code-Injection.html",
+      "http://karmainsecurity.com/KIS-2021-04"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年06月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-3026",
+    "漏洞描述": "Invision Community IPS Community Suite before 4.5.4.2 allows XSS during the quoting of a post or comment.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://invisioncommunity.com/release-notes/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年01月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-3025",
+    "漏洞描述": "Invision Community IPS Community Suite before 4.5.4.2 allows SQL Injection via the Downloads REST API (the sortDir parameter in a sortBy=popular action to the GETindex() method in applications/downloads/api/files.php).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://invisioncommunity.com/release-notes/",
+      "http://packetstormsecurity.com/files/160830/IPS-Community-Suite-4.5.4-SQL-Injection.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年01月08日"
+  },
+  {
+    "设备品牌": "jellyfin",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "jellyfin",
+    "CVE编号": "CVE-2021-29490",
+    "漏洞描述": "Jellyfin is a free software media system that provides media from a dedicated server to end-user devices via multiple apps. Verions prior to 10.7.3 vulnerable to unauthenticated Server-Side Request Forgery (SSRF) attacks via the imageUrl parameter. This issue potentially exposes both internal and external HTTP servers or other resources available via HTTP `GET` that are visible from the Jellyfin server. The vulnerability is patched in version 10.7.3. As a workaround, disable external access to the API endpoints `/Items/*/RemoteImages/Download`, `/Items/RemoteSearch/Image` and `/Images/Remote` via reverse proxy, or limit to known-friendly IPs.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/jellyfin/jellyfin/security/advisories/GHSA-rgjw-4fwc-9v96"
+    ],
+    "受影响版本": [
+      "<= 10.7.2"
+    ],
+    "公开日期": "2021年05月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-28918",
+    "漏洞描述": "Improper input validation of octal strings in netmask npm package v1.0.6 and below allows unauthenticated remote attackers to perform indeterminate SSRF, RFI, and LFI attacks on many of the dependent packages. A remote unauthenticated attacker can bypass packages relying on netmask to filter IPs and reach critical VPN or LAN hosts.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.npmjs.com/package/netmask",
+      "https://github.com/rs/node-netmask",
+      "https://www.bleepingcomputer.com/news/security/critical-netmask-networking-bug-impacts-thousands-of-applications/",
+      "https://github.com/advisories/GHSA-pch5-whg9-qr2r",
+      "https://github.com/sickcodes/security/blob/master/advisories/SICK-2021-011.md",
+      "https://security.netapp.com/advisory/ntap-20210528-0010/",
+      "https://rootdaemon.com/2021/03/29/vulnerability-in-netmask-npm-package-affects-280000-projects/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年04月01日"
+  },
+  {
+    "设备品牌": "Kubernetes",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Kubernetes",
+    "CVE编号": "CVE-2021-25737",
+    "漏洞描述": "A security issue was discovered in Kubernetes where a user may be able to redirect pod traffic to private networks on a Node. Kubernetes already prevents creation of Endpoint IPs in the localhost or link-local range, but the same validation was not performed on EndpointSlice IPs.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://groups.google.com/g/kubernetes-security-announce/c/xAiN3924thY",
+      "https://github.com/kubernetes/kubernetes/issues/102106",
+      "https://security.netapp.com/advisory/ntap-20211004-0004/"
+    ],
+    "受影响版本": [
+      "unspecified",
+      "unspecified",
+      "unspecified",
+      "unspecified"
+    ],
+    "公开日期": "2021年09月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "IPS Module;NGFW Module;Secospace USG6300;Secospace USG6500;Secospace USG6600;USG9500",
+    "CVE编号": "CVE-2021-22356",
+    "漏洞描述": "There is a weak secure algorithm vulnerability in Huawei products. A weak secure algorithm is used in a module. Attackers can exploit this vulnerability by capturing and analyzing the messages between devices to obtain information. This can lead to information leak.Affected product versions include: IPS Module V500R005C00SPC100, V500R005C00SPC200; NGFW Module V500R005C00SPC100, V500R005C00SPC200; Secospace USG6300 V500R001C30SPC200, V500R001C30SPC600, V500R001C60SPC500, V500R005C00SPC100, V500R005C00SPC200; Secospace USG6500 V500R001C30SPC200, V500R001C30SPC600, V500R001C60SPC500, V500R005C00SPC100, V500R005C00SPC200; Secospace USG6600 V500R001C30SPC200, V500R001C30SPC600, V500R001C60SPC500, V500R005C00SPC100, V500R005C00SPC200; USG9500 V500R001C30SPC200, V500R001C30SPC600, V500R001C60SPC500, V500R005C00SPC100, V500R005C00SPC200.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20210512-01-infomationleak-en"
+    ],
+    "受影响版本": [
+      "V500R005C00SPC100,V500R005C00SPC200",
+      "V500R001C30SPC200,V500R001C30SPC600,V500R001C60SPC500,V500R005C00SPC100,V500R005C00SPC200"
+    ],
+    "公开日期": "2021年11月23日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "IPS Module;NGFW Module;SeMG9811;USG9500",
+    "CVE编号": "CVE-2021-22342",
+    "漏洞描述": "There is an information leak vulnerability in Huawei products. A module does not deal with specific input sufficiently. High privilege attackers can exploit this vulnerability by performing some operations. This can lead to information leak. Affected product versions include: IPS Module versions V500R005C00, V500R005C10, V500R005C20; NGFW Module versions V500R005C00,V500R005C10, V500R005C20; SeMG9811 versions V500R005C00; USG9500 versions V500R001C00, V500R001C20, V500R001C30, V500R001C50, V500R001C60, V500R001C80, V500R005C00, V500R005C10, V500R005C20.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20210428-01-infomationleak-en"
+    ],
+    "受影响版本": [
+      "V500R005C00,V500R005C10,V500R005C20",
+      "V500R005C00",
+      "V500R001C00,V500R001C20,V500R001C30,V500R001C50,V500R001C60,V500R001C80,V500R005C00,V500R005C10,V500R005C20"
+    ],
+    "公开日期": "2021年06月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "IPS Module;NGFW Module;NIP6300;NIP6600;Secospace USG6300;Secospace USG6500;Secospace USG6600",
+    "CVE编号": "CVE-2021-22341",
+    "漏洞描述": "There is a memory leak vulnerability in Huawei products. A resource management weakness exists in a module. Attackers with high privilege can exploit this vulnerability by performing some operations. This can lead to memory leak. Affected product versions include:IPS Module V500R005C00SPC100,V500R005C00SPC200;NGFW Module V500R005C00SPC100,V500R005C00SPC200;NIP6300 V500R005C00SPC100,V500R005C10SPC200;NIP6600 V500R005C00SPC100,V500R005C00SPC200;Secospace USG6300 V500R005C00SPC100,V500R005C00SPC200;Secospace USG6500 V500R005C00SPC100,V500R005C10SPC200;Secospace USG6600 V500R005C00SPC100,V500R005C00SPC200.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20210506-01-memleak-en"
+    ],
+    "受影响版本": [
+      "V500R005C00SPC100,V500R005C00SPC200",
+      "V500R005C00SPC100,V500R005C10SPC200"
+    ],
+    "公开日期": "2021年06月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "IPS Module;NGFW Module;NIP6600;NIP6800;Secospace USG6300;Secospace USG6500;Secospace USG6600",
+    "CVE编号": "CVE-2021-22320",
+    "漏洞描述": "There is a denial of service vulnerability in Huawei products. A module cannot deal with specific messages correctly. Attackers can exploit this vulnerability by sending malicious messages to an affected module. This can lead to denial of service. Affected product include some versions of IPS Module, NGFW Module, NIP6600, NIP6800, Secospace USG6300, Secospace USG6500 and Secospace USG6600.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20210210-03-dos-en"
+    ],
+    "受影响版本": [
+      "V500R005C00SPC100,V500R005C00SPC200,V500R005C20SPC300",
+      "V500R001C30SPC200,V500R001C30SPC600,V500R001C60SPC500,V500R005C00SPC100,V500R005C00SPC200,V500R005C20SPC300,V500R005C20SPC500",
+      "V500R001C60SPC500,V500R005C00SPC100,V500R005C00SPC200,V500R005C20SPC300,V500R005C20SPC500"
+    ],
+    "公开日期": "2021年03月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "IPS Module;NGFW Module;Secospace USG6300;Secospace USG6500;Secospace USG6600;USG9500",
+    "CVE编号": "CVE-2021-22312",
+    "漏洞描述": "There is a memory leak vulnerability in some Huawei products. An authenticated remote attacker may exploit this vulnerability by sending specific message to the affected product. Due to not release the allocated memory properly, successful exploit may cause some service abnormal. Affected product include some versions of IPS Module, NGFW Module, Secospace USG6300, Secospace USG6500, Secospace USG6600 and USG9500.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20210210-01-memoryleak-en"
+    ],
+    "受影响版本": [
+      "V500R005C00SPC100,V500R005C00SPC200",
+      "V500R001C30SPC200,V500R001C30SPC600,V500R001C60SPC500,V500R005C00SPC100,V500R005C00SPC200"
+    ],
+    "公开日期": "2021年04月08日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall Global VPN Client",
+    "CVE编号": "CVE-2021-20051",
+    "漏洞描述": "SonicWall Global VPN Client 4.10.7.1117 installer (32-bit and 64-bit) and earlier versions have a DLL Search Order Hijacking vulnerability in one of the installer components. Successful exploitation via a local attacker could result in command execution in the target system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0036"
+    ],
+    "受影响版本": [
+      "Global VPN Client 4.10.7.1117 and earlier versions"
+    ],
+    "公开日期": "2022年05月04日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall SMA100",
+    "CVE编号": "CVE-2021-20049",
+    "漏洞描述": "A vulnerability in SonicWall SMA100 password change API allows a remote unauthenticated attacker to perform SMA100 username enumeration based on the server responses. This vulnerability impacts 10.2.1.2-24sv, 10.2.0.8-37sv and earlier 10.x versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0030"
+    ],
+    "受影响版本": [
+      "10.2.0.8-37sv and earlier",
+      "10.2.1.2-24sv and earlier"
+    ],
+    "公开日期": "2021年12月23日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall Global VPN Client",
+    "CVE编号": "CVE-2021-20047",
+    "漏洞描述": "SonicWall Global VPN client version 4.10.6 (32-bit and 64-bit) and earlier have a DLL Search Order Hijacking vulnerability. Successful exploitation via a local attacker could result in remote code execution in the target system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0025"
+    ],
+    "受影响版本": [
+      "Global VPN Client 4.10.6 and earlier"
+    ],
+    "公开日期": "2021年12月08日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall SMA100",
+    "CVE编号": "CVE-2021-20044",
+    "漏洞描述": "A post-authentication remote command injection vulnerability in SonicWall SMA100 allows a remote authenticated attacker to execute OS system commands in the appliance. This vulnerability affected SMA 200, 210, 400, 410 and 500v appliances.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0026"
+    ],
+    "受影响版本": [
+      "10.2.0.8-37sv and earlier",
+      "10.2.1.1-19sv and earlier",
+      "10.2.1.2-24sv and earlier"
+    ],
+    "公开日期": "2021年12月08日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall SMA100",
+    "CVE编号": "CVE-2021-20043",
+    "漏洞描述": "A Heap-based buffer overflow vulnerability in SonicWall SMA100 getBookmarks method allows a remote authenticated attacker to potentially execute code as the nobody user in the appliance. This vulnerability affected SMA 200, 210, 400, 410 and 500v appliances.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0026"
+    ],
+    "受影响版本": [
+      "10.2.0.8-37sv and earlier",
+      "10.2.1.1-19sv and earlier",
+      "10.2.1.2-24sv and earlier"
+    ],
+    "公开日期": "2021年12月08日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall Global VPN Client",
+    "CVE编号": "CVE-2021-20037",
+    "漏洞描述": "SonicWall Global VPN Client 4.10.5 installer (32-bit and 64-bit) incorrect default file permission vulnerability leads to privilege escalation which potentially allows command execution in the host operating system. This vulnerability impacts GVC 4.10.5 installer and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0024"
+    ],
+    "受影响版本": [
+      "Global VPN Client 4.10.5 and earlier"
+    ],
+    "公开日期": "2021年09月21日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall Analytics On-Prem",
+    "CVE编号": "CVE-2021-20032",
+    "漏洞描述": "SonicWall Analytics 2.5 On-Prem is vulnerable to Java Debug Wire Protocol (JDWP) interface security misconfiguration vulnerability which potentially leads to Remote Code Execution. This vulnerability impacts Analytics On-Prem 2.5.2518 and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0018"
+    ],
+    "受影响版本": [
+      "Analytics On-Prem 2.5.2518 and earlier"
+    ],
+    "公开日期": "2021年08月10日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall GMS",
+    "CVE编号": "CVE-2021-20030",
+    "漏洞描述": "SonicWall GMS is vulnerable to file path manipulation resulting that an unauthenticated attacker can gain access to web directory containing application's binaries and configuration files.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0021"
+    ],
+    "受影响版本": [
+      "prior GMS 9.3.2"
+    ],
+    "公开日期": "2022年10月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall NSM On-Prem",
+    "CVE编号": "CVE-2021-20026",
+    "漏洞描述": "A vulnerability in the SonicWall NSM On-Prem product allows an authenticated attacker to perform OS command injection using a crafted HTTP request. This vulnerability affects NSM On-Prem 2.2.0-R10 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0014"
+    ],
+    "受影响版本": [
+      "NSM On-Prem 2.2.0-R10 and earlier"
+    ],
+    "公开日期": "2021年05月27日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Email Security Virtual Appliance",
+    "CVE编号": "CVE-2021-20025",
+    "漏洞描述": "SonicWall Email Security Virtual Appliance version 10.0.9 and earlier versions contain a default username and a password that is used at initial setup. An attacker could exploit this transitional/temporary user account from the trusted domain to access the Virtual Appliance remotely only when the device is freshly installed and not connected to Mysonicwall.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0012"
+    ],
+    "受影响版本": [
+      "10.0.9 and earlier"
+    ],
+    "公开日期": "2021年05月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall Switch",
+    "CVE编号": "CVE-2021-20024",
+    "漏洞描述": "Multiple Out-of-Bound read vulnerability in SonicWall Switch when handling LLDP Protocol allows an attacker to cause a system instability or potentially read sensitive information from the memory locations.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0011"
+    ],
+    "受影响版本": [
+      "1.0.0.5-16 and earlier"
+    ],
+    "公开日期": "2021年07月09日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Email Security",
+    "CVE编号": "CVE-2021-20023",
+    "漏洞描述": "SonicWall Email Security version 10.0.9.x contains a vulnerability that allows a post-authenticated attacker to read an arbitrary file on the remote host.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0010"
+    ],
+    "受影响版本": [
+      "10.0.9 and earlier"
+    ],
+    "公开日期": "2021年04月20日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Email Security",
+    "CVE编号": "CVE-2021-20022",
+    "漏洞描述": "SonicWall Email Security version 10.0.9.x contains a vulnerability that allows a post-authenticated attacker to upload an arbitrary file to the remote host.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0008"
+    ],
+    "受影响版本": [
+      "10.0.9 and earlier"
+    ],
+    "公开日期": "2021年04月09日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Email Security",
+    "CVE编号": "CVE-2021-20021",
+    "漏洞描述": "A vulnerability in the SonicWall Email Security version 10.0.9.x allows an attacker to create an administrative account by sending a crafted HTTP request to the remote host.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0007"
+    ],
+    "受影响版本": [
+      "10.0.9 and earlier"
+    ],
+    "公开日期": "2021年04月09日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Global Management System (GMS)",
+    "CVE编号": "CVE-2021-20020",
+    "漏洞描述": "A command execution vulnerability in SonicWall GMS 9.3 allows a remote unauthenticated attacker to locally escalate privilege to root.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0009"
+    ],
+    "受影响版本": [
+      "9.3 and earlier"
+    ],
+    "公开日期": "2021年04月10日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2021-20018",
+    "漏洞描述": "A post-authenticated vulnerability in SonicWall SMA100 allows an attacker to export the configuration file to the specified email address. This vulnerability impacts SMA100 version 10.2.0.5 and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0005"
+    ],
+    "受影响版本": [
+      "10.2.0.5 and earlier"
+    ],
+    "公开日期": "2021年03月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2021-20017",
+    "漏洞描述": "A post-authenticated command injection vulnerability in SonicWall SMA100 allows an authenticated attacker to execute OS commands as a 'nobody' user. This vulnerability impacts SMA100 version 10.2.0.5 and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0004"
+    ],
+    "受影响版本": [
+      "10.2.0.5 and earlier"
+    ],
+    "公开日期": "2021年03月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall SMA100",
+    "CVE编号": "CVE-2021-20016",
+    "漏洞描述": "A SQL-Injection vulnerability in the SonicWall SSLVPN SMA100 product allows a remote unauthenticated attacker to perform SQL query to access username password and other session related information. This vulnerability impacts SMA100 build version 10.x.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0001"
+    ],
+    "受影响版本": [
+      "SMA100 build version 10.x"
+    ],
+    "公开日期": "2021年02月03日"
+  },
+  {
+    "设备品牌": "Huawei",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "IPS Module",
+    "CVE编号": "CVE-2020-9101",
+    "漏洞描述": "There is an out-of-bounds write vulnerability in some products. An unauthenticated attacker crafts malformed packets with specific parameter and sends the packets to the affected products. Due to insufficient validation of packets, which may be exploited to cause the process reboot. Affected product versions include: IPS Module versions V500R005C00, V500R005C10; NGFW Module versions V500R005C00, V500R005C10; Secospace USG6300 versions V500R001C30, V500R001C60, V500R005C00, V500R005C10; Secospace USG6500 versions V500R001C30, V500R001C60, V500R005C00, V500R005C10; Secospace USG6600 versions V500R001C30, V500R001C60, V500R005C00, V500R005C10; USG9500 versions V500R001C30, V500R001C60, V500R005C00, V500R005C10",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200715-01-outofboundswrite-en"
+    ],
+    "受影响版本": [
+      "V500R005C00",
+      "V500R005C10"
+    ],
+    "公开日期": "2020年07月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "IPS Module; NGFW Module; NIP6300; NIP6600; NIP6800; Secospace USG6300; Secospace USG6500; Secospace USG6600; USG9500",
+    "CVE编号": "CVE-2020-9099",
+    "漏洞描述": "Huawei products IPS Module; NGFW Module; NIP6300; NIP6600; NIP6800; Secospace USG6300; Secospace USG6500; Secospace USG6600; USG9500 with versions of V500R001C00; V500R001C20; V500R001C30; V500R001C50; V500R001C60; V500R001C80; V500R005C00; V500R005C10; V500R005C20; V500R002C00; V500R002C10; V500R002C20; V500R002C30 have an improper authentication vulnerability. Attackers need to perform some operations to exploit the vulnerability. Successful exploit may obtain certain permissions on the device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200506-02-authentication-en"
+    ],
+    "受影响版本": [
+      "V500R001C00",
+      "V500R001C20",
+      "V500R001C30",
+      "V500R001C50",
+      "V500R001C60",
+      "V500R001C80",
+      "V500R005C00",
+      "V500R005C10",
+      "V500R005C20",
+      "V500R002C00",
+      "V500R002C10",
+      "V500R002C20",
+      "V500R002C30"
+    ],
+    "公开日期": "2020年06月08日"
+  },
+  {
+    "设备品牌": "Kubernetes",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Kubernetes",
+    "CVE编号": "CVE-2020-8562",
+    "漏洞描述": "As mitigations to a report from 2019 and CVE-2020-8555, Kubernetes attempts to prevent proxied connections from accessing link-local or localhost networks when making user-driven connections to Services, Pods, Nodes, or StorageClass service providers. As part of this mitigation Kubernetes does a DNS name resolution check and validates that response IPs are not in the link-local (169.254.0.0/16) or localhost (127.0.0.0/8) range. Kubernetes then performs a second DNS resolution without validation for the actual connection. If a non-standard DNS server returns different non-cached responses, a user may be able to bypass the proxy IP restriction and access private networks on the control plane.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/kubernetes/kubernetes/issues/101493",
+      "https://groups.google.com/g/kubernetes-security-announce/c/-MFX60_wdOY",
+      "https://security.netapp.com/advisory/ntap-20220225-0002/"
+    ],
+    "受影响版本": [
+      "unspecified",
+      "next of v1.18.18",
+      "unspecified",
+      "next of v1.19.10",
+      "unspecified",
+      "next of v1.20.6",
+      "unspecified",
+      "next of v1.21.0"
+    ],
+    "公开日期": "2022年02月01日"
+  },
+  {
+    "设备品牌": "McAfee, LLC",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "McAfee Host Intrusion Prevention System (Host IPS) for Windows",
+    "CVE编号": "CVE-2020-7279",
+    "漏洞描述": "DLL Search Order Hijacking Vulnerability in the installer component of McAfee Host Intrusion Prevention System (Host IPS) for Windows prior to 8.0.0 Patch 15 Update allows attackers with local access to execute arbitrary code via execution from a compromised folder.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://kc.mcafee.com/corporate/index?page=content&id=SB10320"
+    ],
+    "受影响版本": [
+      "8.0.x"
+    ],
+    "公开日期": "2020年06月10日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Directory Services Connector",
+    "CVE编号": "CVE-2020-5148",
+    "漏洞描述": "SonicWall SSO-agent default configuration uses NetAPI to probe the associated IP's in the network, this client probing method allows a potential attacker to capture the password hash of the privileged user and potentially forces the SSO Agent to authenticate allowing an attacker to bypass firewall access controls.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0003"
+    ],
+    "受影响版本": [
+      "4.1.17 and earlier"
+    ],
+    "公开日期": "2021年03月05日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall NetExtender",
+    "CVE编号": "CVE-2020-5147",
+    "漏洞描述": "SonicWall NetExtender Windows client vulnerable to unquoted service path vulnerability, this allows a local attacker to gain elevated privileges in the host operating system. This vulnerability impact SonicWall NetExtender Windows client version 10.2.300 and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0023",
+      "http://packetstormsecurity.com/files/163857/SonicWall-NetExtender-10.2.0.300-Unquoted-Service-Path.html"
+    ],
+    "受影响版本": [
+      "10.2.300 and earlier"
+    ],
+    "公开日期": "2021年01月09日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2020-5146",
+    "漏洞描述": "A vulnerability in SonicWall SMA100 appliance allow an authenticated management-user to perform OS command injection using HTTP POST parameters. This vulnerability affected SMA100 Appliance version 10.2.0.2-20sv and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0022"
+    ],
+    "受影响版本": [
+      "10.2.0.2-20sv and earlier"
+    ],
+    "公开日期": "2021年01月09日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall Global VPN Client",
+    "CVE编号": "CVE-2020-5145",
+    "漏洞描述": "SonicWall Global VPN client version 4.10.4.0314 and earlier have an insecure library loading (DLL hijacking) vulnerability. Successful exploitation could lead to remote code execution in the target system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0021"
+    ],
+    "受影响版本": [
+      "4.10.4.0314 and earlier"
+    ],
+    "公开日期": "2020年10月28日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall Global VPN Client",
+    "CVE编号": "CVE-2020-5144",
+    "漏洞描述": "SonicWall Global VPN client version 4.10.4.0314 and earlier allows unprivileged windows user to elevate privileges to SYSTEM through loaded process hijacking vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0020"
+    ],
+    "受影响版本": [
+      "4.10.4.0314 and earlier"
+    ],
+    "公开日期": "2020年10月28日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2020-5132",
+    "漏洞描述": "SonicWall SSL-VPN products and SonicWall firewall SSL-VPN feature misconfiguration leads to possible DNS flaw known as domain name collision vulnerability. When the users publicly display their organization’s internal domain names in the SSL-VPN authentication page, an attacker with knowledge of internal domain names can potentially take advantage of this vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0006"
+    ],
+    "受影响版本": [
+      "SMA100 10.2.0.2-20sv"
+    ],
+    "公开日期": "2020年09月30日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SonicWall NetExtender",
+    "CVE编号": "CVE-2020-5131",
+    "漏洞描述": "SonicWall NetExtender Windows client vulnerable to arbitrary file write vulnerability, this allows attacker to overwrite a DLL and execute code with the same privilege in the host operating system. This vulnerability impact SonicWall NetExtender Windows client version 9.0.815 and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0004"
+    ],
+    "受影响版本": [
+      "9.0.815 and earlier"
+    ],
+    "公开日期": "2020年07月17日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "SMA1000",
+    "CVE编号": "CVE-2020-5129",
+    "漏洞描述": "A vulnerability in the SonicWall SMA1000 HTTP Extraweb server allows an unauthenticated remote attacker to cause HTTP server crash which leads to Denial of Service. This vulnerability affected SMA1000 Version 12.1.0-06411 and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0002"
+    ],
+    "受影响版本": [
+      "12.1.0-06411 and earlier"
+    ],
+    "公开日期": "2020年03月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-35559",
+    "漏洞描述": "An issue was discovered in MB CONNECT LINE mymbCONNECT24 and mbCONNECT24 through 2.6.2. There is an unused function that allows an authenticated attacker to use up all available IPs of an account and thus not allow creation of new devices and users.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://mbconnectline.com/security-advice/",
+      "https://cert.vde.com/de-de/advisories/vde-2021-003"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月16日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Fortinet FortiOS",
+    "CVE编号": "CVE-2020-15937",
+    "漏洞描述": "An improper neutralization of input vulnerability in FortiGate version 6.2.x below 6.2.5 and 6.4.x below 6.4.1 may allow a remote attacker to perform a stored cross site scripting attack (XSS) via the IPS and WAF logs dashboard.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://fortiguard.com/advisory/FG-IR-20-068"
+    ],
+    "受影响版本": [
+      "FortiOS 6.4.1, 6.2.5"
+    ],
+    "公开日期": "2021年03月03日"
+  },
+  {
+    "设备品牌": "autovance",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "ftp-srv",
+    "CVE编号": "CVE-2020-15152",
+    "漏洞描述": "ftp-srv is an npm package which is a modern and extensible FTP server designed to be simple yet configurable. In ftp-srv before versions 2.19.6, 3.1.2, and 4.3.4 are vulnerable to Server-Side Request Forgery. The PORT command allows arbitrary IPs which can be used to cause the server to make a connection elsewhere. A possible workaround is blocking the PORT through the configuration. This issue is fixed in version2 2.19.6, 3.1.2, and 4.3.4. More information can be found on the linked advisory.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/autovance/ftp-srv/security/advisories/GHSA-jw37-5gqr-cf9j",
+      "https://github.com/autovance/ftp-srv/commit/e449e75219d918c400dec65b4b0759f60476abca",
+      "https://www.npmjs.com/package/ftp-srv"
+    ],
+    "受影响版本": [
+      ">= 1.0.0, < 2.19.6",
+      ">= 3.0.0, < 3.1.2",
+      ">= 4.0.0, < 4.3.4"
+    ],
+    "公开日期": "2020年08月17日"
+  },
+  {
+    "设备品牌": "Qualcomm, Inc.",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "IPS PDF releases prior to IPS System 2020.2",
+    "CVE编号": "CVE-2020-11158",
+    "漏洞描述": "u'Null pointer dereference in HP OfficeJet Pro 8210 jbig2 filter due to lack of check of PDF font array leads to denial of service' in IPS PDF releases prior to IPS System 2020.2",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.qualcomm.com/company/product-security/bulletins/august-2020-bulletin"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年09月08日"
+  }
+]

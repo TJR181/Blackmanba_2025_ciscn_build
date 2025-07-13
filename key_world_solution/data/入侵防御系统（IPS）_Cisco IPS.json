@@ -1,0 +1,47 @@
+[
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cisco UTD SNORT IPS Engine Software",
+    "CVE编号": "CVE-2024-20508",
+    "漏洞描述": "A vulnerability in Cisco Unified Threat Defense (UTD) Snort Intrusion Prevention System (IPS) Engine for Cisco IOS XE Software could allow an unauthenticated, remote attacker to bypass configured security policies or cause a denial of service (DoS) condition on an affected device.\r\n\r\nThis vulnerability is due to insufficient validation of HTTP requests when they are processed by Cisco UTD Snort IPS Engine. An attacker could exploit this vulnerability by sending a crafted HTTP request through an affected device. A successful exploit could allow the attacker to trigger a reload of the Snort process.  If the action in case of Cisco UTD Snort IPS Engine failure is set to the default, fail-open, successful exploitation of this vulnerability could allow the attacker to bypass configured security policies. If the action in case of Cisco UTD Snort IPS Engine failure is set to fail-close, successful exploitation of this vulnerability could cause traffic that is configured to be inspected by Cisco UTD Snort IPS Engine to be dropped.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-utd-snort3-dos-bypas-b4OUEwxD"
+    ],
+    "受影响版本": [
+      "17.12.1a",
+      "17.12.2",
+      "17.13.1a",
+      "17.12.3",
+      "17.12.3a",
+      "17.15.1a",
+      "17.9.5a",
+      "17.6.1a",
+      "17.8.1a",
+      "17.6.2",
+      "17.7.2",
+      "17.12.4",
+      "17.14.1a",
+      "17.11.1a",
+      "17.7.1a",
+      "17.6.6"
+    ],
+    "公开日期": "2024年09月25日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cisco Firepower Threat Defense Software",
+    "CVE编号": "CVE-2024-20363",
+    "漏洞描述": "Multiple Cisco products are affected by a vulnerability in the Snort Intrusion Prevention System (IPS) rule engine that could allow an unauthenticated, remote attacker to bypass the configured rules on an affected system. This vulnerability is due to incorrect HTTP packet handling. An attacker could exploit this vulnerability by sending crafted HTTP packets through an affected device. A successful exploit could allow the attacker to bypass configured IPS rules and allow uninspected traffic onto the network.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-snort3-ips-bypass-uE69KBMd"
+    ],
+    "受影响版本": [
+      "7.4.0"
+    ],
+    "公开日期": "2024年05月22日"
+  }
+]

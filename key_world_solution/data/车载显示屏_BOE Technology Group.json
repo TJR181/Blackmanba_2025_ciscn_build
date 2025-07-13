@@ -1,0 +1,97 @@
+[
+  {
+    "设备品牌": "Gosuncn Technology Group",
+    "设备类型": "车载显示屏",
+    "产品型号": "Audio-Visual Integrated Management Platform",
+    "CVE编号": "CVE-2025-4536",
+    "漏洞描述": "A vulnerability has been found in Gosuncn Technology Group Audio-Visual Integrated Management Platform 1.0 and classified as critical. Affected by this vulnerability is an unknown functionality of the file /sysmgr/user/listByPage. The manipulation leads to information disclosure. The attack can be launched remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://wiki.shikangsi.com/post/share/ab0b0245-dc38-4b27-80e8-bc61de83692c"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2025年05月11日"
+  },
+  {
+    "设备品牌": "Gosuncn Technology Group",
+    "设备类型": "车载显示屏",
+    "产品型号": "Audio-Visual Integrated Management Platform",
+    "CVE编号": "CVE-2025-4535",
+    "漏洞描述": "A vulnerability, which was classified as problematic, was found in Gosuncn Technology Group Audio-Visual Integrated Management Platform 4.0. Affected is an unknown function of the file /config/config.properties of the component Configuration File Handler. The manipulation leads to information disclosure. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://wiki.shikangsi.com/post/share/d9f6cb0a-a673-472c-812c-7ba9545bfba8"
+    ],
+    "受影响版本": [
+      "4.0"
+    ],
+    "公开日期": "2025年05月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-28269",
+    "漏洞描述": "Soyal Technology 701Client 9.0.1 is vulnerable to Insecure permissions via client.exe binary with Authenticated Users group with Full permissions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.zeroscience.mk/en/vulnerabilities",
+      "https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5634.php",
+      "https://www.exploit-db.com/exploits/49679"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年04月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-28055",
+    "漏洞描述": "A vulnerability in the TCL Android Smart TV series V8-R851T02-LF1 V295 and below and V8-T658T01-LF1 V373 and below by TCL Technology Group Corporation allows a local unprivileged attacker, such as a malicious App, to read & write to the /data/vendor/tcl, /data/vendor/upgrade, and /var/TerminalManager directories within the TV file system. An attacker, such as a malicious APK or local unprivileged user could perform fake system upgrades by writing to the /data/vendor/upgrage folder.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://twitter.com/sickcodes/",
+      "https://twitter.com/johnjhacking/",
+      "https://sick.codes/extraordinary-vulnerabilities-discovered-in-tcl-android-tvs-now-worlds-3rd-largest-tv-manufacturer/",
+      "https://github.com/sickcodes/security/blob/master/advisories/SICK-2020-012.md",
+      "https://sick.codes/sick-2020-012",
+      "https://github.com/sickcodes/security/blob/master/etc/CVE-2020-27403_CVE-2020-28055_Press-Statement-and-Questions_11162020.pdf",
+      "https://github.com/sickcodes/security/blob/master/etc/CVE-2020-27403_CVE-2020-28055_GlobalFAQ.pdf",
+      "https://securityledger.com/2020/11/security-holes-opened-back-door-to-tcl-android-smart-tvs/",
+      "https://securityledger.com/2020/11/tv-maker-tcl-denies-back-door-promises-better-process/",
+      "https://support.tcl.com/vulnerabilities-found-in-tcl-android-tvs"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-27403",
+    "漏洞描述": "A vulnerability in the TCL Android Smart TV series V8-R851T02-LF1 V295 and below and V8-T658T01-LF1 V373 and below by TCL Technology Group Corporation allows an attacker on the adjacent network to arbitrarily browse and download sensitive files over an insecure web server running on port 7989 that lists all files & directories. An unprivileged remote attacker on the adjacent network, can download most system files, leading to serious critical information disclosure. Also, some TV models and/or FW versions may expose the webserver with the entire filesystem accessible on another port. For example, nmap scan for all ports run directly from the TV model U43P6046 (Android 8.0) showed port 7983 not mentioned in the original CVE description, but containing the same directory listing of the entire filesystem. This webserver is bound (at least) to localhost interface and accessible freely to all unprivileged installed apps on the Android such as a regular web browser. Any app can therefore read any files of any other apps including Android system settings including sensitive data such as saved passwords, private keys etc.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/sickcodes",
+      "https://github.com/sickcodes/security/blob/master/advisories/SICK-2020-009.md",
+      "https://sick.codes/sick-2020-009",
+      "https://sick.codes/extraordinary-vulnerabilities-discovered-in-tcl-android-tvs-now-worlds-3rd-largest-tv-manufacturer/",
+      "https://github.com/sickcodes/security/issues/1",
+      "https://github.com/sickcodes/security/blob/master/etc/CVE-2020-27403_CVE-2020-28055_Press-Statement-and-Questions_11162020.pdf",
+      "https://github.com/sickcodes/security/blob/master/etc/CVE-2020-27403_CVE-2020-28055_GlobalFAQ.pdf",
+      "https://securityledger.com/2020/11/security-holes-opened-back-door-to-tcl-android-smart-tvs/",
+      "https://securityledger.com/2020/11/tv-maker-tcl-denies-back-door-promises-better-process/",
+      "https://support.tcl.com/vulnerabilities-found-in-tcl-android-tvs"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月10日"
+  }
+]

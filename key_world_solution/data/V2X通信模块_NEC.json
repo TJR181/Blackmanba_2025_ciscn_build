@@ -1,0 +1,588 @@
+[
+  {
+    "设备品牌": "Linux",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-22022",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nusb: xhci: Apply the link chain quirk on NEC isoc endpoints\n\nTwo clearly different specimens of NEC uPD720200 (one with start/stop\nbug, one without) were seen to cause IOMMU faults after some Missed\nService Errors. Faulting address is immediately after a transfer ring\nsegment and patched dynamic debug messages revealed that the MSE was\nreceived when waiting for a TD near the end of that segment:\n\n[ 1.041954] xhci_hcd: Miss service interval error for slot 1 ep 2 expected TD DMA ffa08fe0\n[ 1.042120] xhci_hcd: AMD-Vi: Event logged [IO_PAGE_FAULT domain=0x0005 address=0xffa09000 flags=0x0000]\n[ 1.042146] xhci_hcd: AMD-Vi: Event logged [IO_PAGE_FAULT domain=0x0005 address=0xffa09040 flags=0x0000]\n\nIt gets even funnier if the next page is a ring segment accessible to\nthe HC. Below, it reports MSE in segment at ff1e8000, plows through a\nzero-filled page at ff1e9000 and starts reporting events for TRBs in\npage at ff1ea000 every microframe, instead of jumping to seg ff1e6000.\n\n[ 7.041671] xhci_hcd: Miss service interval error for slot 1 ep 2 expected TD DMA ff1e8fe0\n[ 7.041999] xhci_hcd: Miss service interval error for slot 1 ep 2 expected TD DMA ff1e8fe0\n[ 7.042011] xhci_hcd: WARN: buffer overrun event for slot 1 ep 2 on endpoint\n[ 7.042028] xhci_hcd: All TDs skipped for slot 1 ep 2. Clear skip flag.\n[ 7.042134] xhci_hcd: WARN: buffer overrun event for slot 1 ep 2 on endpoint\n[ 7.042138] xhci_hcd: ERROR Transfer event TRB DMA ptr not part of current TD ep_index 2 comp_code 31\n[ 7.042144] xhci_hcd: Looking for event-dma 00000000ff1ea040 trb-start 00000000ff1e6820 trb-end 00000000ff1e6820\n[ 7.042259] xhci_hcd: WARN: buffer overrun event for slot 1 ep 2 on endpoint\n[ 7.042262] xhci_hcd: ERROR Transfer event TRB DMA ptr not part of current TD ep_index 2 comp_code 31\n[ 7.042266] xhci_hcd: Looking for event-dma 00000000ff1ea050 trb-start 00000000ff1e6820 trb-end 00000000ff1e6820\n\nAt some point completion events change from Isoch Buffer Overrun to\nShort Packet and the HC finally finds cycle bit mismatch in ff1ec000.\n\n[ 7.098130] xhci_hcd: ERROR Transfer event TRB DMA ptr not part of current TD ep_index 2 comp_code 13\n[ 7.098132] xhci_hcd: Looking for event-dma 00000000ff1ecc50 trb-start 00000000ff1e6820 trb-end 00000000ff1e6820\n[ 7.098254] xhci_hcd: ERROR Transfer event TRB DMA ptr not part of current TD ep_index 2 comp_code 13\n[ 7.098256] xhci_hcd: Looking for event-dma 00000000ff1ecc60 trb-start 00000000ff1e6820 trb-end 00000000ff1e6820\n[ 7.098379] xhci_hcd: Overrun event on slot 1 ep 2\n\nIt's possible that data from the isochronous device were written to\nrandom buffers of pending TDs on other endpoints (either IN or OUT),\nother devices or even other HCs in the same IOMMU domain.\n\nLastly, an error from a different USB device on another HC. Was it\ncaused by the above? I don't know, but it may have been. The disk\nwas working without any other issues and generated PCIe traffic to\nstarve the NEC of upstream BW and trigger those MSEs. The two HCs\nshared one x1 slot by means of a commercial \"PCIe splitter\" board.\n\n[ 7.162604] usb 10-2: reset SuperSpeed USB device number 3 using xhci_hcd\n[ 7.178990] sd 9:0:0:0: [sdb] tag#0 UNKNOWN(0x2003) Result: hostbyte=0x07 driverbyte=DRIVER_OK cmd_age=0s\n[ 7.179001] sd 9:0:0:0: [sdb] tag#0 CDB: opcode=0x28 28 00 04 02 ae 00 00 02 00 00\n[ 7.179004] I/O error, dev sdb, sector 67284480 op 0x0:(READ) flags 0x80700 phys_seg 5 prio class 0\n\nFortunately, it appears that this ridiculous bug is avoided by setting\nthe chain bit of Link TRBs on isochronous rings. Other ancient HCs are\nknown which also expect the bit to be set and they ignore Link TRBs if\nit's not. Reportedly, 0.95 spec guaranteed that the bit is set.\n\nThe bandwidth-starved NEC HC running a 32KB/uframe UVC endpoint reports\ntens of MSEs per second and runs into the bug within seconds. Chaining\nLink TRBs allows the same workload to run for many minutes, many times.\n\nNo ne\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/a4931d9fb99eb5462f3eaa231999d279c40afb21",
+      "https://git.kernel.org/stable/c/43a18225150ce874d23b37761c302a5dffee1595",
+      "https://git.kernel.org/stable/c/061a1683bae6ef56ab8fa392725ba7495515cd1d",
+      "https://git.kernel.org/stable/c/bb0ba4cb1065e87f9cc75db1fa454e56d0894d01"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2025年04月16日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "WX1500HP",
+    "CVE编号": "CVE-2025-0356",
+    "漏洞描述": "NEC Corporation Aterm WX1500HP Ver.1.4.2 and earlier and WX3600HP Ver.1.5.3 and earlier allows a attacker to execute arbitrary OS commands via the network.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv25-003_en.html"
+    ],
+    "受影响版本": [
+      "Ver.1.4.2 and earlier"
+    ],
+    "公开日期": "2025年01月15日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "WG2600HS",
+    "CVE编号": "CVE-2025-0355",
+    "漏洞描述": "Missing Authentication for Critical Function vulnerability in NEC Corporation Aterm WG2600HS Ver.1.7.2 and earlier, WF1200CRS Ver.1.6.0 and earlier, WG1200CRS Ver.1.5.0 and earlier, GB1200PE Ver.1.3.0 and earlier, WG2600HP4 Ver.1.4.2 and earlier, WG2600HM4 Ver.1.4.2 and earlier, WG2600HS2 Ver.1.3.2 and earlier, WX3000HP Ver.2.4.2 and earlier and WX4200D5 Ver.1.2.4 and earlier allows a attacker to get a Wi-Fi password via the network.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv25-003_en.html"
+    ],
+    "受影响版本": [
+      "Ver.1.7.2 and earlier"
+    ],
+    "公开日期": "2025年01月15日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "WG2600HS",
+    "CVE编号": "CVE-2025-0354",
+    "漏洞描述": "Cross-site scripting vulnerability in NEC Corporation Aterm WG2600HS Ver.1.7.2 and earlier, WG2600HP4 Ver.1.4.2 and earlier, WG2600HM4 Ver.1.4.2 and earlier, WG2600HS2 Ver.1.3.2 and earlier, WX3000HP Ver.2.4.2 and earlier and WX4200D5 Ver.1.2.4 and earlier allows a attacker to inject an arbitrary script via the network.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv25-003_en.html"
+    ],
+    "受影响版本": [
+      "Ver.1.7.2 and earlier"
+    ],
+    "公开日期": "2025年01月15日"
+  },
+  {
+    "设备品牌": "Sharp NEC Display Solutions, Ltd.",
+    "设备类型": "V2X通信模块",
+    "产品型号": "NP-CB4500UL, NP-CB4500WL, NP-CB4700UL, NP-P525UL, NP-P525UL+, NP-P525ULG, NP-P525ULJL, NP-P525WL, NP-P525WL+, NP-P525WLG, NP-P525WLJL, NP-CG6500UL, NP-CG6500WL, NP-CG6700UL, NP-P605UL, NP-P605UL+, NP-P605ULG, NP-P605ULJL, NP-CA4120X, NP-CA4160W, NP-CA4160X, NP-CA4200U, NP-CA4200W, NP-CA4202W, NP-CA4260X, NP-CA4300X, NP-CA4355X, NP-CD2100U, NP-CD2120X, NP-CD2300X, NP-CR2100X, NP-CR2170W, NP-CR2170X, NP-CR2200U, NP-CR2200W, NP-CR2280X, NP-CR2310X, NP-CR2350X, NP-MC302XG, NP-MC332WG, NP-MC332WJL, NP-MC342XG, NP-MC372X, NP-MC372XG, NP-MC382W, NP-MC382WG, NP-MC422XG, NP-ME342UG, NP-ME372W, NP-ME372WG, NP-ME372WJL, NP-ME382U, NP-ME382UG, NP-ME382UJL, NP-ME402X, NP-ME402XG, NP-ME402XJL, NP-CB4500XL, NP-CG6400UL, NP-CG6400WL, NP-CG6500XL, NP-PE455UL, NP-PE455ULG, NP-PE455WL, NP-PE455WLG, NP-PE505XLG, NP-CB4600U, NP-CF6600U, NP-P474U, NP-P554U, NP-P554U+, NP-P554UG, NP-P554UJL, NP-CG6600UL, NP-P547UL, NP-P547ULG, NP-P547ULJL, NP-P607UL+, NP-P627UL, NP-P627UL+, NP-P627ULG, NP-P627ULJL, NP-PV710UL-B, NP-PV710UL-B1, NP-PV710UL-W, NP-PV710UL-W+, NP-PV710UL-W1, NP-PV730UL-BJL, NP-PV730UL-WJL, NP-PV800UL-B, NP-PV800UL-B+, NP-PV800UL-B1, NP-PV800UL-BJL, NP-PV800UL-W, NP-PV800UL-W+, NP-PV800UL-W1, NP-PV800UL-WJL, NP-CA4200X, NP-CA4265X, NP-CA4300U, NP-CA4300W, NP-CA4305X, NP-CA4400X, NP-CD2125X, NP-CD2200W, NP-CD2300U, NP-CD2310X, NP-CR2105X, NP-CR2200X, NP-CR2205W, NP-CR2300U, NP-CR2300W, NP-CR2315X, NP-CR2400X, NP-MC333XG, NP-MC363XG, NP-MC393WJL, NP-MC423W, NP-MC423WG, NP-MC453X, NP-MC453X, NP-MC453XG, NP-MC453XJL, NP-ME383WG, NP-ME403U, NP-ME403UG, NP-ME403UJL, NP-ME423W, NP-ME423WG, NP-ME423WJL, NP-ME453X, NP-ME453XG, NP-CB4400USL, NP-CB4400WSL, NP-CB4510UL, NP-CB4510WL, NP-CB4510XL, NP-CB4550USL, NP-CB6700UL, NP-CG6510UL, NP-PE456USL, NP-PE456USLG, NP-PE456USLJL, NP-PE456WSLG, NP-PE506UL, NP-PE506ULG, NP-PE506ULJL, NP-PE506WL, NP-PE506WLG, NP-PE506WLJL",
+    "CVE编号": "CVE-2024-7011",
+    "漏洞描述": "Sharp NEC Projectors (NP-CB4500UL, NP-CB4500WL, NP-CB4700UL, NP-P525UL, NP-P525UL+, NP-P525ULG, NP-P525ULJL, NP-P525WL, NP-P525WL+, NP-P525WLG, NP-P525WLJL, NP-CG6500UL, NP-CG6500WL, NP-CG6700UL, NP-P605UL, NP-P605UL+, NP-P605ULG, NP-P605ULJL, NP-CA4120X, NP-CA4160W, NP-CA4160X, NP-CA4200U, NP-CA4200W, NP-CA4202W, NP-CA4260X, NP-CA4300X, NP-CA4355X, NP-CD2100U, NP-CD2120X, NP-CD2300X, NP-CR2100X, NP-CR2170W, NP-CR2170X, NP-CR2200U, NP-CR2200W, NP-CR2280X, NP-CR2310X, NP-CR2350X, NP-MC302XG, NP-MC332WG, NP-MC332WJL, NP-MC342XG, NP-MC372X, NP-MC372XG, NP-MC382W, NP-MC382WG, NP-MC422XG, NP-ME342UG, NP-ME372W, NP-ME372WG, NP-ME372WJL, NP-ME382U, NP-ME382UG, NP-ME382UJL, NP-ME402X, NP-ME402XG, NP-ME402XJL, NP-CB4500XL, NP-CG6400UL, NP-CG6400WL, NP-CG6500XL, NP-PE455UL, NP-PE455ULG, NP-PE455WL, NP-PE455WLG, NP-PE505XLG, NP-CB4600U, NP-CF6600U, NP-P474U, NP-P554U, NP-P554U+, NP-P554UG, NP-P554UJL, NP-CG6600UL, NP-P547UL, NP-P547ULG, NP-P547ULJL, NP-P607UL+, NP-P627UL, NP-P627UL+, NP-P627ULG, NP-P627ULJL, NP-PV710UL-B, NP-PV710UL-B1, NP-PV710UL-W, NP-PV710UL-W+, NP-PV710UL-W1, NP-PV730UL-BJL, NP-PV730UL-WJL, NP-PV800UL-B, NP-PV800UL-B+, NP-PV800UL-B1, NP-PV800UL-BJL, NP-PV800UL-W, NP-PV800UL-W+, NP-PV800UL-W1, NP-PV800UL-WJL, NP-CA4200X, NP-CA4265X, NP-CA4300U, NP-CA4300W, NP-CA4305X, NP-CA4400X, NP-CD2125X, NP-CD2200W, NP-CD2300U, NP-CD2310X, NP-CR2105X, NP-CR2200X, NP-CR2205W, NP-CR2300U, NP-CR2300W, NP-CR2315X, NP-CR2400X, NP-MC333XG, NP-MC363XG, NP-MC393WJL, NP-MC423W, NP-MC423WG, NP-MC453X, NP-MC453X, NP-MC453XG, NP-MC453XJL, NP-ME383WG, NP-ME403U, NP-ME403UG, NP-ME403UJL, NP-ME423W, NP-ME423WG, NP-ME423WJL, NP-ME453X, NP-ME453XG, NP-CB4400USL, NP-CB4400WSL, NP-CB4510UL, NP-CB4510WL, NP-CB4510XL, NP-CB4550USL, NP-CB6700UL, NP-CG6510UL, NP-PE456USL, NP-PE456USLG, NP-PE456USLJL, NP-PE456WSLG, NP-PE506UL, NP-PE506ULG, NP-PE506ULJL, NP-PE506WL, NP-PE506WLG, NP-PE506WLJL) allows an attacker to cause a denial-of-service (DoS) condition via SNMP service.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.sharp-nec-displays.com/global/support/info/Projector_vulnerability_202408.html"
+    ],
+    "受影响版本": [
+      "all"
+    ],
+    "公开日期": "2024年09月27日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "WebSAM DeploymentManager",
+    "CVE编号": "CVE-2024-6466",
+    "漏洞描述": "NEC Corporation's WebSAM DeploymentManager v6.0 to v6.80 allows an attacker to reset configurations or restart products via network with X-FRAME-OPTIONS is not specified.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv15-019_en.html"
+    ],
+    "受影响版本": [
+      "from v6.0 to v6.80"
+    ],
+    "公开日期": "2025年01月21日"
+  },
+  {
+    "设备品牌": "NEC Platforms, Ltd",
+    "设备类型": "V2X通信模块",
+    "产品型号": "ITK-6DGS-1(BK) TEL",
+    "CVE编号": "CVE-2024-3016",
+    "漏洞描述": "NEC Platforms DT900 and DT900S Series 5.0.0.0 – v5.3.4.4, v5.4.0.0 – v5.6.0.20 allows an attacker to access a non-documented the system settings to change settings via local network with unauthenticated user.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv24-002_en.html"
+    ],
+    "受影响版本": [
+      "v5.0.0.0 – v5.3.4.4, v5.4.0.0 – v5.6.0.20"
+    ],
+    "公开日期": "2024年05月09日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "WG1800HP4",
+    "CVE编号": "CVE-2024-28016",
+    "漏洞描述": "Improper Access Controlvulnerability in NEC Corporation Aterm WG1800HP4, WG1200HS3, WG1900HP2, WG1200HP3, WG1800HP3, WG1200HS2, WG1900HP, WG1200HP2, W1200EX(-MS), WG1200HS, WG1200HP, WF300HP2, W300P, WF800HP, WR8165N, WG2200HP, WF1200HP2, WG1800HP2, WF1200HP, WG600HP, WG300HP, WF300HP, WG1800HP, WG1400HP, WR8175N, WR9300N, WR8750N, WR8160N, WR9500N, WR8600N, WR8370N, WR8170N, WR8700N, WR8300N, WR8150N, WR4100N, WR4500N, WR8100N, WR8500N, CR2500P, WR8400N, WR8200N, WR1200H, WR7870S, WR6670S, WR7850S, WR6650S, WR6600H, WR7800H, WM3400RN, WM3450RN, WM3500R, WM3600R, WM3800R, WR8166N, MR01LN MR02LN, WG1810HP(JE) and WG1810HP(MF) all versions allows a attacker to get device informations via the internet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv24-001_en.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2024年03月28日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "WG1800HP4",
+    "CVE编号": "CVE-2024-28015",
+    "漏洞描述": "Improper Neutralization of Special Elements used in an OS Command vulnerability in NEC Corporation Aterm WG1800HP4, WG1200HS3, WG1900HP2, WG1200HP3, WG1800HP3, WG1200HS2, WG1900HP, WG1200HP2, W1200EX(-MS), WG1200HS, WG1200HP, WF300HP2, W300P, WF800HP, WR8165N, WG2200HP, WF1200HP2, WG1800HP2, WF1200HP, WG600HP, WG300HP, WF300HP, WG1800HP, WG1400HP, WR8175N, WR9300N, WR8750N, WR8160N, WR9500N, WR8600N, WR8370N, WR8170N, WR8700N, WR8300N, WR8150N, WR4100N, WR4500N, WR8100N, WR8500N, CR2500P, WR8400N, WR8200N, WR1200H, WR7870S, WR6670S, WR7850S, WR6650S, WR6600H, WR7800H, WM3400RN, WM3450RN, WM3500R, WM3600R, WM3800R, WR8166N, MR01LN MR02LN, WG1810HP(JE) and WG1810HP(MF) all versions allows a attacker to execute an arbitrary OS command with the root privilege via the internet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv24-001_en.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2024年03月28日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "WG1800HP4",
+    "CVE编号": "CVE-2024-28014",
+    "漏洞描述": "Stack-based Buffer Overflow vulnerability in NEC Corporation Aterm WG1800HP4, WG1200HS3, WG1900HP2, WG1200HP3, WG1800HP3, WG1200HS2, WG1900HP, WG1200HP2, W1200EX(-MS), WG1200HS, WG1200HP, WF300HP2, W300P, WF800HP, WR8165N, WG2200HP, WF1200HP2, WG1800HP2, WF1200HP, WG600HP, WG300HP, WF300HP, WG1800HP, WG1400HP, WR8175N, WR9300N, WR8750N, WR8160N, WR9500N, WR8600N, WR8370N, WR8170N, WR8700N, WR8300N, WR8150N, WR4100N, WR4500N, WR8100N, WR8500N, CR2500P, WR8400N, WR8200N, WR1200H, WR7870S, WR6670S, WR7850S, WR6650S, WR6600H, WR7800H, WM3400RN, WM3450RN, WM3500R, WM3600R, WM3800R, WR8166N, MR01LN MR02LN, WG1810HP(JE) and WG1810HP(MF) all versions allows a attacker to execute an arbitrary command via the internet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv24-001_en.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2024年03月28日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "WG1800HP4",
+    "CVE编号": "CVE-2024-28013",
+    "漏洞描述": "Use of Insufficiently Random Values vulnerability in NEC Corporation Aterm WG1800HP4, WG1200HS3, WG1900HP2, WG1200HP3, WG1800HP3, WG1200HS2, WG1900HP, WG1200HP2, W1200EX(-MS), WG1200HS, WG1200HP, WF300HP2, W300P, WF800HP, WR8165N, WG2200HP, WF1200HP2, WG1800HP2, WF1200HP, WG600HP, WG300HP, WF300HP, WG1800HP, WG1400HP, WR8175N, WR9300N, WR8750N, WR8160N, WR9500N, WR8600N, WR8370N, WR8170N, WR8700N, WR8300N, WR8150N, WR4100N, WR4500N, WR8100N, WR8500N, CR2500P, WR8400N, WR8200N, WR1200H, WR7870S, WR6670S, WR7850S, WR6650S, WR6600H, WR7800H, WM3400RN, WM3450RN, WM3500R, WM3600R, WM3800R, WR8166N, MR01LN MR02LN, WG1810HP(JE) and WG1810HP(MF) all versions allows a attacker to change settings via the internet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv24-001_en.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2024年03月28日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "WG1800HP4",
+    "CVE编号": "CVE-2024-28012",
+    "漏洞描述": "Improper authentication vulnerability in NEC Corporation Aterm WG1800HP4, WG1200HS3, WG1900HP2, WG1200HP3, WG1800HP3, WG1200HS2, WG1900HP, WG1200HP2, W1200EX(-MS), WG1200HS, WG1200HP, WF300HP2, W300P, WF800HP, WR8165N, WG2200HP, WF1200HP2, WG1800HP2, WF1200HP, WG600HP, WG300HP, WF300HP, WG1800HP, WG1400HP, WR8175N, WR9300N, WR8750N, WR8160N, WR9500N, WR8600N, WR8370N, WR8170N, WR8700N, WR8300N, WR8150N, WR4100N, WR4500N, WR8100N, WR8500N, CR2500P, WR8400N, WR8200N, WR1200H, WR7870S, WR6670S, WR7850S, WR6650S, WR6600H, WR7800H, WM3400RN, WM3450RN, WM3500R, WM3600R, WM3800R, WR8166N, MR01LN MR02LN, WG1810HP(JE) and WG1810HP(MF) all versions allows a attacker to execute an arbitrary command with the root privilege via the internet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv24-001_en.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2024年03月28日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "WG1800HP4",
+    "CVE编号": "CVE-2024-28011",
+    "漏洞描述": "Hidden Functionality vulnerability in NEC Corporation Aterm WG1800HP4, WG1200HS3, WG1900HP2, WG1200HP3, WG1800HP3, WG1200HS2, WG1900HP, WG1200HP2, W1200EX(-MS), WG1200HS, WG1200HP, WF300HP2, W300P, WF800HP, WR8165N, WG2200HP, WF1200HP2, WG1800HP2, WF1200HP, WG600HP, WG300HP, WF300HP, WG1800HP, WG1400HP, WR8175N, WR9300N, WR8750N, WR8160N, WR9500N, WR8600N, WR8370N, WR8170N, WR8700N, WR8300N, WR8150N, WR4100N, WR4500N, WR8100N, WR8500N, CR2500P, WR8400N, WR8200N, WR1200H, WR7870S, WR6670S, WR7850S, WR6650S, WR6600H, WR7800H, WM3400RN, WM3450RN, WM3500R, WM3600R, WM3800R, WR8166N, MR01LN MR02LN, WG1810HP(JE) and WG1810HP(MF) all versions allows a attacker to execute an arbitrary OS command with the root privilege via the internet",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv24-001_en.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2024年03月28日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "WG1800HP4",
+    "CVE编号": "CVE-2024-28010",
+    "漏洞描述": "Use of Hard-coded Password in NEC Corporation Aterm WG1800HP4, WG1200HS3, WG1900HP2, WG1200HP3, WG1800HP3, WG1200HS2, WG1900HP, WG1200HP2, W1200EX(-MS), WG1200HS, WG1200HP, WF300HP2, W300P, WF800HP, WR8165N, WG2200HP, WF1200HP2, WG1800HP2, WF1200HP, WG600HP, WG300HP, WF300HP, WG1800HP, WG1400HP, WR8175N, WR9300N, WR8750N, WR8160N, WR9500N, WR8600N, WR8370N, WR8170N, WR8700N, WR8300N, WR8150N, WR4100N, WR4500N, WR8100N, WR8500N, CR2500P, WR8400N, WR8200N, WR1200H, WR7870S, WR6670S, WR7850S, WR6650S, WR6600H, WR7800H, WM3400RN, WM3450RN, WM3500R, WM3600R, WM3800R, WR8166N, MR01LN MR02LN, WG1810HP(JE) and WG1810HP(MF) all versions allows a attacker to execute an arbitrary OS command via the internet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv24-001_en.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2024年03月28日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "WG1800HP4",
+    "CVE编号": "CVE-2024-28009",
+    "漏洞描述": "Improper authentication vulnerability in NEC Corporation Aterm WG1800HP4, WG1200HS3, WG1900HP2, WG1200HP3, WG1800HP3, WG1200HS2, WG1900HP, WG1200HP2, W1200EX(-MS), WG1200HS, WG1200HP, WF300HP2, W300P, WF800HP, WR8165N, WG2200HP, WF1200HP2, WG1800HP2, WF1200HP, WG600HP, WG300HP, WF300HP, WG1800HP, WG1400HP, WR8175N, WR9300N, WR8750N, WR8160N, WR9500N, WR8600N, WR8370N, WR8170N, WR8700N, WR8300N, WR8150N, WR4100N, WR4500N, WR8100N, WR8500N, CR2500P, WR8400N, WR8200N, WR1200H, WR7870S, WR6670S, WR7850S, WR6650S, WR6600H, WR7800H, WM3400RN, WM3450RN, WM3500R, WM3600R, WM3800R, WR8166N, MR01LN MR02LN, WG1810HP(JE) and WG1810HP(MF) all versions allows a attacker to execute an arbitrary command with the root privilege via the internet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv24-001_en.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2024年03月28日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "WG1800HP4",
+    "CVE编号": "CVE-2024-28008",
+    "漏洞描述": "Active Debug Code in NEC Corporation Aterm WG1800HP4, WG1200HS3, WG1900HP2, WG1200HP3, WG1800HP3, WG1200HS2, WG1900HP, WG1200HP2, W1200EX(-MS), WG1200HS, WG1200HP, WF300HP2, W300P, WF800HP, WR8165N, WG2200HP, WF1200HP2, WG1800HP2, WF1200HP, WG600HP, WG300HP, WF300HP, WG1800HP, WG1400HP, WR8175N, WR9300N, WR8750N, WR8160N, WR9500N, WR8600N, WR8370N, WR8170N, WR8700N, WR8300N, WR8150N, WR4100N, WR4500N, WR8100N, WR8500N, CR2500P, WR8400N, WR8200N, WR1200H, WR7870S, WR6670S, WR7850S, WR6650S, WR6600H, WR7800H, WM3400RN, WM3450RN, WM3500R, WM3600R, WM3800R, WR8166N, MR01LN MR02LN, WG1810HP(JE) and WG1810HP(MF) all versions allows a attacker to execute an arbitrary OS command via the internet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv24-001_en.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2024年03月28日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "WG1800HP4",
+    "CVE编号": "CVE-2024-28007",
+    "漏洞描述": "Improper authentication vulnerability in NEC Corporation Aterm WG1800HP4, WG1200HS3, WG1900HP2, WG1200HP3, WG1800HP3, WG1200HS2, WG1900HP, WG1200HP2, W1200EX(-MS), WG1200HS, WG1200HP, WF300HP2, W300P, WF800HP, WR8165N, WG2200HP, WF1200HP2, WG1800HP2, WF1200HP, WG600HP, WG300HP, WF300HP, WG1800HP, WG1400HP, WR8175N, WR9300N, WR8750N, WR8160N, WR9500N, WR8600N, WR8370N, WR8170N, WR8700N, WR8300N, WR8150N, WR4100N, WR4500N, WR8100N, WR8500N, CR2500P, WR8400N, WR8200N, WR1200H, WR7870S, WR6670S, WR7850S, WR6650S, WR6600H, WR7800H, WM3400RN, WM3450RN, WM3500R, WM3600R, WM3800R, WR8166N, MR01LN MR02LN, WG1810HP(JE) and WG1810HP(MF) all versions allows a attacker to execute an arbitrary command with the root privilege via the internet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv24-001_en.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2024年03月28日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "WG1800HP4",
+    "CVE编号": "CVE-2024-28006",
+    "漏洞描述": "Improper authentication vulnerability in NEC Corporation Aterm WG1800HP4, WG1200HS3, WG1900HP2, WG1200HP3, WG1800HP3, WG1200HS2, WG1900HP, WG1200HP2, W1200EX(-MS), WG1200HS, WG1200HP, WF300HP2, W300P, WF800HP, WR8165N, WG2200HP, WF1200HP2, WG1800HP2, WF1200HP, WG600HP, WG300HP, WF300HP, WG1800HP, WG1400HP, WR8175N, WR9300N, WR8750N, WR8160N, WR9500N, WR8600N, WR8370N, WR8170N, WR8700N, WR8300N, WR8150N, WR4100N, WR4500N, WR8100N, WR8500N, CR2500P, WR8400N, WR8200N, WR1200H, WR7870S, WR6670S, WR7850S, WR6650S, WR6600H, WR7800H, WM3400RN, WM3450RN, WM3500R, WM3600R, WM3800R, WR8166N, MR01LN MR02LN, WG1810HP(JE) and WG1810HP(MF) all versions allows a attacker to view device information.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv24-001_en.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2024年03月28日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "UNIVERGE IX",
+    "CVE编号": "CVE-2024-11014",
+    "漏洞描述": "Cross-site request forgery (CSRF) vulnerability in NEC Corporation UNIVERGE IX from Ver9.2 to Ver10.10.21, for Ver10.8 up to Ver10.8.27 and for Ver10.9 up to Ver10.9.14 allows a attacker to hijack the authentication of screens on the device via the management interface.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://https://jpn.nec.com/security-info/secinfo/nv24-009_en.html"
+    ],
+    "受影响版本": [
+      "from Ver9.2 to Ver10.10.21"
+    ],
+    "公开日期": "2024年11月29日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "UNIVERGE IX",
+    "CVE编号": "CVE-2024-11013",
+    "漏洞描述": "Command Injection vulnerability in NEC Corporation UNIVERGE IX from Ver9.2 to Ver10.10.21, for Ver10.8 up to Ver10.8.27, for Ver10.9 up to Ver10.9.14 and UNIVERGE IX-R/IX-V Ver1.2.15 and earlier allows a attacker to inject an arbitrary CLI commands to be executed on the device via the management interface.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://https://jpn.nec.com/security-info/secinfo/nv24-009_en.html"
+    ],
+    "受影响版本": [
+      "from Ver9.2 to Ver10.10.21"
+    ],
+    "公开日期": "2024年11月29日"
+  },
+  {
+    "设备品牌": "Sharp NEC Display Solutions, Ltd.",
+    "设备类型": "V2X通信模块",
+    "产品型号": "P403, P463, P553, P703, P801, X554UN, X464UN, X554UNS, X464UNV, X474HB, X464UNS, X554UNV, X555UNS, X555UNV, X754HB, X554HB, E705, E805, E905, UN551S, UN551VS, X551UHD, X651UHD, X841UHD, X981UHD, MD551C8",
+    "CVE编号": "CVE-2023-7077",
+    "漏洞描述": "Sharp NEC Displays (P403, P463, P553, P703, P801, X554UN, X464UN, X554UNS, X464UNV, X474HB, X464UNS, X554UNV, X555UNS, X555UNV, X754HB, X554HB, E705, E805, E905, UN551S, UN551VS, X551UHD, X651UHD, X841UHD, X981UHD, MD551C8) allows an attacker execute remote code by sending unintended parameters in http request.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.sharp-nec-displays.com/global/support/info/A4_vulnerability.html"
+    ],
+    "受影响版本": [
+      "all"
+    ],
+    "公开日期": "2024年02月05日"
+  },
+  {
+    "设备品牌": "NEC Platforms, Ltd",
+    "设备类型": "V2X通信模块",
+    "产品型号": "ITK-6DGS-1(BK) TEL",
+    "CVE编号": "CVE-2023-3741",
+    "漏洞描述": "An OS Command injection vulnerability in NEC Platforms DT900 and DT900S Series all versions allows an attacker to execute any command on the device.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://https://jpn.nec.com/security-info/secinfo/nv23-011_en.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2023年11月30日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Aterm WG2600HP2",
+    "CVE编号": "CVE-2023-3333",
+    "漏洞描述": "Improper Neutralization of Special Elements used in an OS Command vulnerability in NEC Corporation Aterm WG2600HP2, WG2600HP, WG2200HP, WG1800HP2, WG1800HP, WG1400HP, WG600HP, WG300HP, WF300HP, WR9500N, WR9300N, WR8750N, WR8700N, WR8600N, WR8370N, WR8175N and WR8170N all versions allows a attacker to execute an arbitrary OS command with the root privilege, after obtaining a high privilege exploiting CVE-2023-3330 and CVE-2023-3331 vulnerabilities.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://https://jpn.nec.com/security-info/secinfo/nv23-007_en.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2023年06月28日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Aterm WG2600HP2",
+    "CVE编号": "CVE-2023-3332",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation vulnerability in NEC Corporation Aterm Aterm WG2600HP2, WG2600HP, WG2200HP, WG1800HP2, WG1800HP, WG1400HP, WG600HP, WG300HP, WF300HP, WR9500N, WR9300N, WR8750N, WR8700N, WR8600N, WR8370N, WR8175N and WR8170N all versions allows a attacker to \n\nexecute an arbitrary script, after obtaining a high privilege exploiting CVE-2023-3330 and CVE-2023-3331 vulnerabilities.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://https://jpn.nec.com/security-info/secinfo/nv23-007_en.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2023年06月28日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Aterm WG2600HP2",
+    "CVE编号": "CVE-2023-3331",
+    "漏洞描述": "Improper Limitation of a Pathname to a Restricted Directory vulnerability in NEC Corporation Aterm Aterm WG2600HP2, WG2600HP, WG2200HP, WG1800HP2, WG1800HP, WG1400HP, WG600HP, WG300HP, WF300HP, WR9500N, WR9300N, WR8750N, WR8700N, WR8600N, WR8370N, WR8175N and WR8170N all versions allows a attacker to delete\n\n specific files in the product.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://https://jpn.nec.com/security-info/secinfo/nv23-007_en.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2023年06月28日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Aterm WG2600HP2",
+    "CVE编号": "CVE-2023-3330",
+    "漏洞描述": "Improper Limitation of a Pathname to a Restricted Directory vulnerability in NEC Corporation Aterm WG2600HP2, WG2600HP, WG2200HP, WG1800HP2, WG1800HP, WG1400HP, WG600HP, WG300HP, WF300HP, WR9500N, WR9300N, WR8750N, WR8700N, WR8600N, WR8370N, WR8175N and WR8170N all versions allows a attacker to obtain specific files in the product.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv23-007_en.html"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2023年06月28日"
+  },
+  {
+    "设备品牌": "Hitachi and NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Hitachi Virtual File Platform and NEC Storage M Series NAS Gateway which uses Hitachi Virtual File Platform",
+    "CVE编号": "CVE-2021-20740",
+    "漏洞描述": "Hitachi Virtual File Platform Versions prior to 5.5.3-09 and Versions prior to 6.4.3-09, and NEC Storage M Series NAS Gateway Nh4a/Nh8a versions prior to FOS 5.5.3-08(NEC2.5.4a) and Nh4b/Nh8b, Nh4c/Nh8c versions prior to FOS 6.4.3-08(NEC3.4.2) allow remote authenticated attackers to execute arbitrary OS commands with root privileges via unspecified vectors.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.hitachi.co.jp/products/it/storage-solutions/global/sec_info/2021/2021_306.html",
+      "https://jpn.nec.com/security-info/secinfo/nv21-011.html",
+      "https://jvn.jp/en/jp/JVN21298724/index.html"
+    ],
+    "受影响版本": [
+      "Hitachi Virtual File Platform Versions prior to 5.5.3-09 and Versions prior to 6.4.3-09, and NEC Storage M Series NAS Gateway Nh4a/Nh8a versions prior to FOS 5.5.3-08(NEC2.5.4a) and Nh4b/Nh8b, Nh4c/Nh8c versions prior to FOS 6.4.3-08(NEC3.4.2)"
+    ],
+    "公开日期": "2021年06月28日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "NEC Aterm devices",
+    "CVE编号": "CVE-2021-20712",
+    "漏洞描述": "Improper access control vulnerability in NEC Aterm WG2600HS firmware Ver1.5.1 and earlier, and Aterm WX3000HP firmware Ver1.1.2 and earlier allows a device connected to the LAN side to be accessed from the WAN side due to the defect in the IPv6 firewall function.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv21-010.html",
+      "https://jvn.jp/en/jp/JVN29739718/index.html"
+    ],
+    "受影响版本": [
+      "Aterm WG2600HS firmware Ver1.5.1 and earlier, and Aterm WX3000HP firmware Ver1.1.2 and earlier"
+    ],
+    "公开日期": "2021年04月26日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "NEC Aterm devices",
+    "CVE编号": "CVE-2021-20709",
+    "漏洞描述": "Improper validation of integrity check value vulnerability in NEC Aterm WF1200CR firmware Ver1.3.2 and earlier, Aterm WG1200CR firmware Ver1.3.3 and earlier, and Aterm WG2600HS firmware Ver1.5.1 and earlier allows an attacker with an administrative privilege to execute arbitrary OS commands by sending a specially crafted request to a specific URL.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv21-010.html",
+      "https://jvn.jp/en/jp/JVN29739718/index.html"
+    ],
+    "受影响版本": [
+      "Aterm WF1200CR firmware Ver1.3.2 and earlier, Aterm WG1200CR firmware Ver1.3.3 and earlier, and Aterm WG2600HS firmware Ver1.5.1 and earlier"
+    ],
+    "公开日期": "2021年04月26日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "NEC Aterm devices",
+    "CVE编号": "CVE-2021-20708",
+    "漏洞描述": "NEC Aterm devices (Aterm WF1200CR firmware Ver1.3.2 and earlier, Aterm WG1200CR firmware Ver1.3.3 and earlier, and Aterm WG2600HS firmware Ver1.5.1 and earlier) allow authenticated attackers to execute arbitrary OS commands by sending a specially crafted request to a specific URL.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv21-010.html",
+      "https://jvn.jp/en/jp/JVN29739718/index.html"
+    ],
+    "受影响版本": [
+      "Aterm WF1200CR firmware Ver1.3.2 and earlier, Aterm WG1200CR firmware Ver1.3.3 and earlier, and Aterm WG2600HS firmware Ver1.5.1 and earlier"
+    ],
+    "公开日期": "2021年04月26日"
+  },
+  {
+    "设备品牌": "Sharp NEC Display Solutions, Ltd.",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Sharp NEC Displays",
+    "CVE编号": "CVE-2021-20699",
+    "漏洞描述": "Sharp NEC Displays ((UN462A R1.300 and prior to it, UN462VA R1.300 and prior to it, UN492S R1.300 and prior to it, UN492VS R1.300 and prior to it, UN552A R1.300 and prior to it, UN552S R1.300 and prior to it, UN552VS R1.300 and prior to it, UN552 R1.300 and prior to it, UN552V R1.300 and prior to it, UX552S R1.300 and prior to it, UX552 R1.300 and prior to it, V864Q R2.000 and prior to it, C861Q R2.000 and prior to it, P754Q R2.000 and prior to it, V754Q R2.000 and prior to it, C751Q R2.000 and prior to it, V984Q R2.000 and prior to it, C981Q R2.000 and prior to it, P654Q R2.000 and prior to it, V654Q R2.000 and prior to it, C651Q R2.000 and prior to it, V554Q R2.000 and prior to it, P404 R3.200 and prior to it, P484 R3.200 and prior to it, P554 R3.200 and prior to it, V404 R3.200 and prior to it, V484 R3.200 and prior to it, V554 R3.200 and prior to it, V404-T R3.200 and prior to it, V484-T R3.200 and prior to it, V554-T R3.200 and prior to it, C501 R2.000 and prior to it, C551 R2.000 and prior to it, C431 R2.000 and prior to it) allows an attacker a buffer overflow and to execute remote code by sending long parameters that contains specific characters in http request.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.sharp-nec-displays.com/global/support/info/A5-1_vulnerability.html"
+    ],
+    "受影响版本": [
+      "(UN462A R1.300 and prior to it, UN462VA R1.300 and prior to it, UN492S R1.300 and prior to it, UN492VS R1.300 and prior to it, UN552A R1.300 and prior to it, UN552S R1.300 and prior to it, UN552VS R1.300 and prior to it, UN552 R1.300 and prior to it, UN552V R1.300 and prior to it, UX552S R1.300 and prior to it, UX552 R1.300 and prior to it, V864Q R2.000 and prior to it, C861Q R2.000 and prior to it, P754Q R2.000 and prior to it, V754Q R2.000 and prior to it, C751Q R2.000 and prior to it, V984Q R2.000 and prior to it, C981Q R2.000 and prior to it, P654Q R2.000 and prior to it, V654Q R2.000 and prior to it, C651Q R2.000 and prior to it, V554Q R2.000 and prior to it, P404 R3.200 and prior to it, P484 R3.200 and prior to it, P554 R3.200 and prior to it, V404 R3.200 and prior to it, V484 R3.200 and prior to it, V554 R3.200 and prior to it, V404-T R3.200 and prior to it, V484-T R3.200 and prior to it, V554-T R3.200 and prior to it, C501 R2.000 and prior to it, C551 R2.000 and prior to it, C431 R2.00 ...[truncated*]"
+    ],
+    "公开日期": "2021年06月07日"
+  },
+  {
+    "设备品牌": "Sharp NEC Display Solutions, Ltd.",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Sharp NEC Displays",
+    "CVE编号": "CVE-2021-20698",
+    "漏洞描述": "Sharp NEC Displays (UN462A R1.300 and prior to it, UN462VA R1.300 and prior to it, UN492S R1.300 and prior to it, UN492VS R1.300 and prior to it, UN552A R1.300 and prior to it, UN552S R1.300 and prior to it, UN552VS R1.300 and prior to it, UN552 R1.300 and prior to it, UN552V R1.300 and prior to it, UX552S R1.300 and prior to it, UX552 R1.300 and prior to it, V864Q R2.000 and prior to it, C861Q R2.000 and prior to it, P754Q R2.000 and prior to it, V754Q R2.000 and prior to it, C751Q R2.000 and prior to it, V984Q R2.000 and prior to it, C981Q R2.000 and prior to it, P654Q R2.000 and prior to it, V654Q R2.000 and prior to it, C651Q R2.000 and prior to it, V554Q R2.000 and prior to it, P404 R3.200 and prior to it, P484 R3.200 and prior to it, P554 R3.200 and prior to it, V404 R3.200 and prior to it, V484 R3.200 and prior to it, V554 R3.200 and prior to it, V404-T R3.200 and prior to it, V484-T R3.200 and prior to it, V554-T R3.200 and prior to it, C501 R2.000 and prior to it, C551 R2.000 and prior to it, C431 R2.000 and prior to it) allows an attacker to obtain root privileges and execute remote code by sending unintended parameters that contain specific characters in http request.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.sharp-nec-displays.com/global/support/info/A5-1_vulnerability.html"
+    ],
+    "受影响版本": [
+      "UN462A R1.300 and prior to it, UN462VA R1.300 and prior to it, UN492S R1.300 and prior to it, UN492VS R1.300 and prior to it, UN552A R1.300 and prior to it, UN552S R1.300 and prior to it, UN552VS R1.300 and prior to it, UN552 R1.300 and prior to it, UN552V R1.300 and prior to it, UX552S R1.300 and prior to it, UX552 R1.300 and prior to it, V864Q R2.000 and prior to it, C861Q R2.000 and prior to it, P754Q R2.000 and prior to it, V754Q R2.000 and prior to it, C751Q R2.000 and prior to it, V984Q R2.000 and prior to it, C981Q R2.000 and prior to it, P654Q R2.000 and prior to it, V654Q R2.000 and prior to it, C651Q R2.000 and prior to it, V554Q R2.000 and prior to it, P404 R3.200 and prior to it, P484 R3.200 and prior to it, P554 R3.200 and prior to it, V404 R3.200 and prior to it, V484 R3.200 and prior to it, V554 R3.200 and prior to it, V404-T R3.200 and prior to it, V484-T R3.200 and prior to it, V554-T R3.200 and prior to it, C501 R2.000 and prior to it, C551 R2.000 and prior to it, C431 R2.000 and prior to it"
+    ],
+    "公开日期": "2021年06月07日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "NEC Aterm devices",
+    "CVE编号": "CVE-2021-20680",
+    "漏洞描述": "Cross-site scripting vulnerability in NEC Aterm devices (Aterm WG1900HP2 firmware Ver.1.3.1 and earlier, Aterm WG1900HP firmware Ver.2.5.1 and earlier, Aterm WG1800HP4 firmware Ver.1.3.1 and earlier, Aterm WG1800HP3 firmware Ver.1.5.1 and earlier, Aterm WG1200HS2 firmware Ver.2.5.0 and earlier, Aterm WG1200HP3 firmware Ver.1.3.1 and earlier, Aterm WG1200HP2 firmware Ver.2.5.0 and earlier, Aterm W1200EX firmware Ver.1.3.1 and earlier, Aterm W1200EX-MS firmware Ver.1.3.1 and earlier, Aterm WG1200HS firmware all versions Aterm WG1200HP firmware all versions Aterm WF800HP firmware all versions Aterm WF300HP2 firmware all versions Aterm WR8165N firmware all versions Aterm W500P firmware all versions, and Aterm W300P firmware all versions) allows remote attackers to inject arbitrary script or HTML via unspecified vectors.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv21-008.html",
+      "https://jvn.jp/en/jp/JVN67456944/index.html"
+    ],
+    "受影响版本": [
+      "Aterm WG1900HP2 firmware Ver.1.3.1 and earlier, Aterm WG1900HP firmware Ver.2.5.1 and earlier, Aterm WG1800HP4 firmware Ver.1.3.1 and earlier, Aterm WG1800HP3 firmware Ver.1.5.1 and earlier, Aterm WG1200HS2 firmware Ver.2.5.0 and earlier, Aterm WG1200HP3 firmware Ver.1.3.1 and earlier, Aterm WG1200HP2 firmware Ver.2.5.0 and earlier, Aterm W1200EX firmware Ver.1.3.1 and earlier, Aterm W1200EX-MS firmware Ver.1.3.1 and earlier, Aterm WG1200HS firmware all versions Aterm WG1200HP firmware all versions Aterm WF800HP firmware all versions Aterm WF300HP2 firmware all versions Aterm WR8165N firmware all versions Aterm W500P firmware all versions, and  Aterm W300P firmware all versions"
+    ],
+    "公开日期": "2021年04月26日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Management software for NEC Storage disk array system",
+    "CVE编号": "CVE-2020-5684",
+    "漏洞描述": "iSM client versions from V5.1 prior to V12.1 running on NEC Storage Manager or NEC Storage Manager Express does not verify a server certificate properly, which allows a man-in-the-middle attacker to eavesdrop on an encrypted communication or alter the communication via a crafted certificate.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv20-015.html",
+      "https://jvn.jp/en/jp/JVN10100024/index.html"
+    ],
+    "受影响版本": [
+      "iSM client versions from V5.1 prior to V12.1 running on NEC Storage Manager or NEC Storage Manager Express"
+    ],
+    "公开日期": "2020年12月24日"
+  },
+  {
+    "设备品牌": "NEC Corporation",
+    "设备类型": "V2X通信模块",
+    "产品型号": "Multiple NEC products where Baseboard Management Controller (BMC) firmware Rev1.09 and earlier is applied",
+    "CVE编号": "CVE-2020-5633",
+    "漏洞描述": "Multiple NEC products (Express5800/T110j, Express5800/T110j-S, Express5800/T110j (2nd-Gen), Express5800/T110j-S (2nd-Gen), iStorage NS100Ti, and Express5800/GT110j) where Baseboard Management Controller (BMC) firmware Rev1.09 and earlier is applied allows remote attackers to bypass authentication and then obtain/modify BMC setting information, obtain monitoring information, or reboot/shut down the vulnerable product via unspecified vectors.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jpn.nec.com/security-info/secinfo/nv21-002.html",
+      "https://www.support.nec.co.jp/View.aspx?id=9010108754",
+      "https://jvn.jp/en/jp/JVN38752718/index.html"
+    ],
+    "受影响版本": [
+      "Express5800/T110j, Express5800/T110j-S, Express5800/T110j (2nd-Gen), Express5800/T110j-S (2nd-Gen), iStorage NS100Ti, and Express5800/GT110j"
+    ],
+    "公开日期": "2021年01月13日"
+  },
+  {
+    "设备品牌": "NEC",
+    "设备类型": "V2X通信模块",
+    "产品型号": "ESMPRO Manager",
+    "CVE编号": "CVE-2020-27859",
+    "漏洞描述": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of NEC ESMPRO Manager 6.42. Authentication is not required to exploit this vulnerability. The specific flaw exists within the GetEuaLogDownloadAction class. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to disclose information in the context of SYSTEM. Was ZDI-CAN-9607.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-20-736/"
+    ],
+    "受影响版本": [
+      "6.42"
+    ],
+    "公开日期": "2021年01月20日"
+  },
+  {
+    "设备品牌": "NEC",
+    "设备类型": "V2X通信模块",
+    "产品型号": "ExpressCluster",
+    "CVE编号": "CVE-2020-17408",
+    "漏洞描述": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of NEC ExpressCluster 4.1. Authentication is not required to exploit this vulnerability. The specific flaw exists within the clpwebmc executable. Due to the improper restriction of XML External Entity (XXE) references, a specially-crafted document specifying a URI causes the XML parser to access the URI and embed the contents back into the XML document for further processing. An attacker can leverage this vulnerability to disclose information in the context of SYSTEM. Was ZDI-CAN-10801.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-20-1102/",
+      "https://www.support.nec.co.jp/en/View.aspx?id=9510100319"
+    ],
+    "受影响版本": [
+      "4.1"
+    ],
+    "公开日期": "2020年09月10日"
+  },
+  {
+    "设备品牌": "NEC",
+    "设备类型": "V2X通信模块",
+    "产品型号": "ESMPRO Manager",
+    "CVE编号": "CVE-2020-10917",
+    "漏洞描述": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of NEC ESMPRO Manager 6.42. Authentication is not required to exploit this vulnerability. The specific flaw exists within the RMI service. The issue results from the lack of proper validation of user-supplied data, which can result in deserialization of untrusted data. An attacker can leverage this vulnerability to execute code in the context of SYSTEM. Was ZDI-CAN-10007.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-20-684/"
+    ],
+    "受影响版本": [
+      "6.42"
+    ],
+    "公开日期": "2020年07月22日"
+  }
+]

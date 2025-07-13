@@ -1,0 +1,67 @@
+[
+  {
+    "设备品牌": "sierrawireless",
+    "设备类型": "车载通信网关",
+    "产品型号": "ALEOS",
+    "CVE编号": "CVE-2023-40458",
+    "漏洞描述": "Loop with Unreachable Exit Condition ('Infinite Loop') vulnerability in Sierra Wireless, Inc ALEOS could potentially allow a remote attacker to trigger a \nDenial of Service (DoS) condition for ACEManager without impairing \nother router functions. This condition is cleared by restarting the \ndevice.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://source.sierrawireless.com/resources/security-bulletins/sierra-wireless-technical-bulletin---swi-psa-2023-006/#sthash.5ZcnyPM1.dpbs"
+    ],
+    "受影响版本": [
+      "0",
+      "4.10.0"
+    ],
+    "公开日期": "2023年11月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载通信网关",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-38321",
+    "漏洞描述": "OpenNDS, as used in Sierra Wireless ALEOS before 4.17.0.12 and other products, allows remote attackers to cause a denial of service (NULL pointer dereference, daemon crash, and Captive Portal outage) via a GET request to /opennds_auth/ that lacks a custom query string parameter and client-token.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://openwrt.org/docs/guide-user/services/captive-portal/opennds",
+      "https://github.com/openNDS/openNDS/blob/master/ChangeLog",
+      "https://source.sierrawireless.com/-/media/support_downloads/security-bulletins/pdf/swi-psa-2023-006-r3.ashx"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年12月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载通信网关",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-8948",
+    "漏洞描述": "The Sierra Wireless Windows Mobile Broadband Driver Packages (MBDP) before build 5043 allows an unprivileged user to overwrite arbitrary files in arbitrary folders using hard links. An unprivileged user could leverage this vulnerability to execute arbitrary code with system privileges.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://danishcyberdefence.dk/blog/sierra_wireless",
+      "https://source.sierrawireless.com/resources/airlink/software_reference_docs/technical-bulletin/sierra-wireless-technical-bulletin---swi-psa-2020-002-cve-2020-8948/#sthash.ByZB8ifG.dpbs"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年04月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载通信网关",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-11101",
+    "漏洞描述": "Sierra Wireless AirLink Mobility Manager (AMM) before 2.17 mishandles sessions and thus an unauthenticated attacker can obtain a login session with administrator privileges.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.sierrawireless.com/company/security/",
+      "https://source.sierrawireless.com/-/media/support_downloads/security-bulletins/pdf/swi-psa-2020-007---amm-unauthenticated-login.ashx"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年12月26日"
+  }
+]

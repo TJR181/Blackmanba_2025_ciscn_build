@@ -1,0 +1,434 @@
+[
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Web Security Appliance (WSA) ",
+    "CVE编号": "CVE-2023-20120",
+    "漏洞描述": "Multiple vulnerabilities in the web-based management interface of Cisco AsyncOS Software for Cisco Secure Email and Web Manager; Cisco Secure Email Gateway, formerly Cisco Email Security Appliance (ESA); and Cisco Secure Web Appliance, formerly Cisco Web Security Appliance (WSA), could allow a remote attacker to conduct a cross-site scripting (XSS) attack against a user of the interface. For more information about these vulnerabilities, see the Details section of this advisory.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-sma-wsa-xss-cP9DuEmq"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年06月28日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Email Security Appliance (ESA)",
+    "CVE编号": "CVE-2023-20057",
+    "漏洞描述": "A vulnerability in the URL filtering mechanism of Cisco AsyncOS Software for Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to bypass the URL reputation filters on an affected device.\r\n\r This vulnerability is due to improper processing of URLs. An attacker could exploit this vulnerability by crafting a URL in a particular way. A successful exploit could allow the attacker to bypass the URL reputation filters that are configured for an affected device, which could allow malicious URLs to pass through the device.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-url-bypass-WbMQqNJh"
+    ],
+    "受影响版本": [
+      "10.0.1-087"
+    ],
+    "公开日期": "2023年01月19日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Web Security Appliance (WSA) ",
+    "CVE编号": "CVE-2023-20028",
+    "漏洞描述": "Multiple vulnerabilities in the web-based management interface of Cisco AsyncOS Software for Cisco Secure Email and Web Manager; Cisco Secure Email Gateway, formerly Cisco Email Security Appliance (ESA); and Cisco Secure Web Appliance, formerly Cisco Web Security Appliance (WSA), could allow a remote attacker to conduct a cross-site scripting (XSS) attack against a user of the interface. For more information about these vulnerabilities, see the Details section of this advisory.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-sma-wsa-xss-cP9DuEmq"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年06月28日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Secure Email",
+    "CVE编号": "CVE-2022-20960",
+    "漏洞描述": "A vulnerability in Cisco AsyncOS Software for Cisco Email Security Appliance (ESA) could allow an unauthenticated remote attacker to cause a denial of service (DoS) condition on an affected device.\r\n\r This vulnerability is due to improper handling of certain TLS connections that are processed by an affected device. An attacker could exploit this vulnerability by establishing a large number of concurrent TLS connections to an affected device. A successful exploit could allow the attacker to cause the device to drop new TLS email messages that come from the associated email servers. Exploitation of this vulnerability does not cause the affected device to unexpectedly reload. The device will recover autonomously within a few hours of when the attack is halted or mitigated.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-dos-gdghHmbV"
+    ],
+    "受影响版本": [
+      "11.0.3-238",
+      "11.1.0-069",
+      "11.1.0-128",
+      "11.1.0-131",
+      "12.0.0-419",
+      "12.1.0-071",
+      "12.1.0-087",
+      "12.1.0-089",
+      "12.5.0-066",
+      "13.0.0-392",
+      "13.5.1-277",
+      "14.0.0-698",
+      "14.2.0-620"
+    ],
+    "公开日期": "2022年11月03日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Secure Web Appliance",
+    "CVE编号": "CVE-2022-20942",
+    "漏洞描述": "A vulnerability in the web-based management interface of Cisco Email Security Appliance (ESA), Cisco Secure Email and Web Manager, and Cisco Secure Web Appliance, formerly known as Cisco Web Security Appliance (WSA), could allow an authenticated, remote attacker to retrieve sensitive information from an affected device, including user credentials.\r\n\r This vulnerability is due to weak enforcement of back-end authorization checks. An attacker could exploit this vulnerability by sending a crafted HTTP request to an affected device. A successful exploit could allow the attacker to obtain confidential data that is stored on the affected device.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cnt-sec-infodiscl-BVKKnUG"
+    ],
+    "受影响版本": [
+      "11.7.0-406",
+      "11.7.0-418",
+      "11.7.1-006",
+      "11.7.1-020",
+      "11.7.1-049",
+      "11.7.2-011",
+      "11.8.0-414",
+      "11.8.1-023",
+      "11.8.3-018",
+      "11.8.3-021",
+      "12.0.1-268",
+      "12.0.3-007",
+      "12.5.1-011",
+      "12.5.2-007"
+    ],
+    "公开日期": "2022年11月03日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Email Security Appliance (ESA)",
+    "CVE编号": "CVE-2022-20798",
+    "漏洞描述": "A vulnerability in the external authentication functionality of Cisco Secure Email and Web Manager, formerly known as Cisco Security Management Appliance (SMA), and Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to bypass authentication and log in to the web management interface of an affected device. This vulnerability is due to improper authentication checks when an affected device uses Lightweight Directory Access Protocol (LDAP) for external authentication. An attacker could exploit this vulnerability by entering a specific input on the login page of the affected device. A successful exploit could allow the attacker to gain unauthorized access to the web-based management interface of the affected device.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sma-esa-auth-bypass-66kEcxQD"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年06月15日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Secure Email",
+    "CVE编号": "CVE-2022-20772",
+    "漏洞描述": "A vulnerability in Cisco Email Security Appliance (ESA) and Cisco Secure Email and Web Manager could allow an unauthenticated, remote attacker to conduct an HTTP response splitting attack.\r\n\r This vulnerability is due to the failure of the application or its environment to properly sanitize input values. An attacker could exploit this vulnerability by injecting malicious HTTP headers, controlling the response body, or splitting the response into multiple responses.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ESA-HTTP-Inject-nvsycUmR"
+    ],
+    "受影响版本": [
+      "13.5.1-277",
+      "14.0.0-698",
+      "14.2.0-620"
+    ],
+    "公开日期": "2022年11月03日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Web Security Appliance (WSA)",
+    "CVE编号": "CVE-2022-20675",
+    "漏洞描述": "A vulnerability in the TCP/IP stack of Cisco Email Security Appliance (ESA), Cisco Web Security Appliance (WSA), and Cisco Secure Email and Web Manager, formerly Security Management Appliance, could allow an unauthenticated, remote attacker to crash the Simple Network Management Protocol (SNMP) service, resulting in a denial of service (DoS) condition. This vulnerability is due to an open port listener on TCP port 199. An attacker could exploit this vulnerability by connecting to TCP port 199. A successful exploit could allow the attacker to crash the SNMP service, resulting in a DoS condition.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ESA-SNMP-JLAJksWK"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年04月06日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Email Security Appliance (ESA)",
+    "CVE编号": "CVE-2022-20664",
+    "漏洞描述": "A vulnerability in the web management interface of Cisco Secure Email and Web Manager, formerly Cisco Security Management Appliance (SMA), and Cisco Email Security Appliance (ESA) could allow an authenticated, remote attacker to retrieve sensitive information from a Lightweight Directory Access Protocol (LDAP) external authentication server connected to an affected device. This vulnerability is due to a lack of proper input sanitization while querying the external authentication server. An attacker could exploit this vulnerability by sending a crafted query through an external authentication web page. A successful exploit could allow the attacker to gain access to sensitive information, including user credentials from the external authentication server. To exploit this vulnerability, an attacker would need valid operator-level (or higher) credentials.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esasma-info-dsc-Q9tLuOvM"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年06月15日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Email Security Appliance (ESA)",
+    "CVE编号": "CVE-2022-20653",
+    "漏洞描述": "A vulnerability in the DNS-based Authentication of Named Entities (DANE) email verification component of Cisco AsyncOS Software for Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected device. This vulnerability is due to insufficient error handling in DNS name resolution by the affected software. An attacker could exploit this vulnerability by sending specially formatted email messages that are processed by an affected device. A successful exploit could allow the attacker to cause the device to become unreachable from management interfaces or to process additional email messages for a period of time until the device recovers, resulting in a DoS condition. Continued attacks could cause the device to become completely unavailable, resulting in a persistent DoS condition.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-dos-MxZvGtgU"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年02月17日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Email Security Appliance (ESA)",
+    "CVE编号": "CVE-2021-34741",
+    "漏洞描述": "A vulnerability in the email scanning algorithm of Cisco AsyncOS software for Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to perform a denial of service (DoS) attack against an affected device. This vulnerability is due to insufficient input validation of incoming emails. An attacker could exploit this vulnerability by sending a crafted email through Cisco ESA. A successful exploit could allow the attacker to exhaust all the available CPU resources on an affected device for an extended period of time, preventing other emails from being processed and resulting in a DoS condition.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-dos-JOm9ETfO"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年11月04日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Web Security Appliance (WSA)",
+    "CVE编号": "CVE-2021-1566",
+    "漏洞描述": "A vulnerability in the Cisco Advanced Malware Protection (AMP) for Endpoints integration of Cisco AsyncOS for Cisco Email Security Appliance (ESA) and Cisco Web Security Appliance (WSA) could allow an unauthenticated, remote attacker to intercept traffic between an affected device and the AMP servers. This vulnerability is due to improper certificate validation when an affected device establishes TLS connections. A man-in-the-middle attacker could exploit this vulnerability by sending a crafted TLS packet to an affected device. A successful exploit could allow the attacker to spoof a trusted host and then extract sensitive information or alter certain API requests.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-wsa-cert-vali-n8L97RW"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年06月16日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Email Security Appliance (ESA)",
+    "CVE编号": "CVE-2021-1534",
+    "漏洞描述": "A vulnerability in the antispam protection mechanisms of Cisco AsyncOS Software for Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to bypass the URL reputation filters on an affected device. This vulnerability is due to improper processing of URLs. An attacker could exploit this vulnerability by crafting a URL in a particular way. A successful exploit could allow the attacker to bypass the URL reputation filters that are configured for an affected device, which could allow malicious URLs to pass through the device.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-url-bypass-sGcfsDrp"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年10月06日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Web Security Appliance (WSA)",
+    "CVE编号": "CVE-2021-1516",
+    "漏洞描述": "A vulnerability in the web-based management interface of Cisco AsyncOS Software for Cisco Content Security Management Appliance (SMA), Cisco Email Security Appliance (ESA), and Cisco Web Security Appliance (WSA) could allow an authenticated, remote attacker to access sensitive information on an affected device. The vulnerability exists because confidential information is included in HTTP requests that are exchanged between the user and the device. An attacker could exploit this vulnerability by looking at the raw HTTP requests that are sent to the interface. A successful exploit could allow the attacker to obtain some of the passwords that are configured throughout the interface.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-wsa-sma-info-gY2AEz2H"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年05月06日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Web Security Appliance (WSA)",
+    "CVE编号": "CVE-2021-1129",
+    "漏洞描述": "A vulnerability in the authentication for the general purpose APIs implementation of Cisco Email Security Appliance (ESA), Cisco Content Security Management Appliance (SMA), and Cisco Web Security Appliance (WSA) could allow an unauthenticated, remote attacker to access general system information and certain configuration information from an affected device. The vulnerability exists because a secure authentication token is not required when authenticating to the general purpose API. An attacker could exploit this vulnerability by sending a crafted request for information to the general purpose API on an affected device. A successful exploit could allow the attacker to obtain system and configuration information from the affected device, resulting in an unauthorized information disclosure.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-wsa-sma-info-RHp44vAC"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年01月20日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Email Security Appliance (ESA)",
+    "CVE编号": "CVE-2020-3568",
+    "漏洞描述": "A vulnerability in the antispam protection mechanisms of Cisco AsyncOS Software for Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to bypass the URL reputation filters on an affected device. The vulnerability is due to insufficient input validation of URLs. An attacker could exploit this vulnerability by crafting a URL in a particular way. A successful exploit could allow the attacker to bypass the URL reputation filters that are configured for the affected device, which could allow malicious URLs to pass through the device.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-url-bypass-zZtugtg3"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年10月08日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Secure Email",
+    "CVE编号": "CVE-2020-3548",
+    "漏洞描述": "A vulnerability in the Transport Layer Security (TLS) protocol implementation of Cisco&nbsp;AsyncOS software for Cisco&nbsp;Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to cause high CPU usage on an affected device, resulting in a denial of service (DoS) condition.\r\nThe vulnerability is due to inefficient processing of incoming TLS traffic. An attacker could exploit this vulnerability by sending a series of crafted TLS packets to an affected device. A successful exploit could allow the attacker to trigger a prolonged state of high CPU utilization. The affected device would still be operative, but response time and overall performance may be degraded.There are no workarounds that address this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-tls-dos-xW53TBhb"
+    ],
+    "受影响版本": [
+      "N/A"
+    ],
+    "公开日期": "2024年11月18日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Web Security Appliance (WSA)",
+    "CVE编号": "CVE-2020-3547",
+    "漏洞描述": "A vulnerability in the web-based management interface of Cisco AsyncOS software for Cisco Email Security Appliance (ESA), Cisco Content Security Management Appliance (SMA), and Cisco Web Security Appliance (WSA) could allow an authenticated, remote attacker to access sensitive information on an affected device. The vulnerability exists because an insecure method is used to mask certain passwords on the web-based management interface. An attacker could exploit this vulnerability by looking at the raw HTML code that is received from the interface. A successful exploit could allow the attacker to obtain some of the passwords configured throughout the interface.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sma-wsa-esa-info-dis-vsvPzOHP"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月04日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Email Security Appliance (ESA)",
+    "CVE编号": "CVE-2020-3546",
+    "漏洞描述": "A vulnerability in the web-based management interface of Cisco AsyncOS software for Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to access sensitive information on an affected device. The vulnerability is due to insufficient validation of requests that are sent to the web-based management interface. An attacker could exploit this vulnerability by sending a crafted request to the interface of an affected device. A successful exploit could allow the attacker to obtain the IP addresses that are configured on the internal interfaces of the affected device. There is a workaround that addresses this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-info-disclosure-vMJMMgJ"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月04日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Email Security Appliance (ESA)",
+    "CVE编号": "CVE-2020-3447",
+    "漏洞描述": "A vulnerability in the CLI of Cisco AsyncOS for Cisco Email Security Appliance (ESA) and Cisco AsyncOS for Cisco Content Security Management Appliance (SMA) could allow an authenticated, remote attacker to access sensitive information on an affected device. The vulnerability is due to excessive verbosity in certain log subscriptions. An attacker could exploit this vulnerability by accessing specific log files on an affected device. A successful exploit could allow the attacker to obtain sensitive log data, which may include user credentials. To exploit this vulnerability, the attacker would need to have valid credentials at the operator level or higher on the affected device.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-sma-log-YxQ6g2kG"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月17日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Email Security Appliance (ESA)",
+    "CVE编号": "CVE-2020-3368",
+    "漏洞描述": "A vulnerability in the antispam protection mechanisms of Cisco AsyncOS Software for Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to bypass the URL reputation filters on an affected device. The vulnerability is due to insufficient input validation of URLs. An attacker could exploit this vulnerability by crafting the URL in a particular way. A successful exploit could allow the attacker to bypass the URL reputation filters that are configured for the affected device, which could allow malicious URLs to pass through the device.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-url-bypass-WO4BZ75s"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月18日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Web Security Appliance (WSA)",
+    "CVE编号": "CVE-2020-3164",
+    "漏洞描述": "A vulnerability in the web-based management interface of Cisco AsyncOS for Cisco Email Security Appliance (ESA), Cisco Web Security Appliance (WSA), and Cisco Content Security Management Appliance (SMA) could allow an unauthenticated remote attacker to cause high CPU usage on an affected device, resulting in a denial of service (DoS) condition. The vulnerability is due to improper validation of specific HTTP request headers. An attacker could exploit this vulnerability by sending a malformed HTTP request to an affected device. A successful exploit could allow the attacker to trigger a prolonged status of high CPU utilization relative to the GUI process(es). Upon successful exploitation of this vulnerability, an affected device will still be operative, but its response time and overall performance may be degraded.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cont-sec-gui-dos-nJ625dXb"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年03月04日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Email Security Appliance (ESA)",
+    "CVE编号": "CVE-2020-3137",
+    "漏洞描述": "A vulnerability in the web-based management interface of Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to conduct a cross-site scripting (XSS) attack against a user of the web-based management interface of an affected device. The vulnerability exists because the web-based management interface of the affected device does not properly validate user-supplied input. An attacker could exploit this vulnerability by persuading a user to click a malicious link. A successful exploit could allow the attacker to execute arbitrary script code in the context of the affected interface or to access sensitive, browser-based information.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-email-sec-xss-EbjXuXwP"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月23日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Email Security Appliance (ESA)",
+    "CVE编号": "CVE-2020-3134",
+    "漏洞描述": "A vulnerability in the zip decompression engine of Cisco AsyncOS Software for Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected device. The vulnerability is due to improper validation of zip files. An attacker could exploit this vulnerability by sending an email message with a crafted zip-compressed attachment. A successful exploit could trigger a restart of the content-scanning process, causing a temporary DoS condition. This vulnerability affects Cisco AsyncOS Software for Cisco ESA releases earlier than 13.0.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-dos-87mBkc8n"
+    ],
+    "受影响版本": [
+      "earlier than 13.0"
+    ],
+    "公开日期": "2020年01月26日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Email Security Appliance (ESA)",
+    "CVE编号": "CVE-2020-3133",
+    "漏洞描述": "A vulnerability in the email message scanning of Cisco AsyncOS Software for Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to bypass configured filters on the device. The vulnerability is due to improper validation of incoming emails. An attacker could exploit this vulnerability by sending a crafted email message to a recipient protected by the ESA. A successful exploit could allow the attacker to bypass the configured content filters, which could allow malicious content to pass through the device.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-bypass-5Cdv2HMA"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月23日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Email Security Appliance (ESA)",
+    "CVE编号": "CVE-2020-3132",
+    "漏洞描述": "A vulnerability in the email message scanning feature of Cisco AsyncOS Software for Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to cause a temporary denial of service (DoS) condition on an affected device. The vulnerability is due to inadequate parsing mechanisms for specific email body components. An attacker could exploit this vulnerability by sending a malicious email containing a high number of shortened URLs through an affected device. A successful exploit could allow the attacker to consume processing resources, causing a DoS condition on an affected device. To successfully exploit this vulnerability, certain conditions beyond the control of the attacker must occur.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-shrt-dos-wM54R8qA"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年02月19日"
+  },
+  {
+    "设备品牌": "Cisco",
+    "设备类型": "邮件网关",
+    "产品型号": "Cisco Secure Email",
+    "CVE编号": "CVE-2020-26082",
+    "漏洞描述": "A vulnerability in the zip decompression engine of Cisco AsyncOS Software for Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to bypass content filters that are configured on an affected device.\r\n The vulnerability is due to improper handling of password-protected zip files. An attacker could exploit this vulnerability by sending a malicious file inside a crafted zip-compressed file to an affected device. A successful exploit could allow the attacker to bypass configured content filters that would normally drop the email.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-zip-bypass-gbU4gtTg"
+    ],
+    "受影响版本": [
+      "N/A"
+    ],
+    "公开日期": "2023年08月04日"
+  }
+]

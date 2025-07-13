@@ -1,0 +1,350 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2025-26167",
+    "漏洞描述": "Buffalo LS520D 4.53 is vulnerable to Arbitrary file read, which allows unauthenticated attackers to access the NAS web UI and read arbitrary internal files.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/SpikeReply/advisories/blob/0f15f5aefb959fbaff049da7cc3e36733e25b580/cve/buffalo/cve-2025-26167.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年03月06日"
+  },
+  {
+    "设备品牌": "BUFFALO INC.",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "WHR-1166DHP2",
+    "CVE编号": "CVE-2024-44072",
+    "漏洞描述": "OS command injection vulnerability exists in BUFFALO wireless LAN routers and wireless LAN repeaters. If a user logs in to the management page and sends a specially crafted request to the affected product from the product's specific management page, an arbitrary OS command may be executed.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.buffalo.jp/news/detail/20240719-01.html",
+      "https://jvn.jp/en/jp/JVN12824024/"
+    ],
+    "受影响版本": [
+      "Ver. 2.95 and earlier"
+    ],
+    "公开日期": "2024年09月10日"
+  },
+  {
+    "设备品牌": "BUFFALO INC.",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "WCR-1166DS",
+    "CVE编号": "CVE-2024-26023",
+    "漏洞描述": "OS command injection vulnerability in BUFFALO wireless LAN routers allows a logged-in user to execute arbitrary OS commands.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.buffalo.jp/news/detail/20240410-01.html",
+      "https://jvn.jp/en/jp/JVN58236836/"
+    ],
+    "受影响版本": [
+      "firmware Ver. 1.32 and earlier"
+    ],
+    "公开日期": "2024年04月15日"
+  },
+  {
+    "设备品牌": "BUFFALO INC.",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "WSR-2533DHP",
+    "CVE编号": "CVE-2024-23486",
+    "漏洞描述": "Plaintext storage of a password issue exists in BUFFALO wireless LAN routers, which may allow a network-adjacent unauthenticated attacker with access to the product's login page may obtain configured credentials.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.buffalo.jp/news/detail/20240410-01.html",
+      "https://jvn.jp/en/jp/JVN58236836/"
+    ],
+    "受影响版本": [
+      "firmware Ver. 1.06 and earlier"
+    ],
+    "公开日期": "2024年04月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-51073",
+    "漏洞描述": "An issue in Buffalo LS210D v.1.78-0.03 allows a remote attacker to execute arbitrary code via the Firmware Update Script at /etc/init.d/update_notifications.sh.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.buffalotech.com",
+      "https://github.com/christopher-pace/CVE-2023-51073/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年01月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-49038",
+    "漏洞描述": "Command injection in the ping utility on Buffalo LS210D 1.78-0.03 allows a remote authenticated attacker to inject arbitrary commands onto the NAS as root.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/christopher-pace/CVE-2023-49038"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年01月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-39620",
+    "漏洞描述": "An Issue in Buffalo America, Inc. TeraStation NAS TS5410R v.5.00 thru v.0.07 allows a remote attacker to obtain sensitive information via the guest account function.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/bcross520/bcross520.github.io/wiki/Buffalo-Terastation-NAS-Disabled-guest-built%E2%80%90in-account-allows-for-SMB%5CRPC-device-enumeration."
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年09月08日"
+  },
+  {
+    "设备品牌": "BUFFALO INC.",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "BS-GSL and BS-GS series",
+    "CVE编号": "CVE-2023-26588",
+    "漏洞描述": "Use of hard-coded credentials vulnerability in Buffalo network devices allows an attacker to access the debug function of the product. The affected products and versions are as follows: BS-GSL2024 firmware Ver. 1.10-0.03 and earlier, BS-GSL2016P firmware Ver. 1.10-0.03 and earlier, BS-GSL2016 firmware Ver. 1.10-0.03 and earlier, BS-GS2008 firmware Ver. 1.0.10.01 and earlier, BS-GS2016 firmware Ver. 1.0.10.01 and earlier, BS-GS2024 firmware Ver. 1.0.10.01 and earlier, BS-GS2048 firmware Ver. 1.0.10.01 and earlier, BS-GS2008P firmware Ver. 1.0.10.01 and earlier, BS-GS2016P firmware Ver. 1.0.10.01 and earlier, and BS-GS2024P firmware Ver. 1.0.10.01 and earlier",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.buffalo.jp/news/detail/20230310-01.html",
+      "https://jvn.jp/en/vu/JVNVU96824262/"
+    ],
+    "受影响版本": [
+      "BS-GSL2024 firmware Ver. 1.10-0.03 and earlier, BS-GSL2016P firmware Ver. 1.10-0.03 and earlier, BS-GSL2016 firmware Ver. 1.10-0.03 and earlier, BS-GS2008 firmware Ver. 1.0.10.01 and earlier, BS-GS2016 firmware Ver. 1.0.10.01 and earlier, BS-GS2024 firmware Ver. 1.0.10.01 and earlier, BS-GS2048 firmware Ver. 1.0.10.01 and earlier, BS-GS2008P firmware Ver. 1.0.10.01 and earlier, BS-GS2016P firmware Ver. 1.0.10.01 and earlier, and BS-GS2024P firmware Ver. 1.0.10.01 and earlier"
+    ],
+    "公开日期": "2023年04月11日"
+  },
+  {
+    "设备品牌": "BUFFALO INC.",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "BS-GSL and BS-GS series",
+    "CVE编号": "CVE-2023-24544",
+    "漏洞描述": "Improper access control vulnerability in Buffalo network devices allows a network-adjacent attacker to obtain specific files of the product. As a result, the product settings may be altered. The affected products and versions are as follows: BS-GSL2024 firmware Ver. 1.10-0.03 and earlier, BS-GSL2016P firmware Ver. 1.10-0.03 and earlier, BS-GSL2016 firmware Ver. 1.10-0.03 and earlier, BS-GS2008 firmware Ver. 1.0.10.01 and earlier, BS-GS2016 firmware Ver. 1.0.10.01 and earlier, BS-GS2024 firmware Ver. 1.0.10.01 and earlier, BS-GS2048 firmware Ver. 1.0.10.01 and earlier, BS-GS2008P firmware Ver. 1.0.10.01 and earlier, BS-GS2016P firmware Ver. 1.0.10.01 and earlier, and BS-GS2024P firmware Ver. 1.0.10.01 and earlier",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.buffalo.jp/news/detail/20230310-01.html",
+      "https://jvn.jp/en/vu/JVNVU96824262/"
+    ],
+    "受影响版本": [
+      "BS-GSL2024 firmware Ver. 1.10-0.03 and earlier, BS-GSL2016P firmware Ver. 1.10-0.03 and earlier, BS-GSL2016 firmware Ver. 1.10-0.03 and earlier, BS-GS2008 firmware Ver. 1.0.10.01 and earlier, BS-GS2016 firmware Ver. 1.0.10.01 and earlier, BS-GS2024 firmware Ver. 1.0.10.01 and earlier, BS-GS2048 firmware Ver. 1.0.10.01 and earlier, BS-GS2008P firmware Ver. 1.0.10.01 and earlier, BS-GS2016P firmware Ver. 1.0.10.01 and earlier, and BS-GS2024P firmware Ver. 1.0.10.01 and earlier"
+    ],
+    "公开日期": "2023年04月11日"
+  },
+  {
+    "设备品牌": "BUFFALO INC.",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "BS-GS series",
+    "CVE编号": "CVE-2023-24464",
+    "漏洞描述": "Stored-cross-site scripting vulnerability in Buffalo network devices allows an attacker with access to the web management console of the product to execute arbitrary JavaScript on a legitimate user's web browser. The affected products and versions are as follows: BS-GS2008 firmware Ver. 1.0.10.01 and earlier, BS-GS2016 firmware Ver. 1.0.10.01 and earlier, BS-GS2024 firmware Ver. 1.0.10.01 and earlier, BS-GS2048 firmware Ver. 1.0.10.01 and earlier, BS-GS2008P firmware Ver. 1.0.10.01 and earlier, BS-GS2016P firmware Ver. 1.0.10.01 and earlier, and BS-GS2024P firmware Ver. 1.0.10.01 and earlier",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.buffalo.jp/news/detail/20230310-01.html",
+      "https://jvn.jp/en/vu/JVNVU96824262/"
+    ],
+    "受影响版本": [
+      "BS-GS2008 firmware Ver. 1.0.10.01 and earlier, BS-GS2016 firmware Ver. 1.0.10.01 and earlier, BS-GS2024 firmware Ver. 1.0.10.01 and earlier, BS-GS2048 firmware Ver. 1.0.10.01 and earlier, BS-GS2008P firmware Ver. 1.0.10.01 and earlier, BS-GS2016P firmware Ver. 1.0.10.01 and earlier, and BS-GS2024P firmware Ver. 1.0.10.01 and earlier"
+    ],
+    "公开日期": "2023年04月11日"
+  },
+  {
+    "设备品牌": "BUFFALO INC.",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "WXR-5700AX7S",
+    "CVE编号": "CVE-2022-43486",
+    "漏洞描述": "Hidden functionality vulnerability in Buffalo network devices allows a network-adjacent attacker with an administrative privilege to enable the debug functionalities and execute an arbitrary command on the affected devices.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.buffalo.jp/news/detail/20240131-01.html",
+      "https://jvn.jp/en/vu/JVNVU97099584/"
+    ],
+    "受影响版本": [
+      "firmware Ver. 1.27 and earlier"
+    ],
+    "公开日期": "2022年12月19日"
+  },
+  {
+    "设备品牌": "BUFFALO INC.",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "WXR-5700AX7S",
+    "CVE编号": "CVE-2022-43466",
+    "漏洞描述": "OS command injection vulnerability in Buffalo network devices allows a network-adjacent attacker with an administrative privilege to execute an arbitrary OS command if a specially crafted request is sent to a specific CGI program.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.buffalo.jp/news/detail/20240131-01.html",
+      "https://jvn.jp/en/vu/JVNVU97099584/"
+    ],
+    "受影响版本": [
+      "firmware Ver. 1.27 and earlier"
+    ],
+    "公开日期": "2022年12月19日"
+  },
+  {
+    "设备品牌": "BUFFALO INC.",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "WXR-11000XE12",
+    "CVE编号": "CVE-2022-43443",
+    "漏洞描述": "OS command injection vulnerability in Buffalo network devices allows an network-adjacent attacker to execute an arbitrary OS command if a specially crafted request is sent to the management page.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.buffalo.jp/news/detail/20240131-01.html",
+      "https://jvn.jp/en/vu/JVNVU97099584/"
+    ],
+    "受影响版本": [
+      "firmware Ver. 1.10 and earlier"
+    ],
+    "公开日期": "2022年12月19日"
+  },
+  {
+    "设备品牌": "BUFFALO INC.",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "Buffalo network devices",
+    "CVE编号": "CVE-2022-40966",
+    "漏洞描述": "Authentication bypass vulnerability in multiple Buffalo network devices allows a network-adjacent attacker to bypass authentication and access the device. The affected products/versions are as follows: WCR-300 firmware Ver. 1.87 and earlier, WHR-HP-G300N firmware Ver. 2.00 and earlier, WHR-HP-GN firmware Ver. 1.87 and earlier, WPL-05G300 firmware Ver. 1.88 and earlier, WRM-D2133HP firmware Ver. 2.85 and earlier, WRM-D2133HS firmware Ver. 2.96 and earlier, WTR-M2133HP firmware Ver. 2.85 and earlier, WTR-M2133HS firmware Ver. 2.96 and earlier, WXR-1900DHP firmware Ver. 2.50 and earlier, WXR-1900DHP2 firmware Ver. 2.59 and earlier, WXR-1900DHP3 firmware Ver. 2.63 and earlier, WXR-5950AX12 firmware Ver. 3.40 and earlier, WXR-6000AX12B firmware Ver. 3.40 and earlier, WXR-6000AX12S firmware Ver. 3.40 and earlier, WZR-300HP firmware Ver. 2.00 and earlier, WZR-450HP firmware Ver. 2.00 and earlier, WZR-600DHP firmware Ver. 2.00 and earlier, WZR-900DHP firmware Ver. 1.15 and earlier, WZR-1750DHP2 firmware Ver. 2.31 and earlier, WZR-HP-AG300H firmware Ver. 1.76 and earlier, WZR-HP-G302H firmware Ver. 1.86 and earlier, WEM-1266 firmware Ver. 2.85 and earlier, WEM-1266WP firmware Ver. 2.85 and earlier, WLAE-AG300N firmware Ver. 1.86 and earlier, FS-600DHP firmware Ver. 3.40 and earlier, FS-G300N firmware Ver. 3.14 and earlier, FS-HP-G300N firmware Ver. 3.33 and earlier, FS-R600DHP firmware Ver. 3.40 and earlier, BHR-4GRV firmware Ver. 2.00 and earlier, DWR-HP-G300NH firmware Ver. 1.84 and earlier, DWR-PG firmware Ver. 1.83 and earlier, HW-450HP-ZWE firmware Ver. 2.00 and earlier, WER-A54G54 firmware Ver. 1.43 and earlier, WER-AG54 firmware Ver. 1.43 and earlier, WER-AM54G54 firmware Ver. 1.43 and earlier, WER-AMG54 firmware Ver. 1.43 and earlier, WHR-300 firmware Ver. 2.00 and earlier, WHR-300HP firmware Ver. 2.00 and earlier, WHR-AM54G54 firmware Ver. 1.43 and earlier, WHR-AMG54 firmware Ver. 1.43 and earlier, WHR-AMPG firmware Ver. 1.52 and earlier, WHR-G firmware Ver. 1.49 and earlier, WHR-G300N firmware Ver. 1.65 and earlier, WHR-G301N firmware Ver. 1.87 and earlier, WHR-G54S firmware Ver. 1.43 and earlier, WHR-G54S-NI firmware Ver. 1.24 and earlier, WHR-HP-AMPG firmware Ver. 1.43 and earlier, WHR-HP-G firmware Ver. 1.49 and earlier, WHR-HP-G54 firmware Ver. 1.43 and earlier, WLI-H4-D600 firmware Ver. 1.88 and earlier, WS024BF firmware Ver. 1.60 and earlier, WS024BF-NW firmware Ver. 1.60 and earlier, WXR-1750DHP firmware Ver. 2.60 and earlier, WXR-1750DHP2 firmware Ver. 2.60 and earlier, WZR-1166DHP firmware Ver. 2.18 and earlier, WZR-1166DHP2 firmware Ver. 2.18 and earlier, WZR-1750DHP firmware Ver. 2.30 and earlier, WZR2-G300N firmware Ver. 1.55 and earlier, WZR-450HP-CWT firmware Ver. 2.00 and earlier, WZR-450HP-UB firmware Ver. 2.00 and earlier, WZR-600DHP2 firmware Ver. 1.15 and earlier, WZR-600DHP3 firmware Ver. 2.19 and earlier, WZR-900DHP2 firmware Ver. 2.19 and earlier, WZR-AGL300NH firmware Ver. 1.55 and earlier, WZR-AMPG144NH firmware Ver. 1.49 and earlier, WZR-AMPG300NH firmware Ver. 1.51 and earlier, WZR-D1100H firmware Ver. 2.00 and earlier, WZR-G144N firmware Ver. 1.48 and earlier, WZR-G144NH firmware Ver. 1.48 and earlier, WZR-HP-G300NH firmware Ver. 1.84 and earlier, WZR-HP-G301NH firmware Ver. 1.84 and earlier, WZR-HP-G450H firmware Ver. 1.90 and earlier, WZR-S1750DHP firmware Ver. 2.32 and earlier, WZR-S600DHP firmware Ver. 2.19 and earlier, and WZR-S900DHP firmware Ver. 2.19 and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.buffalo.jp/news/detail/20221003-01.html",
+      "https://jvn.jp/en/vu/JVNVU92805279/index.html"
+    ],
+    "受影响版本": [
+      "A wide range of products is affected.  For the specific products/versions information, see the URLs  provided by the vendor and JVN which are listed in [Reference] section."
+    ],
+    "公开日期": "2022年12月07日"
+  },
+  {
+    "设备品牌": "BUFFALO INC.",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "Buffalo network devices",
+    "CVE编号": "CVE-2022-39044",
+    "漏洞描述": "Hidden functionality vulnerability in multiple Buffalo network devices allows a network-adjacent attacker with an administrative privilege to execute an arbitrary OS command. The affected products/versions are as follows: WCR-300 firmware Ver. 1.87 and earlier, WHR-HP-G300N firmware Ver. 2.00 and earlier, WHR-HP-GN firmware Ver. 1.87 and earlier, WPL-05G300 firmware Ver. 1.88 and earlier, WZR-300HP firmware Ver. 2.00 and earlier, WZR-450HP firmware Ver. 2.00 and earlier, WZR-600DHP firmware Ver. 2.00 and earlier, WZR-900DHP firmware Ver. 1.15 and earlier, WZR-HP-AG300H firmware Ver. 1.76 and earlier, WZR-HP-G302H firmware Ver. 1.86 and earlier, WLAE-AG300N firmware Ver. 1.86 and earlier, FS-600DHP firmware Ver. 3.40 and earlier, FS-G300N firmware Ver. 3.14 and earlier, FS-HP-G300N firmware Ver. 3.33 and earlier, FS-R600DHP firmware Ver. 3.40 and earlier, BHR-4GRV firmware Ver. 2.00 and earlier, DWR-HP-G300NH firmware Ver. 1.84 and earlier, DWR-PG firmware Ver. 1.83 and earlier, HW-450HP-ZWE firmware Ver. 2.00 and earlier, WER-A54G54 firmware Ver. 1.43 and earlier, WER-AG54 firmware Ver. 1.43 and earlier, WER-AM54G54 firmware Ver. 1.43 and earlier, WER-AMG54 firmware Ver. 1.43 and earlier, WHR-300 firmware Ver. 2.00 and earlier, WHR-300HP firmware Ver. 2.00 and earlier, WHR-AM54G54 firmware Ver. 1.43 and earlier, WHR-AMG54 firmware Ver. 1.43 and earlier, WHR-AMPG firmware Ver. 1.52 and earlier, WHR-G firmware Ver. 1.49 and earlier, WHR-G300N firmware Ver. 1.65 and earlier, WHR-G301N firmware Ver. 1.87 and earlier, WHR-G54S firmware Ver. 1.43 and earlier, WHR-G54S-NI firmware Ver. 1.24 and earlier, WHR-HP-AMPG firmware Ver. 1.43 and earlier, WHR-HP-G firmware Ver. 1.49 and earlier, WHR-HP-G54 firmware Ver. 1.43 and earlier, WLI-H4-D600 firmware Ver. 1.88 and earlier, WLI-TX4-AG300N firmware Ver. 1.53 and earlier, WS024BF firmware Ver. 1.60 and earlier, WS024BF-NW firmware Ver. 1.60 and earlier, WZR2-G108 firmware Ver. 1.33 and earlier, WZR2-G300N firmware Ver. 1.55 and earlier, WZR-450HP-CWT firmware Ver. 2.00 and earlier, WZR-450HP-UB firmware Ver. 2.00 and earlier, WZR-600DHP2 firmware Ver. 1.15 and earlier, WZR-AGL300NH firmware Ver. 1.55 and earlier, WZR-AMPG144NH firmware Ver. 1.49 and earlier, WZR-AMPG300NH firmware Ver. 1.51 and earlier, WZR-D1100H firmware Ver. 2.00 and earlier, WZR-G144N firmware Ver. 1.48 and earlier, WZR-G144NH firmware Ver. 1.48 and earlier, WZR-HP-G300NH firmware Ver. 1.84 and earlier, WZR-HP-G301NH firmware Ver. 1.84 and earlier, and WZR-HP-G450H firmware Ver. 1.90 and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.buffalo.jp/news/detail/20221003-01.html",
+      "https://jvn.jp/en/vu/JVNVU92805279/index.html"
+    ],
+    "受影响版本": [
+      "A wide range of products is affected.  For the specific products/versions information, see the URLs  provided by the vendor and JVN which are listed in [Reference] section."
+    ],
+    "公开日期": "2022年12月07日"
+  },
+  {
+    "设备品牌": "BUFFALO INC.",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "Buffalo network devices",
+    "CVE编号": "CVE-2022-34840",
+    "漏洞描述": "Use of hard-coded credentials vulnerability in multiple Buffalo network devices allows a network-adjacent attacker to alter?configuration settings of the device. The affected products/versions are as follows: WZR-300HP firmware Ver. 2.00 and earlier, WZR-450HP firmware Ver. 2.00 and earlier, WZR-600DHP firmware Ver. 2.00 and earlier, WZR-900DHP firmware Ver. 1.15 and earlier, HW-450HP-ZWE firmware Ver. 2.00 and earlier, WZR-450HP-CWT firmware Ver. 2.00 and earlier, WZR-450HP-UB firmware Ver. 2.00 and earlier, WZR-600DHP2 firmware Ver. 1.15 and earlier, and WZR-D1100H firmware Ver. 2.00 and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.buffalo.jp/news/detail/20221003-01.html",
+      "https://jvn.jp/en/vu/JVNVU92805279/index.html"
+    ],
+    "受影响版本": [
+      "WZR-300HP firmware Ver. 2.00 and earlier, WZR-450HP firmware Ver. 2.00 and earlier, WZR-600DHP firmware Ver. 2.00 and earlier, WZR-900DHP firmware Ver. 1.15 and earlier, HW-450HP-ZWE firmware Ver. 2.00 and earlier, WZR-450HP-CWT firmware Ver. 2.00 and earlier, WZR-450HP-UB firmware Ver. 2.00 and earlier, WZR-600DHP2 firmware Ver. 1.15 and earlier, and WZR-D1100H firmware Ver. 2.00 and earlier."
+    ],
+    "公开日期": "2022年12月07日"
+  },
+  {
+    "设备品牌": "BUFFALO INC.",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "Buffalo broadband routers",
+    "CVE编号": "CVE-2021-3512",
+    "漏洞描述": "Improper access control vulnerability in Buffalo broadband routers (BHR-4GRV firmware Ver.1.99 and prior, DWR-HP-G300NH firmware Ver.1.83 and prior, HW-450HP-ZWE firmware Ver.1.99 and prior, WHR-300HP firmware Ver.1.99 and prior, WHR-300 firmware Ver.1.99 and prior, WHR-G301N firmware Ver.1.86 and prior, WHR-HP-G300N firmware Ver.1.99 and prior, WHR-HP-GN firmware Ver.1.86 and prior, WPL-05G300 firmware Ver.1.87 and prior, WZR-450HP-CWT firmware Ver.1.99 and prior, WZR-450HP-UB firmware Ver.1.99 and prior, WZR-HP-AG300H firmware Ver.1.75 and prior, WZR-HP-G300NH firmware Ver.1.83 and prior, WZR-HP-G301NH firmware Ver.1.83 and prior, WZR-HP-G302H firmware Ver.1.85 and prior, WZR-HP-G450H firmware Ver.1.89 and prior, WZR-300HP firmware Ver.1.99 and prior, WZR-450HP firmware Ver.1.99 and prior, WZR-600DHP firmware Ver.1.99 and prior, WZR-D1100H firmware Ver.1.99 and prior, FS-HP-G300N firmware Ver.3.32 and prior, FS-600DHP firmware Ver.3.38 and prior, FS-R600DHP firmware Ver.3.39 and prior, and FS-G300N firmware Ver.3.13 and prior) allows remote unauthenticated attackers to bypass access restriction and to start telnet service and execute arbitrary OS commands with root privileges via unspecified vectors.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.buffalo.jp/news/detail/20210427-01.html",
+      "https://jvn.jp/en/vu/JVNVU99235714/index.html"
+    ],
+    "受影响版本": [
+      "BHR-4GRV firmware Ver.1.99 and prior, DWR-HP-G300NH firmware Ver.1.83 and prior, HW-450HP-ZWE firmware Ver.1.99 and prior, WHR-300HP firmware Ver.1.99 and prior, WHR-300 firmware Ver.1.99 and prior, WHR-G301N firmware Ver.1.86 and prior, WHR-HP-G300N firmware Ver.1.99 and prior, WHR-HP-GN firmware Ver.1.86 and prior, WPL-05G300 firmware Ver.1.87 and prior, WZR-450HP-CWT firmware Ver.1.99 and prior, WZR-450HP-UB firmware Ver.1.99 and prior, WZR-HP-AG300H firmware Ver.1.75 and prior, WZR-HP-G300NH firmware Ver.1.83 and prior, WZR-HP-G301NH firmware Ver.1.83 and prior, WZR-HP-G302H firmware Ver.1.85 and prior, WZR-HP-G450H firmware Ver.1.89 and prior, WZR-300HP firmware Ver.1.99 and prior, WZR-450HP firmware Ver.1.99 and prior, WZR-600DHP firmware Ver.1.99 and prior, WZR-D1100H firmware Ver.1.99 and prior, FS-HP-G300N firmware Ver.3.32 and prior, FS-600DHP firmware Ver.3.38 and prior, FS-R600DHP firmware Ver.3.39 and prior, and FS-G300N firmware Ver.3.13 and prior"
+    ],
+    "公开日期": "2021年04月28日"
+  },
+  {
+    "设备品牌": "BUFFALO INC.",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "Buffalo broadband routers",
+    "CVE编号": "CVE-2021-3511",
+    "漏洞描述": "Disclosure of sensitive information to an unauthorized user vulnerability in Buffalo broadband routers (BHR-4GRV firmware Ver.1.99 and prior, DWR-HP-G300NH firmware Ver.1.83 and prior, HW-450HP-ZWE firmware Ver.1.99 and prior, WHR-300HP firmware Ver.1.99 and prior, WHR-300 firmware Ver.1.99 and prior, WHR-G301N firmware Ver.1.86 and prior, WHR-HP-G300N firmware Ver.1.99 and prior, WHR-HP-GN firmware Ver.1.86 and prior, WPL-05G300 firmware Ver.1.87 and prior, WZR-450HP-CWT firmware Ver.1.99 and prior, WZR-450HP-UB firmware Ver.1.99 and prior, WZR-HP-AG300H firmware Ver.1.75 and prior, WZR-HP-G300NH firmware Ver.1.83 and prior, WZR-HP-G301NH firmware Ver.1.83 and prior, WZR-HP-G302H firmware Ver.1.85 and prior, WZR-HP-G450H firmware Ver.1.89 and prior, WZR-300HP firmware Ver.1.99 and prior, WZR-450HP firmware Ver.1.99 and prior, WZR-600DHP firmware Ver.1.99 and prior, WZR-D1100H firmware Ver.1.99 and prior, FS-HP-G300N firmware Ver.3.32 and prior, FS-600DHP firmware Ver.3.38 and prior, FS-R600DHP firmware Ver.3.39 and prior, and FS-G300N firmware Ver.3.13 and prior) allows remote unauthenticated attackers to obtain information such as configuration via unspecified vectors.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.buffalo.jp/news/detail/20210427-01.html",
+      "https://jvn.jp/en/vu/JVNVU99235714/index.html"
+    ],
+    "受影响版本": [
+      "BHR-4GRV firmware Ver.1.99 and prior, DWR-HP-G300NH firmware Ver.1.83 and prior, HW-450HP-ZWE firmware Ver.1.99 and prior, WHR-300HP firmware Ver.1.99 and prior, WHR-300 firmware Ver.1.99 and prior, WHR-G301N firmware Ver.1.86 and prior, WHR-HP-G300N firmware Ver.1.99 and prior, WHR-HP-GN firmware Ver.1.86 and prior, WPL-05G300 firmware Ver.1.87 and prior, WZR-450HP-CWT firmware Ver.1.99 and prior, WZR-450HP-UB firmware Ver.1.99 and prior, WZR-HP-AG300H firmware Ver.1.75 and prior, WZR-HP-G300NH firmware Ver.1.83 and prior, WZR-HP-G301NH firmware Ver.1.83 and prior, WZR-HP-G302H firmware Ver.1.85 and prior, WZR-HP-G450H firmware Ver.1.89 and prior, WZR-300HP firmware Ver.1.99 and prior, WZR-450HP firmware Ver.1.99 and prior, WZR-600DHP firmware Ver.1.99 and prior, WZR-D1100H firmware Ver.1.99 and prior, FS-HP-G300N firmware Ver.3.32 and prior, FS-600DHP firmware Ver.3.38 and prior, FS-R600DHP firmware Ver.3.39 and prior, and FS-G300N firmware Ver.3.13 and prior"
+    ],
+    "公开日期": "2021年04月28日"
+  },
+  {
+    "设备品牌": "BUFFALO INC.",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "Buffalo network devices",
+    "CVE编号": "CVE-2021-20716",
+    "漏洞描述": "Hidden functionality in multiple Buffalo network devices (BHR-4RV firmware Ver.2.55 and prior, FS-G54 firmware Ver.2.04 and prior, WBR2-B11 firmware Ver.2.32 and prior, WBR2-G54 firmware Ver.2.32 and prior, WBR2-G54-KD firmware Ver.2.32 and prior, WBR-B11 firmware Ver.2.23 and prior, WBR-G54 firmware Ver.2.23 and prior, WBR-G54L firmware Ver.2.20 and prior, WHR2-A54G54 firmware Ver.2.25 and prior, WHR2-G54 firmware Ver.2.23 and prior, WHR2-G54V firmware Ver.2.55 and prior, WHR3-AG54 firmware Ver.2.23 and prior, WHR-G54 firmware Ver.2.16 and prior, WHR-G54-NF firmware Ver.2.10 and prior, WLA2-G54 firmware Ver.2.24 and prior, WLA2-G54C firmware Ver.2.24 and prior, WLA-B11 firmware Ver.2.20 and prior, WLA-G54 firmware Ver.2.20 and prior, WLA-G54C firmware Ver.2.20 and prior, WLAH-A54G54 firmware Ver.2.54 and prior, WLAH-AM54G54 firmware Ver.2.54 and prior, WLAH-G54 firmware Ver.2.54 and prior, WLI2-TX1-AG54 firmware Ver.2.53 and prior, WLI2-TX1-AMG54 firmware Ver.2.53 and prior, WLI2-TX1-G54 firmware Ver.2.20 and prior, WLI3-TX1-AMG54 firmware Ver.2.53 and prior, WLI3-TX1-G54 firmware Ver.2.53 and prior, WLI-T1-B11 firmware Ver.2.20 and prior, WLI-TX1-G54 firmware Ver.2.20 and prior, WVR-G54-NF firmware Ver.2.02 and prior, WZR-G108 firmware Ver.2.41 and prior, WZR-G54 firmware Ver.2.41 and prior, WZR-HP-G54 firmware Ver.2.41 and prior, WZR-RS-G54 firmware Ver.2.55 and prior, and WZR-RS-G54HP firmware Ver.2.55 and prior) allows a remote attacker to enable the debug option and to execute arbitrary code or OS commands, change the configuration, and cause a denial of service (DoS) condition.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.buffalo.jp/news/detail/20210427-02.html",
+      "https://jvn.jp/en/vu/JVNVU90274525/index.html"
+    ],
+    "受影响版本": [
+      "BHR-4RV firmware Ver.2.55 and prior, FS-G54 firmware Ver.2.04 and prior, WBR2-B11 firmware Ver.2.32 and prior, WBR2-G54 firmware Ver.2.32 and prior, WBR2-G54-KD firmware Ver.2.32 and prior, WBR-B11 firmware Ver.2.23 and prior, WBR-G54 firmware Ver.2.23 and prior, WBR-G54L firmware Ver.2.20 and prior, WHR2-A54G54 firmware Ver.2.25 and prior, WHR2-G54 firmware Ver.2.23 and prior, WHR2-G54V firmware Ver.2.55 and prior, WHR3-AG54 firmware Ver.2.23 and prior, WHR-G54 firmware Ver.2.16 and prior, WHR-G54-NF firmware Ver.2.10 and prior, WLA2-G54 firmware Ver.2.24 and prior, WLA2-G54C firmware Ver.2.24 and prior, WLA-B11 firmware Ver.2.20 and prior, WLA-G54 firmware Ver.2.20 and prior, WLA-G54C firmware Ver.2.20 and prior, WLAH-A54G54 firmware Ver.2.54 and prior, WLAH-AM54G54 firmware Ver.2.54 and prior, WLAH-G54 firmware Ver.2.54 and prior, WLI2-TX1-AG54 firmware Ver.2.53 and prior, WLI2-TX1-AMG54 firmware Ver.2.53 and prior, WLI2-TX1-G54 firmware Ver.2.20 and prior, WLI3-TX1-AMG54 firmware Ver.2.53  ...[truncated*]"
+    ],
+    "公开日期": "2021年04月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "Buffalo WSR-2533DHPL2, Buffalo WSR-2533DHP3",
+    "CVE编号": "CVE-2021-20092",
+    "漏洞描述": "The web interfaces of Buffalo WSR-2533DHPL2 firmware version <= 1.02 and WSR-2533DHP3 firmware version <= 1.24 do not properly restrict access to sensitive information from an unauthorized actor.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.tenable.com/security/research/tra-2021-13"
+    ],
+    "受影响版本": [
+      "WSR-2533DHPL2 <=1.02, WSR-2533DHP3 <= 1.24"
+    ],
+    "公开日期": "2021年04月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "Buffalo WSR-2533DHPL2, Buffalo WSR-2533DHP3",
+    "CVE编号": "CVE-2021-20091",
+    "漏洞描述": "The web interfaces of Buffalo WSR-2533DHPL2 firmware version <= 1.02 and WSR-2533DHP3 firmware version <= 1.24 do not properly sanitize user input. An authenticated remote attacker could leverage this vulnerability to alter device configuration, potentially gaining remote code execution.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.tenable.com/security/research/tra-2021-13"
+    ],
+    "受影响版本": [
+      "WSR-2533DHPL2 <=1.02, WSR-2533DHP3 <= 1.24"
+    ],
+    "公开日期": "2021年04月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络存储设备（NAS）",
+    "产品型号": "Buffalo WSR-2533DHPL2, Buffalo WSR-2533DHP3",
+    "CVE编号": "CVE-2021-20090",
+    "漏洞描述": "A path traversal vulnerability in the web interfaces of Buffalo WSR-2533DHPL2 firmware version <= 1.02 and WSR-2533DHP3 firmware version <= 1.24 could allow unauthenticated remote attackers to bypass authentication.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.tenable.com/security/research/tra-2021-13",
+      "https://www.kb.cert.org/vuls/id/914124",
+      "https://www.secpod.com/blog/arcadyan-based-routers-and-modems-under-active-exploitation/"
+    ],
+    "受影响版本": [
+      "WSR-2533DHPL2 <=1.02, WSR-2533DHP3 <= 1.24"
+    ],
+    "公开日期": "2021年04月29日"
+  }
+]

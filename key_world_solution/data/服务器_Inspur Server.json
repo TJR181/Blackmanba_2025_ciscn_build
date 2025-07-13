@@ -1,0 +1,93 @@
+[
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-56629",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nHID: wacom: fix when get product name maybe null pointer\n\nDue to incorrect dev->product reporting by certain devices, null\npointer dereferences occur when dev->product is empty, leading to\npotential system crashes.\n\nThis issue was found on EXCELSIOR DL37-D05 device with\nLoongson-LS3A6000-7A2000-DL37 motherboard.\n\nKernel logs:\n[   56.470885] usb 4-3: new full-speed USB device number 4 using ohci-pci\n[   56.671638] usb 4-3: string descriptor 0 read error: -22\n[   56.671644] usb 4-3: New USB device found, idVendor=056a, idProduct=0374, bcdDevice= 1.07\n[   56.671647] usb 4-3: New USB device strings: Mfr=1, Product=2, SerialNumber=3\n[   56.678839] hid-generic 0003:056A:0374.0004: hiddev0,hidraw3: USB HID v1.10 Device [HID 056a:0374] on usb-0000:00:05.0-3/input0\n[   56.697719] CPU 2 Unable to handle kernel paging request at virtual address 0000000000000000, era == 90000000066e35c8, ra == ffff800004f98a80\n[   56.697732] Oops[#1]:\n[   56.697734] CPU: 2 PID: 2742 Comm: (udev-worker) Tainted: G           OE      6.6.0-loong64-desktop #25.00.2000.015\n[   56.697737] Hardware name: Inspur CE520L2/C09901N000000000, BIOS 2.09.00 10/11/2024\n[   56.697739] pc 90000000066e35c8 ra ffff800004f98a80 tp 9000000125478000 sp 900000012547b8a0\n[   56.697741] a0 0000000000000000 a1 ffff800004818b28 a2 0000000000000000 a3 0000000000000000\n[   56.697743] a4 900000012547b8f0 a5 0000000000000000 a6 0000000000000000 a7 0000000000000000\n[   56.697745] t0 ffff800004818b2d t1 0000000000000000 t2 0000000000000003 t3 0000000000000005\n[   56.697747] t4 0000000000000000 t5 0000000000000000 t6 0000000000000000 t7 0000000000000000\n[   56.697748] t8 0000000000000000 u0 0000000000000000 s9 0000000000000000 s0 900000011aa48028\n[   56.697750] s1 0000000000000000 s2 0000000000000000 s3 ffff800004818e80 s4 ffff800004810000\n[   56.697751] s5 90000001000b98d0 s6 ffff800004811f88 s7 ffff800005470440 s8 0000000000000000\n[   56.697753]    ra: ffff800004f98a80 wacom_update_name+0xe0/0x300 [wacom]\n[   56.697802]   ERA: 90000000066e35c8 strstr+0x28/0x120\n[   56.697806]  CRMD: 000000b0 (PLV0 -IE -DA +PG DACF=CC DACM=CC -WE)\n[   56.697816]  PRMD: 0000000c (PPLV0 +PIE +PWE)\n[   56.697821]  EUEN: 00000000 (-FPE -SXE -ASXE -BTE)\n[   56.697827]  ECFG: 00071c1d (LIE=0,2-4,10-12 VS=7)\n[   56.697831] ESTAT: 00010000 [PIL] (IS= ECode=1 EsubCode=0)\n[   56.697835]  BADV: 0000000000000000\n[   56.697836]  PRID: 0014d000 (Loongson-64bit, Loongson-3A6000)\n[   56.697838] Modules linked in: wacom(+) bnep bluetooth rfkill qrtr nls_iso8859_1 nls_cp437 snd_hda_codec_conexant snd_hda_codec_generic ledtrig_audio snd_hda_codec_hdmi snd_hda_intel snd_intel_dspcfg snd_hda_codec snd_hda_core snd_hwdep snd_pcm snd_timer snd soundcore input_leds mousedev led_class joydev deepin_netmonitor(OE) fuse nfnetlink dmi_sysfs ip_tables x_tables overlay amdgpu amdxcp drm_exec gpu_sched drm_buddy radeon drm_suballoc_helper i2c_algo_bit drm_ttm_helper r8169 ttm drm_display_helper spi_loongson_pci xhci_pci cec xhci_pci_renesas spi_loongson_core hid_generic realtek gpio_loongson_64bit\n[   56.697887] Process (udev-worker) (pid: 2742, threadinfo=00000000aee0d8b4, task=00000000a9eff1f3)\n[   56.697890] Stack : 0000000000000000 ffff800004817e00 0000000000000000 0000251c00000000\n[   56.697896]         0000000000000000 00000011fffffffd 0000000000000000 0000000000000000\n[   56.697901]         0000000000000000 1b67a968695184b9 0000000000000000 90000001000b98d0\n[   56.697906]         90000001000bb8d0 900000011aa48028 0000000000000000 ffff800004f9d74c\n[   56.697911]         90000001000ba000 ffff800004f9ce58 0000000000000000 ffff800005470440\n[   56.697916]         ffff800004811f88 90000001000b98d0 9000000100da2aa8 90000001000bb8d0\n[   56.697921]         0000000000000000 90000001000ba000 900000011aa48028 ffff800004f9d74c\n[   56.697926]         ffff8000054704e8 90000001000bb8b8 90000001000ba000 0000000000000000\n[   56.697931]         90000001000bb8d0 \n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/d031eef3cc2e3bf524509e38fb898e5335c85c96",
+      "https://git.kernel.org/stable/c/5912a921289edb34d40aeab32ea6d52d41e75fed",
+      "https://git.kernel.org/stable/c/2ed3e3a3ac06af8a6391c3d6a7791b7967d7d43a",
+      "https://git.kernel.org/stable/c/2cd323c55bd3f356bf23ae1b4c20100abcdc29d6",
+      "https://git.kernel.org/stable/c/a7f0509556fa2f9789639dbcee9eed46e471ccef",
+      "https://git.kernel.org/stable/c/e689bc6697a7fcebd4a945ab0b1e1112c76024d8",
+      "https://git.kernel.org/stable/c/59548215b76be98cf3422eea9a67d6ea578aca3d"
+    ],
+    "受影响版本": [
+      "09dc28acaec74d7467c7c9b81dc8676e5bc957ce",
+      "09dc28acaec74d7467c7c9b81dc8676e5bc957ce",
+      "09dc28acaec74d7467c7c9b81dc8676e5bc957ce",
+      "09dc28acaec74d7467c7c9b81dc8676e5bc957ce",
+      "09dc28acaec74d7467c7c9b81dc8676e5bc957ce",
+      "09dc28acaec74d7467c7c9b81dc8676e5bc957ce",
+      "09dc28acaec74d7467c7c9b81dc8676e5bc957ce"
+    ],
+    "公开日期": "2024年12月27日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-48673",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/smc: Fix possible access to freed memory in link clear\n\nAfter modifying the QP to the Error state, all RX WR would be completed\nwith WC in IB_WC_WR_FLUSH_ERR status. Current implementation does not\nwait for it is done, but destroy the QP and free the link group directly.\nSo there is a risk that accessing the freed memory in tasklet context.\n\nHere is a crash example:\n\n BUG: unable to handle page fault for address: ffffffff8f220860\n #PF: supervisor write access in kernel mode\n #PF: error_code(0x0002) - not-present page\n PGD f7300e067 P4D f7300e067 PUD f7300f063 PMD 8c4e45063 PTE 800ffff08c9df060\n Oops: 0002 [#1] SMP PTI\n CPU: 1 PID: 0 Comm: swapper/1 Kdump: loaded Tainted: G S         OE     5.10.0-0607+ #23\n Hardware name: Inspur NF5280M4/YZMB-00689-101, BIOS 4.1.20 07/09/2018\n RIP: 0010:native_queued_spin_lock_slowpath+0x176/0x1b0\n Code: f3 90 48 8b 32 48 85 f6 74 f6 eb d5 c1 ee 12 83 e0 03 83 ee 01 48 c1 e0 05 48 63 f6 48 05 00 c8 02 00 48 03 04 f5 00 09 98 8e <48> 89 10 8b 42 08 85 c0 75 09 f3 90 8b 42 08 85 c0 74 f7 48 8b 32\n RSP: 0018:ffffb3b6c001ebd8 EFLAGS: 00010086\n RAX: ffffffff8f220860 RBX: 0000000000000246 RCX: 0000000000080000\n RDX: ffff91db1f86c800 RSI: 000000000000173c RDI: ffff91db62bace00\n RBP: ffff91db62bacc00 R08: 0000000000000000 R09: c00000010000028b\n R10: 0000000000055198 R11: ffffb3b6c001ea58 R12: ffff91db80e05010\n R13: 000000000000000a R14: 0000000000000006 R15: 0000000000000040\n FS:  0000000000000000(0000) GS:ffff91db1f840000(0000) knlGS:0000000000000000\n CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\n CR2: ffffffff8f220860 CR3: 00000001f9580004 CR4: 00000000003706e0\n DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000\n DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400\n Call Trace:\n  <IRQ>\n  _raw_spin_lock_irqsave+0x30/0x40\n  mlx5_ib_poll_cq+0x4c/0xc50 [mlx5_ib]\n  smc_wr_rx_tasklet_fn+0x56/0xa0 [smc]\n  tasklet_action_common.isra.21+0x66/0x100\n  __do_softirq+0xd5/0x29c\n  asm_call_irq_on_stack+0x12/0x20\n  </IRQ>\n  do_softirq_own_stack+0x37/0x40\n  irq_exit_rcu+0x9d/0xa0\n  sysvec_call_function_single+0x34/0x80\n  asm_sysvec_call_function_single+0x12/0x20",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/89fcb70f1acd6b0bbf2f7bfbf45d7aa75a9bdcde",
+      "https://git.kernel.org/stable/c/e9b1a4f867ae9c1dbd1d71cd09cbdb3239fb4968"
+    ],
+    "受影响版本": [
+      "bd4ad57718cc86d2972a20f9791cd079996a4dd6",
+      "bd4ad57718cc86d2972a20f9791cd079996a4dd6"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-27285",
+    "漏洞描述": "An issue was discovered in Inspur ClusterEngine v4.0 that allows attackers to gain escalated Local privileges and execute arbitrary commands via /opt/tsce4/torque6/bin/getJobsByShell.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/fjh1997/CVE-2021-27285"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年01月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-26122",
+    "漏洞描述": "Inspur NF5266M5 through 3.21.2 and other server M5 devices allow remote code execution via administrator privileges. The Baseboard Management Controller (BMC) program of INSPUR server is weak in checking the firmware and lacks the signature verification mechanism, the attacker who obtains the administrator's rights can control the BMC by inserting malicious code into the firmware program and bypassing the current verification mechanism to upgrade the BMC.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://en.inspur.com/en/2487134/index.html",
+      "https://en.inspur.com/en/security_bulletins/security_advisory2/2543921/index.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-21224",
+    "漏洞描述": "A Remote Code Execution vulnerability has been found in Inspur ClusterEngine V4.0. A remote attacker can send a malicious login packet to the control server",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/NS-Sp4ce/Inspur/tree/master/ClusterEngineV4.0%20Vul",
+      "https://github.com/NS-Sp4ce/Inspur/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月22日"
+  }
+]

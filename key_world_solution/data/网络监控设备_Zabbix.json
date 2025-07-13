@@ -1,0 +1,834 @@
+[
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2024-45700",
+    "漏洞描述": "Zabbix server is vulnerable to a DoS vulnerability due to uncontrolled resource exhaustion. An attacker can send specially crafted requests to the server, which will cause the server to allocate an excessive amount of memory and perform CPU-intensive decompression operations, ultimately leading to a service crash.",
+    "攻击向量": "ADJACENT",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-26253"
+    ],
+    "受影响版本": [
+      "6.0.0",
+      "7.0.0",
+      "7.2.0",
+      "7.4.0alpha1"
+    ],
+    "公开日期": "2025年04月02日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2024-42333",
+    "漏洞描述": "The researcher is showing that it is possible to leak a small amount of Zabbix Server memory using an out of bounds read in src/libs/zbxmedia/email.c",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-25629"
+    ],
+    "受影响版本": [
+      "6.0.0",
+      "6.4.0",
+      "7.0.0"
+    ],
+    "公开日期": "2024年11月27日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2024-42332",
+    "漏洞描述": "The researcher is showing that due to the way the SNMP trap log is parsed, an attacker can craft an SNMP trap with additional lines of information and have forged data show in the Zabbix UI. This attack requires SNMP auth to be off and/or the attacker to know the community/auth details. The attack requires an SNMP item to be configured as text on the target host.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-25628"
+    ],
+    "受影响版本": [
+      "6.0.0",
+      "6.4.0",
+      "7.0.0"
+    ],
+    "公开日期": "2024年11月27日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2024-42327",
+    "漏洞描述": "A non-admin user account on the Zabbix frontend with the default User role, or with any other role that gives API access can exploit this vulnerability. An SQLi exists in the CUser class in the addRelatedObjects function, this function is being called from the CUser.get function which is available for every user who has API access.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-25623"
+    ],
+    "受影响版本": [
+      "6.0.0",
+      "6.4.0",
+      "7.0.0"
+    ],
+    "公开日期": "2024年11月27日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2024-42325",
+    "漏洞描述": "Zabbix API user.get returns all users that share common group with the calling user. This includes media and other information, such as login attempts, etc.",
+    "攻击向量": "ADJACENT",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-26258"
+    ],
+    "受影响版本": [
+      "5.0.0",
+      "6.0.0",
+      "7.0.0",
+      "7.2.0"
+    ],
+    "公开日期": "2025年04月02日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2024-36468",
+    "漏洞描述": "The reported vulnerability is a stack buffer overflow in the zbx_snmp_cache_handle_engineid function within the Zabbix server/proxy code. This issue occurs when copying data from session->securityEngineID to local_record.engineid without proper bounds checking.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-25621"
+    ],
+    "受影响版本": [
+      "7.0.0"
+    ],
+    "公开日期": "2024年11月27日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2024-36467",
+    "漏洞描述": "An authenticated user with API access (e.g.: user with default User role), more specifically a user with access to the user.update API endpoint is enough to be able to add themselves to any group (e.g.: Zabbix Administrators), except to groups that are disabled or having restricted GUI access.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-25614"
+    ],
+    "受影响版本": [
+      "5.0.0",
+      "6.0.0",
+      "6.4.0",
+      "7.0.0"
+    ],
+    "公开日期": "2024年11月27日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2024-36465",
+    "漏洞描述": "A low privilege (regular) Zabbix user with API access can use SQL injection vulnerability in include/classes/api/CApiService.php to execute arbitrary SQL commands via the groupBy parameter.",
+    "攻击向量": "ADJACENT",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-26257"
+    ],
+    "受影响版本": [
+      "7.0.0",
+      "7.2.0"
+    ],
+    "公开日期": "2025年04月02日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2024-36463",
+    "漏洞描述": "The implementation of atob in \"Zabbix JS\" allows to create a string with arbitrary content and use it to access internal properties of objects.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-25611"
+    ],
+    "受影响版本": [
+      "5.0.0",
+      "6.0.0",
+      "6.4.0",
+      "7.0.0"
+    ],
+    "公开日期": "2024年11月26日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2024-36461",
+    "漏洞描述": "Within Zabbix, users have the ability to directly modify memory pointers in the JavaScript engine.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-25018"
+    ],
+    "受影响版本": [
+      "6.0.0",
+      "6.4.0",
+      "7.0.0alpha1"
+    ],
+    "公开日期": "2024年08月09日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2024-22123",
+    "漏洞描述": "Setting SMS media allows to set GSM modem file. Later this file is used as Linux device. But due everything is a file for Linux, it is possible to set another file, e.g. log file and zabbix_server will try to communicate with it as modem. As a result, log file will be broken with AT commands and small part for log file content will be leaked to UI.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-25013"
+    ],
+    "受影响版本": [
+      "5.0.0",
+      "6.0.0",
+      "6.4.0",
+      "7.0.0alpha1"
+    ],
+    "公开日期": "2024年08月09日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2024-22122",
+    "漏洞描述": "Zabbix allows to configure SMS notifications. AT command injection occurs on \"Zabbix Server\" because there is no validation of \"Number\" field on Web nor on Zabbix server side. Attacker can run test of SMS providing specially crafted phone number and execute additional AT commands on modem.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-25012"
+    ],
+    "受影响版本": [
+      "5.0.0",
+      "6.0.0",
+      "6.4.0",
+      "7.0.0alpha1"
+    ],
+    "公开日期": "2024年08月09日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2024-22121",
+    "漏洞描述": "A non-admin user can change or remove important features within the Zabbix Agent application, thus impacting the integrity and availability of the application.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-25011"
+    ],
+    "受影响版本": [
+      "5.0.0",
+      "6.0.0",
+      "6.4.0",
+      "7.0.0alpha1"
+    ],
+    "公开日期": "2024年08月09日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2024-22120",
+    "漏洞描述": "Zabbix server can perform command execution for configured scripts. After command is executed, audit entry is added to \"Audit Log\". Due to \"clientip\" field is not sanitized, it is possible to injection SQL into \"clientip\" and exploit time based blind SQL injection.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-24505"
+    ],
+    "受影响版本": [
+      "6.0.0",
+      "6.4.0",
+      "7.0.0alpha1"
+    ],
+    "公开日期": "2024年05月17日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2024-22119",
+    "漏洞描述": "The cause of vulnerability is improper validation of form input field “Name” on Graph page in Items section.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-24070",
+      "https://lists.debian.org/debian-lts-announce/2024/04/msg00020.html"
+    ],
+    "受影响版本": [
+      "5.0.0",
+      "6.0.0",
+      "6.4.0",
+      "7.0.0alpha1"
+    ],
+    "公开日期": "2024年02月09日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2023-32728",
+    "漏洞描述": "The Zabbix Agent 2 item key smart.disk.get does not sanitize its parameters before passing them to a shell command resulting possible vulnerability for remote code execution.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-23858"
+    ],
+    "受影响版本": [
+      "5,0,0",
+      "6.0.0",
+      "6.4.0",
+      "7.0.0alpha1"
+    ],
+    "公开日期": "2023年12月18日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2023-32727",
+    "漏洞描述": "An attacker who has the privilege to configure Zabbix items can use function icmpping() with additional malicious command inside it to execute arbitrary code on the current Zabbix server.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-23857"
+    ],
+    "受影响版本": [
+      "4.0.0",
+      "5.0.0 ",
+      "6.0.0",
+      "6.4.0",
+      "7.0.0alpha1"
+    ],
+    "公开日期": "2023年12月18日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2023-32726",
+    "漏洞描述": "The vulnerability is caused by improper check for check if RDLENGTH does not overflow the buffer in response from DNS server.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-23855",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UMFKNV5E4LG2DIZNPRWQ2ENH75H6UEQT/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BYSYLA7VTHR25CBLYO5ZLEJFGU7HTHQB/",
+      "https://lists.debian.org/debian-lts-announce/2024/01/msg00012.html"
+    ],
+    "受影响版本": [
+      "5.0.0",
+      "6.0.0",
+      "6.4.0",
+      "7.0.0alpha1"
+    ],
+    "公开日期": "2023年12月18日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2023-32723",
+    "漏洞描述": "Request to LDAP is sent before user permissions are checked.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-23230",
+      "https://lists.debian.org/debian-lts-announce/2024/01/msg00012.html"
+    ],
+    "受影响版本": [
+      "4.0.0",
+      "4.4.0",
+      "5.0.0alpha1"
+    ],
+    "公开日期": "2023年10月12日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2023-32722",
+    "漏洞描述": "The zabbix/src/libs/zbxjson module is vulnerable to a buffer overflow when parsing JSON files via zbx_json_open.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-23390"
+    ],
+    "受影响版本": [
+      "6.0.0",
+      "6.4.0",
+      "7.0.0alpha1"
+    ],
+    "公开日期": "2023年10月12日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2023-32721",
+    "漏洞描述": "A stored XSS has been found in the Zabbix web application in the Maps element if a URL field is set with spaces before URL.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-23389",
+      "https://lists.debian.org/debian-lts-announce/2024/01/msg00012.html"
+    ],
+    "受影响版本": [
+      "4.0.0",
+      "5.0.0",
+      "6.0.0",
+      "6.4.0",
+      "7.0.0alpha1"
+    ],
+    "公开日期": "2023年10月12日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2023-29457",
+    "漏洞描述": "Reflected XSS attacks, occur when a malicious script is reflected off a web application to the victim's browser. The script can be activated through Action form fields, which can be sent as request to a website with a vulnerability that enables execution of malicious scripts.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-22988",
+      "https://lists.debian.org/debian-lts-announce/2023/08/msg00027.html"
+    ],
+    "受影响版本": [
+      "4.0.0",
+      "5.0.0",
+      "6.0.0"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2023-29456",
+    "漏洞描述": "URL validation scheme receives input from a user and then parses it to identify its various components. The validation scheme can ensure that all URL components comply with internet standards.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-22987",
+      "https://lists.debian.org/debian-lts-announce/2023/08/msg00027.html"
+    ],
+    "受影响版本": [
+      "4.0.0",
+      "5.0.0",
+      "6.0.0",
+      "6.4.0",
+      "7.0.0alpha1"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2023-29455",
+    "漏洞描述": "Reflected XSS attacks, also known as non-persistent attacks, occur when a malicious script is reflected off a web application to the victim's browser. The script is activated through a link, which sends a request to a website with a vulnerability that enables execution of malicious scripts.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-22986",
+      "https://lists.debian.org/debian-lts-announce/2023/08/msg00027.html"
+    ],
+    "受影响版本": [
+      "4.0.0",
+      "5.0.0"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2023-29454",
+    "漏洞描述": "Stored or persistent cross-site scripting (XSS) is a type of XSS where the attacker first sends the payload to the web application, then the application saves the payload (e.g., in a database or server-side text files), and finally, the application unintentionally executes the payload for every victim visiting its web pages.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-22985",
+      "https://lists.debian.org/debian-lts-announce/2023/08/msg00027.html"
+    ],
+    "受影响版本": [
+      "4.0.0",
+      "5.0.0",
+      "6.0.0"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2023-29451",
+    "漏洞描述": "Specially crafted string can cause a buffer overrun in the JSON parser library leading to a crash of the Zabbix Server or a Zabbix Proxy.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-22587",
+      "https://lists.debian.org/debian-lts-announce/2023/08/msg00027.html"
+    ],
+    "受影响版本": [
+      "6.0",
+      "6.2",
+      "6.4",
+      "7.0.0alpha1"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix",
+    "CVE编号": "CVE-2023-29450",
+    "漏洞描述": "JavaScript pre-processing can be used by the attacker to gain access to the file system (read-only access on behalf of user \"zabbix\") on the Zabbix Server or Zabbix Proxy, potentially leading to unauthorized access to sensitive data.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-22588",
+      "https://lists.debian.org/debian-lts-announce/2023/08/msg00027.html"
+    ],
+    "受影响版本": [
+      "5.0",
+      "6.0",
+      "6.2",
+      "6.4"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Web Service Report Generation",
+    "CVE编号": "CVE-2022-46768",
+    "漏洞描述": "Arbitrary file read vulnerability exists in Zabbix Web Service Report Generation, which listens on the port 10053. The service does not have proper validation for URL parameters before reading the files.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-22087"
+    ],
+    "受影响版本": [
+      "6.0.0-6.0.11",
+      "6.2.0-6.2.5"
+    ],
+    "公开日期": "2022年12月19日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Zabbix agent (MSI packages)",
+    "CVE编号": "CVE-2022-43516",
+    "漏洞描述": "A Firewall Rule which allows all incoming TCP connections to all programs from any source and to all ports is created in Windows Firewall after Zabbix agent installation (MSI)",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-22002"
+    ],
+    "受影响版本": [
+      "Oct. 29, 2022 - Dec 2, 2022",
+      "Dec 3, 2022"
+    ],
+    "公开日期": "2022年12月12日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Frontend",
+    "CVE编号": "CVE-2022-43515",
+    "漏洞描述": "Zabbix Frontend provides a feature that allows admins to maintain the installation and ensure that only certain IP addresses can access it. In this way, any user will not be able to access the Zabbix Frontend while it is being maintained and possible sensitive data will be prevented from being disclosed. An attacker can bypass this protection and access the instance using IP address not listed in the defined range.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-22050",
+      "https://lists.debian.org/debian-lts-announce/2023/08/msg00027.html"
+    ],
+    "受影响版本": [
+      "4.0.0-4.0.44",
+      "5.0.0-5.0.29",
+      "6.0.0-6.0.9",
+      "6.2.0-6.2.4",
+      "5.0.30rc1",
+      "6.0.11rc1",
+      "6.2.5rc1"
+    ],
+    "公开日期": "2022年12月12日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Frontend",
+    "CVE编号": "CVE-2022-40626",
+    "漏洞描述": "An unauthenticated user can create a link with reflected Javascript code inside the backurl parameter and send it to other authenticated users in order to create a fake account with predefined login, password and role in Zabbix Frontend.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-21350",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/SPU4RCRYVNVM3SS523UQXE63ATCTEX5G/"
+    ],
+    "受影响版本": [
+      "6.0.0-6.0.6",
+      "6.2.0",
+      "6.0.7rc1",
+      "6.2.1rc1"
+    ],
+    "公开日期": "2022年09月14日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Frontend",
+    "CVE编号": "CVE-2022-35230",
+    "漏洞描述": "An authenticated user can create a link with reflected Javascript code inside it for the graphs page and send it to other users. The payload can be executed only with a known CSRF token value of the victim, which is changed periodically and is difficult to predict.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-21305",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00013.html"
+    ],
+    "受影响版本": [
+      "4.0.0-4.0.42",
+      "5.0.0-5.0.24"
+    ],
+    "公开日期": "2022年07月06日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Frontend",
+    "CVE编号": "CVE-2022-35229",
+    "漏洞描述": "An authenticated user can create a link with reflected Javascript code inside it for the discovery page and send it to other users. The payload can be executed only with a known CSRF token value of the victim, which is changed periodically and is difficult to predict.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-21306",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00013.html",
+      "https://lists.debian.org/debian-lts-announce/2023/08/msg00027.html"
+    ],
+    "受影响版本": [
+      "4.0.0-4.0.42",
+      "5.0.0-5.0.24",
+      "6.0.0-6.0.4",
+      "6.2alpha1-6.2beta3"
+    ],
+    "公开日期": "2022年07月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-26148",
+    "漏洞描述": "An issue was discovered in Grafana through 7.3.4, when integrated with Zabbix. The Zabbix password can be found in the api_jsonrpc.php HTML source code. When the user logs in and allows the user to register, one can right click to view the source code and use Ctrl-F to search for password in api_jsonrpc.php to discover the Zabbix account password and URL address.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://2k8.org/post-319.html",
+      "https://security.netapp.com/advisory/ntap-20220425-0005/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年03月21日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Frontend",
+    "CVE编号": "CVE-2022-24919",
+    "漏洞描述": "An authenticated user can create a link with reflected Javascript code inside it for graphs’ page and send it to other users. The payload can be executed only with a known CSRF token value of the victim, which is changed periodically and is difficult to predict. Malicious code has access to all the same objects as the rest of the web page and can make arbitrary modifications to the contents of the page being displayed to a victim during social engineering attacks.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-20680",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/2V4N22R3QVTYAJMWFK2U2O6QXAZYM35Z/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/SWDZONUHDYKBXTAIAGHSYQDEGORD2QT7/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/QWP6UBFA5T6MOQPY2VDUG5YAJBFPYRFF/",
+      "https://lists.debian.org/debian-lts-announce/2022/04/msg00011.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00013.html"
+    ],
+    "受影响版本": [
+      "4.0.0-4.0.38",
+      "5.0.0-5.0.20",
+      "5.4.0-5.4.10",
+      "6.0",
+      "4.0.39rc1",
+      "5.0.21rc1",
+      "5.4.11rc1",
+      "6.0.1rc1"
+    ],
+    "公开日期": "2022年03月09日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Frontend",
+    "CVE编号": "CVE-2022-24917",
+    "漏洞描述": "An authenticated user can create a link with reflected Javascript code inside it for services’ page and send it to other users. The payload can be executed only with a known CSRF token value of the victim, which is changed periodically and is difficult to predict. Malicious code has access to all the same objects as the rest of the web page and can make arbitrary modifications to the contents of the page being displayed to a victim during social engineering attacks.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-20680",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/2V4N22R3QVTYAJMWFK2U2O6QXAZYM35Z/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/SWDZONUHDYKBXTAIAGHSYQDEGORD2QT7/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/QWP6UBFA5T6MOQPY2VDUG5YAJBFPYRFF/",
+      "https://lists.debian.org/debian-lts-announce/2022/04/msg00011.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00013.html"
+    ],
+    "受影响版本": [
+      "4.0.0-4.0.38",
+      "5.0.0-5.0.20",
+      "5.4.0-5.4.10",
+      "4.0.39rc1",
+      "5.0.21rc1",
+      "5.4.11rc1"
+    ],
+    "公开日期": "2022年03月09日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Frontend",
+    "CVE编号": "CVE-2022-24349",
+    "漏洞描述": "An authenticated user can create a link with reflected XSS payload for actions’ pages, and send it to other users. Malicious code has access to all the same objects as the rest of the web page and can make arbitrary modifications to the contents of the page being displayed to a victim. This attack can be implemented with the help of social engineering and expiration of a number of factors - an attacker should have authorized access to the Zabbix Frontend and allowed network connection between a malicious server and victim’s computer, understand attacked infrastructure, be recognized by the victim as a trustee and use trusted communication channel.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-20680",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/2V4N22R3QVTYAJMWFK2U2O6QXAZYM35Z/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/SWDZONUHDYKBXTAIAGHSYQDEGORD2QT7/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/QWP6UBFA5T6MOQPY2VDUG5YAJBFPYRFF/",
+      "https://lists.debian.org/debian-lts-announce/2022/04/msg00011.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00013.html"
+    ],
+    "受影响版本": [
+      "4.0.0-4.0.38",
+      "5.0.0-5.0.20",
+      "5.4.0-5.4.10",
+      "6.0",
+      "4.0.39rc1",
+      "5.0.21rc1",
+      "5.4.11rc1",
+      "6.0.1rc1"
+    ],
+    "公开日期": "2022年03月09日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Frontend",
+    "CVE编号": "CVE-2022-23134",
+    "漏洞描述": "After the initial setup process, some steps of setup.php file are reachable not only by super-administrators, but by unauthenticated users as well. Malicious actor can pass step checks and potentially change the configuration of Zabbix Frontend.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-20384",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/6SZYHXINBKCY42ITFSNCYE7KCSF33VRA/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/VB6W556GVXOKUYTASTDGL3AI7S3SJHX7/",
+      "https://lists.debian.org/debian-lts-announce/2022/02/msg00008.html"
+    ],
+    "受影响版本": [
+      "5.4.0 - 5.4.8",
+      "5.4.9"
+    ],
+    "公开日期": "2022年01月13日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Proxy, Server",
+    "CVE编号": "CVE-2022-23132",
+    "漏洞描述": "During Zabbix installation from RPM, DAC_OVERRIDE SELinux capability is in use to access PID files in [/var/run/zabbix] folder. In this case, Zabbix Proxy or Server processes can bypass file read, write and execute permissions check on the file system level",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-20341",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/6SZYHXINBKCY42ITFSNCYE7KCSF33VRA/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/VB6W556GVXOKUYTASTDGL3AI7S3SJHX7/"
+    ],
+    "受影响版本": [
+      "4.0.0 - 4.0.36",
+      "5.0.0 – 5.0.18",
+      "5.4.0 – 5.4.8",
+      "5.0.19",
+      "5.4.9"
+    ],
+    "公开日期": "2022年01月13日"
+  },
+  {
+    "设备品牌": "Zabbix",
+    "设备类型": "网络监控设备",
+    "产品型号": "Frontend",
+    "CVE编号": "CVE-2022-23131",
+    "漏洞描述": "In the case of instances where the SAML SSO authentication is enabled (non-default), session data can be modified by a malicious actor, because a user login stored in the session was not verified. Malicious unauthenticated actor may exploit this issue to escalate privileges and gain admin access to Zabbix Frontend. To perform the attack, SAML authentication is required to be enabled and the actor has to know the username of Zabbix user (or use the guest account, which is disabled by default).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-20350"
+    ],
+    "受影响版本": [
+      "5.4.0 - 5.4.8",
+      "5.4.9"
+    ],
+    "公开日期": "2022年01月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-22704",
+    "漏洞描述": "The zabbix-agent2 package before 5.4.9-r1 for Alpine Linux sometimes allows privilege escalation to root because the design incorrectly expected that systemd would (in effect) determine part of the configuration.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://gitlab.alpinelinux.org/alpine/aports/-/issues/13368"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年01月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-46088",
+    "漏洞描述": "Zabbix 4.0 LTS, 4.2, 4.4, and 5.0 LTS is vulnerable to Remote Code Execution (RCE). Any user with the \"Zabbix Admin\" role is able to run custom shell script on the application server in the context of the application user.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/paalbra/zabbix-zbxsec-7"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年01月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-27927",
+    "漏洞描述": "In Zabbix from 4.0.x before 4.0.28rc1, 5.0.0alpha1 before 5.0.10rc1, 5.2.x before 5.2.6rc1, and 5.4.0alpha1 before 5.4.0beta2, the CControllerAuthenticationUpdate controller lacks a CSRF protection mechanism. The code inside this controller calls diableSIDValidation inside the init() method. An attacker doesn't have to know Zabbix user login credentials, but has to know the correct Zabbix URL and contact information of an existing user with sufficient privileges.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-18942",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00013.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年03月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-15803",
+    "漏洞描述": "Zabbix before 3.0.32rc1, 4.x before 4.0.22rc1, 4.1.x through 4.4.x before 4.4.10rc1, and 5.x before 5.0.2rc1 allows stored XSS in the URL Widget.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/ZBX-18057",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/TIRIMOXH6GSBAANDCB3ANLJK4CRLWRXT/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/2ZHHIUYIVA5GZYLKW6A5G6HRELPOBZFE/",
+      "https://lists.debian.org/debian-lts-announce/2020/08/msg00007.html",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00007.html",
+      "https://lists.debian.org/debian-lts-announce/2021/04/msg00018.html",
+      "https://lists.debian.org/debian-lts-announce/2023/04/msg00013.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年07月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-11800",
+    "漏洞描述": "Zabbix Server 2.2.x and 3.0.x before 3.0.31, and 3.2 allows remote attackers to execute arbitrary code.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.zabbix.com/browse/DEV-1538",
+      "https://support.zabbix.com/browse/ZBXSEC-30",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00007.html",
+      "https://support.zabbix.com/browse/ZBX-17600",
+      "https://lists.debian.org/debian-lts-announce/2020/11/msg00039.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年10月07日"
+  }
+]

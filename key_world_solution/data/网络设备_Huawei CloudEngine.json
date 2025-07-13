@@ -1,0 +1,192 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-40042",
+    "漏洞描述": "There is a release of invalid pointer vulnerability in some Huawei products, successful exploit may cause the process and service abnormal. Affected product versions include: CloudEngine 12800 V200R019C10SPC800, V200R019C10SPC900; CloudEngine 5800 V200R019C10SPC800, V200R020C00SPC600; CloudEngine 6800 versions V200R019C10SPC800, V200R019C10SPC900, V200R020C00SPC600, V300R020C00SPC200; CloudEngine 7800 V200R019C10SPC800.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20220112-01-invalid-en"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年01月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-40033",
+    "漏洞描述": "There is an information exposure vulnerability on several Huawei Products. The vulnerability is due to that the software does not properly protect certain information. Successful exploit could cause information disclosure. Affected product versions include: CloudEngine 12800 V200R005C10SPC800; CloudEngine 5800 V200R005C10SPC800, V200R019C00SPC800; CloudEngine 6800 V200R005C10SPC800, V200R005C20SPC800, V200R019C00SPC800; CloudEngine 7800 V200R005C10SPC800, V200R019C00SPC800.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20220112-01-infodis-en"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年01月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络设备",
+    "产品型号": "CloudEngine 12800;CloudEngine 5800;CloudEngine 6800;CloudEngine 7800",
+    "CVE编号": "CVE-2021-37122",
+    "漏洞描述": "There is a use-after-free (UAF) vulnerability in Huawei products. An attacker may craft specific packets to exploit this vulnerability. Successful exploitation may cause the service abnormal. Affected product versions include:CloudEngine 12800 V200R005C10SPC800,V200R019C00SPC800;CloudEngine 5800 V200R005C10SPC800,V200R019C00SPC800;CloudEngine 6800 V200R005C10SPC800,V200R005C20SPC800,V200R019C00SPC800;CloudEngine 7800 V200R005C10SPC800,V200R019C00SPC800.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20211008-01-cloudengine-en"
+    ],
+    "受影响版本": [
+      "V200R005C10SPC800,V200R019C00SPC800",
+      "V200R005C10SPC800,V200R005C20SPC800,V200R019C00SPC800"
+    ],
+    "公开日期": "2021年10月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络设备",
+    "产品型号": "CloudEngine 12800;CloudEngine 5800;CloudEngine 6800;CloudEngine 7800",
+    "CVE编号": "CVE-2021-22362",
+    "漏洞描述": "There is an out of bounds write vulnerability in some Huawei products. An attacker can exploit this vulnerability by sending crafted data in the packet to the target device. Due to insufficient validation of message, successful exploit can cause certain service abnormal.Affected product versions include:CloudEngine 12800 versions V200R002C50SPC800,V200R003C00SPC810,V200R005C00SPC800,V200R005C10SPC800,V200R019C00SPC800,V200R019C10SPC800;CloudEngine 5800 versions V200R002C50SPC800,V200R003C00SPC810,V200R005C00SPC800,V200R005C10SPC800,V200R019C00SPC800,V200R019C10SPC800@;CloudEngine 6800 versions V200R002C50SPC800,V200R003C00SPC810,V200R005C00SPC800,V200R005C10SPC800,V200R005C20SPC800,V200R019C00SPC800,V200R019C10SPC800;CloudEngine 7800 versions V200R002C50SPC800,V200R003C00SPC810,V200R005C00SPC800,V200R005C10SPC800,V200R019C00SPC800,V200R019C10SPC800.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20210519-01-cloudengine-en"
+    ],
+    "受影响版本": [
+      "V200R002C50SPC800,V200R003C00SPC810,V200R005C00SPC800,V200R005C10SPC800,V200R019C00SPC800,V200R019C10SPC800",
+      "V200R002C50SPC800,V200R003C00SPC810,V200R005C00SPC800,V200R005C10SPC800,V200R005C20SPC800,V200R019C00SPC800,V200R019C10SPC800"
+    ],
+    "公开日期": "2021年05月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络设备",
+    "产品型号": "CloudEngine 12800;CloudEngine 5800;CloudEngine 6800;CloudEngine 7800",
+    "CVE编号": "CVE-2021-22328",
+    "漏洞描述": "There is a denial of service vulnerability in some huawei products. In specific scenarios, due to the improper handling of the packets, an attacker may craft the specific packet. Successful exploit may cause some services abnormal. Affected product versions include:CloudEngine 12800 V200R005C00SPC800, CloudEngine 5800 V200R005C00SPC800, CloudEngine 6800 V200R005C00SPC800, CloudEngine 7800 V200R005C00SPC800.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20210407-01-dos-en"
+    ],
+    "受影响版本": [
+      "V200R005C00SPC800"
+    ],
+    "公开日期": "2021年08月23日"
+  },
+  {
+    "设备品牌": "Huawei",
+    "设备类型": "网络设备",
+    "产品型号": "CloudEngine 12800",
+    "CVE编号": "CVE-2020-9207",
+    "漏洞描述": "There is an improper authentication vulnerability in some verisons of Huawei CloudEngine product. A module does not verify the input file properly. Attackers can exploit this vulnerability by crafting malicious files to bypass current verification mechanism. This can compromise normal service.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20201216-01-vrp-en"
+    ],
+    "受影响版本": [
+      "V200R019C00SPC800"
+    ],
+    "公开日期": "2020年12月29日"
+  },
+  {
+    "设备品牌": "Huawei",
+    "设备类型": "网络设备",
+    "产品型号": "CloudEngine 12800",
+    "CVE编号": "CVE-2020-9124",
+    "漏洞描述": "There is a memory leak vulnerability in some versions of Huawei CloudEngine product. An unauthenticated, remote attacker may exploit this vulnerability by sending specific message to the affected product. Due to not release the allocated memory properly, successful exploit may cause memory leak.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20201223-01-cloudengine-en"
+    ],
+    "受影响版本": [
+      "V200R002C50SPC800",
+      "V200R003C00SPC810",
+      "V200R005C00SPC800",
+      "V200R005C10SPC800"
+    ],
+    "公开日期": "2020年12月29日"
+  },
+  {
+    "设备品牌": "Huawei",
+    "设备类型": "网络设备",
+    "产品型号": "CloudEngine 12800",
+    "CVE编号": "CVE-2020-9102",
+    "漏洞描述": "There is a information leak vulnerability in some Huawei products, and it could allow a local attacker to get information. The vulnerability is due to the improper management of the username. An attacker with the ability to access the device and cause the username information leak. Affected product versions include: CloudEngine 12800 versions V200R002C50SPC800, V200R003C00SPC810, V200R005C00SPC800, V200R005C10SPC800, V200R019C00SPC800; CloudEngine 5800 versions V200R002C50SPC800, V200R003C00SPC810, V200R005C00SPC800, V200R005C10SPC800, V200R019C00SPC800; CloudEngine 6800 versions V200R002C50SPC800, V200R003C00SPC810, V200R005C00SPC800, V200R005C10SPC800, V200R005C20SPC800, V200R019C00SPC800; CloudEngine 7800 versions V200R002C50SPC800, V200R003C00SPC810, V200R005C00SPC800, V200R005C10SPC800, V200R019C00SPC800",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200715-03-informationleak-en"
+    ],
+    "受影响版本": [
+      "V200R002C50SPC800",
+      "V200R003C00SPC810",
+      "V200R005C00SPC800",
+      "V200R005C10SPC800",
+      "V200R019C00SPC800"
+    ],
+    "公开日期": "2020年07月17日"
+  },
+  {
+    "设备品牌": "Huawei",
+    "设备类型": "网络设备",
+    "产品型号": "CloudEngine 12800",
+    "CVE编号": "CVE-2020-9094",
+    "漏洞描述": "There is an out of bound read vulnerability in some verisons of Huawei CloudEngine product. A module does not deal with specific message properly. Attackers can exploit this vulnerability by sending malicious packet. This can lead to denial of service.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20201216-01-obr-en"
+    ],
+    "受影响版本": [
+      "V200R019C00SPC800"
+    ],
+    "公开日期": "2020年12月29日"
+  },
+  {
+    "设备品牌": "Huawei",
+    "设备类型": "网络设备",
+    "产品型号": "CloudEngine 12800",
+    "CVE编号": "CVE-2020-1870",
+    "漏洞描述": "There is a denial of service vulnerability in some Huawei products. Due to improper memory management, memory leakage may occur in some special cases. Attackers can perform a series of operations to exploit this vulnerability. Successful exploit may cause a denial of service. Affected product versions include: CloudEngine 12800 versions V200R019C00SPC800; CloudEngine 5800 versions V200R019C00SPC800; CloudEngine 6800 versions V200R005C20SPC800, V200R019C00SPC800; CloudEngine 7800 versions V200R019C00SPC800; NE40E versions V800R011C00SPC200, V800R011C00SPC300, V800R011C10SPC100; NE40E-F versions V800R011C00SPC200, V800R011C10SPC100; NE40E-M versions V800R011C00SPC200, V800R011C10SPC100.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200527-01-dos-en"
+    ],
+    "受影响版本": [
+      "V200R019C00SPC800"
+    ],
+    "公开日期": "2020年05月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络设备",
+    "产品型号": "CloudEngine 12800;CloudEngine 5800;CloudEngine 6800;CloudEngine 7800",
+    "CVE编号": "CVE-2020-1865",
+    "漏洞描述": "There is an out-of-bounds read vulnerability in Huawei CloudEngine products. The software reads data past the end of the intended buffer when parsing certain PIM message, an adjacent attacker could send crafted PIM messages to the device, successful exploit could cause out of bounds read when the system does the certain operation.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20201230-02-cloudengine-en"
+    ],
+    "受影响版本": [
+      "V200R002C50SPC800,V200R003C00SPC810,V200R005C00SPC800,V200R005C10SPC800,V200R019C00SPC800,V200R019C10SPC800",
+      "V200R002C50SPC800,V200R003C00SPC810,V200R005C00SPC800,V200R005C10SPC800,V200R005C20SPC800,V200R019C00SPC800,V200R019C10SPC800"
+    ],
+    "公开日期": "2021年01月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络设备",
+    "产品型号": "CloudEngine 12800",
+    "CVE编号": "CVE-2020-1861",
+    "漏洞描述": "CloudEngine 12800 with versions of V200R001C00SPC600,V200R001C00SPC700,V200R002C01,V200R002C50SPC800,V200R002C50SPC800PWE,V200R003C00SPC810,V200R003C00SPC810PWE,V200R005C00SPC600,V200R005C00SPC800,V200R005C00SPC800PWE,V200R005C10,V200R005C10SPC300 have an information leakage vulnerability in some Huawei products. In some special cases, an authenticated attacker can exploit this vulnerability because the software processes data improperly. Successful exploitation may lead to information leakage.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200219-01-leak-en"
+    ],
+    "受影响版本": [
+      "V200R001C00SPC600,V200R001C00SPC700,V200R002C01,V200R002C50SPC800,V200R002C50SPC800PWE,V200R003C00SPC810,V200R003C00SPC810PWE,V200R005C00SPC600,V200R005C00SPC800,V200R005C00SPC800PWE,V200R005C10,V200R005C10SPC300"
+    ],
+    "公开日期": "2020年02月28日"
+  }
+]

@@ -1,0 +1,823 @@
+[
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Automic Automation",
+    "CVE编号": "CVE-2025-4971",
+    "漏洞描述": "Broadcom Automic\nAutomation Agent Unix versions <\n24.3.0 HF4 and < 21.0.13 HF1 allow low privileged users who have execution\nrights on the agent executable to escalate their privileges.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25732",
+      "https://www.secuvera.de/advisories/secuvera-SA-2025-01.txt"
+    ],
+    "受影响版本": [
+      "< 24.3.0 HF4, and < 21.0.13 HF1",
+      "24.3.0 HF4 or later, and 21.0.13 HF1 or later"
+    ],
+    "公开日期": "2025年05月19日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-37840",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmtd: rawnand: brcmnand: fix PM resume warning\n\nFixed warning on PM resume as shown below caused due to uninitialized\nstruct nand_operation that checks chip select field :\nWARN_ON(op->cs >= nanddev_ntargets(&chip->base)\n\n[   14.588522] ------------[ cut here ]------------\n[   14.588529] WARNING: CPU: 0 PID: 1392 at drivers/mtd/nand/raw/internals.h:139 nand_reset_op+0x1e0/0x1f8\n[   14.588553] Modules linked in: bdc udc_core\n[   14.588579] CPU: 0 UID: 0 PID: 1392 Comm: rtcwake Tainted: G        W          6.14.0-rc4-g5394eea10651 #16\n[   14.588590] Tainted: [W]=WARN\n[   14.588593] Hardware name: Broadcom STB (Flattened Device Tree)\n[   14.588598] Call trace:\n[   14.588604]  dump_backtrace from show_stack+0x18/0x1c\n[   14.588622]  r7:00000009 r6:0000008b r5:60000153 r4:c0fa558c\n[   14.588625]  show_stack from dump_stack_lvl+0x70/0x7c\n[   14.588639]  dump_stack_lvl from dump_stack+0x18/0x1c\n[   14.588653]  r5:c08d40b0 r4:c1003cb0\n[   14.588656]  dump_stack from __warn+0x84/0xe4\n[   14.588668]  __warn from warn_slowpath_fmt+0x18c/0x194\n[   14.588678]  r7:c08d40b0 r6:c1003cb0 r5:00000000 r4:00000000\n[   14.588681]  warn_slowpath_fmt from nand_reset_op+0x1e0/0x1f8\n[   14.588695]  r8:70c40dff r7:89705f41 r6:36b4a597 r5:c26c9444 r4:c26b0048\n[   14.588697]  nand_reset_op from brcmnand_resume+0x13c/0x150\n[   14.588714]  r9:00000000 r8:00000000 r7:c24f8010 r6:c228a3f8 r5:c26c94bc r4:c26b0040\n[   14.588717]  brcmnand_resume from platform_pm_resume+0x34/0x54\n[   14.588735]  r5:00000010 r4:c0840a50\n[   14.588738]  platform_pm_resume from dpm_run_callback+0x5c/0x14c\n[   14.588757]  dpm_run_callback from device_resume+0xc0/0x324\n[   14.588776]  r9:c24f8054 r8:c24f80a0 r7:00000000 r6:00000000 r5:00000010 r4:c24f8010\n[   14.588779]  device_resume from dpm_resume+0x130/0x160\n[   14.588799]  r9:c22539e4 r8:00000010 r7:c22bebb0 r6:c24f8010 r5:c22539dc r4:c22539b0\n[   14.588802]  dpm_resume from dpm_resume_end+0x14/0x20\n[   14.588822]  r10:c2204e40 r9:00000000 r8:c228a3fc r7:00000000 r6:00000003 r5:c228a414\n[   14.588826]  r4:00000010\n[   14.588828]  dpm_resume_end from suspend_devices_and_enter+0x274/0x6f8\n[   14.588848]  r5:c228a414 r4:00000000\n[   14.588851]  suspend_devices_and_enter from pm_suspend+0x228/0x2bc\n[   14.588868]  r10:c3502910 r9:c3501f40 r8:00000004 r7:c228a438 r6:c0f95e18 r5:00000000\n[   14.588871]  r4:00000003\n[   14.588874]  pm_suspend from state_store+0x74/0xd0\n[   14.588889]  r7:c228a438 r6:c0f934c8 r5:00000003 r4:00000003\n[   14.588892]  state_store from kobj_attr_store+0x1c/0x28\n[   14.588913]  r9:00000000 r8:00000000 r7:f09f9f08 r6:00000004 r5:c3502900 r4:c0283250\n[   14.588916]  kobj_attr_store from sysfs_kf_write+0x40/0x4c\n[   14.588936]  r5:c3502900 r4:c0d92a48\n[   14.588939]  sysfs_kf_write from kernfs_fop_write_iter+0x104/0x1f0\n[   14.588956]  r5:c3502900 r4:c3501f40\n[   14.588960]  kernfs_fop_write_iter from vfs_write+0x250/0x420\n[   14.588980]  r10:c0e14b48 r9:00000000 r8:c25f5780 r7:00443398 r6:f09f9f68 r5:c34f7f00\n[   14.588983]  r4:c042a88c\n[   14.588987]  vfs_write from ksys_write+0x74/0xe4\n[   14.589005]  r10:00000004 r9:c25f5780 r8:c02002fA0 r7:00000000 r6:00000000 r5:c34f7f00\n[   14.589008]  r4:c34f7f00\n[   14.589011]  ksys_write from sys_write+0x10/0x14\n[   14.589029]  r7:00000004 r6:004421c0 r5:00443398 r4:00000004\n[   14.589032]  sys_write from ret_fast_syscall+0x0/0x5c\n[   14.589044] Exception stack(0xf09f9fa8 to 0xf09f9ff0)\n[   14.589050] 9fa0:                   00000004 00443398 00000004 00443398 00000004 00000001\n[   14.589056] 9fc0: 00000004 00443398 004421c0 00000004 b6ecbd58 00000008 bebfbc38 0043eb78\n[   14.589062] 9fe0: 00440eb0 bebfbaf8 b6de18a0 b6e579e8\n[   14.589065] ---[ end trace 0000000000000000 ]---\n\nThe fix uses the higher level nand_reset(chip, chipnr); where chipnr = 0, when\ndoing PM resume operation in compliance with the controller support for single\ndie nand chip. Switching from nand_reset_op() to nan\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/6f567c6a5250e3531cfd9c7ff254ecc2650464fa",
+      "https://git.kernel.org/stable/c/8775581e1c48e1bdd04a893d6f6bbe5128ad0ea7",
+      "https://git.kernel.org/stable/c/fbcb584efa5cd912ff8a151d67b8fe22f4162a85",
+      "https://git.kernel.org/stable/c/9dd161f707ecb7db38e5f529e979a5b6eb565b2d",
+      "https://git.kernel.org/stable/c/9bd51723ab51580e077c91d494c37e80703b8524",
+      "https://git.kernel.org/stable/c/7266066b9469f04ed1d4c0fdddaea1425835eb55",
+      "https://git.kernel.org/stable/c/c2eb3cffb0d972c5503e4d48921971c81def0fe5",
+      "https://git.kernel.org/stable/c/659b1f29f3e2fd5d751fdf35c5526d1f1c9b3dd2",
+      "https://git.kernel.org/stable/c/ddc210cf8b8a8be68051ad958bf3e2cef6b681c2"
+    ],
+    "受影响版本": [
+      "97d90da8a886949f09bb4754843fb0b504956ad2",
+      "97d90da8a886949f09bb4754843fb0b504956ad2",
+      "97d90da8a886949f09bb4754843fb0b504956ad2",
+      "97d90da8a886949f09bb4754843fb0b504956ad2",
+      "97d90da8a886949f09bb4754843fb0b504956ad2",
+      "97d90da8a886949f09bb4754843fb0b504956ad2",
+      "97d90da8a886949f09bb4754843fb0b504956ad2",
+      "97d90da8a886949f09bb4754843fb0b504956ad2",
+      "97d90da8a886949f09bb4754843fb0b504956ad2"
+    ],
+    "公开日期": "2025年05月09日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-42148",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nbnx2x: Fix multiple UBSAN array-index-out-of-bounds\n\nFix UBSAN warnings that occur when using a system with 32 physical\ncpu cores or more, or when the user defines a number of Ethernet\nqueues greater than or equal to FP_SB_MAX_E1x using the num_queues\nmodule parameter.\n\nCurrently there is a read/write out of bounds that occurs on the array\n\"struct stats_query_entry query\" present inside the \"bnx2x_fw_stats_req\"\nstruct in \"drivers/net/ethernet/broadcom/bnx2x/bnx2x.h\".\nLooking at the definition of the \"struct stats_query_entry query\" array:\n\nstruct stats_query_entry query[FP_SB_MAX_E1x+\n         BNX2X_FIRST_QUEUE_QUERY_IDX];\n\nFP_SB_MAX_E1x is defined as the maximum number of fast path interrupts and\nhas a value of 16, while BNX2X_FIRST_QUEUE_QUERY_IDX has a value of 3\nmeaning the array has a total size of 19.\nSince accesses to \"struct stats_query_entry query\" are offset-ted by\nBNX2X_FIRST_QUEUE_QUERY_IDX, that means that the total number of Ethernet\nqueues should not exceed FP_SB_MAX_E1x (16). However one of these queues\nis reserved for FCOE and thus the number of Ethernet queues should be set\nto [FP_SB_MAX_E1x -1] (15) if FCOE is enabled or [FP_SB_MAX_E1x] (16) if\nit is not.\n\nThis is also described in a comment in the source code in\ndrivers/net/ethernet/broadcom/bnx2x/bnx2x.h just above the Macro definition\nof FP_SB_MAX_E1x. Below is the part of this explanation that it important\nfor this patch\n\n/*\n  * The total number of L2 queues, MSIX vectors and HW contexts (CIDs) is\n  * control by the number of fast-path status blocks supported by the\n  * device (HW/FW). Each fast-path status block (FP-SB) aka non-default\n  * status block represents an independent interrupts context that can\n  * serve a regular L2 networking queue. However special L2 queues such\n  * as the FCoE queue do not require a FP-SB and other components like\n  * the CNIC may consume FP-SB reducing the number of possible L2 queues\n  *\n  * If the maximum number of FP-SB available is X then:\n  * a. If CNIC is supported it consumes 1 FP-SB thus the max number of\n  *    regular L2 queues is Y=X-1\n  * b. In MF mode the actual number of L2 queues is Y= (X-1/MF_factor)\n  * c. If the FCoE L2 queue is supported the actual number of L2 queues\n  *    is Y+1\n  * d. The number of irqs (MSIX vectors) is either Y+1 (one extra for\n  *    slow-path interrupts) or Y+2 if CNIC is supported (one additional\n  *    FP interrupt context for the CNIC).\n  * e. The number of HW context (CID count) is always X or X+1 if FCoE\n  *    L2 queue is supported. The cid for the FCoE L2 queue is always X.\n  */\n\nHowever this driver also supports NICs that use the E2 controller which can\nhandle more queues due to having more FP-SB represented by FP_SB_MAX_E2.\nLooking at the commits when the E2 support was added, it was originally\nusing the E1x parameters: commit f2e0899f0f27 (\"bnx2x: Add 57712 support\").\nBack then FP_SB_MAX_E2 was set to 16 the same as E1x. However the driver\nwas later updated to take full advantage of the E2 instead of having it be\nlimited to the capabilities of the E1x. But as far as we can tell, the\narray \"stats_query_entry query\" was still limited to using the FP-SB\navailable to the E1x cards as part of an oversignt when the driver was\nupdated to take full advantage of the E2, and now with the driver being\naware of the greater queue size supported by E2 NICs, it causes the UBSAN\nwarnings seen in the stack traces below.\n\nThis patch increases the size of the \"stats_query_entry query\" array by\nreplacing FP_SB_MAX_E1x with FP_SB_MAX_E2 to be large enough to handle\nboth types of NICs.\n\nStack traces:\n\nUBSAN: array-index-out-of-bounds in\n       drivers/net/ethernet/broadcom/bnx2x/bnx2x_stats.c:1529:11\nindex 20 is out of range for type 'stats_query_entry [19]'\nCPU: 12 PID: 858 Comm: systemd-network Not tainted 6.9.0-060900rc7-generic\n\t     #202405052133\nHardware name: HP ProLiant DL360 Gen9/ProLiant DL360 \n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/cfb04472ce33bee2579caf4dc9f4242522f6e26e",
+      "https://git.kernel.org/stable/c/cbe53087026ad929cd3950508397e8892a6a2a0f",
+      "https://git.kernel.org/stable/c/8b17cec33892a66bbd71f8d9a70a45e2072ae84f",
+      "https://git.kernel.org/stable/c/0edae06b4c227bcfaf3ce21208d49191e1009d3b",
+      "https://git.kernel.org/stable/c/9504a1550686f53b0bab4cab31d435383b1ee2ce",
+      "https://git.kernel.org/stable/c/f1313ea92f82451923e28ab45a4aaa0e70e80b98",
+      "https://git.kernel.org/stable/c/b9ea38e767459111a511ed4fb74abc37db95a59d",
+      "https://git.kernel.org/stable/c/134061163ee5ca4759de5c24ca3bd71608891ba7"
+    ],
+    "受影响版本": [
+      "50f0a562f8cc9ed9d9f7f7380434c3c8646172d5",
+      "50f0a562f8cc9ed9d9f7f7380434c3c8646172d5",
+      "50f0a562f8cc9ed9d9f7f7380434c3c8646172d5",
+      "50f0a562f8cc9ed9d9f7f7380434c3c8646172d5",
+      "50f0a562f8cc9ed9d9f7f7380434c3c8646172d5",
+      "50f0a562f8cc9ed9d9f7f7380434c3c8646172d5",
+      "50f0a562f8cc9ed9d9f7f7380434c3c8646172d5",
+      "50f0a562f8cc9ed9d9f7f7380434c3c8646172d5"
+    ],
+    "公开日期": "2024年07月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-50093",
+    "漏洞描述": "APIIDA API Gateway Manager for Broadcom Layer7 v2023.2.2 is vulnerable to Host Header Injection.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://apiida.com/product/apiida-api-gateway-manager/",
+      "https://senscybersecurity.nl/cve-2023-50093-explained/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年01月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-50092",
+    "漏洞描述": "APIIDA API Gateway Manager for Broadcom Layer7 v2023.2 is vulnerable to Cross Site Scripting (XSS).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://apiida.com/product/apiida-api-gateway-manager/",
+      "https://senscybersecurity.nl/cve-2023-50092-explained/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年01月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-47233",
+    "漏洞描述": "The brcm80211 component in the Linux kernel through 6.5.10 has a brcmf_cfg80211_detach use-after-free in the device unplugging (disconnect the USB by hotplug) code. For physically proximate attackers with local access, this \"could be exploited in a real world scenario.\" This is related to brcmf_cfg80211_escan_timeout_worker in drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://bugzilla.suse.com/show_bug.cgi?id=1216702",
+      "https://marc.info/?l=linux-kernel&m=169907678011243&w=2",
+      "https://lore.kernel.org/all/20231104054709.716585-1-zyytlz.wz%40163.com/",
+      "https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=0f7352557a35ab7888bc7831411ec8a3cbe20d78",
+      "https://lists.debian.org/debian-lts-announce/2024/06/msg00017.html",
+      "https://lists.debian.org/debian-lts-announce/2024/06/msg00020.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年11月03日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4345",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable client-side control bypass leads to unauthorized data access for low privileged user",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4344",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable to insufficient randomness due to improper use of ssl.rnd to setup CIM connection",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4343",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable due to exposure of sensitive password information in the URL as a URL search parameter",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4342",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable due to insecure defaults of lacking HTTP strict-transport-security  policy",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4341",
+    "漏洞描述": "Broadcom RAID Controller is vulnerable to Privilege escalation to root due to creation of insecure folders by Web GUI",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4340",
+    "漏洞描述": "Broadcom RAID Controller is vulnerable to Privilege escalation by taking advantage of the Session prints in the log file",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4339",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable to exposure of private keys used for CIM stored with insecure file permissions",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4338",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable due to insecure default of HTTP configuration that does not provide X-Content-Type-Options Headers",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4337",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable to improper session handling of managed servers on Gateway installation",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4336",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable due to insecure default of HTTP configuration that does not safeguard cookies with Secure attribute",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4335",
+    "漏洞描述": "Broadcom RAID Controller Web server (nginx) is serving private server-side files without any authentication on Linux",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4334",
+    "漏洞描述": "Broadcom RAID Controller Web server (nginx) is serving private files without any authentication",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4333",
+    "漏洞描述": "Broadcom RAID Controller web interface doesn’t enforce SSL cipher ordering by server",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4332",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable due to Improper permissions on the log file",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4331",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable has an insecure default TLS configuration that support obsolete and vulnerable TLS protocols",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "",
+    "CVE编号": "CVE-2023-4330",
+    "漏洞描述": "",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "无官方补丁，建议联系厂商或及时更新系统"
+    ],
+    "受影响版本": [],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4329",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable due to insecure default of HTTP configuration that does not safeguard SESSIONID cookie with SameSite attribute",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4328",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable  to exposure of sensitive data and the keys used for encryption are accessible to any local user on Windows",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4327",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable to exposure of sensitive data and the keys used for encryption are accessible to any local user on Linux",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4326",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable has an insecure default TLS configuration that supports obsolete SHA1-based ciphersuites",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4325",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable due to usage of Libcurl with LSA has known vulnerabilities",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4324",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable due to insecure defaults of lacking HTTP Content-Security-Policy  headers",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "Broadcom",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "LSI Storage Authority (LSA)",
+    "CVE编号": "CVE-2023-4323",
+    "漏洞描述": "Broadcom RAID Controller web interface is vulnerable to improper session management of active sessions on Gateway setup",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/support/resources/product-security-center"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-31096",
+    "漏洞描述": "An issue was discovered in Broadcom) LSI PCI-SV92EX Soft Modem Kernel Driver through 2.2.100.1 (aka AGRSM64.sys). There is Local Privilege Escalation to SYSTEM via a Stack Overflow in RTLCopyMemory (IOCTL 0x1b2150). An attacker can exploit this to elevate privileges from a medium-integrity process to SYSTEM. This can also be used to bypass kernel-level protections such as AV or PPL, because exploit code runs with high-integrity privileges and can be used in coordinated BYOVD (bring your own vulnerable driver) ransomware campaigns.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com",
+      "https://cschwarz1.github.io/posts/0x04/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年10月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Kernel",
+    "CVE编号": "CVE-2023-1380",
+    "漏洞描述": "A slab-out-of-bound read problem was found in brcmf_get_assoc_ies in drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c in the Linux Kernel. This issue could occur when assoc_info->req_len data is bigger than the size of the buffer, defined as WL_EXTRA_BUF_MAX, leading to a denial of service.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2177883",
+      "https://lore.kernel.org/linux-wireless/20230309104457.22628-1-jisoo.jang%40yonsei.ac.kr/T/#u",
+      "https://www.openwall.com/lists/oss-security/2023/03/14/1",
+      "https://security.netapp.com/advisory/ntap-20230511-0001/",
+      "http://packetstormsecurity.com/files/173087/Kernel-Live-Patch-Security-Notice-LSN-0095-1.html",
+      "http://packetstormsecurity.com/files/173757/Kernel-Live-Patch-Security-Notice-LSN-0096-1.html",
+      "https://lists.debian.org/debian-lts-announce/2023/07/msg00030.html",
+      "https://www.debian.org/security/2023/dsa-5480",
+      "https://lists.debian.org/debian-lts-announce/2023/10/msg00027.html"
+    ],
+    "受影响版本": [
+      "unknown"
+    ],
+    "公开日期": "2023年03月27日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49459",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nthermal/drivers/broadcom: Fix potential NULL dereference in sr_thermal_probe\n\nplatform_get_resource() may return NULL, add proper check to\navoid potential NULL dereferencing.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/b3461ccaa5d2588568d865faee285512ad448049",
+      "https://git.kernel.org/stable/c/79098339ac2065f4b4352ef5921628970b6f47e6",
+      "https://git.kernel.org/stable/c/ef1235c6514a58f274246cf4a2d5f4e40af539ce",
+      "https://git.kernel.org/stable/c/ee9b6b02e8c140323ed46d6602d805ea735c7719",
+      "https://git.kernel.org/stable/c/61621e042c22b47d1eadee617bdd26835294b425",
+      "https://git.kernel.org/stable/c/e20d136ec7d6f309989c447638365840d3424c8e"
+    ],
+    "受影响版本": [
+      "250e211057c7237dc75634b1372a1a3bd58dcd96",
+      "250e211057c7237dc75634b1372a1a3bd58dcd96",
+      "250e211057c7237dc75634b1372a1a3bd58dcd96",
+      "250e211057c7237dc75634b1372a1a3bd58dcd96",
+      "250e211057c7237dc75634b1372a1a3bd58dcd96",
+      "250e211057c7237dc75634b1372a1a3bd58dcd96"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-3643",
+    "漏洞描述": "Guests can trigger NIC interface reset/abort/crash via netback It is possible for a guest to trigger a NIC interface reset/abort/crash in a Linux based network backend by sending certain kinds of packets. It appears to be an (unwritten?) assumption in the rest of the Linux network stack that packet protocol headers are all contained within the linear section of the SKB and some NICs behave badly if this is not the case. This has been reported to occur with Cisco (enic) and Broadcom NetXtrem II BCM5780 (bnx2x) though it may be an issue with other NICs/drivers as well. In case the frontend is sending requests with split headers, netback will forward those violating above mentioned assumption to the networking core, resulting in said misbehavior.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://xenbits.xenproject.org/xsa/advisory-423.txt",
+      "http://www.openwall.com/lists/oss-security/2022/12/07/2",
+      "https://lists.debian.org/debian-lts-announce/2022/12/msg00031.html",
+      "https://lists.debian.org/debian-lts-announce/2022/12/msg00034.html",
+      "http://packetstormsecurity.com/files/175963/Kernel-Live-Patch-Security-Notice-LSN-0099-1.html"
+    ],
+    "受影响版本": [
+      "consult Xen advisory XSA-423"
+    ],
+    "公开日期": "2022年12月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Kernel",
+    "CVE编号": "CVE-2022-3628",
+    "漏洞描述": "A buffer overflow flaw was found in the Linux kernel Broadcom Full MAC Wi-Fi driver. This issue occurs when a user connects to a malicious USB device. This can allow a local user to crash the system or escalate their privileges.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/patch/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fweh.c?id=6788ba8aed4e28e90f72d68a9d794e34eac17295"
+    ],
+    "受影响版本": [
+      "Linux kernel 6.1-rc5"
+    ],
+    "公开日期": "2023年01月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-42775",
+    "漏洞描述": "Broadcom Emulex HBA Manager/One Command Manager versions before 11.4.425.0 and 12.8.542.31, if not installed in Strictly Local Management mode, have a vulnerability in the remote firmware download feature that could allow a user to place or replace an arbitrary file on the remote host. In non-secure mode, the user is unauthenticated.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/products/storage/fibre-channel-host-bus-adapters/emulex-hba-manager",
+      "https://docs.broadcom.com/doc/elx_HBAManager-Lin-RN12811-101.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年11月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-42774",
+    "漏洞描述": "Broadcom Emulex HBA Manager/One Command Manager versions before 11.4.425.0 and 12.8.542.31, if not installed in Strictly Local Management mode, have a buffer overflow vulnerability in the remote firmware download feature that could allow remote unauthenticated users to perform various attacks. In non-secure mode, the user is unauthenticated.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/products/storage/fibre-channel-host-bus-adapters/emulex-hba-manager",
+      "https://docs.broadcom.com/doc/elx_HBAManager-Lin-RN12811-101.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年11月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-42773",
+    "漏洞描述": "Broadcom Emulex HBA Manager/One Command Manager versions before 11.4.425.0 and 12.8.542.31, if not installed in Strictly Local Management mode, could allow a user to retrieve an arbitrary file from a remote host with the GetDumpFile command. In non-secure mode, the user is unauthenticated.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.broadcom.com/products/storage/fibre-channel-host-bus-adapters/emulex-hba-manager",
+      "https://docs.broadcom.com/doc/elx_HBAManager-Lin-RN12811-101.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年11月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-42772",
+    "漏洞描述": "Broadcom Emulex HBA Manager/One Command Manager versions before 11.4.425.0 and 12.8.542.31, if not installed in Strictly Local Management mode, have a buffer overflow vulnerability in the remote GetDumpFile command that could allow a user to attempt various attacks. In non-secure mode, the user is unauthenticated",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://docs.broadcom.com/doc/elx_HBAManager-Lin-RN12811-101.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年11月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-34174",
+    "漏洞描述": "A vulnerability exists in Broadcom BCM4352 and BCM43684 chips. Any wireless router using BCM4352 and BCM43684 will be affected, such as ASUS AX6100. An attacker may cause a Denial of Service (DoS) to any device connected to BCM4352 or BCM43684 routers via an association or reassociation frame.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/E7mer",
+      "https://github.com/E7mer/OWFuzz"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年07月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-33478",
+    "漏洞描述": "The TrustZone implementation in certain Broadcom MediaxChange firmware could allow an unauthenticated, physically proximate attacker to achieve arbitrary code execution in the TrustZone Trusted Execution Environment (TEE) of an affected device. This, for example, affects certain Cisco IP Phone and Wireless IP Phone products before 2021-07-07. Exploitation is possible only when the attacker can disassemble the device in order to control the voltage/current for chip pins.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-brcm-mxc-jul2021-26LqUZUh"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年07月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-22492",
+    "漏洞描述": "An issue was discovered on Samsung mobile devices with O(8.x), P(9.0), and Q(10.0) (Broadcom Bluetooth chipsets) software. The Bluetooth UART driver has a buffer overflow. The Samsung ID is SVE-2020-18731 (January 2021).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://security.samsungmobile.com/securityUpdate.smsb"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年01月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-6616",
+    "漏洞描述": "Some Broadcom chips mishandle Bluetooth random-number generation because a low-entropy Pseudo Random Number Generator (PRNG) is used in situations where a Hardware Random Number Generator (HRNG) should have been used to prevent spoofing. This affects, for example, Samsung Galaxy S8, S8+, and Note8 devices with the BCM4361 chipset. The Samsung ID is SVE-2020-16882 (May 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://security.samsungmobile.com/securityUpdate.smsb",
+      "https://support.apple.com/kb/HT211100",
+      "http://bluetooth.lol",
+      "https://media.ccc.de/v/DiVOC-6-finding_eastereggs_in_broadcom_s_bluetooth_random_number_generator",
+      "https://twitter.com/naehrdine/status/1255981245147877377",
+      "https://github.com/seemoo-lab/internalblue/blob/master/doc/rng.md",
+      "https://twitter.com/naehrdine/status/1255980443368919045",
+      "https://support.apple.com/kb/HT211168",
+      "http://seclists.org/fulldisclosure/2020/May/49",
+      "https://support.apple.com/HT211168"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年05月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10829",
+    "漏洞描述": "An issue was discovered on Samsung mobile devices with O(8.0), P(9.0), and Q(10.0) (Broadcom chipsets) software. A kernel driver heap overflow leads to arbitrary code execution. The Samsung ID is SVE-2019-15880 (March 2020).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://security.samsungmobile.com/securityUpdate.smsb"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年03月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10370",
+    "漏洞描述": "Certain Cypress (and Broadcom) Wireless Combo chips such as CYW43455, when a 2021-01-26 Bluetooth firmware update is not present, allow a Bluetooth outage via a \"Spectra\" attack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.informatik.tu-darmstadt.de/seemoo/team_seemoo/jiska_classen/index.en.jsp",
+      "https://github.com/RPi-Distro/bluez-firmware/commit/8445a53ce2c51a77472b908a0c8f6f8e1fa5c37a",
+      "https://security-tracker.debian.org/tracker/CVE-2020-10370",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2052676",
+      "https://www.informatik.tu-darmstadt.de/fb20/aktuelles_fb20/fb20_neuigkeiten/neuigkeiten_fb20_details_203136.de.jsp"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年11月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10369",
+    "漏洞描述": "Certain Cypress (and Broadcom) Wireless Combo chips, when a January 2021 firmware update is not present, allow inferences about memory content via a \"Spectra\" attack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.informatik.tu-darmstadt.de/seemoo/team_seemoo/jiska_classen/index.en.jsp",
+      "https://github.com/RPi-Distro/bluez-firmware/commit/8445a53ce2c51a77472b908a0c8f6f8e1fa5c37a",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2052676",
+      "https://www.informatik.tu-darmstadt.de/fb20/aktuelles_fb20/fb20_neuigkeiten/neuigkeiten_fb20_details_203136.de.jsp"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年11月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10368",
+    "漏洞描述": "Certain Cypress (and Broadcom) Wireless Combo chips, when a January 2021 firmware update is not present, allow memory read access via a \"Spectra\" attack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.informatik.tu-darmstadt.de/seemoo/team_seemoo/jiska_classen/index.en.jsp",
+      "https://github.com/RPi-Distro/bluez-firmware/commit/8445a53ce2c51a77472b908a0c8f6f8e1fa5c37a",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2052676",
+      "https://www.informatik.tu-darmstadt.de/fb20/aktuelles_fb20/fb20_neuigkeiten/neuigkeiten_fb20_details_203136.de.jsp"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年11月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10367",
+    "漏洞描述": "Certain Cypress (and Broadcom) Wireless Combo chips, when a January 2021 firmware update is not present, allow memory access via a \"Spectra\" attack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.informatik.tu-darmstadt.de/seemoo/team_seemoo/jiska_classen/index.en.jsp",
+      "https://github.com/RPi-Distro/bluez-firmware/commit/8445a53ce2c51a77472b908a0c8f6f8e1fa5c37a",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2052676",
+      "https://www.informatik.tu-darmstadt.de/fb20/aktuelles_fb20/fb20_neuigkeiten/neuigkeiten_fb20_details_203136.de.jsp"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年11月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2020-0019",
+    "漏洞描述": "In the Broadcom Nexus firmware, there is an insecure default password. This could lead to local information disclosure in the kernel with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android SoCAndroid ID: A-171413798",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2020-12-01"
+    ],
+    "受影响版本": [
+      "Android SoC"
+    ],
+    "公开日期": "2020年12月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Android",
+    "CVE编号": "CVE-2020-0016",
+    "漏洞描述": "In the Broadcom Nexus firmware, there is an insecure default password. This could lead to local escalation of privilege in the kernel with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android SoCAndroid ID: A-171413483",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://source.android.com/security/bulletin/2020-12-01"
+    ],
+    "受影响版本": [
+      "Android SoC"
+    ],
+    "公开日期": "2020年12月14日"
+  }
+]

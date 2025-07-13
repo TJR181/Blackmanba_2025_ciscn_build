@@ -1,0 +1,365 @@
+[
+  {
+    "设备品牌": "STMicroelectronics",
+    "设备类型": "车载传感器模块",
+    "产品型号": "X-CUBE-AZRT-H7RS",
+    "CVE编号": "CVE-2024-50597",
+    "漏洞描述": "An integer underflow vulnerability exists in the HTTP server PUT request functionality of STMicroelectronics X-CUBE-AZRTOS-WL 2.0.0. A specially crafted network packet can lead to denial of service. An attacker can send a malicious packet to trigger this vulnerability.This vulnerability affects the NetX Duo Component HTTP Server implementation which can be found in x-cube-azrtos-f7\\Middlewares\\ST\\netxduo\\addons\\http\\nxd_http_server.c",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2024-2103"
+    ],
+    "受影响版本": [
+      "1.0.0"
+    ],
+    "公开日期": "2025年04月02日"
+  },
+  {
+    "设备品牌": "STMicroelectronics",
+    "设备类型": "车载传感器模块",
+    "产品型号": "X-CUBE-AZRT-H7RS",
+    "CVE编号": "CVE-2024-50596",
+    "漏洞描述": "An integer underflow vulnerability exists in the HTTP server PUT request functionality of STMicroelectronics X-CUBE-AZRTOS-WL 2.0.0. A specially crafted network packet can lead to denial of service. An attacker can send a malicious packet to trigger this vulnerability.This vulnerability affects the NetX Duo Web Component HTTP Server implementation which can be found in x-cube-azrtos-f7\\Middlewares\\ST\\netxduo\\addons\\web\\nx_web_http_server.c",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2024-2103"
+    ],
+    "受影响版本": [
+      "1.0.0"
+    ],
+    "公开日期": "2025年04月02日"
+  },
+  {
+    "设备品牌": "STMicroelectronics",
+    "设备类型": "车载传感器模块",
+    "产品型号": "X-CUBE-AZRT-H7RS",
+    "CVE编号": "CVE-2024-50595",
+    "漏洞描述": "An integer underflow vulnerability exists in the HTTP server PUT request functionality of STMicroelectronics X-CUBE-AZRTOS-WL 2.0.0. A specially crafted series of network requests can lead to denial of service. An attacker can send a sequence of malicious packets to trigger this vulnerability.This vulnerability affects the NetX Duo Component HTTP Server implementation which can be found in x-cube-azrtos-f7\\Middlewares\\ST\\netxduo\\addons\\http\\nxd_http_server.c",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2024-2102"
+    ],
+    "受影响版本": [
+      "1.0.0"
+    ],
+    "公开日期": "2025年04月02日"
+  },
+  {
+    "设备品牌": "STMicroelectronics",
+    "设备类型": "车载传感器模块",
+    "产品型号": "X-CUBE-AZRT-H7RS",
+    "CVE编号": "CVE-2024-50594",
+    "漏洞描述": "An integer underflow vulnerability exists in the HTTP server PUT request functionality of STMicroelectronics X-CUBE-AZRTOS-WL 2.0.0. A specially crafted series of network requests can lead to denial of service. An attacker can send a sequence of malicious packets to trigger this vulnerability.This vulnerability affects the NetX Duo Web Component HTTP Server implementation which can be found in x-cube-azrtos-f7\\Middlewares\\ST\\netxduo\\addons\\web\\nx_web_http_server.c",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2024-2102"
+    ],
+    "受影响版本": [
+      "1.0.0"
+    ],
+    "公开日期": "2025年04月02日"
+  },
+  {
+    "设备品牌": "STMicroelectronics",
+    "设备类型": "车载传感器模块",
+    "产品型号": "X-CUBE-AZRT-H7RS",
+    "CVE编号": "CVE-2024-50385",
+    "漏洞描述": "A denial of service vulnerability exists in the NetX Component HTTP server functionality of STMicroelectronics X-CUBE-AZRTOS-WL 2.0.0. A specially crafted network packet can lead to denial of service. An attacker can send a malicious packet to trigger this vulnerability.This vulnerability affects X-CUBE-AZRTOS-F7 NetX Duo Component HTTP Server HTTP server v 1.1.0. This HTTP server implementation is contained in this file - x-cube-azrtos-f7\\Middlewares\\ST\\netxduo\\addons\\http\\nxd_http_server.c",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2024-2097"
+    ],
+    "受影响版本": [
+      "1.0.0"
+    ],
+    "公开日期": "2025年04月02日"
+  },
+  {
+    "设备品牌": "STMicroelectronics",
+    "设备类型": "车载传感器模块",
+    "产品型号": "X-CUBE-AZRT-H7RS",
+    "CVE编号": "CVE-2024-50384",
+    "漏洞描述": "A denial of service vulnerability exists in the NetX Component HTTP server functionality of STMicroelectronics X-CUBE-AZRTOS-WL 2.0.0. A specially crafted network packet can lead to denial of service. An attacker can send a malicious packet to trigger this vulnerability.This vulnerability affects X-CUBE-AZRTOS-F7 NetX Duo Web Component HTTP server v 1.1.0. This HTTP server implementation is contained in this file - x-cube-azrtos-f7\\Middlewares\\ST\\netxduo\\addons\\web\\nx_web_http_server.c",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2024-2097"
+    ],
+    "受影响版本": [
+      "1.0.0"
+    ],
+    "公开日期": "2025年04月02日"
+  },
+  {
+    "设备品牌": "STMicroelectronics",
+    "设备类型": "车载传感器模块",
+    "产品型号": "X-CUBE-AZRT-H7RS",
+    "CVE编号": "CVE-2024-45064",
+    "漏洞描述": "A buffer overflow vulnerability exists in the FileX Internal RAM interface functionality of STMicroelectronics X-CUBE-AZRTOS-WL 2.0.0. A specially crafted set of network packets can lead to code execution. An attacker can send a sequence of requests to trigger this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2024-2096"
+    ],
+    "受影响版本": [
+      "1.0.0"
+    ],
+    "公开日期": "2025年04月02日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载传感器模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-26787",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmmc: mmci: stm32: fix DMA API overlapping mappings warning\n\nTurning on CONFIG_DMA_API_DEBUG_SG results in the following warning:\n\nDMA-API: mmci-pl18x 48220000.mmc: cacheline tracking EEXIST,\noverlapping mappings aren't supported\nWARNING: CPU: 1 PID: 51 at kernel/dma/debug.c:568\nadd_dma_entry+0x234/0x2f4\nModules linked in:\nCPU: 1 PID: 51 Comm: kworker/1:2 Not tainted 6.1.28 #1\nHardware name: STMicroelectronics STM32MP257F-EV1 Evaluation Board (DT)\nWorkqueue: events_freezable mmc_rescan\nCall trace:\nadd_dma_entry+0x234/0x2f4\ndebug_dma_map_sg+0x198/0x350\n__dma_map_sg_attrs+0xa0/0x110\ndma_map_sg_attrs+0x10/0x2c\nsdmmc_idma_prep_data+0x80/0xc0\nmmci_prep_data+0x38/0x84\nmmci_start_data+0x108/0x2dc\nmmci_request+0xe4/0x190\n__mmc_start_request+0x68/0x140\nmmc_start_request+0x94/0xc0\nmmc_wait_for_req+0x70/0x100\nmmc_send_tuning+0x108/0x1ac\nsdmmc_execute_tuning+0x14c/0x210\nmmc_execute_tuning+0x48/0xec\nmmc_sd_init_uhs_card.part.0+0x208/0x464\nmmc_sd_init_card+0x318/0x89c\nmmc_attach_sd+0xe4/0x180\nmmc_rescan+0x244/0x320\n\nDMA API debug brings to light leaking dma-mappings as dma_map_sg and\ndma_unmap_sg are not correctly balanced.\n\nIf an error occurs in mmci_cmd_irq function, only mmci_dma_error\nfunction is called and as this API is not managed on stm32 variant,\ndma_unmap_sg is never called in this error path.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/0224cbc53ba82b84affa7619b6d1b1a254bc2c53",
+      "https://git.kernel.org/stable/c/5ae5060e17a3fc38e54c3e5bd8abd6b1d5bfae7c",
+      "https://git.kernel.org/stable/c/70af82bb9c897faa25a44e4181f36c60312b71ef",
+      "https://git.kernel.org/stable/c/176e66269f0de327375fc0ea51c12c2f5a97e4c4",
+      "https://git.kernel.org/stable/c/d610a307225951929b9dff807788439454476f85",
+      "https://git.kernel.org/stable/c/6b1ba3f9040be5efc4396d86c9752cdc564730be"
+    ],
+    "受影响版本": [
+      "46b723dd867d599420fb640c0eaf2a866ef721d4",
+      "46b723dd867d599420fb640c0eaf2a866ef721d4",
+      "46b723dd867d599420fb640c0eaf2a866ef721d4",
+      "46b723dd867d599420fb640c0eaf2a866ef721d4",
+      "46b723dd867d599420fb640c0eaf2a866ef721d4",
+      "46b723dd867d599420fb640c0eaf2a866ef721d4"
+    ],
+    "公开日期": "2024年04月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-50096",
+    "漏洞描述": "STMicroelectronics STSAFE-A1xx middleware before 3.3.7 allows MCU code execution if an adversary has the ability to read from and write to the I2C bus. This is caused by an StSafeA_ReceiveBytes buffer overflow in the X-CUBE-SAFEA1 Software Package for STSAFE-A sample applications (1.2.0), and thus can affect user-written code that was derived from a published sample application.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/elttam/publications/blob/master/writeups/CVE-2023-50096.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年01月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-48010",
+    "漏洞描述": "STMicroelectronics SPC58 is vulnerable to Missing Protection Mechanism for Alternate Hardware Interface. Code running as Supervisor on the SPC58 PowerPC microcontrollers may disable the System Memory Protection Unit and gain unabridged read/write access to protected assets.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.st.com/resource/en/reference_manual/rm0452-spc58-h-line--32-bit-power-architecture-automotive-mcu-triple-z4-cores-200-mhz-10-mbytes-flash-hsm-asild-stmicroelectronics.pdf",
+      "https://plaxidityx.com/blog/blog-post/is-your-memory-protecteduncovering-hidden-vulnerabilities-in-automotive-mpu-mechanisms/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年12月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-43393",
+    "漏洞描述": "STMicroelectronics STSAFE-J 1.1.4, J-SAFE3 1.2.5, and J-SIGN sometimes allow attackers to abuse signature verification. This is associated with the ECDSA signature algorithm on the Java Card J-SAFE3 and STSAFE-J platforms exposing a 3.0.4 Java Card API. It is exploitable for STSAFE-J in closed configuration and J-SIGN (when signature verification is activated) but not for J-SAFE3 EPASS BAC and EAC products. It might also impact other products based on the J-SAFE-3 Java Card platform.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://community.st.com/s/toparticles",
+      "https://www.cert.ssi.gouv.fr/avis/CERTFR-2022-AVI-169/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年03月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-43392",
+    "漏洞描述": "STMicroelectronics STSAFE-J 1.1.4, J-SAFE3 1.2.5, and J-SIGN sometimes allow attackers to obtain information on cryptographic secrets. This is associated with the ECDSA signature algorithm on the Java Card J-SAFE3 and STSAFE-J platforms exposing a 3.0.4 Java Card API. It is exploitable for STSAFE-J in closed configuration and J-SIGN (when signature verification is activated) but not for J-SAFE3 EPASS BAC and EAC products. It might also impact other products based on the J-SAFE-3 Java Card platform.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://community.st.com/s/toparticles",
+      "https://www.cert.ssi.gouv.fr/avis/CERTFR-2022-AVI-169/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年03月04日"
+  },
+  {
+    "设备品牌": "STMicroelectronics STM32Cube ",
+    "设备类型": "车载传感器模块",
+    "产品型号": "STM32 USB Host Library",
+    "CVE编号": "CVE-2021-42553",
+    "漏洞描述": "A buffer overflow vulnerability in stm32_mw_usb_host of STMicroelectronics in versions before 3.5.1 allows an attacker to execute arbitrary code when the descriptor contains more endpoints than USBH_MAX_NUM_ENDPOINTS. The library is typically integrated when using a RTOS such as FreeRTOS on STM32 MCUs.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://github.com/STMicroelectronics/stm32_mw_usb_host/pull/4",
+      "https://github.com/STMicroelectronics/stm32_mw_usb_host"
+    ],
+    "受影响版本": [
+      "all"
+    ],
+    "公开日期": "2022年10月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-34268",
+    "漏洞描述": "An issue in the USBH_ParseDevDesc() function of STMicroelectronics STM32Cube Middleware v1.8.0 and below causes a denial of service (DOS) via a malformed USB device packet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/STMicroelectronics/STM32CubeH7/issues/75"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年07月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-34267",
+    "漏洞描述": "An in the USBH_MSC_InterfaceInit() function of STMicroelectronics STM32Cube Middleware v1.8.0 and below causes a denial of service (DOS) when the system tries to communicate with the connected endpoint.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/STMicroelectronics/STM32CubeH7/issues/80"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年07月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-34262",
+    "漏洞描述": "A buffer overflow vulnerability in the USBH_ParseEPDesc() function of STMicroelectronics STM32Cube Middleware v1.8.0 and below allows attackers to execute arbitrary code.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/STMicroelectronics/STM32CubeH7/issues/81"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年07月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-34261",
+    "漏洞描述": "An issue in USBH_ParseCfgDesc() of STMicroelectronics STM32Cube Middleware v1.8.0 and below causes a denial of service due to the system hanging when trying to set a remote wake-up feature.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/STMicroelectronics/STM32CubeH7/issues/78"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年07月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-34260",
+    "漏洞描述": "A buffer overflow vulnerability in the USBH_ParseInterfaceDesc() function of STMicroelectronics STM32Cube Middleware v1.8.0 and below allows attackers to execute arbitrary code.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/STMicroelectronics/STM32CubeH7/issues/83"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年07月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-34259",
+    "漏洞描述": "A buffer overflow vulnerability in the USBH_ParseCfgDesc() function of STMicroelectronics STM32Cube Middleware v1.8.0 and below allows attackers to execute arbitrary code.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/STMicroelectronics/STM32CubeH7/issues/76"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年07月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-29414",
+    "漏洞描述": "STMicroelectronics STM32L4 devices through 2021-03-29 have incorrect physical access control.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.sit.fraunhofer.de/en/news-events/downloads-services/cve/",
+      "https://eprint.iacr.org/2021/640",
+      "https://www.aisec.fraunhofer.de/de/das-institut/wissenschaftliche-exzellenz/security-and-trust-in-open-source-security-tokens.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年05月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-8004",
+    "漏洞描述": "STMicroelectronics STM32F1 devices have Incorrect Access Control.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://blog.zapb.de/stm32f1-exceptional-failure/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年04月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-27212",
+    "漏洞描述": "STMicroelectronics STM32L4 devices through 2020-10-19 have incorrect access control. The flash read-out protection (RDP) can be degraded from RDP level 2 (no access via debug interface) to level 1 (limited access via debug interface) by injecting a fault during the boot phase.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.aisec.fraunhofer.de/en/FirmwareProtection.html",
+      "https://eprint.iacr.org/2021/640",
+      "https://www.aisec.fraunhofer.de/de/das-institut/wissenschaftliche-exzellenz/security-and-trust-in-open-source-security-tokens.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年05月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载传感器模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-13466",
+    "漏洞描述": "STMicroelectronics STM32F103 devices through 2020-05-20 allow physical attackers to execute arbitrary code via a power glitch and a specific flash patch/breakpoint unit configuration.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.usenix.org/system/files/woot20-paper-obermaier.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月31日"
+  }
+]

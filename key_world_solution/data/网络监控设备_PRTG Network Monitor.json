@@ -1,0 +1,144 @@
+[
+  {
+    "设备品牌": "Paessler",
+    "设备类型": "网络监控设备",
+    "产品型号": "PRTG Network Monitor",
+    "CVE编号": "CVE-2024-12833",
+    "漏洞描述": "Paessler PRTG Network Monitor SNMP Cross-Site Scripting Authentication Bypass Vulnerability. This vulnerability allows network-adjacent attackers to bypass authentication on affected installations of Paessler PRTG Network Monitor. Some user interaction on the part of an administrator is required to exploit this vulnerability.\n\nThe specific flaw exists within the PRTG Network Monitor web interface. The issue results from the lack of proper validation of user-supplied data, which can lead to the injection of an arbitrary script. An attacker can leverage this vulnerability to bypass authentication on the system. Was ZDI-CAN-23371.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-1736/"
+    ],
+    "受影响版本": [
+      "24.1.92.1554 x64"
+    ],
+    "公开日期": "2025年02月11日"
+  },
+  {
+    "设备品牌": "Paessler",
+    "设备类型": "网络监控设备",
+    "产品型号": "PRTG Network Monitor",
+    "CVE编号": "CVE-2023-51630",
+    "漏洞描述": "Paessler PRTG Network Monitor Cross-Site Scripting Authentication Bypass Vulnerability. This vulnerability allows remote attackers to bypass authentication on affected installations of Paessler PRTG Network Monitor. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file.\n\nThe specific flaw exists within the web console. The issue results from the lack of proper validation of user-supplied data, which can lead to the injection of an arbitrary script. An attacker can leverage this vulnerability to bypass authentication on the system.\n. Was ZDI-CAN-21182.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-073/"
+    ],
+    "受影响版本": [
+      "23.2.84.1566"
+    ],
+    "公开日期": "2024年02月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-35739",
+    "漏洞描述": "PRTG Network Monitor through 22.2.77.2204 does not prevent custom input for a device’s icon, which can be modified to insert arbitrary content into the style tag for that device. When the device page loads, the arbitrary Cascading Style Sheets (CSS) data is inserted into the style tag, loading malicious content. Due to PRTG Network Monitor preventing “characters, and from modern browsers disabling JavaScript support in style tags, this vulnerability could not be escalated into a Cross-Site Scripting vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.paessler.com/prtg/history/stable",
+      "https://raxis.com/blog/cve-2022-35739"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年10月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-34547",
+    "漏洞描述": "PRTG Network Monitor 20.1.55.1775 allows /editsettings CSRF for user account creation.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/likhihcv/PRTG_Network_Monitor_20.1.55.1775_CSRF"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年06月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-29643",
+    "漏洞描述": "PRTG Network Monitor before 21.3.69.1333 allows stored XSS via an unsanitized string imported from a User Object in a connected Active Directory instance.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://raxis.com/blog/prtg-network-monitor-cve-2021-29643",
+      "https://www.paessler.com/prtg/history/stable#21.3.69.1333"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-27220",
+    "漏洞描述": "An issue was discovered in PRTG Network Monitor before 21.1.66.1623. By invoking the screenshot functionality with prepared context paths, an attacker is able to verify the existence of certain files on the filesystem of the PRTG's Web server.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.paessler.com/prtg/history/stable#21.1.66.1623"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年03月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-14073",
+    "漏洞描述": "XSS exists in PRTG Network Monitor 20.1.56.1574 via crafted map properties. An attacker with Read/Write privileges can create a map, and then use the Map Designer Properties screen to insert JavaScript code. This can be exploited against any user with View Maps or Edit Maps access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.paessler.com/prtg/history/stable",
+      "https://gist.github.com/alert3/e058baa33c31695f4168a1dbf77103df",
+      "https://kb.paessler.com/en/topic/88223-what-s-the-open-vulnerability-report-cve-2020-14073-that-my-security-tracker-informed-me-about",
+      "http://packetstormsecurity.com/files/160312/PRTG-Network-Monitor-20.4.63.1412-Cross-Site-Scripting.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月23日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-11547",
+    "漏洞描述": "PRTG Network Monitor before 20.1.57.1745 allows remote unauthenticated attackers to obtain information about probes running or the server itself (CPU usage, memory, Windows version, and internal statistics) via an HTTP request, as demonstrated by type=probes to login.htm or index.htm.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/ch-rigu/PRTG-Network-Monitor-Information-Disclosure"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年04月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10374",
+    "漏洞描述": "A webserver component in Paessler PRTG Network Monitor 19.2.50 to PRTG 20.1.56 allows unauthenticated remote command execution via a crafted POST request or the what parameter of the screenshot function in the Contact Support form.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.paessler.com/prtg/history/stable#20.1.57.1745",
+      "https://kb.paessler.com/en/topic/87668-how-can-i-mitigate-cve-2020-10374-until-i-can-update",
+      "https://tehtris.com/en/rce-on-prtg-network-monitor-tehtris-pentest/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年03月30日"
+  }
+]

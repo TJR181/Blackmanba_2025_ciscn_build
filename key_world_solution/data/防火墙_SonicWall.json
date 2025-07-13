@@ -1,0 +1,1102 @@
+[
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "Connect Tunnel",
+    "CVE编号": "CVE-2025-32817",
+    "漏洞描述": "A Improper Link Resolution vulnerability (CWE-59) in the SonicWall Connect Tunnel Windows (32 and 64 bit) client, this results in unauthorized file overwrite, potentially leading to denial of service or file corruption.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0007"
+    ],
+    "受影响版本": [
+      "12.4.3.283 and earlier versions"
+    ],
+    "公开日期": "2025年04月16日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "NetExtender",
+    "CVE编号": "CVE-2025-23010",
+    "漏洞描述": "An Improper Link Resolution Before File Access ('Link Following') vulnerability in SonicWall NetExtender Windows (32 and 64 bit) client which allows an attacker to manipulate file paths.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0006"
+    ],
+    "受影响版本": [
+      "10.3.1 and earlier versions"
+    ],
+    "公开日期": "2025年04月10日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "NetExtender",
+    "CVE编号": "CVE-2025-23009",
+    "漏洞描述": "A local privilege escalation vulnerability in SonicWall NetExtender Windows (32 and 64 bit) client which allows an attacker to trigger an arbitrary file deletion.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0006"
+    ],
+    "受影响版本": [
+      "10.3.1 and earlier versions"
+    ],
+    "公开日期": "2025年04月10日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "NetExtender",
+    "CVE编号": "CVE-2025-23008",
+    "漏洞描述": "An improper privilege management vulnerability in the SonicWall NetExtender Windows (32 and 64 bit) client allows a low privileged attacker to modify configurations.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0006"
+    ],
+    "受影响版本": [
+      "10.3.1 and earlier versions"
+    ],
+    "公开日期": "2025年04月10日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2024-53703",
+    "漏洞描述": "A vulnerability in the SonicWall SMA100 SSLVPN firmware 10.2.1.13-72sv and earlier versions mod_httprp library loaded by the Apache web server allows remote attackers to cause Stack-based buffer overflow and potentially lead to code execution.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0018"
+    ],
+    "受影响版本": [
+      "10.2.1.13-72sv and earlier versions"
+    ],
+    "公开日期": "2024年12月05日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2024-53702",
+    "漏洞描述": "Use of cryptographically weak pseudo-random number generator (PRNG) vulnerability in the SonicWall SMA100 SSLVPN backup code generator that, in certain cases, can be predicted by an attacker, potentially exposing the generated secret.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0018"
+    ],
+    "受影响版本": [
+      "10.2.1.13-72sv and earlier versions"
+    ],
+    "公开日期": "2024年12月05日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2024-45319",
+    "漏洞描述": "A vulnerability in the SonicWall SMA100 SSLVPN \n\nfirmware 10.2.1.13-72sv and earlier versions allows a remote authenticated attacker can circumvent the certificate requirement during authentication.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0018"
+    ],
+    "受影响版本": [
+      "10.2.1.13-72sv and earlier versions"
+    ],
+    "公开日期": "2024年12月05日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2024-45318",
+    "漏洞描述": "A vulnerability in the SonicWall SMA100 SSLVPN web management interface allows remote attackers to cause Stack-based buffer overflow and potentially lead to code execution.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0018"
+    ],
+    "受影响版本": [
+      "10.2.1.13-72sv and earlier versions"
+    ],
+    "公开日期": "2024年12月05日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "Connect Tunnel",
+    "CVE编号": "CVE-2024-45316",
+    "漏洞描述": "The Improper link resolution before file access ('Link Following') vulnerability in SonicWall Connect Tunnel (version 12.4.3.271 and earlier of Windows client) allows users with standard privileges to delete arbitrary folders and files, potentially leading to local privilege escalation attack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0017"
+    ],
+    "受影响版本": [
+      "12.4.3.271 and earlier versions"
+    ],
+    "公开日期": "2024年10月11日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "Connect Tunnel",
+    "CVE编号": "CVE-2024-45315",
+    "漏洞描述": "The Improper link resolution before file access ('Link Following') vulnerability in SonicWall Connect Tunnel (version 12.4.3.271 and earlier of Windows client) allows users with standard privileges to create arbitrary folders and files, potentially leading to local Denial of Service (DoS) attack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0017"
+    ],
+    "受影响版本": [
+      "12.4.3.271 and earlier versions"
+    ],
+    "公开日期": "2024年10月11日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicOS",
+    "CVE编号": "CVE-2024-40766",
+    "漏洞描述": "An improper access control vulnerability has been identified in the SonicWall SonicOS management access, potentially leading to unauthorized resource access and in specific conditions, causing the firewall to crash. This issue affects SonicWall Firewall Gen 5 and Gen 6 devices, as well as Gen 7 devices running SonicOS 7.0.1-5035 and older versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0015"
+    ],
+    "受影响版本": [
+      "5.9.2.14-12o and older versions",
+      "6.5.4.14-109n and older versions",
+      "7.0.1-5035 and older versions"
+    ],
+    "公开日期": "2024年08月23日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2024-40763",
+    "漏洞描述": "Heap-based buffer overflow vulnerability in the SonicWall SMA100 SSLVPN due to the use of strcpy. This allows remote authenticated attackers to cause Heap-based buffer overflow and potentially lead to code execution.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0018"
+    ],
+    "受影响版本": [
+      "10.2.1.13-72sv and earlier versions"
+    ],
+    "公开日期": "2024年12月05日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "NetExtender",
+    "CVE编号": "CVE-2024-29014",
+    "漏洞描述": "Vulnerability in SonicWall SMA100 NetExtender Windows (32 and 64-bit) client 10.2.339 and earlier versions allows an attacker to arbitrary code execution when processing an EPC Client update.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0011"
+    ],
+    "受影响版本": [
+      "10.2.339 and earlier versions"
+    ],
+    "公开日期": "2024年07月18日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "Email Security",
+    "CVE编号": "CVE-2024-22398",
+    "漏洞描述": "An improper Limitation of a Pathname to a Restricted Directory (Path Traversal) vulnerability in SonicWall Email Security Appliance could allow a remote attacker with administrative privileges to conduct a directory traversal attack and delete arbitrary files from the appliance file system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0006"
+    ],
+    "受影响版本": [
+      "10.0.26.7807 and earlier versions"
+    ],
+    "公开日期": "2024年03月14日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicOS",
+    "CVE编号": "CVE-2024-22394",
+    "漏洞描述": "An improper authentication vulnerability has been identified in SonicWall SonicOS SSL-VPN feature, which in specific conditions could allow a remote attacker to bypass authentication. \n\nThis issue affects only firmware version SonicOS 7.1.1-7040.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0003"
+    ],
+    "受影响版本": [
+      "SonicOS 7.1.1-7040"
+    ],
+    "公开日期": "2024年02月08日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicOS",
+    "CVE编号": "CVE-2024-12802",
+    "漏洞描述": "SSL-VPN MFA Bypass in SonicWALL SSL-VPN can arise in specific cases due to the separate handling of UPN (User Principal Name) and SAM (Security Account Manager) account names when integrated with Microsoft Active Directory, allowing MFA to be configured independently for each login method and potentially enabling attackers to bypass MFA by exploiting the alternative account name.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0001"
+    ],
+    "受影响版本": [
+      "6.5.4.15-117n and older versions",
+      "6.5.4.4-44v-21-2457 and older versions",
+      "7.0.1-5161 and older versions",
+      "7.1.1-7058 and older versions",
+      "7.1.2-7019",
+      "8.0.0-8035"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "Capture Client",
+    "CVE编号": "CVE-2023-6340",
+    "漏洞描述": "SonicWall Capture Client version 3.7.10, NetExtender client version 10.2.337 and earlier versions are installed with sfpmonitor.sys driver.  The driver has been found to be vulnerable to Denial-of-Service (DoS) caused by Stack-based Buffer Overflow vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0019"
+    ],
+    "受影响版本": [
+      "3.7.10 and earlier versions"
+    ],
+    "公开日期": "2024年01月17日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "NetExtender",
+    "CVE编号": "CVE-2023-44220",
+    "漏洞描述": "SonicWall NetExtender Windows (32-bit and 64-bit) client 10.2.336 and earlier versions have a DLL Search Order Hijacking vulnerability in the start-up DLL component. Successful exploitation via a local attacker could result in command execution in the target system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0017"
+    ],
+    "受影响版本": [
+      "10.2.336 and earlier versions"
+    ],
+    "公开日期": "2023年10月27日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "Directory Services Connector",
+    "CVE编号": "CVE-2023-44219",
+    "漏洞描述": "A local privilege escalation vulnerability in SonicWall Directory Services Connector Windows MSI client 4.1.21 and earlier versions allows a local low-privileged user to gain system privileges through running the recovery feature.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0016"
+    ],
+    "受影响版本": [
+      "4.1.21 and earlier versions"
+    ],
+    "公开日期": "2023年10月27日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "NetExtender",
+    "CVE编号": "CVE-2023-44218",
+    "漏洞描述": "\nA flaw within the SonicWall NetExtender Pre-Logon feature enables an unauthorized user to gain access to the host Windows operating system with 'SYSTEM' level privileges, leading to a local privilege escalation (LPE) vulnerability.\n\n",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0014"
+    ],
+    "受影响版本": [
+      "10.2.336 and earlier versions"
+    ],
+    "公开日期": "2023年10月03日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "NetExtender",
+    "CVE编号": "CVE-2023-44217",
+    "漏洞描述": "\nA local privilege escalation vulnerability in SonicWall Net Extender MSI client for Windows 10.2.336 and earlier versions allows a local low-privileged user to gain system privileges through running repair functionality.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0013"
+    ],
+    "受影响版本": [
+      "10.2.336 and earlier versions"
+    ],
+    "公开日期": "2023年10月03日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34137",
+    "漏洞描述": "SonicWall GMS and Analytics CAS Web Services application use static values for authentication without proper checks leading to authentication bypass vulnerability. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34136",
+    "漏洞描述": "Vulnerability in SonicWall GMS and Analytics allows unauthenticated attacker to upload files to a restricted location not controlled by the attacker. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34135",
+    "漏洞描述": "Path Traversal vulnerability in SonicWall GMS and Analytics allows a remote authenticated attacker to read arbitrary files from the underlying file system via web service. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34134",
+    "漏洞描述": "Exposure of sensitive information to an unauthorized actor vulnerability in SonicWall GMS and Analytics allows authenticated attacker to read administrator password hash via a web service call. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34133",
+    "漏洞描述": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in SonicWall GMS and Analytics allows an unauthenticated attacker to extract sensitive information from the application database. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060",
+      "http://packetstormsecurity.com/files/174571/Sonicwall-GMS-9.9.9320-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34132",
+    "漏洞描述": "Use of password hash instead of password for authentication vulnerability in SonicWall GMS and Analytics allows Pass-the-Hash attacks. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060",
+      "http://packetstormsecurity.com/files/174571/Sonicwall-GMS-9.9.9320-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34131",
+    "漏洞描述": "Exposure of sensitive information to an unauthorized actor vulnerability in SonicWall GMS and Analytics enables an unauthenticated attacker to access restricted web pages. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34130",
+    "漏洞描述": "SonicWall GMS and Analytics use outdated Tiny Encryption Algorithm (TEA) with a hardcoded key to encrypt sensitive data. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34129",
+    "漏洞描述": "Improper limitation of a pathname to a restricted directory ('Path Traversal') vulnerability in SonicWall GMS and Analytics allows an authenticated remote attacker to traverse the directory and extract arbitrary files using Zip Slip method to any location on the underlying filesystem with root privileges. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34128",
+    "漏洞描述": "Tomcat application credentials are hardcoded in SonicWall GMS and Analytics configuration file. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34127",
+    "漏洞描述": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability in SonicWall GMS, SonicWall Analytics enables an authenticated attacker to execute arbitrary code with root privileges. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060",
+      "http://packetstormsecurity.com/files/174571/Sonicwall-GMS-9.9.9320-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34126",
+    "漏洞描述": "Vulnerability in SonicWall GMS and Analytics allows an authenticated attacker to upload files on the underlying filesystem with root privileges. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34124",
+    "漏洞描述": "The authentication mechanism in SonicWall GMS and Analytics Web Services had insufficient checks, allowing authentication bypass. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060",
+      "http://packetstormsecurity.com/files/174571/Sonicwall-GMS-9.9.9320-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "GMS",
+    "CVE编号": "CVE-2023-34123",
+    "漏洞描述": "Use of Hard-coded Cryptographic Key vulnerability in SonicWall GMS, SonicWall Analytics. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010",
+      "https://www.sonicwall.com/support/notices/230710150218060"
+    ],
+    "受影响版本": [
+      "9.3.2-SP1 and earlier versions"
+    ],
+    "公开日期": "2023年07月12日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall Email Security",
+    "CVE编号": "CVE-2023-0655",
+    "漏洞描述": "SonicWall Email Security contains a vulnerability that could permit a remote unauthenticated attacker access to an error page that includes sensitive information about users email addresses.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0002"
+    ],
+    "受影响版本": [
+      "10.0.19.7431 and earlier versions"
+    ],
+    "公开日期": "2023年02月14日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2022-2915",
+    "漏洞描述": "A Heap-based Buffer Overflow vulnerability in the SonicWall SMA100 appliance allows a remote authenticated attacker to cause Denial of Service (DoS) on the appliance or potentially lead to code execution. This vulnerability impacts 10.2.1.5-34sv and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0019"
+    ],
+    "受影响版本": [
+      "10.2.1.5-34sv and earlier"
+    ],
+    "公开日期": "2022年08月26日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall Email Security",
+    "CVE编号": "CVE-2022-2324",
+    "漏洞描述": "Improperly Implemented Security Check vulnerability in the SonicWall Hosted Email Security leads to bypass of Capture ATP security service in the appliance. This vulnerability impacts 10.0.17.7319 and earlier versions",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0014"
+    ],
+    "受影响版本": [
+      "10.0.17.7319 and earlier"
+    ],
+    "公开日期": "2022年07月29日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall Switch",
+    "CVE编号": "CVE-2022-2323",
+    "漏洞描述": "Improper neutralization of special elements used in a user input allows an authenticated malicious user to perform remote code execution in the host system. This vulnerability impacts SonicWall Switch 1.1.1.0-2s and earlier versions",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0013"
+    ],
+    "受影响版本": [
+      "1.1.1.0-2s and earlier"
+    ],
+    "公开日期": "2022年07月29日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall SMA1000",
+    "CVE编号": "CVE-2022-22282",
+    "漏洞描述": "SonicWall SMA1000 series firmware 12.4.0, 12.4.1-02965 and earlier versions incorrectly restricts access to a resource using HTTP connections from an unauthorized actor leading to Improper Access Control vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0009"
+    ],
+    "受影响版本": [
+      "12.4.0",
+      "12.4.1"
+    ],
+    "公开日期": "2022年05月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall NetExtender Windows (32 and 64 bit) Client",
+    "CVE编号": "CVE-2022-22281",
+    "漏洞描述": "A buffer overflow vulnerability in the SonicWall SSL-VPN NetExtender Windows Client (32 and 64 bit) in 10.2.322 and earlier versions, allows an attacker to potentially execute arbitrary code in the host windows operating system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0008"
+    ],
+    "受影响版本": [
+      "10.2.322 and earlier versions"
+    ],
+    "公开日期": "2022年05月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall GMS",
+    "CVE编号": "CVE-2022-22280",
+    "漏洞描述": "Improper Neutralization of Special Elements used in an SQL Command leading to Unauthenticated SQL Injection vulnerability, impacting SonicWall GMS 9.3.1-SP2-Hotfix1, Analytics On-Prem 2.5.0.3-2520 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0007"
+    ],
+    "受影响版本": [
+      "9.3.1-SP2-Hotfix1 and earlier"
+    ],
+    "公开日期": "2022年07月29日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2022-1703",
+    "漏洞描述": "Improper neutralization of special elements in the SonicWall SSL-VPN SMA100 series management interface allows a remote authenticated attacker to inject OS Commands which potentially leads to remote command execution vulnerability or denial of service (DoS) attack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0010"
+    ],
+    "受影响版本": [
+      "10.2.0.9-41sv and earlier",
+      "10.2.1.4-31sv and earlier"
+    ],
+    "公开日期": "2022年06月03日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall SMA1000",
+    "CVE编号": "CVE-2022-1702",
+    "漏洞描述": "SonicWall SMA1000 series firmware 12.4.0, 12.4.1-02965 and earlier versions accept a user-controlled input that specifies a link to an external site and uses that link in a redirect which leads to Open redirection vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0009"
+    ],
+    "受影响版本": [
+      "12.4.0",
+      "12.4.1"
+    ],
+    "公开日期": "2022年05月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall SMA1000",
+    "CVE编号": "CVE-2022-1701",
+    "漏洞描述": "SonicWall SMA1000 series firmware 12.4.0, 12.4.1-02965 and earlier versions uses a shared and hard-coded encryption key to store data.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0009"
+    ],
+    "受影响版本": [
+      "12.4.0",
+      "12.4.1"
+    ],
+    "公开日期": "2022年05月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall Global VPN Client",
+    "CVE编号": "CVE-2021-20051",
+    "漏洞描述": "SonicWall Global VPN Client 4.10.7.1117 installer (32-bit and 64-bit) and earlier versions have a DLL Search Order Hijacking vulnerability in one of the installer components. Successful exploitation via a local attacker could result in command execution in the target system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0036"
+    ],
+    "受影响版本": [
+      "Global VPN Client 4.10.7.1117 and earlier versions"
+    ],
+    "公开日期": "2022年05月04日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall SMA100",
+    "CVE编号": "CVE-2021-20049",
+    "漏洞描述": "A vulnerability in SonicWall SMA100 password change API allows a remote unauthenticated attacker to perform SMA100 username enumeration based on the server responses. This vulnerability impacts 10.2.1.2-24sv, 10.2.0.8-37sv and earlier 10.x versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0030"
+    ],
+    "受影响版本": [
+      "10.2.0.8-37sv and earlier",
+      "10.2.1.2-24sv and earlier"
+    ],
+    "公开日期": "2021年12月23日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall Global VPN Client",
+    "CVE编号": "CVE-2021-20047",
+    "漏洞描述": "SonicWall Global VPN client version 4.10.6 (32-bit and 64-bit) and earlier have a DLL Search Order Hijacking vulnerability. Successful exploitation via a local attacker could result in remote code execution in the target system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0025"
+    ],
+    "受影响版本": [
+      "Global VPN Client 4.10.6 and earlier"
+    ],
+    "公开日期": "2021年12月08日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall SMA100",
+    "CVE编号": "CVE-2021-20044",
+    "漏洞描述": "A post-authentication remote command injection vulnerability in SonicWall SMA100 allows a remote authenticated attacker to execute OS system commands in the appliance. This vulnerability affected SMA 200, 210, 400, 410 and 500v appliances.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0026"
+    ],
+    "受影响版本": [
+      "10.2.0.8-37sv and earlier",
+      "10.2.1.1-19sv and earlier",
+      "10.2.1.2-24sv and earlier"
+    ],
+    "公开日期": "2021年12月08日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall SMA100",
+    "CVE编号": "CVE-2021-20043",
+    "漏洞描述": "A Heap-based buffer overflow vulnerability in SonicWall SMA100 getBookmarks method allows a remote authenticated attacker to potentially execute code as the nobody user in the appliance. This vulnerability affected SMA 200, 210, 400, 410 and 500v appliances.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0026"
+    ],
+    "受影响版本": [
+      "10.2.0.8-37sv and earlier",
+      "10.2.1.1-19sv and earlier",
+      "10.2.1.2-24sv and earlier"
+    ],
+    "公开日期": "2021年12月08日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall Global VPN Client",
+    "CVE编号": "CVE-2021-20037",
+    "漏洞描述": "SonicWall Global VPN Client 4.10.5 installer (32-bit and 64-bit) incorrect default file permission vulnerability leads to privilege escalation which potentially allows command execution in the host operating system. This vulnerability impacts GVC 4.10.5 installer and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0024"
+    ],
+    "受影响版本": [
+      "Global VPN Client 4.10.5 and earlier"
+    ],
+    "公开日期": "2021年09月21日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall Analytics On-Prem",
+    "CVE编号": "CVE-2021-20032",
+    "漏洞描述": "SonicWall Analytics 2.5 On-Prem is vulnerable to Java Debug Wire Protocol (JDWP) interface security misconfiguration vulnerability which potentially leads to Remote Code Execution. This vulnerability impacts Analytics On-Prem 2.5.2518 and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0018"
+    ],
+    "受影响版本": [
+      "Analytics On-Prem 2.5.2518 and earlier"
+    ],
+    "公开日期": "2021年08月10日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall GMS",
+    "CVE编号": "CVE-2021-20030",
+    "漏洞描述": "SonicWall GMS is vulnerable to file path manipulation resulting that an unauthenticated attacker can gain access to web directory containing application's binaries and configuration files.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0021"
+    ],
+    "受影响版本": [
+      "prior GMS 9.3.2"
+    ],
+    "公开日期": "2022年10月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall NSM On-Prem",
+    "CVE编号": "CVE-2021-20026",
+    "漏洞描述": "A vulnerability in the SonicWall NSM On-Prem product allows an authenticated attacker to perform OS command injection using a crafted HTTP request. This vulnerability affects NSM On-Prem 2.2.0-R10 and earlier versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0014"
+    ],
+    "受影响版本": [
+      "NSM On-Prem 2.2.0-R10 and earlier"
+    ],
+    "公开日期": "2021年05月27日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "Email Security Virtual Appliance",
+    "CVE编号": "CVE-2021-20025",
+    "漏洞描述": "SonicWall Email Security Virtual Appliance version 10.0.9 and earlier versions contain a default username and a password that is used at initial setup. An attacker could exploit this transitional/temporary user account from the trusted domain to access the Virtual Appliance remotely only when the device is freshly installed and not connected to Mysonicwall.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0012"
+    ],
+    "受影响版本": [
+      "10.0.9 and earlier"
+    ],
+    "公开日期": "2021年05月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall Switch",
+    "CVE编号": "CVE-2021-20024",
+    "漏洞描述": "Multiple Out-of-Bound read vulnerability in SonicWall Switch when handling LLDP Protocol allows an attacker to cause a system instability or potentially read sensitive information from the memory locations.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0011"
+    ],
+    "受影响版本": [
+      "1.0.0.5-16 and earlier"
+    ],
+    "公开日期": "2021年07月09日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "Email Security",
+    "CVE编号": "CVE-2021-20023",
+    "漏洞描述": "SonicWall Email Security version 10.0.9.x contains a vulnerability that allows a post-authenticated attacker to read an arbitrary file on the remote host.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0010"
+    ],
+    "受影响版本": [
+      "10.0.9 and earlier"
+    ],
+    "公开日期": "2021年04月20日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "Email Security",
+    "CVE编号": "CVE-2021-20022",
+    "漏洞描述": "SonicWall Email Security version 10.0.9.x contains a vulnerability that allows a post-authenticated attacker to upload an arbitrary file to the remote host.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0008"
+    ],
+    "受影响版本": [
+      "10.0.9 and earlier"
+    ],
+    "公开日期": "2021年04月09日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "Email Security",
+    "CVE编号": "CVE-2021-20021",
+    "漏洞描述": "A vulnerability in the SonicWall Email Security version 10.0.9.x allows an attacker to create an administrative account by sending a crafted HTTP request to the remote host.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0007"
+    ],
+    "受影响版本": [
+      "10.0.9 and earlier"
+    ],
+    "公开日期": "2021年04月09日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "Global Management System (GMS)",
+    "CVE编号": "CVE-2021-20020",
+    "漏洞描述": "A command execution vulnerability in SonicWall GMS 9.3 allows a remote unauthenticated attacker to locally escalate privilege to root.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0009"
+    ],
+    "受影响版本": [
+      "9.3 and earlier"
+    ],
+    "公开日期": "2021年04月10日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2021-20018",
+    "漏洞描述": "A post-authenticated vulnerability in SonicWall SMA100 allows an attacker to export the configuration file to the specified email address. This vulnerability impacts SMA100 version 10.2.0.5 and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0005"
+    ],
+    "受影响版本": [
+      "10.2.0.5 and earlier"
+    ],
+    "公开日期": "2021年03月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2021-20017",
+    "漏洞描述": "A post-authenticated command injection vulnerability in SonicWall SMA100 allows an authenticated attacker to execute OS commands as a 'nobody' user. This vulnerability impacts SMA100 version 10.2.0.5 and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0004"
+    ],
+    "受影响版本": [
+      "10.2.0.5 and earlier"
+    ],
+    "公开日期": "2021年03月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall SMA100",
+    "CVE编号": "CVE-2021-20016",
+    "漏洞描述": "A SQL-Injection vulnerability in the SonicWall SSLVPN SMA100 product allows a remote unauthenticated attacker to perform SQL query to access username password and other session related information. This vulnerability impacts SMA100 build version 10.x.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0001"
+    ],
+    "受影响版本": [
+      "SMA100 build version 10.x"
+    ],
+    "公开日期": "2021年02月03日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "Directory Services Connector",
+    "CVE编号": "CVE-2020-5148",
+    "漏洞描述": "SonicWall SSO-agent default configuration uses NetAPI to probe the associated IP's in the network, this client probing method allows a potential attacker to capture the password hash of the privileged user and potentially forces the SSO Agent to authenticate allowing an attacker to bypass firewall access controls.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0003"
+    ],
+    "受影响版本": [
+      "4.1.17 and earlier"
+    ],
+    "公开日期": "2021年03月05日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall NetExtender",
+    "CVE编号": "CVE-2020-5147",
+    "漏洞描述": "SonicWall NetExtender Windows client vulnerable to unquoted service path vulnerability, this allows a local attacker to gain elevated privileges in the host operating system. This vulnerability impact SonicWall NetExtender Windows client version 10.2.300 and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0023",
+      "http://packetstormsecurity.com/files/163857/SonicWall-NetExtender-10.2.0.300-Unquoted-Service-Path.html"
+    ],
+    "受影响版本": [
+      "10.2.300 and earlier"
+    ],
+    "公开日期": "2021年01月09日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2020-5146",
+    "漏洞描述": "A vulnerability in SonicWall SMA100 appliance allow an authenticated management-user to perform OS command injection using HTTP POST parameters. This vulnerability affected SMA100 Appliance version 10.2.0.2-20sv and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0022"
+    ],
+    "受影响版本": [
+      "10.2.0.2-20sv and earlier"
+    ],
+    "公开日期": "2021年01月09日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall Global VPN Client",
+    "CVE编号": "CVE-2020-5145",
+    "漏洞描述": "SonicWall Global VPN client version 4.10.4.0314 and earlier have an insecure library loading (DLL hijacking) vulnerability. Successful exploitation could lead to remote code execution in the target system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0021"
+    ],
+    "受影响版本": [
+      "4.10.4.0314 and earlier"
+    ],
+    "公开日期": "2020年10月28日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall Global VPN Client",
+    "CVE编号": "CVE-2020-5144",
+    "漏洞描述": "SonicWall Global VPN client version 4.10.4.0314 and earlier allows unprivileged windows user to elevate privileges to SYSTEM through loaded process hijacking vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0020"
+    ],
+    "受影响版本": [
+      "4.10.4.0314 and earlier"
+    ],
+    "公开日期": "2020年10月28日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2020-5132",
+    "漏洞描述": "SonicWall SSL-VPN products and SonicWall firewall SSL-VPN feature misconfiguration leads to possible DNS flaw known as domain name collision vulnerability. When the users publicly display their organization’s internal domain names in the SSL-VPN authentication page, an attacker with knowledge of internal domain names can potentially take advantage of this vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0006"
+    ],
+    "受影响版本": [
+      "SMA100 10.2.0.2-20sv"
+    ],
+    "公开日期": "2020年09月30日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall NetExtender",
+    "CVE编号": "CVE-2020-5131",
+    "漏洞描述": "SonicWall NetExtender Windows client vulnerable to arbitrary file write vulnerability, this allows attacker to overwrite a DLL and execute code with the same privilege in the host operating system. This vulnerability impact SonicWall NetExtender Windows client version 9.0.815 and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0004"
+    ],
+    "受影响版本": [
+      "9.0.815 and earlier"
+    ],
+    "公开日期": "2020年07月17日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SMA1000",
+    "CVE编号": "CVE-2020-5129",
+    "漏洞描述": "A vulnerability in the SonicWall SMA1000 HTTP Extraweb server allows an unauthenticated remote attacker to cause HTTP server crash which leads to Denial of Service. This vulnerability affected SMA1000 Version 12.1.0-06411 and earlier.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0002"
+    ],
+    "受影响版本": [
+      "12.1.0-06411 and earlier"
+    ],
+    "公开日期": "2020年03月26日"
+  }
+]

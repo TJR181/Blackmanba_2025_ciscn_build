@@ -1,0 +1,435 @@
+[
+  {
+    "设备品牌": "Sharp NEC Display Solutions, Ltd.",
+    "设备类型": "车载摄像头",
+    "产品型号": "NP-CB4500UL, NP-CB4500WL, NP-CB4700UL, NP-P525UL, NP-P525UL+, NP-P525ULG, NP-P525ULJL, NP-P525WL, NP-P525WL+, NP-P525WLG, NP-P525WLJL, NP-CG6500UL, NP-CG6500WL, NP-CG6700UL, NP-P605UL, NP-P605UL+, NP-P605ULG, NP-P605ULJL, NP-CA4120X, NP-CA4160W, NP-CA4160X, NP-CA4200U, NP-CA4200W, NP-CA4202W, NP-CA4260X, NP-CA4300X, NP-CA4355X, NP-CD2100U, NP-CD2120X, NP-CD2300X, NP-CR2100X, NP-CR2170W, NP-CR2170X, NP-CR2200U, NP-CR2200W, NP-CR2280X, NP-CR2310X, NP-CR2350X, NP-MC302XG, NP-MC332WG, NP-MC332WJL, NP-MC342XG, NP-MC372X, NP-MC372XG, NP-MC382W, NP-MC382WG, NP-MC422XG, NP-ME342UG, NP-ME372W, NP-ME372WG, NP-ME372WJL, NP-ME382U, NP-ME382UG, NP-ME382UJL, NP-ME402X, NP-ME402XG, NP-ME402XJL, NP-CB4500XL, NP-CG6400UL, NP-CG6400WL, NP-CG6500XL, NP-PE455UL, NP-PE455ULG, NP-PE455WL, NP-PE455WLG, NP-PE505XLG, NP-CB4600U, NP-CF6600U, NP-P474U, NP-P554U, NP-P554U+, NP-P554UG, NP-P554UJL, NP-CG6600UL, NP-P547UL, NP-P547ULG, NP-P547ULJL, NP-P607UL+, NP-P627UL, NP-P627UL+, NP-P627ULG, NP-P627ULJL, NP-PV710UL-B, NP-PV710UL-B1, NP-PV710UL-W, NP-PV710UL-W+, NP-PV710UL-W1, NP-PV730UL-BJL, NP-PV730UL-WJL, NP-PV800UL-B, NP-PV800UL-B+, NP-PV800UL-B1, NP-PV800UL-BJL, NP-PV800UL-W, NP-PV800UL-W+, NP-PV800UL-W1, NP-PV800UL-WJL, NP-CA4200X, NP-CA4265X, NP-CA4300U, NP-CA4300W, NP-CA4305X, NP-CA4400X, NP-CD2125X, NP-CD2200W, NP-CD2300U, NP-CD2310X, NP-CR2105X, NP-CR2200X, NP-CR2205W, NP-CR2300U, NP-CR2300W, NP-CR2315X, NP-CR2400X, NP-MC333XG, NP-MC363XG, NP-MC393WJL, NP-MC423W, NP-MC423WG, NP-MC453X, NP-MC453X, NP-MC453XG, NP-MC453XJL, NP-ME383WG, NP-ME403U, NP-ME403UG, NP-ME403UJL, NP-ME423W, NP-ME423WG, NP-ME423WJL, NP-ME453X, NP-ME453XG, NP-CB4400USL, NP-CB4400WSL, NP-CB4510UL, NP-CB4510WL, NP-CB4510XL, NP-CB4550USL, NP-CB6700UL, NP-CG6510UL, NP-PE456USL, NP-PE456USLG, NP-PE456USLJL, NP-PE456WSLG, NP-PE506UL, NP-PE506ULG, NP-PE506ULJL, NP-PE506WL, NP-PE506WLG, NP-PE506WLJL",
+    "CVE编号": "CVE-2024-7011",
+    "漏洞描述": "Sharp NEC Projectors (NP-CB4500UL, NP-CB4500WL, NP-CB4700UL, NP-P525UL, NP-P525UL+, NP-P525ULG, NP-P525ULJL, NP-P525WL, NP-P525WL+, NP-P525WLG, NP-P525WLJL, NP-CG6500UL, NP-CG6500WL, NP-CG6700UL, NP-P605UL, NP-P605UL+, NP-P605ULG, NP-P605ULJL, NP-CA4120X, NP-CA4160W, NP-CA4160X, NP-CA4200U, NP-CA4200W, NP-CA4202W, NP-CA4260X, NP-CA4300X, NP-CA4355X, NP-CD2100U, NP-CD2120X, NP-CD2300X, NP-CR2100X, NP-CR2170W, NP-CR2170X, NP-CR2200U, NP-CR2200W, NP-CR2280X, NP-CR2310X, NP-CR2350X, NP-MC302XG, NP-MC332WG, NP-MC332WJL, NP-MC342XG, NP-MC372X, NP-MC372XG, NP-MC382W, NP-MC382WG, NP-MC422XG, NP-ME342UG, NP-ME372W, NP-ME372WG, NP-ME372WJL, NP-ME382U, NP-ME382UG, NP-ME382UJL, NP-ME402X, NP-ME402XG, NP-ME402XJL, NP-CB4500XL, NP-CG6400UL, NP-CG6400WL, NP-CG6500XL, NP-PE455UL, NP-PE455ULG, NP-PE455WL, NP-PE455WLG, NP-PE505XLG, NP-CB4600U, NP-CF6600U, NP-P474U, NP-P554U, NP-P554U+, NP-P554UG, NP-P554UJL, NP-CG6600UL, NP-P547UL, NP-P547ULG, NP-P547ULJL, NP-P607UL+, NP-P627UL, NP-P627UL+, NP-P627ULG, NP-P627ULJL, NP-PV710UL-B, NP-PV710UL-B1, NP-PV710UL-W, NP-PV710UL-W+, NP-PV710UL-W1, NP-PV730UL-BJL, NP-PV730UL-WJL, NP-PV800UL-B, NP-PV800UL-B+, NP-PV800UL-B1, NP-PV800UL-BJL, NP-PV800UL-W, NP-PV800UL-W+, NP-PV800UL-W1, NP-PV800UL-WJL, NP-CA4200X, NP-CA4265X, NP-CA4300U, NP-CA4300W, NP-CA4305X, NP-CA4400X, NP-CD2125X, NP-CD2200W, NP-CD2300U, NP-CD2310X, NP-CR2105X, NP-CR2200X, NP-CR2205W, NP-CR2300U, NP-CR2300W, NP-CR2315X, NP-CR2400X, NP-MC333XG, NP-MC363XG, NP-MC393WJL, NP-MC423W, NP-MC423WG, NP-MC453X, NP-MC453X, NP-MC453XG, NP-MC453XJL, NP-ME383WG, NP-ME403U, NP-ME403UG, NP-ME403UJL, NP-ME423W, NP-ME423WG, NP-ME423WJL, NP-ME453X, NP-ME453XG, NP-CB4400USL, NP-CB4400WSL, NP-CB4510UL, NP-CB4510WL, NP-CB4510XL, NP-CB4550USL, NP-CB6700UL, NP-CG6510UL, NP-PE456USL, NP-PE456USLG, NP-PE456USLJL, NP-PE456WSLG, NP-PE506UL, NP-PE506ULG, NP-PE506ULJL, NP-PE506WL, NP-PE506WLG, NP-PE506WLJL) allows an attacker to cause a denial-of-service (DoS) condition via SNMP service.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.sharp-nec-displays.com/global/support/info/Projector_vulnerability_202408.html"
+    ],
+    "受影响版本": [
+      "all"
+    ],
+    "公开日期": "2024年09月27日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "车载摄像头",
+    "产品型号": "home 5G HR02",
+    "CVE编号": "CVE-2024-52321",
+    "漏洞描述": "Multiple SHARP routers contain an improper authentication vulnerability in the configuration backup function. The product's backup files containing sensitive information may be retrieved by a remote unauthenticated attacker.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://k-tai.sharp.co.jp/support/info/info083.html",
+      "https://jvn.jp/en/jp/JVN61635834/"
+    ],
+    "受影响版本": [
+      "S5.82.00 and earlier"
+    ],
+    "公开日期": "2024年12月23日"
+  },
+  {
+    "设备品牌": "Toshiba Tec Corporation",
+    "设备类型": "车载摄像头",
+    "产品型号": "e-STUDIO 908",
+    "CVE编号": "CVE-2024-48870",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs improperly validate input data in URI data registration, resulting in a stored cross-site scripting vulnerability.\r\nIf crafted input is stored by an administrative user, malicious script may be executed on the web browsers of other victim users.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "T2.12.h3.00 and earlier versions"
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "车载摄像头",
+    "产品型号": "Sharp Digital Full-color MFPs and Monochrome MFPs",
+    "CVE编号": "CVE-2024-47801",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs improperly process query parameters in HTTP requests, resulting in a reflected cross-site scripting vulnerability.\r\nAccessing a crafted URL which points to an affected product may cause malicious script executed on the web browser.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "see the information provided by Sharp Corporation"
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "车载摄像头",
+    "产品型号": "Sharp Digital Full-color MFPs and Monochrome MFPs",
+    "CVE编号": "CVE-2024-47549",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs improperly process query parameters in HTTP requests, which may allow contamination of unintended data to HTTP response headers.\r\nAccessing a crafted URL which points to an affected product may cause malicious script executed on the web browser.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "see the information provided by Sharp Corporation"
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "车载摄像头",
+    "产品型号": "Sharp Digital Full-color MFPs and Monochrome MFPs",
+    "CVE编号": "CVE-2024-47406",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs improperly process HTTP authentication requests, resulting in an authentication bypass vulnerability.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "see the information provided by Sharp Corporation"
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "车载摄像头",
+    "产品型号": "Sharp Digital Full-color MFPs and Monochrome MFPs",
+    "CVE编号": "CVE-2024-47005",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs provide configuration related APIs. They are expected to be called by administrative users only, but insufficiently restricted.\r\nA non-administrative user may execute some configuration APIs.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "see the information provided by Sharp Corporation"
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "车载摄像头",
+    "产品型号": "home 5G HR02",
+    "CVE编号": "CVE-2024-46873",
+    "漏洞描述": "Multiple SHARP routers leave the hidden debug function enabled. An arbitrary OS command may be executed with the root privilege by a remote unauthenticated attacker.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://k-tai.sharp.co.jp/support/info/info083.html",
+      "https://jvn.jp/en/jp/JVN61635834/"
+    ],
+    "受影响版本": [
+      "S5.82.00 and earlier"
+    ],
+    "公开日期": "2024年12月23日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "车载摄像头",
+    "产品型号": "Sharp Digital Full-color MFPs and Monochrome MFPs",
+    "CVE编号": "CVE-2024-45842",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs improperly process URI data in HTTP PUT requests resulting in a path Traversal vulnerability.\r\nUnintended internal files may be retrieved when processing crafted HTTP requests.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "see the information provided by Sharp Corporation"
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "车载摄像头",
+    "产品型号": "Sharp Digital Full-color MFPs and Monochrome MFPs",
+    "CVE编号": "CVE-2024-45829",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs provide the web page to download data, where query parameters in HTTP requests are improperly processed and resulting in an Out-of-bounds Read vulnerability.\r\nCrafted HTTP requests may cause affected products crashed.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "see the information provided by Sharp Corporation"
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "车载摄像头",
+    "产品型号": "Sharp Digital Full-color MFPs and Monochrome MFPs",
+    "CVE编号": "CVE-2024-43424",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs improperly process HTTP request headers, resulting in an Out-of-bounds Read vulnerability.\r\nCrafted HTTP requests may cause affected products crashed.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "see the information provided by Sharp Corporation"
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "车载摄像头",
+    "产品型号": "Sharp Digital Full-color MFPs and Monochrome MFPs",
+    "CVE编号": "CVE-2024-42420",
+    "漏洞描述": "Sharp and Toshiba Tec MFPs contain multiple Out-of-bounds Read vulnerabilities, due to improper processing of keyword search input and improper processing of SOAP messages.\r\nCrafted HTTP requests may cause affected products crashed.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU95063136/",
+      "https://global.sharp/products/copier/info/info_security_2024-10.html",
+      "https://www.toshibatec.com/information/20241025_01.html"
+    ],
+    "受影响版本": [
+      "see the information provided by Sharp Corporation."
+    ],
+    "公开日期": "2024年10月25日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "车载摄像头",
+    "产品型号": "Multiple MFPs (multifunction printers)",
+    "CVE编号": "CVE-2024-36254",
+    "漏洞描述": "Out-of-bounds read vulnerability exists in Sharp Corporation and Toshiba Tec Corporation multiple MFPs (multifunction printers), which may lead to a denial-of-service (DoS) condition.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://global.sharp/products/copier/info/info_security_2024-05.html",
+      "https://jp.sharp/business/print/information/info_security_2024-05.html",
+      "https://www.toshibatec.com/information/20240531_02.html",
+      "https://www.toshibatec.co.jp/information/20240531_02.html",
+      "https://jvn.jp/en/vu/JVNVU93051062/"
+    ],
+    "受影响版本": [
+      "See the information provided by Sharp Corporation listed under [References]"
+    ],
+    "公开日期": "2024年11月26日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "车载摄像头",
+    "产品型号": "Multiple MFPs (multifunction printers)",
+    "CVE编号": "CVE-2024-36249",
+    "漏洞描述": "Cross-site scripting vulnerability exists in Sharp Corporation and Toshiba Tech Corporation multiple MFPs (multifunction printers). If this vulnerability is exploited, an arbitrary script may be executed on the administrative page of the affected MFPs. As for the details of affected product names, model numbers, and versions, refer to the information provided by the respective vendors listed under [References].",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://global.sharp/products/copier/info/info_security_2024-05.html",
+      "https://jp.sharp/business/print/information/info_security_2024-05.html",
+      "https://www.toshibatec.com/information/20240531_02.html",
+      "https://www.toshibatec.co.jp/information/20240531_02.html",
+      "https://jvn.jp/en/vu/JVNVU93051062/"
+    ],
+    "受影响版本": [
+      "See the information provided by Sharp Corporation listed under [References]"
+    ],
+    "公开日期": "2024年11月26日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "车载摄像头",
+    "产品型号": "Multiple MFPs (multifunction printers)",
+    "CVE编号": "CVE-2024-33616",
+    "漏洞描述": "Admin authentication can be bypassed with some specific invalid credentials, which allows logging in with an administrative privilege. Sharp Corporation states the telnet feature is implemented on older models only, and is planning to provide the firmware update to remove the feature. As for the details of affected product names, model numbers, and versions, refer to the information provided by the respective vendors listed under [References].",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://global.sharp/products/copier/info/info_security_2024-05.html",
+      "https://jp.sharp/business/print/information/info_security_2024-05.html",
+      "https://www.toshibatec.com/information/20240531_02.html",
+      "https://www.toshibatec.co.jp/information/20240531_02.html",
+      "https://jvn.jp/en/vu/JVNVU93051062/",
+      "https://pierrekim.github.io/blog/2024-06-27-sharp-mfp-17-vulnerabilities.html"
+    ],
+    "受影响版本": [
+      "See the information provided by Sharp Corporation listed under [References]"
+    ],
+    "公开日期": "2024年11月26日"
+  },
+  {
+    "设备品牌": "Sharp NEC Display Solutions, Ltd.",
+    "设备类型": "车载摄像头",
+    "产品型号": "P403, P463, P553, P703, P801, X554UN, X464UN, X554UNS, X464UNV, X474HB, X464UNS, X554UNV, X555UNS, X555UNV, X754HB, X554HB, E705, E805, E905, UN551S, UN551VS, X551UHD, X651UHD, X841UHD, X981UHD, MD551C8",
+    "CVE编号": "CVE-2023-7077",
+    "漏洞描述": "Sharp NEC Displays (P403, P463, P553, P703, P801, X554UN, X464UN, X554UNS, X464UNV, X474HB, X464UNS, X554UNV, X555UNS, X555UNV, X754HB, X554HB, E705, E805, E905, UN551S, UN551VS, X551UHD, X651UHD, X841UHD, X981UHD, MD551C8) allows an attacker execute remote code by sending unintended parameters in http request.\n\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.sharp-nec-displays.com/global/support/info/A4_vulnerability.html"
+    ],
+    "受影响版本": [
+      "all"
+    ],
+    "公开日期": "2024年02月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-38302",
+    "漏洞描述": "A certain software build for the Sharp Rouvo V device (SHARP/VZW_STTM21VAPP/STTM21VAPP:12/SP1A.210812.016/1KN0_0_530:user/release-keys) leaks the Wi-Fi MAC address and the Bluetooth MAC address to system properties that can be accessed by any local app on the device without any permissions or special privileges. Google restricted third-party apps from directly obtaining non-resettable device identifiers in Android 10 and higher, but in this instance they are leaked by a high-privilege process and can be obtained indirectly. This malicious app reads from the \"ro.boot.wifi_mac\" system property to indirectly obtain the Wi-Fi MAC address and reads the \"ro.boot.bt_mac\" system property to obtain the Bluetooth MAC address.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://media.defcon.org/DEF%20CON%2031/DEF%20CON%2031%20presentations/Ryan%20Johnson%20Mohamed%20Elsabagh%20Angelos%20Stavrou%20-%20Still%20Vulnerable%20Out%20of%20the%20Box%20Revisiting%20the%20Security%20of%20Prepaid%20Android%20Carrier%20Devices.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年04月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-38301",
+    "漏洞描述": "An issue was discovered in a third-party component related to vendor.gsm.serial, shipped on devices from multiple device manufacturers. Various software builds for the BLU View 2, Boost Mobile Celero 5G, Sharp Rouvo V, Motorola Moto G Pure, Motorola Moto G Power, T-Mobile Revvl 6 Pro 5G, and T-Mobile Revvl V+ 5G devices leak the device serial number to a system property that can be accessed by any local app on the device without any permissions or special privileges. Google restricted third-party apps from directly obtaining non-resettable device identifiers in Android 10 and higher, but in these instances they are leaked by a high-privilege process and can be obtained indirectly. The software build fingerprints for each confirmed vulnerable device are as follows: BLU View 2 (BLU/B131DL/B130DL:11/RP1A.200720.011/1672046950:user/release-keys); Boost Mobile Celero 5G (Celero5G/Jupiter/Jupiter:11/RP1A.200720.011/SW_S98119AA1_V067:user/release-keys); Sharp Rouvo V (SHARP/VZW_STTM21VAPP/STTM21VAPP:12/SP1A.210812.016/1KN0_0_530:user/release-keys); Motorola Moto G Pure (motorola/ellis_trac/ellis:11/RRHS31.Q3-46-110-2/74844:user/release-keys, motorola/ellis_trac/ellis:11/RRHS31.Q3-46-110-7/5cde8:user/release-keys, motorola/ellis_trac/ellis:11/RRHS31.Q3-46-110-10/d67faa:user/release-keys, motorola/ellis_trac/ellis:11/RRHS31.Q3-46-110-13/b4a29:user/release-keys, motorola/ellis_trac/ellis:12/S3RH32.20-42-10/1c2540:user/release-keys, motorola/ellis_trac/ellis:12/S3RHS32.20-42-13-2-1/6368dd:user/release-keys, motorola/ellis_a/ellis:11/RRH31.Q3-46-50-2/20fec:user/release-keys, motorola/ellis_vzw/ellis:11/RRH31.Q3-46-138/103bd:user/release-keys, motorola/ellis_vzw/ellis:11/RRHS31.Q3-46-138-2/e5502:user/release-keys, and motorola/ellis_vzw/ellis:12/S3RHS32.20-42-10-14-2/5e0b0:user/release-keys); Motorola Moto G Power (motorola/tonga_g/tonga:11/RRQ31.Q3-68-16-2/e5877:user/release-keys and motorola/tonga_g/tonga:12/S3RQS32.20-42-10-6/f876d3:user/release-keys); T-Mobile Revvl 6 Pro 5G (T-Mobile/Augusta/Augusta:12/SP1A.210812.016/SW_S98121AA1_V070:user/release-keys); and T-Mobile Revvl V+ 5G (T-Mobile/Sprout/Sprout:11/RP1A.200720.011/SW_S98115AA1_V077:user/release-keys). This malicious app reads from the \"vendor.gsm.serial\" system property to indirectly obtain the device serial number.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://media.defcon.org/DEF%20CON%2031/DEF%20CON%2031%20presentations/Ryan%20Johnson%20Mohamed%20Elsabagh%20Angelos%20Stavrou%20-%20Still%20Vulnerable%20Out%20of%20the%20Box%20Revisiting%20the%20Security%20of%20Prepaid%20Android%20Carrier%20Devices.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年04月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-38290",
+    "漏洞描述": "Certain software builds for the BLU View 2 and Sharp Rouvo V Android devices contain a vulnerable pre-installed app with a package name of com.evenwell.fqc (versionCode='9020801', versionName='9.0208.01' ; versionCode='9020913', versionName='9.0209.13' ; versionCode='9021203', versionName='9.0212.03') that allows local third-party apps to execute arbitrary shell commands in its context (system user) due to inadequate access control. No permissions or special privileges are necessary to exploit the vulnerability in the com.evenwell.fqc app. No user interaction is required beyond installing and running a third-party app. The vulnerability allows local apps to access sensitive functionality that is generally restricted to pre-installed apps, such as programmatically performing the following actions: granting arbitrary permissions (which can be used to obtain sensitive user data), installing arbitrary apps, video recording the screen, wiping the device (removing the user's apps and data), injecting arbitrary input events, calling emergency phone numbers, disabling apps, accessing notifications, and much more. The software build fingerprints for each confirmed vulnerable device are as follows: BLU View 2 (BLU/B131DL/B130DL:11/RP1A.200720.011/1672046950:user/release-keys, BLU/B131DL/B130DL:11/RP1A.200720.011/1663816427:user/release-keys, BLU/B131DL/B130DL:11/RP1A.200720.011/1656476696:user/release-keys, BLU/B131DL/B130DL:11/RP1A.200720.011/1647856638:user/release-keys) and Sharp Rouvo V (SHARP/VZW_STTM21VAPP/STTM21VAPP:12/SP1A.210812.016/1KN0_0_460:user/release-keys and SHARP/VZW_STTM21VAPP/STTM21VAPP:12/SP1A.210812.016/1KN0_0_530:user/release-keys). This malicious app starts an exported activity named com.evenwell.fqc/.activity.ClickTest, crashes the com.evenwell.fqc app by sending an empty Intent (i.e., having not extras) to the com.evenwell.fqc/.FQCBroadcastReceiver receiver component, and then it sends command arbitrary shell commands to the com.evenwell.fqc/.FQCService service component which executes them with \"system\" privileges.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://media.defcon.org/DEF%20CON%2031/DEF%20CON%2031%20presentations/Ryan%20Johnson%20Mohamed%20Elsabagh%20Angelos%20Stavrou%20-%20Still%20Vulnerable%20Out%20of%20the%20Box%20Revisiting%20the%20Security%20of%20Prepaid%20Android%20Carrier%20Devices.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年04月22日"
+  },
+  {
+    "设备品牌": "gatsbyjs",
+    "设备类型": "车载摄像头",
+    "产品型号": "gatsby",
+    "CVE编号": "CVE-2023-30548",
+    "漏洞描述": "gatsby-plugin-sharp is a plugin for the gatsby framework which exposes functions built on the Sharp image processing library. The gatsby-plugin-sharp plugin prior to versions 5.8.1 and 4.25.1 contains a path traversal vulnerability exposed when running the Gatsby develop server (`gatsby develop`). It should be noted that by default gatsby develop is only accessible via the localhost 127.0.0.1, and one would need to intentionally expose the server to other interfaces to exploit this vulnerability by using server options such as --host 0.0.0.0, -H 0.0.0.0, or the GATSBY_HOST=0.0.0.0 environment variable. Attackers exploiting this vulnerability will have read access to all files within the scope of the server process. A patch has been introduced in gatsby-plugin-sharp@5.8.1 and gatsby-plugin-sharp@4.25.1 which mitigates the issue by ensuring that included paths remain within the project directory. As stated above, by default gatsby develop is only exposed to the localhost 127.0.0.1. For those using the develop server in the default configuration no risk is posed. If other ranges are required, preventing the develop server from being exposed to untrusted interfaces or IP address ranges would mitigate the risk from this vulnerability. Users are non the less encouraged to upgrade to a safe version.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/gatsbyjs/gatsby/security/advisories/GHSA-h2pm-378c-pcxx",
+      "https://github.com/gatsbyjs/gatsby/commit/5f442081b227cc0879babb96858f970c4ce94c6b",
+      "https://github.com/gatsbyjs/gatsby/commit/dcf88ed01df2c26e0c93a41e1a2a840076d8247e"
+    ],
+    "受影响版本": [
+      "< 4.25.1",
+      ">= 5.0.0, < 5.8.1"
+    ],
+    "公开日期": "2023年04月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载摄像头",
+    "产品型号": "VitalPBX",
+    "CVE编号": "CVE-2023-0480",
+    "漏洞描述": "VitalPBX version 3.2.3-8 allows an unauthenticated external attacker to obtain the instance administrator's account. This is possible because the application is vulnerable to CSRF.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://fluidattacks.com/advisories/sharp/",
+      "https://vitalpbx.com/"
+    ],
+    "受影响版本": [
+      "3.2.3-8"
+    ],
+    "公开日期": "2023年04月04日"
+  },
+  {
+    "设备品牌": "SHARP",
+    "设备类型": "车载摄像头",
+    "产品型号": "SHARP multifunction printers",
+    "CVE编号": "CVE-2022-45796",
+    "漏洞描述": "Command injection vulnerability in nw_interface.html in SHARP multifunction printers (MFPs)'s Digital Full-color Multifunctional System 202 or earlier, 120 or earlier, 600 or earlier, 121 or earlier, 500 or earlier, 402 or earlier, 790 or earlier, and Digital Multifunctional System (Monochrome) 200 or earlier, 211 or earlier, 102 or earlier, 453 or earlier, 400 or earlier, 202 or earlier, 602 or earlier, 500 or earlier, 401 or earlier allows remote attackers to execute arbitrary commands via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://global.sharp/products/copier/info/info_security_2022-11.html",
+      "https://jvn.jp/en/vu/JVNVU96195138/index.html",
+      "https://zuso.ai/advisory/ZA-2022-01.html",
+      "http://seclists.org/fulldisclosure/2024/Jul/0"
+    ],
+    "受影响版本": [
+      "Digital Full-color Multifunctional System",
+      "Digital Multifunctional System (Monochrome)"
+    ],
+    "公开日期": "2022年12月16日"
+  },
+  {
+    "设备品牌": "lovell",
+    "设备类型": "车载摄像头",
+    "产品型号": "sharp",
+    "CVE编号": "CVE-2022-29256",
+    "漏洞描述": "sharp is an application for Node.js image processing. Prior to version 0.30.5, there is a possible vulnerability in logic that is run only at `npm install` time when installing versions of `sharp` prior to the latest v0.30.5. If an attacker has the ability to set the value of the `PKG_CONFIG_PATH` environment variable in a build environment then they might be able to use this to inject an arbitrary command at `npm install` time. This is not part of any runtime code, does not affect Windows users at all, and is unlikely to affect anyone that already cares about the security of their build environment. This problem is fixed in version 0.30.5.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://github.com/lovell/sharp/security/advisories/GHSA-gp95-ppv5-3jc5",
+      "https://github.com/lovell/sharp/commit/a6aeef612be50f5868a77481848b1de674216f0c"
+    ],
+    "受影响版本": [
+      "< 0.30.5"
+    ],
+    "公开日期": "2022年05月25日"
+  },
+  {
+    "设备品牌": "Sharp NEC Display Solutions, Ltd.",
+    "设备类型": "车载摄像头",
+    "产品型号": "Sharp NEC Displays",
+    "CVE编号": "CVE-2021-20699",
+    "漏洞描述": "Sharp NEC Displays ((UN462A R1.300 and prior to it, UN462VA R1.300 and prior to it, UN492S R1.300 and prior to it, UN492VS R1.300 and prior to it, UN552A R1.300 and prior to it, UN552S R1.300 and prior to it, UN552VS R1.300 and prior to it, UN552 R1.300 and prior to it, UN552V R1.300 and prior to it, UX552S R1.300 and prior to it, UX552 R1.300 and prior to it, V864Q R2.000 and prior to it, C861Q R2.000 and prior to it, P754Q R2.000 and prior to it, V754Q R2.000 and prior to it, C751Q R2.000 and prior to it, V984Q R2.000 and prior to it, C981Q R2.000 and prior to it, P654Q R2.000 and prior to it, V654Q R2.000 and prior to it, C651Q R2.000 and prior to it, V554Q R2.000 and prior to it, P404 R3.200 and prior to it, P484 R3.200 and prior to it, P554 R3.200 and prior to it, V404 R3.200 and prior to it, V484 R3.200 and prior to it, V554 R3.200 and prior to it, V404-T R3.200 and prior to it, V484-T R3.200 and prior to it, V554-T R3.200 and prior to it, C501 R2.000 and prior to it, C551 R2.000 and prior to it, C431 R2.000 and prior to it) allows an attacker a buffer overflow and to execute remote code by sending long parameters that contains specific characters in http request.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.sharp-nec-displays.com/global/support/info/A5-1_vulnerability.html"
+    ],
+    "受影响版本": [
+      "(UN462A R1.300 and prior to it, UN462VA R1.300 and prior to it, UN492S R1.300 and prior to it, UN492VS R1.300 and prior to it, UN552A R1.300 and prior to it, UN552S R1.300 and prior to it, UN552VS R1.300 and prior to it, UN552 R1.300 and prior to it, UN552V R1.300 and prior to it, UX552S R1.300 and prior to it, UX552 R1.300 and prior to it, V864Q R2.000 and prior to it, C861Q R2.000 and prior to it, P754Q R2.000 and prior to it, V754Q R2.000 and prior to it, C751Q R2.000 and prior to it, V984Q R2.000 and prior to it, C981Q R2.000 and prior to it, P654Q R2.000 and prior to it, V654Q R2.000 and prior to it, C651Q R2.000 and prior to it, V554Q R2.000 and prior to it, P404 R3.200 and prior to it, P484 R3.200 and prior to it, P554 R3.200 and prior to it, V404 R3.200 and prior to it, V484 R3.200 and prior to it, V554 R3.200 and prior to it, V404-T R3.200 and prior to it, V484-T R3.200 and prior to it, V554-T R3.200 and prior to it, C501 R2.000 and prior to it, C551 R2.000 and prior to it, C431 R2.00 ...[truncated*]"
+    ],
+    "公开日期": "2021年06月07日"
+  },
+  {
+    "设备品牌": "Sharp NEC Display Solutions, Ltd.",
+    "设备类型": "车载摄像头",
+    "产品型号": "Sharp NEC Displays",
+    "CVE编号": "CVE-2021-20698",
+    "漏洞描述": "Sharp NEC Displays (UN462A R1.300 and prior to it, UN462VA R1.300 and prior to it, UN492S R1.300 and prior to it, UN492VS R1.300 and prior to it, UN552A R1.300 and prior to it, UN552S R1.300 and prior to it, UN552VS R1.300 and prior to it, UN552 R1.300 and prior to it, UN552V R1.300 and prior to it, UX552S R1.300 and prior to it, UX552 R1.300 and prior to it, V864Q R2.000 and prior to it, C861Q R2.000 and prior to it, P754Q R2.000 and prior to it, V754Q R2.000 and prior to it, C751Q R2.000 and prior to it, V984Q R2.000 and prior to it, C981Q R2.000 and prior to it, P654Q R2.000 and prior to it, V654Q R2.000 and prior to it, C651Q R2.000 and prior to it, V554Q R2.000 and prior to it, P404 R3.200 and prior to it, P484 R3.200 and prior to it, P554 R3.200 and prior to it, V404 R3.200 and prior to it, V484 R3.200 and prior to it, V554 R3.200 and prior to it, V404-T R3.200 and prior to it, V484-T R3.200 and prior to it, V554-T R3.200 and prior to it, C501 R2.000 and prior to it, C551 R2.000 and prior to it, C431 R2.000 and prior to it) allows an attacker to obtain root privileges and execute remote code by sending unintended parameters that contain specific characters in http request.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.sharp-nec-displays.com/global/support/info/A5-1_vulnerability.html"
+    ],
+    "受影响版本": [
+      "UN462A R1.300 and prior to it, UN462VA R1.300 and prior to it, UN492S R1.300 and prior to it, UN492VS R1.300 and prior to it, UN552A R1.300 and prior to it, UN552S R1.300 and prior to it, UN552VS R1.300 and prior to it, UN552 R1.300 and prior to it, UN552V R1.300 and prior to it, UX552S R1.300 and prior to it, UX552 R1.300 and prior to it, V864Q R2.000 and prior to it, C861Q R2.000 and prior to it, P754Q R2.000 and prior to it, V754Q R2.000 and prior to it, C751Q R2.000 and prior to it, V984Q R2.000 and prior to it, C981Q R2.000 and prior to it, P654Q R2.000 and prior to it, V654Q R2.000 and prior to it, C651Q R2.000 and prior to it, V554Q R2.000 and prior to it, P404 R3.200 and prior to it, P484 R3.200 and prior to it, P554 R3.200 and prior to it, V404 R3.200 and prior to it, V484 R3.200 and prior to it, V554 R3.200 and prior to it, V404-T R3.200 and prior to it, V484-T R3.200 and prior to it, V554-T R3.200 and prior to it, C501 R2.000 and prior to it, C551 R2.000 and prior to it, C431 R2.000 and prior to it"
+    ],
+    "公开日期": "2021年06月07日"
+  },
+  {
+    "设备品牌": "Sharp Corporation",
+    "设备类型": "车载摄像头",
+    "产品型号": "SHARP AQUOS series",
+    "CVE编号": "CVE-2020-5571",
+    "漏洞描述": "SHARP AQUOS series (AQUOS SH-M02 build number 01.00.05 and earlier, AQUOS SH-RM02 build number 01.00.04 and earlier, AQUOS mini SH-M03 build number 01.00.04 and earlier, AQUOS Keitai SH-N01 build number 01.00.01 and earlier, AQUOS L2 (UQ mobile/J:COM) build number 01.00.05 and earlier, AQUOS sense lite SH-M05 build number 03.00.04 and earlier, AQUOS sense (UQ mobile) build number 03.00.03 and earlier, AQUOS compact SH-M06 build number 02.00.02 and earlier, AQUOS sense plus SH-M07 build number 02.00.02 and earlier, AQUOS sense2 SH-M08 build number 02.00.05 and earlier, and AQUOS sense2 (UQ mobile) build number 02.00.06 and earlier) allow an attacker to obtain the sensitive information of the device via malicious applications installed on the device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://k-tai.sharp.co.jp/support/info/info036.html",
+      "https://jvn.jp/en/jp/JVN93064451/index.html"
+    ],
+    "受影响版本": [
+      "AQUOS SH-M02 build number 01.00.05 and earlier, AQUOS SH-RM02 build number 01.00.04 and earlier, AQUOS mini SH-M03 build number 01.00.04 and earlier, AQUOS Keitai SH-N01 build number 01.00.01 and earlier, AQUOS L2 (UQ mobile/J:COM) build number 01.00.05 and earlier, AQUOS sense lite SH-M05 build number 03.00.04 and earlier, AQUOS sense (UQ mobile) build number 03.00.03 and earlier, AQUOS compact SH-M06 build number 02.00.02 and earlier, AQUOS sense plus SH-M07 build number 02.00.02 and earlier, AQUOS sense2 SH-M08 build number 02.00.05 and earlier, and AQUOS sense2 (UQ mobile) build number 02.00.06 and earlier"
+    ],
+    "公开日期": "2020年04月23日"
+  }
+]

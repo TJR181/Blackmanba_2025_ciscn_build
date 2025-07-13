@@ -1,0 +1,87 @@
+[
+  {
+    "设备品牌": "Harman Becker",
+    "设备类型": "车载音频系统",
+    "产品型号": "MGU21",
+    "CVE编号": "CVE-2025-3885",
+    "漏洞描述": "Harman Becker MGU21 Bluetooth Improper Input Validation Denial-of-Service Vulnerability. This vulnerability allows network-adjacent attackers to create a denial-of-service condition on affected installations of Harman Becker MGU21 devices. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the Bluetooth stack of the BCM89359 chipset. The issue results from the lack of proper validation of Bluetooth frames. An attacker can leverage this vulnerability to create a denial-of-service condition on the system. Was ZDI-CAN-23942.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-251/"
+    ],
+    "受影响版本": [
+      "MGU21_22-07 firmware with BCM89359 wireless chipset; LMP Version: 5.0 (0x9); LMP Subversion: 0x420d"
+    ],
+    "公开日期": "2025年05月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载音频系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-40293",
+    "漏洞描述": "Harman Infotainment 20190525031613 and later allows command injection via unauthenticated RPC with a D-Bus connection object.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://autohack.in/2023/07/26/dude-its-my-car-how-to-develop-intimacy-with-your-car/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年08月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载音频系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-40292",
+    "漏洞描述": "Harman Infotainment 20190525031613 and later discloses the IP address via CarPlay CTRL packets.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://autohack.in/2023/07/26/dude-its-my-car-how-to-develop-intimacy-with-your-car/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年08月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载音频系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-40291",
+    "漏洞描述": "Harman Infotainment 20190525031613 allows root access via SSH over a USB-to-Ethernet dongle with a password that is an internal project name.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://autohack.in/2023/07/26/dude-its-my-car-how-to-develop-intimacy-with-your-car/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年08月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载音频系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-38523",
+    "漏洞描述": "The web interface on multiple Samsung Harman AMX N-Series devices allows directory listing for the /tmp/ directory, without authentication, exposing sensitive information such as the command history and screenshot of the file being processed. This affects N-Series N1115 Wallplate Video Encoder before 1.15.61, N-Series N1x22A Video Encoder/Decoder before 1.15.61, N-Series N1x33A Video Encoder/Decoder before 1.15.61, N-Series N1x33 Video Encoder/Decoder before 1.15.61, N-Series N2x35 Video Encoder/Decoder before 1.15.61, N-Series N2x35A Video Encoder/Decoder before 1.15.61, N-Series N2xx2 Video Encoder/Decoder before 1.15.61, N-Series N2xx2A Video Encoder/Decoder before 1.15.61, N-Series N3000 Video Encoder/Decoder before 2.12.105, and N-Series N4321 Audio Transceiver before 1.00.06.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://help.harmanpro.com/n1115-svsi-firmware",
+      "https://help.harmanpro.com/n1x22a-updater",
+      "https://help.harmanpro.com/n1x33a-updater",
+      "https://help.harmanpro.com/n1x33-updater",
+      "https://help.harmanpro.com/n2x35-updater-hotfix",
+      "https://help.harmanpro.com/n2x35a-updater-hotfix",
+      "https://help.harmanpro.com/n2xx2-updater-hotfix",
+      "https://help.harmanpro.com/n2xx2a-updater",
+      "https://help.harmanpro.com/svsi-n4321-firmware",
+      "https://help.harmanpro.com/n3k-updater-hotfix",
+      "https://wiki.notveg.ninja/blog/CVE-2023-38523/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年07月20日"
+  }
+]

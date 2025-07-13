@@ -1,0 +1,37 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-36622",
+    "漏洞描述": "Samsung Electronics mTower v0.3.0 and earlier was discovered to contain a NULL pointer dereference via the function TEE_GetObjectInfo1.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://security.samsungmobile.com/securityUpdate.smsb",
+      "https://github.com/Samsung/mTower",
+      "https://github.com/Samsung/mTower/blob/18f4b592a8a973ce5972f4e2658ea0f6e3686284/tee/lib/libutee/tee_api_objects.c#L84",
+      "https://github.com/Samsung/mTower/blob/18f4b592a8a973ce5972f4e2658ea0f6e3686284/tee/tee/tee_svc.c#L965"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年09月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载视频监控系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-36621",
+    "漏洞描述": "Samsung Electronics mTower v0.3.0 and earlier was discovered to contain a NULL pointer dereference via the function TEE_AllocateTransientObject.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://security.samsungmobile.com/securityUpdate.smsb",
+      "https://github.com/Samsung/mTower",
+      "https://github.com/Samsung/mTower/blob/18f4b592a8a973ce5972f4e2658ea0f6e3686284/tee/lib/libutee/tee_api_objects.c#L223"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年09月01日"
+  }
+]

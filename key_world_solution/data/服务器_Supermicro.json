@@ -1,0 +1,663 @@
+[
+  {
+    "设备品牌": "Acer",
+    "设备类型": "服务器",
+    "产品型号": "vz2694g",
+    "CVE编号": "CVE-2024-8105",
+    "漏洞描述": "A vulnerability related to the use an insecure Platform Key (PK) has been discovered. An attacker with the compromised PK private key can create malicious UEFI software that is signed with a trusted key that has been compromised.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://uefi.org/specs/UEFI/2.9_A/32_Secure_Boot_and_Driver_Signing.html",
+      "https://www.binarly.io/advisories/brly-2024-005",
+      "https://kb.cert.org/vuls/id/455367",
+      "https://github.com/binarly-io/Vulnerability-REsearch/blob/main/PKfail/BRLY-2024-005.md",
+      "https://www.supermicro.com/en/support/security_PKFAIL_Jul_2024",
+      "https://www.intel.com/content/www/us/en/security-center/announcement/intel-security-announcement-2024-07-25-001.html",
+      "https://security.ts.fujitsu.com/ProductSecurity/content/Fujitsu-PSIRT-FJ-ISS-2024-072412-Security-Notice.pdf",
+      "https://www.gigabyte.com/us/Support/Security/2205"
+    ],
+    "受影响版本": [
+      "d61d0e09d008bfb29bc32532b1b94fcc4ee2af5e8372c6d38722a4e73ecc71d6"
+    ],
+    "公开日期": "2024年08月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-56582",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nbtrfs: fix use-after-free in btrfs_encoded_read_endio()\n\nShinichiro reported the following use-after free that sometimes is\nhappening in our CI system when running fstests' btrfs/284 on a TCMU\nrunner device:\n\n  BUG: KASAN: slab-use-after-free in lock_release+0x708/0x780\n  Read of size 8 at addr ffff888106a83f18 by task kworker/u80:6/219\n\n  CPU: 8 UID: 0 PID: 219 Comm: kworker/u80:6 Not tainted 6.12.0-rc6-kts+ #15\n  Hardware name: Supermicro Super Server/X11SPi-TF, BIOS 3.3 02/21/2020\n  Workqueue: btrfs-endio btrfs_end_bio_work [btrfs]\n  Call Trace:\n   <TASK>\n   dump_stack_lvl+0x6e/0xa0\n   ? lock_release+0x708/0x780\n   print_report+0x174/0x505\n   ? lock_release+0x708/0x780\n   ? __virt_addr_valid+0x224/0x410\n   ? lock_release+0x708/0x780\n   kasan_report+0xda/0x1b0\n   ? lock_release+0x708/0x780\n   ? __wake_up+0x44/0x60\n   lock_release+0x708/0x780\n   ? __pfx_lock_release+0x10/0x10\n   ? __pfx_do_raw_spin_lock+0x10/0x10\n   ? lock_is_held_type+0x9a/0x110\n   _raw_spin_unlock_irqrestore+0x1f/0x60\n   __wake_up+0x44/0x60\n   btrfs_encoded_read_endio+0x14b/0x190 [btrfs]\n   btrfs_check_read_bio+0x8d9/0x1360 [btrfs]\n   ? lock_release+0x1b0/0x780\n   ? trace_lock_acquire+0x12f/0x1a0\n   ? __pfx_btrfs_check_read_bio+0x10/0x10 [btrfs]\n   ? process_one_work+0x7e3/0x1460\n   ? lock_acquire+0x31/0xc0\n   ? process_one_work+0x7e3/0x1460\n   process_one_work+0x85c/0x1460\n   ? __pfx_process_one_work+0x10/0x10\n   ? assign_work+0x16c/0x240\n   worker_thread+0x5e6/0xfc0\n   ? __pfx_worker_thread+0x10/0x10\n   kthread+0x2c3/0x3a0\n   ? __pfx_kthread+0x10/0x10\n   ret_from_fork+0x31/0x70\n   ? __pfx_kthread+0x10/0x10\n   ret_from_fork_asm+0x1a/0x30\n   </TASK>\n\n  Allocated by task 3661:\n   kasan_save_stack+0x30/0x50\n   kasan_save_track+0x14/0x30\n   __kasan_kmalloc+0xaa/0xb0\n   btrfs_encoded_read_regular_fill_pages+0x16c/0x6d0 [btrfs]\n   send_extent_data+0xf0f/0x24a0 [btrfs]\n   process_extent+0x48a/0x1830 [btrfs]\n   changed_cb+0x178b/0x2ea0 [btrfs]\n   btrfs_ioctl_send+0x3bf9/0x5c20 [btrfs]\n   _btrfs_ioctl_send+0x117/0x330 [btrfs]\n   btrfs_ioctl+0x184a/0x60a0 [btrfs]\n   __x64_sys_ioctl+0x12e/0x1a0\n   do_syscall_64+0x95/0x180\n   entry_SYSCALL_64_after_hwframe+0x76/0x7e\n\n  Freed by task 3661:\n   kasan_save_stack+0x30/0x50\n   kasan_save_track+0x14/0x30\n   kasan_save_free_info+0x3b/0x70\n   __kasan_slab_free+0x4f/0x70\n   kfree+0x143/0x490\n   btrfs_encoded_read_regular_fill_pages+0x531/0x6d0 [btrfs]\n   send_extent_data+0xf0f/0x24a0 [btrfs]\n   process_extent+0x48a/0x1830 [btrfs]\n   changed_cb+0x178b/0x2ea0 [btrfs]\n   btrfs_ioctl_send+0x3bf9/0x5c20 [btrfs]\n   _btrfs_ioctl_send+0x117/0x330 [btrfs]\n   btrfs_ioctl+0x184a/0x60a0 [btrfs]\n   __x64_sys_ioctl+0x12e/0x1a0\n   do_syscall_64+0x95/0x180\n   entry_SYSCALL_64_after_hwframe+0x76/0x7e\n\n  The buggy address belongs to the object at ffff888106a83f00\n   which belongs to the cache kmalloc-rnd-07-96 of size 96\n  The buggy address is located 24 bytes inside of\n   freed 96-byte region [ffff888106a83f00, ffff888106a83f60)\n\n  The buggy address belongs to the physical page:\n  page: refcount:1 mapcount:0 mapping:0000000000000000 index:0xffff888106a83800 pfn:0x106a83\n  flags: 0x17ffffc0000000(node=0|zone=2|lastcpupid=0x1fffff)\n  page_type: f5(slab)\n  raw: 0017ffffc0000000 ffff888100053680 ffffea0004917200 0000000000000004\n  raw: ffff888106a83800 0000000080200019 00000001f5000000 0000000000000000\n  page dumped because: kasan: bad access detected\n\n  Memory state around the buggy address:\n   ffff888106a83e00: fa fb fb fb fb fb fb fb fb fb fb fb fc fc fc fc\n   ffff888106a83e80: fa fb fb fb fb fb fb fb fb fb fb fb fc fc fc fc\n  >ffff888106a83f00: fa fb fb fb fb fb fb fb fb fb fb fb fc fc fc fc\n                              ^\n   ffff888106a83f80: fa fb fb fb fb fb fb fb fb fb fb fb fc fc fc fc\n   ffff888106a84000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  ==================================================================\n\nFurther analyzing the trace and \n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/a40de0330af4fb7bc6b354250c24f294f8b826a0",
+      "https://git.kernel.org/stable/c/6228f13f1996a4feb9b601d6644bf0bfe03671dd",
+      "https://git.kernel.org/stable/c/f8a5129e4a9fc3f6aa3f137513253b51b31b94d4",
+      "https://git.kernel.org/stable/c/05b36b04d74a517d6675bf2f90829ff1ac7e28dc"
+    ],
+    "受影响版本": [
+      "1881fba89bd5dcd364d2e1bf561912a90a11c21a",
+      "1881fba89bd5dcd364d2e1bf561912a90a11c21a",
+      "1881fba89bd5dcd364d2e1bf561912a90a11c21a",
+      "1881fba89bd5dcd364d2e1bf561912a90a11c21a"
+    ],
+    "公开日期": "2024年12月27日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-47684",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ntcp: check skb is non-NULL in tcp_rto_delta_us()\n\nWe have some machines running stock Ubuntu 20.04.6 which is their 5.4.0-174-generic\nkernel that are running ceph and recently hit a null ptr dereference in\ntcp_rearm_rto(). Initially hitting it from the TLP path, but then later we also\nsaw it getting hit from the RACK case as well. Here are examples of the oops\nmessages we saw in each of those cases:\n\nJul 26 15:05:02 rx [11061395.780353] BUG: kernel NULL pointer dereference, address: 0000000000000020\nJul 26 15:05:02 rx [11061395.787572] #PF: supervisor read access in kernel mode\nJul 26 15:05:02 rx [11061395.792971] #PF: error_code(0x0000) - not-present page\nJul 26 15:05:02 rx [11061395.798362] PGD 0 P4D 0\nJul 26 15:05:02 rx [11061395.801164] Oops: 0000 [#1] SMP NOPTI\nJul 26 15:05:02 rx [11061395.805091] CPU: 0 PID: 9180 Comm: msgr-worker-1 Tainted: G W 5.4.0-174-generic #193-Ubuntu\nJul 26 15:05:02 rx [11061395.814996] Hardware name: Supermicro SMC 2x26 os-gen8 64C NVME-Y 256G/H12SSW-NTR, BIOS 2.5.V1.2U.NVMe.UEFI 05/09/2023\nJul 26 15:05:02 rx [11061395.825952] RIP: 0010:tcp_rearm_rto+0xe4/0x160\nJul 26 15:05:02 rx [11061395.830656] Code: 87 ca 04 00 00 00 5b 41 5c 41 5d 5d c3 c3 49 8b bc 24 40 06 00 00 eb 8d 48 bb cf f7 53 e3 a5 9b c4 20 4c 89 ef e8 0c fe 0e 00 <48> 8b 78 20 48 c1 ef 03 48 89 f8 41 8b bc 24 80 04 00 00 48 f7 e3\nJul 26 15:05:02 rx [11061395.849665] RSP: 0018:ffffb75d40003e08 EFLAGS: 00010246\nJul 26 15:05:02 rx [11061395.855149] RAX: 0000000000000000 RBX: 20c49ba5e353f7cf RCX: 0000000000000000\nJul 26 15:05:02 rx [11061395.862542] RDX: 0000000062177c30 RSI: 000000000000231c RDI: ffff9874ad283a60\nJul 26 15:05:02 rx [11061395.869933] RBP: ffffb75d40003e20 R08: 0000000000000000 R09: ffff987605e20aa8\nJul 26 15:05:02 rx [11061395.877318] R10: ffffb75d40003f00 R11: ffffb75d4460f740 R12: ffff9874ad283900\nJul 26 15:05:02 rx [11061395.884710] R13: ffff9874ad283a60 R14: ffff9874ad283980 R15: ffff9874ad283d30\nJul 26 15:05:02 rx [11061395.892095] FS: 00007f1ef4a2e700(0000) GS:ffff987605e00000(0000) knlGS:0000000000000000\nJul 26 15:05:02 rx [11061395.900438] CS: 0010 DS: 0000 ES: 0000 CR0: 0000000080050033\nJul 26 15:05:02 rx [11061395.906435] CR2: 0000000000000020 CR3: 0000003e450ba003 CR4: 0000000000760ef0\nJul 26 15:05:02 rx [11061395.913822] PKRU: 55555554\nJul 26 15:05:02 rx [11061395.916786] Call Trace:\nJul 26 15:05:02 rx [11061395.919488]\nJul 26 15:05:02 rx [11061395.921765] ? show_regs.cold+0x1a/0x1f\nJul 26 15:05:02 rx [11061395.925859] ? __die+0x90/0xd9\nJul 26 15:05:02 rx [11061395.929169] ? no_context+0x196/0x380\nJul 26 15:05:02 rx [11061395.933088] ? ip6_protocol_deliver_rcu+0x4e0/0x4e0\nJul 26 15:05:02 rx [11061395.938216] ? ip6_sublist_rcv_finish+0x3d/0x50\nJul 26 15:05:02 rx [11061395.943000] ? __bad_area_nosemaphore+0x50/0x1a0\nJul 26 15:05:02 rx [11061395.947873] ? bad_area_nosemaphore+0x16/0x20\nJul 26 15:05:02 rx [11061395.952486] ? do_user_addr_fault+0x267/0x450\nJul 26 15:05:02 rx [11061395.957104] ? ipv6_list_rcv+0x112/0x140\nJul 26 15:05:02 rx [11061395.961279] ? __do_page_fault+0x58/0x90\nJul 26 15:05:02 rx [11061395.965458] ? do_page_fault+0x2c/0xe0\nJul 26 15:05:02 rx [11061395.969465] ? page_fault+0x34/0x40\nJul 26 15:05:02 rx [11061395.973217] ? tcp_rearm_rto+0xe4/0x160\nJul 26 15:05:02 rx [11061395.977313] ? tcp_rearm_rto+0xe4/0x160\nJul 26 15:05:02 rx [11061395.981408] tcp_send_loss_probe+0x10b/0x220\nJul 26 15:05:02 rx [11061395.985937] tcp_write_timer_handler+0x1b4/0x240\nJul 26 15:05:02 rx [11061395.990809] tcp_write_timer+0x9e/0xe0\nJul 26 15:05:02 rx [11061395.994814] ? tcp_write_timer_handler+0x240/0x240\nJul 26 15:05:02 rx [11061395.999866] call_timer_fn+0x32/0x130\nJul 26 15:05:02 rx [11061396.003782] __run_timers.part.0+0x180/0x280\nJul 26 15:05:02 rx [11061396.008309] ? recalibrate_cpu_khz+0x10/0x10\nJul 26 15:05:02 rx [11061396.012841] ? native_x2apic_icr_write+0x30/0x30\nJul 26 15:05:02 rx [11061396.017718] ? lapic_next_even\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/ad4f0a14d6856e68f023fc4e5017cfd881a3dfbc",
+      "https://git.kernel.org/stable/c/16e0387d87fc858e34449fdf2b14ed5837f761db",
+      "https://git.kernel.org/stable/c/ec31cf42fc4e35bb1248ce6eb1de6de9f851ac86",
+      "https://git.kernel.org/stable/c/5c4c03288a4aea705e36aa44119c13d7ee4dce99",
+      "https://git.kernel.org/stable/c/96c4983eab2a5da235f7fff90beaf17b008ba029",
+      "https://git.kernel.org/stable/c/570f7d8c9bf14f041152ba8353d4330ef7575915",
+      "https://git.kernel.org/stable/c/81d18c152e3f82bacadf83bc0a471b2363b9cc18",
+      "https://git.kernel.org/stable/c/09aea49fbc7e755a915c405644f347137cdb62b0",
+      "https://git.kernel.org/stable/c/c8770db2d54437a5f49417ae7b46f7de23d14db6"
+    ],
+    "受影响版本": [
+      "e1a10ef7fa876f8510aaec36ea5c0cf34baba410",
+      "e1a10ef7fa876f8510aaec36ea5c0cf34baba410",
+      "e1a10ef7fa876f8510aaec36ea5c0cf34baba410",
+      "e1a10ef7fa876f8510aaec36ea5c0cf34baba410",
+      "e1a10ef7fa876f8510aaec36ea5c0cf34baba410",
+      "e1a10ef7fa876f8510aaec36ea5c0cf34baba410",
+      "e1a10ef7fa876f8510aaec36ea5c0cf34baba410",
+      "e1a10ef7fa876f8510aaec36ea5c0cf34baba410",
+      "e1a10ef7fa876f8510aaec36ea5c0cf34baba410",
+      "42a858e036bb26cb559157393b7890cabe70bfc2"
+    ],
+    "公开日期": "2024年10月21日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-42268",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/mlx5: Fix missing lock on sync reset reload\n\nOn sync reset reload work, when remote host updates devlink on reload\nactions performed on that host, it misses taking devlink lock before\ncalling devlink_remote_reload_actions_performed() which results in\ntriggering lock assert like the following:\n\nWARNING: CPU: 4 PID: 1164 at net/devlink/core.c:261 devl_assert_locked+0x3e/0x50\n…\n CPU: 4 PID: 1164 Comm: kworker/u96:6 Tainted: G S      W          6.10.0-rc2+ #116\n Hardware name: Supermicro SYS-2028TP-DECTR/X10DRT-PT, BIOS 2.0 12/18/2015\n Workqueue: mlx5_fw_reset_events mlx5_sync_reset_reload_work [mlx5_core]\n RIP: 0010:devl_assert_locked+0x3e/0x50\n…\n Call Trace:\n  <TASK>\n  ? __warn+0xa4/0x210\n  ? devl_assert_locked+0x3e/0x50\n  ? report_bug+0x160/0x280\n  ? handle_bug+0x3f/0x80\n  ? exc_invalid_op+0x17/0x40\n  ? asm_exc_invalid_op+0x1a/0x20\n  ? devl_assert_locked+0x3e/0x50\n  devlink_notify+0x88/0x2b0\n  ? mlx5_attach_device+0x20c/0x230 [mlx5_core]\n  ? __pfx_devlink_notify+0x10/0x10\n  ? process_one_work+0x4b6/0xbb0\n  process_one_work+0x4b6/0xbb0\n[…]",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/5d07d1d40aabfd61bab21115639bd4f641db6002",
+      "https://git.kernel.org/stable/c/98884e89c90d077f6fe6ba18e6cf6f914642f04e",
+      "https://git.kernel.org/stable/c/091268f3c27a5b6d7858a3bb2a0dbcc9cd26ddb5",
+      "https://git.kernel.org/stable/c/572f9caa9e7295f8c8822e4122c7ae8f1c412ff9"
+    ],
+    "受影响版本": [
+      "84a433a40d0ebf3bbf36b8bfa58c6f45dc782344",
+      "84a433a40d0ebf3bbf36b8bfa58c6f45dc782344",
+      "84a433a40d0ebf3bbf36b8bfa58c6f45dc782344",
+      "84a433a40d0ebf3bbf36b8bfa58c6f45dc782344"
+    ],
+    "公开日期": "2024年08月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-42103",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nbtrfs: fix adding block group to a reclaim list and the unused list during reclaim\n\nThere is a potential parallel list adding for retrying in\nbtrfs_reclaim_bgs_work and adding to the unused list. Since the block\ngroup is removed from the reclaim list and it is on a relocation work,\nit can be added into the unused list in parallel. When that happens,\nadding it to the reclaim list will corrupt the list head and trigger\nlist corruption like below.\n\nFix it by taking fs_info->unused_bgs_lock.\n\n  [177.504][T2585409] BTRFS error (device nullb1): error relocating ch= unk 2415919104\n  [177.514][T2585409] list_del corruption. next->prev should be ff1100= 0344b119c0, but was ff11000377e87c70. (next=3Dff110002390cd9c0)\n  [177.529][T2585409] ------------[ cut here ]------------\n  [177.537][T2585409] kernel BUG at lib/list_debug.c:65!\n  [177.545][T2585409] Oops: invalid opcode: 0000 [#1] PREEMPT SMP KASAN NOPTI\n  [177.555][T2585409] CPU: 9 PID: 2585409 Comm: kworker/u128:2 Tainted: G        W          6.10.0-rc5-kts #1\n  [177.568][T2585409] Hardware name: Supermicro SYS-520P-WTR/X12SPW-TF, BIOS 1.2 02/14/2022\n  [177.579][T2585409] Workqueue: events_unbound btrfs_reclaim_bgs_work[btrfs]\n  [177.589][T2585409] RIP: 0010:__list_del_entry_valid_or_report.cold+0x70/0x72\n  [177.624][T2585409] RSP: 0018:ff11000377e87a70 EFLAGS: 00010286\n  [177.633][T2585409] RAX: 000000000000006d RBX: ff11000344b119c0 RCX:0000000000000000\n  [177.644][T2585409] RDX: 000000000000006d RSI: 0000000000000008 RDI:ffe21c006efd0f40\n  [177.655][T2585409] RBP: ff110002e0509f78 R08: 0000000000000001 R09:ffe21c006efd0f08\n  [177.665][T2585409] R10: ff11000377e87847 R11: 0000000000000000 R12:ff110002390cd9c0\n  [177.676][T2585409] R13: ff11000344b119c0 R14: ff110002e0508000 R15:dffffc0000000000\n  [177.687][T2585409] FS:  0000000000000000(0000) GS:ff11000fec880000(0000) knlGS:0000000000000000\n  [177.700][T2585409] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\n  [177.709][T2585409] CR2: 00007f06bc7b1978 CR3: 0000001021e86005 CR4:0000000000771ef0\n  [177.720][T2585409] DR0: 0000000000000000 DR1: 0000000000000000 DR2:0000000000000000\n  [177.731][T2585409] DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7:0000000000000400\n  [177.742][T2585409] PKRU: 55555554\n  [177.748][T2585409] Call Trace:\n  [177.753][T2585409]  <TASK>\n  [177.759][T2585409]  ? __die_body.cold+0x19/0x27\n  [177.766][T2585409]  ? die+0x2e/0x50\n  [177.772][T2585409]  ? do_trap+0x1ea/0x2d0\n  [177.779][T2585409]  ? __list_del_entry_valid_or_report.cold+0x70/0x72\n  [177.788][T2585409]  ? do_error_trap+0xa3/0x160\n  [177.795][T2585409]  ? __list_del_entry_valid_or_report.cold+0x70/0x72\n  [177.805][T2585409]  ? handle_invalid_op+0x2c/0x40\n  [177.812][T2585409]  ? __list_del_entry_valid_or_report.cold+0x70/0x72\n  [177.820][T2585409]  ? exc_invalid_op+0x2d/0x40\n  [177.827][T2585409]  ? asm_exc_invalid_op+0x1a/0x20\n  [177.834][T2585409]  ? __list_del_entry_valid_or_report.cold+0x70/0x72\n  [177.843][T2585409]  btrfs_delete_unused_bgs+0x3d9/0x14c0 [btrfs]\n\nThere is a similar retry_list code in btrfs_delete_unused_bgs(), but it is\nsafe, AFAICS. Since the block group was in the unused list, the used bytes\nshould be 0 when it was added to the unused list. Then, it checks\nblock_group->{used,reserved,pinned} are still 0 under the\nblock_group->lock. So, they should be still eligible for the unused list,\nnot the reclaim list.\n\nThe reason it is safe there it's because because we're holding\nspace_info->groups_sem in write mode.\n\nThat means no other task can allocate from the block group, so while we\nare at deleted_unused_bgs() it's not possible for other tasks to\nallocate and deallocate extents from the block group, so it can't be\nadded to the unused list or the reclaim list by anyone else.\n\nThe bug can be reproduced by btrfs/166 after a few rounds. In practice\nthis can be hit when relocation cannot find more chunk space and ends\nwith ENOSPC.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/522b39bd7163e8dc49f8cf10b9b782218ac48746",
+      "https://git.kernel.org/stable/c/aa1d8cc0cc500e06b316cd6732d4e6c1388fe33c",
+      "https://git.kernel.org/stable/c/f8e960be923f74a273c62478c9cab9523936752b",
+      "https://git.kernel.org/stable/c/326fa14549d7969ef80d3f5beea5470cd1c8e67f",
+      "https://git.kernel.org/stable/c/48f091fd50b2eb33ae5eaea9ed3c4f81603acf38"
+    ],
+    "受影响版本": [
+      "2311fd03027d2c1b2ac4a3a41153a16352659b65",
+      "15cb476ceb7da730857b8e94f06161273adb7a3a",
+      "bf1e8c21f2bef7dfcdadc93b0bb2e8723639d5f7",
+      "ab58fe210c40e582a9fd3d122ae21071adb5470a",
+      "4eb4e85c4f818491efc67e9373aa16b123c3f522"
+    ],
+    "公开日期": "2024年07月30日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-40962",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nbtrfs: zoned: allocate dummy checksums for zoned NODATASUM writes\n\nShin'ichiro reported that when he's running fstests' test-case\nbtrfs/167 on emulated zoned devices, he's seeing the following NULL\npointer dereference in 'btrfs_zone_finish_endio()':\n\n  Oops: general protection fault, probably for non-canonical address 0xdffffc0000000011: 0000 [#1] PREEMPT SMP KASAN NOPTI\n  KASAN: null-ptr-deref in range [0x0000000000000088-0x000000000000008f]\n  CPU: 4 PID: 2332440 Comm: kworker/u80:15 Tainted: G        W          6.10.0-rc2-kts+ #4\n  Hardware name: Supermicro Super Server/X11SPi-TF, BIOS 3.3 02/21/2020\n  Workqueue: btrfs-endio-write btrfs_work_helper [btrfs]\n  RIP: 0010:btrfs_zone_finish_endio.part.0+0x34/0x160 [btrfs]\n\n  RSP: 0018:ffff88867f107a90 EFLAGS: 00010206\n  RAX: dffffc0000000000 RBX: 0000000000000000 RCX: ffffffff893e5534\n  RDX: 0000000000000011 RSI: 0000000000000004 RDI: 0000000000000088\n  RBP: 0000000000000002 R08: 0000000000000001 R09: ffffed1081696028\n  R10: ffff88840b4b0143 R11: ffff88834dfff600 R12: ffff88840b4b0000\n  R13: 0000000000020000 R14: 0000000000000000 R15: ffff888530ad5210\n  FS:  0000000000000000(0000) GS:ffff888e3f800000(0000) knlGS:0000000000000000\n  CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\n  CR2: 00007f87223fff38 CR3: 00000007a7c6a002 CR4: 00000000007706f0\n  DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000\n  DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400\n  PKRU: 55555554\n  Call Trace:\n   <TASK>\n   ? __die_body.cold+0x19/0x27\n   ? die_addr+0x46/0x70\n   ? exc_general_protection+0x14f/0x250\n   ? asm_exc_general_protection+0x26/0x30\n   ? do_raw_read_unlock+0x44/0x70\n   ? btrfs_zone_finish_endio.part.0+0x34/0x160 [btrfs]\n   btrfs_finish_one_ordered+0x5d9/0x19a0 [btrfs]\n   ? __pfx_lock_release+0x10/0x10\n   ? do_raw_write_lock+0x90/0x260\n   ? __pfx_do_raw_write_lock+0x10/0x10\n   ? __pfx_btrfs_finish_one_ordered+0x10/0x10 [btrfs]\n   ? _raw_write_unlock+0x23/0x40\n   ? btrfs_finish_ordered_zoned+0x5a9/0x850 [btrfs]\n   ? lock_acquire+0x435/0x500\n   btrfs_work_helper+0x1b1/0xa70 [btrfs]\n   ? __schedule+0x10a8/0x60b0\n   ? __pfx___might_resched+0x10/0x10\n   process_one_work+0x862/0x1410\n   ? __pfx_lock_acquire+0x10/0x10\n   ? __pfx_process_one_work+0x10/0x10\n   ? assign_work+0x16c/0x240\n   worker_thread+0x5e6/0x1010\n   ? __pfx_worker_thread+0x10/0x10\n   kthread+0x2c3/0x3a0\n   ? trace_irq_enable.constprop.0+0xce/0x110\n   ? __pfx_kthread+0x10/0x10\n   ret_from_fork+0x31/0x70\n   ? __pfx_kthread+0x10/0x10\n   ret_from_fork_asm+0x1a/0x30\n   </TASK>\n\nEnabling CONFIG_BTRFS_ASSERT revealed the following assertion to\ntrigger:\n\n  assertion failed: !list_empty(&ordered->list), in fs/btrfs/zoned.c:1815\n\nThis indicates, that we're missing the checksums list on the\nordered_extent. As btrfs/167 is doing a NOCOW write this is to be\nexpected.\n\nFurther analysis with drgn confirmed the assumption:\n\n  >>> inode = prog.crashed_thread().stack_trace()[11]['ordered'].inode\n  >>> btrfs_inode = drgn.container_of(inode, \"struct btrfs_inode\", \\\n         \t\t\t\t\"vfs_inode\")\n  >>> print(btrfs_inode.flags)\n  (u32)1\n\nAs zoned emulation mode simulates conventional zones on regular devices,\nwe cannot use zone-append for writing. But we're only attaching dummy\nchecksums if we're doing a zone-append write.\n\nSo for NOCOW zoned data writes on conventional zones, also attach a\ndummy checksum.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/082b3d4e788953a3ff42ecdb70c4210149076285",
+      "https://git.kernel.org/stable/c/25cfe59f4470a051d1b80f51fa0ca3a5048e4a19",
+      "https://git.kernel.org/stable/c/cebae292e0c32a228e8f2219c270a7237be24a6a"
+    ],
+    "受影响版本": [
+      "cbfce4c7fbde23cc8bcba44822a58c728caf6ec9",
+      "cbfce4c7fbde23cc8bcba44822a58c728caf6ec9",
+      "cbfce4c7fbde23cc8bcba44822a58c728caf6ec9"
+    ],
+    "公开日期": "2024年07月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-36435",
+    "漏洞描述": "An issue was discovered on Supermicro BMC firmware in select X11, X12, H12, B12, X13, H13, and B13 motherboards (and CMM6 modules). An unauthenticated user can post crafted data to the interface that triggers a stack buffer overflow, and may lead to arbitrary remote code execution on a BMC.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.supermicro.com/zh_tw/support/security_BMC_IPMI_Jul_2024"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年07月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-36434",
+    "漏洞描述": "An SMM callout vulnerability was discovered in Supermicro X11DPH-T, X11DPH-Tq, and X11DPH-i motherboards with BIOS firmware before 4.4.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.supermicro.com/en/support/security_center#%21advisories",
+      "https://www.supermicro.com/en/support/security_BIOS_Jul_2024"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年07月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-36433",
+    "漏洞描述": "An arbitrary memory write vulnerability was discovered in Supermicro X11DPH-T, X11DPH-Tq, and X11DPH-i motherboards with BIOS firmware before 4.4.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.supermicro.com/en/support/security_center#%21advisories",
+      "https://www.supermicro.com/en/support/security_BIOS_Jul_2024"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年07月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-36432",
+    "漏洞描述": "An arbitrary memory write vulnerability was discovered in Supermicro X11DPG-HGX2, X11PDG-QT, X11PDG-OT, and X11PDG-SN motherboards with BIOS firmware before 4.4.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.supermicro.com/en/support/security_center#%21advisories",
+      "https://www.supermicro.com/zh_tw/support/security_BIOS_Jul_2024"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年07月15日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-26944",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nbtrfs: zoned: fix use-after-free in do_zone_finish()\n\nShinichiro reported the following use-after-free triggered by the device\nreplace operation in fstests btrfs/070.\n\n BTRFS info (device nullb1): scrub: finished on devid 1 with status: 0\n ==================================================================\n BUG: KASAN: slab-use-after-free in do_zone_finish+0x91a/0xb90 [btrfs]\n Read of size 8 at addr ffff8881543c8060 by task btrfs-cleaner/3494007\n\n CPU: 0 PID: 3494007 Comm: btrfs-cleaner Tainted: G        W          6.8.0-rc5-kts #1\n Hardware name: Supermicro Super Server/X11SPi-TF, BIOS 3.3 02/21/2020\n Call Trace:\n  <TASK>\n  dump_stack_lvl+0x5b/0x90\n  print_report+0xcf/0x670\n  ? __virt_addr_valid+0x200/0x3e0\n  kasan_report+0xd8/0x110\n  ? do_zone_finish+0x91a/0xb90 [btrfs]\n  ? do_zone_finish+0x91a/0xb90 [btrfs]\n  do_zone_finish+0x91a/0xb90 [btrfs]\n  btrfs_delete_unused_bgs+0x5e1/0x1750 [btrfs]\n  ? __pfx_btrfs_delete_unused_bgs+0x10/0x10 [btrfs]\n  ? btrfs_put_root+0x2d/0x220 [btrfs]\n  ? btrfs_clean_one_deleted_snapshot+0x299/0x430 [btrfs]\n  cleaner_kthread+0x21e/0x380 [btrfs]\n  ? __pfx_cleaner_kthread+0x10/0x10 [btrfs]\n  kthread+0x2e3/0x3c0\n  ? __pfx_kthread+0x10/0x10\n  ret_from_fork+0x31/0x70\n  ? __pfx_kthread+0x10/0x10\n  ret_from_fork_asm+0x1b/0x30\n  </TASK>\n\n Allocated by task 3493983:\n  kasan_save_stack+0x33/0x60\n  kasan_save_track+0x14/0x30\n  __kasan_kmalloc+0xaa/0xb0\n  btrfs_alloc_device+0xb3/0x4e0 [btrfs]\n  device_list_add.constprop.0+0x993/0x1630 [btrfs]\n  btrfs_scan_one_device+0x219/0x3d0 [btrfs]\n  btrfs_control_ioctl+0x26e/0x310 [btrfs]\n  __x64_sys_ioctl+0x134/0x1b0\n  do_syscall_64+0x99/0x190\n  entry_SYSCALL_64_after_hwframe+0x6e/0x76\n\n Freed by task 3494056:\n  kasan_save_stack+0x33/0x60\n  kasan_save_track+0x14/0x30\n  kasan_save_free_info+0x3f/0x60\n  poison_slab_object+0x102/0x170\n  __kasan_slab_free+0x32/0x70\n  kfree+0x11b/0x320\n  btrfs_rm_dev_replace_free_srcdev+0xca/0x280 [btrfs]\n  btrfs_dev_replace_finishing+0xd7e/0x14f0 [btrfs]\n  btrfs_dev_replace_by_ioctl+0x1286/0x25a0 [btrfs]\n  btrfs_ioctl+0xb27/0x57d0 [btrfs]\n  __x64_sys_ioctl+0x134/0x1b0\n  do_syscall_64+0x99/0x190\n  entry_SYSCALL_64_after_hwframe+0x6e/0x76\n\n The buggy address belongs to the object at ffff8881543c8000\n  which belongs to the cache kmalloc-1k of size 1024\n The buggy address is located 96 bytes inside of\n  freed 1024-byte region [ffff8881543c8000, ffff8881543c8400)\n\n The buggy address belongs to the physical page:\n page:00000000fe2c1285 refcount:1 mapcount:0 mapping:0000000000000000 index:0x0 pfn:0x1543c8\n head:00000000fe2c1285 order:3 entire_mapcount:0 nr_pages_mapped:0 pincount:0\n flags: 0x17ffffc0000840(slab|head|node=0|zone=2|lastcpupid=0x1fffff)\n page_type: 0xffffffff()\n raw: 0017ffffc0000840 ffff888100042dc0 ffffea0019e8f200 dead000000000002\n raw: 0000000000000000 0000000000100010 00000001ffffffff 0000000000000000\n page dumped because: kasan: bad access detected\n\n Memory state around the buggy address:\n  ffff8881543c7f00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  ffff8881543c7f80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n >ffff8881543c8000: fa fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb\n                                                        ^\n  ffff8881543c8080: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb\n  ffff8881543c8100: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb\n\nThis UAF happens because we're accessing stale zone information of a\nalready removed btrfs_device in do_zone_finish().\n\nThe sequence of events is as follows:\n\nbtrfs_dev_replace_start\n  btrfs_scrub_dev\n   btrfs_dev_replace_finishing\n    btrfs_dev_replace_update_device_in_mapping_tree <-- devices replaced\n    btrfs_rm_dev_replace_free_srcdev\n     btrfs_free_device                              <-- device freed\n\ncleaner_kthread\n btrfs_delete_unused_bgs\n  btrfs_zone_finish\n   do_zone_finish              <-- refers the freed device\n\nThe reason for this is that we're using a\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/34ca809e055eca5cfe63d9c7efbf80b7c21b4e57",
+      "https://git.kernel.org/stable/c/1ec17ef59168a1a6f1105f5dc517f783839a5302"
+    ],
+    "受影响版本": [
+      "4dcbb8ab31c1292aea6a3f240e19523f633320c2",
+      "4dcbb8ab31c1292aea6a3f240e19523f633320c2"
+    ],
+    "公开日期": "2024年05月01日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-26782",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmptcp: fix double-free on socket dismantle\n\nwhen MPTCP server accepts an incoming connection, it clones its listener\nsocket. However, the pointer to 'inet_opt' for the new socket has the same\nvalue as the original one: as a consequence, on program exit it's possible\nto observe the following splat:\n\n  BUG: KASAN: double-free in inet_sock_destruct+0x54f/0x8b0\n  Free of addr ffff888485950880 by task swapper/25/0\n\n  CPU: 25 PID: 0 Comm: swapper/25 Kdump: loaded Not tainted 6.8.0-rc1+ #609\n  Hardware name: Supermicro SYS-6027R-72RF/X9DRH-7TF/7F/iTF/iF, BIOS 3.0  07/26/2013\n  Call Trace:\n   <IRQ>\n   dump_stack_lvl+0x32/0x50\n   print_report+0xca/0x620\n   kasan_report_invalid_free+0x64/0x90\n   __kasan_slab_free+0x1aa/0x1f0\n   kfree+0xed/0x2e0\n   inet_sock_destruct+0x54f/0x8b0\n   __sk_destruct+0x48/0x5b0\n   rcu_do_batch+0x34e/0xd90\n   rcu_core+0x559/0xac0\n   __do_softirq+0x183/0x5a4\n   irq_exit_rcu+0x12d/0x170\n   sysvec_apic_timer_interrupt+0x6b/0x80\n   </IRQ>\n   <TASK>\n   asm_sysvec_apic_timer_interrupt+0x16/0x20\n  RIP: 0010:cpuidle_enter_state+0x175/0x300\n  Code: 30 00 0f 84 1f 01 00 00 83 e8 01 83 f8 ff 75 e5 48 83 c4 18 44 89 e8 5b 5d 41 5c 41 5d 41 5e 41 5f c3 cc cc cc cc fb 45 85 ed <0f> 89 60 ff ff ff 48 c1 e5 06 48 c7 43 18 00 00 00 00 48 83 44 2b\n  RSP: 0018:ffff888481cf7d90 EFLAGS: 00000202\n  RAX: 0000000000000000 RBX: ffff88887facddc8 RCX: 0000000000000000\n  RDX: 1ffff1110ff588b1 RSI: 0000000000000019 RDI: ffff88887fac4588\n  RBP: 0000000000000004 R08: 0000000000000002 R09: 0000000000043080\n  R10: 0009b02ea273363f R11: ffff88887fabf42b R12: ffffffff932592e0\n  R13: 0000000000000004 R14: 0000000000000000 R15: 00000022c880ec80\n   cpuidle_enter+0x4a/0xa0\n   do_idle+0x310/0x410\n   cpu_startup_entry+0x51/0x60\n   start_secondary+0x211/0x270\n   secondary_startup_64_no_verify+0x184/0x18b\n   </TASK>\n\n  Allocated by task 6853:\n   kasan_save_stack+0x1c/0x40\n   kasan_save_track+0x10/0x30\n   __kasan_kmalloc+0xa6/0xb0\n   __kmalloc+0x1eb/0x450\n   cipso_v4_sock_setattr+0x96/0x360\n   netlbl_sock_setattr+0x132/0x1f0\n   selinux_netlbl_socket_post_create+0x6c/0x110\n   selinux_socket_post_create+0x37b/0x7f0\n   security_socket_post_create+0x63/0xb0\n   __sock_create+0x305/0x450\n   __sys_socket_create.part.23+0xbd/0x130\n   __sys_socket+0x37/0xb0\n   __x64_sys_socket+0x6f/0xb0\n   do_syscall_64+0x83/0x160\n   entry_SYSCALL_64_after_hwframe+0x6e/0x76\n\n  Freed by task 6858:\n   kasan_save_stack+0x1c/0x40\n   kasan_save_track+0x10/0x30\n   kasan_save_free_info+0x3b/0x60\n   __kasan_slab_free+0x12c/0x1f0\n   kfree+0xed/0x2e0\n   inet_sock_destruct+0x54f/0x8b0\n   __sk_destruct+0x48/0x5b0\n   subflow_ulp_release+0x1f0/0x250\n   tcp_cleanup_ulp+0x6e/0x110\n   tcp_v4_destroy_sock+0x5a/0x3a0\n   inet_csk_destroy_sock+0x135/0x390\n   tcp_fin+0x416/0x5c0\n   tcp_data_queue+0x1bc8/0x4310\n   tcp_rcv_state_process+0x15a3/0x47b0\n   tcp_v4_do_rcv+0x2c1/0x990\n   tcp_v4_rcv+0x41fb/0x5ed0\n   ip_protocol_deliver_rcu+0x6d/0x9f0\n   ip_local_deliver_finish+0x278/0x360\n   ip_local_deliver+0x182/0x2c0\n   ip_rcv+0xb5/0x1c0\n   __netif_receive_skb_one_core+0x16e/0x1b0\n   process_backlog+0x1e3/0x650\n   __napi_poll+0xa6/0x500\n   net_rx_action+0x740/0xbb0\n   __do_softirq+0x183/0x5a4\n\n  The buggy address belongs to the object at ffff888485950880\n   which belongs to the cache kmalloc-64 of size 64\n  The buggy address is located 0 bytes inside of\n   64-byte region [ffff888485950880, ffff8884859508c0)\n\n  The buggy address belongs to the physical page:\n  page:0000000056d1e95e refcount:1 mapcount:0 mapping:0000000000000000 index:0xffff888485950700 pfn:0x485950\n  flags: 0x57ffffc0000800(slab|node=1|zone=2|lastcpupid=0x1fffff)\n  page_type: 0xffffffff()\n  raw: 0057ffffc0000800 ffff88810004c640 ffffea00121b8ac0 dead000000000006\n  raw: ffff888485950700 0000000000200019 00000001ffffffff 0000000000000000\n  page dumped because: kasan: bad access detected\n\n  Memory state around the buggy address:\n   ffff888485950780: fa fb fb\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/f74362a004225df935863dea6eb7d82daaa5b16e",
+      "https://git.kernel.org/stable/c/4a4eeb6912538c2d0b158e8d11b62d96c1dada4e",
+      "https://git.kernel.org/stable/c/d93fd40c62397326046902a2c5cb75af50882a85",
+      "https://git.kernel.org/stable/c/ce0809ada38dca8d6d41bb57ab40494855c30582",
+      "https://git.kernel.org/stable/c/85933e80d077c9ae2227226beb86c22f464059cc",
+      "https://git.kernel.org/stable/c/10048689def7e40a4405acda16fdc6477d4ecc5c"
+    ],
+    "受影响版本": [
+      "cf7da0d66cc1a2a19fc5930bb746ffbb2d4cd1be",
+      "cf7da0d66cc1a2a19fc5930bb746ffbb2d4cd1be",
+      "cf7da0d66cc1a2a19fc5930bb746ffbb2d4cd1be",
+      "cf7da0d66cc1a2a19fc5930bb746ffbb2d4cd1be",
+      "cf7da0d66cc1a2a19fc5930bb746ffbb2d4cd1be",
+      "cf7da0d66cc1a2a19fc5930bb746ffbb2d4cd1be"
+    ],
+    "公开日期": "2024年04月04日"
+  },
+  {
+    "设备品牌": "SMCI",
+    "设备类型": "服务器",
+    "产品型号": "MBD-X12DPG-OA6",
+    "CVE编号": "CVE-2024-10239",
+    "漏洞描述": "A security issue in the firmware image verification implementation at Supermicro MBD-X12DPG-OA6 . An attacker with administrator privileges can upload a specially crafted image, which can cause a stack overflow due to the unchecked fat->fsd.max_fld.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.supermicro.com/en/support/security_BMC_IPMI_Jan_2025"
+    ],
+    "受影响版本": [
+      "1.04.16"
+    ],
+    "公开日期": "2025年02月04日"
+  },
+  {
+    "设备品牌": "SMCI",
+    "设备类型": "服务器",
+    "产品型号": "MBD-X12DPG-OA6",
+    "CVE编号": "CVE-2024-10238",
+    "漏洞描述": "A security issue in the firmware image verification implementation \n\n at Supermicro MBD-X12DPG-OA6. An attacker can upload a specially crafted image that will cause a stack overflow is caused by not checking fld->used_bytes.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.supermicro.com/en/support/security_BMC_IPMI_Jan_2025"
+    ],
+    "受影响版本": [
+      "1.04.16"
+    ],
+    "公开日期": "2025年02月04日"
+  },
+  {
+    "设备品牌": "SMCI",
+    "设备类型": "服务器",
+    "产品型号": "MBD-X12DPG-OA6",
+    "CVE编号": "CVE-2024-10237",
+    "漏洞描述": "There is a vulnerability in the BMC firmware image authentication design \n\n at Supermicro MBD-X12DPG-OA6\n\n. An attacker can modify the firmware to bypass BMC inspection and bypass the signature verification process",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.supermicro.com/en/support/security_BMC_IPMI_Jan_2025"
+    ],
+    "受影响版本": [
+      "1.04.16"
+    ],
+    "公开日期": "2025年02月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-40290",
+    "漏洞描述": "An issue was discovered on Supermicro X11SSM-F, X11SAE-F, and X11SSE-F 1.66 devices. An attacker could exploit an XSS issue that affects Internet Explorer 11 on Windows.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.supermicro.com/en/support/security_center#%21advisories",
+      "https://www.supermicro.com/en/support/security_BMC_IPMI_Oct_2023"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年03月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-40289",
+    "漏洞描述": "A command injection issue was discovered on Supermicro X11SSM-F, X11SAE-F, and X11SSE-F 1.66 devices. An attacker can exploit this to elevate privileges from a user with BMC administrative privileges.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.supermicro.com/en/support/security_center#%21advisories",
+      "https://www.supermicro.com/en/support/security_BMC_IPMI_Oct_2023"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年03月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-40288",
+    "漏洞描述": "An issue was discovered on Supermicro X11SSM-F, X11SAE-F, and X11SSE-F 1.66 devices. An attacker could exploit an XSS issue.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.supermicro.com/en/support/security_center#%21advisories",
+      "https://www.supermicro.com/en/support/security_BMC_IPMI_Oct_2023"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年03月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-40287",
+    "漏洞描述": "An issue was discovered on Supermicro X11SSM-F, X11SAE-F, and X11SSE-F 1.66 devices. An attacker could exploit an XSS issue.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.supermicro.com/en/support/security_center#%21advisories",
+      "https://www.supermicro.com/en/support/security_BMC_IPMI_Oct_2023"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年03月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-40286",
+    "漏洞描述": "An issue was discovered on Supermicro X11SSM-F, X11SAE-F, and X11SSE-F 1.66 devices. An attacker could exploit an XSS issue.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.supermicro.com/en/support/security_center#%21advisories",
+      "https://www.supermicro.com/en/support/security_BMC_IPMI_Oct_2023"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年03月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-40285",
+    "漏洞描述": "An issue was discovered on Supermicro X11SSM-F, X11SAE-F, and X11SSE-F 1.66 devices. An attacker could exploit an XSS issue.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.supermicro.com/en/support/security_center#%21advisories",
+      "https://www.supermicro.com/en/support/security_BMC_IPMI_Oct_2023"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年03月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-40284",
+    "漏洞描述": "An issue was discovered on Supermicro X11SSM-F, X11SAE-F, and X11SSE-F 1.66 devices. An attacker could exploit an XSS issue.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.supermicro.com/en/support/security_center#%21advisories",
+      "https://www.supermicro.com/en/support/security_BMC_IPMI_Oct_2023"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年03月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-35861",
+    "漏洞描述": "A shell-injection vulnerability in email notifications on Supermicro motherboards (such as H12DST-B before 03.10.35) allows remote attackers to inject execute arbitrary commands as root on the BMC.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.supermicro.com/en/products/motherboards",
+      "https://www.supermicro.com/en/support/security_SMTP_Jun_2023",
+      "https://blog.freax13.de/cve/cve-2023-35861"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年07月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-34853",
+    "漏洞描述": "Buffer Overflow vulnerability in Supermicro motherboard X12DPG-QR 1.4b allows local attackers to hijack control flow via manipulation of SmcSecurityEraseSetupVar variable.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.supermicro.com/Bios/softfiles/17136/X12DPG-QR_1.4b_X1.02.61_SUM2.10.0.zip.",
+      "https://www.supermicro.com/en/support/security_BIOS_Aug_2023"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年08月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-33413",
+    "漏洞描述": "The configuration functionality in the Intelligent Platform Management Interface (IPMI) baseboard management controller (BMC) implementation on Supermicro X11 and M11 based devices, with firmware versions through 3.17.02, allows remote authenticated users to execute arbitrary commands.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://supermicro.com",
+      "https://www.supermicro.com/en/support/security_BMC_Dec_2023"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年12月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-33412",
+    "漏洞描述": "The web interface in the Intelligent Platform Management Interface (IPMI) baseboard management controller (BMC) implementation on Supermicro X11 and M11 based devices, with firmware versions before 3.17.02, allows remote authenticated users to execute arbitrary commands via a crafted request targeting vulnerable cgi endpoints.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://supermicro.com",
+      "https://www.supermicro.com/en/support/security_BMC_Dec_2023"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年12月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-33411",
+    "漏洞描述": "A web server in the Intelligent Platform Management Interface (IPMI) baseboard management controller (BMC) implementation on Supermicro X11 and M11 based devices, with firmware versions up to 3.17.02, allows remote unauthenticated users to perform directory traversal, potentially disclosing sensitive information.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://supermicro.com",
+      "https://www.supermicro.com/en/support/security_BMC_Dec_2023"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年12月07日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-50093",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\niommu/vt-d: avoid invalid memory access via node_online(NUMA_NO_NODE)\n\nKASAN reports:\n\n[ 4.668325][ T0] BUG: KASAN: wild-memory-access in dmar_parse_one_rhsa (arch/x86/include/asm/bitops.h:214 arch/x86/include/asm/bitops.h:226 include/asm-generic/bitops/instrumented-non-atomic.h:142 include/linux/nodemask.h:415 drivers/iommu/intel/dmar.c:497)\n[    4.676149][    T0] Read of size 8 at addr 1fffffff85115558 by task swapper/0/0\n[    4.683454][    T0]\n[    4.685638][    T0] CPU: 0 PID: 0 Comm: swapper/0 Not tainted 5.19.0-rc3-00004-g0e862838f290 #1\n[    4.694331][    T0] Hardware name: Supermicro SYS-5018D-FN4T/X10SDV-8C-TLN4F, BIOS 1.1 03/02/2016\n[    4.703196][    T0] Call Trace:\n[    4.706334][    T0]  <TASK>\n[ 4.709133][ T0] ? dmar_parse_one_rhsa (arch/x86/include/asm/bitops.h:214 arch/x86/include/asm/bitops.h:226 include/asm-generic/bitops/instrumented-non-atomic.h:142 include/linux/nodemask.h:415 drivers/iommu/intel/dmar.c:497)\n\nafter converting the type of the first argument (@nr, bit number)\nof arch_test_bit() from `long` to `unsigned long`[0].\n\nUnder certain conditions (for example, when ACPI NUMA is disabled\nvia command line), pxm_to_node() can return %NUMA_NO_NODE (-1).\nIt is valid 'magic' number of NUMA node, but not valid bit number\nto use in bitops.\nnode_online() eventually descends to test_bit() without checking\nfor the input, assuming it's on caller side (which might be good\nfor perf-critical tasks). There, -1 becomes %ULONG_MAX which leads\nto an insane array index when calculating bit position in memory.\n\nFor now, add an explicit check for @node being not %NUMA_NO_NODE\nbefore calling test_bit(). The actual logics didn't change here\nat all.\n\n[0] https://github.com/norov/linux/commit/0e862838f290147ea9c16db852d8d494b552d38d",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/b12304984654d8e58a2b22ff94c4410906d6267f",
+      "https://git.kernel.org/stable/c/5659efdadf04b56707d58c1b758df16d2e0eff2c",
+      "https://git.kernel.org/stable/c/0b4c0003aeda32a600f95df53b2848da8a5aa3fa",
+      "https://git.kernel.org/stable/c/73ce2046e04ad488cecc66757c36cbe1bdf089d4",
+      "https://git.kernel.org/stable/c/c2304c50f4d94f56c2e326f25c9dc8cf2ba6f5fa",
+      "https://git.kernel.org/stable/c/b0b0b77ea611e3088e9523e60860f4f41b62b235"
+    ],
+    "受影响版本": [
+      "ee34b32d8c2950f66038c8975747ef9aec855289",
+      "ee34b32d8c2950f66038c8975747ef9aec855289",
+      "ee34b32d8c2950f66038c8975747ef9aec855289",
+      "ee34b32d8c2950f66038c8975747ef9aec855289",
+      "ee34b32d8c2950f66038c8975747ef9aec855289",
+      "ee34b32d8c2950f66038c8975747ef9aec855289"
+    ],
+    "公开日期": "2025年06月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-50090",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nbtrfs: replace BTRFS_MAX_EXTENT_SIZE with fs_info->max_extent_size\n\nOn zoned filesystem, data write out is limited by max_zone_append_size,\nand a large ordered extent is split according the size of a bio. OTOH,\nthe number of extents to be written is calculated using\nBTRFS_MAX_EXTENT_SIZE, and that estimated number is used to reserve the\nmetadata bytes to update and/or create the metadata items.\n\nThe metadata reservation is done at e.g, btrfs_buffered_write() and then\nreleased according to the estimation changes. Thus, if the number of extent\nincreases massively, the reserved metadata can run out.\n\nThe increase of the number of extents easily occurs on zoned filesystem\nif BTRFS_MAX_EXTENT_SIZE > max_zone_append_size. And, it causes the\nfollowing warning on a small RAM environment with disabling metadata\nover-commit (in the following patch).\n\n[75721.498492] ------------[ cut here ]------------\n[75721.505624] BTRFS: block rsv 1 returned -28\n[75721.512230] WARNING: CPU: 24 PID: 2327559 at fs/btrfs/block-rsv.c:537 btrfs_use_block_rsv+0x560/0x760 [btrfs]\n[75721.581854] CPU: 24 PID: 2327559 Comm: kworker/u64:10 Kdump: loaded Tainted: G        W         5.18.0-rc2-BTRFS-ZNS+ #109\n[75721.597200] Hardware name: Supermicro Super Server/H12SSL-NT, BIOS 2.0 02/22/2021\n[75721.607310] Workqueue: btrfs-endio-write btrfs_work_helper [btrfs]\n[75721.616209] RIP: 0010:btrfs_use_block_rsv+0x560/0x760 [btrfs]\n[75721.646649] RSP: 0018:ffffc9000fbdf3e0 EFLAGS: 00010286\n[75721.654126] RAX: 0000000000000000 RBX: 0000000000004000 RCX: 0000000000000000\n[75721.663524] RDX: 0000000000000004 RSI: 0000000000000008 RDI: fffff52001f7be6e\n[75721.672921] RBP: ffffc9000fbdf420 R08: 0000000000000001 R09: ffff889f8d1fc6c7\n[75721.682493] R10: ffffed13f1a3f8d8 R11: 0000000000000001 R12: ffff88980a3c0e28\n[75721.692284] R13: ffff889b66590000 R14: ffff88980a3c0e40 R15: ffff88980a3c0e8a\n[75721.701878] FS:  0000000000000000(0000) GS:ffff889f8d000000(0000) knlGS:0000000000000000\n[75721.712601] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\n[75721.720726] CR2: 000055d12e05c018 CR3: 0000800193594000 CR4: 0000000000350ee0\n[75721.730499] Call Trace:\n[75721.735166]  <TASK>\n[75721.739886]  btrfs_alloc_tree_block+0x1e1/0x1100 [btrfs]\n[75721.747545]  ? btrfs_alloc_logged_file_extent+0x550/0x550 [btrfs]\n[75721.756145]  ? btrfs_get_32+0xea/0x2d0 [btrfs]\n[75721.762852]  ? btrfs_get_32+0xea/0x2d0 [btrfs]\n[75721.769520]  ? push_leaf_left+0x420/0x620 [btrfs]\n[75721.776431]  ? memcpy+0x4e/0x60\n[75721.781931]  split_leaf+0x433/0x12d0 [btrfs]\n[75721.788392]  ? btrfs_get_token_32+0x580/0x580 [btrfs]\n[75721.795636]  ? push_for_double_split.isra.0+0x420/0x420 [btrfs]\n[75721.803759]  ? leaf_space_used+0x15d/0x1a0 [btrfs]\n[75721.811156]  btrfs_search_slot+0x1bc3/0x2790 [btrfs]\n[75721.818300]  ? lock_downgrade+0x7c0/0x7c0\n[75721.824411]  ? free_extent_buffer.part.0+0x107/0x200 [btrfs]\n[75721.832456]  ? split_leaf+0x12d0/0x12d0 [btrfs]\n[75721.839149]  ? free_extent_buffer.part.0+0x14f/0x200 [btrfs]\n[75721.846945]  ? free_extent_buffer+0x13/0x20 [btrfs]\n[75721.853960]  ? btrfs_release_path+0x4b/0x190 [btrfs]\n[75721.861429]  btrfs_csum_file_blocks+0x85c/0x1500 [btrfs]\n[75721.869313]  ? rcu_read_lock_sched_held+0x16/0x80\n[75721.876085]  ? lock_release+0x552/0xf80\n[75721.881957]  ? btrfs_del_csums+0x8c0/0x8c0 [btrfs]\n[75721.888886]  ? __kasan_check_write+0x14/0x20\n[75721.895152]  ? do_raw_read_unlock+0x44/0x80\n[75721.901323]  ? _raw_write_lock_irq+0x60/0x80\n[75721.907983]  ? btrfs_global_root+0xb9/0xe0 [btrfs]\n[75721.915166]  ? btrfs_csum_root+0x12b/0x180 [btrfs]\n[75721.921918]  ? btrfs_get_global_root+0x820/0x820 [btrfs]\n[75721.929166]  ? _raw_write_unlock+0x23/0x40\n[75721.935116]  ? unpin_extent_cache+0x1e3/0x390 [btrfs]\n[75721.942041]  btrfs_finish_ordered_io.isra.0+0xa0c/0x1dc0 [btrfs]\n[75721.949906]  ? try_to_wake_up+0x30/0x14a0\n[75721.955700]  ? btrfs_unlink_subvol+0xda0/0xda0 [btrfs]\n[75721.962661]  ? rcu\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/1aa262c1d056551dd1246115af8b7e351184deae",
+      "https://git.kernel.org/stable/c/6cb4b96df97082a54634ba02196516919cda228c",
+      "https://git.kernel.org/stable/c/096e8eb9639b342bc35f9b741cf05e26d0106e92",
+      "https://git.kernel.org/stable/c/f7b12a62f008a3041f42f2426983e59a6a0a3c59"
+    ],
+    "受影响版本": [
+      "d8e3fb106f393858b90b3befc4f6092a76c86d1c",
+      "d8e3fb106f393858b90b3befc4f6092a76c86d1c",
+      "d8e3fb106f393858b90b3befc4f6092a76c86d1c",
+      "d8e3fb106f393858b90b3befc4f6092a76c86d1c"
+    ],
+    "公开日期": "2025年06月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49372",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ntcp: tcp_rtx_synack() can be called from process context\n\nLaurent reported the enclosed report [1]\n\nThis bug triggers with following coditions:\n\n0) Kernel built with CONFIG_DEBUG_PREEMPT=y\n\n1) A new passive FastOpen TCP socket is created.\n   This FO socket waits for an ACK coming from client to be a complete\n   ESTABLISHED one.\n2) A socket operation on this socket goes through lock_sock()\n   release_sock() dance.\n3) While the socket is owned by the user in step 2),\n   a retransmit of the SYN is received and stored in socket backlog.\n4) At release_sock() time, the socket backlog is processed while\n   in process context.\n5) A SYNACK packet is cooked in response of the SYN retransmit.\n6) -> tcp_rtx_synack() is called in process context.\n\nBefore blamed commit, tcp_rtx_synack() was always called from BH handler,\nfrom a timer handler.\n\nFix this by using TCP_INC_STATS() & NET_INC_STATS()\nwhich do not assume caller is in non preemptible context.\n\n[1]\nBUG: using __this_cpu_add() in preemptible [00000000] code: epollpep/2180\ncaller is tcp_rtx_synack.part.0+0x36/0xc0\nCPU: 10 PID: 2180 Comm: epollpep Tainted: G           OE     5.16.0-0.bpo.4-amd64 #1  Debian 5.16.12-1~bpo11+1\nHardware name: Supermicro SYS-5039MC-H8TRF/X11SCD-F, BIOS 1.7 11/23/2021\nCall Trace:\n <TASK>\n dump_stack_lvl+0x48/0x5e\n check_preemption_disabled+0xde/0xe0\n tcp_rtx_synack.part.0+0x36/0xc0\n tcp_rtx_synack+0x8d/0xa0\n ? kmem_cache_alloc+0x2e0/0x3e0\n ? apparmor_file_alloc_security+0x3b/0x1f0\n inet_rtx_syn_ack+0x16/0x30\n tcp_check_req+0x367/0x610\n tcp_rcv_state_process+0x91/0xf60\n ? get_nohz_timer_target+0x18/0x1a0\n ? lock_timer_base+0x61/0x80\n ? preempt_count_add+0x68/0xa0\n tcp_v4_do_rcv+0xbd/0x270\n __release_sock+0x6d/0xb0\n release_sock+0x2b/0x90\n sock_setsockopt+0x138/0x1140\n ? __sys_getsockname+0x7e/0xc0\n ? aa_sk_perm+0x3e/0x1a0\n __sys_setsockopt+0x198/0x1e0\n __x64_sys_setsockopt+0x21/0x30\n do_syscall_64+0x38/0xc0\n entry_SYSCALL_64_after_hwframe+0x44/0xae",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/3db889f883e65bbd3b1401279bfc1e9ed255c481",
+      "https://git.kernel.org/stable/c/c348b0f8d035fc4bdc040796889beec7218bd1b8",
+      "https://git.kernel.org/stable/c/58bd38cbc961fd799842b7be8c5222310f04b908",
+      "https://git.kernel.org/stable/c/d05c2fdf8e10528bb6751bd95243e862d5402a9b",
+      "https://git.kernel.org/stable/c/0a0f7f84148445c9f02f226928803a870139d820",
+      "https://git.kernel.org/stable/c/88cd232146207ff1d41dededed5e77c0d4438113",
+      "https://git.kernel.org/stable/c/bdc28a8fb43cc476e33b11519235adb816ce00e8",
+      "https://git.kernel.org/stable/c/d8e1bc6029acac796293310aacef7b7336f35b6a",
+      "https://git.kernel.org/stable/c/0a375c822497ed6ad6b5da0792a12a6f1af10c0b"
+    ],
+    "受影响版本": [
+      "168a8f58059a22feb9e9a2dcc1b8053dbbbc12ef",
+      "168a8f58059a22feb9e9a2dcc1b8053dbbbc12ef",
+      "168a8f58059a22feb9e9a2dcc1b8053dbbbc12ef",
+      "168a8f58059a22feb9e9a2dcc1b8053dbbbc12ef",
+      "168a8f58059a22feb9e9a2dcc1b8053dbbbc12ef",
+      "168a8f58059a22feb9e9a2dcc1b8053dbbbc12ef",
+      "168a8f58059a22feb9e9a2dcc1b8053dbbbc12ef",
+      "168a8f58059a22feb9e9a2dcc1b8053dbbbc12ef",
+      "168a8f58059a22feb9e9a2dcc1b8053dbbbc12ef"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49082",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: mpt3sas: Fix use after free in _scsih_expander_node_remove()\n\nThe function mpt3sas_transport_port_remove() called in\n_scsih_expander_node_remove() frees the port field of the sas_expander\nstructure, leading to the following use-after-free splat from KASAN when\nthe ioc_info() call following that function is executed (e.g. when doing\nrmmod of the driver module):\n\n[ 3479.371167] ==================================================================\n[ 3479.378496] BUG: KASAN: use-after-free in _scsih_expander_node_remove+0x710/0x750 [mpt3sas]\n[ 3479.386936] Read of size 1 at addr ffff8881c037691c by task rmmod/1531\n[ 3479.393524]\n[ 3479.395035] CPU: 18 PID: 1531 Comm: rmmod Not tainted 5.17.0-rc8+ #1436\n[ 3479.401712] Hardware name: Supermicro Super Server/H12SSL-NT, BIOS 2.1 06/02/2021\n[ 3479.409263] Call Trace:\n[ 3479.411743]  <TASK>\n[ 3479.413875]  dump_stack_lvl+0x45/0x59\n[ 3479.417582]  print_address_description.constprop.0+0x1f/0x120\n[ 3479.423389]  ? _scsih_expander_node_remove+0x710/0x750 [mpt3sas]\n[ 3479.429469]  kasan_report.cold+0x83/0xdf\n[ 3479.433438]  ? _scsih_expander_node_remove+0x710/0x750 [mpt3sas]\n[ 3479.439514]  _scsih_expander_node_remove+0x710/0x750 [mpt3sas]\n[ 3479.445411]  ? _raw_spin_unlock_irqrestore+0x2d/0x40\n[ 3479.452032]  scsih_remove+0x525/0xc90 [mpt3sas]\n[ 3479.458212]  ? mpt3sas_expander_remove+0x1d0/0x1d0 [mpt3sas]\n[ 3479.465529]  ? down_write+0xde/0x150\n[ 3479.470746]  ? up_write+0x14d/0x460\n[ 3479.475840]  ? kernfs_find_ns+0x137/0x310\n[ 3479.481438]  pci_device_remove+0x65/0x110\n[ 3479.487013]  __device_release_driver+0x316/0x680\n[ 3479.493180]  driver_detach+0x1ec/0x2d0\n[ 3479.498499]  bus_remove_driver+0xe7/0x2d0\n[ 3479.504081]  pci_unregister_driver+0x26/0x250\n[ 3479.510033]  _mpt3sas_exit+0x2b/0x6cf [mpt3sas]\n[ 3479.516144]  __x64_sys_delete_module+0x2fd/0x510\n[ 3479.522315]  ? free_module+0xaa0/0xaa0\n[ 3479.527593]  ? __cond_resched+0x1c/0x90\n[ 3479.532951]  ? lockdep_hardirqs_on_prepare+0x273/0x3e0\n[ 3479.539607]  ? syscall_enter_from_user_mode+0x21/0x70\n[ 3479.546161]  ? trace_hardirqs_on+0x1c/0x110\n[ 3479.551828]  do_syscall_64+0x35/0x80\n[ 3479.556884]  entry_SYSCALL_64_after_hwframe+0x44/0xae\n[ 3479.563402] RIP: 0033:0x7f1fc482483b\n...\n[ 3479.943087] ==================================================================\n\nFix this by introducing the local variable port_id to store the port ID\nvalue before executing mpt3sas_transport_port_remove(). This local variable\nis then used in the call to ioc_info() instead of dereferencing the freed\nport structure.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/25c1353dca74ad7cf3fd7ce258fe7c957a147d5e",
+      "https://git.kernel.org/stable/c/17d66b1c92bcb41e72271ec60069d3684aaa1c9c",
+      "https://git.kernel.org/stable/c/1bb8a7fc64d63ec818e367e1b37676ea2ef2d20c",
+      "https://git.kernel.org/stable/c/87d663d40801dffc99a5ad3b0188ad3e2b4d1557"
+    ],
+    "受影响版本": [
+      "7d310f241001e090cf1ec0f3ae836b38d8c6ebec",
+      "7d310f241001e090cf1ec0f3ae836b38d8c6ebec",
+      "7d310f241001e090cf1ec0f3ae836b38d8c6ebec",
+      "7d310f241001e090cf1ec0f3ae836b38d8c6ebec"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-48628",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nceph: drop messages from MDS when unmounting\n\nWhen unmounting all the dirty buffers will be flushed and after\nthe last osd request is finished the last reference of the i_count\nwill be released. Then it will flush the dirty cap/snap to MDSs,\nand the unmounting won't wait the possible acks, which will ihold\nthe inodes when updating the metadata locally but makes no sense\nany more, of this. This will make the evict_inodes() to skip these\ninodes.\n\nIf encrypt is enabled the kernel generate a warning when removing\nthe encrypt keys when the skipped inodes still hold the keyring:\n\nWARNING: CPU: 4 PID: 168846 at fs/crypto/keyring.c:242 fscrypt_destroy_keyring+0x7e/0xd0\nCPU: 4 PID: 168846 Comm: umount Tainted: G S  6.1.0-rc5-ceph-g72ead199864c #1\nHardware name: Supermicro SYS-5018R-WR/X10SRW-F, BIOS 2.0 12/17/2015\nRIP: 0010:fscrypt_destroy_keyring+0x7e/0xd0\nRSP: 0018:ffffc9000b277e28 EFLAGS: 00010202\nRAX: 0000000000000002 RBX: ffff88810d52ac00 RCX: ffff88810b56aa00\nRDX: 0000000080000000 RSI: ffffffff822f3a09 RDI: ffff888108f59000\nRBP: ffff8881d394fb88 R08: 0000000000000028 R09: 0000000000000000\nR10: 0000000000000001 R11: 11ff4fe6834fcd91 R12: ffff8881d394fc40\nR13: ffff888108f59000 R14: ffff8881d394f800 R15: 0000000000000000\nFS:  00007fd83f6f1080(0000) GS:ffff88885fd00000(0000) knlGS:0000000000000000\nCS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\nCR2: 00007f918d417000 CR3: 000000017f89a005 CR4: 00000000003706e0\nDR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000\nDR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400\nCall Trace:\n<TASK>\ngeneric_shutdown_super+0x47/0x120\nkill_anon_super+0x14/0x30\nceph_kill_sb+0x36/0x90 [ceph]\ndeactivate_locked_super+0x29/0x60\ncleanup_mnt+0xb8/0x140\ntask_work_run+0x67/0xb0\nexit_to_user_mode_prepare+0x23d/0x240\nsyscall_exit_to_user_mode+0x25/0x60\ndo_syscall_64+0x40/0x80\nentry_SYSCALL_64_after_hwframe+0x63/0xcd\nRIP: 0033:0x7fd83dc39e9b\n\nLater the kernel will crash when iput() the inodes and dereferencing\nthe \"sb->s_master_keys\", which has been released by the\ngeneric_shutdown_super().",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/89744b64914426cbabceb3d8a149176b5dafdfb5",
+      "https://git.kernel.org/stable/c/47f82395f04a976d4fa97de7f2acffa1c1096571",
+      "https://git.kernel.org/stable/c/e3dfcab2080dc1f9a4b09cc1327361bc2845bfcd"
+    ],
+    "受影响版本": [
+      "9030aaf9bf0a1eee47a154c316c789e959638b0f",
+      "9030aaf9bf0a1eee47a154c316c789e959638b0f",
+      "9030aaf9bf0a1eee47a154c316c789e959638b0f"
+    ],
+    "公开日期": "2024年03月02日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-43309",
+    "漏洞描述": "Supermicro X11SSL-CF HW Rev 1.01, BMC firmware v1.63 was discovered to contain insecure permissions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://supermicro.com",
+      "http://x11ssl-cf.com",
+      "https://www.supermicro.com/en/support/security_VRM_Jan_2023"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年04月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-25857",
+    "漏洞描述": "An issue was discovered in pcmt superMicro-CMS version 3.11, allows authenticated attackers to execute arbitrary code via the font_type parameter to setup.php.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/pcmt/superMicro-CMS/issues/2"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-25856",
+    "漏洞描述": "An issue was discovered in pcmt superMicro-CMS version 3.11, allows attackers to delete files via crafted image file in images.php.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/pcmt/superMicro-CMS/issues/1"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-15046",
+    "漏洞描述": "The web interface on Supermicro X10DRH-iT motherboards with BIOS 2.0a and IPMI firmware 03.40 allows remote attackers to exploit a cgi/config_user.cgi CSRF issue to add new admin users. The fixed versions are BIOS 3.2 and firmware 03.88.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.totalpentest.com/post/supermicro-ipmi-webgui-cross-site-request-forgery",
+      "http://packetstormsecurity.com/files/158373/SuperMicro-IPMI-03.40-Cross-Site-Request-Forgery.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月24日"
+  }
+]

@@ -1,0 +1,95 @@
+[
+  {
+    "设备品牌": "Pioneer",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "DMH-WT7600NEX",
+    "CVE编号": "CVE-2025-5834",
+    "漏洞描述": "Pioneer DMH-WT7600NEX Missing Immutable Root of Trust in Hardware Local Privilege Escalation Vulnerability. This vulnerability allows local attackers to bypass authentication on affected installations of Pioneer DMH-WT7600NEX devices. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed.\n\nThe specific flaw exists within the configuration of the application system-on-chip (SoC). The issue results from the lack of a properly configured hardware root of trust. An attacker can leverage this vulnerability to escalate privileges and execute arbitrary code in the context of the boot process. Was ZDI-CAN-26078.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-351/"
+    ],
+    "受影响版本": [
+      "3.05"
+    ],
+    "公开日期": "2025年06月25日"
+  },
+  {
+    "设备品牌": "Pioneer",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "DMH-WT7600NEX",
+    "CVE编号": "CVE-2025-5833",
+    "漏洞描述": "Pioneer DMH-WT7600NEX Root Filesystem Insufficient Verification of Data Authenticity Vulnerability. This vulnerability allows physically present attackers to bypass authentication on affected installations of Pioneer DMH-WT7600NEX devices. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the configuration of the operating system. The issue results from the lack of properly configured protection for the root file system. An attacker can leverage this vulnerability to bypass authentication on the system. Was ZDI-CAN-26077.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-350/"
+    ],
+    "受影响版本": [
+      "3.05"
+    ],
+    "公开日期": "2025年06月25日"
+  },
+  {
+    "设备品牌": "Pioneer",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "DMH-WT7600NEX",
+    "CVE编号": "CVE-2025-5832",
+    "漏洞描述": "Pioneer DMH-WT7600NEX Software Update Signing Insufficient Verification of Data Authenticity Vulnerability. This vulnerability allows physically present attackers to execute arbitrary code on affected installations of Pioneer DMH-WT7600NEX devices. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the software update verification process. The issue results from the lack of validating all the data in the software update. An attacker can leverage this vulnerability to execute code in the context of the device. Was ZDI-CAN-26079.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-352/"
+    ],
+    "受影响版本": [
+      "3.05"
+    ],
+    "公开日期": "2025年06月25日"
+  },
+  {
+    "设备品牌": "Pioneer",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "DMH-WT7600NEX",
+    "CVE编号": "CVE-2024-23930",
+    "漏洞描述": "This vulnerability allows network-adjacent attackers to create a denial-of-service condition on affected installations of Pioneer DMH-WT7600NEX devices. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the Media service, which listens on TCP port 42000 by default. The issue results from improper handling of error conditions. An attacker can leverage this vulnerability to create a denial-of-service condition on the system.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-1043/",
+      "https://jpn.pioneer/ja/car/dl/dmh-sz700_sf700/"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2025年01月31日"
+  },
+  {
+    "设备品牌": "Pioneer",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "DMH-WT7600NEX",
+    "CVE编号": "CVE-2024-23929",
+    "漏洞描述": "This vulnerability allows network-adjacent attackers to create arbitrary files on affected installations of Pioneer DMH-WT7600NEX devices. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed.\n\nThe specific flaw exists within the telematics functionality. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this in conjunction with other vulnerabilities to execute arbitrary code in the context of root.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-1044/",
+      "https://jpn.pioneer/ja/car/dl/dmh-sz700_sf700/"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2025年01月31日"
+  },
+  {
+    "设备品牌": "Pioneer",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "DMH-WT7600NEX",
+    "CVE编号": "CVE-2024-23928",
+    "漏洞描述": "This vulnerability allows network-adjacent attackers to compromise the integrity of downloaded information on affected installations of Pioneer DMH-WT7600NEX devices. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the telematics functionality, which operates over HTTPS. The issue results from the lack of proper validation of the certificate presented by the server. An attacker can leverage this in conjunction with other vulnerabilities to execute arbitrary code in the context of root.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-1045/",
+      "https://jpn.pioneer/ja/car/dl/dmh-sz700_sf700/"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2025年01月31日"
+  }
+]

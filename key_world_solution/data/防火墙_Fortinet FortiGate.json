@@ -1,0 +1,86 @@
+[
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "防火墙",
+    "产品型号": "FortiManager",
+    "CVE编号": "CVE-2024-47571",
+    "漏洞描述": "An operation on a resource after expiration or release in Fortinet FortiManager 6.4.12 through 7.4.0 allows an attacker to gain improper access to FortiGate via valid credentials.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://fortiguard.fortinet.com/psirt/FG-IR-24-239"
+    ],
+    "受影响版本": [
+      "6.4.12",
+      "7.0.7",
+      "7.2.3",
+      "7.4.0"
+    ],
+    "公开日期": "2025年01月14日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "防火墙",
+    "产品型号": "FortiOS",
+    "CVE编号": "CVE-2024-40591",
+    "漏洞描述": "An incorrect privilege assignment vulnerability [CWE-266] in Fortinet FortiOS version 7.6.0, 7.4.0 through 7.4.4, 7.2.0 through 7.2.9 and before 7.0.15 allows an authenticated admin whose access profile has the Security Fabric permission to escalate their privileges to super-admin by connecting the targetted FortiGate to a malicious upstream FortiGate they control.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://fortiguard.fortinet.com/psirt/FG-IR-24-302"
+    ],
+    "受影响版本": [
+      "6.4.0",
+      "7.0.0",
+      "7.2.0",
+      "7.4.0",
+      "7.6.0"
+    ],
+    "公开日期": "2025年02月11日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "防火墙",
+    "产品型号": "FortiAuthenticator",
+    "CVE编号": "CVE-2022-22302",
+    "漏洞描述": "A clear text storage of sensitive information (CWE-312) vulnerability in both FortiGate version 6.4.0 through 6.4.1, 6.2.0 through 6.2.9 and 6.0.0 through 6.0.13 and FortiAuthenticator version 5.5.0 and all versions of 6.1 and 6.0 may allow a local unauthorized party to retrieve the Fortinet private keys used to establish secure communication with both Apple Push Notification and Google Cloud Messaging services, via accessing the files on the filesystem.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://fortiguard.com/psirt/FG-IR-20-014"
+    ],
+    "受影响版本": [
+      "5.5.0",
+      "6.0.0",
+      "6.1.0"
+    ],
+    "公开日期": "2023年07月11日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "防火墙",
+    "产品型号": "Fortinet FortiOS",
+    "CVE编号": "CVE-2020-15936",
+    "漏洞描述": "A improper input validation in Fortinet FortiGate version 6.4.3 and below, version 6.2.5 and below, version 6.0.11 and below, version 5.6.13 and below allows attacker to disclose sensitive information via SNI Client Hello TLS packets.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://fortiguard.com/advisory/FG-IR-20-091"
+    ],
+    "受影响版本": [
+      "FortiOS 6.4.3, 6.4.2, 6.4.1, 6.4.0, 6.2.5, 6.2.4, 6.2.3, 6.2.2, 6.2.1, 6.2.0, 6.0.11, 6.0.10, 6.0.9, 6.0.8, 6.0.7, 6.0.6, 6.0.5, 6.0.4, 6.0.3, 6.0.2, 6.0.1, 6.0.0, 5.6.13, 5.6.12, 5.6.11, 5.6.10, 5.6.9, 5.6.8, 5.6.7, 5.6.6, 5.6.5, 5.6.4, 5.6.3, 5.6.2, 5.6.1, 5.6.0"
+    ],
+    "公开日期": "2022年03月01日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "防火墙",
+    "产品型号": "Fortinet FortiOS",
+    "CVE编号": "CVE-2020-12818",
+    "漏洞描述": "An insufficient logging vulnerability in FortiGate before 6.4.1 may allow the traffic from an unauthenticated attacker to Fortinet owned IP addresses to go unnoticed.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://fortiguard.com/advisory/FG-IR-20-033"
+    ],
+    "受影响版本": [
+      "FortiOS before 6.4.1"
+    ],
+    "公开日期": "2020年09月24日"
+  }
+]

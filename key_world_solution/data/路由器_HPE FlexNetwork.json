@@ -1,0 +1,47 @@
+[
+  {
+    "设备品牌": "Hewlett Packard Enterprise",
+    "设备类型": "路由器",
+    "产品型号": "HPE FlexNetwork and FlexFabric products",
+    "CVE编号": "CVE-2024-22439",
+    "漏洞描述": "\nA potential security vulnerability has been identified in HPE FlexFabric and FlexNetwork series products. This vulnerability could be exploited to gain privileged access to switches resulting in information disclosure.\n\n",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=hpesbnw04625en_us"
+    ],
+    "受影响版本": [
+      "See security bulletin HPESBNW04625 for details"
+    ],
+    "公开日期": "2024年04月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "HPE FlexNetwork 5130 EI Switch Series; HPE FlexFabric 5945 Switch Series",
+    "CVE编号": "CVE-2022-28624",
+    "漏洞描述": "A potential security vulnerability has been identified in certain HPE FlexNetwork and FlexFabric switch products. The vulnerability could be remotely exploited to allow cross site scripting (XSS). HPE has made the following software updates to resolve the vulnerability. HPE FlexNetwork 5130EL_7.10.R3507P02 and HPE FlexFabric 5945_7.10.R6635.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbnw04265en_us"
+    ],
+    "受影响版本": [
+      "Prior to Version 5130EL_7.10.R3507P02 and Prior to Version 5945_7.10.R6635"
+    ],
+    "公开日期": "2022年07月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "HPE FlexNetwork 5130 EI Switch Series",
+    "CVE编号": "CVE-2021-29219",
+    "漏洞描述": "A potential local buffer overflow vulnerability has been identified in HPE FlexNetwork 5130 EL Switch Series version: Prior to 5130_EI_7.10.R3507P02. HPE has made the following software update to resolve the vulnerability in HPE FlexNetwork 5130 EL Switch Series version 5130_EL_7.10.R3507P02.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbnw04234en_us"
+    ],
+    "受影响版本": [
+      "Prior to 5130_EI_7.10.R3507P02"
+    ],
+    "公开日期": "2022年02月04日"
+  }
+]

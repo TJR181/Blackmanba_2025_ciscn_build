@@ -1,0 +1,127 @@
+[
+  {
+    "设备品牌": "SierraWireless",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "ALEOS",
+    "CVE编号": "CVE-2023-40462",
+    "漏洞描述": "The ACEManager\ncomponent of ALEOS 4.16 and earlier does not\n\n\n\nperform input\nsanitization during authentication, which could\n\n\n\npotentially result\nin a Denial of Service (DoS) condition for\n\n\n\nACEManager without\nimpairing other router functions. ACEManager\n\n\n\nrecovers from the\nDoS condition by restarting within ten seconds of\n\n\n\nbecoming\nunavailable.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://source.sierrawireless.com/resources/security-bulletins/sierra-wireless-technical-bulletin---swi-psa-2023-006/#sthash.6KUVtE6w.dpbs",
+      "https://lists.debian.org/debian-lts-announce/2023/12/msg00024.html"
+    ],
+    "受影响版本": [
+      "4.10",
+      "0"
+    ],
+    "公开日期": "2023年12月04日"
+  },
+  {
+    "设备品牌": "SierraWireless",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "ALEOS",
+    "CVE编号": "CVE-2023-40459",
+    "漏洞描述": "\n\n\n\n\n\n\n\n\nThe\nACEManager component of ALEOS 4.16 and earlier does not adequately perform\ninput sanitization during authentication, which could potentially result in a\nDenial of Service (DoS) condition for ACEManager without impairing other router\nfunctions. ACEManager recovers from the DoS condition by restarting within ten\nseconds of becoming unavailable.\n\n\n\n\n\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://source.sierrawireless.com/resources/security-bulletins/sierra-wireless-technical-bulletin---swi-psa-2023-006/#sthash.6KUVtE6w.dpbs"
+    ],
+    "受影响版本": [
+      "4.10",
+      "0"
+    ],
+    "公开日期": "2023年12月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-29585",
+    "漏洞描述": "In Mahara before 20.10.5, 21.04.4, 21.10.2, and 22.04.0, a site using Isolated Institutions is vulnerable if more than ten groups are used. They are all shown from page 2 of the group results list (rather than only being shown for the institution that the viewer is a member of).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://bugs.launchpad.net/mahara/+bug/1922226",
+      "https://mahara.org/interaction/forum/topic.php?id=9093"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年04月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-38207",
+    "漏洞描述": "drivers/net/ethernet/xilinx/ll_temac_main.c in the Linux kernel before 5.12.13 allows remote attackers to cause a denial of service (buffer overflow and lockup) by sending heavy network traffic for about ten minutes.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.12.13",
+      "https://github.com/torvalds/linux/commit/c364df2489b8ef2f5e3159b1dff1ff1fdb16040d",
+      "https://security.netapp.com/advisory/ntap-20210902-0007/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-34557",
+    "漏洞描述": "XScreenSaver 5.45 can be bypassed if the machine has more than ten disconnectable video outputs. A buffer overflow in update_screen_layout() allows an attacker to bypass the standard screen lock authentication mechanism by crashing XScreenSaver. The attacker must physically disconnect many video outputs.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/QubesOS/qubes-issues/issues/6595",
+      "https://www.openwall.com/lists/oss-security/2021/06/05/1",
+      "https://github.com/QubesOS/qubes-secpack/blob/master/QSBs/qsb-068-2021.txt",
+      "https://github.com/QubesOS/qubes-xscreensaver/blob/master/0001-Fix-updating-outputs-info.patch",
+      "http://www.openwall.com/lists/oss-security/2021/06/11/1",
+      "http://www.openwall.com/lists/oss-security/2021/07/06/2",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/TC4QB7TRS4GS7LDXQQ4PC6J3LVFJYISV/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年06月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-30144",
+    "漏洞描述": "The Dashboard plugin through 1.0.2 for GLPI allows remote low-privileged users to bypass access control on viewing information about the last ten events, the connected users, and the users in the tech category. For example, plugins/dashboard/front/main2.php can be used.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/Kitsun3Sec/exploits/tree/master/cms/GLPI/dashboard-plugin",
+      "https://plugins.glpi-project.org/#/plugin/dashboard"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年04月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-25275",
+    "漏洞描述": "Dovecot before 2.3.13 has Improper Input Validation in lda, lmtp, and imap, leading to an application crash via a crafted email message with certain choices for ten thousand MIME parts.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://dovecot.org/security",
+      "http://www.openwall.com/lists/oss-security/2021/01/04/3",
+      "https://dovecot.org/pipermail/dovecot-news/2021-January/000451.html",
+      "https://www.debian.org/security/2021/dsa-4825",
+      "http://seclists.org/fulldisclosure/2021/Jan/18",
+      "http://packetstormsecurity.com/files/160841/Dovecot-2.3.11.3-Denial-Of-Service.html",
+      "https://security.gentoo.org/glsa/202101-01",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/GXDKFLOCUP7I4ELGQ2F4P5TGC6NXMYV7/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年01月04日"
+  }
+]

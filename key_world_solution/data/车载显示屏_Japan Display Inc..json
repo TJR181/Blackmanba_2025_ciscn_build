@@ -1,0 +1,154 @@
+[
+  {
+    "设备品牌": "yotuwp",
+    "设备类型": "车载显示屏",
+    "产品型号": "Video Gallery – YouTube Playlist, Channel Gallery by YotuWP",
+    "CVE编号": "CVE-2024-4551",
+    "漏洞描述": "The Video Gallery – YouTube Playlist, Channel Gallery by YotuWP plugin for WordPress is vulnerable to Local File Inclusion in all versions up to, and including, 1.3.13 via the display function. This makes it possible for authenticated attackers, with contributor access and higher, to include and execute arbitrary php files on the server, allowing the execution of any PHP code in those files. This can be used to bypass access controls, obtain sensitive data, or achieve code execution in cases where images and other “safe” file types can be uploaded and included.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.wordfence.com/threat-intel/vulnerabilities/id/a4c7c932-5955-4fce-a64d-3b5c5de95356?source=cve",
+      "https://plugins.trac.wordpress.org/browser/yotuwp-easy-youtube-embed/trunk/inc/views.php#L828",
+      "https://swisskyrepo.github.io/PayloadsAllTheThings/File%20Inclusion/#lfi-to-rce-via-php-pearcmd"
+    ],
+    "受影响版本": [
+      "*"
+    ],
+    "公开日期": "2024年06月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-36735",
+    "漏洞描述": "OneFlow-Inc. Oneflow v0.9.1 does not display an error or warning when the oneflow.eye parameter is floating.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://gist.github.com/Redmept1on/4998e9b6435448cea07a8b2dbf96eedc"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年06月06日"
+  },
+  {
+    "设备品牌": "themegrill",
+    "设备类型": "车载显示屏",
+    "产品型号": "ColorMag",
+    "CVE编号": "CVE-2024-2500",
+    "漏洞描述": "The ColorMag theme for WordPress is vulnerable to Stored Cross-Site Scripting via a user's Display Name in all versions up to, and including, 3.1.6 due to insufficient input sanitization and output escaping. This makes it possible for authentciated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.wordfence.com/threat-intel/vulnerabilities/id/a4b44d89-6f1e-4a23-91ea-e79fc3221183?source=cve",
+      "https://themes.trac.wordpress.org/browser/colormag/3.1.6/inc/template-tags.php#L845",
+      "https://themes.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=221537%40colormag&new=221537%40colormag&sfp_email=&sfph_mail="
+    ],
+    "受影响版本": [
+      "*"
+    ],
+    "公开日期": "2024年03月22日"
+  },
+  {
+    "设备品牌": "themeinwp",
+    "设备类型": "车载显示屏",
+    "产品型号": "Booster Extension",
+    "CVE编号": "CVE-2024-2109",
+    "漏洞描述": "The Booster Extension plugin for WordPress is vulnerable to Sensitive Information Exposure in all versions up to, and including, 1.2.0 via the 'booster_extension_authorbox_shortcode_display' function. This makes it possible for unauthenticated attackers to extract sensitive data including user emails",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.wordfence.com/threat-intel/vulnerabilities/id/89458095-2efe-4162-961a-7dc80852d312?source=cve",
+      "https://plugins.trac.wordpress.org/browser/booster-extension/tags/1.2.0/inc/frontend/author-box-shortcode.php"
+    ],
+    "受影响版本": [
+      "*"
+    ],
+    "公开日期": "2024年05月02日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载显示屏",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52644",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: b43: Stop/wake correct queue in DMA Tx path when QoS is disabled\n\nWhen QoS is disabled, the queue priority value will not map to the correct\nieee80211 queue since there is only one queue. Stop/wake queue 0 when QoS\nis disabled to prevent trying to stop/wake a non-existent queue and failing\nto stop/wake the actual queue instantiated.\n\nLog of issue before change (with kernel parameter qos=0):\n    [  +5.112651] ------------[ cut here ]------------\n    [  +0.000005] WARNING: CPU: 7 PID: 25513 at net/mac80211/util.c:449 __ieee80211_wake_queue+0xd5/0x180 [mac80211]\n    [  +0.000067] Modules linked in: b43(O) snd_seq_dummy snd_hrtimer snd_seq snd_seq_device nft_chain_nat xt_MASQUERADE nf_nat xfrm_user xfrm_algo xt_addrtype overlay ccm af_packet amdgpu snd_hda_codec_cirrus snd_hda_codec_generic ledtrig_audio drm_exec amdxcp gpu_sched xt_conntrack nf_conntrack nf_defrag_ipv6 nf_defrag_ipv4 ip6t_rpfilter ipt_rpfilter xt_pkttype xt_LOG nf_log_syslog xt_tcpudp nft_compat nf_tables nfnetlink sch_fq_codel btusb uinput iTCO_wdt ctr btrtl intel_pmc_bxt i915 intel_rapl_msr mei_hdcp mei_pxp joydev at24 watchdog btintel atkbd libps2 serio radeon btbcm vivaldi_fmap btmtk intel_rapl_common snd_hda_codec_hdmi bluetooth uvcvideo nls_iso8859_1 applesmc nls_cp437 x86_pkg_temp_thermal snd_hda_intel intel_powerclamp vfat videobuf2_vmalloc coretemp fat snd_intel_dspcfg crc32_pclmul uvc polyval_clmulni snd_intel_sdw_acpi loop videobuf2_memops snd_hda_codec tun drm_suballoc_helper polyval_generic drm_ttm_helper drm_buddy tap ecdh_generic videobuf2_v4l2 gf128mul macvlan ttm ghash_clmulni_intel ecc tg3\n    [  +0.000044]  videodev bridge snd_hda_core rapl crc16 drm_display_helper cec mousedev snd_hwdep evdev intel_cstate bcm5974 hid_appleir videobuf2_common stp mac_hid libphy snd_pcm drm_kms_helper acpi_als mei_me intel_uncore llc mc snd_timer intel_gtt industrialio_triggered_buffer apple_mfi_fastcharge i2c_i801 mei snd lpc_ich agpgart ptp i2c_smbus thunderbolt apple_gmux i2c_algo_bit kfifo_buf video industrialio soundcore pps_core wmi tiny_power_button sbs sbshc button ac cordic bcma mac80211 cfg80211 ssb rfkill libarc4 kvm_intel kvm drm irqbypass fuse backlight firmware_class efi_pstore configfs efivarfs dmi_sysfs ip_tables x_tables autofs4 dm_crypt cbc encrypted_keys trusted asn1_encoder tee tpm rng_core input_leds hid_apple led_class hid_generic usbhid hid sd_mod t10_pi crc64_rocksoft crc64 crc_t10dif crct10dif_generic ahci libahci libata uhci_hcd ehci_pci ehci_hcd crct10dif_pclmul crct10dif_common sha512_ssse3 sha512_generic sha256_ssse3 sha1_ssse3 aesni_intel usbcore scsi_mod libaes crypto_simd cryptd scsi_common\n    [  +0.000055]  usb_common rtc_cmos btrfs blake2b_generic libcrc32c crc32c_generic crc32c_intel xor raid6_pq dm_snapshot dm_bufio dm_mod dax [last unloaded: b43(O)]\n    [  +0.000009] CPU: 7 PID: 25513 Comm: irq/17-b43 Tainted: G        W  O       6.6.7 #1-NixOS\n    [  +0.000003] Hardware name: Apple Inc. MacBookPro8,3/Mac-942459F5819B171B, BIOS 87.0.0.0.0 06/13/2019\n    [  +0.000001] RIP: 0010:__ieee80211_wake_queue+0xd5/0x180 [mac80211]\n    [  +0.000046] Code: 00 45 85 e4 0f 85 9b 00 00 00 48 8d bd 40 09 00 00 f0 48 0f ba ad 48 09 00 00 00 72 0f 5b 5d 41 5c 41 5d 41 5e e9 cb 6d 3c d0 <0f> 0b 5b 5d 41 5c 41 5d 41 5e c3 cc cc cc cc 48 8d b4 16 94 00 00\n    [  +0.000002] RSP: 0018:ffffc90003c77d60 EFLAGS: 00010097\n    [  +0.000001] RAX: 0000000000000001 RBX: 0000000000000002 RCX: 0000000000000000\n    [  +0.000001] RDX: 0000000000000000 RSI: 0000000000000002 RDI: ffff88820b924900\n    [  +0.000002] RBP: ffff88820b924900 R08: ffffc90003c77d90 R09: 000000000003bfd0\n    [  +0.000001] R10: ffff88820b924900 R11: ffffc90003c77c68 R12: 0000000000000000\n    [  +0.000001] R13: 0000000000000000 R14: ffffc90003c77d90 R15: ffffffffc0fa6f40\n    [  +0.000001] FS:  0000000000000000(0000) GS:ffff88846fb80000(0000) knlGS:0000000000000000\n    [  +0.000001] CS:  0010 DS: 0\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/1824f942527f784a19e01eac2d9679a21623d010",
+      "https://git.kernel.org/stable/c/31aaf17200c336fe258b70d39c40645ae19d0240",
+      "https://git.kernel.org/stable/c/49f067726ab01c87cf57566797a8a719badbbf08",
+      "https://git.kernel.org/stable/c/04a2b6eff2ae1c19cb7f41e803bcbfaf94c06455",
+      "https://git.kernel.org/stable/c/c67698325c68f8768db858f5c87c34823421746d",
+      "https://git.kernel.org/stable/c/bc845e2e42cae95172c04bf29807c480f51a2a83",
+      "https://git.kernel.org/stable/c/4049a9f80513a6739c5677736a4c88f96df1b436",
+      "https://git.kernel.org/stable/c/f1cf77bb870046a6111a604f7f7fe83d1c8c9610",
+      "https://git.kernel.org/stable/c/9636951e4468f02c72cc75a82dc65d003077edbc"
+    ],
+    "受影响版本": [
+      "e6f5b934fba8c44c87c551e066aa7ca6fde2939e",
+      "e6f5b934fba8c44c87c551e066aa7ca6fde2939e",
+      "e6f5b934fba8c44c87c551e066aa7ca6fde2939e",
+      "e6f5b934fba8c44c87c551e066aa7ca6fde2939e",
+      "e6f5b934fba8c44c87c551e066aa7ca6fde2939e",
+      "e6f5b934fba8c44c87c551e066aa7ca6fde2939e",
+      "e6f5b934fba8c44c87c551e066aa7ca6fde2939e",
+      "e6f5b934fba8c44c87c551e066aa7ca6fde2939e",
+      "e6f5b934fba8c44c87c551e066aa7ca6fde2939e"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载显示屏",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-50011",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nvenus: pm_helpers: Fix warning in OPP during probe\n\nFix the following WARN triggered during Venus driver probe on\n5.19.0-rc8-next-20220728:\n\n WARNING: CPU: 7 PID: 339 at drivers/opp/core.c:2471 dev_pm_opp_set_config+0x49c/0x610\n Modules linked in: qcom_spmi_adc5 rtc_pm8xxx qcom_spmi_adc_tm5 leds_qcom_lpg led_class_multicolor\n  qcom_pon qcom_vadc_common venus_core(+) qcom_spmi_temp_alarm v4l2_mem2mem videobuf2_v4l2 msm(+)\n  videobuf2_common crct10dif_ce spi_geni_qcom snd_soc_sm8250 i2c_qcom_geni gpu_sched\n  snd_soc_qcom_common videodev qcom_q6v5_pas soundwire_qcom drm_dp_aux_bus qcom_stats\n  drm_display_helper qcom_pil_info soundwire_bus snd_soc_lpass_va_macro mc qcom_q6v5\n  phy_qcom_snps_femto_v2 qcom_rng snd_soc_lpass_macro_common snd_soc_lpass_wsa_macro\n  lpass_gfm_sm8250 slimbus qcom_sysmon qcom_common qcom_glink_smem qmi_helpers\n  qcom_wdt mdt_loader socinfo icc_osm_l3 display_connector\n  drm_kms_helper qnoc_sm8250 drm fuse ip_tables x_tables ipv6\n CPU: 7 PID: 339 Comm: systemd-udevd Not tainted 5.19.0-rc8-next-20220728 #4\n Hardware name: Qualcomm Technologies, Inc. Robotics RB5 (DT)\n pstate: 80400005 (Nzcv daif +PAN -UAO -TCO -DIT -SSBS BTYPE=--)\n pc : dev_pm_opp_set_config+0x49c/0x610\n lr : dev_pm_opp_set_config+0x58/0x610\n sp : ffff8000093c3710\n x29: ffff8000093c3710 x28: ffffbca3959d82b8 x27: ffff8000093c3d00\n x26: ffffbca3959d8e08 x25: ffff4396cac98118 x24: ffff4396c0e24810\n x23: ffff4396c4272c40 x22: ffff4396c0e24810 x21: ffff8000093c3810\n x20: ffff4396cac36800 x19: ffff4396cac96800 x18: 0000000000000000\n x17: 0000000000000003 x16: ffffbca3f4edf198 x15: 0000001cba64a858\n x14: 0000000000000180 x13: 000000000000017e x12: 0000000000000000\n x11: 0000000000000002 x10: 0000000000000a60 x9 : ffff8000093c35c0\n x8 : ffff4396c4273700 x7 : ffff43983efca6c0 x6 : ffff43983efca640\n x5 : 00000000410fd0d0 x4 : ffff4396c4272c40 x3 : ffffbca3f5d1e008\n x2 : 0000000000000000 x1 : ffff4396c2421600 x0 : ffff4396cac96860\n Call trace:\n  dev_pm_opp_set_config+0x49c/0x610\n  devm_pm_opp_set_config+0x18/0x70\n  vcodec_domains_get+0xb8/0x1638 [venus_core]\n  core_get_v4+0x1d8/0x218 [venus_core]\n  venus_probe+0xf4/0x468 [venus_core]\n  platform_probe+0x68/0xd8\n  really_probe+0xbc/0x2a8\n  __driver_probe_device+0x78/0xe0\n  driver_probe_device+0x3c/0xf0\n  __driver_attach+0x70/0x120\n  bus_for_each_dev+0x70/0xc0\n  driver_attach+0x24/0x30\n  bus_add_driver+0x150/0x200\n  driver_register+0x64/0x120\n  __platform_driver_register+0x28/0x38\n  qcom_venus_driver_init+0x24/0x1000 [venus_core]\n  do_one_initcall+0x54/0x1c8\n  do_init_module+0x44/0x1d0\n  load_module+0x16c8/0x1aa0\n  __do_sys_finit_module+0xbc/0x110\n  __arm64_sys_finit_module+0x20/0x30\n  invoke_syscall+0x44/0x108\n  el0_svc_common.constprop.0+0xcc/0xf0\n  do_el0_svc+0x2c/0xb8\n  el0_svc+0x2c/0x88\n  el0t_64_sync_handler+0xb8/0xc0\n  el0t_64_sync+0x18c/0x190\n  qcom-venus: probe of aa00000.video-codec failed with error -16\n\nThe fix is re-ordering the code related to OPP core. The OPP core\nexpects all configuration options to be provided before the OPP\ntable is added.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/0bdec5eed69c73886af4cfbb94b663e1e10b8344",
+      "https://git.kernel.org/stable/c/8d4eccd78461c3e3555bff67148432bb6c21d059",
+      "https://git.kernel.org/stable/c/1d95af02f23031c2e1cca7607c514b86ce85bc6e"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2025年06月18日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载显示屏",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49458",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/msm: don't free the IRQ if it was not requested\n\nAs msm_drm_uninit() is called from the msm_drm_init() error path,\nadditional care should be necessary as not to call the free_irq() for\nthe IRQ that was not requested before (because an error occured earlier\nthan the request_irq() call).\n\nThis fixed the issue reported with the following backtrace:\n\n[    8.571329] Trying to free already-free IRQ 187\n[    8.571339] WARNING: CPU: 0 PID: 76 at kernel/irq/manage.c:1895 free_irq+0x1e0/0x35c\n[    8.588746] Modules linked in: pmic_glink pdr_interface fastrpc qrtr_smd snd_soc_hdmi_codec msm fsa4480 gpu_sched drm_dp_aux_bus qrtr i2c_qcom_geni crct10dif_ce qcom_stats qcom_q6v5_pas drm_display_helper gpi qcom_pil_info drm_kms_helper qcom_q6v5 qcom_sysmon qcom_common qcom_glink_smem qcom_rng mdt_loader qmi_helpers phy_qcom_qmp ufs_qcom typec qnoc_sm8350 socinfo rmtfs_mem fuse drm ipv6\n[    8.624154] CPU: 0 PID: 76 Comm: kworker/u16:2 Not tainted 5.18.0-rc5-next-20220506-00033-g6cee8cab6089-dirty #419\n[    8.624161] Hardware name: Qualcomm Technologies, Inc. SM8350 HDK (DT)\n[    8.641496] Workqueue: events_unbound deferred_probe_work_func\n[    8.647510] pstate: 604000c5 (nZCv daIF +PAN -UAO -TCO -DIT -SSBS BTYPE=--)\n[    8.654681] pc : free_irq+0x1e0/0x35c\n[    8.658454] lr : free_irq+0x1e0/0x35c\n[    8.662228] sp : ffff800008ab3950\n[    8.665642] x29: ffff800008ab3950 x28: 0000000000000000 x27: ffff16350f56a700\n[    8.672994] x26: ffff1635025df080 x25: ffff16350251badc x24: ffff16350251bb90\n[    8.680343] x23: 0000000000000000 x22: 00000000000000bb x21: ffff16350e8f9800\n[    8.687690] x20: ffff16350251ba00 x19: ffff16350cbd5880 x18: ffffffffffffffff\n[    8.695039] x17: 0000000000000000 x16: ffffa2dd12179434 x15: ffffa2dd1431d02d\n[    8.702391] x14: 0000000000000000 x13: ffffa2dd1431d028 x12: 662d79646165726c\n[    8.709740] x11: ffffa2dd13fd2438 x10: 000000000000000a x9 : 00000000000000bb\n[    8.717111] x8 : ffffa2dd13fd23f0 x7 : ffff800008ab3750 x6 : 00000000fffff202\n[    8.724487] x5 : ffff16377e870a18 x4 : 00000000fffff202 x3 : ffff735a6ae1b000\n[    8.731851] x2 : 0000000000000000 x1 : 0000000000000000 x0 : ffff1635015f8000\n[    8.739217] Call trace:\n[    8.741755]  free_irq+0x1e0/0x35c\n[    8.745198]  msm_drm_uninit.isra.0+0x14c/0x294 [msm]\n[    8.750548]  msm_drm_bind+0x28c/0x5d0 [msm]\n[    8.755081]  try_to_bring_up_aggregate_device+0x164/0x1d0\n[    8.760657]  __component_add+0xa0/0x170\n[    8.764626]  component_add+0x14/0x20\n[    8.768337]  dp_display_probe+0x2a4/0x464 [msm]\n[    8.773242]  platform_probe+0x68/0xe0\n[    8.777043]  really_probe.part.0+0x9c/0x28c\n[    8.781368]  __driver_probe_device+0x98/0x144\n[    8.785871]  driver_probe_device+0x40/0x140\n[    8.790191]  __device_attach_driver+0xb4/0x120\n[    8.794788]  bus_for_each_drv+0x78/0xd0\n[    8.798751]  __device_attach+0xdc/0x184\n[    8.802713]  device_initial_probe+0x14/0x20\n[    8.807031]  bus_probe_device+0x9c/0xa4\n[    8.810991]  deferred_probe_work_func+0x88/0xc0\n[    8.815667]  process_one_work+0x1d0/0x320\n[    8.819809]  worker_thread+0x14c/0x444\n[    8.823688]  kthread+0x10c/0x110\n[    8.827036]  ret_from_fork+0x10/0x20\n\nPatchwork: https://patchwork.freedesktop.org/patch/485422/",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/beb81c13d020ceb7f8693e65464162e5f249218e",
+      "https://git.kernel.org/stable/c/b288ec4439c1dad304c1862bf6b0be78d9b1b2b2",
+      "https://git.kernel.org/stable/c/59023c4fb1ab3de0fa001681650f662c253c7fd7",
+      "https://git.kernel.org/stable/c/577e2a9dfc8fba7938aaf75db63fae7e328cc3cb"
+    ],
+    "受影响版本": [
+      "f026e431cf861197dc03217d1920b38b80b31dd9",
+      "f026e431cf861197dc03217d1920b38b80b31dd9",
+      "f026e431cf861197dc03217d1920b38b80b31dd9",
+      "f026e431cf861197dc03217d1920b38b80b31dd9"
+    ],
+    "公开日期": "2025年02月26日"
+  },
+  {
+    "设备品牌": "TOYOTA MOTOR CORPORATION",
+    "设备类型": "车载显示屏",
+    "产品型号": "DCU (Display Control Unit)",
+    "CVE编号": "CVE-2020-5551",
+    "漏洞描述": "Toyota 2017 Model Year DCU (Display Control Unit) allows an unauthenticated attacker within Bluetooth range to cause a denial of service attack and/or execute an arbitrary command. The affected DCUs are installed in Lexus (LC, LS, NX, RC, RC F), TOYOTA CAMRY, and TOYOTA SIENNA manufactured in the regions other than Japan from Oct. 2016 to Oct. 2019. An attacker with certain knowledge on the target vehicle control system may be able to send some diagnostic commands to ECUs with some limited availability impacts; the vendor states critical vehicle controls such as driving, turning, and stopping are not affected.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://jvn.jp/en/vu/JVNVU99396686/index.html",
+      "https://global.toyota/en/newsroom/corporate/32120629.html"
+    ],
+    "受影响版本": [
+      "2017 Model Year"
+    ],
+    "公开日期": "2020年03月30日"
+  }
+]

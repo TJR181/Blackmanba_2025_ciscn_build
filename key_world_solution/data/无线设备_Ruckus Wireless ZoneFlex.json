@@ -1,0 +1,17 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-7234",
+    "漏洞描述": "Ruckus ZoneFlex R310 104.0.0.0.1347 devices allow Stored XSS via the SSID field on the Configuration > Radio 2.4G > Wireless X screen (after a successful login to the super account).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://sku11army.blogspot.com/2020/01/ruckus-wireless-authenticated-stored.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年01月19日"
+  }
+]

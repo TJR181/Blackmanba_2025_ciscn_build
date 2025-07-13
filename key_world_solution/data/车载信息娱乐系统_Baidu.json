@@ -1,0 +1,232 @@
+[
+  {
+    "设备品牌": "suifengtec",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "WP Baidu Map",
+    "CVE编号": "CVE-2024-9886",
+    "漏洞描述": "The WP Baidu Map plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the plugin's 'baidu_map' shortcode in all versions up to, and including, 1.2.2 due to insufficient input sanitization and output escaping on user supplied attributes. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.wordfence.com/threat-intel/vulnerabilities/id/ccd917ae-3fa2-47b5-ace7-1462647e2352?source=cve",
+      "https://plugins.trac.wordpress.org/browser/wp-baidu-map/trunk/wp-baidu-map.php",
+      "https://wordpress.org/plugins/wp-baidu-map/"
+    ],
+    "受影响版本": [
+      "*"
+    ],
+    "公开日期": "2024年10月30日"
+  },
+  {
+    "设备品牌": "Baidu",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "UEditor",
+    "CVE编号": "CVE-2024-7343",
+    "漏洞描述": "A vulnerability was found in Baidu UEditor 1.4.2. It has been declared as problematic. This vulnerability affects unknown code of the file /ueditor142/php/controller.php?action=catchimage. The manipulation of the argument source[] leads to cross site scripting. The attack can be initiated remotely. The exploit has been disclosed to the public and may be used. VDB-273274 is the identifier assigned to this vulnerability. NOTE: The vendor was contacted early about this disclosure but did not respond in any way.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://github.com/Hebing123/cve/issues/63"
+    ],
+    "受影响版本": [
+      "1.4.2"
+    ],
+    "公开日期": "2024年08月01日"
+  },
+  {
+    "设备品牌": "Baidu",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "UEditor",
+    "CVE编号": "CVE-2024-7342",
+    "漏洞描述": "A vulnerability was found in Baidu UEditor 1.4.3.3. It has been classified as problematic. This affects an unknown part of the file /ueditor/php/controller.php?action=uploadfile&encode=utf-8. The manipulation of the argument upfile leads to unrestricted upload. It is possible to initiate the attack remotely. The exploit has been disclosed to the public and may be used. The identifier VDB-273273 was assigned to this vulnerability. NOTE: The vendor was contacted early about this disclosure but did not respond in any way.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://github.com/Hebing123/cve/issues/62"
+    ],
+    "受影响版本": [
+      "1.4.3.3"
+    ],
+    "公开日期": "2024年08月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-56954",
+    "漏洞描述": "An issue in Beijing Baidu Netcom Science & Technology Co Ltd Haokan Video iOS 7.70.0 allows attackers to access sensitive user information via supplying a crafted link.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/ZhouZiyi1/Vuls/blob/main/241219-HaokanVideo/241219-HaokanVideo.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年01月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-56953",
+    "漏洞描述": "An issue in Baidu (China) Co Ltd Baidu Input Method (iOS version) v12.6.13 allows attackers to access user information via supplying a crafted link.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/ZhouZiyi1/Vuls/blob/main/241217-BaiduInput/241217-BaiduInput.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年01月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-56952",
+    "漏洞描述": "An issue in Beijing Baidu Netcom Science & Technology Co Ltd Baidu Lite app (iOS version) 6.40.0 allows attackers to access user information via supplying a crafted link.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/ZhouZiyi1/Vuls/blob/main/241217-BaiduLite/241217-BaiduLite.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年01月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-51324",
+    "漏洞描述": "An issue in the BdApiUtil driver of Baidu Antivirus v5.2.3.116083 allows attackers to terminate arbitrary process via executing a BYOVD (Bring Your Own Vulnerable Driver) attack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/magicsword-io/LOLDrivers/issues/204"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年02月11日"
+  },
+  {
+    "设备品牌": "baidu",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "openrasp",
+    "CVE编号": "CVE-2024-29183",
+    "漏洞描述": "OpenRASP is a RASP solution that directly integrates its protection engine into the application server by instrumentation. There exists a reflected XSS in the /login page due to a reflection of the redirect parameter. This allows an attacker to execute arbitrary javascript with the permissions of a user after the user logins with their account.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/baidu/openrasp/commit/240fde3901c7a36aaade3683ffd5c89140a535fb",
+      "https://securitylab.github.com/advisories/GHSL-2023-253_openrasp"
+    ],
+    "受影响版本": [
+      "<=1.3.7"
+    ],
+    "公开日期": "2024年04月19日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2023-52921",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdgpu: fix possible UAF in amdgpu_cs_pass1()\n\nSince the gang_size check is outside of chunk parsing\nloop, we need to reset i before we free the chunk data.\n\nSuggested by Ye Zhang (@VAR10CK) of Baidu Security.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/e08e9dd09809b16f8f8cee8c466841b33d24ed96",
+      "https://git.kernel.org/stable/c/90e065677e0362a777b9db97ea21d43a39211399"
+    ],
+    "受影响版本": [
+      "2ebf61f2cfb9a11bc17db30df3e675a4cd7418d3",
+      "2ebf61f2cfb9a11bc17db30df3e675a4cd7418d3"
+    ],
+    "公开日期": "2024年11月19日"
+  },
+  {
+    "设备品牌": "Haoqisir",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "Baidu Tongji generator",
+    "CVE编号": "CVE-2023-31233",
+    "漏洞描述": "Auth. (admin+) Stored Cross-Site Scripting (XSS) vulnerability in Haoqisir Baidu Tongji generator plugin <= 1.0.2 versions.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://patchstack.com/database/vulnerability/baidu-tongji-generator/wordpress-baidu-tongji-generator-plugin-1-0-2-cross-site-scripting-xss-vulnerability?_s_id=cve"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年05月18日"
+  },
+  {
+    "设备品牌": "Haoqisir",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "Baidu Tongji generator",
+    "CVE编号": "CVE-2023-31230",
+    "漏洞描述": "Cross-Site Request Forgery (CSRF) vulnerability in Haoqisir Baidu Tongji generator allows Stored XSS.This issue affects Baidu Tongji generator: from n/a through 1.0.2.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://patchstack.com/database/vulnerability/baidu-tongji-generator/wordpress-baidu-tongji-generator-plugin-1-0-2-cross-site-request-forgery-csrf-vulnerability?_s_id=cve"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年11月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-30637",
+    "漏洞描述": "Baidu braft 1.1.2 has a memory leak related to use of the new operator in example/atomic/atomic_server. NOTE: installations with brpc-0.14.0 and later are unaffected.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/baidu/braft/issues/393"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年04月13日"
+  },
+  {
+    "设备品牌": "Include",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "WP BaiDu Submit",
+    "CVE编号": "CVE-2023-25796",
+    "漏洞描述": "Auth. (admin+) Stored Cross-Site Scripting (XSS) vulnerability in Include WP BaiDu Submit plugin <= 1.2.1 versions.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://patchstack.com/database/vulnerability/wp-baidu-submit/wordpress-wp-baidu-submit-plugin-1-2-1-cross-site-scripting-xss-vulnerability?_s_id=cve"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年05月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-44302",
+    "漏洞描述": "BaiCloud-cms v2.5.7 was discovered to contain multiple SQL injection vulnerabilities via the tongji and baidu_map parameters in /user/ztconfig.php.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/relightsec/BaiCloud/blob/main/README.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年02月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-5499",
+    "漏洞描述": "Baidu Rust SGX SDK through 1.0.8 has an enclave ID race. There are non-deterministic results in which, sometimes, two global IDs are the same.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/wssgcsc58/CVEs/tree/master/baidurustsgxsdk_enclaveid_race"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年01月04日"
+  }
+]

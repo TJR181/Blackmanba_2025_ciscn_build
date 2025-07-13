@@ -1,0 +1,124 @@
+[
+  {
+    "设备品牌": "Telit Cinterion",
+    "设备类型": "车载通信网关",
+    "产品型号": "BGS5",
+    "CVE编号": "CVE-2023-47616",
+    "漏洞描述": "A CWE-200: Exposure of Sensitive Information to an Unauthorized Actor vulnerability exists in Telit Cinterion BGS5, Telit Cinterion EHS5/6/8, Telit Cinterion PDS5/6/8, Telit Cinterion ELS61/81, Telit Cinterion PLS62 that could allow an attacker with physical access to the target system to get access to a sensitive data on the targeted system.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://ics-cert.kaspersky.com/advisories/2023/11/09/klcert-22-193-telit-cinterion-thales-gemalto-modules-exposure-of-sensitive-information-to-an-unauthorized-actor/"
+    ],
+    "受影响版本": [
+      "所有未更新补丁的相关版本"
+    ],
+    "公开日期": "2023年11月09日"
+  },
+  {
+    "设备品牌": "Telit Cinterion",
+    "设备类型": "车载通信网关",
+    "产品型号": "BGS5",
+    "CVE编号": "CVE-2023-47615",
+    "漏洞描述": "A CWE-526: Exposure of Sensitive Information Through Environmental Variables vulnerability exists in Telit Cinterion BGS5, Telit Cinterion EHS5/6/8, Telit Cinterion PDS5/6/8, Telit Cinterion ELS61/81, Telit Cinterion PLS62 that could allow a local, low privileged attacker to get access to a sensitive data on the targeted system.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://ics-cert.kaspersky.com/advisories/2023/11/09/klcert-22-212-telit-cinterion-thales-gemalto-modules-exposure-of-sensitive-information-through-environmental-variables/"
+    ],
+    "受影响版本": [
+      "所有未更新补丁的相关版本"
+    ],
+    "公开日期": "2023年11月09日"
+  },
+  {
+    "设备品牌": "Telit Cinterion",
+    "设备类型": "车载通信网关",
+    "产品型号": "BGS5",
+    "CVE编号": "CVE-2023-47614",
+    "漏洞描述": "A CWE-200: Exposure of Sensitive Information to an Unauthorized Actor vulnerability exists in Telit Cinterion BGS5, Telit Cinterion EHS5/6/8, Telit Cinterion PDS5/6/8, Telit Cinterion ELS61/81, Telit Cinterion PLS62 that could allow a local, low privileged attacker to disclose hidden virtual paths and file names on the targeted system.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://ics-cert.kaspersky.com/advisories/2023/11/08/klcert-22-210-telit-cinterion-thales-gemalto-modules-exposure-of-sensitive-information-to-an-unauthorized-actor-vulnerability/"
+    ],
+    "受影响版本": [
+      "*"
+    ],
+    "公开日期": "2023年11月10日"
+  },
+  {
+    "设备品牌": "Telit Cinterion",
+    "设备类型": "车载通信网关",
+    "产品型号": "BGS5",
+    "CVE编号": "CVE-2023-47613",
+    "漏洞描述": "A CWE-23: Relative Path Traversal vulnerability exists in Telit Cinterion BGS5, Telit Cinterion EHS5/6/8, Telit Cinterion PDS5/6/8, Telit Cinterion ELS61/81, Telit Cinterion PLS62 that could allow a local, low privileged attacker to escape from virtual directories and get read/write access to protected files on the targeted system.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://ics-cert.kaspersky.com/advisories/2023/11/08/klcert-22-211-telit-cinterion-thales-gemalto-modules-relative-path-traversal/"
+    ],
+    "受影响版本": [
+      "所有未更新补丁的相关版本"
+    ],
+    "公开日期": "2023年11月09日"
+  },
+  {
+    "设备品牌": "Telit Cinterion",
+    "设备类型": "车载通信网关",
+    "产品型号": "BGS5",
+    "CVE编号": "CVE-2023-47612",
+    "漏洞描述": "A CWE-552: Files or Directories Accessible to External Parties vulnerability exists in Telit Cinterion BGS5, Telit Cinterion EHS5/6/8, Telit Cinterion PDS5/6/8, Telit Cinterion ELS61/81, Telit Cinterion PLS62 that could allow an attacker with physical access to the target system to obtain a read/write access to any files and directories on the targeted system, including hidden files and directories.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://ics-cert.kaspersky.com/advisories/2023/11/08/klcert-22-194-telit-cinterion-thales-gemalto-modules-files-or-directories-accessible-to-external-parties-vulnerability/"
+    ],
+    "受影响版本": [
+      "所有未更新补丁的相关版本"
+    ],
+    "公开日期": "2023年11月09日"
+  },
+  {
+    "设备品牌": "Telit Cinterion",
+    "设备类型": "车载通信网关",
+    "产品型号": "BGS5",
+    "CVE编号": "CVE-2023-47611",
+    "漏洞描述": "A CWE-269: Improper Privilege Management vulnerability exists in Telit Cinterion BGS5, Telit Cinterion EHS5/6/8, Telit Cinterion PDS5/6/8, Telit Cinterion ELS61/81, Telit Cinterion PLS62 that could allow a local, low privileged attacker to elevate privileges to \"manufacturer\" level on the targeted system.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://ics-cert.kaspersky.com/advisories/2023/11/08/klcert-22-216-telit-cinterion-thales-gemalto-modules-improper-privilege-management-vulnerability/"
+    ],
+    "受影响版本": [
+      "*"
+    ],
+    "公开日期": "2023年11月10日"
+  },
+  {
+    "设备品牌": "Telit Cinterion",
+    "设备类型": "车载通信网关",
+    "产品型号": "EHS5",
+    "CVE编号": "CVE-2023-47610",
+    "漏洞描述": "A CWE-120: Buffer Copy without Checking Size of Input vulnerability exists in Telit Cinterion EHS5/6/8 that could allow a remote unauthenticated attacker to execute arbitrary code on the targeted system by sending a specially crafted SMS message.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://ics-cert.kaspersky.com/advisories/2023/11/08/klcert-23-018-telit-cinterion-thales-gemalto-modules-buffer-copy-without-checking-size-of-input-vulnerability/"
+    ],
+    "受影响版本": [
+      "所有未更新补丁的相关版本"
+    ],
+    "公开日期": "2023年11月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载通信网关",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-15858",
+    "漏洞描述": "Some devices of Thales DIS (formerly Gemalto, formerly Cinterion) allow Directory Traversal by physically proximate attackers. The directory path access check of the internal flash file system can be circumvented. This flash file system can store application-specific data and data needed for customer Java applications, TLS and OTAP (Java over-the-air-provisioning) functionality. The affected products and releases are: BGS5 up to and including SW RN 02.000 / ARN 01.001.06 EHSx and PDSx up to and including SW RN 04.003 / ARN 01.000.04 ELS61 up to and including SW RN 02.002 / ARN 01.000.04 ELS81 up to and including SW RN 05.002 / ARN 01.000.04 PLS62 up to and including SW RN 02.000 / ARN 01.000.04",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://www.thalesgroup.com/en/markets/digital-identity-and-security/iot/resources/security-updates-cinterion-iot-modules",
+      "http://seclists.org/fulldisclosure/2023/Apr/11",
+      "http://packetstormsecurity.com/files/171978/Telit-Cinterion-IoT-Traversal-Escalation-Bypass-Heap-Overflow.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月21日"
+  }
+]

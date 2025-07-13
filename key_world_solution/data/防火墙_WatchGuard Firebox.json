@@ -1,0 +1,255 @@
+[
+  {
+    "设备品牌": "WatchGuard",
+    "设备类型": "防火墙",
+    "产品型号": "Fireware OS",
+    "CVE编号": "CVE-2025-4805",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation (XSS or 'Cross-site Scripting') vulnerability in WatchGuard Fireware OS allows Stored XSS. This vulnerability requires an authenticated administrator session to a locally managed Firebox.\nThis issue affects Fireware OS: from 12.0 through 12.11.1.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.watchguard.com/wgrd-psirt/advisory/wgsa-2025-00007"
+    ],
+    "受影响版本": [
+      "12.0"
+    ],
+    "公开日期": "2025年05月16日"
+  },
+  {
+    "设备品牌": "WatchGuard",
+    "设备类型": "防火墙",
+    "产品型号": "Fireware OS",
+    "CVE编号": "CVE-2025-4804",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation (XSS or 'Cross-site Scripting') vulnerability in WatchGuard Fireware OS allows Stored XSS via the spamBlocker module. This vulnerability requires an authenticated administrator session to a locally managed Firebox.\nThis issue affects Fireware OS: from 12.0 through 12.11.1.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.watchguard.com/wgrd-psirt/advisory/wgsa-2025-00006"
+    ],
+    "受影响版本": [
+      "12.0"
+    ],
+    "公开日期": "2025年05月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-31792",
+    "漏洞描述": "A stored cross-site scripting (XSS) vulnerability exists in the management web interface of WatchGuard Firebox and XTM appliances. A remote attacker can potentially execute arbitrary JavaScript code in the management web interface by sending crafted requests to exposed management ports. This is fixed in Fireware OS 12.8.1, 12.5.10, and 12.1.4.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.watchguard.com/wgrd-psirt/advisory/wgsa-2022-00014"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年09月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-31791",
+    "漏洞描述": "WatchGuard Firebox and XTM appliances allow a local attacker (that has already obtained shell access) to elevate their privileges and execute code with root permissions. This is fixed in Fireware OS 12.8.1, 12.5.10, and 12.1.4.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.watchguard.com/wgrd-psirt/advisory/wgsa-2022-00018"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年09月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-31790",
+    "漏洞描述": "WatchGuard Firebox and XTM appliances allow an unauthenticated remote attacker to retrieve sensitive authentication server settings by sending a malicious request to exposed authentication endpoints. This is fixed in Fireware OS 12.8.1, 12.5.10, and 12.1.4.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.watchguard.com/wgrd-psirt/advisory/wgsa-2022-00017",
+      "https://www.openwall.com/lists/oss-security/2022/08/30/2",
+      "https://www.ambionics.io/blog/hacking-watchguard-firewalls"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年09月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-31789",
+    "漏洞描述": "An integer overflow in WatchGuard Firebox and XTM appliances allows an unauthenticated remote attacker to trigger a buffer overflow and potentially execute arbitrary code by sending a malicious request to exposed management ports. This is fixed in Fireware OS 12.8.1, 12.5.10, and 12.1.4.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.watchguard.com/wgrd-psirt/advisory/wgsa-2022-00015"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年09月06日"
+  },
+  {
+    "设备品牌": "WatchGuard",
+    "设备类型": "防火墙",
+    "产品型号": "Fireware OS",
+    "CVE编号": "CVE-2022-31749",
+    "漏洞描述": "An argument injection vulnerability in the diagnose and import pac commands in WatchGuard Fireware OS before 12.8.1, 12.1.4, and 12.5.10 allows an authenticated remote attacker with unprivileged credentials to upload or read files to limited, arbitrary locations on WatchGuard Firebox and XTM appliances",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.rapid7.com/blog/post/2022/06/23/cve-2022-31749-watchguard-authenticated-arbitrary-file-read-write-fixed/",
+      "https://www.watchguard.com/wgrd-psirt/advisory/wgsa-2022-00019"
+    ],
+    "受影响版本": [
+      "0",
+      "12.2.x",
+      "12.5.10",
+      "12.x"
+    ],
+    "公开日期": "2025年01月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-26318",
+    "漏洞描述": "On WatchGuard Firebox and XTM appliances, an unauthenticated user can execute arbitrary code, aka FBX-22786. This vulnerability impacts Fireware OS before 12.7.2_U2, 12.x before 12.1.3_U8, and 12.2.x through 12.5.x before 12.5.9_U2.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.watchguard.com/support/release-notes/fireware/12/en-US/EN_ReleaseNotes_Fireware_12_7_2/index.html#Fireware/en-US/resolved_issues.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年03月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-25363",
+    "漏洞描述": "WatchGuard Firebox and XTM appliances allow an authenticated remote attacker with unprivileged credentials to modify privileged management user credentials. This vulnerability impacts Fireware OS before 12.7.2_U2, 12.x before 12.1.3_U8, and 12.2.x through 12.5.x before 12.5.9_U2.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.watchguard.com/support/release-notes/fireware/12/en-US/EN_ReleaseNotes_Fireware_12_7_2/index.html#Fireware/en-US/resolved_issues.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年02月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-25361",
+    "漏洞描述": "WatchGuard Firebox and XTM appliances allow an unauthenticated remote attacker to delete arbitrary files from a limited set of directories on the system. This vulnerability impacts Fireware OS before 12.7.2_U2, 12.x before 12.1.3_U8, and 12.2.x through 12.5.x before 12.5.9_U2.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://watchguard.com",
+      "https://www.watchguard.com/wgrd-psirt/advisory/wgsa-2022-00004"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年06月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-25360",
+    "漏洞描述": "WatchGuard Firebox and XTM appliances allow an authenticated remote attacker with unprivileged credentials to upload files to arbitrary locations. This vulnerability impacts Fireware OS before 12.7.2_U2, 12.x before 12.1.3_U8, and 12.2.x through 12.5.x before 12.5.9_U2.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.watchguard.com/support/release-notes/fireware/12/en-US/EN_ReleaseNotes_Fireware_12_7_2/index.html#Fireware/en-US/resolved_issues.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年02月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-25293",
+    "漏洞描述": "A systemd stack-based buffer overflow in WatchGuard Firebox and XTM appliances allows an authenticated remote attacker to potentially execute arbitrary code by initiating a firmware update with a malicious upgrade image. This vulnerability impacts Fireware OS before 12.7.2_U2, 12.x before 12.1.3_U8, and 12.2.x through 12.5.x before 12.5.9_U2.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://cwe.mitre.org/data/definitions/121.html",
+      "https://www.watchguard.com/support/release-notes/fireware/12/en-US/EN_ReleaseNotes_Fireware_12_7_2/index.html#Fireware/en-US/resolved_issues.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年02月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-25292",
+    "漏洞描述": "A wgagent stack-based buffer overflow in WatchGuard Firebox and XTM appliances allows an authenticated remote attacker to potentially execute arbitrary code by initiating a firmware update with a malicious upgrade image. This vulnerability impacts Fireware OS before 12.7.2_U2, 12.x before 12.1.3_U8, and 12.2.x through 12.5.x before 12.5.9_U2.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://cwe.mitre.org/data/definitions/121.html",
+      "https://www.watchguard.com/support/release-notes/fireware/12/en-US/EN_ReleaseNotes_Fireware_12_7_2/index.html#Fireware/en-US/resolved_issues.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年02月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-25291",
+    "漏洞描述": "An integer overflow in WatchGuard Firebox and XTM appliances allows an authenticated remote attacker to trigger a heap-based buffer overflow and potentially execute arbitrary code by initiating a firmware update with a malicious upgrade image. This vulnerability impacts Fireware OS before 12.7.2_U2, 12.x before 12.1.3_U8, and 12.2.x through 12.5.x before 12.5.9_U2.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.watchguard.com/support/release-notes/fireware/12/en-US/EN_ReleaseNotes_Fireware_12_7_2/index.html#Fireware/en-US/resolved_issues.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年02月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-25290",
+    "漏洞描述": "WatchGuard Firebox and XTM appliances allow an authenticated remote attacker with unprivileged credentials to retrieve certificate private keys. This vulnerability impacts Fireware OS before 12.7.2_U2, 12.x before 12.1.3_U8, and 12.2.x through 12.5.x before 12.5.9_U2.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.watchguard.com/support/release-notes/fireware/12/en-US/EN_ReleaseNotes_Fireware_12_7_2/index.html#Fireware/en-US/resolved_issues.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年02月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "防火墙",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-23176",
+    "漏洞描述": "WatchGuard Firebox and XTM appliances allow a remote attacker with unprivileged credentials to access the system with a privileged management session via exposed management access. This vulnerability impacts Fireware OS before 12.7.2_U1, 12.x before 12.1.3_U3, and 12.2.x through 12.5.x before 12.5.7_U3.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://securityportal.watchguard.com",
+      "https://www.watchguard.com/support/release-notes/fireware/12/en-US/EN_ReleaseNotes_Fireware_12_7/index.html#Fireware/en-US/resolved_issues.html",
+      "https://www.watchguard.com/support/release-notes/fireware/12/en-US/EN_ReleaseNotes_Fireware_12_7_2/index.html#Fireware/en-US/resolved_issues.html",
+      "https://www.watchguard.com/support/release-notes/fireware/12/en-US/EN_ReleaseNotes_Fireware_12_1_3_U7/index.html#Fireware/en-US/resolved_issues.html",
+      "https://arstechnica.com/information-technology/2022/04/watchguard-failed-to-disclose-critical-flaw-exploited-by-russian-hackers/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年02月24日"
+  }
+]

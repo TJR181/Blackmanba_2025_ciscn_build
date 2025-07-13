@@ -1,0 +1,1106 @@
+[
+  {
+    "设备品牌": "nautobot",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "nautobot",
+    "CVE编号": "CVE-2025-49143",
+    "漏洞描述": "Nautobot is a Network Source of Truth and Network Automation Platform. Prior to v2.4.10 and v1.6.32 , files uploaded by users to Nautobot's MEDIA_ROOT directory, including DeviceType image attachments as well as images attached to a Location, Device, or Rack, are served to users via a URL endpoint that was not enforcing user authentication. As a consequence, such files can be retrieved by anonymous users who know or can guess the correct URL for a given file. Nautobot v2.4.10 and v1.6.32 address this issue by adding enforcement of Nautobot user authentication to this endpoint.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/nautobot/nautobot/security/advisories/GHSA-rh67-4c8j-hjjh",
+      "https://github.com/nautobot/nautobot/pull/6672",
+      "https://github.com/nautobot/nautobot/pull/6703",
+      "https://github.com/nautobot/nautobot/commit/9c892dc300429948a4714f743c9c2879d8987340",
+      "https://github.com/nautobot/nautobot/commit/d99a53b065129cff3a0fa9abe7355a9ef1ad4c95"
+    ],
+    "受影响版本": [
+      "< 1.6.32",
+      ">= 2.0.0, < 2.4.10"
+    ],
+    "公开日期": "2025年06月10日"
+  },
+  {
+    "设备品牌": "nautobot",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "nautobot",
+    "CVE编号": "CVE-2025-49142",
+    "漏洞描述": "Nautobot is a Network Source of Truth and Network Automation Platform. All users of Nautobot versions prior to 2.4.10 or prior to 1.6.32 are potentially affected. Due to insufficient security configuration of the Jinja2 templating feature used in computed fields, custom links, etc. in Nautobot, a malicious user could configure this feature set in ways that could expose the value of Secrets defined in Nautobot when the templated content is rendered or that could call Python APIs to modify data within Nautobot when the templated content is rendered, bypassing the object permissions assigned to the viewing user. Nautobot versions 1.6.32 and 2.4.10 will include fixes for the vulnerability. The vulnerability can be partially mitigated by configuring object permissions appropriately to limit certain actions to only trusted users.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/nautobot/nautobot/security/advisories/GHSA-wjw6-95h5-4jpx",
+      "https://github.com/nautobot/nautobot/pull/7417",
+      "https://github.com/nautobot/nautobot/pull/7429",
+      "https://docs.djangoproject.com/en/4.2/ref/templates/api/#alters-data-description",
+      "https://jinja.palletsprojects.com/en/stable/sandbox"
+    ],
+    "受影响版本": [
+      "< 1.6.32",
+      ">= 2.0.0, < 2.4.10"
+    ],
+    "公开日期": "2025年06月10日"
+  },
+  {
+    "设备品牌": "cilium",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "hubble",
+    "CVE编号": "CVE-2025-48056",
+    "漏洞描述": "Hubble is a fully distributed networking and security observability platform for cloud native workloads. Prior to version 1.17.2, a network attacker could inject malicious control characters into Hubble CLI terminal output, potentially leading to loss of integrity and manipulation of the output. This could be leveraged to conceal log entries, rewrite output, or even make the terminal temporarily unusable. Exploitation of this attack would require the victim to be monitoring Kafka traffic using Layer 7 Protocol Visibility at the time of the attack. The issue is patched in Hubble CLI v1.17.2. Hubble CLI users who are unable to upgrade can direct their Hubble flows to a log file and inspect the output within a text editor.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/cilium/hubble/security/advisories/GHSA-274q-79q9-52j7",
+      "https://github.com/cilium/cilium/pull/37401"
+    ],
+    "受影响版本": [
+      "< 1.17.2"
+    ],
+    "公开日期": "2025年05月20日"
+  },
+  {
+    "设备品牌": "vercel",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "next.js",
+    "CVE编号": "CVE-2025-32421",
+    "漏洞描述": "Next.js is a React framework for building full-stack web applications. Versions prior to 14.2.24 and 15.1.6 have a race-condition vulnerability. This issue only affects the Pages Router under certain misconfigurations, causing normal endpoints to serve `pageProps` data instead of standard HTML. This issue was patched in versions 15.1.6 and 14.2.24 by stripping the `x-now-route-matches` header from incoming requests. Applications hosted on Vercel's platform are not affected by this issue, as the platform does not cache responses based solely on `200 OK` status without explicit `cache-control` headers. Those who self-host Next.js deployments and are unable to upgrade immediately can mitigate this vulnerability by stripping the `x-now-route-matches` header from all incoming requests at the content development network and setting `cache-control: no-store` for all responses under risk. The maintainers of Next.js strongly recommend only caching responses with explicit cache-control headers.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/vercel/next.js/security/advisories/GHSA-qpjv-v59x-3qc4",
+      "https://vercel.com/changelog/cve-2025-32421"
+    ],
+    "受影响版本": [
+      "< 14.2.24",
+      ">= 15.0.0, < 15.1.6"
+    ],
+    "公开日期": "2025年05月14日"
+  },
+  {
+    "设备品牌": "dnnsoftware",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Dnn.Platform",
+    "CVE编号": "CVE-2025-32372",
+    "漏洞描述": "DNN (formerly DotNetNuke) is an open-source web content management platform (CMS) in the Microsoft ecosystem. A bypass has been identified for the previously known vulnerability CVE-2017-0929, allowing unauthenticated attackers to execute arbitrary GET requests against target systems, including internal or adjacent networks. This vulnerability facilitates a semi-blind SSRF attack, allowing attackers to make the target server send requests to internal or external URLs without viewing the full responses. Potential impacts include internal network reconnaissance, bypassing firewalls. This vulnerability is fixed in 9.13.8.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/dnnsoftware/Dnn.Platform/security/advisories/GHSA-3f7v-qx94-666m",
+      "https://github.com/dnnsoftware/Dnn.Platform/commit/4721dd9eef846936d3b1a3676499e46968d15feb"
+    ],
+    "受影响版本": [
+      "< 9.13.8"
+    ],
+    "公开日期": "2025年04月09日"
+  },
+  {
+    "设备品牌": "gchq",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "stroom",
+    "CVE编号": "CVE-2025-25182",
+    "漏洞描述": "Stroom is a data processing, storage and analysis platform. A vulnerability exists starting in version 7.2-beta.53 and prior to versions 7.2.24, 7.3-beta.22, 7.4.4, and 7.5-beta.2 that allows authentication bypass to a Stroom system when configured with ALB and installed in a way that the application is accessible not through the ALB itself. This vulnerability may also allow for server-side request forgery which may lead to code execution or further privileges escalations when using the AWS metadata URL. This scenario assumes that Stroom must be configured to use ALB Authentication integration and the application is network accessible. The vulnerability has been fixed in versions 7.2.24, 7.3-beta.22, 7.4.4, and 7.5-beta.2.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/gchq/stroom/security/advisories/GHSA-x489-xx2m-vc43",
+      "https://github.com/gchq/stroom/pull/4320"
+    ],
+    "受影响版本": [
+      ">= 7.2-beta.53, < 7.2.24",
+      "= 7.5-beta.1",
+      ">= 7.3-beta.1, < 7.3-beta.22",
+      ">= 7.4-beta.1, < 7.4.4"
+    ],
+    "公开日期": "2025年02月12日"
+  },
+  {
+    "设备品牌": "CollaboraOnline",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "online",
+    "CVE编号": "CVE-2025-24796",
+    "漏洞描述": "Collabora Online is a collaborative online office suite based on LibreOffice. Macro support is disabled by default in Collabora Online, but can be enabled by an administrator. Collabora Online typically hosts each document instance within a jail and is allowed to download content from locations controlled by the net.lok_allow configuration option, which by default include the private IP ranges to enable access to the local network. If enabled, macros were allowed run executable binaries. By combining an ability to host executables, typically in the local network, in an allowed accessible location, with a macro enabled Collabora Online, it was then possible to install arbitrary binaries within the jail and execute them. These executables are restricted to the same jail file system and user as the document instance but can be used to bypass the additional limits on what network hosts are accessible and provide more flexibility as a platform for further attempts. This is issue is fixed in 24.04.12.4, 23.05.19, 22.05.25 and later macros.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/CollaboraOnline/online/security/advisories/GHSA-4jjq-vgqp-qw45"
+    ],
+    "受影响版本": [
+      "< 22.05.25",
+      ">= 23.05.1, < 23.05.19",
+      ">= 24.04.1.1, < 24.04.12.4"
+    ],
+    "公开日期": "2025年03月06日"
+  },
+  {
+    "设备品牌": "",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "",
+    "CVE编号": "CVE-2024-9620",
+    "漏洞描述": "A flaw was found in Event-Driven Automation (EDA) in Ansible Automation Platform (AAP), which lacks encryption of sensitive information. An attacker with network access could exploit this vulnerability by sniffing the plaintext data transmitted between the EDA and AAP. An attacker with system access could exploit this vulnerability by reading the plaintext data stored in EDA and AAP databases.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://access.redhat.com/security/cve/CVE-2024-9620",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2317129"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年10月08日"
+  },
+  {
+    "设备品牌": "YugabyteDB",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "YugabyteDB Anywhere",
+    "CVE编号": "CVE-2024-6895",
+    "漏洞描述": "Insufficient authentication in user account management in Yugabyte Platform allows local network attackers with a compromised user session to change critical security information without re-authentication. An attacker with user session and access to application can modify settings such as password and email without being prompted for the current password, enabling account takeover.",
+    "攻击向量": "ADJACENT",
+    "厂商补丁链接": [
+      "https://github.com/yugabyte/yugabyte-db/commit/9687371d8777f876285b737a9d01995bc46bafa5"
+    ],
+    "受影响版本": [
+      "2.14.0.0",
+      "2.16.0.0",
+      "2.18.0.0",
+      "2.20.0.0"
+    ],
+    "公开日期": "2024年07月19日"
+  },
+  {
+    "设备品牌": "Absolute Security",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Absolute Persistence",
+    "CVE编号": "CVE-2024-6364",
+    "漏洞描述": "A vulnerability in Absolute Persistence® versions before 2.8 exists when it is not activated. This may allow a skilled attacker with both physical access to the device, and full hostile network control, to initiate OS commands on the device.  To remediate this vulnerability, update the device firmware to the latest available version. Please contact the device manufacturer for upgrade instructions or contact Absolute Security, see reference below.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://www.absolute.com/platform/vulnerability-archive/cve-2024-6364"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年05月13日"
+  },
+  {
+    "设备品牌": "Absolute Software",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Secure Access",
+    "CVE编号": "CVE-2024-37346",
+    "漏洞描述": "There is an insufficient input validation vulnerability in\nthe Warehouse component of Absolute Secure Access prior to 13.06. Attackers\nwith system administrator permissions can impair the availability of certain\nelements of the Secure Access administrative UI by writing invalid data to the\nwarehouse over the network. There is no loss of warehouse integrity or\nconfidentiality, the security scope is unchanged. Loss of availability is high.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.absolute.com/platform/security-information/vulnerability-archive/secure-access-1306/cve-2024-37346/"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年06月20日"
+  },
+  {
+    "设备品牌": "nautobot",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "nautobot",
+    "CVE编号": "CVE-2024-36112",
+    "漏洞描述": "Nautobot is a Network Source of Truth and Network Automation Platform. A user with permissions to view Dynamic Group records (`extras.view_dynamicgroup` permission) can use the Dynamic Group detail UI view (`/extras/dynamic-groups/<uuid>/`) and/or the members REST API view (`/api/extras/dynamic-groups/<uuid>/members/`) to list the objects that are members of a given Dynamic Group. In versions of Nautobot between 1.3.0 (where the Dynamic Groups feature was added) and 1.6.22 inclusive, and 2.0.0 through 2.2.4 inclusive, Nautobot fails to restrict these listings based on the member object permissions - for example a Dynamic Group of Device objects will list all Devices that it contains, regardless of the user's `dcim.view_device` permissions or lack thereof. This issue has been fixed in Nautobot versions 1.6.23 and 2.2.5. Users are advised to upgrade. This vulnerability can be partially mitigated by removing `extras.view_dynamicgroup` permission from users however a full fix will require upgrading.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/nautobot/nautobot/security/advisories/GHSA-qmjf-wc2h-6x3q",
+      "https://github.com/nautobot/nautobot/pull/5757",
+      "https://github.com/nautobot/nautobot/pull/5762"
+    ],
+    "受影响版本": [
+      ">= 1.3.0, < 1.6.23",
+      ">= 2.0.0, < 2.2.5"
+    ],
+    "公开日期": "2024年05月28日"
+  },
+  {
+    "设备品牌": "nautobot",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "nautobot",
+    "CVE编号": "CVE-2024-34707",
+    "漏洞描述": "Nautobot is a Network Source of Truth and Network Automation Platform. A Nautobot user with admin privileges can modify the `BANNER_TOP`, `BANNER_BOTTOM`, and `BANNER_LOGIN` configuration settings via the `/admin/constance/config/` endpoint. Normally these settings are used to provide custom banner text at the top and bottom of all Nautobot web pages (or specifically on the login page in the case of `BANNER_LOGIN`) but it was reported that an admin user can make use of these settings to inject arbitrary HTML, potentially exposing Nautobot users to security issues such as cross-site scripting (stored XSS). The vulnerability is fixed in Nautobot 1.6.22 and 2.2.4.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/nautobot/nautobot/security/advisories/GHSA-r2hr-4v48-fjv3",
+      "https://github.com/nautobot/nautobot/pull/5697",
+      "https://github.com/nautobot/nautobot/pull/5698",
+      "https://github.com/nautobot/nautobot/commit/4f0a66bd6307bfe0e0acb899233e0d4ad516f51c",
+      "https://github.com/nautobot/nautobot/commit/f640aedc69c848d3d1be57f0300fc40033ff6423"
+    ],
+    "受影响版本": [
+      "< 1.6.22",
+      ">= 2.0.0, < 2.2.4"
+    ],
+    "公开日期": "2024年05月13日"
+  },
+  {
+    "设备品牌": "valtimo-platform",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "valtimo-frontend-libraries",
+    "CVE编号": "CVE-2024-34706",
+    "漏洞描述": "Valtimo is an open source business process and case management platform. When opening a form in Valtimo, the access token (JWT) of the user is exposed to `api.form.io` via the the `x-jwt-token` header. An attacker can retrieve personal information from this token, or use it to execute requests to the Valtimo REST API on behalf of the logged-in user. This issue is caused by a misconfiguration of the Form.io component.\n\nThe following conditions have to be met in order to perform this attack: An attacker needs to have access to the network traffic on the `api.form.io` domain; the content of the `x-jwt-token` header is logged or otherwise available to the attacker; an attacker needs to have network access to the Valtimo API; and an attacker needs to act within the time-to-live of the access token. The default TTL in Keycloak is 5 minutes.\n\nVersions 10.8.4, 11.1.6 and 11.2.2 have been patched.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/valtimo-platform/valtimo-frontend-libraries/security/advisories/GHSA-xcp4-62vj-cq3r",
+      "https://github.com/valtimo-platform/valtimo-frontend-libraries/commit/1aaba5ef5750dafebbc7476fb08bf2375a25f19e",
+      "https://github.com/valtimo-platform/valtimo-frontend-libraries/commit/8c2dbf2a41180d2b0358d878290e4d37168f0fb6",
+      "https://github.com/valtimo-platform/valtimo-frontend-libraries/commit/d65e05fd2784bd4a628778b34a5b79ce2f0cef8c"
+    ],
+    "受影响版本": [
+      "< 10.8.4",
+      ">= 11.0.0, < 11.1.6",
+      ">= 11.2.0, < 11.2.2"
+    ],
+    "公开日期": "2024年05月13日"
+  },
+  {
+    "设备品牌": "nautobot",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "nautobot",
+    "CVE编号": "CVE-2024-32979",
+    "漏洞描述": "Nautobot is a Network Source of Truth and Network Automation Platform built as a web application atop the Django Python framework with a PostgreSQL or MySQL database. It was discovered that due to improper handling and escaping of user-provided query parameters, a maliciously crafted Nautobot URL could potentially be used to execute a Reflected Cross-Site Scripting (Reflected XSS) attack against users. All filterable object-list views in Nautobot are vulnerable. This issue has been fixed in Nautobot versions 1.6.20 and 2.2.3. There are no known workarounds for this vulnerability.\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/nautobot/nautobot/security/advisories/GHSA-jxgr-gcj5-cqqg",
+      "https://github.com/nautobot/nautobot/pull/5646",
+      "https://github.com/nautobot/nautobot/pull/5647",
+      "https://github.com/nautobot/nautobot/commit/42440ebd9b381534ad89d62420ebea00d703d64e"
+    ],
+    "受影响版本": [
+      "< 1.6.20",
+      ">= 2.0.0, < 2.2.3"
+    ],
+    "公开日期": "2024年05月01日"
+  },
+  {
+    "设备品牌": "nautobot",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "nautobot",
+    "CVE编号": "CVE-2024-29199",
+    "漏洞描述": "Nautobot is a Network Source of Truth and Network Automation Platform. A number of Nautobot URL endpoints were found to be improperly accessible to unauthenticated (anonymous) users. These endpoints will not disclose any Nautobot data to an unauthenticated user unless the Nautobot configuration variable EXEMPT_VIEW_PERMISSIONS is changed from its default value (an empty list) to permit access to specific data by unauthenticated users. This vulnerability is fixed in 1.6.16 and 2.1.9.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/nautobot/nautobot/security/advisories/GHSA-m732-wvh2-7cq4",
+      "https://github.com/nautobot/nautobot/pull/5464",
+      "https://github.com/nautobot/nautobot/pull/5465",
+      "https://github.com/nautobot/nautobot/commit/2fd95c365f8477b26e06d60b999ddd36882d5750",
+      "https://github.com/nautobot/nautobot/commit/dd623e6c3307f48b6357fcc91925bcad5192abfb",
+      "https://github.com/nautobot/nautobot/releases/tag/v1.6.16",
+      "https://github.com/nautobot/nautobot/releases/tag/v2.1.9"
+    ],
+    "受影响版本": [
+      "< 1.6.16",
+      ">= 2.0.0, < 2.1.9"
+    ],
+    "公开日期": "2024年03月26日"
+  },
+  {
+    "设备品牌": "getsentry",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "sentry",
+    "CVE编号": "CVE-2024-24829",
+    "漏洞描述": "Sentry is an error tracking and performance monitoring platform. Sentry’s integration platform provides a way for external services to interact with Sentry. One of such integrations, the Phabricator integration (maintained by Sentry) with version <=24.1.1 contains a constrained SSRF vulnerability. An attacker could make Sentry send POST HTTP requests to arbitrary URLs (including internal IP addresses) by providing an unsanitized input to the Phabricator integration. However, the body payload is constrained to a specific format. If an attacker has access to a Sentry instance, this allows them to: 1. interact with internal network; 2. scan local/remote ports. This issue has been fixed in Sentry self-hosted release 24.1.2, and has already been mitigated on sentry.io on February 8. Users are advised to upgrade. There are no known workarounds for this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/getsentry/sentry/security/advisories/GHSA-rqxh-fp9p-p98r",
+      "https://github.com/getsentry/sentry/pull/64882",
+      "https://github.com/getsentry/self-hosted/releases/tag/24.1.2"
+    ],
+    "受影响版本": [
+      ">= 9.1.0, < 24.1.2"
+    ],
+    "公开日期": "2024年02月08日"
+  },
+  {
+    "设备品牌": "nautobot",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "nautobot",
+    "CVE编号": "CVE-2024-23345",
+    "漏洞描述": "Nautobot is a Network Source of Truth and Network Automation Platform built as a web application.  All users of Nautobot versions earlier than 1.6.10 or 2.1.2 are potentially impacted by a cross-site scripting vulnerability. Due to inadequate input sanitization, any user-editable fields that support Markdown rendering, including are potentially susceptible to cross-site scripting (XSS) attacks via maliciously crafted data. This issue is fixed in Nautobot versions 1.6.10 and 2.1.2.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/nautobot/nautobot/security/advisories/GHSA-v4xv-795h-rv4h",
+      "https://github.com/nautobot/nautobot/pull/5133",
+      "https://github.com/nautobot/nautobot/pull/5134",
+      "https://github.com/nautobot/nautobot/commit/17effcbe84a72150c82b138565c311bbee357e80",
+      "https://github.com/nautobot/nautobot/commit/64312a4297b5ca49b6cdedf477e41e8e4fd61cce"
+    ],
+    "受影响版本": [
+      ">= 2.0.0, < 2.1.2",
+      "< 1.6.10"
+    ],
+    "公开日期": "2024年01月22日"
+  },
+  {
+    "设备品牌": "Open Automation Software",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "OAS Platform",
+    "CVE编号": "CVE-2024-22178",
+    "漏洞描述": "A file write vulnerability exists in the OAS Engine Save Security Configuration functionality of Open Automation Software OAS Platform V19.00.0057. A specially crafted series of network requests can lead to arbitrary file creation or overwrite. An attacker can send a sequence of requests to trigger this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2024-1951"
+    ],
+    "受影响版本": [
+      "V19.00.0057"
+    ],
+    "公开日期": "2024年04月03日"
+  },
+  {
+    "设备品牌": "Oracle Corporation",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Business Intelligence Enterprise Edition",
+    "CVE编号": "CVE-2024-21001",
+    "漏洞描述": "",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.oracle.com/security-alerts/cpuapr2024.html"
+    ],
+    "受影响版本": [
+      "7.0.0.0.0"
+    ],
+    "公开日期": "2024年04月16日"
+  },
+  {
+    "设备品牌": "Oracle Corporation",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Business Intelligence Enterprise Edition",
+    "CVE编号": "CVE-2024-20913",
+    "漏洞描述": "",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.oracle.com/security-alerts/cpujan2024.html"
+    ],
+    "受影响版本": [
+      "12.2.1.4.0"
+    ],
+    "公开日期": "2024年02月17日"
+  },
+  {
+    "设备品牌": "Byzoro",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Smart S210 Management Platform",
+    "CVE编号": "CVE-2024-0939",
+    "漏洞描述": "A vulnerability has been found in Byzoro Smart S210 Management Platform up to 20240117 and classified as critical. This vulnerability affects unknown code of the file /Tool/uploadfile.php. The manipulation of the argument file_upload leads to unrestricted upload. The attack can be initiated remotely. The exploit has been disclosed to the public and may be used. The identifier of this vulnerability is VDB-252184. NOTE: The vendor was contacted early about this disclosure but did not respond in any way.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://github.com/Yu1e/vuls/blob/main/an%20arbitrary%20file%20upload%20vulnerability%20in%20BaiZhuo%20Networks%20Smart%20S210%20multi-service%20security%20gateway%20intelligent%20management%20platform.md"
+    ],
+    "受影响版本": [
+      "20240117"
+    ],
+    "公开日期": "2024年01月26日"
+  },
+  {
+    "设备品牌": "Byzoro",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "S210",
+    "CVE编号": "CVE-2023-6576",
+    "漏洞描述": "A vulnerability was found in Byzoro S210 up to 20231123. It has been declared as critical. This vulnerability affects unknown code of the file /Tool/uploadfile.php of the component HTTP POST Request Handler. The manipulation of the argument file_upload leads to unrestricted upload. The attack can be initiated remotely. The exploit has been disclosed to the public and may be used. The identifier of this vulnerability is VDB-247156. NOTE: The vendor was contacted early about this disclosure but did not respond in any way.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://github.com/willchen0011/cve/blob/main/upload.md"
+    ],
+    "受影响版本": [
+      "20231123"
+    ],
+    "公开日期": "2023年12月07日"
+  },
+  {
+    "设备品牌": "Byzoro",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Smart S20",
+    "CVE编号": "CVE-2023-6574",
+    "漏洞描述": "A vulnerability was found in Byzoro Smart S20 up to 20231120 and classified as critical. Affected by this issue is some unknown functionality of the file /sysmanage/updateos.php of the component HTTP POST Request Handler. The manipulation of the argument 1_file_upload leads to unrestricted upload. The attack may be launched remotely. The exploit has been disclosed to the public and may be used. VDB-247154 is the identifier assigned to this vulnerability. NOTE: The vendor was contacted early about this disclosure but did not respond in any way.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://github.com/flyyue2001/cve/blob/main/smart_sql_updateos.md"
+    ],
+    "受影响版本": [
+      "20231120"
+    ],
+    "公开日期": "2023年12月07日"
+  },
+  {
+    "设备品牌": "nautobot",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "nautobot",
+    "CVE编号": "CVE-2023-51649",
+    "漏洞描述": "Nautobot is a Network Source of Truth and Network Automation Platform built as a web application atop the Django Python framework with a PostgreSQL or MySQL database. When submitting a Job to run via a Job Button, only the model-level `extras.run_job` permission is checked (i.e., does the user have permission to run Jobs in general). Object-level permissions (i.e., does the user have permission to run this specific Job?) are not enforced by the URL/view used in this case. A user with permissions to run even a single Job can actually run all configured JobButton Jobs. Fix will be available in Nautobot 1.6.8 and 2.1.0 ",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/nautobot/nautobot/security/advisories/GHSA-vf5m-xrhm-v999",
+      "https://github.com/nautobot/nautobot/issues/4988",
+      "https://github.com/nautobot/nautobot/pull/4993",
+      "https://github.com/nautobot/nautobot/pull/4995"
+    ],
+    "受影响版本": [
+      ">= 1.5.14, < 1.6.8",
+      ">= 2.0.0, < 2.1.0"
+    ],
+    "公开日期": "2023年12月22日"
+  },
+  {
+    "设备品牌": "nautobot",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "nautobot",
+    "CVE编号": "CVE-2023-50263",
+    "漏洞描述": "Nautobot is a Network Source of Truth and Network Automation Platform built as a web application atop the Django Python framework with a PostgreSQL or MySQL database. In Nautobot 1.x and 2.0.x prior to 1.6.7 and 2.0.6, the URLs `/files/get/?name=...` and `/files/download/?name=...` are used to provide admin access to files that have been uploaded as part of a run request for a Job that has FileVar inputs. Under normal operation these files are ephemeral and are deleted once the Job in question runs. \n\nIn the default implementation used in Nautobot, as provided by `django-db-file-storage`, these URLs do not by default require any user authentication to access; they should instead be restricted to only users who have permissions to view Nautobot's `FileProxy` model instances.\n\nNote that no URL mechanism is provided for listing or traversal of the available file `name` values, so in practice an unauthenticated user would have to guess names to discover arbitrary files for download, but if a user knows the file name/path value, they can access it without authenticating, so we are considering this a vulnerability.\n\nFixes are included in Nautobot 1.6.7 and Nautobot 2.0.6. No known workarounds are available other than applying the patches included in those versions.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/nautobot/nautobot/security/advisories/GHSA-75mc-3pjc-727q",
+      "https://github.com/nautobot/nautobot/pull/4959",
+      "https://github.com/nautobot/nautobot/pull/4964",
+      "https://github.com/nautobot/nautobot/commit/458280c359a4833a20da294eaf4b8d55edc91cee",
+      "https://github.com/nautobot/nautobot/commit/7c4cf3137f45f1541f09f2f6a7f8850cd3a2eaee",
+      "https://github.com/victor-o-silva/db_file_storage/blob/master/db_file_storage/views.py"
+    ],
+    "受影响版本": [
+      ">= 1.1.0, < 1.6.7",
+      ">= 2.0.0, < 2.0.6"
+    ],
+    "公开日期": "2023年12月12日"
+  },
+  {
+    "设备品牌": "nautobot",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "nautobot",
+    "CVE编号": "CVE-2023-48705",
+    "漏洞描述": "Nautobot is a Network Source of Truth and Network Automation Platform built as a web application All users of Nautobot versions earlier than 1.6.6 or 2.0.5 are potentially affected by a cross-site scripting vulnerability. Due to incorrect usage of Django's `mark_safe()` API when rendering certain types of user-authored content; including custom links, job buttons, and computed fields; it is possible that users with permission to create or edit these types of content could craft a malicious payload (such as JavaScript code) that would be executed when rendering pages containing this content. The maintainers have fixed the incorrect uses of `mark_safe()` (generally by replacing them with appropriate use of `format_html()` instead) to prevent such malicious data from being executed. Users on Nautobot 1.6.x LTM should upgrade to v1.6.6 and users on Nautobot 2.0.x should upgrade to v2.0.5. Appropriate object permissions can and should be applied to restrict which users are permitted to create or edit the aforementioned types of user-authored content. Other than that, there is no direct workaround available.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/nautobot/nautobot/security/advisories/GHSA-cf9f-wmhp-v4pr",
+      "https://github.com/nautobot/nautobot/pull/4832",
+      "https://github.com/nautobot/nautobot/pull/4833",
+      "https://github.com/nautobot/nautobot/commit/362850f5a94689a4c75e3188bf6de826c3b012b2",
+      "https://github.com/nautobot/nautobot/commit/54abe23331b6c3d0d82bf1b028c679b1d200920d",
+      "https://docs.djangoproject.com/en/3.2/ref/utils/#django.utils.html.format_html",
+      "https://docs.djangoproject.com/en/3.2/ref/utils/#django.utils.safestring.mark_safe"
+    ],
+    "受影响版本": [
+      "< 1.6.6",
+      ">= 2.0.0, < 2.0.5"
+    ],
+    "公开日期": "2023年11月22日"
+  },
+  {
+    "设备品牌": "nautobot",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "nautobot",
+    "CVE编号": "CVE-2023-46128",
+    "漏洞描述": "Nautobot is a Network Automation Platform built as a web application atop the Django Python framework with a PostgreSQL or MySQL database. In Nautobot 2.0.x, certain REST API endpoints, in combination with the `?depth=<N>` query parameter, can expose hashed user passwords as stored in the database to any authenticated user with access to these endpoints. The passwords are not exposed in plaintext. This vulnerability has been patched in version 2.0.3.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/nautobot/nautobot/security/advisories/GHSA-r2hw-74xv-4gqp",
+      "https://github.com/nautobot/nautobot/pull/4692",
+      "https://github.com/nautobot/nautobot/commit/1ce8e5c658a075c29554d517cd453675e5d40d71"
+    ],
+    "受影响版本": [
+      ">= 2.0.0, < 2.0.3"
+    ],
+    "公开日期": "2023年10月24日"
+  },
+  {
+    "设备品牌": "GeoNode",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "geonode",
+    "CVE编号": "CVE-2023-42439",
+    "漏洞描述": "GeoNode is an open source platform that facilitates the creation, sharing, and collaborative use of geospatial data. A SSRF vulnerability exists starting in version 3.2.0, bypassing existing controls on the software. This can allow a user to request internal services for a full read SSRF, returning any data from the internal network. The application is using a whitelist, but the whitelist can be bypassed. The bypass will trick the application that the first host is a whitelisted address, but the browser will use `@` or `%40` as a credential to the host geoserver on port 8080, this will return the data to that host on the response. Version 4.1.3.post1 is the first available version that contains a patch.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/GeoNode/geonode/security/advisories/GHSA-pxg5-h34r-7q8p",
+      "https://github.com/GeoNode/geonode/commit/79ac6e70419c2e0261548bed91c159b54ff35b8d",
+      "https://github.com/GeoNode/geonode/releases/tag/4.1.3"
+    ],
+    "受影响版本": [
+      ">= 3.2.0, <= 4.1.2"
+    ],
+    "公开日期": "2023年09月15日"
+  },
+  {
+    "设备品牌": "apptainer",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "apptainer",
+    "CVE编号": "CVE-2023-38496",
+    "漏洞描述": "Apptainer is an open source container platform. Version 1.2.0-rc.2 introduced an ineffective privilege drop when requesting container network setup, therefore subsequent functions are called with root privileges, the attack surface is rather limited for users but an attacker could possibly craft a starter config to delete any directory on the host filesystems. A security fix has been included in Apptainer 1.2.1. There is no known workaround outside of upgrading to Apptainer 1.2.1.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://github.com/apptainer/apptainer/security/advisories/GHSA-mmx5-32m4-wxvx",
+      "https://github.com/apptainer/apptainer/pull/1523",
+      "https://github.com/apptainer/apptainer/pull/1578"
+    ],
+    "受影响版本": [
+      ">= 1.2.0-rc.2, < 1.2.1"
+    ],
+    "公开日期": "2023年07月25日"
+  },
+  {
+    "设备品牌": "metabase",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "metabase",
+    "CVE编号": "CVE-2023-37470",
+    "漏洞描述": "Metabase is an open-source business intelligence and analytics platform. Prior to versions 0.43.7.3, 0.44.7.3, 0.45.4.3, 0.46.6.4, 1.43.7.3, 1.44.7.3, 1.45.4.3, and 1.46.6.4, a vulnerability could potentially allow remote code execution on one's Metabase server. The core issue is that one of the supported data warehouses (an embedded in-memory database H2), exposes a number of ways for a connection string to include code that is then executed by the process running the embedded database. Because Metabase allows users to connect to databases, this means that a user supplied string can be used to inject executable code. Metabase allows users to validate their connection string before adding a database (including on setup), and this validation API was the primary vector used as it can be called without validation. Versions 0.43.7.3, 0.44.7.3, 0.45.4.3, 0.46.6.4, 1.43.7.3, 1.44.7.3, 1.45.4.3, and 1.46.6.4 fix this issue by removing the ability of users to add H2 databases entirely. As a workaround, it is possible to block these vulnerabilities at the network level by blocking the endpoints `POST /api/database`, `PUT /api/database/:id`, and `POST /api/setup/validateuntil`. Those who use H2 as a file-based database should migrate to SQLite.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/metabase/metabase/security/advisories/GHSA-p7w3-9m58-rq83"
+    ],
+    "受影响版本": [
+      "< 0.43.7.3",
+      ">= 0.44.0.0, < 0.44.7.3",
+      ">= 0.45.0.0, < 0.45.4.3",
+      ">= 0.46.0.0, < 0.46.6.4",
+      ">= 1.0.0, < 1.43.7.3",
+      ">= 1.44.0.0, < 1.44.7.3",
+      ">= 1.45.0.0, < 1.45.4.3",
+      ">= 1.46.0.0, < 1.46.6.4"
+    ],
+    "公开日期": "2023年08月04日"
+  },
+  {
+    "设备品牌": "vegaprotocol",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "vega",
+    "CVE编号": "CVE-2023-35163",
+    "漏洞描述": "Vega is a decentralized trading platform that allows pseudo-anonymous trading of derivatives on a blockchain. Prior to version 0.71.6, a vulnerability exists that allows a malicious validator to trick the Vega network into re-processing past Ethereum events from Vega’s Ethereum bridge. For example, a deposit to the collateral bridge for 100USDT that credits a party’s general account on Vega, can be re-processed 50 times resulting in 5000USDT in that party’s general account. This is without depositing any more than the original 100USDT on the bridge. Despite this exploit requiring access to a validator's Vega key, a validator key can be obtained at the small cost of 3000VEGA, the amount needed to announce a new node onto the network.\n\nA patch is available in version 0.71.6. No known workarounds are available, however there are mitigations in place should this vulnerability be exploited. There are monitoring alerts for `mainnet1` in place to identify any issues of this nature including this vulnerability being exploited. The validators have the ability to stop the bridge thus stopping any withdrawals should this vulnerability be exploited.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://github.com/vegaprotocol/vega/security/advisories/GHSA-8rc9-vxjh-qjf2",
+      "https://github.com/vegaprotocol/vega/commit/56b09bf57af8cd9eca5996252d86f469a3e34c68",
+      "https://github.com/vegaprotocol/vega/releases/tag/v0.71.6"
+    ],
+    "受影响版本": [
+      "< 0.71.6"
+    ],
+    "公开日期": "2023年06月23日"
+  },
+  {
+    "设备品牌": "txthinking",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "brook",
+    "CVE编号": "CVE-2023-33965",
+    "漏洞描述": "Brook is a cross-platform programmable network tool. The `tproxy` server is vulnerable to a drive-by command injection. An attacker may fool a victim into visiting a malicious web page which will trigger requests to the local `tproxy` service leading to remote code execution. A patch is available in version 20230606.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/txthinking/brook/security/advisories/GHSA-vfrj-fv6p-3cpf",
+      "https://github.com/txthinking/brook/commit/314d7070c37babf6c38a0fe1eada872bb74bf03e"
+    ],
+    "受影响版本": [
+      "< 20230606"
+    ],
+    "公开日期": "2023年06月01日"
+  },
+  {
+    "设备品牌": "moby",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "moby",
+    "CVE编号": "CVE-2023-28842",
+    "漏洞描述": "Moby) is an open source container framework developed by Docker Inc. that is distributed as Docker, Mirantis Container Runtime, and various other downstream projects/products. The Moby daemon component (`dockerd`), which is developed as moby/moby is commonly referred to as *Docker*.\n\nSwarm Mode, which is compiled in and delivered by default in `dockerd` and is thus present in most major Moby downstreams, is a simple, built-in container orchestrator that is implemented through a combination of SwarmKit and supporting network code.\n\nThe `overlay` network driver is a core feature of Swarm Mode, providing isolated virtual LANs that allow communication between containers and services across the cluster. This driver is an implementation/user of VXLAN, which encapsulates link-layer (Ethernet) frames in UDP datagrams that tag the frame with the VXLAN metadata, including a VXLAN Network ID (VNI) that identifies the originating overlay network. In addition, the overlay network driver supports an optional, off-by-default encrypted mode, which is especially useful when VXLAN packets traverses an untrusted network between nodes.\n\nEncrypted overlay networks function by encapsulating the VXLAN datagrams through the use of the IPsec Encapsulating Security Payload protocol in Transport mode. By deploying IPSec encapsulation, encrypted overlay networks gain the additional properties of source authentication through cryptographic proof, data integrity through check-summing, and confidentiality through encryption.\n\nWhen setting an endpoint up on an encrypted overlay network, Moby installs three iptables (Linux kernel firewall) rules that enforce both incoming and outgoing IPSec. These rules rely on the `u32` iptables extension provided by the `xt_u32` kernel module to directly filter on a VXLAN packet's VNI field, so that IPSec guarantees can be enforced on encrypted overlay networks without interfering with other overlay networks or other users of VXLAN.\n\nThe `overlay` driver dynamically and lazily defines the kernel configuration for the VXLAN network on each node as containers are attached and detached. Routes and encryption parameters are only defined for destination nodes that participate in the network. The iptables rules that prevent encrypted overlay networks from accepting unencrypted packets are not created until a peer is available with which to communicate.\n\nEncrypted overlay networks silently accept cleartext VXLAN datagrams that are tagged with the VNI of an encrypted overlay network. As a result, it is possible to inject arbitrary Ethernet frames into the encrypted overlay network by encapsulating them in VXLAN datagrams. The implications of this can be quite dire, and GHSA-vwm3-crmr-xfxw should be referenced for a deeper exploration.\n\nPatches are available in Moby releases 23.0.3, and 20.10.24. As Mirantis Container Runtime's 20.10 releases are numbered differently, users of that platform should update to 20.10.16.\n\nSome workarounds are available. In multi-node clusters, deploy a global ‘pause’ container for each encrypted overlay network, on every node. For a single-node cluster, do not use overlay networks of any sort. Bridge networks provide the same connectivity on a single node and have no multi-node features. The Swarm ingress feature is implemented using an overlay network, but can be disabled by publishing ports in `host` mode instead of `ingress` mode (allowing the use of an external load balancer), and removing the `ingress` network. If encrypted overlay networks are in exclusive use, block UDP port 4789 from traffic that has not been validated by IPSec.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/moby/moby/security/advisories/GHSA-6wrf-mxfj-pf5p",
+      "https://github.com/moby/libnetwork/security/advisories/GHSA-gvm4-2qqg-m333",
+      "https://github.com/moby/moby/security/advisories/GHSA-232p-vwff-86mp",
+      "https://github.com/moby/moby/security/advisories/GHSA-33pg-m6jh-5237",
+      "https://github.com/moby/moby/security/advisories/GHSA-vwm3-crmr-xfxw",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZTE4ITXXPIWZEQ4HYQCB6N6GZIMWXDAI/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LYZOKMMVX4SIEHPJW3SJUQGMO5YZCPHC/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XNF4OLYZRQE75EB5TW5N42FSXHBXGWFE/"
+    ],
+    "受影响版本": [
+      ">= 1.12.0, < 20.10.24",
+      ">= 23.0.0, < 23.0.3"
+    ],
+    "公开日期": "2023年04月04日"
+  },
+  {
+    "设备品牌": "moby",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "moby",
+    "CVE编号": "CVE-2023-28841",
+    "漏洞描述": "Moby is an open source container framework developed by Docker Inc. that is distributed as Docker, Mirantis Container Runtime, and various other downstream projects/products. The Moby daemon component (`dockerd`), which is developed as moby/moby is commonly referred to as *Docker*.\n\nSwarm Mode, which is compiled in and delivered by default in `dockerd` and is thus present in most major Moby downstreams, is a simple, built-in container orchestrator that is implemented through a combination of SwarmKit and supporting network code.\n\nThe `overlay` network driver is a core feature of Swarm Mode, providing isolated virtual LANs that allow communication between containers and services across the cluster. This driver is an implementation/user of VXLAN, which encapsulates link-layer (Ethernet) frames in UDP datagrams that tag the frame with the VXLAN metadata, including a VXLAN Network ID (VNI) that identifies the originating overlay network. In addition, the overlay network driver supports an optional, off-by-default encrypted mode, which is especially useful when VXLAN packets traverses an untrusted network between nodes.\n\nEncrypted overlay networks function by encapsulating the VXLAN datagrams through the use of the IPsec Encapsulating Security Payload protocol in Transport mode. By deploying IPSec encapsulation, encrypted overlay networks gain the additional properties of source authentication through cryptographic proof, data integrity through check-summing, and confidentiality through encryption.\n\nWhen setting an endpoint up on an encrypted overlay network, Moby installs three iptables (Linux kernel firewall) rules that enforce both incoming and outgoing IPSec. These rules rely on the `u32` iptables extension provided by the `xt_u32` kernel module to directly filter on a VXLAN packet's VNI field, so that IPSec guarantees can be enforced on encrypted overlay networks without interfering with other overlay networks or other users of VXLAN.\n\nAn iptables rule designates outgoing VXLAN datagrams with a VNI that corresponds to an encrypted overlay network for IPsec encapsulation.\n\nEncrypted overlay networks on affected platforms silently transmit unencrypted data. As a result, `overlay` networks may appear to be functional, passing traffic as expected, but without any of the expected confidentiality or data integrity guarantees.\n\nIt is possible for an attacker sitting in a trusted position on the network to read all of the application traffic that is moving across the overlay network, resulting in unexpected secrets or user data disclosure. Thus, because many database protocols, internal APIs, etc. are not protected by a second layer of encryption, a user may use Swarm encrypted overlay networks to provide confidentiality, which due to this vulnerability this is no longer guaranteed.\n\nPatches are available in Moby releases 23.0.3, and 20.10.24. As Mirantis Container Runtime's 20.10 releases are numbered differently, users of that platform should update to 20.10.16.\n\nSome workarounds are available. Close the VXLAN port (by default, UDP port 4789) to outgoing traffic at the Internet boundary in order to prevent unintentionally leaking unencrypted traffic over the Internet, and/or ensure that the `xt_u32` kernel module is available on all nodes of the Swarm cluster.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/moby/moby/security/advisories/GHSA-33pg-m6jh-5237",
+      "https://github.com/moby/libnetwork/security/advisories/GHSA-gvm4-2qqg-m333",
+      "https://github.com/moby/moby/security/advisories/GHSA-232p-vwff-86mp",
+      "https://github.com/moby/moby/security/advisories/GHSA-6wrf-mxfj-pf5p",
+      "https://github.com/moby/moby/security/advisories/GHSA-vwm3-crmr-xfxw",
+      "https://github.com/moby/moby/issues/43382",
+      "https://github.com/moby/moby/pull/45118",
+      "https://github.com/moby/libnetwork/blob/d9fae4c73daf76c3b0f77e14b45b8bf612ba764d/drivers/overlay/encryption.go#L205-L207",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZTE4ITXXPIWZEQ4HYQCB6N6GZIMWXDAI/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LYZOKMMVX4SIEHPJW3SJUQGMO5YZCPHC/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XNF4OLYZRQE75EB5TW5N42FSXHBXGWFE/"
+    ],
+    "受影响版本": [
+      ">= 1.12.0, < 20.10.24",
+      ">= 23.0.0, < 23.0.3"
+    ],
+    "公开日期": "2023年04月04日"
+  },
+  {
+    "设备品牌": "moby",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "moby",
+    "CVE编号": "CVE-2023-28840",
+    "漏洞描述": "Moby is an open source container framework developed by Docker Inc. that is distributed as Docker, Mirantis Container Runtime, and various other downstream projects/products. The Moby daemon component (`dockerd`), which is developed as moby/moby, is commonly referred to as *Docker*.\n\nSwarm Mode, which is compiled in and delivered by default in dockerd and is thus present in most major Moby downstreams, is a simple, built-in container orchestrator that is implemented through a combination of SwarmKit and supporting network code.\n\nThe overlay network driver is a core feature of Swarm Mode, providing isolated virtual LANs that allow communication between containers and services across the cluster. This driver is an implementation/user of VXLAN, which encapsulates link-layer (Ethernet) frames in UDP datagrams that tag the frame with a VXLAN Network ID (VNI) that identifies the originating overlay network. In addition, the overlay network driver supports an optional, off-by-default encrypted mode, which is especially useful when VXLAN packets traverses an untrusted network between nodes.\n\nEncrypted overlay networks function by encapsulating the VXLAN datagrams through the use of the IPsec Encapsulating Security Payload protocol in Transport mode. By deploying IPSec encapsulation, encrypted overlay networks gain the additional properties of source authentication through cryptographic proof, data integrity through check-summing, and confidentiality through encryption.\n\nWhen setting an endpoint up on an encrypted overlay network, Moby installs three iptables (Linux kernel firewall) rules that enforce both incoming and outgoing IPSec. These rules rely on the u32 iptables extension provided by the xt_u32 kernel module to directly filter on a VXLAN packet's VNI field, so that IPSec guarantees can be enforced on encrypted overlay networks without interfering with other overlay networks or other users of VXLAN.\n\nTwo iptables rules serve to filter incoming VXLAN datagrams with a VNI that corresponds to an encrypted network and discards unencrypted datagrams. The rules are appended to the end of the INPUT filter chain, following any rules that have been previously set by the system administrator. Administrator-set rules take precedence over the rules Moby sets to discard unencrypted VXLAN datagrams, which can potentially admit unencrypted datagrams that should have been discarded.\n\nThe injection of arbitrary Ethernet frames can enable a Denial of Service attack. A sophisticated attacker may be able to establish a UDP or TCP connection by way of the container’s outbound gateway that would otherwise be blocked by a stateful firewall, or carry out other escalations beyond simple injection by smuggling packets into the overlay network.\n\nPatches are available in Moby releases 23.0.3 and 20.10.24. As Mirantis Container Runtime's 20.10 releases are numbered differently, users of that platform should update to 20.10.16.\n\nSome workarounds are available. Close the VXLAN port (by default, UDP port 4789) to incoming traffic at the Internet boundary to prevent all VXLAN packet injection, and/or ensure that the `xt_u32` kernel module is available on all nodes of the Swarm cluster.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/moby/moby/security/advisories/GHSA-232p-vwff-86mp",
+      "https://github.com/moby/libnetwork/security/advisories/GHSA-gvm4-2qqg-m333",
+      "https://github.com/moby/moby/security/advisories/GHSA-33pg-m6jh-5237",
+      "https://github.com/moby/moby/security/advisories/GHSA-6wrf-mxfj-pf5p",
+      "https://github.com/moby/moby/security/advisories/GHSA-vwm3-crmr-xfxw",
+      "https://github.com/moby/moby/issues/43382",
+      "https://github.com/moby/moby/pull/45118",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZTE4ITXXPIWZEQ4HYQCB6N6GZIMWXDAI/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LYZOKMMVX4SIEHPJW3SJUQGMO5YZCPHC/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XNF4OLYZRQE75EB5TW5N42FSXHBXGWFE/"
+    ],
+    "受影响版本": [
+      ">= 1.12.0, < 20.10.24",
+      ">= 23.0.0, < 23.0.3"
+    ],
+    "公开日期": "2023年04月04日"
+  },
+  {
+    "设备品牌": "contiki-ng",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "contiki-ng",
+    "CVE编号": "CVE-2023-28116",
+    "漏洞描述": "Contiki-NG is an open-source, cross-platform operating system for internet of things (IoT) devices. In versions 4.8 and prior, an out-of-bounds write can occur in the BLE L2CAP module of the Contiki-NG operating system.  The network stack of Contiki-NG uses a global buffer (packetbuf) for processing of packets, with the size of PACKETBUF_SIZE. In particular, when using the BLE L2CAP module with the default configuration, the PACKETBUF_SIZE value becomes larger then the actual size of the packetbuf.  When large packets are processed by the L2CAP module, a buffer overflow can therefore occur when copying the packet data to the packetbuf. The vulnerability has been patched in the \"develop\" branch of Contiki-NG, and will be included in release 4.9. The problem can be worked around by applying the patch manually.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/contiki-ng/contiki-ng/security/advisories/GHSA-m737-4vx6-pfqp",
+      "https://github.com/contiki-ng/contiki-ng/pull/2398"
+    ],
+    "受影响版本": [
+      "<= 4.8"
+    ],
+    "公开日期": "2023年03月17日"
+  },
+  {
+    "设备品牌": "discourse",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "discourse",
+    "CVE编号": "CVE-2023-28112",
+    "漏洞描述": "Discourse is an open-source discussion platform. Prior to version 3.1.0.beta3 of the `beta` and `tests-passed` branches, some user provided URLs were being passed to FastImage without SSRF protection. Insufficient protections could enable attackers to trigger outbound network connections from the Discourse server to private IP addresses. This affects any site running the `tests-passed` or `beta` branches versions 3.1.0.beta2 and prior. This issue is patched in version 3.1.0.beta3 of the `beta` and `tests-passed` branches. There are no known workarounds.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/discourse/discourse/security/advisories/GHSA-9897-x229-55gh",
+      "https://github.com/discourse/discourse/pull/20710",
+      "https://github.com/discourse/discourse/commit/39c2f63b35d90ebaf67b9604cf1d424e5984203c"
+    ],
+    "受影响版本": [
+      "beta < 3.1.0.beta3",
+      "tests-passed < 3.1.0.beta3"
+    ],
+    "公开日期": "2023年03月17日"
+  },
+  {
+    "设备品牌": "nautobot",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "nautobot",
+    "CVE编号": "CVE-2023-25657",
+    "漏洞描述": "Nautobot is a Network Source of Truth and Network Automation Platform. All users of Nautobot versions earlier than 1.5.7 are impacted by a remote code execution vulnerability. Nautobot did not properly sandbox Jinja2 template rendering. In Nautobot 1.5.7 has enabled sandboxed environments for the Jinja2 template engine used internally for template rendering for the following objects: `extras.ComputedField`, `extras.CustomLink`, `extras.ExportTemplate`, `extras.Secret`, `extras.Webhook`. While no active exploits of this vulnerability are known this change has been made as a preventative measure to protect against any potential remote code execution attacks utilizing maliciously crafted template code. This change forces the Jinja2 template engine to use a `SandboxedEnvironment` on all new installations of Nautobot. This addresses any potential unsafe code execution everywhere the helper function `nautobot.utilities.utils.render_jinja2` is called. Additionally, the documentation that had previously suggesting the direct use of `jinja2.Template` has been revised to suggest `render_jinja2`. Users are advised to upgrade to Nautobot 1.5.7 or newer. For users that are unable to upgrade to the latest release of Nautobot, you may add the following setting to your `nautobot_config.py` to apply the sandbox environment enforcement: `TEMPLATES[1][\"OPTIONS\"][\"environment\"] = \"jinja2.sandbox.SandboxedEnvironment\"` After applying this change, you must restart all Nautobot services, including any Celery worker processes. **Note:** *Nautobot specifies two template engines by default, the first being “django” for the Django built-in template engine, and the second being “jinja” for the Jinja2 template engine. This recommended setting will update the second item in the list of template engines, which is the Jinja2 engine.* For users that are unable to immediately update their configuration such as if a Nautobot service restart is too disruptive to operations, access to provide custom Jinja2 template values may be mitigated using permissions to restrict “change” (write) actions to the affected object types listed in the first section. **Note:** *This solution is intended to be stopgap until you can successfully update your `nautobot_config.py` or upgrade your Nautobot instance to apply the sandboxed environment enforcement.*",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/nautobot/nautobot/security/advisories/GHSA-8mfq-f5wj-vw5m",
+      "https://github.com/nautobot/nautobot/commit/d47f157e83b0c353bb2b697f911882c71cf90ca0",
+      "https://jinja.palletsprojects.com/en/3.0.x/sandbox/#sandbox"
+    ],
+    "受影响版本": [
+      "< 1.5.7"
+    ],
+    "公开日期": "2023年02月21日"
+  },
+  {
+    "设备品牌": "nextcloud",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "security-advisories",
+    "CVE编号": "CVE-2023-23943",
+    "漏洞描述": "Nextcloud mail is an email app for the nextcloud home server platform. In affected versions the SMTP, IMAP and Sieve host fields allowed to scan for internal services and servers reachable from within the local network of the Nextcloud Server. It is recommended that the Nextcloud Maill app is upgraded to 1.15.0 or 2.2.2. The only known workaround for this issue is to completely disable the nextcloud mail app.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/nextcloud/security-advisories/security/advisories/GHSA-8gcx-r739-9pf6",
+      "https://github.com/nextcloud/mail/pull/7796",
+      "https://hackerone.com/reports/1736390",
+      "https://hackerone.com/reports/1741525",
+      "https://hackerone.com/reports/1746582"
+    ],
+    "受影响版本": [
+      ">= 2.0.0, < 2.2.2",
+      "< 1.15.0"
+    ],
+    "公开日期": "2023年02月06日"
+  },
+  {
+    "设备品牌": "discourse",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "discourse",
+    "CVE编号": "CVE-2022-39241",
+    "漏洞描述": "Discourse is a platform for community discussion. A malicious admin could use this vulnerability to perform port enumeration on the local host or other hosts on the internal network, as well as against hosts on the Internet. Latest `stable`, `beta`, and `test-passed` versions are now patched. As a workaround, self-hosters can use `DISCOURSE_BLOCKED_IP_BLOCKS` env var (which overrides `blocked_ip_blocks` setting) to stop webhooks from accessing private IPs.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/discourse/discourse/security/advisories/GHSA-rcc5-28r3-23rr"
+    ],
+    "受影响版本": [
+      "<= 2.8.9",
+      "<= 2.9.0.beta10"
+    ],
+    "公开日期": "2022年11月02日"
+  },
+  {
+    "设备品牌": "contiki-ng",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "contiki-ng",
+    "CVE编号": "CVE-2022-36053",
+    "漏洞描述": "Contiki-NG is an open-source, cross-platform operating system for Next-Generation IoT devices. The low-power IPv6 network stack of Contiki-NG has a buffer module (os/net/ipv6/uipbuf.c) that processes IPv6 extension headers in incoming data packets. As part of this processing, the function uipbuf_get_next_header casts a pointer to a uip_ext_hdr structure into the packet buffer at different offsets where extension headers are expected to be found, and then reads from this structure. Because of a lack of bounds checking, the casting can be done so that the structure extends beyond the packet's end. Hence, with a carefully crafted packet, it is possible to cause the Contiki-NG system to read data outside the packet buffer. A patch that fixes the vulnerability is included in Contiki-NG 4.8.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/contiki-ng/contiki-ng/security/advisories/GHSA-2j9c-7754-w4cw",
+      "https://github.com/contiki-ng/contiki-ng/pull/1648"
+    ],
+    "受影响版本": [
+      "< 4.8"
+    ],
+    "公开日期": "2022年09月01日"
+  },
+  {
+    "设备品牌": "contiki-ng",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "contiki-ng",
+    "CVE编号": "CVE-2022-35926",
+    "漏洞描述": "Contiki-NG is an open-source, cross-platform operating system for IoT devices. Because of insufficient validation of IPv6 neighbor discovery options in Contiki-NG, attackers can send neighbor solicitation packets that trigger an out-of-bounds read. The problem exists in the module os/net/ipv6/uip-nd6.c, where memory read operations from the main packet buffer, <code>uip_buf</code>, are not checked if they go out of bounds. In particular, this problem can occur when attempting to read the 2-byte option header and the Source Link-Layer Address Option (SLLAO). This attack requires ipv6 be enabled for the network. The problem has been patched in the develop branch of Contiki-NG. The upcoming 4.8 release of Contiki-NG will include the patch.Users unable to upgrade may apply the patch in Contiki-NG PR #1654.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/contiki-ng/contiki-ng/releases/tag/release%2Fv4.8",
+      "https://github.com/contiki-ng/contiki-ng/security/advisories/GHSA-4hpq-4f53-w386",
+      "https://github.com/contiki-ng/contiki-ng/pull/1654",
+      "https://github.com/contiki-ng/contiki-ng/pull/1654/commits/a4597001d50a04f4b9c78f323ba731e2f979802c"
+    ],
+    "受影响版本": [
+      "< 4.8"
+    ],
+    "公开日期": "2022年08月04日"
+  },
+  {
+    "设备品牌": "Splunk, Inc",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Splunk Enterprise",
+    "CVE编号": "CVE-2022-32153",
+    "漏洞描述": "Splunk Enterprise peers in Splunk Enterprise versions before 9.0 and Splunk Cloud Platform versions before 8.2.2203 did not validate the TLS certificates during Splunk-to-Splunk communications by default. Splunk peer communications configured properly with valid certificates were not vulnerable. However, an attacker with administrator credentials could add a peer without a valid certificate and connections from misconfigured nodes without valid certificates did not fail by default. For Splunk Enterprise, update to Splunk Enterprise version 9.0 and Configure TLS host name validation for Splunk-to-Splunk communications (https://docs.splunk.com/Documentation/Splunk/9.0.0/Security/EnableTLSCertHostnameValidation) to enable the remediation.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://docs.splunk.com/Documentation/Splunk/9.0.0/Security/EnableTLSCertHostnameValidation",
+      "https://docs.splunk.com/Documentation/Splunk/9.0.0/Security/Updates",
+      "https://research.splunk.com/application/splunk_digital_certificates_infrastructure_version/",
+      "https://research.splunk.com/application/splunk_digital_certificates_lack_of_encryption/",
+      "https://research.splunk.com/application/splunk_protocol_impersonation_weak_encryption_selfsigned/",
+      "https://research.splunk.com/network/splunk_identified_ssl_tls_certificates/",
+      "https://www.splunk.com/en_us/product-security/announcements/svd-2022-0603.html"
+    ],
+    "受影响版本": [
+      "9.0"
+    ],
+    "公开日期": "2022年06月15日"
+  },
+  {
+    "设备品牌": "Splunk",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Splunk Enterprise",
+    "CVE编号": "CVE-2022-32152",
+    "漏洞描述": "Splunk Enterprise peers in Splunk Enterprise versions before 9.0 and Splunk Cloud Platform versions before 8.2.2203 did not validate the TLS certificates during Splunk-to-Splunk communications by default. Splunk peer communications configured properly with valid certificates were not vulnerable. However, an attacker with administrator credentials could add a peer without a valid certificate and connections from misconfigured nodes without valid certificates did not fail by default. For Splunk Enterprise, update to Splunk Enterprise version 9.0 and Configure TLS host name validation for Splunk-to-Splunk communications (https://docs.splunk.com/Documentation/Splunk/9.0.0/Security/EnableTLSCertHostnameValidation) to enable the remediation.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://docs.splunk.com/Documentation/Splunk/9.0.0/Security/EnableTLSCertHostnameValidation",
+      "https://docs.splunk.com/Documentation/Splunk/9.0.0/Security/Updates",
+      "https://www.splunk.com/en_us/product-security/announcements/svd-2022-0602.html",
+      "https://research.splunk.com/application/splunk_digital_certificates_infrastructure_version/",
+      "https://research.splunk.com/application/splunk_digital_certificates_lack_of_encryption/",
+      "https://research.splunk.com/application/splunk_protocol_impersonation_weak_encryption_selfsigned/",
+      "https://research.splunk.com/network/splunk_identified_ssl_tls_certificates/"
+    ],
+    "受影响版本": [
+      "9.0"
+    ],
+    "公开日期": "2022年06月15日"
+  },
+  {
+    "设备品牌": "Open Automation Software",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "OAS Platform",
+    "CVE编号": "CVE-2022-26043",
+    "漏洞描述": "An external config control vulnerability exists in the OAS Engine SecureAddSecurity functionality of Open Automation Software OAS Platform V16.00.0112. A specially-crafted series of network requests can lead to the creation of a custom Security Group. An attacker can send a sequence of requests to trigger this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2022-1489"
+    ],
+    "受影响版本": [
+      "V16.00.0112"
+    ],
+    "公开日期": "2022年05月25日"
+  },
+  {
+    "设备品牌": "garden-io",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "garden",
+    "CVE编号": "CVE-2022-24829",
+    "漏洞描述": "Garden is an automation platform for Kubernetes development and testing. In versions prior to 0.12.39 multiple endpoints did not require authentication. In some operating modes this allows for an attacker to gain access to the application erroneously. The configuration is leaked through the /api endpoint on the local server that is responsible for serving the Garden dashboard. At the moment, this server is accessible to 0.0.0.0 which makes it accessible to anyone on the same network (or anyone on the internet if they are on a public, static IP). This may lead to the ability to compromise credentials, secrets or environment variables. Users are advised to upgrade to version 0.12.39 as soon as possible. Users unable to upgrade should use a firewall blocking access to port 9777 from all untrusted network machines.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/garden-io/garden/security/advisories/GHSA-f5f3-qrqw-2vqf",
+      "https://github.com/garden-io/garden/commit/56051a5b50409227bc420910da88ed156a6e432b"
+    ],
+    "受影响版本": [
+      "< 0.12.39"
+    ],
+    "公开日期": "2022年04月11日"
+  },
+  {
+    "设备品牌": "istio",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "istio",
+    "CVE编号": "CVE-2022-23635",
+    "漏洞描述": "Istio is an open platform to connect, manage, and secure microservices. In affected versions the Istio control plane, `istiod`, is vulnerable to a request processing error, allowing a malicious attacker that sends a specially crafted message which results in the control plane crashing. This endpoint is served over TLS port 15012, but does not require any authentication from the attacker. For simple installations, Istiod is typically only reachable from within the cluster, limiting the blast radius. However, for some deployments, especially [multicluster](https://istio.io/latest/docs/setup/install/multicluster/primary-remote/) topologies, this port is exposed over the public internet. There are no effective workarounds, beyond upgrading. Limiting network access to Istiod to the minimal set of clients can help lessen the scope of the vulnerability to some extent.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/istio/istio/security/advisories/GHSA-856q-xv3c-7f2f",
+      "https://github.com/istio/istio/commit/5f3b5ed958ae75156f8656fe7b3794f78e94db84",
+      "https://istio.io/latest/news/security/istio-security-2022-003"
+    ],
+    "受影响版本": [
+      ">= 1.13.0, < 1.13.1",
+      ">= 1.12.0, < 1.12.4",
+      "< 1.11.7"
+    ],
+    "公开日期": "2022年02月22日"
+  },
+  {
+    "设备品牌": "McAfee,LLC",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "McAfee Network Security Manager (NSM)",
+    "CVE编号": "CVE-2021-4038",
+    "漏洞描述": "Cross Site Scripting (XSS) vulnerability in McAfee Network Security Manager (NSM) prior to 10.1 Minor 7 allows a remote authenticated administrator to embed a XSS in the administrator interface via specially crafted custom rules containing HTML. NSM did not correctly sanitize custom rule content in all scenarios.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kc.mcafee.com/corporate/index?page=content&id=SB10375"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年12月09日"
+  },
+  {
+    "设备品牌": "misskey-dev",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "misskey",
+    "CVE编号": "CVE-2021-39195",
+    "漏洞描述": "Misskey is an open source, decentralized microblogging platform. In affected versions a Server-Side Request Forgery vulnerability exists in \"Upload from URL\" and remote attachment handling. This could result in the disclosure of non-public information within the internal network. This has been fixed in 12.90.0. However, if you are using a proxy, you will need to take additional measures. As a workaround this exploit may be avoided by appropriately restricting access to private networks from the host where the application is running.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/misskey-dev/misskey/security/advisories/GHSA-mqv7-gxh4-r5vf",
+      "https://github.com/misskey-dev/misskey/commit/e1a8b158e04ad567d92d8daf3cc0898ee18f1a2e",
+      "https://github.com/misskey-dev/misskey/blob/develop/CHANGELOG.md#12900-20210904"
+    ],
+    "受影响版本": [
+      "< 12.90.0"
+    ],
+    "公开日期": "2021年09月07日"
+  },
+  {
+    "设备品牌": "wireapp",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "wire-ios-transport",
+    "CVE编号": "CVE-2021-32755",
+    "漏洞描述": "Wire is a collaboration platform. wire-ios-transport handles authentication of requests, network failures, and retries for the iOS implementation of Wire. In the 3.82 version of the iOS application, a new web socket implementation was introduced for users running iOS 13 or higher. This new websocket implementation is not configured to enforce certificate pinning when available. Certificate pinning for the new websocket is enforced in version 3.84 or above.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/wireapp/wire-ios-transport/security/advisories/GHSA-v8mx-h3vj-w39v"
+    ],
+    "受影响版本": [
+      "= 3.8.2"
+    ],
+    "公开日期": "2021年07月13日"
+  },
+  {
+    "设备品牌": "Oracle Corporation",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Platform Security for Java",
+    "CVE编号": "CVE-2021-2302",
+    "漏洞描述": "Vulnerability in the Oracle Platform Security for Java product of Oracle Fusion Middleware (component: OPSS). Supported versions that are affected are 11.1.1.9.0, 12.2.1.3.0 and 12.2.1.4.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Platform Security for Java. Successful attacks of this vulnerability can result in takeover of Oracle Platform Security for Java. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts). CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.oracle.com/security-alerts/cpuapr2021.html",
+      "https://www.zerodayinitiative.com/advisories/ZDI-21-460/"
+    ],
+    "受影响版本": [
+      "11.1.1.9.0",
+      "12.2.1.3.0",
+      "12.2.1.4.0"
+    ],
+    "公开日期": "2021年04月22日"
+  },
+  {
+    "设备品牌": "contiki-ng",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "contiki-ng",
+    "CVE编号": "CVE-2021-21257",
+    "漏洞描述": "Contiki-NG is an open-source, cross-platform operating system for internet of things devices. The RPL-Classic and RPL-Lite implementations in the Contiki-NG operating system versions prior to 4.6 do not validate the address pointer in the RPL source routing header This makes it possible for an attacker to cause out-of-bounds writes with packets injected into the network stack. Specifically, the problem lies in the rpl_ext_header_srh_update function in the two rpl-ext-header.c modules for RPL-Classic and RPL-Lite respectively. The addr_ptr variable is calculated using an unvalidated CMPR field value from the source routing header. An out-of-bounds write can be triggered on line 151 in os/net/routing/rpl-lite/rpl-ext-header.c and line 261 in os/net/routing/rpl-classic/rpl-ext-header.c, which contain the following memcpy call with addr_ptr as destination. The problem has been patched in Contiki-NG 4.6. Users can apply a patch out-of-band as a workaround.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/contiki-ng/contiki-ng/security/advisories/GHSA-mvc7-9p4q-c5cm",
+      "https://github.com/contiki-ng/contiki-ng/pull/1431"
+    ],
+    "受影响版本": [
+      "< 4.6"
+    ],
+    "公开日期": "2021年06月18日"
+  },
+  {
+    "设备品牌": "Oracle Corporation",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Business Intelligence Enterprise Edition",
+    "CVE编号": "CVE-2021-2005",
+    "漏洞描述": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Fusion Middleware (component: BI Platform Security). Supported versions that are affected are 12.2.1.3.0 and 12.2.1.4.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Business Intelligence Enterprise Edition. Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in Oracle Business Intelligence Enterprise Edition, attacks may significantly impact additional products. Successful attacks of this vulnerability can result in unauthorized read access to a subset of Oracle Business Intelligence Enterprise Edition accessible data. CVSS 3.1 Base Score 4.7 (Confidentiality impacts). CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:N/A:N).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.oracle.com/security-alerts/cpujan2021.html"
+    ],
+    "受影响版本": [
+      "12.2.1.3.0",
+      "12.2.1.4.0"
+    ],
+    "公开日期": "2021年01月20日"
+  },
+  {
+    "设备品牌": "McAfee",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Database Security",
+    "CVE编号": "CVE-2020-7339",
+    "漏洞描述": "Use of a Broken or Risky Cryptographic Algorithm vulnerability in McAfee Database Security Server and Sensor prior to 4.8.0 in the form of a SHA1 signed certificate that would allow an attacker on the same local network to potentially intercept communication between the Server and Sensors.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://kc.mcafee.com/corporate/index?page=content&id=SB10340"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年12月09日"
+  },
+  {
+    "设备品牌": "McAfee",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Network Security Management (NSM)",
+    "CVE编号": "CVE-2020-7336",
+    "漏洞描述": "Cross Site Request Forgery vulnerability in McAfee Network Security Management (NSM) prior to 10.1.7.35 and NSM 9.x prior to 9.2.9.55 may allow an attacker to change the configuration of the Network Security Manager via a carefully crafted HTTP request.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://kc.mcafee.com/corporate/index?page=content&id=SB10341"
+    ],
+    "受影响版本": [
+      "NSM 10.x",
+      "NSM 9.x"
+    ],
+    "公开日期": "2021年01月05日"
+  },
+  {
+    "设备品牌": "McAfee,LLC",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "McAfee Endpoint Security (ENS) for WIndows",
+    "CVE编号": "CVE-2020-7308",
+    "漏洞描述": "Cleartext Transmission of Sensitive Information between McAfee Endpoint Security (ENS) for Windows prior to 10.7.0 February 2021 Update and McAfee Global Threat Intelligence (GTI) servers using DNS allows a remote attacker to view the requests from ENS and responses from GTI over DNS. By gaining control of an intermediate DNS server or altering the network DNS configuration, it is possible for an attacker to intercept requests and send their own responses.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kc.mcafee.com/corporate/index?page=content&id=SB10354"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年04月15日"
+  },
+  {
+    "设备品牌": "McAfee",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Network Security Management (NSM)",
+    "CVE编号": "CVE-2020-7284",
+    "漏洞描述": "Exposure of Sensitive Information in McAfee Network Security Management (NSM) prior to 10.1.7.7 allows local users to gain unauthorised access to the root account via execution of carefully crafted commands from the restricted command line interface (CLI).",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://kc.mcafee.com/corporate/index?page=content&id=SB10322"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年07月03日"
+  },
+  {
+    "设备品牌": "McAfee",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Network Security Management (NSM)",
+    "CVE编号": "CVE-2020-7258",
+    "漏洞描述": "Cross site scripting vulnerability in McAfee Network Security Management (NSM) Prior to 9.1 update 6 Mar 2020 Update allows attackers to unspecified impact via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kc.mcafee.com/corporate/index?page=content&id=SB10310"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年03月18日"
+  },
+  {
+    "设备品牌": "McAfee",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Network Security Management (NSM)",
+    "CVE编号": "CVE-2020-7256",
+    "漏洞描述": "Cross site scripting vulnerability in McAfee Network Security Management (NSM) Prior to 9.1 update 6 Mar 2020 Update allows attackers to unspecified impact via unspecified vectors.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kc.mcafee.com/corporate/index?page=content&id=SB10310"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年03月18日"
+  },
+  {
+    "设备品牌": "Oracle Corporation",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Oracle Business Intelligence Enterprise Edition",
+    "CVE编号": "CVE-2020-2531",
+    "漏洞描述": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Fusion Middleware (component: BI Platform Security). Supported versions that are affected are 12.2.1.3.0 and 12.2.1.4.0. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Business Intelligence Enterprise Edition. Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in unauthorized read access to a subset of Oracle Business Intelligence Enterprise Edition accessible data. CVSS 3.0 Base Score 3.1 (Confidentiality impacts). CVSS Vector: (CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.oracle.com/security-alerts/cpujan2020.html"
+    ],
+    "受影响版本": [
+      "12.2.1.3.0",
+      "12.2.1.4.0"
+    ],
+    "公开日期": "2020年01月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Openshift",
+    "CVE编号": "CVE-2020-14336",
+    "漏洞描述": "A flaw was found in the Restricted Security Context Constraints (SCC), where it allows pods to craft custom network packets. This flaw allows an attacker to cause a denial of service attack on an OpenShift Container Platform cluster if they can deploy pods. The highest threat from this vulnerability is to system availability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1858981"
+    ],
+    "受影响版本": [
+      "Red Hat OpenShift Container Platform 4.6 and Red Hat OpenShift Container Platform 4.5.16"
+    ],
+    "公开日期": "2021年06月02日"
+  },
+  {
+    "设备品牌": "AMD",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "2nd Gen AMD EPYC™",
+    "CVE编号": "CVE-2020-12961",
+    "漏洞描述": "A potential vulnerability exists in AMD Platform Security Processor (PSP) that may allow an attacker to zero any privileged register on the System Management Network which may lead to bypassing SPI ROM protections.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.amd.com/en/corporate/product-security/bulletin/amd-sb-1021"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年11月16日"
+  }
+]

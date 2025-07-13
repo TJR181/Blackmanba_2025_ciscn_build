@@ -1,0 +1,2260 @@
+[
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2025-36050",
+    "漏洞描述": "IBM QRadar SIEM 7.5 through 7.5.0 Update Package 12 stores potentially sensitive information in log files that could be read by a local user.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7237317"
+    ],
+    "受影响版本": [
+      "7.5"
+    ],
+    "公开日期": "2025年06月19日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2025-33121",
+    "漏洞描述": "IBM QRadar SIEM 7.5 through 7.5.0 Update Package 12  is vulnerable to an XML external entity injection (XXE) attack when processing XML data. A remote attacker could exploit this vulnerability to expose sensitive information or consume memory resources.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7237317"
+    ],
+    "受影响版本": [
+      "7.5"
+    ],
+    "公开日期": "2025年06月19日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2025-33117",
+    "漏洞描述": "IBM QRadar SIEM 7.5 through 7.5.0 Update Package 12  could allow a privileged user to modify configuration files that would allow the upload of a malicious autoupdate file to execute arbitrary commands.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7237317"
+    ],
+    "受影响版本": [
+      "7.5"
+    ],
+    "公开日期": "2025年06月19日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2025-25022",
+    "漏洞描述": "IBM QRadar Suite Software 1.10.12.0 through 1.11.2.0 and IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 could allow an unauthenticated user in the environment to obtain highly sensitive information in configuration files.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7235432"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2025年06月03日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2025-25021",
+    "漏洞描述": "IBM QRadar Suite Software 1.10.12.0 through 1.11.2.0 and IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 could allow a privileged execute code in case management script creation due to the improper generation of code.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7235432"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2025年06月03日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2025-25020",
+    "漏洞描述": "IBM QRadar Suite Software 1.10.12.0 through 1.11.2.0 and IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 could allow an authenticated user to cause a denial of service due to improperly validating API data input.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7235432"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2025年06月03日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2025-25019",
+    "漏洞描述": "IBM QRadar Suite Software 1.10.12.0 through 1.11.2.0 and IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 does not invalidate session after a logout which could allow a user to impersonate another user on the system.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7235432"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2025年06月03日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2025-1334",
+    "漏洞描述": "IBM QRadar Suite Software 1.10.12.0 through 1.11.2.0 and IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 allows web pages to be stored locally which can be read by another user on the system.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7235432"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2025年06月03日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2024-56463",
+    "漏洞描述": "IBM QRadar SIEM 7.5 is vulnerable to cross-site scripting. This vulnerability allows a privileged user to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7183251"
+    ],
+    "受影响版本": [
+      "7.5"
+    ],
+    "公开日期": "2025年02月14日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar WinCollect Agent",
+    "CVE编号": "CVE-2024-51462",
+    "漏洞描述": "IBM QRadar WinCollect Agent 10.0.0 through 10.1.12 could allow a remote attacker to inject XML data into parameter values due to improper input validation of assumed immutable data.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7176043"
+    ],
+    "受影响版本": [
+      "10.0.0"
+    ],
+    "公开日期": "2025年01月17日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar WinCollect Agent",
+    "CVE编号": "CVE-2024-51461",
+    "漏洞描述": "IBM QRadar WinCollect Agent 10.0 through 10.1.13 could allow a remote attacker to cause a denial of service by interrupting an HTTP request that could consume memory resources.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7230614"
+    ],
+    "受影响版本": [
+      "10.0"
+    ],
+    "公开日期": "2025年04月11日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Advisor with Watson",
+    "CVE编号": "CVE-2024-49822",
+    "漏洞描述": "IBM QRadar Advisor 1.0.0 through 2.6.5 is vulnerable to server-side request forgery (SSRF). This may allow an authenticated attacker to send unauthorized requests from the system, potentially leading to network enumeration or facilitating other attacks.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7186424"
+    ],
+    "受影响版本": [
+      "1.0.0"
+    ],
+    "公开日期": "2025年03月18日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2024-47107",
+    "漏洞描述": "IBM QRadar SIEM 7.5 is vulnerable to stored cross-site scripting. This vulnerability allows authenticated users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7178104"
+    ],
+    "受影响版本": [
+      "7.5"
+    ],
+    "公开日期": "2024年12月07日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar EDR",
+    "CVE编号": "CVE-2024-45643",
+    "漏洞描述": "IBM Security QRadar 3.12 EDR uses weaker than expected cryptographic algorithms that could allow an attacker to decrypt sensitive credential information.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7185938"
+    ],
+    "受影响版本": [
+      "3.12"
+    ],
+    "公开日期": "2025年03月14日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar EDR",
+    "CVE编号": "CVE-2024-45638",
+    "漏洞描述": "IBM Security QRadar 3.12 EDR stores user credentials in plain text which can be read by a local privileged user.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7185938"
+    ],
+    "受影响版本": [
+      "3.12"
+    ],
+    "公开日期": "2025年03月14日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Network Packet Capture",
+    "CVE编号": "CVE-2024-31905",
+    "漏洞描述": "IBM QRadar Network Packet Capture 7.5 could allow a remote attacker to obtain sensitive information, caused by the failure to properly enable HTTP Strict Transport Security. An attacker could exploit this vulnerability to obtain sensitive information using man in the middle techniques.  IBM X-Force ID:  289858.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7160961",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/289858"
+    ],
+    "受影响版本": [
+      "7.5"
+    ],
+    "公开日期": "2024年08月15日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2024-28799",
+    "漏洞描述": "IBM QRadar Suite Software 1.10.12.0 through 1.10.23.0 and IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 displays sensitive data improperly to a local privileged user, in non default configurations, during back-end commands which may result in the unexpected disclosure of this information.  IBM X-Force ID:  287173.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7165488",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/287173"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2024年08月14日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2024-28786",
+    "漏洞描述": "IBM QRadar SIEM 7.5 transmits sensitive or security-critical data in cleartext in a communication channel that could be obtained by an unauthorized actor using man in the middle techniques.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7173420"
+    ],
+    "受影响版本": [
+      "7.5"
+    ],
+    "公开日期": "2025年01月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2024-28784",
+    "漏洞描述": "IBM QRadar SIEM 7.5 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session.  IBM X-Force ID:  285893.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://https://www.ibm.com/support/pages/node/7145260",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/285893"
+    ],
+    "受影响版本": [
+      "7.5"
+    ],
+    "公开日期": "2024年03月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2024-28782",
+    "漏洞描述": "IBM QRadar Suite Software 1.10.12.0 through 1.10.18.0 and IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 stores user credentials in plain clear text which can be read by an authenticated user.  IBM X-Force ID:  285698.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7145683",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/285698"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2024年04月03日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2024-27269",
+    "漏洞描述": "IBM QRadar SIEM 7.5 could allow a privileged user to configure user management that would disclose unintended sensitive information across tenants.  IBM X-Force ID:  284575.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7150684",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/284575"
+    ],
+    "受影响版本": [
+      "7.5"
+    ],
+    "公开日期": "2024年05月10日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2024-25024",
+    "漏洞描述": "IBM QRadar Suite Software 1.10.12.0 through 1.10.23.0 and IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 stores user credentials in plain clear text which can be read by a local user.  IBM X-Force ID:  281430.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7165488",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/281430"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2024年08月15日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2024-25023",
+    "漏洞描述": "IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 and IBM QRadar Suite Software 1.10.12.0 through 1.10.22.0 stores potentially sensitive information in log files that could be read by a local user.  IBM X-Force ID:  281429.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7159768",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/281429"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2024年07月09日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Products",
+    "CVE编号": "CVE-2024-22355",
+    "漏洞描述": "IBM QRadar Suite Products 1.10.12.0 through 1.10.18.0 and IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 does not require that users should have strong passwords by default, which makes it easier for attackers to compromise user accounts.  IBM X-Force ID:  280781.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7129328",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/280781"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2024年03月03日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2024-22337",
+    "漏洞描述": "IBM QRadar Suite 1.10.12.0 through 1.10.17.0 and IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 stores potentially sensitive information in log files that could be read by a local user.  IBM X-Force ID:  279977.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7118642",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/279977"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2024年02月17日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2024-22336",
+    "漏洞描述": "IBM QRadar Suite 1.10.12.0 through 1.10.17.0 and IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 stores potentially sensitive information in log files that could be read by a local user.  IBM X-Force ID:  279976.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7118642",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/279976"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2024年02月17日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2024-22335",
+    "漏洞描述": "IBM QRadar Suite 1.10.12.0 through 1.10.17.0 and IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 stores potentially sensitive information in log files that could be read by a local user.  IBM X-Force ID:  279975.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7118642",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/279975"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2024年02月17日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2023-50961",
+    "漏洞描述": "IBM QRadar SIEM 7.5 is vulnerable to stored cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session.  IBM X-Force ID:  275939.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7145262",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/275939"
+    ],
+    "受影响版本": [
+      "7.5"
+    ],
+    "公开日期": "2024年03月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2023-50951",
+    "漏洞描述": "IBM QRadar Suite 1.10.12.0 through 1.10.17.0 and IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 in some circumstances will log some sensitive information about invalid authorization attempts.  IBM X-Force ID:  275747.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7118604",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/275747"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2024年02月17日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2023-50950",
+    "漏洞描述": "IBM QRadar SIEM 7.5 could disclose sensitive email information in responses from offense rules.  IBM X-Force ID:  275709.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7108657",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/275709"
+    ],
+    "受影响版本": [
+      "7.5"
+    ],
+    "公开日期": "2024年01月17日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2023-50949",
+    "漏洞描述": "IBM QRadar SIEM 7.5 could allow an unauthorized user to perform unauthorized actions due to improper certificate validation.  IBM X-Force ID:  275706.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7147933",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/275706"
+    ],
+    "受影响版本": [
+      "7.5"
+    ],
+    "公开日期": "2024年04月11日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Products",
+    "CVE编号": "CVE-2023-47742",
+    "漏洞描述": "IBM QRadar Suite Products 1.10.12.0 through 1.10.18.0 and IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 could disclose sensitive information using man in the middle techniques due to not correctly enforcing all aspects of certificate validation in some circumstances.  IBM X-Force ID:  272533.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7129328",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/272533"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2024年03月03日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2023-47731",
+    "漏洞描述": "IBM QRadar Suite Software 1.10.12.0 through 1.10.19.0 and IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 is vulnerable to stored cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session.  IBM X-Force ID:  272203.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://https://www.ibm.com/support/pages/node/7148994",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/272203"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2024年04月23日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2023-47728",
+    "漏洞描述": "IBM QRadar Suite Software 1.10.12.0 through 1.10.22.0 and IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 could allow a remote attacker to obtain sensitive information when a detailed technical error message is returned in the request.  This information could be used in further attacks against the system.  IBM X-Force ID:  272201.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7161427",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/272201"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2024年08月16日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Cloud Pak for Security",
+    "CVE编号": "CVE-2023-47727",
+    "漏洞描述": "IBM Cloud Pak for Security 1.10.0.0 through 1.10.11.0 and IBM QRadar Suite Software 1.10.12.0 through 1.10.20.0 could allow an authenticated user to modify dashboard parameters due to improper input validation.  IBM X-Force ID:  272089.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7149968",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/272089"
+    ],
+    "受影响版本": [
+      "1.10.0.0"
+    ],
+    "公开日期": "2024年05月02日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2023-47726",
+    "漏洞描述": "IBM QRadar Suite Software 1.10.12.0 through 1.10.21.0 and IBM Cloud Pak for Security 1.10.12.0 through 1.10.21.0 could allow an authenticated user to execute certain arbitrary commands due to improper input validation.  IBM X-Force ID:  272087.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://https://www.ibm.com/support/pages/node/7157750",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/272087"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2024年06月18日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2023-47146",
+    "漏洞描述": "IBM Qradar SIEM 7.5 could allow a privileged user to obtain sensitive domain information due to data being misidentified.  IBM X-Force ID:  270372.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://https://www.ibm.com/support/pages/node/7099297",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/270372"
+    ],
+    "受影响版本": [
+      "7.5"
+    ],
+    "公开日期": "2023年12月19日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "IBM QRadar SIEM",
+    "CVE编号": "CVE-2023-43057",
+    "漏洞描述": "IBM QRadar SIEM 7.5.0 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session.  IBM X-Force ID:  267484.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7070736",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/267484"
+    ],
+    "受影响版本": [
+      "7.5.0"
+    ],
+    "公开日期": "2023年11月11日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2023-43041",
+    "漏洞描述": "IBM QRadar SIEM 7.5 is vulnerable to information exposure allowing a delegated Admin tenant user with a specific domain security profile assigned to see data from other domains.  This vulnerability is due to an incomplete fix for CVE-2022-34352.  IBM X-Force ID:  266808.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7060803",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/266808"
+    ],
+    "受影响版本": [
+      "7.5"
+    ],
+    "公开日期": "2023年10月29日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2023-40367",
+    "漏洞描述": "IBM QRadar SIEM 7.5.0 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session.  IBM X-Force ID:  263376.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7049133",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/263376"
+    ],
+    "受影响版本": [
+      "7.5.0"
+    ],
+    "公开日期": "2023年10月14日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar WinCollect Agent",
+    "CVE编号": "CVE-2023-38736",
+    "漏洞描述": "IBM QRadar WinCollect Agent 10.0 through 10.1.6, when installed to run as ADMIN or SYSTEM, is vulnerable to a local escalation of privilege attack that a normal user could utilize to gain SYSTEM permissions.  IBM X-Force ID:  262542.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7030703",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/262542"
+    ],
+    "受影响版本": [
+      "10.0"
+    ],
+    "公开日期": "2023年09月08日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "SOAR QRadar Plugin App",
+    "CVE编号": "CVE-2023-38263",
+    "漏洞描述": "IBM SOAR QRadar Plugin App 1.0 through 5.0.3 could allow an authenticated user to perform unauthorized actions due to improper access controls.  IBM X-Force ID:  260577.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7111679",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/260577"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2024年02月02日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "SOAR QRadar Plugin App",
+    "CVE编号": "CVE-2023-38020",
+    "漏洞描述": "IBM SOAR QRadar Plugin App 1.0 through 5.0.3 could allow an authenticated user to manipulate output written to log files.  IBM X-Force ID:  260576.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7111679",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/260576"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2024年02月02日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "SOAR QRadar Plugin App",
+    "CVE编号": "CVE-2023-38019",
+    "漏洞描述": "IBM SOAR QRadar Plugin App 1.0 through 5.0.3 could allow a remote attacker to traverse directories on the system. An attacker could send a specially crafted URL request containing \"dot dot\" sequences (/../) to view arbitrary files on the system.  IBM X-Force ID:  260575.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7111679",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/260575"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2024年02月02日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Security QRadar EDR",
+    "CVE编号": "CVE-2023-35006",
+    "漏洞描述": "IBM Security QRadar EDR 3.12 is vulnerable to HTML injection. A remote attacker could inject malicious HTML code, which when viewed, would be executed in the victim's Web browser within the security context of the hosting site.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7159770"
+    ],
+    "受影响版本": [
+      "3.12"
+    ],
+    "公开日期": "2024年07月10日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Security QRadar EDR",
+    "CVE编号": "CVE-2023-33860",
+    "漏洞描述": "IBM Security QRadar EDR 3.12 does not set the secure attribute on authorization tokens or session cookies. Attackers may be able to get the cookie values by sending a http:// link to a user or by planting this link in a site the user goes to. The cookie will be sent to the insecure link and the attacker can then obtain the cookie value by snooping the traffic.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7159770"
+    ],
+    "受影响版本": [
+      "3.12"
+    ],
+    "公开日期": "2024年07月10日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Security QRadar EDR",
+    "CVE编号": "CVE-2023-33859",
+    "漏洞描述": "IBM Security QRadar EDR 3.12 could disclose sensitive information due to an observable login response discrepancy.  IBM X-Force ID:  257697.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7159770",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/257697"
+    ],
+    "受影响版本": [
+      "3.12"
+    ],
+    "公开日期": "2024年07月10日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2023-30994",
+    "漏洞描述": "IBM QRadar SIEM 7.5.0 uses weaker than expected cryptographic algorithms that could allow an attacker to decrypt highly sensitive information.  IBM X-Force ID:  254138",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7049133",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/254138"
+    ],
+    "受影响版本": [
+      "7.5.0"
+    ],
+    "公开日期": "2023年10月14日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar WinCollect Agent",
+    "CVE编号": "CVE-2023-26279",
+    "漏洞描述": "\nIBM QRadar WinCollect Agent 10.0 through 10.1.7 could allow a local user to perform unauthorized actions due to improper encoding.  IBM X-Force ID:  248160.\n\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7081403",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/213551"
+    ],
+    "受影响版本": [
+      "10.0"
+    ],
+    "公开日期": "2023年11月23日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar WinCollect Agent",
+    "CVE编号": "CVE-2023-26278",
+    "漏洞描述": "IBM QRadar WinCollect Agent 10.0 through 10.1.3 could allow a local authenticated attacker to gain elevated privileges on the system.  IBM X-Force ID:  248158.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6999341",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/248158"
+    ],
+    "受影响版本": [
+      "10.0"
+    ],
+    "公开日期": "2023年05月31日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar WinCollect Agent",
+    "CVE编号": "CVE-2023-26277",
+    "漏洞描述": "IBM QRadar WinCollect Agent 10.0 though 10.1.3 could allow a local user to execute commands on the system due to execution with unnecessary privileges.  IBM X-Force ID:  248156.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6999343",
+      "https://https://exchange.xforce.ibmcloud.com/vulnerabilities/248156"
+    ],
+    "受影响版本": [
+      "10.0"
+    ],
+    "公开日期": "2023年05月31日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Security QRadar SIEM",
+    "CVE编号": "CVE-2023-26276",
+    "漏洞描述": "IBM QRadar SIEM 7.5.0 uses weaker than expected cryptographic algorithms that could allow an attacker to decrypt highly sensitive information.  IBM X-Force ID:  248147.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7006081",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/248147"
+    ],
+    "受影响版本": [
+      "7.5.0"
+    ],
+    "公开日期": "2023年06月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Security QRadar SIEM",
+    "CVE编号": "CVE-2023-26274",
+    "漏洞描述": "\nIBM QRadar SIEM 7.5.0 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 248144.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7006085",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/248144"
+    ],
+    "受影响版本": [
+      "7.5.0"
+    ],
+    "公开日期": "2023年06月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Security QRadar SIEM",
+    "CVE编号": "CVE-2023-26273",
+    "漏洞描述": "IBM QRadar SIEM 7.5.0 could allow an authenticated user to perform unauthorized actions due to hazardous input validation.  IBM X-Force ID:  248134.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7006083",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/248134"
+    ],
+    "受影响版本": [
+      "7.5.0"
+    ],
+    "公开日期": "2023年06月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Security QRadar SIEM",
+    "CVE编号": "CVE-2023-22875",
+    "漏洞描述": "\nIBM QRadar SIEM 7.4 and 7.5copies certificate key files used for SSL/TLS in the QRadar web user interface to managed hosts in the deployment that do not require that key. IBM X-Force ID: 244356.\n\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6855643",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/244356"
+    ],
+    "受影响版本": [
+      "7.4, 7.5"
+    ],
+    "公开日期": "2023年01月17日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar WinCollect Agent ",
+    "CVE编号": "CVE-2022-43880",
+    "漏洞描述": "IBM QRadar WinCollect Agent 10.0 through 10.1.2 could allow a privileged user to cause a denial of service.  IBM X-Force ID:  240151.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6980843",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/240151"
+    ],
+    "受影响版本": [
+      "10.0"
+    ],
+    "公开日期": "2024年03月03日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2022-43863",
+    "漏洞描述": "IBM QRadar SIEM 7.4 and 7.5 is vulnerable to privilege escalation, allowing a user with some admin capabilities to gain additional admin capabilities.  IBM X-Force ID:  239425.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6964862",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/239425"
+    ],
+    "受影响版本": [
+      "7.4, 7.5"
+    ],
+    "公开日期": "2023年03月22日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Cloud Pak for Security",
+    "CVE编号": "CVE-2022-38386",
+    "漏洞描述": "IBM Cloud Pak for Security (CP4S) 1.10.0.0 through 1.10.11.0 and IBM QRadar Suite for Software 1.10.12.0 through 1.10.19.0 does not set the SameSite attribute for sensitive cookies which could allow an attacker to obtain sensitive information using man-in-the-middle techniques.  IBM X-Force ID:  233778.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7149811",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/233778"
+    ],
+    "受影响版本": [
+      "1.10.0.0"
+    ],
+    "公开日期": "2024年05月01日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Cloud Pak for Security",
+    "CVE编号": "CVE-2022-38383",
+    "漏洞描述": "IBM Cloud Pak for Security (CP4S) 1.10.0.0 through 1.10.11.0 and IBM QRadar Software Suite 1.10.12.0 through 1.10.21.0 allows web pages to be stored locally which can be read by another user on the system.  IBM X-Force ID:  233673.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7158986",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/233673"
+    ],
+    "受影响版本": [
+      "1.10.0.0"
+    ],
+    "公开日期": "2024年06月28日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Suite Software",
+    "CVE编号": "CVE-2022-38382",
+    "漏洞描述": "IBM Cloud Pak for Security (CP4S) 1.10.0.0 through 1.10.11.0 and IBM QRadar Suite Software 1.10.12.0 through 1.10.23.0 does not invalidate session after logout which could allow another authenticated user to obtain sensitive information.  IBM X-Force ID:  233672.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7165286",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/233672"
+    ],
+    "受影响版本": [
+      "1.10.12.0"
+    ],
+    "公开日期": "2024年08月13日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Cloud Pak for Security",
+    "CVE编号": "CVE-2022-36777",
+    "漏洞描述": "IBM Cloud Pak for Security (CP4S) 1.10.0.0 through 1.10.11.0 and IBM QRadar Suite Software 1.10.12.0 through 1.10.16.0could allow an authenticated user to obtain sensitive version information that could aid in further attacks against the system.  IBM X-Force ID:  233665.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7080058",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/233665"
+    ],
+    "受影响版本": [
+      "1.10.0.0"
+    ],
+    "公开日期": "2023年11月22日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar User Behavior Analytics",
+    "CVE编号": "CVE-2022-36771",
+    "漏洞描述": "IBM QRadar User Behavior Analytics could allow an authenticated user to obtain sensitive information from that they should not have access to. IBM X-Force ID: 232791.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6824197",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/232791"
+    ],
+    "受影响版本": [
+      "4.1.8"
+    ],
+    "公开日期": "2022年09月28日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Security QRadar SIEM",
+    "CVE编号": "CVE-2022-34352",
+    "漏洞描述": "\nIBM QRadar SIEM 7.5.0 is vulnerable to information exposure allowing a delegated Admin tenant user with a specific domain security profile assigned to see data from other domains.  IBM X-Force ID:  230403.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7006057",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/230403"
+    ],
+    "受影响版本": [
+      "7.5.0"
+    ],
+    "公开日期": "2023年06月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2022-34351",
+    "漏洞描述": "IBM QRadar SIEM 7.4 and 7.5 is vulnerable to information exposure allowing a non-tenant user with a specific domain security profile assigned to see some data from other domains.  IBM X-Force ID:  230402.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6955059",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/230402"
+    ],
+    "受影响版本": [
+      "7.4.0",
+      "7.5.0"
+    ],
+    "公开日期": "2023年02月17日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2022-30613",
+    "漏洞描述": "IBM QRadar SIEM 7.4 and 7.5 could disclose sensitive information via a local service to a privileged user. IBM X-Force ID: 227366.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6826693",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/227366"
+    ],
+    "受影响版本": [
+      "7.4.0",
+      "7.5.0"
+    ],
+    "公开日期": "2022年10月07日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2022-22480",
+    "漏洞描述": "IBM QRadar SIEM 7.4 and 7.5 data node rebalancing does not function correctly when using encrypted hosts which could result in information disclosure. IBM X-Force ID: 225889.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6826695",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/225889"
+    ],
+    "受影响版本": [
+      "7.4.0",
+      "7.5.0"
+    ],
+    "公开日期": "2022年10月07日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2022-22424",
+    "漏洞描述": "IBM QRadar SIEM 7.3, 7.4, and 7.5 could allow a local user to obtain sensitive information from the TLS key file due to incorrect file permissions. IBM X-Force ID: 223597.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6605433",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/223597"
+    ],
+    "受影响版本": [
+      "7.3.0",
+      "7.4.0",
+      "7.5.0",
+      "7.3.3.FixPack11",
+      "7.4.3.FixPack5",
+      "7.5.0.UpdatePack1"
+    ],
+    "公开日期": "2022年07月20日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2022-22345",
+    "漏洞描述": "IBM QRadar 7.3, 7.4, and 7.5 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 220041.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6574453",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/220041"
+    ],
+    "受影响版本": [
+      "7.3.3",
+      "7.4.3",
+      "7.5.0"
+    ],
+    "公开日期": "2022年04月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2022-22320",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 218367.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6584451",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/218367"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2022年05月11日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Data Synchronization App",
+    "CVE编号": "CVE-2022-22313",
+    "漏洞描述": "IBM QRadar Data Synchronization App 1.0 through 3.0.1 uses weaker than expected cryptographic algorithms that could allow an attacker to decrypt highly sensitive information.  IBM X-Force ID:  217370.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6980797",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/217370"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2023年05月06日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-39088",
+    "漏洞描述": "IBM QRadar SIEM 7.3, 7.4, and 7.5 is vulnerable to local privilege escalation if this could be combined with other unknown vulnerabilities then privilege escalation could be performed. IBM X-Force ID: 216111.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6607129",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/216111"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4",
+      "7.5"
+    ],
+    "公开日期": "2022年07月28日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-39041",
+    "漏洞描述": "IBM QRadar SIEM 7.3, 7.4, and 7.5 may be vulnerable to partial denial of service attack, resulting in some protocols not listening to specified ports. IBM X-Force ID: 214028.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6602749",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/214028"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4",
+      "7.5"
+    ],
+    "公开日期": "2022年07月12日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar WinCollect Agent",
+    "CVE编号": "CVE-2021-39008",
+    "漏洞描述": "\nIBM QRadar WinCollect Agent 10.0 through 10.1.7 could allow a privileged user to obtain sensitive information due to missing best practices. IBM X-Force ID: 213551.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7081403",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/213551"
+    ],
+    "受影响版本": [
+      "10.0"
+    ],
+    "公开日期": "2023年11月23日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar WinCollect Agent",
+    "CVE编号": "CVE-2021-39006",
+    "漏洞描述": "IBM QRadar WinCollect Agent 10.0 and 10.0.1 could allow an attacker to obtain sensitive information due to missing best practices. IBM X-Force ID: 213549.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6596947",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/213549"
+    ],
+    "受影响版本": [
+      "10.0",
+      "10.0.1"
+    ],
+    "公开日期": "2022年06月21日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-38939",
+    "漏洞描述": "IBM QRadar SIEM 7.3, 7.4, and 7.5 stores potentially sensitive information in log files that could be read by an user with access to creating domains. IBM X-Force ID: 211037.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6574787",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/211037"
+    ],
+    "受影响版本": [
+      "7.3.3",
+      "7.4.3",
+      "7.5.0"
+    ],
+    "公开日期": "2022年04月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-38936",
+    "漏洞描述": "IBM QRadar SIEM 7.3, 7.4, and 7.5 could disclose highly sensitive information to a privileged user. IBM X-Force ID: 210893.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6605429",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/210893"
+    ],
+    "受影响版本": [
+      "7.3.0",
+      "7.4.0",
+      "7.5.0",
+      "7.3.3.FixPack11",
+      "7.4.3.FixPack5",
+      "7.5.0.UpdatePack1"
+    ],
+    "公开日期": "2022年07月20日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-38919",
+    "漏洞描述": "IBM QRadar SIEM 7.3, 7.4, and 7.5 in some senarios may reveal authorized service tokens to other QRadar users. IBM X-Force ID: 210021",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6574787",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/210021"
+    ],
+    "受影响版本": [
+      "7.3.3",
+      "7.4.3",
+      "7.5.0"
+    ],
+    "公开日期": "2022年04月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Qradar Advisor",
+    "CVE编号": "CVE-2021-38896",
+    "漏洞描述": "IBM QRadar Advisor 2.5 through 2.6.1 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 209566.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6506461",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/209566"
+    ],
+    "受影响版本": [
+      "2.5",
+      "2.6.1"
+    ],
+    "公开日期": "2021年10月20日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-38878",
+    "漏洞描述": "IBM QRadar 7.3, 7.4, and 7.5 could allow a malicious actor to impersonate an actor due to key exchange without entity authentication. IBM X-Force ID: 208756.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6574787",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/208756"
+    ],
+    "受影响版本": [
+      "7.3.3",
+      "7.4.3",
+      "7.5.0"
+    ],
+    "公开日期": "2022年04月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-38874",
+    "漏洞描述": "IBM QRadar SIEM 7.3, 7.4, and 7.5 allows for users to access information across tenant and domain boundaries in some situations. IBM X-Force ID: 208397.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6574787",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/208397"
+    ],
+    "受影响版本": [
+      "7.3.3",
+      "7.4.3",
+      "7.5.0"
+    ],
+    "公开日期": "2022年04月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-38869",
+    "漏洞描述": "IBM QRadar SIEM 7.3, 7.4, and 7.5 in some situations may not automatically log users out after they exceede their idle timeout. IBM X-Force ID: 208341.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6574787",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/208341"
+    ],
+    "受影响版本": [
+      "7.3.3",
+      "7.4.3",
+      "7.5.0"
+    ],
+    "公开日期": "2022年04月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-29880",
+    "漏洞描述": "IBM QRadar SIEM 7.4.3 GA - 7.4.3 Fix Pack 1 when using domains or multi-tenancy could be vulnerable to information disclosure between tenants by routing SIEM data to the incorrect domain. IBM X-Force ID: 206979.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6480957",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/206979"
+    ],
+    "受影响版本": [
+      "7.4.3"
+    ],
+    "公开日期": "2021年08月13日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-29863",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 is vulnerable to server side request forgery (SSRF). This may allow an authenticated attacker to send unauthorized requests from the system, potentially leading to network enumeration or facilitating other attacks. This vulnerability is due to an incomplete fix for CVE-2020-4786. IBM X-Force ID: 206087.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6520490",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/206087"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2021年12月01日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-29849",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 205281.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6520476",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/205281"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2021年12月01日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-29779",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 could allow an attacker to obtain sensitive information due to the server performing key exchange without entity authentication on inter-host communications using man in the middle techniques. IBM X-Force ID: 203033.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6520484",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/203033"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2021年12月01日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-29776",
+    "漏洞描述": "IBM QRadar SIEM 7.3, 7.4, and 7.5 could allow an authenticated user to obtain sensitive information from another user's dashboard providing the dashboard ID of that user. IBM X-Force ID: 203030.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6574787",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/203030"
+    ],
+    "受影响版本": [
+      "7.3.3",
+      "7.4.3",
+      "7.5.0"
+    ],
+    "公开日期": "2022年04月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar User Behavior Analytics",
+    "CVE编号": "CVE-2021-29757",
+    "漏洞描述": "IBM QRadar User Behavior Analytics 4.1.1 is vulnerable to cross-site request forgery which could allow an attacker to execute malicious and unauthorized actions transmitted from a user that the website trusts. IBM X-Force ID: 202168.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6477204",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/202168"
+    ],
+    "受影响版本": [
+      "4.1.1"
+    ],
+    "公开日期": "2021年08月02日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-29755",
+    "漏洞描述": "IBM QRadar SIEM 7.3, 7.4, and 7.5 does not preform proper certificate validation for some inter-host communications. IBM X-Force ID: 202015.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6605431",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/202015"
+    ],
+    "受影响版本": [
+      "7.3.0",
+      "7.4.0",
+      "7.5.0",
+      "7.3.3.FixPack11",
+      "7.4.3.FixPack5",
+      "7.5.0.UpdatePack1"
+    ],
+    "公开日期": "2022年07月20日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-29750",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 uses weaker than expected cryptographic algorithms that could allow an attacker to decrypt highly sensitive information. IBM X-Force ID: 201778.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6488945",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/201778"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2021年09月15日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-20429",
+    "漏洞描述": "IBM QRadar User Behavior Analytics 1.0.0 through 4.1.0 could disclose sensitive information due an overly permissive cross-domain policy. IBM X-Force ID: 196334.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6453107",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/196334"
+    ],
+    "受影响版本": [
+      "1.0.0",
+      "4.1.1"
+    ],
+    "公开日期": "2021年05月14日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-20401",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 contains hard-coded credentials, such as a password or cryptographic key, which it uses for its own inbound authentication, outbound communication to external components, or encryption of internal data. IBM X-Force ID: 196075.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6449682",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/196075"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2021年05月05日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-20400",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 uses weaker than expected cryptographic algorithms that could allow an attacker to decrypt highly sensitive information. IBM X-Force ID: 196074.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6520488",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/196074"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2021年12月01日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-20399",
+    "漏洞描述": "IBM Qradar SIEM 7.3.0 to 7.3.3 Patch 8 and 7.4.0 to 7.4.3 GA is vulnerable to an XML External Entity Injection (XXE) attack when processing XML data. A remote attacker could exploit this vulnerability to expose sensitive information or consume memory resources. IBM X-Force ID: 196073.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6475263",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/196073"
+    ],
+    "受影响版本": [
+      "7.3.0",
+      "7.4.0",
+      "7.4.3",
+      "7.3.3.Patch.8"
+    ],
+    "公开日期": "2021年07月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-20397",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 196017.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6449688",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/196017"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2021年05月05日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Analyst Workflow",
+    "CVE编号": "CVE-2021-20396",
+    "漏洞描述": "IBM QRadar Analyst Workflow App 1.0 through 1.18.0 for IBM QRadar SIEM allows web pages to be stored locally which can be read by another user on the system. IBM X-Force ID: 196009.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6462585",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/196009"
+    ],
+    "受影响版本": [
+      "1.0",
+      "1.18.0"
+    ],
+    "公开日期": "2021年06月11日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-20393",
+    "漏洞描述": "IBM QRadar User Behavior Analytics 1.0.0 through 4.1.0 could allow a remote attacker to obtain sensitive information when a detailed technical error message is returned in the browser. This information could be used in further attacks against the system. IBM X-Force ID: 196001.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6453109",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/196001"
+    ],
+    "受影响版本": [
+      "1.0.0",
+      "4.1.1"
+    ],
+    "公开日期": "2021年05月14日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-20392",
+    "漏洞描述": "IBM QRadar User Behavior Analytics 1.0.0 through 4.0.1 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6453105",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/196000"
+    ],
+    "受影响版本": [
+      "1.0.0",
+      "4.1.1"
+    ],
+    "公开日期": "2021年05月14日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-20391",
+    "漏洞描述": "IBM QRadar User Behavior Analytics 1.0.0 through 4.1.0 allows web pages to be stored locally which can be read by another user on the system. IBM X-Force ID: 195999.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6453103",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/195999"
+    ],
+    "受影响版本": [
+      "1.0.0",
+      "4.1.1"
+    ],
+    "公开日期": "2021年05月14日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Qradar Advisor",
+    "CVE编号": "CVE-2021-20380",
+    "漏洞描述": "IBM QRadar Advisor With Watson App 1.1 through 2.5 as used on IBM QRadar SIEM 7.4 could allow a remote user to obtain sensitive information from HTTP requests that could aid in further attacks against the system. IBM X-Force ID: 195712.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6457941",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/195712"
+    ],
+    "受影响版本": [
+      "1.1",
+      "2.5"
+    ],
+    "公开日期": "2021年06月03日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2021-20337",
+    "漏洞描述": "IBM QRadar SIEM 7.3.0 to 7.3.3 Patch 8 and 7.4.0 to 7.4.3 GA uses weaker than expected cryptographic algorithms that could allow an attacker to decrypt highly sensitive information. IBM X-Force ID: 194448.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6474847",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/194448"
+    ],
+    "受影响版本": [
+      "7.3.0",
+      "7.4.0",
+      "7.4.3",
+      "7.3.Patch.8"
+    ],
+    "公开日期": "2021年07月26日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-5032",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 in some configurations may be vulnerable to a temporary denial of service attack when sent particular payloads. IBM X-Force ID: 194178.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6411014",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/194178"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2021年02月04日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-5013",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 may vulnerable to a XML External Entity Injection (XXE) attack when processing XML data. A remote attacker could exploit this vulnerability to expose sensitive information or consume memory resources. IBM X-Force ID: 193245.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6449690",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/193245"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2021年05月05日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4993",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 when decompressing or verifying signature of zip files processes data in a way that may be vulnerable to path traversal attacks. IBM X-Force ID: 192905.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6449672",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/192905"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2021年05月05日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar",
+    "CVE编号": "CVE-2020-4980",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 uses less secure methods for protecting data in transit between hosts when encrypt host connections is not enabled as well as data at rest. IBM X-Force ID: 192539.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6472891",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/192539"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2021年07月16日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4979",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 is vulnerable to insecure inter-deployment communication. An attacker that is able to comprimise or spoof traffic between hosts may be able to execute arbitrary commands. IBM X-Force D: 192538.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6449668",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/192538"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2021年05月05日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4932",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 contains hard-coded credentials, such as a password or cryptographic key, which it uses for its own inbound authentication, outbound communication to external components, or encryption of internal data. IBM X-Force ID: 191748.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6449682",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/191748"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2021年05月05日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4929",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 191706.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6449674",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/191706"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2021年05月05日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4888",
+    "漏洞描述": "IBM QRadar SIEM 7.4.0 to 7.4.2 Patch 1 and 7.3.0 to 7.3.3 Patch 7 could allow a remote attacker to execute arbitrary commands on the system, caused by insecure deserialization of user-supplied content by the Java deserialization function. By sending a malicious serialized Java object, an attacker could exploit this vulnerability to execute arbitrary commands on the system. IBM X-Force ID: 190912.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6409306",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/190912"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4",
+      "7.3.3.Patch.7",
+      "7.4.2.Patch.1"
+    ],
+    "公开日期": "2021年01月28日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4883",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 could disclose sensitive information about other domains which could be used in further attacks against the system. IBM X-Force ID: 190907.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6449678",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/190907"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2021年05月05日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4789",
+    "漏洞描述": "IBM QRadar SIEM 7.4.2 GA to 7.4.2 Patch 1, 7.4.0 to 7.4.1 Patch 1, and 7.3.0 to 7.3.3 Patch 5 could allow a remote attacker to traverse directories on the system. An attacker could send a specially-crafted URL request containing \"dot dot\" sequences (/../) to view arbitrary files on the system. IBM X-Force ID: 189302.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6408862",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/189302"
+    ],
+    "受影响版本": [
+      "7.3.0",
+      "7.4.0",
+      "7.3.3 Patch 5",
+      "7.4.1 Patch 1",
+      "7.4.2.GA",
+      "7.4.2 Patch 1"
+    ],
+    "公开日期": "2021年01月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4787",
+    "漏洞描述": "IBM QRadar SIEM 7.4.2 GA to 7.4.2 Patch 1, 7.4.0 to 7.4.1 Patch 1, and 7.3.0 to 7.3.3 Patch 5 is vulnerable to server side request forgery (SSRF). This may allow an authenticated attacker to send unauthorized requests from the system, potentially leading to network enumeration or facilitating other attacks. IBM X-Force ID: 189224.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6408864",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/189224"
+    ],
+    "受影响版本": [
+      "7.3.0",
+      "7.4.0",
+      "7.3.3 Patch 5",
+      "7.4.1 Patch 1",
+      "7.4.2.GA",
+      "7.4.2 Patch 1"
+    ],
+    "公开日期": "2021年01月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4786",
+    "漏洞描述": "IBM QRadar SIEM 7.4.2 GA to 7.4.2 Patch 1, 7.4.0 to 7.4.1 Patch 1, and 7.3.0 to 7.3.3 Patch 5 is vulnerable to server side request forgery (SSRF). This may allow an authenticated attacker to send unauthorized requests from the system, potentially leading to network enumeration or facilitating other attacks. IBM X-Force ID: 189221.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6408866",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/189221"
+    ],
+    "受影响版本": [
+      "7.3.0",
+      "7.4.0",
+      "7.3.3 Patch 5",
+      "7.4.1 Patch 1",
+      "7.4.2.GA",
+      "7.4.2 Patch 1"
+    ],
+    "公开日期": "2021年01月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4513",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 182368.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6246131",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/182368"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2020年07月14日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4512",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 could allow a remote privileged user to execute commands.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6246229",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/182367"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2020年07月14日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4511",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 could allow an authenticated user to cause a denial of service of the qflow process by sending a malformed sflow command. IBM X-Force ID: 182366.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6246135",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/182366"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2020年07月14日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4510",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 is vulnerable to an XML External Entity Injection (XXE) attack when processing XML data. A remote attacker could exploit this vulnerability to expose sensitive information or consume memory resources. IBM X-Force ID: 182365.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6246133",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/182365"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2020年07月14日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4509",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 is vulnerable to an XML External Entity Injection (XXE) attack when processing XML data. A remote attacker could exploit this vulnerability to expose sensitive information or consume memory resources. IBM X-Force ID: 182364.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6220154",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/182364"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2020年06月04日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Wincollect",
+    "CVE编号": "CVE-2020-4486",
+    "漏洞描述": "IBM QRadar 7.2.0 thorugh 7.2.9 could allow an authenticated user to overwrite or delete arbitrary files due to a flaw after WinCollect installation. IBM X-Force ID: 181861.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6257885",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/181861"
+    ],
+    "受影响版本": [
+      "7.2.0",
+      "7.2.9"
+    ],
+    "公开日期": "2020年08月11日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Wincollect",
+    "CVE编号": "CVE-2020-4485",
+    "漏洞描述": "IBM QRadar 7.2.0 through 7.2.9 could allow an authenticated user to disable the Wincollect service which could aid an attacker in bypassing security mechanisms in future attacks. IBM X-Force ID: 181860.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6257885",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/181860"
+    ],
+    "受影响版本": [
+      "7.2.0",
+      "7.2.9"
+    ],
+    "公开日期": "2020年08月11日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Qradar Advisor",
+    "CVE编号": "CVE-2020-4408",
+    "漏洞描述": "The IBM QRadar Advisor 1.1 through 2.5.2 with Watson App for IBM QRadar SIEM does not adequately mask all passwords during input, which could be obtained by a physical attacker nearby. IBM X-Force ID: 179536.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6252401",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/179536"
+    ],
+    "受影响版本": [
+      "1.1",
+      "2.5.2"
+    ],
+    "公开日期": "2020年07月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4364",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 178961.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6246139",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/178961"
+    ],
+    "受影响版本": [
+      "7.3",
+      "7.4"
+    ],
+    "公开日期": "2020年07月14日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Qradar",
+    "CVE编号": "CVE-2020-4294",
+    "漏洞描述": "IBM QRadar 7.3.0 to 7.3.3 Patch 2 is vulnerable to Server Side Request Forgery (SSRF). This may allow an authenticated attacker to send unauthorized requests from the system, potentially leading to network enumeration or facilitating other attacks. IBM X-ForceID: 176404.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6189663",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/176404",
+      "http://seclists.org/fulldisclosure/2020/Apr/35",
+      "http://packetstormsecurity.com/files/157329/QRadar-Community-Edition-7.3.1.6-Server-Side-Request-Forgery.html"
+    ],
+    "受影响版本": [
+      "7.3.3.Patch2"
+    ],
+    "公开日期": "2020年04月15日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4280",
+    "漏洞描述": "IBM QRadar SIEM 7.3 and 7.4 could allow a remote attacker to execute arbitrary commands on the system, caused by insecure deserialization of user-supplied content by the Java deserialization function. By sending a malicious serialized Java object, an attacker could exploit this vulnerability to execute arbitrary commands on the system. IBM X-Force ID: 176140.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6344079",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/176140",
+      "http://seclists.org/fulldisclosure/2020/Oct/18",
+      "http://packetstormsecurity.com/files/159589/QRadar-RemoteJavaScript-Deserialization.html"
+    ],
+    "受影响版本": [
+      "7.3.0",
+      "7.3.3.Patch.4",
+      "7.4.0",
+      "7.4.1"
+    ],
+    "公开日期": "2020年10月08日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar",
+    "CVE编号": "CVE-2020-4274",
+    "漏洞描述": "IBM QRadar 7.3.0 to 7.3.3 Patch 2 could allow an authenticated user to access data and perform unauthorized actions due to inadequate permission checks. IBM X-ForceID: 175980.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6189705",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/175980",
+      "http://seclists.org/fulldisclosure/2020/Apr/41",
+      "http://packetstormsecurity.com/files/157338/QRadar-Community-Edition-7.3.1.6-Authorization-Bypass.html"
+    ],
+    "受影响版本": [
+      "7.3.0"
+    ],
+    "公开日期": "2020年04月15日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar",
+    "CVE编号": "CVE-2020-4272",
+    "漏洞描述": "IBM QRadar 7.3.0 to 7.3.3 Patch 2 could allow a remote attacker to include arbitrary files. A remote attacker could send a specially-crafted request specify a malicious file from a remote system, which could allow the attacker to execute arbitrary code on the vulnerable server. IBM X-ForceID: 175898.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6189645",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/175898",
+      "http://seclists.org/fulldisclosure/2020/Apr/40",
+      "http://packetstormsecurity.com/files/157337/QRadar-Community-Edition-7.3.1.6-Arbitrary-Object-Instantiation.html"
+    ],
+    "受影响版本": [
+      "7.3.0"
+    ],
+    "公开日期": "2020年04月15日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Qradar",
+    "CVE编号": "CVE-2020-4271",
+    "漏洞描述": "IBM QRadar 7.3.0 to 7.3.3 Patch 2 could allow an authenticated user to send a specially crafted command which would be executed as a lower privileged user. IBM X-ForceID: 175897.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6189651",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/175897",
+      "http://seclists.org/fulldisclosure/2020/Apr/39",
+      "http://packetstormsecurity.com/files/157336/QRadar-Community-Edition-7.3.1.6-PHP-Object-Injection.html"
+    ],
+    "受影响版本": [
+      "7.3.3.Patch2"
+    ],
+    "公开日期": "2020年04月15日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Qradar",
+    "CVE编号": "CVE-2020-4270",
+    "漏洞描述": "IBM QRadar 7.3.0 to 7.3.3 Patch 2 could allow a local user to gain escalated privileges due to weak file permissions. IBM X-ForceID: 175846.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6189657",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/175846",
+      "http://seclists.org/fulldisclosure/2020/Apr/38",
+      "http://packetstormsecurity.com/files/157335/QRadar-Community-Edition-7.3.1.6-Insecure-File-Permissions.html"
+    ],
+    "受影响版本": [
+      "7.3.3.Patch2"
+    ],
+    "公开日期": "2020年04月15日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Qradar",
+    "CVE编号": "CVE-2020-4269",
+    "漏洞描述": "IBM QRadar 7.3.0 to 7.3.3 Patch 2 contains hard-coded credentials, such as a password or cryptographic key, which it uses for its own inbound authentication, outbound communication to external components, or encryption of internal data. IBM X-ForceID: 175845.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6189711",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/175845",
+      "http://seclists.org/fulldisclosure/2020/Apr/34",
+      "http://packetstormsecurity.com/files/157328/QRadar-Community-Edition-7.3.1.6-Default-Credentials.html"
+    ],
+    "受影响版本": [
+      "7.3.3.Patch2"
+    ],
+    "公开日期": "2020年04月15日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "Qradar",
+    "CVE编号": "CVE-2020-4268",
+    "漏洞描述": "IBM QRadar 7.3.0 to 7.3.3 Patch 2 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-ForceID: 175841.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6189639",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/175841"
+    ],
+    "受影响版本": [
+      "7.3.3.Patch2"
+    ],
+    "公开日期": "2020年04月15日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Network Security",
+    "CVE编号": "CVE-2020-4160",
+    "漏洞描述": "IBM QRadar Network Security 5.4.0 and 5.5.0 could allow a remote attacker to obtain sensitive information, caused by the failure to properly enable HTTP Strict Transport Security. An attacker could exploit this vulnerability to obtain sensitive information using man in the middle techniques. IBM X-Force ID: 174340.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6514403",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/174340"
+    ],
+    "受影响版本": [
+      "5.4.0",
+      "5.5.0"
+    ],
+    "公开日期": "2021年11月08日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Network Security",
+    "CVE编号": "CVE-2020-4159",
+    "漏洞描述": "IBM QRadar Network Security 5.4.0 and 5.5.0 discloses sensitive information to unauthorized users which could be used to mount further attacks against the system. IBM X-Force ID: 174339.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6602933",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/174339"
+    ],
+    "受影响版本": [
+      "5.4.0",
+      "5.5.0"
+    ],
+    "公开日期": "2022年07月12日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Network Security",
+    "CVE编号": "CVE-2020-4157",
+    "漏洞描述": "IBM QRadar Network Security 5.4.0 and 5.5.0 contains hard-coded credentials, such as a password or cryptographic key, which it uses for its own inbound authentication, outbound communication to external components, or encryption of internal data. IBM X-Force ID: 174337.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6602931",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/174337"
+    ],
+    "受影响版本": [
+      "5.4.0",
+      "5.5.0"
+    ],
+    "公开日期": "2022年07月12日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Network Security",
+    "CVE编号": "CVE-2020-4153",
+    "漏洞描述": "IBM QRadar Network Security 5.4.0 and 5.5.0 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 174269.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6514403",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/174269"
+    ],
+    "受影响版本": [
+      "5.4.0",
+      "5.5.0"
+    ],
+    "公开日期": "2021年11月08日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar Network Security",
+    "CVE编号": "CVE-2020-4152",
+    "漏洞描述": "IBM QRadar Network Security 5.4.0 and 5.5.0 transmits sensitive or security-critical data in cleartext in a communication channel that can be obtained using man in the middle techniques. IBM X-Force ID: 17467.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6514403",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/174267"
+    ],
+    "受影响版本": [
+      "5.4.0",
+      "5.5.0"
+    ],
+    "公开日期": "2021年11月08日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "入侵检测系统（IDS）",
+    "产品型号": "QRadar SIEM",
+    "CVE编号": "CVE-2020-4151",
+    "漏洞描述": "IBM QRadar SIEM 7.3.0 through 7.3.3 could allow an authenticated attacker to perform unauthorized actions due to improper input validation. IBM X-Force ID: 174201.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/6189675",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/174201"
+    ],
+    "受影响版本": [
+      "7.3.0",
+      "7.3.3"
+    ],
+    "公开日期": "2020年04月14日"
+  }
+]

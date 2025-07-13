@@ -1,0 +1,19 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "交换机",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-43318",
+    "漏洞描述": "TP-Link JetStream Smart Switch TL-SG2210P 5.0 Build 20211201 allows attackers to escalate privileges via modification of the 'tid' and 'usrlvl' values in GET requests.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/str2ver/CVE-2023-43318/tree/main",
+      "https://seclists.org/fulldisclosure/2024/Mar/9",
+      "https://seclists.org/fulldisclosure/2024/Mar/9"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年03月05日"
+  }
+]

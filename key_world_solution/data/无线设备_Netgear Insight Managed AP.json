@@ -1,0 +1,147 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-51010",
+    "漏洞描述": "Netgear R8500 v1.0.2.160, XR300 v1.0.3.78, R7000P v1.3.3.154, and R6400 v2 1.0.4.128 were discovered to contain a command injection vulnerability in the component ap_mode.cgi via the apmode_gateway parameter. This vulnerability allows attackers to execute arbitrary OS commands via a crafted request.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.netgear.com/about/security/",
+      "https://github.com/wudipjq/my_vuln/blob/main/Netgear4/vuln_48/48.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年11月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-51003",
+    "漏洞描述": "Netgear R8500 v1.0.2.160, XR300 v1.0.3.78, R7000P v1.3.3.154, and R6400 v2 1.0.4.128 were discovered to multiple stack overflow vulnerabilities in the component ap_mode.cgi via the apmode_dns1_pri and apmode_dns1_sec parameters. These vulnerabilities allow attackers to cause a Denial of Service (DoS) via a crafted POST request.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.netgear.com/about/security/",
+      "https://github.com/wudipjq/my_vuln/blob/main/Netgear4/vuln_49/49.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年11月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-35522",
+    "漏洞描述": "Netgear EX3700 ' AC750 WiFi Range Extender Essentials Edition before 1.0.0.98 contains an authenticated command injection in operating_mode.cgi via the ap_mode parameter with ap_24g_manual set to 1 and ap_24g_manual_sec set to NotNone.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/consrc/cves/blob/main/CVE-2024-35522.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年10月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-35519",
+    "漏洞描述": "Netgear EX6120 v1.0.0.68, Netgear EX6100 v1.0.2.28, and Netgear EX3700 v1.0.0.96 are vulnerable to command injection in operating_mode.cgi via the ap_mode parameter.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/consrc/cves/blob/main/CVE-2024-35519.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年10月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-38412",
+    "漏洞描述": "Netgear R6900P v1.3.3.154 was discovered to contain multiple buffer overflows via the wla_ssid and wlg_ssid parameters at ia_ap_setting.cgi.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.netgear.com/about/security/",
+      "https://github.com/FirmRec/IoT-Vulns/blob/main/netgear/nvram_ssid/README.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年08月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-36499",
+    "漏洞描述": "Netgear XR300 v1.0.3.78 was discovered to contain multiple buffer overflows via the wla_ssid and wlg_ssid parameters at genie_ap_wifi_change.cgi.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.netgear.com/about/security/",
+      "https://github.com/FirmRec/IoT-Vulns/blob/main/netgear/nvram_ssid/README.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年08月07日"
+  },
+  {
+    "设备品牌": "Zyxel",
+    "设备类型": "无线设备",
+    "产品型号": "ATP series firmware",
+    "CVE编号": "CVE-2023-34141",
+    "漏洞描述": "A command injection vulnerability in the access point (AP) management feature of the Zyxel ATP series firmware versions 5.00 through 5.36 Patch 2, USG FLEX series firmware versions 5.00 through 5.36 Patch 2,  USG FLEX 50(W) series firmware versions 5.00 through 5.36 Patch 2, USG20(W)-VPN series firmware versions 5.00 through 5.36 Patch 2, VPN series firmware versions 5.00 through 5.36 Patch 2, NXC2500 firmware versions 6.10(AAIG.0) through 6.10(AAIG.3), and NXC5500 firmware versions 6.10(AAOS.0) through 6.10(AAOS.4), could allow an unauthenticated, LAN-based attacker to execute some OS commands on an affected device if the attacker could trick an authorized administrator to add their IP address to the managed AP list in advance.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zyxel.com/global/en/support/security-advisories/zyxel-security-advisory-for-multiple-vulnerabilities-in-firewalls-and-wlan-controllers"
+    ],
+    "受影响版本": [
+      "5.00 through 5.36 Patch 2"
+    ],
+    "公开日期": "2023年07月17日"
+  },
+  {
+    "设备品牌": "SolarWinds",
+    "设备类型": "无线设备",
+    "产品型号": "NPM",
+    "CVE编号": "CVE-2021-35225",
+    "漏洞描述": "Each authenticated Orion Platform user in a MSP (Managed Service Provider) environment can view and browse all NetPath Services from all that MSP's customers. This can lead to any user having a limited insight into other customer's infrastructure and potential data cross-contamination.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://documentation.solarwinds.com/en/success_center/orionplatform/content/core-secure-configuration.htm",
+      "https://support.solarwinds.com/SuccessCenter/s/article/NPM-2020-2-6-Hotfix-2?language=en_US",
+      "https://www.solarwinds.com/trust-center/security-advisories/cve-2021-35225"
+    ],
+    "受影响版本": [
+      "2020.2.6 Hotfix 1 and previous versions"
+    ],
+    "公开日期": "2021年10月21日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "无线设备",
+    "产品型号": "FortiWLC",
+    "CVE编号": "CVE-2021-22126",
+    "漏洞描述": "A use of hard-coded password vulnerability in FortiWLC version 8.5.2 and below, version 8.4.8 and below, version 8.3.3 to 8.3.2, version 8.2.7 to 8.2.6 may allow a local, authenticated attacker to connect to the managed Access Point (Meru AP and FortiAP-U) as root using the default hard-coded username and password.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://fortiguard.fortinet.com/psirt/FG-IR-20-147"
+    ],
+    "受影响版本": [
+      "8.5.0",
+      "8.4.4",
+      "8.4.0",
+      "8.3.2",
+      "8.2.6"
+    ],
+    "公开日期": "2025年03月17日"
+  }
+]

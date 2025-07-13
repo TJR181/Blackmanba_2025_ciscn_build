@@ -1,0 +1,376 @@
+[
+  {
+    "设备品牌": "ManageEngine",
+    "设备类型": "网络监控设备",
+    "产品型号": "OpManager",
+    "CVE编号": "CVE-2025-41437",
+    "漏洞描述": "Zohocorp ManageEngine OpManager, NetFlow Analyzer, Network Configuration Manager, Firewall Analyzer and OpUtils versions 128565 and below are vulnerable to Reflected XSS on the login page.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/itom/advisory/cve-2025-41437.html"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年06月09日"
+  },
+  {
+    "设备品牌": "ManageEngine",
+    "设备类型": "网络监控设备",
+    "产品型号": "OpManager",
+    "CVE编号": "CVE-2024-6748",
+    "漏洞描述": "Zohocorp ManageEngine OpManager, OpManager Plus, OpManager MSP and RMM versions 128317 and below are vulnerable to authenticated SQL injection in the URL monitoring.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/itom/advisory/cve-2024-6748.html"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年07月29日"
+  },
+  {
+    "设备品牌": "ManageEngine",
+    "设备类型": "网络监控设备",
+    "产品型号": "OpManager, Remote Monitoring and Management",
+    "CVE编号": "CVE-2024-5466",
+    "漏洞描述": "Zohocorp ManageEngine OpManager and Remote Monitoring and Management versions 128329 and below are vulnerable to the authenticated remote code execution in the deploy agent option.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/itom/advisory/cve-2024-5466.html"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年08月23日"
+  },
+  {
+    "设备品牌": "ManageEngine",
+    "设备类型": "网络监控设备",
+    "产品型号": "OpManager, OpManager Plus, OpManager MSP, OpManager Enterprise Edition",
+    "CVE编号": "CVE-2024-38870",
+    "漏洞描述": "Zohocorp ManageEngine OpManager, OpManager Plus, OpManager MSP and OpManager Enterprise Edition versions before 128104, from 128151 before 128238, from 128247 before 128250 are vulnerable to Stored XSS vulnerability in reports module.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/network-monitoring/security-updates/cve-2024-38870.html"
+    ],
+    "受影响版本": [
+      "0",
+      "128151",
+      "128247"
+    ],
+    "公开日期": "2024年07月17日"
+  },
+  {
+    "设备品牌": "ManageEngine",
+    "设备类型": "网络监控设备",
+    "产品型号": "OpManager",
+    "CVE编号": "CVE-2023-47211",
+    "漏洞描述": "A directory traversal vulnerability exists in the uploadMib functionality of ManageEngine OpManager 12.7.258. A specially crafted HTTP request can lead to arbitrary file creation. An attacker can send a malicious MiB file to trigger this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2023-1851",
+      "https://www.manageengine.com/itom/advisory/cve-2023-47211.html"
+    ],
+    "受影响版本": [
+      "12.7.258"
+    ],
+    "公开日期": "2024年01月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-31099",
+    "漏洞描述": "Zoho ManageEngine OPManager through 126323 allows an authenticated user to achieve remote code execution via probe servers.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://manageengine.com",
+      "https://www.manageengine.com/network-monitoring/security-updates/cve-2023-31099.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年05月04日"
+  },
+  {
+    "设备品牌": "ManageEngine",
+    "设备类型": "网络监控设备",
+    "产品型号": "OpManager",
+    "CVE编号": "CVE-2022-43473",
+    "漏洞描述": "A blind XML External Entity (XXE) vulnerability exists in the Add UCS Device functionality of ManageEngine OpManager 12.6.168. A specially crafted XML file can lead to SSRF. An attacker can serve \r\na malicious XML payload to trigger this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://talosintelligence.com/vulnerability_reports/TALOS-2022-1685",
+      "https://www.manageengine.com/itom/advisory/cve-2022-43473.html"
+    ],
+    "受影响版本": [
+      " 12.6.168"
+    ],
+    "公开日期": "2023年03月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-38772",
+    "漏洞描述": "Zoho ManageEngine OpManager, OpManager Plus, OpManager MSP, Network Configuration Manager, NetFlow Analyzer, and OpUtils before 125658, 126003, 126105, and 126120 allow authenticated users to make database changes that lead to remote code execution in the NMAP feature.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://manageengine.com",
+      "https://www.manageengine.com/itom/advisory/cve-2022-38772.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年08月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-37024",
+    "漏洞描述": "Zoho ManageEngine OpManager, OpManager Plus, OpManager MSP, Network Configuration Manager, NetFlow Analyzer, and OpUtils before 2022-07-29 through 2022-07-30 ( 125658, 126003, 126105, and 126120) allow authenticated users to make database changes that lead to remote code execution.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/itom/advisory/cve-2022-37024.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年08月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-36923",
+    "漏洞描述": "Zoho ManageEngine OpManager, OpManager Plus, OpManager MSP, Network Configuration Manager, NetFlow Analyzer, Firewall Analyzer, and OpUtils before 2022-07-27 through 2022-07-28 (125657, 126002, 126104, and 126118) allow unauthenticated attackers to obtain a user's API key, and then access external APIs.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/itom/advisory/cve-2022-36923.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年08月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-35404",
+    "漏洞描述": "ManageEngine Password Manager Pro 12100 and prior and OPManager 126100 and prior are vulnerable to unauthorized file and directory creation on a server machine.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://manageengine.com",
+      "https://www.manageengine.com/itom/advisory/cve-2022-35404.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年07月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-29535",
+    "漏洞描述": "Zoho ManageEngine OPManager through 125588 allows SQL Injection via a few default reports.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://manageengine.com",
+      "https://www.manageengine.com/network-monitoring/security-updates/cve-2022-29535.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-27908",
+    "漏洞描述": "Zoho ManageEngine OpManager before 125588 (and before 125603) is vulnerable to authenticated SQL Injection in the Inventory Reports module.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/network-monitoring/security-updates/cve-2022-27908.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年04月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-44514",
+    "漏洞描述": "OpUtils in Zoho ManageEngine OpManager 12.5 before 125490 mishandles authentication for a few audit directories.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/network-monitoring/help/read-me-complete.html#build_125490"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年12月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-41288",
+    "漏洞描述": "Zoho ManageEngine OpManager version 125466 and below is vulnerable to SQL Injection in the getReportData API.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/network-monitoring/help/read-me-complete.html#build_125467"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-40493",
+    "漏洞描述": "Zoho ManageEngine OpManager before 125437 is vulnerable to SQL Injection in the support diagnostics module. This occurs via the pollingObject parameter of the getDataCollectionFailureReason API.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/network-monitoring/security-updates/cve-2021-40493.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年10月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-3287",
+    "漏洞描述": "Zoho ManageEngine OpManager before 12.5.329 allows unauthenticated Remote Code Execution due to a general bypass in the deserialization class.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/network-monitoring/help/read-me-complete.html#125329",
+      "http://packetstormsecurity.com/files/164231/ManageEngine-OpManager-SumPDU-Java-Deserialization.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年04月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-28653",
+    "漏洞描述": "Zoho ManageEngine OpManager Stable build before 125203 (and Released build before 125233) allows Remote Code Execution via the Smart Update Manager (SUM) servlet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/network-monitoring/help/read-me-complete.html#125233",
+      "https://www.manageengine.com/network-monitoring/help/read-me-complete.html#125203",
+      "http://packetstormsecurity.com/files/164231/ManageEngine-OpManager-SumPDU-Java-Deserialization.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-19554",
+    "漏洞描述": "Cross Site Scripting (XSS) vulnerability exists in ManageEngine OPManager <=12.5.174 when the API key contains an XML-based XSS payload.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/network-monitoring/help/read-me-complete.html#125177"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-13818",
+    "漏洞描述": "In Zoho ManageEngine OpManager before 125144, when <cachestart> is used, directory traversal validation can be bypassed.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/network-monitoring/help/read-me-complete.html",
+      "https://www.zerodayinitiative.com/advisories/ZDI-20-691/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-12116",
+    "漏洞描述": "Zoho ManageEngine OpManager Stable build before 124196 and Released build before 125125 allows an unauthenticated attacker to read arbitrary files on the server by sending a crafted request.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/network-monitoring/help/read-me-complete.html",
+      "https://www.manageengine.com/network-monitoring/help/read-me-complete.html#125125"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年05月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-11946",
+    "漏洞描述": "Zoho ManageEngine OpManager before 125120 allows an unauthenticated user to retrieve an API key via a servlet call.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/network-monitoring/help/read-me-complete.html",
+      "https://cwe.mitre.org/data/definitions/306.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年04月20日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-11527",
+    "漏洞描述": "In Zoho ManageEngine OpManager before 12.4.181, an unauthenticated remote attacker can send a specially crafted URI to read arbitrary files.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/network-monitoring/help/read-me-complete.html#124181"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年04月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络监控设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10541",
+    "漏洞描述": "Zoho ManageEngine OpManager before 12.4.179 allows remote code execution via a specially crafted Mail Server Settings v1 API request. This was fixed in 12.5.108.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.manageengine.com/network-monitoring/help/read-me-complete.html#125108"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年03月13日"
+  }
+]

@@ -1,0 +1,887 @@
+[
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP Next Central Manager",
+    "CVE编号": "CVE-2024-41719",
+    "漏洞描述": "When generating QKView of BIG-IP Next instance from the BIG-IP Next Central Manager (CM),  F5 iHealth credentials will be logged in the BIG-IP Central Manager logs.  Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://my.f5.com/manage/s/article/K000140006"
+    ],
+    "受影响版本": [
+      "20.1.0"
+    ],
+    "公开日期": "2024年08月14日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP Edge Client",
+    "CVE编号": "CVE-2024-28883",
+    "漏洞描述": "An origin validation vulnerability exists in \n\nBIG-IP APM browser network access VPN client \n\n\n\n for Windows, macOS and Linux which may allow an attacker to bypass F5 endpoint inspection. \n\n\nNote: Software versions which have reached End of Technical Support (EoTS) are not evaluated.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://my.f5.com/manage/s/article/K000138744"
+    ],
+    "受影响版本": [
+      "7.2.3"
+    ],
+    "公开日期": "2024年05月08日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2024-23982",
+    "漏洞描述": "\n\n\nWhen a BIG-IP PEM classification profile is configured on a UDP virtual server, undisclosed requests can cause the Traffic Management Microkernel (TMM) to terminate. This issue affects classification engines using signatures released between 09-08-2022 and 02-16-2023. See the table in the F5 Security Advisory for a complete list of affected classification signature files.  NOTE: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://my.f5.com/manage/s/article/K000135946"
+    ],
+    "受影响版本": [
+      "17.0.0",
+      "16.1.0",
+      "15.1.0"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP Next SPK",
+    "CVE编号": "CVE-2023-45226",
+    "漏洞描述": "\nThe BIG-IP SPK TMM (Traffic Management Module) f5-debug-sidecar and f5-debug-sshd containers contains hardcoded credentials that may allow an attacker with the ability to intercept traffic to impersonate the SPK Secure Shell (SSH) server on those containers. This is only exposed when ssh debug is enabled.  Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://my.f5.com/manage/s/article/K000135874"
+    ],
+    "受影响版本": [
+      "1.5.0"
+    ],
+    "公开日期": "2023年10月10日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2023-3470",
+    "漏洞描述": "\nSpecific F5 BIG-IP platforms with Cavium Nitrox FIPS HSM cards generate a deterministic password for the Crypto User account.  The predictable nature of the password allows an authenticated user with TMSH access to the BIG-IP system, or anyone with physical access to the FIPS HSM, the information required to generate the correct password.  On vCMP systems, all Guests share the same deterministic password, allowing those with TMSH access on one Guest to access keys of a different Guest.\n\nThe following BIG-IP hardware platforms are affected: 10350v-F, i5820-DF, i7820-DF, i15820-DF, 5250v-F, 7200v-F, 10200v-F, 6900-F, 8900-F, 11000-F, and 11050-F.\n\nThe BIG-IP rSeries r5920-DF and r10920-DF are not affected, nor does the issue affect software FIPS implementations or network HSM configurations.\n\n\n\nNote: Software versions which have reached End of Technical Support (EoTS) are not evaluated.\n\n\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://my.f5.com/manage/s/article/K000135449"
+    ],
+    "受影响版本": [
+      "16.0.0",
+      "15.1.0",
+      "14.1.0",
+      "13.1.0"
+    ],
+    "公开日期": "2023年08月02日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP LTM, Advanced WAF, ASM, and APM",
+    "CVE编号": "CVE-2022-29491",
+    "漏洞描述": "On F5 BIG-IP LTM, Advanced WAF, ASM, or APM 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5, 14.1.x versions prior to 14.1.4.6, and all versions of 13.1.x, 12.1.x, and 11.6.x, when a virtual server is configured with HTTP, TCP on one side (client/server), and DTLS on the other (server/client), undisclosed requests can cause the TMM process to terminate. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K14229426"
+    ],
+    "受影响版本": [
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-29480",
+    "漏洞描述": "On F5 BIG-IP 13.1.x versions prior to 13.1.5, and all versions of 12.1.x and 11.6.x, when multiple route domains are configured, undisclosed requests to big3d can cause an increase in CPU resource utilization. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K71103363"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "14.0.0",
+      "13.1.x",
+      "14.1.0",
+      "15.1.0",
+      "16.1.0",
+      "17.0.0"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-29479",
+    "漏洞描述": "On F5 BIG-IP 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, 13.1.x versions prior to 13.1.5, and all versions of 12.1.x and 11.6.x, and F5 BIG-IQ Centralized Management all versions of 8.x and 7.x, when an IPv6 self IP address is configured and the ipv6.strictcompliance database key is enabled (disabled by default) on a BIG-IP system, undisclosed packets may cause decreased performance. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K64124988"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.0",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-29474",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, 13.1.x versions prior to 13.1.5, and all versions of 12.1.x and 11.6.x, a directory traversal vulnerability exists in iControl SOAP that allows an authenticated attacker with at least guest role privileges to read wsdl files in the BIG-IP file system. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K59904248"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-29473",
+    "漏洞描述": "On F5 BIG-IP 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, and 13.1.x versions prior to 13.1.5, when an IPSec ALG profile is configured on a virtual server, undisclosed responses can cause Traffic Management Microkernel(TMM) to terminate. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K06323049"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.0",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP APM",
+    "CVE编号": "CVE-2022-29263",
+    "漏洞描述": "On F5 BIG-IP APM 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, 13.1.x versions prior to 13.1.5, and all versions of 12.1.x and 11.6.x, as well as F5 BIG-IP APM Clients 7.x versions prior to 7.2.1.5, the BIG-IP Edge Client Component Installer Service does not use best practice while saving temporary files. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K33552735"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-28859",
+    "漏洞描述": "On F5 BIG-IP 15.1.x versions prior to 15.1.5.1 and 14.1.x versions prior to 14.1.4.6, when installing Net HSM, the scripts (nethsm-safenet-install.sh and nethsm-thales-install.sh) expose the Net HSM partition password. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K47662005"
+    ],
+    "受影响版本": [
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.0",
+      "15.1.x",
+      "14.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP APM",
+    "CVE编号": "CVE-2022-28714",
+    "漏洞描述": "On F5 BIG-IP APM 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, 13.1.x versions prior to 13.1.5, and all versions of 12.1.x and 11.6.x, as well as F5 BIG-IP APM Clients 7.x versions prior to 7.2.1.5, a DLL Hijacking vulnerability exists in the BIG-IP Edge Client Windows Installer. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K54460845"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-28708",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2 and 15.1.x versions prior to 15.1.5.1, when a BIG-IP DNS resolver-enabled, HTTP-Explicit or SOCKS profile is configured on a virtual server, an undisclosed DNS response can cause the Traffic Management Microkernel (TMM) process to terminate. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K85054496"
+    ],
+    "受影响版本": [
+      "14.1.x",
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-28707",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, and 14.1.x versions prior to 14.1.4.6, a stored cross-site scripting (XSS) vulnerability exists in an undisclosed page of the BIG-IP Configuration utility (also referred to as the BIG-IP TMUI) that allows an attacker to execute JavaScript in the context of the currently logged-in user. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K70300233"
+    ],
+    "受影响版本": [
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-28706",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2 and 15.1.x versions prior to 15.1.5.1, when the DNS resolver configuration is used, undisclosed requests can cause the Traffic Management Microkernel (TMM) to terminate. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K03755971"
+    ],
+    "受影响版本": [
+      "14.1.x",
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-28705",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, and 13.1.x versions prior to 13.1.5, on platforms with an ePVA and the pva.fwdaccel BigDB variable enabled, undisclosed requests to a virtual server with a FastL4 profile that has ePVA acceleration enabled can cause the Traffic Management Microkernel (TMM) process to terminate. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K52340447"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-28701",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2, when the stream profile is configured on a virtual server, undisclosed requests can cause an increase in memory resource utilization. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K99123750"
+    ],
+    "受影响版本": [
+      "15.1.x",
+      "14.1.x",
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP AFM",
+    "CVE编号": "CVE-2022-28695",
+    "漏洞描述": "On F5 BIG-IP AFM 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, and 13.1.x versions prior to 13.1.5, an authenticated attacker with high privileges can upload a maliciously crafted file to the BIG-IP AFM Configuration utility, which allows an attacker to run arbitrary commands. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K08510472"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-28691",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5, 14.1.x versions prior to 14.1.4.6, and 13.1.x versions prior to 13.1.5, when a Real Time Streaming Protocol (RTSP) profile is configured on a virtual server, undisclosed traffic can cause an increase in Traffic Management Microkernel (TMM) resource utilization. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K37155600"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-27878",
+    "漏洞描述": "On all versions of 16.1.x, 15.1.x, 14.1.x, 13.1.x, 12.1.x, and 11.6.x of F5 BIG-IP, and F5 BIG-IP Guided Configuration (GC) all versions prior to 9.0, a stored cross-site scripting (XSS) vulnerability exists in an undisclosed page of the BIG-IP Configuration utility that allows an attacker to execute JavaScript in the context of the currently logged-in user. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K92807525"
+    ],
+    "受影响版本": [
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP (Advanced WAF, APM, ASM)",
+    "CVE编号": "CVE-2022-27806",
+    "漏洞描述": "On all versions of 16.1.x, 15.1.x, 14.1.x, 13.1.x, 12.1.x, and 11.6.x of F5 BIG-IP Advanced WAF, ASM, and ASM, and F5 BIG-IP Guided Configuration (GC) all versions prior to 9.0, when running in Appliance mode, an authenticated attacker assigned the Administrator role may be able to bypass Appliance mode restrictions, utilizing command injection vulnerabilities in undisclosed URIs in F5 BIG-IP Guided Configuration. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K68647001"
+    ],
+    "受影响版本": [
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-27659",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, and 14.1.x versions prior to 14.1.4.6, an authenticated attacker can modify or delete Dashboards created by other BIG-IP users in the Traffic Management User Interface (TMUI). Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K41877405"
+    ],
+    "受影响版本": [
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP APM",
+    "CVE编号": "CVE-2022-27636",
+    "漏洞描述": "On F5 BIG-IP APM 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, 13.1.x versions prior to 13.1.5, and all versions of 12.1.x and 11.6.x, as well as F5 BIG-IP APM Clients 7.x versions prior to 7.2.1.5, BIG-IP Edge Client may log sensitive APM session-related information when VPN is launched on a Windows system. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K57110035"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP APM",
+    "CVE编号": "CVE-2022-27230",
+    "漏洞描述": "On all versions of 16.1.x, 15.1.x, 14.1.x, 13.1.x, 12.1.x, and 11.6.x of F5 BIG-IP APM, and F5 BIG-IP Guided Configuration (GC) all versions prior to 9.0, a reflected cross-site scripting (XSS) vulnerability exists in an undisclosed page of F5 BIG-IP Guided Configuration that allows an attacker to execute JavaScript in the context of the currently logged-in user. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K21317311"
+    ],
+    "受影响版本": [
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-27189",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, 13.1.x versions prior to 13.1.5, and all versions of 12.1.x and 11.6.x, when an Internet Content Adaptation Protocol (ICAP) profile is configured on a virtual server, undisclosed traffic can cause an increase in Traffic Management Microkernel (TMM) memory resource utilization. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K16187341"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-27182",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, and 14.1.x versions prior to 14.1.4.6, when BIG-IP packet filters are enabled and a virtual server is configured with the type set to Reject, undisclosed requests can cause an increase in memory resource utilization. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K31856317"
+    ],
+    "受影响版本": [
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP APM",
+    "CVE编号": "CVE-2022-27181",
+    "漏洞描述": "On F5 BIG-IP APM 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, 13.1.x versions prior to 13.1.5, and all versions of 12.1.x and 11.6.x, when APM is configured on a virtual server and the associated access profile is configured with APM AAA NTLM Auth, undisclosed requests can cause an increase in internal resource utilization. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K93543114"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP Advanced WAF, ASM, and APM",
+    "CVE编号": "CVE-2022-26890",
+    "漏洞描述": "On F5 BIG-IP Advanced WAF, ASM, and APM 16.1.x versions prior to 16.1.2.1, 15.1.x versions prior to 15.1.5, 14.1.x versions prior to 14.1.4.6, and 13.1.x versions prior to 13.1.5, when ASM or Advanced WAF, as well as APM, are configured on a virtual server, the ASM policy is configured with Session Awareness, and the \"Use APM Username and Session ID\" option is enabled, undisclosed requests can cause the bd process to terminate. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K03442392"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-26835",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, 13.1.x versions prior to 13.1.5, and all versions of 12.1.x and 11.6.x, directory traversal vulnerabilities exist in undisclosed iControl REST endpoints and TMOS Shell (tmsh) commands in F5 BIG-IP Guided Configuration, which may allow an authenticated attacker with at least resource administrator role privileges to read arbitrary files. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K53197140"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-26517",
+    "漏洞描述": "On F5 BIG-IP 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, and 13.1.x versions prior to 13.1.5, when the BIG-IP CGNAT Large Scale NAT (LSN) pool is configured on a virtual server and packet filtering is enabled, undisclosed requests can cause the Traffic Management Microkernel (TMM) to terminate. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K54082580"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.0",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-26415",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, 13.1.x versions prior to 13.1.5, and all versions of 12.1.x, when running in Appliance mode, an authenticated user assigned the Administrator role may be able to bypass Appliance mode restrictions, utilizing an undisclosed iControl REST endpoint. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K81952114"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x",
+      "17.0.0"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-26372",
+    "漏洞描述": "On F5 BIG-IP 15.1.x versions prior to 15.1.0.2, 14.1.x versions prior to 14.1.4.6, 13.1.x versions prior to 13.1.5, and all versions of 12.1.x and 11.6.x, when a DNS listener is configured on a virtual server with DNS queueing (default), undisclosed requests can cause an increase in memory resource utilization. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K23454411"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "16.0.0",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x",
+      "17.0.0"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-26370",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5, and 14.1.x versions prior to 14.1.4.6, when a Session Initiation Protocol (SIP) message routing framework (MRF) application layer gateway (ALG) profile is configured on a Message Routing virtual server, undisclosed requests can cause the Traffic Management Microkernel (TMM) to terminate. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K51539421"
+    ],
+    "受影响版本": [
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-26340",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, 13.1.x versions prior to 13.1.5, and all versions of 12.1.x and 11.6.x, and F5 BIG-IQ Centralized Management all versions of 8.x and 7.x, an authenticated, high-privileged attacker with no bash access may be able to access Certificate and Key files using Secure Copy (SCP) protocol from a remote system. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K38271531"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-26130",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, and 13.1.x versions prior to 13.1.5, when an Active mode-enabled FTP profile is configured on a virtual server, undisclosed traffic can cause the virtual server to stop processing active FTP data channel connections. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K82034427"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-26071",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, 13.1.x versions prior to 13.1.5, and all versions of 12.1.x and 11.6.x, a flaw in the way reply ICMP packets are limited in the Traffic Management Microkernel (TMM) allows an attacker to quickly scan open UDP ports. This flaw allows an off-path remote attacker to effectively bypass source port UDP randomization. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K41440465"
+    ],
+    "受影响版本": [
+      "12.1.x",
+      "11.6.x",
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP (Advanced WAF, APM, ASM)",
+    "CVE编号": "CVE-2022-25946",
+    "漏洞描述": "On all versions of 16.1.x, 15.1.x, 14.1.x, 13.1.x, 12.1.x, and 11.6.x of F5 BIG-IP Advanced WAF, ASM, and ASM, and F5 BIG-IP Guided Configuration (GC) all versions prior to 9.0, when running in Appliance mode, an authenticated attacker with Administrator role privilege may be able to bypass Appliance mode restrictions due to a missing integrity check in F5 BIG-IP Guided Configuration. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K52322100"
+    ],
+    "受影响版本": [
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP FPS, ASM, and Advanced WAF",
+    "CVE编号": "CVE-2022-23031",
+    "漏洞描述": "On BIG-IP FPS, ASM, and Advanced WAF versions 16.1.x before 16.1.1, 15.1.x before 15.1.4, and 14.1.x before 14.1.4.4, an XML External Entity (XXE) vulnerability exists in an undisclosed page of the F5 Advanced Web Application Firewall (Advanced WAF) and BIG-IP ASM Traffic Management User Interface (TMUI), also referred to as the Configuration utility, that allows an authenticated high-privileged attacker to read local files and force BIG-IP to send HTTP requests. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K61112120"
+    ],
+    "受影响版本": [
+      "16.1.x before 16.1.1, 15.1.x before 15.1.4, and 14.1.x before 14.1.4.4"
+    ],
+    "公开日期": "2022年01月25日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-1468",
+    "漏洞描述": "On all versions of 17.0.x, 16.1.x, 15.1.x, 14.1.x, 13.1.x, 12.1.x, and 11.6.x on F5 BIG-IP, an authenticated iControl REST user with at least guest role privileges can cause processing delays to iControl REST requests via undisclosed requests. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K15101402"
+    ],
+    "受影响版本": [
+      "17.0.x",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x",
+      "12.1.x",
+      "11.6.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-1389",
+    "漏洞描述": "On all versions of 16.1.x, 15.1.x, 14.1.x, 13.1.x, 12.1.x, and 11.6.x of F5 BIG-IP (fixed in 17.0.0), a cross-site request forgery (CSRF) vulnerability exists in an undisclosed page of the BIG-IP Configuration utility. This vulnerability allows an attacker to run a limited set of commands: ping, traceroute, and WOM diagnostics. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K49905324"
+    ],
+    "受影响版本": [
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x",
+      "12.1.x",
+      "11.6.x",
+      "17.0.0"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "F5",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP",
+    "CVE编号": "CVE-2022-1388",
+    "漏洞描述": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, 13.1.x versions prior to 13.1.5, and all 12.1.x and 11.6.x versions, undisclosed requests may bypass iControl REST authentication. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K23605346",
+      "http://packetstormsecurity.com/files/167007/F5-BIG-IP-Remote-Code-Execution.html",
+      "http://packetstormsecurity.com/files/167118/F5-BIG-IP-16.0.x-Remote-Code-Execution.html",
+      "http://packetstormsecurity.com/files/167150/F5-BIG-IP-iControl-Remote-Code-Execution.html",
+      "https://www.secpod.com/blog/critical-f5-big-ip-remote-code-execution-vulnerability-patch-now/"
+    ],
+    "受影响版本": [
+      "17.0.0",
+      "16.1.x",
+      "15.1.x",
+      "14.1.x",
+      "13.1.x",
+      "12.1.x",
+      "11.6.x"
+    ],
+    "公开日期": "2022年05月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP Advanced WAF and BIG-IP ASM",
+    "CVE编号": "CVE-2021-23029",
+    "漏洞描述": "On version 16.0.x before 16.0.1.2, insufficient permission checks may allow authenticated users with guest privileges to perform Server-Side Request Forgery (SSRF) attacks through F5 Advanced Web Application Firewall (WAF) and the BIG-IP ASM Configuration utility. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K52420610"
+    ],
+    "受影响版本": [
+      "16.0.x before 16.0.1.2"
+    ],
+    "公开日期": "2021年09月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "负载均衡器",
+    "产品型号": "BIG-IP Advanced WAF and BIG-IP ASM",
+    "CVE编号": "CVE-2021-23028",
+    "漏洞描述": "On version 16.0.x before 16.0.1.2, 15.1.x before 15.1.3.1, 14.1.x before 14.1.4.2, and 13.1.x before 13.1.4, when JSON content profiles are configured for URLs as part of an F5 Advanced Web Application Firewall (WAF)/BIG-IP ASM security policy and applied to a virtual server, undisclosed requests may cause the BIG-IP ASM bd process to terminate. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.f5.com/csp/article/K00602225"
+    ],
+    "受影响版本": [
+      "16.0.x before 16.0.1.2, 15.1.x before 15.1.3.1, 14.1.x before 14.1.4.2, and 13.1.x before 13.1.4"
+    ],
+    "公开日期": "2021年09月14日"
+  }
+]

@@ -1,0 +1,95 @@
+[
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-57999",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\npowerpc/pseries/iommu: IOMMU incorrectly marks MMIO range in DDW\n\nPower Hypervisor can possibily allocate MMIO window intersecting with\nDynamic DMA Window (DDW) range, which is over 32-bit addressing.\n\nThese MMIO pages needs to be marked as reserved so that IOMMU doesn't map\nDMA buffers in this range.\n\nThe current code is not marking these pages correctly which is resulting\nin LPAR to OOPS while booting. The stack is at below\n\nBUG: Unable to handle kernel data access on read at 0xc00800005cd40000\nFaulting instruction address: 0xc00000000005cdac\nOops: Kernel access of bad area, sig: 11 [#1]\nLE PAGE_SIZE=64K MMU=Hash SMP NR_CPUS=2048 NUMA pSeries\nModules linked in: af_packet rfkill ibmveth(X) lpfc(+) nvmet_fc nvmet nvme_keyring crct10dif_vpmsum nvme_fc nvme_fabrics nvme_core be2net(+) nvme_auth rtc_generic nfsd auth_rpcgss nfs_acl lockd grace sunrpc fuse configfs ip_tables x_tables xfs libcrc32c dm_service_time ibmvfc(X) scsi_transport_fc vmx_crypto gf128mul crc32c_vpmsum dm_mirror dm_region_hash dm_log dm_multipath dm_mod sd_mod scsi_dh_emc scsi_dh_rdac scsi_dh_alua t10_pi crc64_rocksoft_generic crc64_rocksoft sg crc64 scsi_mod\nSupported: Yes, External\nCPU: 8 PID: 241 Comm: kworker/8:1 Kdump: loaded Not tainted 6.4.0-150600.23.14-default #1 SLE15-SP6 b44ee71c81261b9e4bab5e0cde1f2ed891d5359b\nHardware name: IBM,9080-M9S POWER9 (raw) 0x4e2103 0xf000005 of:IBM,FW950.B0 (VH950_149) hv:phyp pSeries\nWorkqueue: events work_for_cpu_fn\nNIP:  c00000000005cdac LR: c00000000005e830 CTR: 0000000000000000\nREGS: c00001400c9ff770 TRAP: 0300   Not tainted  (6.4.0-150600.23.14-default)\nMSR:  800000000280b033 <SF,VEC,VSX,EE,FP,ME,IR,DR,RI,LE>  CR: 24228448  XER: 00000001\nCFAR: c00000000005cdd4 DAR: c00800005cd40000 DSISR: 40000000 IRQMASK: 0\nGPR00: c00000000005e830 c00001400c9ffa10 c000000001987d00 c00001400c4fe800\nGPR04: 0000080000000000 0000000000000001 0000000004000000 0000000000800000\nGPR08: 0000000004000000 0000000000000001 c00800005cd40000 ffffffffffffffff\nGPR12: 0000000084228882 c00000000a4c4f00 0000000000000010 0000080000000000\nGPR16: c00001400c4fe800 0000000004000000 0800000000000000 c00000006088b800\nGPR20: c00001401a7be980 c00001400eff3800 c000000002a2da68 000000000000002b\nGPR24: c0000000026793a8 c000000002679368 000000000000002a c0000000026793c8\nGPR28: 000008007effffff 0000080000000000 0000000000800000 c00001400c4fe800\nNIP [c00000000005cdac] iommu_table_reserve_pages+0xac/0x100\nLR [c00000000005e830] iommu_init_table+0x80/0x1e0\nCall Trace:\n[c00001400c9ffa10] [c00000000005e810] iommu_init_table+0x60/0x1e0 (unreliable)\n[c00001400c9ffa90] [c00000000010356c] iommu_bypass_supported_pSeriesLP+0x9cc/0xe40\n[c00001400c9ffc30] [c00000000005c300] dma_iommu_dma_supported+0xf0/0x230\n[c00001400c9ffcb0] [c00000000024b0c4] dma_supported+0x44/0x90\n[c00001400c9ffcd0] [c00000000024b14c] dma_set_mask+0x3c/0x80\n[c00001400c9ffd00] [c0080000555b715c] be_probe+0xc4/0xb90 [be2net]\n[c00001400c9ffdc0] [c000000000986f3c] local_pci_probe+0x6c/0x110\n[c00001400c9ffe40] [c000000000188f28] work_for_cpu_fn+0x38/0x60\n[c00001400c9ffe70] [c00000000018e454] process_one_work+0x314/0x620\n[c00001400c9fff10] [c00000000018f280] worker_thread+0x2b0/0x620\n[c00001400c9fff90] [c00000000019bb18] kthread+0x148/0x150\n[c00001400c9fffe0] [c00000000000ded8] start_kernel_thread+0x14/0x18\n\nThere are 2 issues in the code\n\n1. The index is \"int\" while the address is \"unsigned long\". This results in\n   negative value when setting the bitmap.\n\n2. The DMA offset is page shifted but the MMIO range is used as-is (64-bit\n   address). MMIO address needs to be page shifted as well.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/7043d58ecd1381674f5b2c894deb6986a1a4896b",
+      "https://git.kernel.org/stable/c/d8cc20a8cceb3b5e8ad2e11365e3100ba36a27e9",
+      "https://git.kernel.org/stable/c/8f70caad82e9c088ed93b4fea48d941ab6441886"
+    ],
+    "受影响版本": [
+      "3c33066a21903076722a2881556a92aa3cd7d359",
+      "3c33066a21903076722a2881556a92aa3cd7d359",
+      "3c33066a21903076722a2881556a92aa3cd7d359"
+    ],
+    "公开日期": "2025年02月27日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2021-46938",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ndm rq: fix double free of blk_mq_tag_set in dev remove after table load fails\n\nWhen loading a device-mapper table for a request-based mapped device,\nand the allocation/initialization of the blk_mq_tag_set for the device\nfails, a following device remove will cause a double free.\n\nE.g. (dmesg):\n  device-mapper: core: Cannot initialize queue for request-based dm-mq mapped device\n  device-mapper: ioctl: unable to set up device queue for new table.\n  Unable to handle kernel pointer dereference in virtual kernel address space\n  Failing address: 0305e098835de000 TEID: 0305e098835de803\n  Fault in home space mode while using kernel ASCE.\n  AS:000000025efe0007 R3:0000000000000024\n  Oops: 0038 ilc:3 [#1] SMP\n  Modules linked in: ... lots of modules ...\n  Supported: Yes, External\n  CPU: 0 PID: 7348 Comm: multipathd Kdump: loaded Tainted: G        W      X    5.3.18-53-default #1 SLE15-SP3\n  Hardware name: IBM 8561 T01 7I2 (LPAR)\n  Krnl PSW : 0704e00180000000 000000025e368eca (kfree+0x42/0x330)\n             R:0 T:1 IO:1 EX:1 Key:0 M:1 W:0 P:0 AS:3 CC:2 PM:0 RI:0 EA:3\n  Krnl GPRS: 000000000000004a 000000025efe5230 c1773200d779968d 0000000000000000\n             000000025e520270 000000025e8d1b40 0000000000000003 00000007aae10000\n             000000025e5202a2 0000000000000001 c1773200d779968d 0305e098835de640\n             00000007a8170000 000003ff80138650 000000025e5202a2 000003e00396faa8\n  Krnl Code: 000000025e368eb8: c4180041e100       lgrl    %r1,25eba50b8\n             000000025e368ebe: ecba06b93a55       risbg   %r11,%r10,6,185,58\n            #000000025e368ec4: e3b010000008       ag      %r11,0(%r1)\n            >000000025e368eca: e310b0080004       lg      %r1,8(%r11)\n             000000025e368ed0: a7110001           tmll    %r1,1\n             000000025e368ed4: a7740129           brc     7,25e369126\n             000000025e368ed8: e320b0080004       lg      %r2,8(%r11)\n             000000025e368ede: b904001b           lgr     %r1,%r11\n  Call Trace:\n   [<000000025e368eca>] kfree+0x42/0x330\n   [<000000025e5202a2>] blk_mq_free_tag_set+0x72/0xb8\n   [<000003ff801316a8>] dm_mq_cleanup_mapped_device+0x38/0x50 [dm_mod]\n   [<000003ff80120082>] free_dev+0x52/0xd0 [dm_mod]\n   [<000003ff801233f0>] __dm_destroy+0x150/0x1d0 [dm_mod]\n   [<000003ff8012bb9a>] dev_remove+0x162/0x1c0 [dm_mod]\n   [<000003ff8012a988>] ctl_ioctl+0x198/0x478 [dm_mod]\n   [<000003ff8012ac8a>] dm_ctl_ioctl+0x22/0x38 [dm_mod]\n   [<000000025e3b11ee>] ksys_ioctl+0xbe/0xe0\n   [<000000025e3b127a>] __s390x_sys_ioctl+0x2a/0x40\n   [<000000025e8c15ac>] system_call+0xd8/0x2c8\n  Last Breaking-Event-Address:\n   [<000000025e52029c>] blk_mq_free_tag_set+0x6c/0xb8\n  Kernel panic - not syncing: Fatal exception: panic_on_oops\n\nWhen allocation/initialization of the blk_mq_tag_set fails in\ndm_mq_init_request_queue(), it is uninitialized/freed, but the pointer\nis not reset to NULL; so when dev_remove() later gets into\ndm_mq_cleanup_mapped_device() it sees the pointer and tries to\nuninitialize and free it again.\n\nFix this by setting the pointer to NULL in dm_mq_init_request_queue()\nerror-handling. Also set it to NULL in dm_mq_cleanup_mapped_device().",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/8ae0185255eaf05bd66f4215c81e99bf01140fd9",
+      "https://git.kernel.org/stable/c/b42c0a33dfdd451d9be62dd5de58c39f2750b6e3",
+      "https://git.kernel.org/stable/c/772b9f59657665af3b68d24d12b9d172d31f0dfb",
+      "https://git.kernel.org/stable/c/a992a283c0b77d0a7c2c348add0e6a21fb1dab67",
+      "https://git.kernel.org/stable/c/1cb02dc76f4c0a2749a02b26469512d6984252e9",
+      "https://git.kernel.org/stable/c/6086f957416a6e87236c06079fcaba7a3998aeca",
+      "https://git.kernel.org/stable/c/d757bf4c69cda3c3ab7f775dfabbf5a80e2f6f9d",
+      "https://git.kernel.org/stable/c/8e947c8f4a5620df77e43c9c75310dc510250166"
+    ],
+    "受影响版本": [
+      "1c357a1e86a4227a6b6059f2de118ae47659cebc",
+      "1c357a1e86a4227a6b6059f2de118ae47659cebc",
+      "1c357a1e86a4227a6b6059f2de118ae47659cebc",
+      "1c357a1e86a4227a6b6059f2de118ae47659cebc",
+      "1c357a1e86a4227a6b6059f2de118ae47659cebc",
+      "1c357a1e86a4227a6b6059f2de118ae47659cebc",
+      "1c357a1e86a4227a6b6059f2de118ae47659cebc",
+      "1c357a1e86a4227a6b6059f2de118ae47659cebc"
+    ],
+    "公开日期": "2024年02月27日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "服务器",
+    "产品型号": "IBM System x 3550 M3",
+    "CVE编号": "CVE-2021-3723",
+    "漏洞描述": "A command injection vulnerability was reported in the Integrated Management Module (IMM) of legacy IBM System x 3550 M3 and IBM System x 3650 M3 servers that could allow the execution of operating system commands over an authenticated SSH or Telnet session.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.lenovo.com/us/en/product_security/LEN-66347"
+    ],
+    "受影响版本": [
+      "all"
+    ],
+    "公开日期": "2021年11月12日"
+  },
+  {
+    "设备品牌": "Lenovo",
+    "设备类型": "服务器",
+    "产品型号": "System x IMM2 firmware for: x240, Machine Types: 7162, 2588;  x440, Machine Type 7167, 2590 ; x3750 M4, Machine Type: 8753 ;  x3250 M6, Machine type 3633, 3943 ; nx360 M5, Machine type 5465, 5467 ;  x280/x480/x880 X6 , Machine Type 7196, 4258 ; x3850 X6 and x3950 X6, Machine type 6241    ; x3550 M5, Machine Type 5463, 8869 ; x3650 M5, Machine Type 5462, 8871; x3500 M5, Machine Type 5464, 5478",
+    "CVE编号": "CVE-2020-8340",
+    "漏洞描述": "A cross-site scripting (XSS) vulnerability was discovered in the legacy IBM and Lenovo System x IMM2 (Integrated Management Module 2), prior to version 5.60, embedded Baseboard Management Controller (BMC) web interface during an internal security review. This vulnerability could allow JavaScript code to be executed in the user's web browser if the user is convinced to visit a crafted URL, possibly through phishing. Successful exploitation requires specific knowledge about the user’s network to be included in the crafted URL. Impact is limited to the normal access restrictions and permissions of the user clicking the crafted URL, and subject to the user being able to connect to and already being authenticated to IMM2 or other systems. The JavaScript code is not executed on IMM2 itself.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.lenovo.com/us/en/product_security/LEN-44717"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年09月15日"
+  },
+  {
+    "设备品牌": "Lenovo",
+    "设备类型": "服务器",
+    "产品型号": "System x",
+    "CVE编号": "CVE-2020-8332",
+    "漏洞描述": "A potential vulnerability in the SMI callback function used in the legacy BIOS mode USB drivers in some legacy Lenovo and IBM System x servers may allow arbitrary code execution. Servers operating in UEFI mode are not affected.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://support.lenovo.com/us/en/product_security/LEN-38625"
+    ],
+    "受影响版本": [
+      "various"
+    ],
+    "公开日期": "2020年10月14日"
+  }
+]

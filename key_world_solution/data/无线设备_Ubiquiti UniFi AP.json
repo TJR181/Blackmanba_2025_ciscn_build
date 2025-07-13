@@ -1,0 +1,48 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-24104",
+    "漏洞描述": "Ubiquiti Networks UniFi Dream Machine Pro v7.2.95 allows attackers to bypass domain restrictions via crafted packets.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/f1veT/BUG/issues/1",
+      "https://attack.mitre.org/techniques/T1090/004/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年02月23日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-27888",
+    "漏洞描述": "An issue was discovered on Ubiquiti UniFi Meshing Access Point UAP-AC-M 4.3.21.11325 and UniFi Controller 6.0.28 devices. Cached credentials are not erased from an access point returning wirelessly from a disconnected state. This may provide unintended network access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://community.ui.com/questions/Possible-authentication-bypass-for-access-into-LAN/7965adb2-5d70-4410-8467-4c7bec76bc00"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年10月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "无线设备",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-24755",
+    "漏洞描述": "In Ubiquiti UniFi Video v3.10.13, when the executable starts, its first library validation is in the current directory. This allows the impersonation and modification of the library to execute code on the system. This was tested in (Windows 7 x64/Windows 10 x64).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.youtube.com/watch?v=T41h4yeh9dk"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年05月17日"
+  }
+]

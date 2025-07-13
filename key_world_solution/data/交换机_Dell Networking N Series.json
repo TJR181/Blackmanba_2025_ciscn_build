@@ -1,0 +1,93 @@
+[
+  {
+    "设备品牌": "Dell",
+    "设备类型": "交换机",
+    "产品型号": "Networking X-Series",
+    "CVE编号": "CVE-2021-36322",
+    "漏洞描述": "Dell Networking X-Series firmware versions prior to 3.0.1.8 contain a host header injection vulnerability. A remote unauthenticated attacker may potentially exploit this vulnerability by injecting arbitrary host header values to poison the web-cache or trigger redirections.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.dell.com/support/kbdoc/en-us/000193230/dsa-2021-191-dell-networking-x-series-security-update-for-multiple-security-vulnerabilities"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年11月20日"
+  },
+  {
+    "设备品牌": "Dell",
+    "设备类型": "交换机",
+    "产品型号": "Networking X-Series",
+    "CVE编号": "CVE-2021-36321",
+    "漏洞描述": "Dell Networking X-Series firmware versions prior to 3.0.1.8 contain an improper input validation vulnerability. A remote unauthenticated attacker may potentially exploit this vulnerability by sending specially crafted data to trigger a denial of service.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.dell.com/support/kbdoc/en-us/000193230/dsa-2021-191-dell-networking-x-series-security-update-for-multiple-security-vulnerabilities"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年11月20日"
+  },
+  {
+    "设备品牌": "Dell",
+    "设备类型": "交换机",
+    "产品型号": "Networking X-Series",
+    "CVE编号": "CVE-2021-36320",
+    "漏洞描述": "Dell Networking X-Series firmware versions prior to 3.0.1.8 contain an authentication bypass vulnerability. A remote unauthenticated attacker may potentially hijack a session and access the webserver by forging the session ID.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.dell.com/support/kbdoc/en-us/000193230/dsa-2021-191-dell-networking-x-series-security-update-for-multiple-security-vulnerabilities"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年11月20日"
+  },
+  {
+    "设备品牌": "Dell",
+    "设备类型": "交换机",
+    "产品型号": "VRTX Switch Modules",
+    "CVE编号": "CVE-2021-21507",
+    "漏洞描述": "Dell EMC Networking X-Series firmware versions prior to 3.0.1.8 and Dell EMC PowerEdge VRTX Switch Module firmware versions prior to 2.0.0.82 contain a Weak Password Encryption Vulnerability. A remote unauthenticated attacker could potentially exploit this vulnerability, leading to the disclosure of certain user credentials. The attacker may be able to use the exposed credentials to access the vulnerable system with privileges of the compromised account.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.dell.com/support/kbdoc/000185252"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年04月30日"
+  },
+  {
+    "设备品牌": "Dell",
+    "设备类型": "交换机",
+    "产品型号": "Networking",
+    "CVE编号": "CVE-2020-5349",
+    "漏洞描述": "Dell EMC Networking S4100 and S5200 Series Switches manufactured prior to February 2020 contain a hardcoded credential vulnerability. A remote unauthenticated malicious user could exploit this vulnerability and gain administrative privileges.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.dell.com/support/article/en-us/sln320599/dsa-2020-074-dell-networking-security-update-for-a-hardcoded-credential-vulnerability?lang=en"
+    ],
+    "受影响版本": [
+      "S4100 and S5200"
+    ],
+    "公开日期": "2021年07月19日"
+  },
+  {
+    "设备品牌": "Dell",
+    "设备类型": "交换机",
+    "产品型号": "Dell PowerConnect",
+    "CVE编号": "CVE-2020-5330",
+    "漏洞描述": "Dell EMC Networking X-Series firmware versions 3.0.1.2 and older, Dell EMC Networking PC5500 firmware versions 4.1.0.22 and older and Dell EMC PowerEdge VRTX Switch Modules firmware versions 2.0.0.77 and older contain an information disclosure vulnerability. A remote unauthenticated attacker could exploit this vulnerability to retrieve sensitive data by sending a specially crafted request to the affected endpoints.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.dell.com/support/article/en-us/sln320366/dsa-2020-042-dell-emc-networking-security-update-for-an-information-disclosure-vulnerability?lang=en",
+      "http://packetstormsecurity.com/files/171723/Cisco-Dell-Netgear-Information-Disclosure-Hash-Decrypter.html"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年04月10日"
+  }
+]

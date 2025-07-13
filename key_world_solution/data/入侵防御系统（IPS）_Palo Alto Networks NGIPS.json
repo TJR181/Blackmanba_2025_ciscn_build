@@ -1,0 +1,3419 @@
+[
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Prisma Access Browser",
+    "CVE编号": "CVE-2025-4233",
+    "漏洞描述": "An insufficient implementation of cache vulnerability in Palo Alto Networks Prisma® Access Browser enables users to bypass certain data control policies.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-4233"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年06月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2025-4232",
+    "漏洞描述": "An improper neutralization of wildcards vulnerability in the log collection feature of Palo Alto Networks GlobalProtect™ app on macOS allows a non administrative user to escalate their privileges to root.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-4232"
+    ],
+    "受影响版本": [
+      "6.3",
+      "6.2.0",
+      "6.1.0",
+      "6.0.0"
+    ],
+    "公开日期": "2025年06月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-4231",
+    "漏洞描述": "A command injection vulnerability in Palo Alto Networks PAN-OS® enables an authenticated administrative user to perform actions as the root user.\n\nThe attacker must have network access to the management web interface and successfully authenticate to exploit this issue.\n\nCloud NGFW and Prisma Access are not impacted by this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-4231"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年06月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-4230",
+    "漏洞描述": "A command injection vulnerability in Palo Alto Networks PAN-OS® software enables an authenticated administrator to bypass system restrictions and run arbitrary commands as a root user. To be able to exploit this issue, the user must have access to the PAN-OS CLI.\n\nThe security risk posed by this issue is significantly minimized when CLI access is restricted to a limited group of administrators. \n\nCloud NGFW and Prisma® Access are not affected by this vulnerability.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-4230"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年06月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-4229",
+    "漏洞描述": "An information disclosure vulnerability in the SD-WAN feature of Palo Alto Networks PAN-OS® software enables an unauthorized user to view unencrypted data sent from the firewall through the SD-WAN interface. This requires the user to be able to intercept packets sent from the firewall.\n\nCloud NGFW and Prisma® Access are not affected by this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-4229"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年06月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Broker VM",
+    "CVE编号": "CVE-2025-4228",
+    "漏洞描述": "An incorrect privilege assignment vulnerability in Palo Alto Networks Cortex® XDR Broker VM allows an authenticated administrative user to execute certain files available within the Broker VM and escalate their privileges to root.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-4228"
+    ],
+    "受影响版本": [
+      "27.0.0"
+    ],
+    "公开日期": "2025年06月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2025-4227",
+    "漏洞描述": "An improper access control vulnerability in the  Endpoint Traffic Policy Enforcement https://docs.paloaltonetworks.com/globalprotect/6-0/globalprotect-app-new-features/new-features-released-in-gp-app/endpoint-traffic-policy-enforcement  feature of the Palo Alto Networks GlobalProtect™ app allows certain packets to remain unencrypted instead of being properly secured within the tunnel.\n\nAn attacker with physical access to the network can inject rogue devices to intercept these packets. Under normal operating conditions, the GlobalProtect app automatically recovers from this interception within one minute.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-4227"
+    ],
+    "受影响版本": [
+      "6.3.0",
+      "6.2.0",
+      "6.1.0",
+      "6.0.0"
+    ],
+    "公开日期": "2025年06月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Prisma Cloud Compute Edition",
+    "CVE编号": "CVE-2025-0138",
+    "漏洞描述": "Web sessions in the web interface of Palo Alto Networks Prisma® Cloud Compute Edition do not expire when users are deleted, which makes Prisma Cloud Compute Edition susceptible to unauthorized access.\n\nCompute in Prisma Cloud Enterprise Edition is not affected by this issue.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0138"
+    ],
+    "受影响版本": [
+      "1"
+    ],
+    "公开日期": "2025年05月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-0137",
+    "漏洞描述": "An improper input neutralization vulnerability in the management web interface of the Palo Alto Networks PAN-OS® software enables a malicious authenticated read-write administrator to impersonate another legitimate authenticated PAN-OS administrator.\n\n\nThe attacker must have network access to the management web interface to exploit this issue. You greatly reduce the risk of this issue by restricting access to the management web interface to only trusted internal IP addresses according to our recommended  critical deployment guidelines https://live.paloaltonetworks.com/t5/community-blogs/tips-amp-tricks-how-to-secure-the-management-access-of-your-palo/ba-p/464431 .",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0137"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年05月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-0136",
+    "漏洞描述": "Using the AES-128-CCM algorithm for IPSec on certain Palo Alto Networks PAN-OS® firewalls (PA-7500, PA-5400, PA-5400f, PA-3400, PA-1600, PA-1400, and PA-400 Series) leads to unencrypted data transfer to devices that are connected to the PAN-OS firewall through IPSec.\n\nThis issue does not affect Cloud NGFWs, Prisma® Access instances, or  PAN-OS VM-Series firewalls.\n\nNOTE: The AES-128-CCM encryption algorithm is not recommended for use.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0136"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年05月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2025-0135",
+    "漏洞描述": "An incorrect privilege assignment vulnerability in the Palo Alto Networks GlobalProtect™ App on macOS devices enables a locally authenticated non administrative user to disable the app.\n\nThe GlobalProtect app on Windows, Linux, iOS, Android, Chrome OS and GlobalProtect UWP app are not affected.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0135"
+    ],
+    "受影响版本": [
+      "6.3.0",
+      "6.2.0",
+      "6.1.0",
+      "6.0.0"
+    ],
+    "公开日期": "2025年05月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Broker VM",
+    "CVE编号": "CVE-2025-0134",
+    "漏洞描述": "A code injection vulnerability in the Palo Alto Networks Cortex XDR® Broker VM allows an authenticated user to execute arbitrary code with root privileges on the host operating system running Broker VM.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0134"
+    ],
+    "受影响版本": [
+      "26.0.0"
+    ],
+    "公开日期": "2025年05月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2025-0133",
+    "漏洞描述": "A reflected cross-site scripting (XSS) vulnerability in the GlobalProtect™ gateway and portal features of Palo Alto Networks PAN-OS® software enables execution of malicious JavaScript in the context of an authenticated Captive Portal user's browser when they click on a specially crafted link. The primary risk is phishing attacks that can lead to credential theft—particularly if you enabled Clientless VPN.\n\nThere is no availability impact to GlobalProtect features or GlobalProtect users. Attackers cannot use this vulnerability to tamper with or modify contents or configurations of the GlobalProtect portal or gateways. The integrity impact of this vulnerability is limited to enabling an attacker to create phishing and credential-stealing links that appear to be hosted on the GlobalProtect portal.\n\n\n\nFor GlobalProtect users with Clientless VPN enabled, there is a limited impact on confidentiality due to inherent risks of Clientless VPN that facilitate credential theft. You can read more about this risk in the informational bulletin  PAN-SA-2025-0005 https://security.paloaltonetworks.com/PAN-SA-2025-0005   https://security.paloaltonetworks.com/PAN-SA-2025-0005 . There is no impact to confidentiality for GlobalProtect users if you did not enable (or you disable) Clientless VPN.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0133"
+    ],
+    "受影响版本": [
+      "11.2.0",
+      "11.1.0",
+      "10.2.0",
+      "10.1.0"
+    ],
+    "公开日期": "2025年05月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Broker VM",
+    "CVE编号": "CVE-2025-0132",
+    "漏洞描述": "A missing authentication vulnerability in Palo Alto Networks Cortex XDR® Broker VM allows an unauthenticated user to disable certain internal services on the Broker VM. \n\nThe attacker must have network access to the Broker VM to exploit this issue.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0132"
+    ],
+    "受影响版本": [
+      "26.0.0"
+    ],
+    "公开日期": "2025年05月14日"
+  },
+  {
+    "设备品牌": "OPSWAT",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "MetaDefender Endpoint Security SDK",
+    "CVE编号": "CVE-2025-0131",
+    "漏洞描述": "An incorrect privilege management vulnerability in the OPSWAT MetaDefender Endpoint Security SDK used by the Palo Alto Networks GlobalProtect™ app on Windows devices allows a locally authenticated non-administrative Windows user to escalate their privileges to NT AUTHORITY\\SYSTEM. However, execution requires that the local user also successfully exploits a race condition, which makes this vulnerability difficult to exploit.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0131",
+      "https://www.opswat.com/docs/mdsdk/release-notes/cve-2025-0131"
+    ],
+    "受影响版本": [
+      "4.3.0"
+    ],
+    "公开日期": "2025年05月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-0130",
+    "漏洞描述": "A missing exception check in Palo Alto Networks PAN-OS® software with the web proxy feature enabled allows an unauthenticated attacker to send a burst of maliciously crafted packets that causes the firewall to become unresponsive and eventually reboot. Repeated successful attempts to trigger this condition will cause the firewall to enter maintenance mode.\n\nThis issue does not affect Cloud NGFW or Prisma Access.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0130"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年05月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Prisma Access Browser",
+    "CVE编号": "CVE-2025-0129",
+    "漏洞描述": "An improper exception check in Palo Alto Networks Prisma Access Browser allows a low privileged user to prevent Prisma Access Browser from applying it's Policy Rules. This enables the user to use Prisma Access Browser without any restrictions.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/PAN-SA-2025-0008"
+    ],
+    "受影响版本": [
+      "1"
+    ],
+    "公开日期": "2025年04月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-0128",
+    "漏洞描述": "A denial-of-service (DoS) vulnerability in the Simple Certificate Enrollment Protocol (SCEP) authentication feature of Palo Alto Networks PAN-OS® software enables an unauthenticated attacker to initiate system reboots using a maliciously crafted packet. Repeated attempts to initiate a reboot causes the firewall to enter maintenance mode.\n\nCloud NGFW is not affected by this vulnerability. Prisma® Access software is proactively patched and protected from this issue.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0128"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年04月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-0127",
+    "漏洞描述": "A command injection vulnerability in Palo Alto Networks PAN-OS® software enables an authenticated administrator to bypass system restrictions and run arbitrary commands as a root user. This issue is only applicable to PAN-OS VM-Series. This issue does not affect firewalls that are already deployed.\n\nCloud NGFW and Prisma® Access are not affected by this vulnerability.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0127"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年04月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-0125",
+    "漏洞描述": "An improper input neutralization vulnerability in the management web interface of the Palo Alto Networks PAN-OS® software enables a malicious authenticated read-write administrator to impersonate another legitimate authenticated PAN-OS administrator.\n\n\nThe attacker must have network access to the management web interface to exploit this issue. You greatly reduce the risk of this issue by restricting access to the management web interface to only trusted internal IP addresses according to our recommended  critical deployment guidelines https://live.paloaltonetworks.com/t5/community-blogs/tips-amp-tricks-how-to-secure-the-management-access-of-your-palo/ba-p/464431 .\n\nThis issue does not affect Cloud NGFW and all Prisma® Access instances.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0125"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年04月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-0124",
+    "漏洞描述": "An authenticated file deletion vulnerability in the Palo Alto Networks PAN-OS® software enables an authenticated attacker with network access to the management web interface to delete certain files as the “nobody” user; this includes limited logs and configuration files but does not include system files.\n\nThe attacker must have network access to the management web interface to exploit this issue. You greatly reduce the risk of this issue by restricting access to the management web interface to only trusted internal IP addresses according to our recommended  critical deployment guidelines https://live.paloaltonetworks.com/t5/community-blogs/tips-amp-tricks-how-to-secure-the-management-access-of-your-palo/ba-p/464431 .\n\nThis issue affects Cloud NGFW. However, this issue does not affect Prisma® Access software.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0124"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年04月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-0123",
+    "漏洞描述": "A vulnerability in the Palo Alto Networks PAN-OS® software enables unlicensed administrators to view clear-text data captured using the  packet capture feature https://docs.paloaltonetworks.com/pan-os/11-0/pan-os-admin/monitoring/take-packet-captures/take-a-custom-packet-capture  in decrypted HTTP/2 data streams traversing network interfaces on the firewall. HTTP/1.1 data streams are not impacted.\n\nIn normal conditions, decrypted packet captures are available to firewall administrators after they obtain and install a free Decryption Port Mirror license. The license requirement ensures that this feature can only be used after approved personnel purposefully activate the license. For more information, review how to  configure decryption port mirroring https://docs.paloaltonetworks.com/network-security/decryption/administration/monitoring-decryption/configure-decryption-port-mirroring .\n\nThe administrator must obtain network access to the management interface (web, SSH, console, or telnet) and successfully authenticate to exploit this issue. Risk of this issue can be greatly reduced by restricting access to the management interface to only trusted administrators and from only internal IP addresses according to our recommended  critical deployment guidelines https://live.paloaltonetworks.com/t5/community-blogs/tips-amp-tricks-how-to-secure-the-management-access-of-your-palo/ba-p/464431 .\n\nCustomer firewall administrators do not have access to the packet capture feature in Cloud NGFW. This feature is available only to authorized Palo Alto Networks personnel permitted to perform troubleshooting.\n\nPrisma® Access is not impacted by this vulnerability.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0123"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年04月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Prisma SD-WAN",
+    "CVE编号": "CVE-2025-0122",
+    "漏洞描述": "A denial-of-service (DoS) vulnerability in Palo Alto Networks Prisma® SD-WAN ION devices enables an unauthenticated attacker in a network adjacent to a Prisma SD-WAN ION device to disrupt the packet processing capabilities of the device by sending a burst of crafted packets to that device.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0122"
+    ],
+    "受影响版本": [
+      "6.5.0",
+      "6.4.0",
+      "6.3.0",
+      "6.2.0",
+      "6.1.0"
+    ],
+    "公开日期": "2025年04月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2025-0121",
+    "漏洞描述": "A null pointer dereference vulnerability in the Palo Alto Networks Cortex® XDR agent on Windows devices allows a low-privileged local Windows user to crash the agent. Additionally, malware can use this vulnerability to perform malicious activity without Cortex XDR being able to detect it.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0121"
+    ],
+    "受影响版本": [
+      "8.7.0",
+      "8.6.0",
+      "8.5.0",
+      "8.3-CE",
+      "7.9-CE"
+    ],
+    "公开日期": "2025年04月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2025-0120",
+    "漏洞描述": "A vulnerability with a privilege management mechanism in the Palo Alto Networks GlobalProtect™ app on Windows devices allows a locally authenticated non-administrative Windows user to escalate their privileges to NT AUTHORITY\\SYSTEM. However, execution requires that the local user can also successfully exploit a race condition, which makes this vulnerability difficult to exploit.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0120"
+    ],
+    "受影响版本": [
+      "6.3.0",
+      "6.2.0",
+      "6.1.0",
+      "6.0.0"
+    ],
+    "公开日期": "2025年04月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Broker VM",
+    "CVE编号": "CVE-2025-0119",
+    "漏洞描述": "A command injection vulnerability in the Palo Alto Networks Cortex XDR® Broker VM allows an authenticated user to execute arbitrary OS commands with root privileges on the host operating system running Broker VM.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0119"
+    ],
+    "受影响版本": [
+      "1.0.0"
+    ],
+    "公开日期": "2025年04月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2025-0118",
+    "漏洞描述": "A vulnerability in the Palo Alto Networks GlobalProtect app on Windows allows a remote attacker to run ActiveX controls within the context of an authenticated Windows user. This enables the attacker to run commands as if they are a legitimate authenticated user. However, to exploit this vulnerability, the authenticated user must navigate to a malicious page during the GlobalProtect SAML login process on a Windows device.\n\nThis issue does not apply to the GlobalProtect app on other (non-Windows) platforms.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0118"
+    ],
+    "受影响版本": [
+      "6.3.0",
+      "6.2.0",
+      "6.1.0",
+      "6.0.0"
+    ],
+    "公开日期": "2025年03月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2025-0116",
+    "漏洞描述": "A Denial of Service (DoS) vulnerability in Palo Alto Networks PAN-OS software causes the firewall to unexpectedly reboot when processing a specially crafted LLDP frame sent by an unauthenticated adjacent attacker. Repeated attempts to initiate this condition causes the firewall to enter maintenance mode.\n\nThis issue does not apply to Cloud NGFWs or Prisma Access software.",
+    "攻击向量": "ADJACENT",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0116"
+    ],
+    "受影响版本": [
+      "11.2.0",
+      "11.1.0",
+      "10.2.0",
+      "10.1.0"
+    ],
+    "公开日期": "2025年03月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2025-0115",
+    "漏洞描述": "A vulnerability in the Palo Alto Networks PAN-OS software enables an authenticated admin on the PAN-OS CLI to read arbitrary files.\n\nThe attacker must have network access to the management interface (web, SSH, console, or telnet) and successfully authenticate to exploit this issue. You can greatly reduce the risk of this issue by restricting access to the management interface to only trusted users and internal IP addresses according to our recommended  critical deployment guidelines https://live.paloaltonetworks.com/t5/community-blogs/tips-amp-tricks-how-to-secure-the-management-access-of-your-palo/ba-p/464431 .\n\nThis issue does not affect Cloud NGFW or Prisma Access.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0115"
+    ],
+    "受影响版本": [
+      "11.2.0",
+      "11.1.0",
+      "11.0.0",
+      "10.2.0",
+      "10.1.0"
+    ],
+    "公开日期": "2025年03月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2025-0114",
+    "漏洞描述": "A Denial of Service (DoS) vulnerability in the GlobalProtect feature of Palo Alto Networks PAN-OS software enables an unauthenticated attacker to render the service unavailable by sending a large number of specially crafted packets over a period of time. This issue affects both the GlobalProtect portal and the GlobalProtect gateway.\n\nThis issue does not apply to Cloud NGFWs or Prisma Access software.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0114"
+    ],
+    "受影响版本": [
+      "11.2.0",
+      "11.1.0",
+      "11.0.0",
+      "10.2.0",
+      "10.1.0"
+    ],
+    "公开日期": "2025年03月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Broker VM",
+    "CVE编号": "CVE-2025-0113",
+    "漏洞描述": "A problem with the network isolation mechanism of the Palo Alto Networks Cortex XDR Broker VM allows attackers unauthorized access to Docker containers from the host network used by Broker VM. This may allow access to read files sent for analysis and logs transmitted by the Cortex XDR Agent to the Cortex XDR server.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0113"
+    ],
+    "受影响版本": [
+      "1.0.0"
+    ],
+    "公开日期": "2025年02月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2025-0112",
+    "漏洞描述": "A problem with a detection mechanism in the Palo Alto Networks Cortex XDR agent on Windows devices enables a user with Windows non-administrative privileges to disable the agent. This vulnerability can also be leveraged by malware to disable the Cortex XDR agent and then perform malicious activity.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0112"
+    ],
+    "受影响版本": [
+      "8.3-CE",
+      "8.4.0",
+      "8.5.0",
+      "8.6.0"
+    ],
+    "公开日期": "2025年02月19日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-0111",
+    "漏洞描述": "An authenticated file read vulnerability in the Palo Alto Networks PAN-OS software enables an authenticated attacker with network access to the management web interface to read files on the PAN-OS filesystem that are readable by the “nobody” user.\n\nYou can greatly reduce the risk of this issue by restricting access to the management web interface to only trusted internal IP addresses according to our recommended  best practices deployment guidelines https://live.paloaltonetworks.com/t5/community-blogs/tips-amp-tricks-how-to-secure-the-management-access-of-your-palo/ba-p/464431 .\n\n\n\nThis issue does not affect Cloud NGFW or Prisma Access software.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0111"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年02月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS OpenConfig Plugin",
+    "CVE编号": "CVE-2025-0110",
+    "漏洞描述": "A command injection vulnerability in the Palo Alto Networks PAN-OS OpenConfig plugin enables an authenticated administrator with the ability to make gNMI requests to the PAN-OS management web interface to bypass system restrictions and run arbitrary commands. The commands are run as the “__openconfig” user (which has the Device Administrator role) on the firewall.\n\nYou can greatly reduce the risk of this issue by restricting access to the management web interface to only trusted internal IP addresses according to our recommended  best practices deployment guidelines https://live.paloaltonetworks.com/t5/community-blogs/tips-amp-tricks-how-to-secure-the-management-access-of-your-palo/ba-p/464431 .",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0110"
+    ],
+    "受影响版本": [
+      "1.0.0"
+    ],
+    "公开日期": "2025年02月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-0109",
+    "漏洞描述": "An unauthenticated file deletion vulnerability in the Palo Alto Networks PAN-OS management web interface enables an unauthenticated attacker with network access to the management web interface to delete certain files as the “nobody” user; this includes limited logs and configuration files but does not include system files.\n\n\nYou can greatly reduce the risk of this issue by restricting access to the management web interface to only trusted internal IP addresses according to our recommended  best practices deployment guidelines https://live.paloaltonetworks.com/t5/community-blogs/tips-amp-tricks-how-to-secure-the-management-access-of-your-palo/ba-p/464431 .\n\nThis issue does not affect Cloud NGFW or Prisma Access software.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-0109"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年02月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-0108",
+    "漏洞描述": "An authentication bypass in the Palo Alto Networks PAN-OS software enables an unauthenticated attacker with network access to the management web interface to bypass the authentication otherwise required by the PAN-OS management web interface and invoke certain PHP scripts. While invoking these PHP scripts does not enable remote code execution, it can negatively impact integrity and confidentiality of PAN-OS.\n\nYou can greatly reduce the risk of this issue by restricting access to the management web interface to only trusted internal IP addresses according to our recommended  best practices deployment guidelines https://live.paloaltonetworks.com/t5/community-blogs/tips-amp-tricks-how-to-secure-the-management-access-of-your-palo/ba-p/464431 .\n\nThis issue does not affect Cloud NGFW or Prisma Access software.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2025-0108"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年02月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-0107",
+    "漏洞描述": "An OS command injection vulnerability in Palo Alto Networks Expedition enables an unauthenticated attacker to run arbitrary OS commands as the www-data user in Expedition, which results in the disclosure of usernames, cleartext passwords, device configurations, and device API keys for firewalls running PAN-OS software.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/PAN-SA-2025-0001"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年01月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-0106",
+    "漏洞描述": "A wildcard expansion vulnerability in Palo Alto Networks Expedition allows an unauthenticated attacker to enumerate files on the host filesystem.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/PAN-SA-2025-0001"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年01月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-0105",
+    "漏洞描述": "An arbitrary file deletion vulnerability in Palo Alto Networks Expedition enables an unauthenticated attacker to delete arbitrary files accessible to the www-data user on the host filesystem.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/PAN-SA-2025-0001"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年01月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-0104",
+    "漏洞描述": "A reflected cross-site scripting (XSS) vulnerability in Palo Alto Networks Expedition enables attackers to execute malicious JavaScript code in the context of an authenticated Expedition user’s browser if that authenticated user clicks a malicious link that allows phishing attacks and could lead to Expedition browser-session theft.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/PAN-SA-2025-0001"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年01月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2025-0103",
+    "漏洞描述": "An SQL injection vulnerability in Palo Alto Networks Expedition enables an authenticated attacker to reveal Expedition database contents, such as password hashes, usernames, device configurations, and device API keys. This vulnerability also enables attackers to create and read arbitrary files on the Expedition system.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/PAN-SA-2025-0001"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2025年01月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2024-9474",
+    "漏洞描述": "A privilege escalation vulnerability in Palo Alto Networks PAN-OS software allows a PAN-OS administrator with access to the management web interface to perform actions on the firewall with root privileges.\n\nCloud NGFW and Prisma Access are not impacted by this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-9474"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2024年11月18日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2024-9473",
+    "漏洞描述": "A privilege escalation vulnerability in the Palo Alto Networks GlobalProtect app on Windows allows a locally authenticated non-administrative Windows user to escalate their privileges to NT AUTHORITY/SYSTEM through the use of the repair functionality offered by the .msi file used to install GlobalProtect.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-9473",
+      "https://sec-consult.com/vulnerability-lab/advisory/local-privilege-escalation-via-msi-installer-in-palo-alto-networks-globalprotect/"
+    ],
+    "受影响版本": [
+      "5.1",
+      "6.0",
+      "6.1",
+      "6.2.0",
+      "6.3"
+    ],
+    "公开日期": "2024年10月09日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2024-9472",
+    "漏洞描述": "A null pointer dereference in Palo Alto Networks PAN-OS software on PA-800 Series, PA-3200 Series, PA-5200 Series, and PA-7000 Series hardware platforms when Decryption policy is enabled allows an unauthenticated attacker to crash PAN-OS by sending specific traffic through the data plane, resulting in a denial of service (DoS) condition. Repeated attempts to trigger this condition will result in PAN-OS entering maintenance mode.\n\n\nPalo Alto Networks VM-Series, Cloud NGFW, and Prisma Access are not affected.\n\n\nThis issue only affects PA-800 Series, PA-3200 Series, PA-5200 Series, and PA-7000 Series running these specific versions of PAN-OS:\n\n  *  10.2.7-h12\n  *  10.2.8-h10\n  *  10.2.9-h9\n  *  10.2.9-h11\n  *  10.2.10-h2\n  *  10.2.10-h3\n  *  10.2.11\n  *  10.2.11-h1\n  *  10.2.11-h2\n  *  10.2.11-h3\n  *  11.1.2-h9\n  *  11.1.2-h12\n  *  11.1.3-h2\n  *  11.1.3-h4\n  *  11.1.3-h6\n  *  11.2.2\n  *  11.2.2-h1",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-9472"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2024年11月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-9471",
+    "漏洞描述": "A privilege escalation (PE) vulnerability in the XML API of Palo Alto Networks PAN-OS software enables an authenticated PAN-OS administrator with restricted privileges to use a compromised XML API key to perform actions as a higher privileged PAN-OS administrator. For example, an administrator with \"Virtual system administrator (read-only)\" access could use an XML API key of a \"Virtual system administrator\" to perform write operations on the virtual system configuration even though they should be limited to read-only operations.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-9471"
+    ],
+    "受影响版本": [
+      "11.1.0",
+      "11.0.0",
+      "10.1.0",
+      "10.2.0",
+      "9.1",
+      "9.0"
+    ],
+    "公开日期": "2024年10月09日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2024-9469",
+    "漏洞描述": "A problem with a detection mechanism in the Palo Alto Networks Cortex XDR agent on Windows devices enables a user with Windows non-administrative privileges to disable the agent. This issue may be leveraged by malware to disable the Cortex XDR agent and then to perform malicious activity.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-9469"
+    ],
+    "受影响版本": [
+      "7.9",
+      "8.3",
+      "8.3-CE",
+      "8.4",
+      "8.5",
+      "8.6"
+    ],
+    "公开日期": "2024年10月09日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2024-9468",
+    "漏洞描述": "A memory corruption vulnerability in Palo Alto Networks PAN-OS software allows an unauthenticated attacker to crash PAN-OS due to a crafted packet through the data plane, resulting in a denial of service (DoS) condition. Repeated attempts to trigger this condition will result in PAN-OS entering maintenance mode.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-9468"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2024年10月09日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Expedition",
+    "CVE编号": "CVE-2024-9467",
+    "漏洞描述": "A reflected XSS vulnerability in Palo Alto Networks Expedition enables execution of malicious JavaScript in the context of an authenticated Expedition user's browser if that user clicks on a malicious link, allowing phishing attacks that could lead to Expedition browser session theft.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/PAN-SA-2024-0010"
+    ],
+    "受影响版本": [
+      "1.2.0"
+    ],
+    "公开日期": "2024年10月09日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Expedition",
+    "CVE编号": "CVE-2024-9466",
+    "漏洞描述": "A cleartext storage of sensitive information vulnerability in Palo Alto Networks Expedition allows an authenticated attacker to reveal firewall usernames, passwords, and API keys generated using those credentials.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/PAN-SA-2024-0010",
+      "https://www.horizon3.ai/attack-research/palo-alto-expedition-from-n-day-to-full-compromise/"
+    ],
+    "受影响版本": [
+      "1.2.0"
+    ],
+    "公开日期": "2024年10月09日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Expedition",
+    "CVE编号": "CVE-2024-9465",
+    "漏洞描述": "An SQL injection vulnerability in Palo Alto Networks Expedition allows an unauthenticated attacker to reveal Expedition database contents, such as password hashes, usernames, device configurations, and device API keys. With this, attackers can also create and read arbitrary files on the Expedition system.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/PAN-SA-2024-0010",
+      "https://www.horizon3.ai/attack-research/palo-alto-expedition-from-n-day-to-full-compromise/"
+    ],
+    "受影响版本": [
+      "1.2.0"
+    ],
+    "公开日期": "2024年10月09日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Expedition",
+    "CVE编号": "CVE-2024-9464",
+    "漏洞描述": "An OS command injection vulnerability in Palo Alto Networks Expedition allows an authenticated attacker to run arbitrary OS commands as root in Expedition, resulting in disclosure of usernames, cleartext passwords, device configurations, and device API keys of PAN-OS firewalls.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/PAN-SA-2024-0010",
+      "https://www.horizon3.ai/attack-research/palo-alto-expedition-from-n-day-to-full-compromise/"
+    ],
+    "受影响版本": [
+      "1.2.0"
+    ],
+    "公开日期": "2024年10月09日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Expedition",
+    "CVE编号": "CVE-2024-9463",
+    "漏洞描述": "An OS command injection vulnerability in Palo Alto Networks Expedition allows an unauthenticated attacker to run arbitrary OS commands as root in Expedition, resulting in disclosure of usernames, cleartext passwords, device configurations, and device API keys of PAN-OS firewalls.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/PAN-SA-2024-0010"
+    ],
+    "受影响版本": [
+      "1.2.0"
+    ],
+    "公开日期": "2024年10月09日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-8691",
+    "漏洞描述": "A vulnerability in the GlobalProtect portal in Palo Alto Networks PAN-OS software enables a malicious authenticated GlobalProtect user to impersonate another GlobalProtect user. Active GlobalProtect users impersonated by an attacker who is exploiting this vulnerability are disconnected from GlobalProtect. Upon exploitation, PAN-OS logs indicate that the impersonated user authenticated to GlobalProtect, which hides the identity of the attacker.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-8691"
+    ],
+    "受影响版本": [
+      "9.1.0",
+      "10.1.0",
+      "10.2.0",
+      "11.0.0",
+      "11.1.0",
+      "11.2.0"
+    ],
+    "公开日期": "2024年09月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2024-8690",
+    "漏洞描述": "A problem with a detection mechanism in the Palo Alto Networks Cortex XDR agent on Windows devices enables a user with Windows administrator privileges to disable the agent. This issue may be leveraged by malware to disable the Cortex XDR agent and then to perform malicious activity.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-8690"
+    ],
+    "受影响版本": [
+      "8.5",
+      "8.4",
+      "8.3",
+      "8.3-CE",
+      "8.2",
+      "7.9.102-CE"
+    ],
+    "公开日期": "2024年09月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-8688",
+    "漏洞描述": "An improper neutralization of matching symbols vulnerability in the Palo Alto Networks PAN-OS command line interface (CLI) enables authenticated administrators (including read-only administrators) with access to the CLI to to read arbitrary files on the firewall.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-8688"
+    ],
+    "受影响版本": [
+      "9.1.0",
+      "10.0.0",
+      "10.1.0",
+      "10.2.0",
+      "11.0.0",
+      "11.1.0",
+      "11.2.0"
+    ],
+    "公开日期": "2024年09月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-8687",
+    "漏洞描述": "An information exposure vulnerability exists in Palo Alto Networks PAN-OS software that enables a GlobalProtect end user to learn both the configured GlobalProtect uninstall password and the configured disable or disconnect passcode. After the password or passcode is known, end users can uninstall, disable, or disconnect GlobalProtect even if the GlobalProtect app configuration would not normally permit them to do so.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-8687"
+    ],
+    "受影响版本": [
+      "11.1.0",
+      "11.2.0",
+      "11.0.0",
+      "10.2.0",
+      "10.1.0",
+      "10.0.0",
+      "9.1.0",
+      "9.0.0",
+      "8.1.0"
+    ],
+    "公开日期": "2024年09月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-8686",
+    "漏洞描述": "A command injection vulnerability in Palo Alto Networks PAN-OS software enables an authenticated administrator to bypass system restrictions and run arbitrary commands as root on the firewall.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-8686"
+    ],
+    "受影响版本": [
+      "11.2.0",
+      "11.2.2",
+      "11.1.0",
+      "11.0.0",
+      "10.2.0",
+      "10.1.0"
+    ],
+    "公开日期": "2024年09月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2024-5921",
+    "漏洞描述": "An insufficient certification validation issue in the Palo Alto Networks GlobalProtect app enables attackers to connect the GlobalProtect app to arbitrary servers. This can enable a local non-administrative operating system user or an attacker on the same subnet to install malicious root certificates on the endpoint and subsequently install malicious software signed by the malicious root certificates on that endpoint.\n\nPlease subscribe to  our RSS feed https://security.paloaltonetworks.com/rss.xml  to be alerted to new updates to this and other advisories.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-5921",
+      "https://blog.amberwolf.com/blog/2024/november/palo-alto-globalprotect---code-execution-and-privilege-escalation-via-malicious-vpn-server-cve-2024-5921/",
+      "https://github.com/AmberWolfCyber/NachoVPN"
+    ],
+    "受影响版本": [
+      "6.3.0",
+      "6.2.0",
+      "6.1.0"
+    ],
+    "公开日期": "2024年11月27日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2024-5920",
+    "漏洞描述": "A cross-site scripting (XSS) vulnerability in Palo Alto Networks PAN-OS software enables an authenticated read-write Panorama administrator to push a specially crafted configuration to a PAN-OS node. This enables impersonation of a legitimate PAN-OS administrator who can perform restricted actions on the PAN-OS node after the execution of JavaScript in the legitimate PAN-OS administrator's browser.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-5920"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2024年11月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2024-5919",
+    "漏洞描述": "A blind XML External Entities (XXE) injection vulnerability in the Palo Alto Networks PAN-OS software enables an authenticated attacker to exfiltrate arbitrary files from firewalls to an attacker controlled server. This attack requires network access to the firewall management interface.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-5919"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2024年11月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2024-5918",
+    "漏洞描述": "An improper certificate validation vulnerability in Palo Alto Networks PAN-OS software enables an authorized user with a specially crafted client certificate to connect to an impacted GlobalProtect portal or GlobalProtect gateway as a different legitimate user. This attack is possible only if you \"Allow Authentication with User Credentials OR Client Certificate.\"",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-5918"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2024年11月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-5916",
+    "漏洞描述": "An information exposure vulnerability in Palo Alto Networks PAN-OS software enables a local system administrator to unintentionally disclose secrets, passwords, and tokens of external systems. A read-only administrator who has access to the config log, can read secrets, passwords, and tokens to external systems.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-5916"
+    ],
+    "受影响版本": [
+      "9.1",
+      "10.1",
+      "10.2",
+      "11.0",
+      "11.1"
+    ],
+    "公开日期": "2024年08月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2024-5915",
+    "漏洞描述": "A privilege escalation (PE) vulnerability in the Palo Alto Networks GlobalProtect app on Windows devices enables a local user to execute programs with elevated privileges.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-5915"
+    ],
+    "受影响版本": [
+      "5.1",
+      "6.0",
+      "6.1",
+      "6.2",
+      "6.3"
+    ],
+    "公开日期": "2024年08月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XSOAR CommonScripts",
+    "CVE编号": "CVE-2024-5914",
+    "漏洞描述": "A command injection issue in Palo Alto Networks Cortex XSOAR CommonScripts Pack allows an unauthenticated attacker to execute arbitrary commands within the context of an integration container.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-5914"
+    ],
+    "受影响版本": [
+      "1.12"
+    ],
+    "公开日期": "2024年08月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-5913",
+    "漏洞描述": "An improper input validation vulnerability in Palo Alto Networks PAN-OS software enables an attacker with the ability to tamper with the physical file system to elevate privileges.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-5913"
+    ],
+    "受影响版本": [
+      "10.1.0",
+      "10.2.0",
+      "11.0.0",
+      "11.1.0",
+      "11.2.0"
+    ],
+    "公开日期": "2024年07月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2024-5912",
+    "漏洞描述": "An improper file signature check in Palo Alto Networks Cortex XDR agent may allow an attacker to bypass the Cortex XDR agent's executable blocking capabilities and run untrusted executables on the device. This issue can be leveraged to execute untrusted software without being detected or blocked.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-5912"
+    ],
+    "受影响版本": [
+      "8.4",
+      "8.3-CE",
+      "8.3",
+      "7.9-CE",
+      "8.2"
+    ],
+    "公开日期": "2024年07月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-5911",
+    "漏洞描述": "An arbitrary file upload vulnerability in Palo Alto Networks Panorama software enables an authenticated read-write administrator with access to the web interface to disrupt system processes and crash the Panorama. Repeated attacks eventually cause the Panorama to enter maintenance mode, which requires manual intervention to bring the Panorama back online.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-5911"
+    ],
+    "受影响版本": [
+      "11.2",
+      "11.1",
+      "11.0",
+      "10.2.0",
+      "10.1.0"
+    ],
+    "公开日期": "2024年07月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Expedition",
+    "CVE编号": "CVE-2024-5910",
+    "漏洞描述": "Missing authentication for a critical function in Palo Alto Networks Expedition can lead to an Expedition admin account takeover for attackers with network access to Expedition.\n\nNote: Expedition is a tool aiding in configuration migration, tuning, and enrichment. Configuration secrets, credentials, and other data imported into Expedition is at risk due to this issue.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-5910"
+    ],
+    "受影响版本": [
+      "1.2"
+    ],
+    "公开日期": "2024年07月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2024-5909",
+    "漏洞描述": "A problem with a protection mechanism in the Palo Alto Networks Cortex XDR agent on Windows devices allows a low privileged local Windows user to disable the agent. This issue may be leveraged by malware to disable the Cortex XDR agent and then to perform malicious activity.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-5909"
+    ],
+    "受影响版本": [
+      "8.4.0",
+      "8.3.0",
+      "8.2.0",
+      "8.1.0",
+      "7.9-CE"
+    ],
+    "公开日期": "2024年06月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2024-5908",
+    "漏洞描述": "A problem with the Palo Alto Networks GlobalProtect app can result in exposure of encrypted user credentials, used for connecting to GlobalProtect, in application logs. Normally, these application logs are only viewable by local users and are included when generating logs for troubleshooting purposes. This means that these encrypted credentials are exposed to recipients of the application logs.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-5908"
+    ],
+    "受影响版本": [
+      "5.1.0",
+      "6.0.0",
+      "6.1.0",
+      "6.2.0"
+    ],
+    "公开日期": "2024年06月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2024-5907",
+    "漏洞描述": "A privilege escalation (PE) vulnerability in the Palo Alto Networks Cortex XDR agent on Windows devices enables a local user to execute programs with elevated privileges. However, execution does require the local user to successfully exploit a race condition, which makes this vulnerability difficult to exploit.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-5907"
+    ],
+    "受影响版本": [
+      "7.9-CE",
+      "8.1.0",
+      "8.2.0",
+      "8.3.0",
+      "8.4.0"
+    ],
+    "公开日期": "2024年06月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Prisma Cloud Compute",
+    "CVE编号": "CVE-2024-5906",
+    "漏洞描述": "A cross-site scripting (XSS) vulnerability in Palo Alto Networks Prisma Cloud Compute software enables a malicious administrator with add/edit permissions for identity providers to store a JavaScript payload using the web interface on Prisma Cloud Compute. This enables a malicious administrator to perform actions in the context of another user's browser when accessed by that other user.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-5906"
+    ],
+    "受影响版本": [
+      "32"
+    ],
+    "公开日期": "2024年06月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2024-5905",
+    "漏洞描述": "A problem with a protection mechanism in the Palo Alto Networks Cortex XDR agent on Windows devices allows a local low privileged Windows user to disrupt some functionality of the agent. However, they are not able to disrupt Cortex XDR agent protection mechanisms using this vulnerability.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-5905"
+    ],
+    "受影响版本": [
+      "7.9-CE",
+      "8.1.0",
+      "8.2.0",
+      "8.3.0",
+      "8.4.0"
+    ],
+    "公开日期": "2024年06月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-3400",
+    "漏洞描述": "A command injection as a result of arbitrary file creation vulnerability in the GlobalProtect feature of Palo Alto Networks PAN-OS software for specific PAN-OS versions and distinct feature configurations may enable an unauthenticated attacker to execute arbitrary code with root privileges on the firewall.\n\nCloud NGFW, Panorama appliances, and Prisma Access are not impacted by this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-3400",
+      "https://unit42.paloaltonetworks.com/cve-2024-3400/",
+      "https://www.volexity.com/blog/2024/04/12/zero-day-exploitation-of-unauthenticated-remote-code-execution-vulnerability-in-globalprotect-cve-2024-3400/",
+      "https://www.paloaltonetworks.com/blog/2024/04/more-on-the-pan-os-cve/"
+    ],
+    "受影响版本": [
+      "9.0.0",
+      "9.1.0",
+      "10.0.0",
+      "10.1.0",
+      "10.2.0",
+      "11.0.0",
+      "11.1.0"
+    ],
+    "公开日期": "2024年04月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2024-3393",
+    "漏洞描述": "A Denial of Service vulnerability in the DNS Security feature of Palo Alto Networks PAN-OS software allows an unauthenticated attacker to send a malicious packet through the data plane of the firewall that reboots the firewall. Repeated attempts to trigger this condition will cause the firewall to enter maintenance mode.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-3393"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2024年12月27日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-3388",
+    "漏洞描述": "A vulnerability in the GlobalProtect Gateway in Palo Alto Networks PAN-OS software enables an authenticated attacker to impersonate another user and send network packets to internal assets. However, this vulnerability does not allow the attacker to receive response packets from those internal assets.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-3388"
+    ],
+    "受影响版本": [
+      "8.1.0",
+      "9.0.0",
+      "9.1.0",
+      "10.1.0",
+      "10.2.0",
+      "11.0.0",
+      "11.1.0"
+    ],
+    "公开日期": "2024年04月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-3387",
+    "漏洞描述": "A weak (low bit strength) device certificate in Palo Alto Networks Panorama software enables an attacker to perform a meddler-in-the-middle (MitM) attack to capture encrypted traffic between the Panorama management server and the firewalls it manages. With sufficient computing resources, the attacker could break encrypted communication and expose sensitive information that is shared between the management server and the firewalls.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-3387"
+    ],
+    "受影响版本": [
+      "9.0.0",
+      "9.1.0",
+      "10.1.0",
+      "10.2.0",
+      "10.2.0",
+      "11.0.0",
+      "11.1.0"
+    ],
+    "公开日期": "2024年04月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-3386",
+    "漏洞描述": "An incorrect string comparison vulnerability in Palo Alto Networks PAN-OS software prevents Predefined Decryption Exclusions from functioning as intended. This can cause traffic destined for domains that are not specified in Predefined Decryption Exclusions to be unintentionally excluded from decryption.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-3386"
+    ],
+    "受影响版本": [
+      "9.0.0",
+      "9.1.0",
+      "10.0.0",
+      "10.1.0",
+      "10.1.0",
+      "10.2.0",
+      "10.2.0",
+      "11.0.0",
+      "11.0.0",
+      "11.1.0"
+    ],
+    "公开日期": "2024年04月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-3385",
+    "漏洞描述": "A packet processing mechanism in Palo Alto Networks PAN-OS software enables a remote attacker to reboot hardware-based firewalls. Repeated attacks eventually cause the firewall to enter maintenance mode, which requires manual intervention to bring the firewall back online.\n\nThis affects the following hardware firewall models:\n- PA-5400 Series firewalls\n- PA-7000 Series firewalls",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-3385"
+    ],
+    "受影响版本": [
+      "9.0.0",
+      "9.1.0",
+      "10.1.0",
+      "10.2.0",
+      "11.0.0",
+      "11.1.0"
+    ],
+    "公开日期": "2024年04月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-3384",
+    "漏洞描述": "A vulnerability in Palo Alto Networks PAN-OS software enables a remote attacker to reboot PAN-OS firewalls when receiving Windows New Technology LAN Manager (NTLM) packets from Windows servers. Repeated attacks eventually cause the firewall to enter maintenance mode, which requires manual intervention to bring the firewall back online.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-3384"
+    ],
+    "受影响版本": [
+      "8.1.0",
+      "9.0.0",
+      "9.1.0",
+      "10.0.0",
+      "10.1.0",
+      "10.2.0",
+      "11.0.0",
+      "11.1.0"
+    ],
+    "公开日期": "2024年04月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-3383",
+    "漏洞描述": "A vulnerability in how Palo Alto Networks PAN-OS software processes data received from Cloud Identity Engine (CIE) agents enables modification of User-ID groups. This impacts user access to network resources where users may be inappropriately denied or allowed access to resources based on your existing Security Policy rules.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-3383"
+    ],
+    "受影响版本": [
+      "11.1.0",
+      "11.0.0",
+      "10.2.0",
+      "10.1.0",
+      "9.1.0",
+      "9.0.0"
+    ],
+    "公开日期": "2024年04月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-3382",
+    "漏洞描述": "A memory leak exists in Palo Alto Networks PAN-OS software that enables an attacker to send a burst of crafted packets through the firewall that eventually prevents the firewall from processing traffic. This issue applies only to PA-5400 Series devices that are running PAN-OS software with the SSL Forward Proxy feature enabled.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-3382"
+    ],
+    "受影响版本": [
+      "9.0.0",
+      "9.1.0",
+      "10.1.0",
+      "10.2.0",
+      "11.0.0",
+      "11.1.0"
+    ],
+    "公开日期": "2024年04月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2024-2552",
+    "漏洞描述": "A command injection vulnerability in Palo Alto Networks PAN-OS software enables an authenticated administrator to bypass system restrictions in the management plane and delete files on the firewall.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-2552"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2024年11月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2024-2551",
+    "漏洞描述": "A null pointer dereference vulnerability in Palo Alto Networks PAN-OS software enables an unauthenticated attacker to stop a core system service on the firewall by sending a crafted packet through the data plane that causes a denial of service (DoS) condition. Repeated attempts to trigger this condition result in the firewall entering maintenance mode.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-2551"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2024年11月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2024-2550",
+    "漏洞描述": "A null pointer dereference vulnerability in the GlobalProtect gateway in Palo Alto Networks PAN-OS software enables an unauthenticated attacker to stop the GlobalProtect service on the firewall by sending a specially crafted packet that causes a denial of service (DoS) condition. Repeated attempts to trigger this condition result in the firewall entering maintenance mode.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-2550"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2024年11月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-2433",
+    "漏洞描述": "An improper authorization vulnerability in Palo Alto Networks Panorama software enables an authenticated read-only administrator to upload files using the web interface and completely fill one of the disk partitions with those uploaded files, which prevents the ability to log into the web interface or to download PAN-OS, WildFire, and content images. \n\n\n\nThis issue affects only the web interface of the management plane; the dataplane is unaffected.\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-2433"
+    ],
+    "受影响版本": [
+      "9.0",
+      "9.1",
+      "10.1",
+      "10.2",
+      "11.0",
+      "11.1"
+    ],
+    "公开日期": "2024年03月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2024-2432",
+    "漏洞描述": "A privilege escalation (PE) vulnerability in the Palo Alto Networks GlobalProtect app on Windows devices enables a local user to execute programs with elevated privileges. However, execution requires that the local user is able to successfully exploit a race condition.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-2432"
+    ],
+    "受影响版本": [
+      "5.1",
+      "6.0",
+      "6.1",
+      "6.2"
+    ],
+    "公开日期": "2024年03月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2024-2431",
+    "漏洞描述": "An issue in the Palo Alto Networks GlobalProtect app enables a non-privileged user to disable the GlobalProtect app in configurations that allow a user to disable GlobalProtect with a passcode.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-2431"
+    ],
+    "受影响版本": [
+      "6.0",
+      "5.1",
+      "5.2",
+      "6.1",
+      "6.2"
+    ],
+    "公开日期": "2024年03月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2024-0012",
+    "漏洞描述": "An authentication bypass in Palo Alto Networks PAN-OS software enables an unauthenticated attacker with network access to the management web interface to gain PAN-OS administrator privileges to perform administrative actions, tamper with the configuration, or exploit other authenticated privilege escalation vulnerabilities like  CVE-2024-9474 https://security.paloaltonetworks.com/CVE-2024-9474 .\n\nThe risk of this issue is greatly reduced if you secure access to the management web interface by restricting access to only trusted internal IP addresses according to our recommended  best practice deployment guidelines https://live.paloaltonetworks.com/t5/community-blogs/tips-amp-tricks-how-to-secure-the-management-access-of-your-palo/ba-p/464431 .\n\nThis issue is applicable only to PAN-OS 10.2, PAN-OS 11.0, PAN-OS 11.1, and PAN-OS 11.2 software.\n\nCloud NGFW and Prisma Access are not impacted by this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-0012"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2024年11月18日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-0011",
+    "漏洞描述": "A reflected cross-site scripting (XSS) vulnerability in the Captive Portal feature of Palo Alto Networks PAN-OS software enables execution of malicious JavaScript (in the context of an authenticated Captive Portal user’s browser) if a user clicks on a malicious link, allowing phishing attacks that could lead to credential theft.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-0011"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0",
+      "10.1",
+      "10.2",
+      "11.0",
+      "11.1"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-0010",
+    "漏洞描述": "A reflected cross-site scripting (XSS) vulnerability in the GlobalProtect portal feature of Palo Alto Networks PAN-OS software enables execution of malicious JavaScript (in the context of a user’s browser) if a user clicks on a malicious link, allowing phishing attacks that could lead to credential theft.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-0010"
+    ],
+    "受影响版本": [
+      "9.0",
+      "9.1",
+      "10.1",
+      "10.1",
+      "10.2",
+      "11.0",
+      "11.1"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-0009",
+    "漏洞描述": "An improper verification vulnerability in the GlobalProtect gateway feature of Palo Alto Networks PAN-OS software enables a malicious user with stolen credentials to establish a VPN connection from an unauthorized IP address.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-0009"
+    ],
+    "受影响版本": [
+      "9.0",
+      "9.1",
+      "10.1",
+      "10.2",
+      "11.0",
+      "11.1"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-0008",
+    "漏洞描述": "Web sessions in the management interface in Palo Alto Networks PAN-OS software do not expire in certain situations, making it susceptible to unauthorized access.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-0008"
+    ],
+    "受影响版本": [
+      "9.0",
+      "9.0",
+      "9.1",
+      "10.0",
+      "10.0",
+      "10.1",
+      "10.1",
+      "10.2",
+      "11.0",
+      "11.1"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2024-0007",
+    "漏洞描述": "A cross-site scripting (XSS) vulnerability in Palo Alto Networks PAN-OS software enables a malicious authenticated read-write administrator to store a JavaScript payload using the web interface on Panorama appliances. This enables the impersonation of another authenticated administrator.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2024-0007"
+    ],
+    "受影响版本": [
+      "8.1",
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0",
+      "10.1",
+      "10.2",
+      "11.0",
+      "11.1"
+    ],
+    "公开日期": "2024年02月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2023-6795",
+    "漏洞描述": "An OS command injection vulnerability in Palo Alto Networks PAN-OS software enables an authenticated administrator to disrupt system processes and potentially execute arbitrary code with limited privileges on the firewall.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-6795"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0",
+      "10.1",
+      "10.2",
+      "11.0",
+      "11.1"
+    ],
+    "公开日期": "2023年12月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2023-6794",
+    "漏洞描述": "An arbitrary file upload vulnerability in Palo Alto Networks PAN-OS software enables an authenticated read-write administrator with access to the web interface to disrupt system processes and potentially execute arbitrary code with limited privileges on the firewall.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-6794"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.1",
+      "10.2",
+      "11.0",
+      "11.1"
+    ],
+    "公开日期": "2023年12月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2023-6793",
+    "漏洞描述": "An improper privilege management vulnerability in Palo Alto Networks PAN-OS software enables an authenticated read-only administrator to revoke active XML API keys from the firewall and disrupt XML API usage.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-6793"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0",
+      "10.1",
+      "10.2",
+      "11.0",
+      "11.1"
+    ],
+    "公开日期": "2023年12月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2023-6792",
+    "漏洞描述": "An OS command injection vulnerability in the XML API of Palo Alto Networks PAN-OS software enables an authenticated API user to disrupt system processes and potentially execute arbitrary code with limited privileges on the firewall.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-6792"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0",
+      "10.1",
+      "10.2",
+      "11.0",
+      "11.1"
+    ],
+    "公开日期": "2023年12月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2023-6791",
+    "漏洞描述": "A credential disclosure vulnerability in Palo Alto Networks PAN-OS software enables an authenticated read-only administrator to obtain the plaintext credentials of stored external system integrations such as LDAP, SCP, RADIUS, TACACS+, and SNMP from the web interface.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-6791"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0",
+      "10.1",
+      "10.2",
+      "11.0",
+      "11.1"
+    ],
+    "公开日期": "2023年12月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2023-6790",
+    "漏洞描述": "A DOM-Based cross-site scripting (XSS) vulnerability in Palo Alto Networks PAN-OS software enables a remote attacker to execute a JavaScript payload in the context of an administrator’s browser when they view a specifically crafted link to the PAN-OS web interface.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-6790"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0",
+      "10.1",
+      "10.2",
+      "11.0",
+      "11.1"
+    ],
+    "公开日期": "2023年12月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2023-6789",
+    "漏洞描述": "A cross-site scripting (XSS) vulnerability in Palo Alto Networks PAN-OS software enables a malicious authenticated read-write administrator to store a JavaScript payload using the web interface. Then, when viewed by a properly authenticated administrator, the JavaScript payload executes and disguises all associated actions as performed by that unsuspecting authenticated administrator.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-6789"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0",
+      "10.1",
+      "10.2",
+      "11.0",
+      "11.1"
+    ],
+    "公开日期": "2023年12月13日"
+  },
+  {
+    "设备品牌": "",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "",
+    "CVE编号": "CVE-2023-6061",
+    "漏洞描述": "",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "无官方补丁，建议联系厂商或及时更新系统"
+    ],
+    "受影响版本": [],
+    "公开日期": "2023年12月07日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2023-38046",
+    "漏洞描述": "A vulnerability exists in Palo Alto Networks PAN-OS software that enables an authenticated administrator with the privilege to commit a specifically created configuration to read local files and resources from the system.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-38046"
+    ],
+    "受影响版本": [
+      "11.0",
+      "10.2",
+      "10.1",
+      "10.0",
+      "9.1",
+      "9.0",
+      "8.1"
+    ],
+    "公开日期": "2023年07月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XSOAR",
+    "CVE编号": "CVE-2023-3282",
+    "漏洞描述": "A local privilege escalation (PE) vulnerability in the Palo Alto Networks Cortex XSOAR engine software running on a Linux operating system enables a local attacker to execute programs with elevated privileges if the attacker has shell access to the engine.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-3282"
+    ],
+    "受影响版本": [
+      "6.10",
+      "6.11",
+      "6.12",
+      "8"
+    ],
+    "公开日期": "2023年11月08日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2023-3280",
+    "漏洞描述": "A problem with a protection mechanism in the Palo Alto Networks Cortex XDR agent on Windows devices allows a local user to disable the agent.\n\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-3280"
+    ],
+    "受影响版本": [
+      "5.0",
+      "7.5-CE",
+      "7.9",
+      "7.9-CE",
+      "8.0",
+      "8.1"
+    ],
+    "公开日期": "2023年09月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2023-0010",
+    "漏洞描述": "A reflected cross-site scripting (XSS) vulnerability in the Captive Portal feature of Palo Alto Networks PAN-OS software can allow a JavaScript payload to be executed in the context of an authenticated Captive Portal user’s browser when they click on a specifically crafted link.\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-0010"
+    ],
+    "受影响版本": [
+      "11.0",
+      "10.2",
+      "10.1",
+      "10.0",
+      "9.1",
+      "9.0",
+      "8.1"
+    ],
+    "公开日期": "2023年06月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2023-0009",
+    "漏洞描述": "A local privilege escalation (PE) vulnerability in the Palo Alto Networks GlobalProtect app on Windows enables a local user to execute programs with elevated privileges.\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-0009"
+    ],
+    "受影响版本": [
+      "6.2",
+      "6.1",
+      "6.0",
+      "5.2"
+    ],
+    "公开日期": "2023年06月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2023-0008",
+    "漏洞描述": "A file disclosure vulnerability in Palo Alto Networks PAN-OS software enables an authenticated read-write administrator with access to the web interface to export local files from the firewall through a race condition.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-0008"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0",
+      "10.1",
+      "10.2",
+      "11.0"
+    ],
+    "公开日期": "2023年05月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2023-0007",
+    "漏洞描述": "A cross-site scripting (XSS) vulnerability in Palo Alto Networks PAN-OS software on Panorama appliances enables an authenticated read-write administrator to store a JavaScript payload in the web interface that will execute in the context of another administrator’s browser when viewed.\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-0007"
+    ],
+    "受影响版本": [
+      "10.0",
+      "9.1",
+      "9.0",
+      "8.1",
+      "10.1",
+      "10.2",
+      "11.0"
+    ],
+    "公开日期": "2023年05月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect app",
+    "CVE编号": "CVE-2023-0006",
+    "漏洞描述": "A local file deletion vulnerability in the Palo Alto Networks GlobalProtect app on Windows devices enables a user to delete system files from the endpoint with elevated privileges through a race condition.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-0006"
+    ],
+    "受影响版本": [
+      "6.0",
+      "6.1",
+      "5.2"
+    ],
+    "公开日期": "2023年04月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2023-0005",
+    "漏洞描述": "A vulnerability in Palo Alto Networks PAN-OS software enables an authenticated administrator to expose the plaintext values of secrets stored in the device configuration and encrypted API keys.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-0005"
+    ],
+    "受影响版本": [
+      "11.0",
+      "10.2",
+      "10.1",
+      "10.0",
+      "9.1",
+      "9.0",
+      "8.1"
+    ],
+    "公开日期": "2023年04月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2023-0004",
+    "漏洞描述": "A local file deletion vulnerability in Palo Alto Networks PAN-OS software enables an authenticated administrator to delete files from the local file system with elevated privileges.\n\nThese files can include logs and system components that impact the integrity and availability of PAN-OS software.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-0004",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/E72T67UPDRXHIDLO3OROR25YAMN4GGW5/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/X6QXN4ORIVF6XBW4WWFE7VNPVC74S45Y/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LKYHSZQFDNR7RSA7LHVLLIAQMVYCUGBG/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FNA62Q767CFAFHBCDKYNPBMZWB7TWYVU/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3N4NJ7FR4X4FPZUGNTQAPSTVB2HB2Y4A/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HT7T2R4MQKLIF4ODV4BDLPARWFPCJ5CZ/"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0",
+      "10.1",
+      "10.2",
+      "11.0"
+    ],
+    "公开日期": "2023年04月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XSOAR",
+    "CVE编号": "CVE-2023-0003",
+    "漏洞描述": "A file disclosure vulnerability in the Palo Alto Networks Cortex XSOAR server software enables an authenticated user with access to the web interface to read local files from the server.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-0003",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VEEQIN5242K5NBE2CZ4DYTNA5B4YTYE5/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UEJWL67XR67JAGEL2ZK22NA3BRKNMZNY/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VKFMKD4MJZIKFQJAAJ4VZ2FHIJ764A76/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HMEELCREWMRT6NS7HWXLA6XFLLMO36HE/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/E72T67UPDRXHIDLO3OROR25YAMN4GGW5/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/X6QXN4ORIVF6XBW4WWFE7VNPVC74S45Y/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LKYHSZQFDNR7RSA7LHVLLIAQMVYCUGBG/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FNA62Q767CFAFHBCDKYNPBMZWB7TWYVU/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3N4NJ7FR4X4FPZUGNTQAPSTVB2HB2Y4A/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HT7T2R4MQKLIF4ODV4BDLPARWFPCJ5CZ/"
+    ],
+    "受影响版本": [
+      "8.1 All",
+      "6.10.0.0",
+      "6.9",
+      "6.8",
+      "6.6"
+    ],
+    "公开日期": "2023年02月08日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR agent",
+    "CVE编号": "CVE-2023-0002",
+    "漏洞描述": "A problem with a protection mechanism in the Palo Alto Networks Cortex XDR agent on Windows devices allows a local user to execute privileged cytool commands that disable or uninstall the agent.\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-0002"
+    ],
+    "受影响版本": [
+      "7.9 All",
+      "7.8 All",
+      "7.5",
+      "5.0"
+    ],
+    "公开日期": "2023年02月08日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR agent",
+    "CVE编号": "CVE-2023-0001",
+    "漏洞描述": "An information exposure vulnerability in the Palo Alto Networks Cortex XDR agent on Windows devices allows a local system administrator to disclose the admin password for the agent in cleartext, which bad actors can then use to execute privileged cytool commands that disable or uninstall the agent.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2023-0001"
+    ],
+    "受影响版本": [
+      "7.9 All",
+      "7.8 All",
+      "7.5",
+      "5.0 All"
+    ],
+    "公开日期": "2023年02月08日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XSOAR",
+    "CVE编号": "CVE-2022-0031",
+    "漏洞描述": "A local privilege escalation (PE) vulnerability in the Palo Alto Networks Cortex XSOAR engine software running on a Linux operating system allows a local attacker with shell access to the engine to execute programs with elevated privileges.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0031"
+    ],
+    "受影响版本": [
+      "6.9.0.0",
+      "6.8.0.0",
+      "6.6.0.0",
+      "6.5.0.0"
+    ],
+    "公开日期": "2022年11月09日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2022-0030",
+    "漏洞描述": "An authentication bypass vulnerability in the Palo Alto Networks PAN-OS 8.1 web interface allows a network-based attacker with specific knowledge of the target firewall or Panorama appliance to impersonate an existing PAN-OS administrator and perform privileged actions.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0030"
+    ],
+    "受影响版本": [
+      "9.0 All",
+      "9.1 All",
+      "10.1 All",
+      "10.2 All",
+      "10.0 All",
+      "8.1"
+    ],
+    "公开日期": "2022年10月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2022-0029",
+    "漏洞描述": "An improper link resolution vulnerability in the Palo Alto Networks Cortex XDR agent on Windows devices allows a local attacker to read files on the system with elevated privileges when generating a tech support file.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0029"
+    ],
+    "受影响版本": [
+      "7.7",
+      "7.5 CE",
+      "5.0"
+    ],
+    "公开日期": "2022年09月14日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cloud NGFW",
+    "CVE编号": "CVE-2022-0028",
+    "漏洞描述": "A PAN-OS URL filtering policy misconfiguration could allow a network-based attacker to conduct reflected and amplified TCP denial-of-service (RDoS) attacks. The DoS attack would appear to originate from a Palo Alto Networks PA-Series (hardware), VM-Series (virtual) and CN-Series (container) firewall against an attacker-specified target. To be misused by an external attacker, the firewall configuration must have a URL filtering profile with one or more blocked categories assigned to a source zone that has an external facing interface. This configuration is not typical for URL filtering and, if set, is likely unintended by the administrator. If exploited, this issue would not impact the confidentiality, integrity, or availability of our products. However, the resulting denial-of-service (DoS) attack may help obfuscate the identity of the attacker and implicate the firewall as the source of the attack. We have taken prompt action to address this issue in our PAN-OS software. All software updates for this issue are expected to be released no later than the week of August 15, 2022. This issue does not impact Panorama M-Series or Panorama virtual appliances. This issue has been resolved for all Cloud NGFW and Prisma Access customers and no additional action is required from them.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0028"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2022年08月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2022-0026",
+    "漏洞描述": "A local privilege escalation (PE) vulnerability exists in Palo Alto Networks Cortex XDR agent software on Windows that enables an authenticated local user with file creation privilege in the Windows root directory (such as C:\\) to execute a program with elevated privileges. This issue impacts all versions of Cortex XDR agent without content update 330 or a later content update version.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0026"
+    ],
+    "受影响版本": [
+      "7.7.* without CU-330",
+      "7.7.* with CU-330",
+      "7.6.* without CU-330",
+      "7.6.* with CU-330",
+      "7.5 CE 7.5.* without CU-330",
+      "7.5 CE 7.5.* with CU-330",
+      "7.4.* without CU-330",
+      "7.4.* with CU-330",
+      "6.1.* without CU-330",
+      "6.1.* with CU-330",
+      "7.5.* without CU-330",
+      "7.5.* with CU-330"
+    ],
+    "公开日期": "2022年05月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2022-0025",
+    "漏洞描述": "A local privilege escalation (PE) vulnerability exists in Palo Alto Networks Cortex XDR agent software on Windows that enables an authenticated local user with file creation privilege in the Windows root directory (such as C:\\) to execute a program with elevated privileges. This issue impacts: All versions of the Cortex XDR agent when upgrading to Cortex XDR agent 7.7.0 on Windows; Cortex XDR agent 7.7.0 without content update 500 or a later version on Windows. This issue does not impact other platforms or other versions of the Cortex XDR agent.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0025"
+    ],
+    "受影响版本": [
+      "7.7"
+    ],
+    "公开日期": "2022年05月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2022-0024",
+    "漏洞描述": "A vulnerability exists in Palo Alto Networks PAN-OS software that enables an authenticated network-based PAN-OS administrator to upload a specifically created configuration that disrupts system processes and potentially execute arbitrary code with root privileges when the configuration is committed on both hardware and virtual firewalls. This issue does not impact Panorama appliances or Prisma Access customers. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.23; PAN-OS 9.0 versions earlier than PAN-OS 9.0.16; PAN-OS 9.1 versions earlier than PAN-OS 9.1.13; PAN-OS 10.0 versions earlier than PAN-OS 10.0.10; PAN-OS 10.1 versions earlier than PAN-OS 10.1.5.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0024"
+    ],
+    "受影响版本": [
+      "9.1",
+      "10.1",
+      "9.0",
+      "8.1",
+      "10.0",
+      "10.2.0"
+    ],
+    "公开日期": "2022年05月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2022-0023",
+    "漏洞描述": "An improper handling of exceptional conditions vulnerability exists in the DNS proxy feature of Palo Alto Networks PAN-OS software that enables a meddler-in-the-middle (MITM) to send specifically crafted traffic to the firewall that causes the service to restart unexpectedly. Repeated attempts to send this request result in denial-of-service to all PAN-OS services by restarting the device in maintenance mode. This issue does not impact Panorama appliances and Prisma Access customers. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.22; PAN-OS 9.0 versions earlier than PAN-OS 9.0.16; PAN-OS 9.1 versions earlier than PAN-OS 9.1.13; PAN-OS 10.0 versions earlier than PAN-OS 10.0.10; PAN-OS 10.1 versions earlier than PAN-OS 10.1.5. This issue does not impact PAN-OS 10.2.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0023"
+    ],
+    "受影响版本": [
+      "10.2.*",
+      "8.1",
+      "9.1",
+      "10.1",
+      "10.0",
+      "9.0"
+    ],
+    "公开日期": "2022年04月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2022-0022",
+    "漏洞描述": "Usage of a weak cryptographic algorithm in Palo Alto Networks PAN-OS software where the password hashes of administrator and local user accounts are not created with a sufficient level of computational effort, which allows for password cracking attacks on accounts in normal (non-FIPS-CC) operational mode. An attacker must have access to the account password hashes to take advantage of this weakness and can acquire those hashes if they are able to gain access to the PAN-OS software configuration. Fixed versions of PAN-OS software use a secure cryptographic algorithm for account password hashes. This issue does not impact Prisma Access firewalls. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.21; All versions of PAN-OS 9.0; PAN-OS 9.1 versions earlier than PAN-OS 9.1.11; PAN-OS 10.0 versions earlier than PAN-OS 10.0.7.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0022"
+    ],
+    "受影响版本": [
+      "10.1.*",
+      "9.0.*",
+      "10.2.*",
+      "9.1",
+      "8.1",
+      "10.0"
+    ],
+    "公开日期": "2022年03月09日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2022-0021",
+    "漏洞描述": "An information exposure through log file vulnerability exists in the Palo Alto Networks GlobalProtect app on Windows that logs the cleartext credentials of the connecting GlobalProtect user when authenticating using Connect Before Logon feature. This issue impacts GlobalProtect App 5.2 versions earlier than 5.2.9 on Windows. This issue does not affect the GlobalProtect app on other platforms.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0021"
+    ],
+    "受影响版本": [
+      "5.2"
+    ],
+    "公开日期": "2022年02月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2022-0019",
+    "漏洞描述": "An insufficiently protected credentials vulnerability exists in the Palo Alto Networks GlobalProtect app on Linux that exposes the hashed credentials of GlobalProtect users that saved their password during previous GlobalProtect app sessions to other local users on the system. The exposed credentials enable a local attacker to authenticate to the GlobalProtect portal or gateway as the target user without knowing of the target user’s plaintext password. This issue impacts: GlobalProtect app 5.1 versions earlier than GlobalProtect app 5.1.10 on Linux. GlobalProtect app 5.2 versions earlier than and including GlobalProtect app 5.2.7 on Linux. GlobalProtect app 5.3 versions earlier than GlobalProtect app 5.3.2 on Linux. This issue does not affect the GlobalProtect app on other platforms.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0019"
+    ],
+    "受影响版本": [
+      "5.3",
+      "5.2",
+      "5.1"
+    ],
+    "公开日期": "2022年02月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2022-0018",
+    "漏洞描述": "An information exposure vulnerability exists in the Palo Alto Networks GlobalProtect app on Windows and MacOS where the credentials of the local user account are sent to the GlobalProtect portal when the Single Sign-On feature is enabled in the GlobalProtect portal configuration. This product behavior is intentional and poses no security risk when connecting to trusted GlobalProtect portals configured to use the same Single Sign-On credentials both for the local user account as well as the GlobalProtect login. However when the credentials are different, the local account credentials are inadvertently sent to the GlobalProtect portal for authentication. A third party MITM type of attacker cannot see these credentials in transit. This vulnerability is a concern where the GlobalProtect app is deployed on Bring-your-Own-Device (BYOD) type of clients with private local user accounts or GlobalProtect app is used to connect to different organizations. Fixed versions of GlobalProtect app have an app setting to prevent the transmission of the user's local user credentials to the target GlobalProtect portal regardless of the portal configuration. This issue impacts: GlobalProtect app 5.1 versions earlier than GlobalProtect app 5.1.10 on Windows and MacOS; GlobalProtect app 5.2 versions earlier than GlobalProtect app 5.2.9 on Windows and MacOS This issue does not affect GlobalProtect app on other platforms.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0018"
+    ],
+    "受影响版本": [
+      "5.2",
+      "5.1"
+    ],
+    "公开日期": "2022年02月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2022-0017",
+    "漏洞描述": "An improper link resolution before file access ('link following') vulnerability exists in the Palo Alto Networks GlobalProtect app on Windows that enables a local attacker to disrupt system processes and potentially execute arbitrary code with SYSTEM privileges under certain circumstances. This issue impacts: GlobalProtect app 5.1 versions earlier than GlobalProtect app 5.1.10 on Windows. GlobalProtect app 5.2 versions earlier than GlobalProtect app 5.2.5 on Windows. This issue does not affect GlobalProtect app on other platforms.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0017"
+    ],
+    "受影响版本": [
+      "5.2",
+      "5.1"
+    ],
+    "公开日期": "2022年02月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2022-0016",
+    "漏洞描述": "An improper handling of exceptional conditions vulnerability exists within the Connect Before Logon feature of the Palo Alto Networks GlobalProtect app that enables a local attacker to escalate to SYSTEM or root privileges when authenticating with Connect Before Logon under certain circumstances. This issue impacts GlobalProtect app 5.2 versions earlier than GlobalProtect app 5.2.9 on Windows and MacOS. This issue does not affect the GlobalProtect app on other platforms.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0016"
+    ],
+    "受影响版本": [
+      "5.2"
+    ],
+    "公开日期": "2022年02月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2022-0015",
+    "漏洞描述": "A local privilege escalation (PE) vulnerability exists in the Palo Alto Networks Cortex XDR agent that enables an authenticated local user to execute programs with elevated privileges. This issue impacts: Cortex XDR agent 5.0 versions earlier than Cortex XDR agent 5.0.12; Cortex XDR agent 6.1 versions earlier than Cortex XDR agent 6.1.9.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0015"
+    ],
+    "受影响版本": [
+      "7.2.*",
+      "7.3.*",
+      "7.4.*",
+      "7.5.*",
+      "7.6.*",
+      "5.0",
+      "6.1"
+    ],
+    "公开日期": "2022年01月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2022-0014",
+    "漏洞描述": "An untrusted search path vulnerability exists in the Palo Alto Networks Cortex XDR agent that enables a local attacker with file creation privilege in the Windows root directory (such as C:\\) to store a program that can then be unintentionally executed by another local user when that user utilizes a Live Terminal session. This issue impacts: Cortex XDR agent 5.0 versions earlier than Cortex XDR agent 5.0.12; Cortex XDR agent 6.1 versions earlier than Cortex XDR agent 6.1.9; Cortex XDR agent 7.2 versions earlier than Cortex XDR agent 7.2.4; Cortex XDR agent 7.3 versions earlier than Cortex XDR agent 7.3.2.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0014"
+    ],
+    "受影响版本": [
+      "7.4.*",
+      "7.5.*",
+      "7.6.*",
+      "7.2",
+      "7.3",
+      "5.0",
+      "6.1"
+    ],
+    "公开日期": "2022年01月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2022-0013",
+    "漏洞描述": "A file information exposure vulnerability exists in the Palo Alto Networks Cortex XDR agent that enables a local attacker to read the contents of arbitrary files on the system with elevated privileges when generating a support file. This issue impacts: Cortex XDR agent 5.0 versions earlier than Cortex XDR agent 5.0.12; Cortex XDR agent 6.1 versions earlier than Cortex XDR agent 6.1.9; Cortex XDR agent 7.2 versions earlier than Cortex XDR agent 7.2.4; Cortex XDR agent 7.3 versions earlier than Cortex XDR agent 7.3.2.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0013"
+    ],
+    "受影响版本": [
+      "7.4.*",
+      "7.5.*",
+      "7.2",
+      "5.0",
+      "6.1",
+      "7.3"
+    ],
+    "公开日期": "2022年01月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2022-0012",
+    "漏洞描述": "An improper link resolution before file access vulnerability exists in the Palo Alto Networks Cortex XDR agent on Windows platforms that enables a local user to delete arbitrary system files and impact the system integrity or cause a denial of service condition. This issue impacts: Cortex XDR agent 5.0 versions earlier than Cortex XDR agent 5.0.12; Cortex XDR agent 6.1 versions earlier than Cortex XDR agent 6.1.9; Cortex XDR agent 7.2 versions earlier than Cortex XDR agent 7.2.4; Cortex XDR agent 7.3 versions earlier than Cortex XDR agent 7.3.2.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2022-0012"
+    ],
+    "受影响版本": [
+      "7.4.*",
+      "7.5.*",
+      "7.6.*",
+      "5.0",
+      "7.2",
+      "7.3",
+      "6.1"
+    ],
+    "公开日期": "2022年01月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2021-3064",
+    "漏洞描述": "A memory corruption vulnerability exists in Palo Alto Networks GlobalProtect portal and gateway interfaces that enables an unauthenticated network-based attacker to disrupt system processes and potentially execute arbitrary code with root privileges. The attacker must have network access to the GlobalProtect interface to exploit this issue. This issue impacts PAN-OS 8.1 versions earlier than PAN-OS 8.1.17. Prisma Access customers are not impacted by this issue.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3064"
+    ],
+    "受影响版本": [
+      "9.0.*",
+      "9.1.*",
+      "10.0.*",
+      "10.1.*",
+      "8.1"
+    ],
+    "公开日期": "2021年11月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2021-3063",
+    "漏洞描述": "An improper handling of exceptional conditions vulnerability exists in Palo Alto Networks GlobalProtect portal and gateway interfaces that enables an unauthenticated network-based attacker to send specifically crafted traffic to a GlobalProtect interface that causes the service to stop responding. Repeated attempts to send this request result in denial of service to all PAN-OS services by restarting the device and putting it into maintenance mode. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.21; PAN-OS 9.0 versions earlier than PAN-OS 9.0.14-h4; PAN-OS 9.1 versions earlier than PAN-OS 9.1.11-h3; PAN-OS 10.0 versions earlier than PAN-OS 10.0.8-h4; PAN-OS 10.1 versions earlier than PAN-OS 10.1.3. Prisma Access customers are not impacted by this issue.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3063"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "10.0",
+      "10.1",
+      "9.1"
+    ],
+    "公开日期": "2021年11月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2021-3061",
+    "漏洞描述": "An OS command injection vulnerability in the Palo Alto Networks PAN-OS command line interface (CLI) enables an authenticated administrator with access to the CLI to execute arbitrary OS commands to escalate privileges. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.20-h1; PAN-OS 9.0 versions earlier than PAN-OS 9.0.14-h3; PAN-OS 9.1 versions earlier than PAN-OS 9.1.11-h2; PAN-OS 10.0 versions earlier than PAN-OS 10.0.8; PAN-OS 10.1 versions earlier than PAN-OS 10.1.3. Prisma Access customers that have Prisma Access 2.1 firewalls are impacted by this issue.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3061"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "10.0",
+      "10.1",
+      "9.1"
+    ],
+    "公开日期": "2021年11月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2021-3059",
+    "漏洞描述": "An OS command injection vulnerability in the Palo Alto Networks PAN-OS management interface exists when performing dynamic updates. This vulnerability enables a man-in-the-middle attacker to execute arbitrary OS commands to escalate privileges. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.20-h1; PAN-OS 9.0 versions earlier than PAN-OS 9.0.14-h3; PAN-OS 9.1 versions earlier than PAN-OS 9.1.11-h2; PAN-OS 10.0 versions earlier than PAN-OS 10.0.8; PAN-OS 10.1 versions earlier than PAN-OS 10.1.3. Prisma Access customers that have Prisma Access 2.1 Preferred or Prisma Access 2.1 Innovation firewalls are impacted by this issue.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3059"
+    ],
+    "受影响版本": [
+      "10.0",
+      "10.1",
+      "8.1",
+      "9.0",
+      "9.1"
+    ],
+    "公开日期": "2021年11月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2021-3058",
+    "漏洞描述": "An OS command injection vulnerability in the Palo Alto Networks PAN-OS web interface enables an authenticated administrator with permissions to use XML API the ability to execute arbitrary OS commands to escalate privileges. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.20-h1; PAN-OS 9.0 versions earlier than PAN-OS 9.0.14-h3; PAN-OS 9.1 versions earlier than PAN-OS 9.1.11-h2; PAN-OS 10.0 versions earlier than PAN-OS 10.0.8; PAN-OS 10.1 versions earlier than PAN-OS 10.1.3. This issue does not impact Prisma Access firewalls.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3058"
+    ],
+    "受影响版本": [
+      "10.1",
+      "9.0",
+      "8.1",
+      "9.1",
+      "10.0"
+    ],
+    "公开日期": "2021年11月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2021-3057",
+    "漏洞描述": "A stack-based buffer overflow vulnerability exists in the Palo Alto Networks GlobalProtect app that enables a man-in-the-middle attacker to disrupt system processes and potentially execute arbitrary code with SYSTEM privileges. This issue impacts: GlobalProtect app 5.1 versions earlier than GlobalProtect app 5.1.9 on Windows; GlobalProtect app 5.2 versions earlier than GlobalProtect app 5.2.8 on Windows; GlobalProtect app 5.2 versions earlier than GlobalProtect app 5.2.8 on the Universal Windows Platform; GlobalProtect app 5.3 versions earlier than GlobalProtect app 5.3.1 on Linux.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3057"
+    ],
+    "受影响版本": [
+      "5.1",
+      "5.2"
+    ],
+    "公开日期": "2021年10月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2021-3056",
+    "漏洞描述": "A memory corruption vulnerability in Palo Alto Networks PAN-OS GlobalProtect Clientless VPN enables an authenticated attacker to execute arbitrary code with root user privileges during SAML authentication. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.20; PAN-OS 9.0 versions earlier than PAN-OS 9.0.14; PAN-OS 9.1 versions earlier than PAN-OS 9.1.9; PAN-OS 10.0 versions earlier than PAN-OS 10.0.1. Prisma Access customers with Prisma Access 2.1 Preferred firewalls are impacted by this issue.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3056"
+    ],
+    "受影响版本": [
+      "10.1.*",
+      "9.0",
+      "8.1",
+      "9.1",
+      "10.0"
+    ],
+    "公开日期": "2021年11月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2021-3055",
+    "漏洞描述": "An improper restriction of XML external entity (XXE) reference vulnerability in the Palo Alto Networks PAN-OS web interface enables an authenticated administrator to read any arbitrary file from the file system and send a specifically crafted request to the firewall that causes the service to crash. Repeated attempts to send this request result in denial of service to all PAN-OS services by restarting the device and putting it into maintenance mode. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.20; PAN-OS 9.0 versions earlier than PAN-OS 9.0.14; PAN-OS 9.1 versions earlier than PAN-OS 9.1.10; PAN-OS 10.0 versions earlier than PAN-OS 10.0.6. This issue does not affect Prisma Access.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3055"
+    ],
+    "受影响版本": [
+      "10.1.*",
+      "9.0",
+      "9.1",
+      "10.0",
+      "8.1"
+    ],
+    "公开日期": "2021年09月08日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2021-3054",
+    "漏洞描述": "A time-of-check to time-of-use (TOCTOU) race condition vulnerability in the Palo Alto Networks PAN-OS web interface enables an authenticated administrator with permission to upload plugins to execute arbitrary code with root user privileges. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.20; PAN-OS 9.0 versions earlier than PAN-OS 9.0.14; PAN-OS 9.1 versions earlier than PAN-OS 9.1.11; PAN-OS 10.0 versions earlier than PAN-OS 10.0.7; PAN-OS 10.1 versions earlier than PAN-OS 10.1.2. This issue does not affect Prisma Access.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3054"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "10.0",
+      "9.1",
+      "10.1"
+    ],
+    "公开日期": "2021年09月08日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2021-3053",
+    "漏洞描述": "An improper handling of exceptional conditions vulnerability exists in the Palo Alto Networks PAN-OS dataplane that enables an unauthenticated network-based attacker to send specifically crafted traffic through the firewall that causes the service to crash. Repeated attempts to send this request result in denial of service to all PAN-OS services by restarting the device and putting it into maintenance mode. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.20; PAN-OS 9.0 versions earlier than PAN-OS 9.0.14; PAN-OS 9.1 versions earlier than PAN-OS 9.1.9; PAN-OS 10.0 versions earlier than PAN-OS 10.0.5. This issue does not affect Prisma Access.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3053"
+    ],
+    "受影响版本": [
+      "10.1.*",
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0"
+    ],
+    "公开日期": "2021年09月08日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XSOAR",
+    "CVE编号": "CVE-2021-3051",
+    "漏洞描述": "An improper verification of cryptographic signature vulnerability exists in Cortex XSOAR SAML authentication that enables an unauthenticated network-based attacker with specific knowledge of the Cortex XSOAR instance to access protected resources and perform unauthorized actions on the Cortex XSOAR server. This issue impacts: Cortex XSOAR 5.5.0 builds earlier than 1578677; Cortex XSOAR 6.0.2 builds earlier than 1576452; Cortex XSOAR 6.1.0 builds earlier than 1578663; Cortex XSOAR 6.2.0 builds earlier than 1578666. All Cortex XSOAR instances hosted by Palo Alto Networks are protected from this vulnerability; no additional action is required for these instances.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3051"
+    ],
+    "受影响版本": [
+      "5.5.0",
+      "6.0.2",
+      "6.1.0",
+      "6.2.0"
+    ],
+    "公开日期": "2021年09月08日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2021-3050",
+    "漏洞描述": "An OS command injection vulnerability in the Palo Alto Networks PAN-OS web interface enables an authenticated administrator to execute arbitrary OS commands to escalate privileges. This issue impacts: PAN-OS 9.0 version 9.0.10 through PAN-OS 9.0.14; PAN-OS 9.1 version 9.1.4 through PAN-OS 9.1.10; PAN-OS 10.0 version 10.0.7 and earlier PAN-OS 10.0 versions; PAN-OS 10.1 version 10.1.0 through PAN-OS 10.1.1. Prisma Access firewalls and firewalls running PAN-OS 8.1 versions are not impacted by this issue.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3050"
+    ],
+    "受影响版本": [
+      "8.1.*",
+      "9.0.10",
+      "9.1.4",
+      "10.0.0",
+      "10.1.0"
+    ],
+    "公开日期": "2021年08月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XSOAR",
+    "CVE编号": "CVE-2021-3049",
+    "漏洞描述": "An improper authorization vulnerability in the Palo Alto Networks Cortex XSOAR server enables an authenticated network-based attacker with investigation read permissions to download files from incident investigations of which they are aware but are not a part of. This issue impacts: All Cortex XSOAR 5.5.0 builds; Cortex XSOAR 6.1.0 builds earlier than 12099345. This issue does not impact Cortex XSOAR 6.2.0 versions.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3049"
+    ],
+    "受影响版本": [
+      "5.5.0 all",
+      "6.2.0 all",
+      "6.1.0"
+    ],
+    "公开日期": "2021年09月08日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2021-3047",
+    "漏洞描述": "A cryptographically weak pseudo-random number generator (PRNG) is used during authentication to the Palo Alto Networks PAN-OS web interface. This enables an authenticated attacker, with the capability to observe their own authentication secrets over a long duration on the PAN-OS appliance, to impersonate another authenticated web interface administrator's session. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.19; PAN-OS 9.0 versions earlier than PAN-OS 9.0.14; PAN-OS 9.1 versions earlier than PAN-OS 9.1.10; PAN-OS 10.0 versions earlier than PAN-OS 10.0.4. PAN-OS 10.1 versions are not impacted.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3047"
+    ],
+    "受影响版本": [
+      "10.1.*",
+      "8.1",
+      "9.0",
+      "10.0",
+      "9.1"
+    ],
+    "公开日期": "2021年08月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2021-3046",
+    "漏洞描述": "An improper authentication vulnerability exists in Palo Alto Networks PAN-OS software that enables a SAML authenticated attacker to impersonate any other user in the GlobalProtect Portal and GlobalProtect Gateway when they are configured to use SAML authentication. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.19; PAN-OS 9.0 versions earlier than PAN-OS 9.0.14; PAN-OS 9.1 versions earlier than PAN-OS 9.1.9; PAN-OS 10.0 versions earlier than PAN-OS 10.0.5. PAN-OS 10.1 versions are not impacted.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3046"
+    ],
+    "受影响版本": [
+      "10.1.*",
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0"
+    ],
+    "公开日期": "2021年08月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2021-3045",
+    "漏洞描述": "An OS command argument injection vulnerability in the Palo Alto Networks PAN-OS web interface enables an authenticated administrator to read any arbitrary file from the file system. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.19; PAN-OS 9.0 versions earlier than PAN-OS 9.0.14; PAN-OS 9.1 versions earlier than PAN-OS 9.1.10. PAN-OS 10.0 and later versions are not impacted.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3045"
+    ],
+    "受影响版本": [
+      "10.0.*",
+      "10.1.*",
+      "8.1",
+      "9.0",
+      "9.1"
+    ],
+    "公开日期": "2021年08月11日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XSOAR",
+    "CVE编号": "CVE-2021-3044",
+    "漏洞描述": "An improper authorization vulnerability in Palo Alto Networks Cortex XSOAR enables a remote unauthenticated attacker with network access to the Cortex XSOAR server to perform unauthorized actions through the REST API. This issue impacts: Cortex XSOAR 6.1.0 builds later than 1016923 and earlier than 1271064; Cortex XSOAR 6.2.0 builds earlier than 1271065. This issue does not impact Cortex XSOAR 5.5.0, Cortex XSOAR 6.0.0, Cortex XSOAR 6.0.1, or Cortex XSOAR 6.0.2 versions. All Cortex XSOAR instances hosted by Palo Alto Networks are upgraded to resolve this vulnerability. No additional action is required for these instances.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3044"
+    ],
+    "受影响版本": [
+      "5.5.0 all",
+      "6.0.0 all",
+      "6.0.1 all",
+      "6.0.2 all",
+      "1016923",
+      "6.2.0"
+    ],
+    "公开日期": "2021年06月22日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2021-3042",
+    "漏洞描述": "A local privilege escalation (PE) vulnerability exists in the Palo Alto Networks Cortex XDR agent on Windows platforms that enables an authenticated local Windows user to execute programs with SYSTEM privileges. Exploiting this vulnerability requires the user to have file creation privilege in the Windows root directory (such as C:\\). This issue impacts: All versions of Cortex XDR agent 6.1 without content update 181 or a later version; All versions of Cortex XDR agent 7.2 without content update 181 or a later version; All versions of Cortex XDR agent 7.3 without content update 181 or a later version. Cortex XDR agent 5.0 versions are not impacted by this issue. Content updates are required to resolve this issue and are automatically applied for the agent.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3042"
+    ],
+    "受影响版本": [
+      "5.0 all"
+    ],
+    "公开日期": "2021年07月15日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2021-3041",
+    "漏洞描述": "A local privilege escalation vulnerability exists in the Palo Alto Networks Cortex XDR agent on Windows platforms that enables an authenticated local Windows user to execute programs with SYSTEM privileges. This requires the user to have the privilege to create files in the Windows root directory or to manipulate key registry values. This issue impacts: Cortex XDR agent 5.0 versions earlier than Cortex XDR agent 5.0.11; Cortex XDR agent 6.1 versions earlier than Cortex XDR agent 6.1.8; Cortex XDR agent 7.2 versions earlier than Cortex XDR agent 7.2.3; All versions of Cortex XDR agent 7.2 without content update release 171 or a later version.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3041"
+    ],
+    "受影响版本": [
+      "5.0",
+      "6.1",
+      "7.2"
+    ],
+    "公开日期": "2021年06月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Prisma Cloud Compute",
+    "CVE编号": "CVE-2021-3039",
+    "漏洞描述": "An information exposure through log file vulnerability exists in the Palo Alto Networks Prisma Cloud Compute Console where a secret used to authorize the role of the authenticated user is logged to a debug log file. Authenticated Operator role and Auditor role users with access to the debug log files can use this secret to gain Administrator role access for their active session in Prisma Cloud Compute. Prisma Cloud Compute SaaS versions were automatically upgraded to the fixed release. This issue impacts all Prisma Cloud Compute versions earlier than Prisma Cloud Compute 21.04.412.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3039"
+    ],
+    "受影响版本": [
+      "20.04"
+    ],
+    "公开日期": "2021年06月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2021-3038",
+    "漏洞描述": "A denial-of-service (DoS) vulnerability in Palo Alto Networks GlobalProtect app on Windows systems allows a limited Windows user to send specifically-crafted input to the GlobalProtect app that results in a Windows blue screen of death (BSOD) error. This issue impacts: GlobalProtect app 5.1 versions earlier than GlobalProtect app 5.1.8; GlobalProtect app 5.2 versions earlier than GlobalProtect app 5.2.4.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3038"
+    ],
+    "受影响版本": [
+      "5.1",
+      "5.2"
+    ],
+    "公开日期": "2021年04月20日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2021-3037",
+    "漏洞描述": "An information exposure through log file vulnerability exists in Palo Alto Networks PAN-OS software where the connection details for a scheduled configuration export are logged in system logs. Logged information includes the cleartext username, password, and IP address used to export the PAN-OS configuration to the destination server.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3037"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0.0"
+    ],
+    "公开日期": "2021年04月20日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2021-3036",
+    "漏洞描述": "An information exposure through log file vulnerability exists in Palo Alto Networks PAN-OS software where secrets in PAN-OS XML API requests are logged in cleartext to the web server logs when the API is used incorrectly. This vulnerability applies only to PAN-OS appliances that are configured to use the PAN-OS XML API and exists only when a client includes a duplicate API parameter in API requests. Logged information includes the cleartext username, password, and API key of the administrator making the PAN-OS XML API request.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3036"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0"
+    ],
+    "公开日期": "2021年04月20日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Prisma Cloud Compute",
+    "CVE编号": "CVE-2021-3033",
+    "漏洞描述": "An improper verification of cryptographic signature vulnerability exists in the Palo Alto Networks Prisma Cloud Compute console. This vulnerability enables an attacker to bypass signature validation during SAML authentication by logging in to the Prisma Cloud Compute console as any authorized user. This issue impacts: All versions of Prisma Cloud Compute 19.11, Prisma Cloud Compute 20.04, and Prisma Cloud Compute 20.09; Prisma Cloud Compute 20.12 before update 1. Prisma Cloud Compute SaaS version is not impacted by this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3033"
+    ],
+    "受影响版本": [
+      "19.11",
+      "20.04",
+      "20.09",
+      "20.12"
+    ],
+    "公开日期": "2021年02月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2021-3032",
+    "漏洞描述": "An information exposure through log file vulnerability exists in Palo Alto Networks PAN-OS software where configuration secrets for the “http”, “email”, and “snmptrap” v3 log forwarding server profiles can be logged to the logrcvr.log system log. Logged information may include up to 1024 bytes of the configuration including the username and password in an encrypted form and private keys used in any certificate profiles set for log forwarding server profiles. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.18; PAN-OS 9.0 versions earlier than PAN-OS 9.0.12; PAN-OS 9.1 versions earlier than PAN-OS 9.1.4; PAN-OS 10.0 versions earlier than PAN-OS 10.0.1.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2021-3032"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0"
+    ],
+    "公开日期": "2021年01月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2050",
+    "漏洞描述": "An authentication bypass vulnerability exists in the GlobalProtect SSL VPN component of Palo Alto Networks PAN-OS software that allows an attacker to bypass all client certificate checks with an invalid certificate. A remote attacker can successfully authenticate as any user and gain access to restricted VPN network resources when the gateway or portal is configured to rely entirely on certificate-based authentication. Impacted features that use SSL VPN with client certificate verification are: GlobalProtect Gateway, GlobalProtect Portal, GlobalProtect Clientless VPN In configurations where client certificate verification is used in conjunction with other authentication methods, the protections added by the certificate check are ignored as a result of this issue. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.17; PAN-OS 9.0 versions earlier than PAN-OS 9.0.11; PAN-OS 9.1 versions earlier than PAN-OS 9.1.5; PAN-OS 10.0 versions earlier than PAN-OS 10.0.1.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2050"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0"
+    ],
+    "公开日期": "2020年11月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Cortex XDR Agent",
+    "CVE编号": "CVE-2020-2049",
+    "漏洞描述": "A local privilege escalation vulnerability exists in Palo Alto Networks Cortex XDR Agent on the Windows platform that allows an authenticated local Windows user to execute programs with SYSTEM privileges. This requires the user to have the privilege to create files in the Windows root directory. This issue impacts: All versions of Cortex XDR Agent 7.1 with content update 149 and earlier versions; All versions of Cortex XDR Agent 7.2 with content update 149 and earlier versions.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2049"
+    ],
+    "受影响版本": [
+      "7.1.* with content update 150",
+      "7.1.* without content update 150",
+      "7.2.* with content update 150",
+      "7.2.* without content update 150"
+    ],
+    "公开日期": "2020年12月09日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2048",
+    "漏洞描述": "An information exposure through log file vulnerability exists where the password for the configured system proxy server for a PAN-OS appliance may be displayed in cleartext when using the CLI in Palo Alto Networks PAN-OS software. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.17; PAN-OS 9.0 versions earlier than PAN-OS 9.0.11; PAN-OS 9.1 versions earlier than PAN-OS 9.1.2.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2048"
+    ],
+    "受影响版本": [
+      "10.0.*",
+      "8.1",
+      "9.0",
+      "9.1"
+    ],
+    "公开日期": "2020年11月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2044",
+    "漏洞描述": "An information exposure through log file vulnerability where an administrator's password or other sensitive information may be logged in cleartext while using the CLI in Palo Alto Networks PAN-OS software. The opcmdhistory.log file was introduced to track operational command (op-command) usage but did not mask all sensitive information. The opcmdhistory.log file is removed in PAN-OS 9.1 and later PAN-OS versions. Command usage is recorded, instead, in the req_stats.log file in PAN-OS 9.1 and later PAN-OS versions. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.16; PAN-OS 9.0 versions earlier than PAN-OS 9.0.10; PAN-OS 9.1 versions earlier than PAN-OS 9.1.3.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2044"
+    ],
+    "受影响版本": [
+      "8.0.*",
+      "8.1",
+      "9.0",
+      "9.1"
+    ],
+    "公开日期": "2020年09月09日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2043",
+    "漏洞描述": "An information exposure through log file vulnerability where sensitive fields are recorded in the configuration log without masking on Palo Alto Networks PAN-OS software when the after-change-detail custom syslog field is enabled for configuration logs and the sensitive field appears multiple times in one log entry. The first instance of the sensitive field is masked but subsequent instances are left in clear text. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.16; PAN-OS 9.0 versions earlier than PAN-OS 9.0.10; PAN-OS 9.1 versions earlier than PAN-OS 9.1.4.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2043"
+    ],
+    "受影响版本": [
+      "8.1",
+      "9.0",
+      "9.1",
+      "10.0.0"
+    ],
+    "公开日期": "2020年09月09日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2041",
+    "漏洞描述": "An insecure configuration of the appweb daemon of Palo Alto Networks PAN-OS 8.1 allows a remote unauthenticated user to send a specifically crafted request to the device that causes the appweb service to crash. Repeated attempts to send this request result in denial of service to all PAN-OS services by restarting the device and putting it into maintenance mode. This issue impacts all versions of PAN-OS 8.0, and PAN-OS 8.1 versions earlier than 8.1.16.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2041"
+    ],
+    "受影响版本": [
+      "9.0.*",
+      "9.1.*",
+      "10.0.*",
+      "8.0.*",
+      "8.1"
+    ],
+    "公开日期": "2020年09月09日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2039",
+    "漏洞描述": "An uncontrolled resource consumption vulnerability in Palo Alto Networks PAN-OS allows for a remote unauthenticated user to upload temporary files through the management web interface that are not properly deleted after the request is finished. It is possible for an attacker to disrupt the availability of the management web interface by repeatedly uploading files until available disk space is exhausted. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.16; PAN-OS 9.0 versions earlier than PAN-OS 9.0.10; PAN-OS 9.1 versions earlier than PAN-OS 9.1.4; PAN-OS 10.0 versions earlier than PAN-OS 10.0.1.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2039"
+    ],
+    "受影响版本": [
+      "9.1",
+      "8.1",
+      "9.0",
+      "10.0"
+    ],
+    "公开日期": "2020年09月09日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2035",
+    "漏洞描述": "When SSL/TLS Forward Proxy Decryption mode has been configured to decrypt the web transactions, the PAN-OS URL filtering feature inspects the HTTP Host and URL path headers for policy enforcement on the decrypted HTTPS web transactions but does not consider Server Name Indication (SNI) field within the TLS Client Hello handshake. This allows a compromised host in a protected network to evade any security policy that uses URL filtering on a firewall configured with SSL Decryption in the Forward Proxy mode. A malicious actor can then use this technique to evade detection of communication on the TLS handshake phase between a compromised host and a remote malicious server. This technique does not increase the risk of a host being compromised in the network. It does not impact the confidentiality or availability of a firewall. This is considered to have a low impact on the integrity of the firewall because the firewall fails to enforce a policy on certain traffic that should have been blocked. This issue does not impact the URL filtering policy enforcement on clear text or encrypted web transactions. This technique can be used only after a malicious actor has compromised a host in the protected network and the TLS/SSL Decryption feature is enabled for the traffic that the attacker controls. Palo Alto Networks is not aware of any malware that uses this technique to exfiltrate data. This issue is applicable to all current versions of PAN-OS. This issue does not impact Panorama or WF-500 appliances.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2035",
+      "https://www.mnemonic.no/blog/introducing-snicat/"
+    ],
+    "受影响版本": [
+      "8.1.*",
+      "9.0.*",
+      "9.1.*",
+      "10.0.*",
+      "10.1.*"
+    ],
+    "公开日期": "2020年08月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2020-2033",
+    "漏洞描述": "When the pre-logon feature is enabled, a missing certification validation in Palo Alto Networks GlobalProtect app can disclose the pre-logon authentication cookie to a man-in-the-middle attacker on the same local area network segment with the ability to manipulate ARP or to conduct ARP spoofing attacks. This allows the attacker to access the GlobalProtect Server as allowed by configured Security rules for the 'pre-login' user. This access may be limited compared to the network access of regular users. This issue affects: GlobalProtect app 5.0 versions earlier than GlobalProtect app 5.0.10 when the prelogon feature is enabled; GlobalProtect app 5.1 versions earlier than GlobalProtect app 5.1.4 when the prelogon feature is enabled.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2033"
+    ],
+    "受影响版本": [
+      "5.1",
+      "5.0"
+    ],
+    "公开日期": "2020年06月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2020-2032",
+    "漏洞描述": "A race condition vulnerability Palo Alto Networks GlobalProtect app on Windows allows a local limited Windows user to execute programs with SYSTEM privileges. This issue can be exploited only while performing a GlobalProtect app upgrade. This issue affects: GlobalProtect app 5.0 versions earlier than GlobalProtect app 5.0.10 on Windows; GlobalProtect app 5.1 versions earlier than GlobalProtect app 5.1.4 on Windows.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2032"
+    ],
+    "受影响版本": [
+      "5.1",
+      "5.0"
+    ],
+    "公开日期": "2020年06月10日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2022",
+    "漏洞描述": "An information exposure vulnerability exists in Palo Alto Networks Panorama software that discloses the token for the Panorama web interface administrator's session to a managed device when the Panorama administrator performs a context switch into that device. This vulnerability allows an attacker to gain privileged access to the Panorama web interface. An attacker requires some knowledge of managed firewalls to exploit this issue. This issue impacts: PAN-OS 8.1 versions earlier than PAN-OS 8.1.17; PAN-OS 9.0 versions earlier than PAN-OS 9.0.11; PAN-OS 9.1 versions earlier than PAN-OS 9.1.5.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2022"
+    ],
+    "受影响版本": [
+      "10.0.*",
+      "8.1",
+      "9.0",
+      "9.1"
+    ],
+    "公开日期": "2020年11月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2021",
+    "漏洞描述": "When Security Assertion Markup Language (SAML) authentication is enabled and the 'Validate Identity Provider Certificate' option is disabled (unchecked), improper verification of signatures in PAN-OS SAML authentication enables an unauthenticated network-based attacker to access protected resources. The attacker must have network access to the vulnerable server to exploit this vulnerability. This issue affects PAN-OS 9.1 versions earlier than PAN-OS 9.1.3; PAN-OS 9.0 versions earlier than PAN-OS 9.0.9; PAN-OS 8.1 versions earlier than PAN-OS 8.1.15, and all versions of PAN-OS 8.0 (EOL). This issue does not affect PAN-OS 7.1. This issue cannot be exploited if SAML is not used for authentication. This issue cannot be exploited if the 'Validate Identity Provider Certificate' option is enabled (checked) in the SAML Identity Provider Server Profile. Resources that can be protected by SAML-based single sign-on (SSO) authentication are: GlobalProtect Gateway, GlobalProtect Portal, GlobalProtect Clientless VPN, Authentication and Captive Portal, PAN-OS next-generation firewalls (PA-Series, VM-Series) and Panorama web interfaces, Prisma Access In the case of GlobalProtect Gateways, GlobalProtect Portal, Clientless VPN, Captive Portal, and Prisma Access, an unauthenticated attacker with network access to the affected servers can gain access to protected resources if allowed by configured authentication and Security policies. There is no impact on the integrity and availability of the gateway, portal or VPN server. An attacker cannot inspect or tamper with sessions of regular users. In the worst case, this is a critical severity vulnerability with a CVSS Base Score of 10.0 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N). In the case of PAN-OS and Panorama web interfaces, this issue allows an unauthenticated attacker with network access to the PAN-OS or Panorama web interfaces to log in as an administrator and perform administrative actions. In the worst-case scenario, this is a critical severity vulnerability with a CVSS Base Score of 10.0 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H). If the web interfaces are only accessible to a restricted management network, then the issue is lowered to a CVSS Base Score of 9.6 (CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H). Palo Alto Networks is not aware of any malicious attempts to exploit this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2021"
+    ],
+    "受影响版本": [
+      "7.1.*",
+      "8.0.*",
+      "8.1",
+      "9.0",
+      "9.1"
+    ],
+    "公开日期": "2020年06月29日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2013",
+    "漏洞描述": "A cleartext transmission of sensitive information vulnerability in Palo Alto Networks PAN-OS Panorama that discloses an authenticated PAN-OS administrator's PAN-OS session cookie. When an administrator issues a context switch request into a managed firewall with an affected PAN-OS Panorama version, their PAN-OS session cookie is transmitted over cleartext to the firewall. An attacker with the ability to intercept this network traffic between the firewall and Panorama can access the administrator's account and further manipulate devices managed by Panorama. This issue affects: PAN-OS 7.1 versions earlier than 7.1.26; PAN-OS 8.1 versions earlier than 8.1.13; PAN-OS 9.0 versions earlier than 9.0.6; PAN-OS 9.1 versions earlier than 9.1.1; All version of PAN-OS 8.0;",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2013"
+    ],
+    "受影响版本": [
+      "8.0.*",
+      "9.0",
+      "7.1",
+      "8.1",
+      "9.1"
+    ],
+    "公开日期": "2020年05月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2012",
+    "漏洞描述": "Improper restriction of XML external entity reference ('XXE') vulnerability in Palo Alto Networks Panorama management service allows remote unauthenticated attackers with network access to the Panorama management interface to read arbitrary files on the system. This issue affects: All versions of PAN-OS for Panorama 7.1 and 8.0; PAN-OS for Panorama 8.1 versions earlier than 8.1.13; PAN-OS for Panorama 9.0 versions earlier than 9.0.7.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2012"
+    ],
+    "受影响版本": [
+      "8.0.*",
+      "7.1.*",
+      "8.1",
+      "9.0",
+      "9.1.0"
+    ],
+    "公开日期": "2020年05月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2011",
+    "漏洞描述": "An improper input validation vulnerability in the configuration daemon of Palo Alto Networks PAN-OS Panorama allows for a remote unauthenticated user to send a specifically crafted registration request to the device that causes the configuration service to crash. Repeated attempts to send this request result in denial of service to all PAN-OS Panorama services by restarting the device and putting it into maintenance mode. This issue affects: All versions of PAN-OS 7.1, PAN-OS 8.0; PAN-OS 8.1 versions earlier than 8.1.14; PAN-OS 9.0 versions earlier than 9.0.7; PAN-OS 9.1 versions earlier than 9.1.0.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2011"
+    ],
+    "受影响版本": [
+      "7.1.*",
+      "8.0.*",
+      "8.1",
+      "9.0",
+      "9.1"
+    ],
+    "公开日期": "2020年05月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2009",
+    "漏洞描述": "An external control of filename vulnerability in the SD WAN component of Palo Alto Networks PAN-OS Panorama allows an authenticated administrator to send a request that results in the creation and write of an arbitrary file on all firewalls managed by the Panorama. In some cases this results in arbitrary code execution with root permissions. This issue affects: All versions of PAN-OS 7.1; PAN-OS 8.1 versions earlier than 8.1.14; PAN-OS 9.0 versions earlier than 9.0.7.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2009"
+    ],
+    "受影响版本": [
+      "7.1.*",
+      "8.0.*",
+      "8.1",
+      "9.0"
+    ],
+    "公开日期": "2020年05月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2008",
+    "漏洞描述": "An OS command injection and external control of filename vulnerability in Palo Alto Networks PAN-OS allows authenticated administrators to execute code with root privileges or delete arbitrary system files and impact the system's integrity or cause a denial of service condition. This issue affects: All versions of PAN-OS 7.1 and 8.0; PAN-OS 8.1 versions earlier than 8.1.14.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2008"
+    ],
+    "受影响版本": [
+      "8.0.*",
+      "7.1.*",
+      "8.1",
+      "9.0.0",
+      "9.1.0"
+    ],
+    "公开日期": "2020年05月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2005",
+    "漏洞描述": "A cross-site scripting (XSS) vulnerability exists when visiting malicious websites with the Palo Alto Networks GlobalProtect Clientless VPN that can compromise the user's active session. This issue affects: PAN-OS 7.1 versions earlier than 7.1.26; PAN-OS 8.1 versions earlier than 8.1.13; PAN-OS 9.0 versions earlier than 9.0.7; All versions of PAN-OS 8.0.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2005"
+    ],
+    "受影响版本": [
+      "8.0.*",
+      "7.1",
+      "8.1",
+      "9.0"
+    ],
+    "公开日期": "2020年05月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect App",
+    "CVE编号": "CVE-2020-2004",
+    "漏洞描述": "Under certain circumstances a user's password may be logged in cleartext in the PanGPS.log diagnostic file when logs are collected for troubleshooting on GlobalProtect app (also known as GlobalProtect Agent) for MacOS and Windows. For this issue to occur all of these conditions must be true: (1) 'Save User Credential' option should be set to 'Yes' in the GlobalProtect Portal's Agent configuration, (2) the GlobalProtect user manually selects a gateway, (3) and the logging level is set to 'Dump' while collecting troubleshooting logs. This issue does not affect GlobalProtect app on other platforms (for example iOS/Android/Linux). This issue affects GlobalProtect app 5.0 versions earlier than 5.0.9, GlobalProtect app 5.1 versions earlier than 5.1.2 on Windows or MacOS. Since becoming aware of the issue, Palo Alto Networks has safely deleted all the known GlobalProtectLogs zip files sent by customers with the credentials. We now filter and remove these credentials from all files sent to Customer Support. The GlobalProtectLogs zip files uploaded to Palo Alto Networks systems were only accessible by authorized personnel with valid Palo Alto Networks credentials. We do not have any evidence of malicious access or use of these credentials.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2004"
+    ],
+    "受影响版本": [
+      "5.0",
+      "5.1"
+    ],
+    "公开日期": "2020年05月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2002",
+    "漏洞描述": "An authentication bypass by spoofing vulnerability exists in the authentication daemon and User-ID components of Palo Alto Networks PAN-OS by failing to verify the integrity of the Kerberos key distribution center (KDC) before authenticating users. This affects all forms of authentication that use a Kerberos authentication profile. A man-in-the-middle type of attacker with the ability to intercept communication between PAN-OS and KDC can login to PAN-OS as an administrator. This issue affects: PAN-OS 7.1 versions earlier than 7.1.26; PAN-OS 8.1 versions earlier than 8.1.13; PAN-OS 9.0 versions earlier than 9.0.6; All version of PAN-OS 8.0.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2002"
+    ],
+    "受影响版本": [
+      "8.0.*",
+      "8.1",
+      "9.0",
+      "7.1"
+    ],
+    "公开日期": "2020年05月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-2001",
+    "漏洞描述": "An external control of path and data vulnerability in the Palo Alto Networks PAN-OS Panorama XSLT processing logic that allows an unauthenticated user with network access to PAN-OS management interface to write attacker supplied file on the system and elevate privileges. This issue affects: All PAN-OS 7.1 Panorama and 8.0 Panorama versions; PAN-OS 8.1 versions earlier than 8.1.12 on Panorama; PAN-OS 9.0 versions earlier than 9.0.6 on Panorama.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-2001"
+    ],
+    "受影响版本": [
+      "8.0.*",
+      "7.1.*",
+      "8.1",
+      "9.0"
+    ],
+    "公开日期": "2020年05月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-1997",
+    "漏洞描述": "An open redirection vulnerability in the GlobalProtect component of Palo Alto Networks PAN-OS allows an attacker to specify an arbitrary redirection target away from the trusted GlobalProtect gateway. If the user then successfully authenticates it will cause them to access an unexpected and potentially malicious website. This issue affects: PAN-OS 7.1 versions earlier than 7.1.26; PAN-OS 8.0 versions earlier than 8.0.14.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-1997"
+    ],
+    "受影响版本": [
+      "8.1.*",
+      "9.0.*",
+      "9.1.*",
+      "7.1",
+      "8.0"
+    ],
+    "公开日期": "2020年05月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-1995",
+    "漏洞描述": "A NULL pointer dereference vulnerability in Palo Alto Networks PAN-OS allows an authenticated administrator to send a request that causes the rasmgr daemon to crash. Repeated attempts to send this request result in denial of service to all PAN-OS services by restarting the device and putting it into maintenance mode. This issue affects: PAN-OS 9.1 versions earlier than 9.1.2.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-1995"
+    ],
+    "受影响版本": [
+      "9.1"
+    ],
+    "公开日期": "2020年05月13日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-1992",
+    "漏洞描述": "A format string vulnerability in the Varrcvr daemon of PAN-OS on PA-7000 Series devices with a Log Forwarding Card (LFC) allows remote attackers to crash the daemon creating a denial of service condition or potentially execute code with root privileges. This issue affects Palo Alto Networks PAN-OS 9.0 versions before 9.0.7; PAN-OS 9.1 versions before 9.1.2 on PA-7000 Series devices with an LFC installed and configured. This issue requires WildFire services to be configured and enabled. This issue does not affect PAN-OS 8.1 and earlier releases. This issue does not affect any other PA Series firewalls.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-1992"
+    ],
+    "受影响版本": [
+      "9.0",
+      "9.1"
+    ],
+    "公开日期": "2020年04月08日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Traps",
+    "CVE编号": "CVE-2020-1991",
+    "漏洞描述": "An insecure temporary file vulnerability in Palo Alto Networks Traps allows a local authenticated Windows user to escalate privileges or overwrite system files. This issue affects Palo Alto Networks Traps 5.0 versions before 5.0.8; 6.1 versions before 6.1.4 on Windows. This issue does not affect Cortex XDR 7.0. This issue does not affect Traps for Linux or MacOS.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-1991"
+    ],
+    "受影响版本": [
+      "5.0",
+      "6.1"
+    ],
+    "公开日期": "2020年04月08日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-1990",
+    "漏洞描述": "A stack-based buffer overflow vulnerability in the management server component of PAN-OS allows an authenticated user to upload a corrupted PAN-OS configuration and potentially execute code with root privileges. This issue affects Palo Alto Networks PAN-OS 8.1 versions before 8.1.13; 9.0 versions before 9.0.7. This issue does not affect PAN-OS 7.1.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-1990"
+    ],
+    "受影响版本": [
+      "7.1.*",
+      "8.1",
+      "9.0"
+    ],
+    "公开日期": "2020年04月08日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Global Protect Agent",
+    "CVE编号": "CVE-2020-1989",
+    "漏洞描述": "An incorrect privilege assignment vulnerability when writing application-specific files in the Palo Alto Networks Global Protect Agent for Linux on ARM platform allows a local authenticated user to gain root privileges on the system. This issue affects Palo Alto Networks Global Protect Agent for Linux 5.0 versions before 5.0.8; 5.1 versions before 5.1.1.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-1989"
+    ],
+    "受影响版本": [
+      "5.0",
+      "5.1"
+    ],
+    "公开日期": "2020年04月08日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Global Protect Agent",
+    "CVE编号": "CVE-2020-1988",
+    "漏洞描述": "An unquoted search path vulnerability in the Windows release of Global Protect Agent allows an authenticated local user with file creation privileges on the root of the OS disk (C:\\) or to Program Files directory to gain system privileges. This issue affects Palo Alto Networks GlobalProtect Agent 5.0 versions before 5.0.5; 4.1 versions before 4.1.13 on Windows;",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-1988"
+    ],
+    "受影响版本": [
+      "5.0",
+      "4.1"
+    ],
+    "公开日期": "2020年04月08日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "Global Protect Agent",
+    "CVE编号": "CVE-2020-1987",
+    "漏洞描述": "An information exposure vulnerability in the logging component of Palo Alto Networks Global Protect Agent allows a local authenticated user to read VPN cookie information when the troubleshooting logging level is set to \"Dump\". This issue affects Palo Alto Networks Global Protect Agent 5.0 versions prior to 5.0.9; 5.1 versions prior to 5.1.1.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-1987"
+    ],
+    "受影响版本": [
+      "5.0",
+      "5.1"
+    ],
+    "公开日期": "2020年04月08日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "VM-Series Plugin",
+    "CVE编号": "CVE-2020-1978",
+    "漏洞描述": "TechSupport files generated on Palo Alto Networks VM Series firewalls for Microsoft Azure platform configured with high availability (HA) inadvertently collect Azure dashboard service account credentials. These credentials are equivalent to the credentials associated with the Contributor role in Azure. A user with the credentials will be able to manage all the Azure resources in the subscription except for granting access to other resources. These credentials do not allow login access to the VMs themselves. This issue affects VM Series Plugin versions before 1.0.9 for PAN-OS 9.0. This issue does not affect VM Series in non-HA configurations or on other cloud platforms. It does not affect hardware firewall appliances. Since becoming aware of the issue, Palo Alto Networks has safely deleted all the tech support files with the credentials. We now filter and remove these credentials from all TechSupport files sent to us. The TechSupport files uploaded to Palo Alto Networks systems were only accessible by authorized personnel with valid Palo Alto Networks credentials. We do not have any evidence of malicious access or use of these credentials.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-1978"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2020年04月08日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "GlobalProtect",
+    "CVE编号": "CVE-2020-1976",
+    "漏洞描述": "A denial-of-service (DoS) vulnerability in Palo Alto Networks GlobalProtect software running on Mac OS allows authenticated local users to cause the Mac OS kernel to hang or crash. This issue affects GlobalProtect 5.0.5 and earlier versions of GlobalProtect 5.0 on Mac OS.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-1976"
+    ],
+    "受影响版本": [
+      "5.0"
+    ],
+    "公开日期": "2020年02月12日"
+  },
+  {
+    "设备品牌": "Palo Alto Networks",
+    "设备类型": "入侵防御系统（IPS）",
+    "产品型号": "PAN-OS",
+    "CVE编号": "CVE-2020-1975",
+    "漏洞描述": "Missing XML validation vulnerability in the PAN-OS web interface on Palo Alto Networks PAN-OS software allows authenticated users to inject arbitrary XML that results in privilege escalation. This issue affects PAN-OS 8.1 versions earlier than PAN-OS 8.1.12 and PAN-OS 9.0 versions earlier than PAN-OS 9.0.6. This issue does not affect PAN-OS 7.1, PAN-OS 8.0, or PAN-OS 9.1 or later versions.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://security.paloaltonetworks.com/CVE-2020-1975"
+    ],
+    "受影响版本": [
+      "7.1.*",
+      "8.0.*",
+      "8.1",
+      "9.0"
+    ],
+    "公开日期": "2020年02月12日"
+  }
+]

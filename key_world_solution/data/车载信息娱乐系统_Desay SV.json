@@ -1,0 +1,356 @@
+[
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-22024",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnfsd: fix management of listener transports\n\nCurrently, when no active threads are running, a root user using nfsdctl\ncommand can try to remove a particular listener from the list of previously\nadded ones, then start the server by increasing the number of threads,\nit leads to the following problem:\n\n[  158.835354] refcount_t: addition on 0; use-after-free.\n[  158.835603] WARNING: CPU: 2 PID: 9145 at lib/refcount.c:25 refcount_warn_saturate+0x160/0x1a0\n[  158.836017] Modules linked in: rpcrdma rdma_cm iw_cm ib_cm ib_core nfsd auth_rpcgss nfs_acl lockd grace overlay isofs uinput snd_seq_dummy snd_hrtimer nft_fib_inet nft_fib_ipv4 nft_fib_ipv6 nft_fib nft_reject_inet nf_reject_ipv4 nf_reject_ipv6 nft_reject nft_ct nft_chain_nat nf_nat nf_conntrack nf_defrag_ipv6 nf_defrag_ipv4 rfkill ip_set nf_tables qrtr sunrpc vfat fat uvcvideo videobuf2_vmalloc videobuf2_memops uvc videobuf2_v4l2 videodev videobuf2_common snd_hda_codec_generic mc e1000e snd_hda_intel snd_intel_dspcfg snd_hda_codec snd_hda_core snd_hwdep snd_seq snd_seq_device snd_pcm snd_timer snd soundcore sg loop dm_multipath dm_mod nfnetlink vsock_loopback vmw_vsock_virtio_transport_common vmw_vsock_vmci_transport vmw_vmci vsock xfs libcrc32c crct10dif_ce ghash_ce vmwgfx sha2_ce sha256_arm64 sr_mod sha1_ce cdrom nvme drm_client_lib drm_ttm_helper ttm nvme_core drm_kms_helper nvme_auth drm fuse\n[  158.840093] CPU: 2 UID: 0 PID: 9145 Comm: nfsd Kdump: loaded Tainted: G    B   W          6.13.0-rc6+ #7\n[  158.840624] Tainted: [B]=BAD_PAGE, [W]=WARN\n[  158.840802] Hardware name: VMware, Inc. VMware20,1/VBSA, BIOS VMW201.00V.24006586.BA64.2406042154 06/04/2024\n[  158.841220] pstate: 61400005 (nZCv daif +PAN -UAO -TCO +DIT -SSBS BTYPE=--)\n[  158.841563] pc : refcount_warn_saturate+0x160/0x1a0\n[  158.841780] lr : refcount_warn_saturate+0x160/0x1a0\n[  158.842000] sp : ffff800089be7d80\n[  158.842147] x29: ffff800089be7d80 x28: ffff00008e68c148 x27: ffff00008e68c148\n[  158.842492] x26: ffff0002e3b5c000 x25: ffff600011cd1829 x24: ffff00008653c010\n[  158.842832] x23: ffff00008653c000 x22: 1fffe00011cd1829 x21: ffff00008653c028\n[  158.843175] x20: 0000000000000002 x19: ffff00008653c010 x18: 0000000000000000\n[  158.843505] x17: 0000000000000000 x16: 0000000000000000 x15: 0000000000000000\n[  158.843836] x14: 0000000000000000 x13: 0000000000000001 x12: ffff600050a26493\n[  158.844143] x11: 1fffe00050a26492 x10: ffff600050a26492 x9 : dfff800000000000\n[  158.844475] x8 : 00009fffaf5d9b6e x7 : ffff000285132493 x6 : 0000000000000001\n[  158.844823] x5 : ffff000285132490 x4 : ffff600050a26493 x3 : ffff8000805e72bc\n[  158.845174] x2 : 0000000000000000 x1 : 0000000000000000 x0 : ffff000098588000\n[  158.845528] Call trace:\n[  158.845658]  refcount_warn_saturate+0x160/0x1a0 (P)\n[  158.845894]  svc_recv+0x58c/0x680 [sunrpc]\n[  158.846183]  nfsd+0x1fc/0x348 [nfsd]\n[  158.846390]  kthread+0x274/0x2f8\n[  158.846546]  ret_from_fork+0x10/0x20\n[  158.846714] ---[ end trace 0000000000000000 ]---\n\nnfsd_nl_listener_set_doit() would manipulate the list of transports of\nserver's sv_permsocks and close the specified listener but the other\nlist of transports (server's sp_xprts list) would not be changed leading\nto the problem above.\n\nInstead, determined if the nfsdctl is trying to remove a listener, in\nwhich case, delete all the existing listener transports and re-create\nall-but-the-removed ones.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/a84c80515ca8a0cdf6d06f1b6ca721224b08453e",
+      "https://git.kernel.org/stable/c/052a34f093fb940a145493d1438e7abbfe507cdd",
+      "https://git.kernel.org/stable/c/0f42df0ab2b11ea6b2884bdaf6dbc3be6dde7e82",
+      "https://git.kernel.org/stable/c/d093c90892607be505e801469d6674459e69ab89"
+    ],
+    "受影响版本": [
+      "16a471177496c8e04a9793812c187a2c1a2192fa",
+      "16a471177496c8e04a9793812c187a2c1a2192fa",
+      "16a471177496c8e04a9793812c187a2c1a2192fa",
+      "16a471177496c8e04a9793812c187a2c1a2192fa"
+    ],
+    "公开日期": "2025年04月16日"
+  },
+  {
+    "设备品牌": "straightvisions GmbH",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "SV Forms",
+    "CVE编号": "CVE-2024-51877",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in straightvisions GmbH SV Forms allows DOM-Based XSS.This issue affects SV Forms: from n/a through 2.0.05.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://patchstack.com/database/vulnerability/sv-forms/wordpress-sv-forms-plugin-2-0-05-cross-site-scripting-xss-vulnerability?_s_id=cve"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年11月19日"
+  },
+  {
+    "设备品牌": "Contec Co., Ltd.",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "SolarView Compact",
+    "CVE编号": "CVE-2023-27920",
+    "漏洞描述": "Improper access control vulnerability in the system date/time setting page of SolarView Compact SV-CPT-MC310 versions prior to Ver.8.10 and SV-CPT-MC310F versions prior to Ver.8.10 allows a remote authenticated attacker to alter system date/time of the affected product.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.contec.com/jp/download/donwload-list/?itemid=b28c8b7c-9f40-40b2-843c-b5b04c035b0e#firmware",
+      "https://www.contec.com/jp/api/downloadlogger?download=/-/media/Contec/jp/support/security-info/contec_security_solarview_230508.pdf",
+      "https://jvn.jp/en/vu/JVNVU92106300/"
+    ],
+    "受影响版本": [
+      "SV-CPT-MC310 versions prior to Ver.8.10, and SV-CPT-MC310F versions prior to Ver.8.10"
+    ],
+    "公开日期": "2023年05月23日"
+  },
+  {
+    "设备品牌": "Contec Co., Ltd.",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "SolarView Compact",
+    "CVE编号": "CVE-2023-27521",
+    "漏洞描述": "OS command injection vulnerability in the mail setting page of SolarView Compact SV-CPT-MC310 versions prior to Ver.8.10 and SV-CPT-MC310F versions prior to Ver.8.10 allows remote authenticated attackers to execute an arbitrary OS command.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.contec.com/jp/download/donwload-list/?itemid=b28c8b7c-9f40-40b2-843c-b5b04c035b0e#firmware",
+      "https://www.contec.com/jp/api/downloadlogger?download=/-/media/Contec/jp/support/security-info/contec_security_solarview_230508.pdf",
+      "https://jvn.jp/en/vu/JVNVU92106300/"
+    ],
+    "受影响版本": [
+      "SV-CPT-MC310 versions prior to Ver.8.10, and SV-CPT-MC310F versions prior to Ver.8.10"
+    ],
+    "公开日期": "2023年05月23日"
+  },
+  {
+    "设备品牌": "Contec Co., Ltd.",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "SolarView Compact",
+    "CVE编号": "CVE-2023-27518",
+    "漏洞描述": "Buffer overflow vulnerability in the multiple setting pages of SolarView Compact SV-CPT-MC310 versions prior to Ver.8.10 and SV-CPT-MC310F versions prior to Ver.8.10 allows a remote authenticated attacker to execute arbitrary code.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.contec.com/jp/download/donwload-list/?itemid=b28c8b7c-9f40-40b2-843c-b5b04c035b0e#firmware",
+      "https://www.contec.com/jp/api/downloadlogger?download=/-/media/Contec/jp/support/security-info/contec_security_solarview_230508.pdf",
+      "https://jvn.jp/en/vu/JVNVU92106300/"
+    ],
+    "受影响版本": [
+      "SV-CPT-MC310 versions prior to Ver.8.10, and SV-CPT-MC310F versions prior to Ver.8.10"
+    ],
+    "公开日期": "2023年05月23日"
+  },
+  {
+    "设备品牌": "Contec Co., Ltd.",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "SolarView Compact",
+    "CVE编号": "CVE-2023-27514",
+    "漏洞描述": "OS command injection vulnerability in the download page of SolarView Compact SV-CPT-MC310 versions prior to Ver.8.10 and SV-CPT-MC310F versions prior to Ver.8.10 allows a remote authenticated attacker to execute an arbitrary OS command.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.contec.com/jp/download/donwload-list/?itemid=b28c8b7c-9f40-40b2-843c-b5b04c035b0e#firmware",
+      "https://www.contec.com/jp/api/downloadlogger?download=/-/media/Contec/jp/support/security-info/contec_security_solarview_230508.pdf",
+      "https://jvn.jp/en/vu/JVNVU92106300/"
+    ],
+    "受影响版本": [
+      "SV-CPT-MC310 versions prior to Ver.8.10, and SV-CPT-MC310F versions prior to Ver.8.10"
+    ],
+    "公开日期": "2023年05月23日"
+  },
+  {
+    "设备品牌": "Contec Co., Ltd.",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "SolarView Compact",
+    "CVE编号": "CVE-2023-27512",
+    "漏洞描述": "Use of hard-coded credentials exists in SolarView Compact SV-CPT-MC310 versions prior to Ver.8.10, and SV-CPT-MC310F versions prior to Ver.8.10, which may allow a remote authenticated attacker to login the affected product with an administrative privilege and perform an unintended operation.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.contec.com/jp/download/donwload-list/?itemid=b28c8b7c-9f40-40b2-843c-b5b04c035b0e#firmware",
+      "https://www.contec.com/jp/api/downloadlogger?download=/-/media/Contec/jp/support/security-info/contec_security_solarview_230508.pdf",
+      "https://jvn.jp/en/vu/JVNVU92106300/"
+    ],
+    "受影响版本": [
+      "SV-CPT-MC310 versions prior to Ver.8.10, and SV-CPT-MC310F versions prior to Ver.8.10"
+    ],
+    "公开日期": "2023年05月23日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-47040",
+    "漏洞描述": "An issue in ASKEY router RTF3505VW-N1 BR_SV_g000_R3505VMN1001_s32_7 allows attackers to escalate privileges via running the tcpdump command after placing a crafted file in the /tmp directory and sending crafted packets through port 80.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/leoservalli/Privilege-escalation-ASKEY"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年01月24日"
+  },
+  {
+    "设备品牌": "CONTEC CO., LTD.",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "SolarView Compact",
+    "CVE编号": "CVE-2022-35239",
+    "漏洞描述": "The image file management page of SolarView Compact SV-CPT-MC310 Ver.7.23 and earlier, and SV-CPT-MC310F Ver.7.23 and earlier contains an insufficient verification vulnerability when uploading files. If this vulnerability is exploited, arbitrary PHP code may be executed if a remote authenticated attacker uploads a specially crafted PHP file.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.contec.com/jp/api/downloadlogger?download=/jp/-/media/Contec/jp/support/security-info/contec_security_solarview_220727.pdf",
+      "https://www.contec.com/jp/download/donwload-list/?itemid=b28c8b7c-9f40-40b2-843c-b5b04c035b0e#firmware",
+      "https://jvn.jp/en/vu/JVNVU93696585/"
+    ],
+    "受影响版本": [
+      "SV-CPT-MC310 Ver.7.23 and earlier, and SV-CPT-MC310F Ver.7.23 and earlier"
+    ],
+    "公开日期": "2022年08月16日"
+  },
+  {
+    "设备品牌": "jackalope",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "jackalope-doctrine-dbal",
+    "CVE编号": "CVE-2021-43822",
+    "漏洞描述": "Jackalope Doctrine-DBAL is an implementation of the PHP Content Repository API (PHPCR) using a relational database to persist data. In affected versions users can provoke SQL injections if they can specify a node name or query. Upgrade to version 1.7.4 to resolve this issue. If that is not possible, you can escape all places where `$property` is used to filter `sv:name` in the class `Jackalope\\Transport\\DoctrineDBAL\\Query\\QOMWalker`: `XPath::escape($property)`. Node names and xpaths can contain `\"` or `;` according to the JCR specification. The jackalope component that translates the query object model into doctrine dbal queries does not properly escape the names and paths, so that a accordingly crafted node name can lead to an SQL injection. If queries are never done from user input, or if you validate the user input to not contain `;`, you are not affected.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/jackalope/jackalope-doctrine-dbal/security/advisories/GHSA-ph98-v78f-jqrm",
+      "https://github.com/jackalope/jackalope-doctrine-dbal/commit/9d179a36d320330ddb303ea3a7c98d3a33d231db"
+    ],
+    "受影响版本": [
+      "< 1.7.4"
+    ],
+    "公开日期": "2021年12月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-27404",
+    "漏洞描述": "Askey RTF8115VW BR_SV_g11.11_RTF_TEF001_V6.54_V014 devices allow injection of a Host HTTP header.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/bokanrb/HostHeaderInjection-Askey"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-27403",
+    "漏洞描述": "Askey RTF8115VW BR_SV_g11.11_RTF_TEF001_V6.54_V014 devices allow cgi-bin/te_acceso_router.cgi curWebPage XSS.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/bokanrb/XSS-Askey"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月19日"
+  },
+  {
+    "设备品牌": "Contec Co., Ltd.",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "SolarView Compact",
+    "CVE编号": "CVE-2021-20662",
+    "漏洞描述": "Missing authentication for critical function in SolarView Compact SV-CPT-MC310 prior to Ver.6.5 allows an attacker to alter the setting information without the access privileges via unspecified vectors.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.contec.com/jp/api/downloadlogger?download=https://www.contec.com/jp/-/media/contec/jp/support/security-info/contec_security_solarview_210216.pdf",
+      "https://www.contec.com/jp/download/contract/contract2/?itemid=b28c8b7c-9f40-40b2-843c-b5b04c035b0e&downloaditemid=fa248fba-8901-4d9e-8212-b139f2defbdf",
+      "https://jvn.jp/en/jp/JVN37417423/index.html"
+    ],
+    "受影响版本": [
+      "SV-CPT-MC310 prior to Ver.6.5"
+    ],
+    "公开日期": "2021年02月24日"
+  },
+  {
+    "设备品牌": "Contec Co., Ltd.",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "SolarView Compact",
+    "CVE编号": "CVE-2021-20661",
+    "漏洞描述": "Directory traversal vulnerability in SolarView Compact SV-CPT-MC310 prior to Ver.6.5 allows authenticated attackers to delete arbitrary files and/or directories on the server via unspecified vectors.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.contec.com/jp/api/downloadlogger?download=https://www.contec.com/jp/-/media/contec/jp/support/security-info/contec_security_solarview_210216.pdf",
+      "https://www.contec.com/jp/download/contract/contract2/?itemid=b28c8b7c-9f40-40b2-843c-b5b04c035b0e&downloaditemid=fa248fba-8901-4d9e-8212-b139f2defbdf",
+      "https://jvn.jp/en/jp/JVN37417423/index.html"
+    ],
+    "受影响版本": [
+      "SV-CPT-MC310 prior to Ver.6.5"
+    ],
+    "公开日期": "2021年02月24日"
+  },
+  {
+    "设备品牌": "Contec Co., Ltd.",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "SolarView Compact",
+    "CVE编号": "CVE-2021-20660",
+    "漏洞描述": "Cross-site scripting vulnerability in SolarView Compact SV-CPT-MC310 prior to Ver.6.5 allows an attacker to inject an arbitrary script via unspecified vectors.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.contec.com/jp/api/downloadlogger?download=https://www.contec.com/jp/-/media/contec/jp/support/security-info/contec_security_solarview_210216.pdf",
+      "https://www.contec.com/jp/download/contract/contract2/?itemid=b28c8b7c-9f40-40b2-843c-b5b04c035b0e&downloaditemid=fa248fba-8901-4d9e-8212-b139f2defbdf",
+      "https://jvn.jp/en/jp/JVN37417423/index.html"
+    ],
+    "受影响版本": [
+      "SV-CPT-MC310 prior to Ver.6.5"
+    ],
+    "公开日期": "2021年02月24日"
+  },
+  {
+    "设备品牌": "Contec Co., Ltd.",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "SolarView Compact",
+    "CVE编号": "CVE-2021-20659",
+    "漏洞描述": "SolarView Compact SV-CPT-MC310 prior to Ver.6.5 allows an authenticated attacker to upload arbitrary files via unspecified vectors. If the file is PHP script, an attacker may execute arbitrary code.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.contec.com/jp/api/downloadlogger?download=https://www.contec.com/jp/-/media/contec/jp/support/security-info/contec_security_solarview_210216.pdf",
+      "https://www.contec.com/jp/download/contract/contract2/?itemid=b28c8b7c-9f40-40b2-843c-b5b04c035b0e&downloaditemid=fa248fba-8901-4d9e-8212-b139f2defbdf",
+      "https://jvn.jp/en/jp/JVN37417423/index.html"
+    ],
+    "受影响版本": [
+      "SV-CPT-MC310 prior to Ver.6.5"
+    ],
+    "公开日期": "2021年02月24日"
+  },
+  {
+    "设备品牌": "Contec Co., Ltd.",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "SolarView Compact",
+    "CVE编号": "CVE-2021-20658",
+    "漏洞描述": "SolarView Compact SV-CPT-MC310 prior to Ver.6.5 allows an attacker to execute arbitrary OS commands with the web server privilege via unspecified vectors.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.contec.com/jp/api/downloadlogger?download=https://www.contec.com/jp/-/media/contec/jp/support/security-info/contec_security_solarview_210216.pdf",
+      "https://www.contec.com/jp/download/contract/contract2/?itemid=b28c8b7c-9f40-40b2-843c-b5b04c035b0e&downloaditemid=fa248fba-8901-4d9e-8212-b139f2defbdf",
+      "https://jvn.jp/en/jp/JVN37417423/index.html"
+    ],
+    "受影响版本": [
+      "SV-CPT-MC310 prior to Ver.6.5"
+    ],
+    "公开日期": "2021年02月24日"
+  },
+  {
+    "设备品牌": "Contec Co., Ltd.",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "SolarView Compact",
+    "CVE编号": "CVE-2021-20657",
+    "漏洞描述": "Improper access control vulnerability in SolarView Compact SV-CPT-MC310 prior to Ver.6.5 allows an authenticated attacker to obtain and/or alter the setting information without the access privilege via unspecified vectors.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.contec.com/jp/api/downloadlogger?download=https://www.contec.com/jp/-/media/contec/jp/support/security-info/contec_security_solarview_210216.pdf",
+      "https://www.contec.com/jp/download/contract/contract2/?itemid=b28c8b7c-9f40-40b2-843c-b5b04c035b0e&downloaditemid=fa248fba-8901-4d9e-8212-b139f2defbdf",
+      "https://jvn.jp/en/jp/JVN37417423/index.html"
+    ],
+    "受影响版本": [
+      "SV-CPT-MC310 prior to Ver.6.5"
+    ],
+    "公开日期": "2021年02月24日"
+  },
+  {
+    "设备品牌": "Contec Co., Ltd.",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "SolarView Compact",
+    "CVE编号": "CVE-2021-20656",
+    "漏洞描述": "Exposure of information through directory listing in SolarView Compact SV-CPT-MC310 prior to Ver.6.5 allows an authenticated attacker to obtain the information inside the system, such as directories and/or file configurations via unspecified vectors.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.contec.com/jp/api/downloadlogger?download=https://www.contec.com/jp/-/media/contec/jp/support/security-info/contec_security_solarview_210216.pdf",
+      "https://www.contec.com/jp/download/contract/contract2/?itemid=b28c8b7c-9f40-40b2-843c-b5b04c035b0e&downloaditemid=fa248fba-8901-4d9e-8212-b139f2defbdf",
+      "https://jvn.jp/en/jp/JVN37417423/index.html"
+    ],
+    "受影响版本": [
+      "SV-CPT-MC310 prior to Ver.6.5"
+    ],
+    "公开日期": "2021年02月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-28695",
+    "漏洞描述": "Askey Fiber Router RTF3505VW-N1 BR_SV_g000_R3505VWN1001_s32_7 devices allow Remote Code Execution and retrieval of admin credentials to log into the Dashboard or login via SSH, leading to code execution as root.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://cr1pt0.medium.com/cve-2020-28695-8f8d618ac0b"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年03月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载信息娱乐系统",
+    "产品型号": "perl-dbi",
+    "CVE编号": "CVE-2020-14392",
+    "漏洞描述": "An untrusted pointer dereference flaw was found in Perl-DBI < 1.643. A local attacker who is able to manipulate calls to dbd_db_login6_sv() could cause memory corruption, affecting the service's availability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1877402",
+      "https://metacpan.org/pod/distribution/DBI/Changes#Changes-in-DBI-1.643",
+      "https://usn.ubuntu.com/4503-1/",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00067.html",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00074.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/JXLKODJ7B57GITDEZZXNSHPK4VBYXYHR/",
+      "https://lists.debian.org/debian-lts-announce/2020/09/msg00026.html"
+    ],
+    "受影响版本": [
+      "perl-DBI before version 1.643"
+    ],
+    "公开日期": "2020年09月16日"
+  }
+]

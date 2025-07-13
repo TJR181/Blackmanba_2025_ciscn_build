@@ -1,0 +1,32 @@
+[
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "无线设备",
+    "产品型号": "HPE OfficeConnect 1820 and 1850 Switch Series",
+    "CVE编号": "CVE-2022-37934",
+    "漏洞描述": "A potential security vulnerability has been identified in HPE OfficeConnect 1820, and 1850 switch series. The vulnerability could be remotely exploited to allow remote directory traversal in HPE OfficeConnect 1820 switch series version PT.02.17 and below, HPE OfficeConnect 1850 switch series version PC.01.23 and below, and HPE OfficeConnect 1850 (10G aggregator) switch version PO.01.22 and below.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbnw04401en_us"
+    ],
+    "受影响版本": [
+      "Prior to PT.02.17; Prior to PC.01.23; Prior to PO.01.22"
+    ],
+    "公开日期": "2023年01月03日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "无线设备",
+    "产品型号": "Hewlett Packard Enterprise OfficeConnect 1820, 1850, and 1920S Network switches",
+    "CVE编号": "CVE-2022-37932",
+    "漏洞描述": "A potential security vulnerability has been identified in Hewlett Packard Enterprise OfficeConnect 1820, 1850, and 1920S Network switches. The vulnerability could be remotely exploited to allow authentication bypass. HPE has made the following software updates to resolve the vulnerability in Hewlett Packard Enterprise OfficeConnect 1820, 1850 and 1920S Network switches versions: Prior to PT.02.14; Prior to PC.01.22; Prior to PO.01.21; Prior to PD.02.22;\n\n",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbnw04383en_us"
+    ],
+    "受影响版本": [
+      "Prior to PT.02.14; Prior to PC.01.22; Prior to PO.01.21; Prior to PD.02.22;"
+    ],
+    "公开日期": "2022年11月30日"
+  }
+]

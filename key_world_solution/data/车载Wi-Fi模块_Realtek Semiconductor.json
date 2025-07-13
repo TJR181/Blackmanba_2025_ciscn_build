@@ -1,0 +1,32 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-33225",
+    "漏洞描述": "An issue in the component RTKVHD64.sys of Realtek Semiconductor Corp Realtek(r) High Definition Audio Function Driver v6.0.9549.1 allows attackers to escalate privileges and execute arbitrary code via sending crafted IOCTL requests.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/DriverHunter/Win-Driver-EXP/tree/main/CVE-2024-33225"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年05月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载Wi-Fi模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-33224",
+    "漏洞描述": "An issue in the component rtkio64.sys of Realtek Semiconductor Corp Realtek lO Driver v1.008.0823.2017 allows attackers to escalate privileges and execute arbitrary code via sending crafted IOCTL requests.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/DriverHunter/Win-Driver-EXP/tree/main/CVE-2024-33224"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年05月22日"
+  }
+]

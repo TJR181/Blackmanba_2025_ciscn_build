@@ -1,0 +1,498 @@
+[
+  {
+    "设备品牌": "Linux",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2025-22034",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nmm/gup: reject FOLL_SPLIT_PMD with hugetlb VMAs\n\nPatch series \"mm: fixes for device-exclusive entries (hmm)\", v2.\n\nDiscussing the PageTail() call in make_device_exclusive_range() with\nWilly, I recently discovered [1] that device-exclusive handling does not\nproperly work with THP, making the hmm-tests selftests fail if THPs are\nenabled on the system.\n\nLooking into more details, I found that hugetlb is not properly fenced,\nand I realized that something that was bugging me for longer -- how\ndevice-exclusive entries interact with mapcounts -- completely breaks\nmigration/swapout/split/hwpoison handling of these folios while they have\ndevice-exclusive PTEs.\n\nThe program below can be used to allocate 1 GiB worth of pages and making\nthem device-exclusive on a kernel with CONFIG_TEST_HMM.\n\nOnce they are device-exclusive, these folios cannot get swapped out\n(proc$pid/smaps_rollup will always indicate 1 GiB RSS no matter how much\none forces memory reclaim), and when having a memory block onlined to\nZONE_MOVABLE, trying to offline it will loop forever and complain about\nfailed migration of a page that should be movable.\n\n# echo offline > /sys/devices/system/memory/memory136/state\n# echo online_movable > /sys/devices/system/memory/memory136/state\n# ./hmm-swap &\n... wait until everything is device-exclusive\n# echo offline > /sys/devices/system/memory/memory136/state\n[  285.193431][T14882] page: refcount:2 mapcount:0 mapping:0000000000000000\n  index:0x7f20671f7 pfn:0x442b6a\n[  285.196618][T14882] memcg:ffff888179298000\n[  285.198085][T14882] anon flags: 0x5fff0000002091c(referenced|uptodate|\n  dirty|active|owner_2|swapbacked|node=1|zone=3|lastcpupid=0x7ff)\n[  285.201734][T14882] raw: ...\n[  285.204464][T14882] raw: ...\n[  285.207196][T14882] page dumped because: migration failure\n[  285.209072][T14882] page_owner tracks the page as allocated\n[  285.210915][T14882] page last allocated via order 0, migratetype\n  Movable, gfp_mask 0x140dca(GFP_HIGHUSER_MOVABLE|__GFP_COMP|__GFP_ZERO),\n  id 14926, tgid 14926 (hmm-swap), ts 254506295376, free_ts 227402023774\n[  285.216765][T14882]  post_alloc_hook+0x197/0x1b0\n[  285.218874][T14882]  get_page_from_freelist+0x76e/0x3280\n[  285.220864][T14882]  __alloc_frozen_pages_noprof+0x38e/0x2740\n[  285.223302][T14882]  alloc_pages_mpol+0x1fc/0x540\n[  285.225130][T14882]  folio_alloc_mpol_noprof+0x36/0x340\n[  285.227222][T14882]  vma_alloc_folio_noprof+0xee/0x1a0\n[  285.229074][T14882]  __handle_mm_fault+0x2b38/0x56a0\n[  285.230822][T14882]  handle_mm_fault+0x368/0x9f0\n...\n\nThis series fixes all issues I found so far.  There is no easy way to fix\nwithout a bigger rework/cleanup.  I have a bunch of cleanups on top (some\nprevious sent, some the result of the discussion in v1) that I will send\nout separately once this landed and I get to it.\n\nI wish we could just use some special present PROT_NONE PTEs instead of\nthese (non-present, non-none) fake-swap entries; but that just results in\nthe same problem we keep having (lack of spare PTE bits), and staring at\nother similar fake-swap entries, that ship has sailed.\n\nWith this series, make_device_exclusive() doesn't actually belong into\nmm/rmap.c anymore, but I'll leave moving that for another day.\n\nI only tested this series with the hmm-tests selftests due to lack of HW,\nso I'd appreciate some testing, especially if the interaction between two\nGPUs wanting a device-exclusive entry works as expected.\n\n<program>\n#include <stdio.h>\n#include <fcntl.h>\n#include <stdint.h>\n#include <unistd.h>\n#include <stdlib.h>\n#include <string.h>\n#include <sys/mman.h>\n#include <sys/ioctl.h>\n#include <linux/types.h>\n#include <linux/ioctl.h>\n\n#define HMM_DMIRROR_EXCLUSIVE _IOWR('H', 0x05, struct hmm_dmirror_cmd)\n\nstruct hmm_dmirror_cmd {\n\t__u64 addr;\n\t__u64 ptr;\n\t__u64 npages;\n\t__u64 cpages;\n\t__u64 faults;\n};\n\nconst size_t size = 1 * 1024 * 1024 * 1024ul;\nconst size_t chunk_size = 2 * 1024 * 1024ul;\n\nint m\n---truncated---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/2e877ff3492267def06dd50cb165dc9ab8838e7d",
+      "https://git.kernel.org/stable/c/48d28417c66cce2f3b0ba773fcb6695a56eff220",
+      "https://git.kernel.org/stable/c/fd900832e8440046627b60697687ab5d04398008",
+      "https://git.kernel.org/stable/c/8977752c8056a6a094a279004a49722da15bace3"
+    ],
+    "受影响版本": [
+      "9cb28da54643ad464c47585cd5866c30b0218e67",
+      "9cb28da54643ad464c47585cd5866c30b0218e67",
+      "9cb28da54643ad464c47585cd5866c30b0218e67",
+      "9cb28da54643ad464c47585cd5866c30b0218e67"
+    ],
+    "公开日期": "2025年04月16日"
+  },
+  {
+    "设备品牌": "Axis Communications AB",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "AXIS OS",
+    "CVE编号": "CVE-2025-0361",
+    "漏洞描述": "During an annual penetration test conducted on behalf of Axis Communications, Truesec discovered a flaw in the VAPIX Device Configuration framework that allowed for unauthenticated username enumeration through the VAPIX Device Configuration SSH Management API.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.axis.com/dam/public/f4/9b/13/cve-2025-0361pdf-en-US-474511.pdf"
+    ],
+    "受影响版本": [
+      "11.11.0",
+      "12.0.0"
+    ],
+    "公开日期": "2025年04月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-50928",
+    "漏洞描述": "Insecure permissions in Silicon Labs (SiLabs) Z-Wave Series 700 and 800 v7.21.1 allow attackers to change the wakeup interval of end devices in controller memory, disrupting the device's communications with the controller.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/CNK2100/2024-CVE/blob/main/README.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年12月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-50924",
+    "漏洞描述": "Insecure permissions in Silicon Labs (SiLabs) Z-Wave Series 700 and 800 v7.21.1 allow attackers to cause disrupt communications between the controller and the device itself via repeatedly sending crafted packets to the controller.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/CNK2100/2024-CVE/blob/main/README.md"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年12月10日"
+  },
+  {
+    "设备品牌": "DMG MORI Digital Co., LTD. and NEXT Co., Ltd.",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "Cente TCP/IPv4",
+    "CVE编号": "CVE-2024-28957",
+    "漏洞描述": "Generation of predictable identifiers issue exists in Cente middleware TCP/IP Network Series. If this vulnerability is exploited, a remote unauthenticated attacker may interfere communications by predicting some packet header IDs of the device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.cente.jp/obstacle/4963/",
+      "https://www.cente.jp/obstacle/4956/",
+      "https://jvn.jp/en/vu/JVNVU94016877/"
+    ],
+    "受影响版本": [
+      "Ver.1.41 and earlier"
+    ],
+    "公开日期": "2024年04月15日"
+  },
+  {
+    "设备品牌": "Mozilla",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "Firefox",
+    "CVE编号": "CVE-2024-11691",
+    "漏洞描述": "Certain WebGL operations on Apple silicon M series devices could have lead to an out-of-bounds write and memory corruption due to a flaw in Apple's GPU driver.  \n*This bug only affected the application on Apple M series hardware. Other platforms were unaffected.* This vulnerability affects Firefox < 133, Firefox ESR < 128.5, Firefox ESR < 115.18, Thunderbird < 133, Thunderbird < 128.5, and Thunderbird < 115.18.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://bugzilla.mozilla.org/show_bug.cgi?id=1914707",
+      "https://bugzilla.mozilla.org/show_bug.cgi?id=1924184",
+      "https://www.mozilla.org/security/advisories/mfsa2024-63/",
+      "https://www.mozilla.org/security/advisories/mfsa2024-64/",
+      "https://www.mozilla.org/security/advisories/mfsa2024-65/",
+      "https://www.mozilla.org/security/advisories/mfsa2024-67/",
+      "https://www.mozilla.org/security/advisories/mfsa2024-68/",
+      "https://www.mozilla.org/security/advisories/mfsa2024-70/"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2024年11月26日"
+  },
+  {
+    "设备品牌": "Axis Communications AB",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "AXIS OS",
+    "CVE编号": "CVE-2023-21414",
+    "漏洞描述": "NCC Group has found a flaw during the annual internal penetration test ordered by Axis Communications. The protection for device tampering (commonly known as Secure Boot) contains a flaw which provides an opportunity for a sophisticated attack to bypass this protection. Axis has released patched AXIS OS versions for the highlighted flaw. Please refer to the Axis security advisory for more information and solution.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://www.axis.com/dam/public/45/3c/a1/cve-2023-21414pdf-en-US-412758.pdf"
+    ],
+    "受影响版本": [
+      "AXIS OS 10.11 - 11.5"
+    ],
+    "公开日期": "2023年10月16日"
+  },
+  {
+    "设备品牌": "LenelS2",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "LNL-X2210",
+    "CVE编号": "CVE-2022-31486",
+    "漏洞描述": "An authenticated attacker can send a specially crafted route to the “edit_route.cgi” binary and have it execute shell commands. This vulnerability impacts products based on HID Mercury Intelligent Controllers LP1501, LP1502, LP2500, LP4502, and EP4502 which contain firmware versions prior to 1.303 for the LP series and 1.297 for the EP series. An attacker with this level of access on the device can monitor all communications sent to and from this device, modify onboard relays, change configuration files, or cause the device to become unstable.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.corporate.carrier.com/product-security/advisories-resources/"
+    ],
+    "受影响版本": [
+      "ALL"
+    ],
+    "公开日期": "2022年06月06日"
+  },
+  {
+    "设备品牌": "LenelS2",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "LNL-X2210",
+    "CVE编号": "CVE-2022-31481",
+    "漏洞描述": "An unauthenticated attacker can send a specially crafted update file to the device that can overflow a buffer. This vulnerability impacts products based on HID Mercury Intelligent Controllers LP1501, LP1502, LP2500, LP4502, and EP4502 which contain firmware versions prior to 1.302 for the LP series and 1.296 for the EP series. The overflowed data can allow the attacker to manipulate the “normal” code execution to that of their choosing. An attacker with this level of access on the device can monitor all communications sent to and from this device, modify onboard relays, change configuration files, or cause the device to become unstable.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.corporate.carrier.com/product-security/advisories-resources/"
+    ],
+    "受影响版本": [
+      "ALL"
+    ],
+    "公开日期": "2022年06月06日"
+  },
+  {
+    "设备品牌": "LenelS2",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "LNL-X2210",
+    "CVE编号": "CVE-2022-31479",
+    "漏洞描述": "An unauthenticated attacker can update the hostname with a specially crafted name that will allow for shell commands to be executed during the core collection process. This vulnerability impacts products based on HID Mercury Intelligent Controllers LP1501, LP1502, LP2500, LP4502, and EP4502 which contain firmware versions prior to 1.302 for the LP series and 1.296 for the EP series. An attacker with this level of access on the device can monitor all communications sent to and from this device, modify onboard relays, change configuration files, or cause the device to become unstable. The injected commands only get executed during start up or when unsafe calls regarding the hostname are used. This allows the attacker to gain remote access to the device and can make their persistence permanent by modifying the filesystem.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.corporate.carrier.com/product-security/advisories-resources/"
+    ],
+    "受影响版本": [
+      "ALL"
+    ],
+    "公开日期": "2022年06月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "Mitsubishi Electric MELSEC iQ-R Series R12CCPU-V; Mitsubishi Electric MELSEC-Q Series Q03UDECPU; Mitsubishi Electric MELSEC-Q Series Q04/06/10/13/20/26/50/100UDEHCPU; Mitsubishi Electric MELSEC-Q Series Q03/04/06/13/26UDVCPU; Mitsubishi Electric MELSEC-Q Series Q04/06/13/26UDPVCPU; Mitsubishi Electric MELSEC-Q Series Q12DCCPU-V; Mitsubishi Electric MELSEC-Q Series Q24DHCCPU-V(G); Mitsubishi Electric MELSEC-Q Series Q24/26DHCCPU-LS; Mitsubishi Electric MELSEC-L series L02/06/26CPU(-P); Mitsubishi Electric MELSEC-L series L26CPU-(P)BT; Mitsubishi Electric MELIPC Series MI5122-VW",
+    "CVE编号": "CVE-2022-24946",
+    "漏洞描述": "Improper Resource Locking vulnerability in Mitsubishi Electric MELSEC iQ-R Series R12CCPU-V firmware versions \"16\" and prior, Mitsubishi Electric MELSEC-Q Series Q03UDECPU the first 5 digits of serial No. \"24061\" and prior, Mitsubishi Electric MELSEC-Q Series Q04/06/10/13/20/26/50/100UDEHCPU the first 5 digits of serial No. \"24061\" and prior, Mitsubishi Electric MELSEC-Q Series Q03/04/06/13/26UDVCPU the first 5 digits of serial number \"24051\" and prior, Mitsubishi Electric MELSEC-Q Series Q04/06/13/26UDPVCPU the first 5 digits of serial number \"24051\" and prior, Mitsubishi Electric MELSEC-Q Series Q12DCCPU-V all versions, Mitsubishi Electric MELSEC-Q Series Q24DHCCPU-V(G) all versions, Mitsubishi Electric MELSEC-Q Series Q24/26DHCCPU-LS all versions, Mitsubishi Electric MELSEC-L series L02/06/26CPU(-P) the first 5 digits of serial number \"24051\" and prior, Mitsubishi Electric MELSEC-L series L26CPU-(P)BT the first 5 digits of serial number \"24051\" and prior and Mitsubishi Electric MELIPC Series MI5122-VW firmware versions \"05\" and prior allows a remote unauthenticated attacker to cause a denial of service (DoS) condition in Ethernet communications by sending specially crafted packets. A system reset of the products is required for recovery.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.mitsubishielectric.com/en/psirt/vulnerability/pdf/2022-007_en.pdf",
+      "https://jvn.jp/vu/JVNVU90895626/index.html",
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-22-172-01"
+    ],
+    "受影响版本": [
+      "Mitsubishi Electric MELSEC iQ-R Series R12CCPU-V firmware versions \"16\" and prior",
+      "Mitsubishi Electric MELSEC-Q Series Q03UDECPU the first 5 digits of serial No. \"24061\" and prior",
+      "Mitsubishi Electric MELSEC-Q Series Q04/06/10/13/20/26/50/100UDEHCPU the first 5 digits of serial No. \"24061\" and prior",
+      "Mitsubishi Electric MELSEC-Q Series Q03/04/06/13/26UDVCPU the first 5 digits of serial number \"24051\" and prior",
+      "Mitsubishi Electric MELSEC-Q Series Q04/06/13/26UDPVCPU the first 5 digits of serial number \"24051\" and prior",
+      "Mitsubishi Electric MELSEC-Q Series Q12DCCPU-V all versions",
+      "Mitsubishi Electric MELSEC-Q Series Q24DHCCPU-V(G) all versions",
+      "Mitsubishi Electric MELSEC-Q Series Q24/26DHCCPU-LS all versions",
+      "Mitsubishi Electric MELSEC-L series L02/06/26CPU(-P) the first 5 digits of serial number \"24051\" and prior",
+      "Mitsubishi Electric MELSEC-L series L26CPU-(P)BT the first 5 digits of serial number \"24051\" and prior",
+      "Mitsubishi Electric MELIPC Series MI5122-VW firmware versions \"05\" and prior"
+    ],
+    "公开日期": "2022年06月15日"
+  },
+  {
+    "设备品牌": "Philips",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "Efficia CM Series",
+    "CVE编号": "CVE-2021-43550",
+    "漏洞描述": "The use of a broken or risky cryptographic algorithm is an unnecessary risk that may result in the exposure of sensitive information, which affects the communications between Patient Information Center iX (PIC iX) Versions C.02 and C.03 and Efficia CM Series Revisions A.01 to C.0x and 4.0.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.cisa.gov/uscert/ics/advisories/icsma-21-322-02"
+    ],
+    "受影响版本": [
+      "4.0",
+      "A.01"
+    ],
+    "公开日期": "2021年12月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "JTEKT Corporation TOYOPUC products",
+    "CVE编号": "CVE-2021-33011",
+    "漏洞描述": "All versions of the afffected TOYOPUC-PC10 Series,TOYOPUC-Plus Series,TOYOPUC-PC3J/PC2J Series, TOYOPUC-Nano Series products may not be able to properly process an ICMP flood, which may allow an attacker to deny Ethernet communications between affected devices.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://us-cert.cisa.gov/ics/advisories/icsa-21-245-02"
+    ],
+    "受影响版本": [
+      "TOYOPUC products TOYOPUC-PC10 Series: PC10G-CPU TCC-6353: All versions, PC10GE TCC-6464: All versions, PC10P TCC-6372: All versions, PC10P-DP TCC-6726: All versions, PC10P-DP-IO TCC-6752: All versions, PC10B-P TCC-6373: All versions, PC10B TCC-1021: All versions, PC10B-E/C TCU-6521: All versions, PC10E TCC-4637: All versions, PC10PE TCC-1101: All versions, PC10PE-1616P TCC-1102: All versions, EF10 TCU-6982: All versions TOYOPUC-Plus Series: Plus CPU TCC-6740: All versions, Plus EX TCU-6741: All versions, Plus EX2 TCU-6858: All versions, Plus EFR TCU-6743: All versions, Plus EFR2 TCU-6859: All versions, Plus 2P-EFR TCU-6929: All versions,Plus BUS-EX TCU-6900: All versions TOYOPUC-PC3J/PC2J Series: FL/ET-T-V2H THU-6289: All versions, 2PORT-EFR THU-6404: All versions TOYOPUC-Nano Series: Nano 10GX TUC-1157: All versions, Nano CPU TUC-6941: All versions, Nano 2ET TUU-6949: All versions, Nano Safety TUC-1085: All versions, Nano Safety RS00IP TUU-1086: All versions, Nano Safety RS01IP TUU-1087: All versions"
+    ],
+    "公开日期": "2021年09月10日"
+  },
+  {
+    "设备品牌": "Juniper Networks",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "Junos OS",
+    "CVE编号": "CVE-2021-31371",
+    "漏洞描述": "Juniper Networks Junos OS uses the 128.0.0.0/2 subnet for internal communications between the RE and PFEs. It was discovered that packets utilizing these IP addresses may egress an QFX5000 Series switch, leaking configuration information such as heartbeats, kernel versions, etc. out to the Internet, leading to an information exposure vulnerability. This issue affects Juniper Networks Junos OS on QFX5110, QFX5120, QFX5200, QFX5210 Series, and QFX5100 with QFX 5e Series image installed: All versions prior to 17.3R3-S12; 18.1 versions prior to 18.1R3-S13; 18.3 versions prior to 18.3R3-S5; 19.1 versions prior to 19.1R3-S6; 19.2 versions prior to 19.2R1-S7, 19.2R3-S3; 19.3 versions prior to 19.3R2-S6, 19.3R3-S3; 19.4 versions prior to 19.4R1-S4, 19.4R3-S5; 20.1 versions prior to 20.1R2-S2, 20.1R3-S1; 20.2 versions prior to 20.2R3-S2; 20.3 versions prior to 20.3R3-S1; 20.4 versions prior to 20.4R2-S1, 20.4R3; 21.1 versions prior to 21.1R1-S1, 21.1R2;",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.juniper.net/JSA11236"
+    ],
+    "受影响版本": [
+      "unspecified",
+      "18.1",
+      "18.3",
+      "19.1",
+      "19.2",
+      "19.3",
+      "19.4",
+      "20.1",
+      "20.2",
+      "20.3",
+      "20.4",
+      "21.1",
+      "21.2"
+    ],
+    "公开日期": "2021年10月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "JTEKT Corporation TOYOPUC products",
+    "CVE编号": "CVE-2021-27458",
+    "漏洞描述": "If Ethernet communication of the JTEKT Corporation TOYOPUC product series’ (TOYOPUC-PC10 Series: PC10G-CPU TCC-6353: All versions, PC10GE TCC-6464: All versions, PC10P TCC-6372: All versions, PC10P-DP TCC-6726: All versions, PC10P-DP-IO TCC-6752: All versions, PC10B-P TCC-6373: All versions, PC10B TCC-1021: All versions, PC10B-E/C TCU-6521: All versions, PC10E TCC-4737: All versions; TOYOPUC-Plus Series: Plus CPU TCC-6740: All versions, Plus EX TCU-6741: All versions, Plus EX2 TCU-6858: All versions, Plus EFR TCU-6743: All versions, Plus EFR2 TCU-6859: All versions, Plus 2P-EFR TCU-6929: All versions, Plus BUS-EX TCU-6900: All versions; TOYOPUC-PC3J/PC2J Series: FL/ET-T-V2H THU-6289: All versions, 2PORT-EFR THU-6404: All versions) are left in an open state by an attacker, Ethernet communications cannot be established with other devices, depending on the settings of the link parameters.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://us-cert.cisa.gov/ics/advisories/icsa-21-103-03"
+    ],
+    "受影响版本": [
+      "TOYOPUC-PC10 Series: PC10G-CPU TCC-6353: All versions, PC10GE TCC-6464: All versions, PC10P TCC-6372: All versions, PC10P-DP TCC-6726: All versions, PC10P-DP-IO TCC-6752: All versions, PC10B-P TCC-6373: All versions, PC10B TCC-1021: All versions, PC10B-E/C TCU-6521: All versions, PC10E TCC-4737: All versions",
+      "TOYOPUC-Plus Series: Plus CPU TCC-6740: All versions, Plus EX TCU-6741: All versions, Plus EX2 TCU-6858: All versions, Plus EFR TCU-6743: All versions, Plus EFR2 TCU-6859: All versions, Plus 2P-EFR TCU-6929: All versions, Plus BUS-EX TCU-6900: All versions",
+      "TOYOPUC-PC3J/PC2J Series: FL/ET-T-V2H THU-6289: All versions, 2PORT-EFR THU-6404: All versions"
+    ],
+    "公开日期": "2021年04月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-22815",
+    "漏洞描述": "A CWE-200: Information Exposure vulnerability exists which could cause the troubleshooting archive to be accessed. Affected Products: 1-Phase Uninterruptible Power Supply (UPS) using NMC2 including Smart-UPS, Symmetra, and Galaxy 3500 with Network Management Card 2 (NMC2): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635J (NMC2 AOS V6.9.8 and earlier), 3-Phase Uninterruptible Power Supply (UPS) using NMC2 including Symmetra PX 250/500 (SYPX) Network Management Card 2 (NMC2): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635J (NMC2 AOS V6.9.6 and earlier), 3-Phase Uninterruptible Power Supply (UPS) using NMC2 including Symmetra PX 48/96/100/160 kW UPS (PX2), Symmetra PX 20/40 kW UPS (SY3P), Gutor (SXW, GVX), and Galaxy (GVMTS, GVMSA, GVXTS, GVXSA, G7K, GFC, G9KCHU): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635CH (NMC2 AOS V6.9.6 and earlier), 1-Phase Uninterruptible Power Supply (UPS) using NMC3 including Smart-UPS, Symmetra, and Galaxy 3500 with Network Management Card 3 (NMC3): AP9640/AP9640J, AP9641/AP9641J, AP9643/AP9643J (NMC3 AOS V1.4.2.1 and earlier), APC Rack Power Distribution Units (PDU) using NMC2 2G Metered/Switched Rack PDUs with embedded NMC2: AP84XX, AP86XX, AP88XX, AP89XX (NMC2 AOS V6.9.6 and earlier), APC Rack Power Distribution Units (PDU) using NMC3 2G Metered/Switched Rack PDUs with embedded NMC3: APDU99xx (NMC3 AOS V1.4.0 and earlier), APC 3-Phase Power Distribution Products using NMC2 Galaxy RPP: GRPPIP2X84 (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 (NMC2) for InfraStruxure 150 kVA PDU with 84 Poles (X84P): PDPB150G6F (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for InfraStruxure 40/60kVA PDU (XPDU) PD40G6FK1-M, PD40F6FK1-M, PD40L6FK1-M, PDRPPNX10 M,PD60G6FK1, PD60F6FK1, PD60L6FK1, PDRPPNX10, PD40E5EK20-M, PD40H5EK20-M (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for Modular 150/175kVA PDU (XRDP): PDPM150G6F, PDPM150L6F, PDPM175G6H (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for 400 and 500 kVA (PMM): PMM400-ALA, PMM400-ALAX, PMM400-CUB, PMM500-ALA, PMM500-ALAX, PMM500-CUB (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for Modular PDU (XRDP2G): PDPM72F-5U, PDPM138H-5U, PDPM144F, PDPM138H-R, PDPM277H, PDPM288G6H (NMC2 AOS V6.9.6 and earlier), Rack Automatic Transfer Switches (ATS) Embedded NMC2: Rack Automatic Transfer Switches - AP44XX (ATS4G) (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 (NMC2) Cooling Products: InRow Cooling for series ACRP5xx, ACRP1xx, ACRD5xx, and ACRC5xx SKUs (ACRP2G), InRow Cooling for series ACRC10x SKUs (RC10X2G), InRow Cooling for series ACRD6xx and ACRC6xx SKUs (ACRD2G), InRow Cooling Display for series ACRD3xx (ACRC2G), InRow Cooling for series ACSC1xx SKUs (SC2G), InRow Cooling for series ACRD1xx and ACRD2xx (ACRPTK2G), Ecoflair IAEC25/50 Air Economizer Display (EB2G), Uniflair SP UCF0481I, UCF0341I (UNFLRSP), Uniflair LE DX Perimeter Cooling Display for SKUs: IDAV, IDEV, IDWV, IUAV, IUEV, IUWV, IXAV, IXEV, IXWV, LDAV, LDEV, and LDWV (LEDX2G), Refrigerant Distribution Unit: ACDA9xx (RDU) (NMC2 AOS V6.9.6 and earlier), Environmental Monitoring Unit with embedded NMC2 (NB250): NetBotz NBRK0250 (NMC2 AOS V6.9.6 and earlier), and Network Management Card 2 (NMC2): AP9922 Battery Management System (BM4) (NMC2 AOS V6.9.6 and earlier)",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2021-313-03"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年01月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-22814",
+    "漏洞描述": "A CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability exists which could cause arbritrary script execution when a malicious file is read and displayed. Affected Products: 1-Phase Uninterruptible Power Supply (UPS) using NMC2 including Smart-UPS, Symmetra, and Galaxy 3500 with Network Management Card 2 (NMC2): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635J (NMC2 AOS V6.9.8 and earlier), 3-Phase Uninterruptible Power Supply (UPS) using NMC2 including Symmetra PX 250/500 (SYPX) Network Management Card 2 (NMC2): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635J (NMC2 AOS V6.9.6 and earlier), 3-Phase Uninterruptible Power Supply (UPS) using NMC2 including Symmetra PX 48/96/100/160 kW UPS (PX2), Symmetra PX 20/40 kW UPS (SY3P), Gutor (SXW, GVX), and Galaxy (GVMTS, GVMSA, GVXTS, GVXSA, G7K, GFC, G9KCHU): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635CH (NMC2 AOS V6.9.6 and earlier), 1-Phase Uninterruptible Power Supply (UPS) using NMC3 including Smart-UPS, Symmetra, and Galaxy 3500 with Network Management Card 3 (NMC3): AP9640/AP9640J, AP9641/AP9641J, AP9643/AP9643J (NMC3 AOS V1.4.2.1 and earlier), APC Rack Power Distribution Units (PDU) using NMC2 2G Metered/Switched Rack PDUs with embedded NMC2: AP84XX, AP86XX, AP88XX, AP89XX (NMC2 AOS V6.9.6 and earlier), APC Rack Power Distribution Units (PDU) using NMC3 2G Metered/Switched Rack PDUs with embedded NMC3: APDU99xx (NMC3 AOS V1.4.0 and earlier), APC 3-Phase Power Distribution Products using NMC2 Galaxy RPP: GRPPIP2X84 (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 (NMC2) for InfraStruxure 150 kVA PDU with 84 Poles (X84P): PDPB150G6F (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for InfraStruxure 40/60kVA PDU (XPDU) PD40G6FK1-M, PD40F6FK1-M, PD40L6FK1-M, PDRPPNX10 M,PD60G6FK1, PD60F6FK1, PD60L6FK1, PDRPPNX10, PD40E5EK20-M, PD40H5EK20-M (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for Modular 150/175kVA PDU (XRDP): PDPM150G6F, PDPM150L6F, PDPM175G6H (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for 400 and 500 kVA (PMM): PMM400-ALA, PMM400-ALAX, PMM400-CUB, PMM500-ALA, PMM500-ALAX, PMM500-CUB (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for Modular PDU (XRDP2G): PDPM72F-5U, PDPM138H-5U, PDPM144F, PDPM138H-R, PDPM277H, PDPM288G6H (NMC2 AOS V6.9.6 and earlier), Rack Automatic Transfer Switches (ATS) Embedded NMC2: Rack Automatic Transfer Switches - AP44XX (ATS4G) (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 (NMC2) Cooling Products: InRow Cooling for series ACRP5xx, ACRP1xx, ACRD5xx, and ACRC5xx SKUs (ACRP2G), InRow Cooling for series ACRC10x SKUs (RC10X2G), InRow Cooling for series ACRD6xx and ACRC6xx SKUs (ACRD2G), InRow Cooling Display for series ACRD3xx (ACRC2G), InRow Cooling for series ACSC1xx SKUs (SC2G), InRow Cooling for series ACRD1xx and ACRD2xx (ACRPTK2G), Ecoflair IAEC25/50 Air Economizer Display (EB2G), Uniflair SP UCF0481I, UCF0341I (UNFLRSP), Uniflair LE DX Perimeter Cooling Display for SKUs: IDAV, IDEV, IDWV, IUAV, IUEV, IUWV, IXAV, IXEV, IXWV, LDAV, LDEV, and LDWV (LEDX2G), Refrigerant Distribution Unit: ACDA9xx (RDU) (NMC2 AOS V6.9.6 and earlier), Environmental Monitoring Unit with embedded NMC2 (NB250): NetBotz NBRK0250 (NMC2 AOS V6.9.6 and earlier), and Network Management Card 2 (NMC2): AP9922 Battery Management System (BM4) (NMC2 AOS V6.9.6 and earlier)",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2021-313-03"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年01月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-22813",
+    "漏洞描述": "A CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability exists that could cause arbritrary script execution when a privileged account clicks on a malicious URL specifically crafted for the NMC pointing to an edit policy file. Affected Products: 1-Phase Uninterruptible Power Supply (UPS) using NMC2 including Smart-UPS, Symmetra, and Galaxy 3500 with Network Management Card 2 (NMC2): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635J (NMC2 AOS V6.9.8 and earlier), 3-Phase Uninterruptible Power Supply (UPS) using NMC2 including Symmetra PX 250/500 (SYPX) Network Management Card 2 (NMC2): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635J (NMC2 AOS V6.9.6 and earlier), 3-Phase Uninterruptible Power Supply (UPS) using NMC2 including Symmetra PX 48/96/100/160 kW UPS (PX2), Symmetra PX 20/40 kW UPS (SY3P), Gutor (SXW, GVX), and Galaxy (GVMTS, GVMSA, GVXTS, GVXSA, G7K, GFC, G9KCHU): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635CH (NMC2 AOS V6.9.6 and earlier), 1-Phase Uninterruptible Power Supply (UPS) using NMC3 including Smart-UPS, Symmetra, and Galaxy 3500 with Network Management Card 3 (NMC3): AP9640/AP9640J, AP9641/AP9641J, AP9643/AP9643J (NMC3 AOS V1.4.2.1 and earlier), APC Rack Power Distribution Units (PDU) using NMC2 2G Metered/Switched Rack PDUs with embedded NMC2: AP84XX, AP86XX, AP88XX, AP89XX (NMC2 AOS V6.9.6 and earlier), APC Rack Power Distribution Units (PDU) using NMC3 2G Metered/Switched Rack PDUs with embedded NMC3: APDU99xx (NMC3 AOS V1.4.0 and earlier), APC 3-Phase Power Distribution Products using NMC2 Galaxy RPP: GRPPIP2X84 (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 (NMC2) for InfraStruxure 150 kVA PDU with 84 Poles (X84P): PDPB150G6F (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for InfraStruxure 40/60kVA PDU (XPDU) PD40G6FK1-M, PD40F6FK1-M, PD40L6FK1-M, PDRPPNX10 M,PD60G6FK1, PD60F6FK1, PD60L6FK1, PDRPPNX10, PD40E5EK20-M, PD40H5EK20-M (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for Modular 150/175kVA PDU (XRDP): PDPM150G6F, PDPM150L6F, PDPM175G6H (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for 400 and 500 kVA (PMM): PMM400-ALA, PMM400-ALAX, PMM400-CUB, PMM500-ALA, PMM500-ALAX, PMM500-CUB (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for Modular PDU (XRDP2G): PDPM72F-5U, PDPM138H-5U, PDPM144F, PDPM138H-R, PDPM277H, PDPM288G6H (NMC2 AOS V6.9.6 and earlier), Rack Automatic Transfer Switches (ATS) Embedded NMC2: Rack Automatic Transfer Switches - AP44XX (ATS4G) (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 (NMC2) Cooling Products: InRow Cooling for series ACRP5xx, ACRP1xx, ACRD5xx, and ACRC5xx SKUs (ACRP2G), InRow Cooling for series ACRC10x SKUs (RC10X2G), InRow Cooling for series ACRD6xx and ACRC6xx SKUs (ACRD2G), InRow Cooling Display for series ACRD3xx (ACRC2G), InRow Cooling for series ACSC1xx SKUs (SC2G), InRow Cooling for series ACRD1xx and ACRD2xx (ACRPTK2G), Ecoflair IAEC25/50 Air Economizer Display (EB2G), Uniflair SP UCF0481I, UCF0341I (UNFLRSP), Uniflair LE DX Perimeter Cooling Display for SKUs: IDAV, IDEV, IDWV, IUAV, IUEV, IUWV, IXAV, IXEV, IXWV, LDAV, LDEV, and LDWV (LEDX2G), Refrigerant Distribution Unit: ACDA9xx (RDU) (NMC2 AOS V6.9.6 and earlier), Environmental Monitoring Unit with embedded NMC2 (NB250): NetBotz NBRK0250 (NMC2 AOS V6.9.6 and earlier), and Network Management Card 2 (NMC2): AP9922 Battery Management System (BM4) (NMC2 AOS V6.9.6 and earlier)",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2021-313-03"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年01月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-22812",
+    "漏洞描述": "A CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability exists that could cause arbritrary script execution when a privileged account clicks on a malicious URL specifically crafted for the NMC. Affected Products: 1-Phase Uninterruptible Power Supply (UPS) using NMC2 including Smart-UPS, Symmetra, and Galaxy 3500 with Network Management Card 2 (NMC2): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635J (NMC2 AOS V6.9.8 and earlier), 3-Phase Uninterruptible Power Supply (UPS) using NMC2 including Symmetra PX 250/500 (SYPX) Network Management Card 2 (NMC2): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635J (NMC2 AOS V6.9.6 and earlier), 3-Phase Uninterruptible Power Supply (UPS) using NMC2 including Symmetra PX 48/96/100/160 kW UPS (PX2), Symmetra PX 20/40 kW UPS (SY3P), Gutor (SXW, GVX), and Galaxy (GVMTS, GVMSA, GVXTS, GVXSA, G7K, GFC, G9KCHU): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635CH (NMC2 AOS V6.9.6 and earlier), 1-Phase Uninterruptible Power Supply (UPS) using NMC3 including Smart-UPS, Symmetra, and Galaxy 3500 with Network Management Card 3 (NMC3): AP9640/AP9640J, AP9641/AP9641J, AP9643/AP9643J (NMC3 AOS V1.4.2.1 and earlier), APC Rack Power Distribution Units (PDU) using NMC2 2G Metered/Switched Rack PDUs with embedded NMC2: AP84XX, AP86XX, AP88XX, AP89XX (NMC2 AOS V6.9.6 and earlier), APC Rack Power Distribution Units (PDU) using NMC3 2G Metered/Switched Rack PDUs with embedded NMC3: APDU99xx (NMC3 AOS V1.4.0 and earlier), APC 3-Phase Power Distribution Products using NMC2 Galaxy RPP: GRPPIP2X84 (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 (NMC2) for InfraStruxure 150 kVA PDU with 84 Poles (X84P): PDPB150G6F (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for InfraStruxure 40/60kVA PDU (XPDU) PD40G6FK1-M, PD40F6FK1-M, PD40L6FK1-M, PDRPPNX10 M,PD60G6FK1, PD60F6FK1, PD60L6FK1, PDRPPNX10, PD40E5EK20-M, PD40H5EK20-M (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for Modular 150/175kVA PDU (XRDP): PDPM150G6F, PDPM150L6F, PDPM175G6H (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for 400 and 500 kVA (PMM): PMM400-ALA, PMM400-ALAX, PMM400-CUB, PMM500-ALA, PMM500-ALAX, PMM500-CUB (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for Modular PDU (XRDP2G): PDPM72F-5U, PDPM138H-5U, PDPM144F, PDPM138H-R, PDPM277H, PDPM288G6H (NMC2 AOS V6.9.6 and earlier), Rack Automatic Transfer Switches (ATS) Embedded NMC2: Rack Automatic Transfer Switches - AP44XX (ATS4G) (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 (NMC2) Cooling Products: InRow Cooling for series ACRP5xx, ACRP1xx, ACRD5xx, and ACRC5xx SKUs (ACRP2G), InRow Cooling for series ACRC10x SKUs (RC10X2G), InRow Cooling for series ACRD6xx and ACRC6xx SKUs (ACRD2G), InRow Cooling Display for series ACRD3xx (ACRC2G), InRow Cooling for series ACSC1xx SKUs (SC2G), InRow Cooling for series ACRD1xx and ACRD2xx (ACRPTK2G), Ecoflair IAEC25/50 Air Economizer Display (EB2G), Uniflair SP UCF0481I, UCF0341I (UNFLRSP), Uniflair LE DX Perimeter Cooling Display for SKUs: IDAV, IDEV, IDWV, IUAV, IUEV, IUWV, IXAV, IXEV, IXWV, LDAV, LDEV, and LDWV (LEDX2G), Refrigerant Distribution Unit: ACDA9xx (RDU) (NMC2 AOS V6.9.6 and earlier), Environmental Monitoring Unit with embedded NMC2 (NB250): NetBotz NBRK0250 (NMC2 AOS V6.9.6 and earlier), and Network Management Card 2 (NMC2): AP9922 Battery Management System (BM4) (NMC2 AOS V6.9.6 and earlier)",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2021-313-03"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年01月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-22811",
+    "漏洞描述": "A CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability exists that could cause script execution when the request of a privileged account accessing the vulnerable web page is intercepted. Affected Products: 1-Phase Uninterruptible Power Supply (UPS) using NMC2 including Smart-UPS, Symmetra, and Galaxy 3500 with Network Management Card 2 (NMC2): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635J (NMC2 AOS V6.9.8 and earlier), 3-Phase Uninterruptible Power Supply (UPS) using NMC2 including Symmetra PX 250/500 (SYPX) Network Management Card 2 (NMC2): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635J (NMC2 AOS V6.9.6 and earlier), 3-Phase Uninterruptible Power Supply (UPS) using NMC2 including Symmetra PX 48/96/100/160 kW UPS (PX2), Symmetra PX 20/40 kW UPS (SY3P), Gutor (SXW, GVX), and Galaxy (GVMTS, GVMSA, GVXTS, GVXSA, G7K, GFC, G9KCHU): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635CH (NMC2 AOS V6.9.6 and earlier), 1-Phase Uninterruptible Power Supply (UPS) using NMC3 including Smart-UPS, Symmetra, and Galaxy 3500 with Network Management Card 3 (NMC3): AP9640/AP9640J, AP9641/AP9641J, AP9643/AP9643J (NMC3 AOS V1.4.2.1 and earlier), APC Rack Power Distribution Units (PDU) using NMC2 2G Metered/Switched Rack PDUs with embedded NMC2: AP84XX, AP86XX, AP88XX, AP89XX (NMC2 AOS V6.9.6 and earlier), APC Rack Power Distribution Units (PDU) using NMC3 2G Metered/Switched Rack PDUs with embedded NMC3: APDU99xx (NMC3 AOS V1.4.0 and earlier), APC 3-Phase Power Distribution Products using NMC2 Galaxy RPP: GRPPIP2X84 (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 (NMC2) for InfraStruxure 150 kVA PDU with 84 Poles (X84P): PDPB150G6F (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for InfraStruxure 40/60kVA PDU (XPDU) PD40G6FK1-M, PD40F6FK1-M, PD40L6FK1-M, PDRPPNX10 M,PD60G6FK1, PD60F6FK1, PD60L6FK1, PDRPPNX10, PD40E5EK20-M, PD40H5EK20-M (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for Modular 150/175kVA PDU (XRDP): PDPM150G6F, PDPM150L6F, PDPM175G6H (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for 400 and 500 kVA (PMM): PMM400-ALA, PMM400-ALAX, PMM400-CUB, PMM500-ALA, PMM500-ALAX, PMM500-CUB (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for Modular PDU (XRDP2G): PDPM72F-5U, PDPM138H-5U, PDPM144F, PDPM138H-R, PDPM277H, PDPM288G6H (NMC2 AOS V6.9.6 and earlier), Rack Automatic Transfer Switches (ATS) Embedded NMC2: Rack Automatic Transfer Switches - AP44XX (ATS4G) (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 (NMC2) Cooling Products: InRow Cooling for series ACRP5xx, ACRP1xx, ACRD5xx, and ACRC5xx SKUs (ACRP2G), InRow Cooling for series ACRC10x SKUs (RC10X2G), InRow Cooling for series ACRD6xx and ACRC6xx SKUs (ACRD2G), InRow Cooling Display for series ACRD3xx (ACRC2G), InRow Cooling for series ACSC1xx SKUs (SC2G), InRow Cooling for series ACRD1xx and ACRD2xx (ACRPTK2G), Ecoflair IAEC25/50 Air Economizer Display (EB2G), Uniflair SP UCF0481I, UCF0341I (UNFLRSP), Uniflair LE DX Perimeter Cooling Display for SKUs: IDAV, IDEV, IDWV, IUAV, IUEV, IUWV, IXAV, IXEV, IXWV, LDAV, LDEV, and LDWV (LEDX2G), Refrigerant Distribution Unit: ACDA9xx (RDU) (NMC2 AOS V6.9.6 and earlier), Environmental Monitoring Unit with embedded NMC2 (NB250): NetBotz NBRK0250 (NMC2 AOS V6.9.6 and earlier), and Network Management Card 2 (NMC2): AP9922 Battery Management System (BM4) (NMC2 AOS V6.9.6 and earlier)",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2021-313-03"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年01月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-22810",
+    "漏洞描述": "A CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability exists that could cause arbritrary script execution when a privileged account clicks on a malicious URL specifically crafted for the NMC pointing to a delete policy file. Affected Products: 1-Phase Uninterruptible Power Supply (UPS) using NMC2 including Smart-UPS, Symmetra, and Galaxy 3500 with Network Management Card 2 (NMC2): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635J (NMC2 AOS V6.9.8 and earlier), 3-Phase Uninterruptible Power Supply (UPS) using NMC2 including Symmetra PX 250/500 (SYPX) Network Management Card 2 (NMC2): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635J (NMC2 AOS V6.9.6 and earlier), 3-Phase Uninterruptible Power Supply (UPS) using NMC2 including Symmetra PX 48/96/100/160 kW UPS (PX2), Symmetra PX 20/40 kW UPS (SY3P), Gutor (SXW, GVX), and Galaxy (GVMTS, GVMSA, GVXTS, GVXSA, G7K, GFC, G9KCHU): AP9630/AP9630CH/AP9630J, AP9631/AP9631CH/AP9631J, AP9635/AP9635CH (NMC2 AOS V6.9.6 and earlier), 1-Phase Uninterruptible Power Supply (UPS) using NMC3 including Smart-UPS, Symmetra, and Galaxy 3500 with Network Management Card 3 (NMC3): AP9640/AP9640J, AP9641/AP9641J, AP9643/AP9643J (NMC3 AOS V1.4.2.1 and earlier), APC Rack Power Distribution Units (PDU) using NMC2 2G Metered/Switched Rack PDUs with embedded NMC2: AP84XX, AP86XX, AP88XX, AP89XX (NMC2 AOS V6.9.6 and earlier), APC Rack Power Distribution Units (PDU) using NMC3 2G Metered/Switched Rack PDUs with embedded NMC3: APDU99xx (NMC3 AOS V1.4.0 and earlier), APC 3-Phase Power Distribution Products using NMC2 Galaxy RPP: GRPPIP2X84 (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 (NMC2) for InfraStruxure 150 kVA PDU with 84 Poles (X84P): PDPB150G6F (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for InfraStruxure 40/60kVA PDU (XPDU) PD40G6FK1-M, PD40F6FK1-M, PD40L6FK1-M, PDRPPNX10 M,PD60G6FK1, PD60F6FK1, PD60L6FK1, PDRPPNX10, PD40E5EK20-M, PD40H5EK20-M (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for Modular 150/175kVA PDU (XRDP): PDPM150G6F, PDPM150L6F, PDPM175G6H (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for 400 and 500 kVA (PMM): PMM400-ALA, PMM400-ALAX, PMM400-CUB, PMM500-ALA, PMM500-ALAX, PMM500-CUB (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 for Modular PDU (XRDP2G): PDPM72F-5U, PDPM138H-5U, PDPM144F, PDPM138H-R, PDPM277H, PDPM288G6H (NMC2 AOS V6.9.6 and earlier), Rack Automatic Transfer Switches (ATS) Embedded NMC2: Rack Automatic Transfer Switches - AP44XX (ATS4G) (NMC2 AOS V6.9.6 and earlier), Network Management Card 2 (NMC2) Cooling Products: InRow Cooling for series ACRP5xx, ACRP1xx, ACRD5xx, and ACRC5xx SKUs (ACRP2G), InRow Cooling for series ACRC10x SKUs (RC10X2G), InRow Cooling for series ACRD6xx and ACRC6xx SKUs (ACRD2G), InRow Cooling Display for series ACRD3xx (ACRC2G), InRow Cooling for series ACSC1xx SKUs (SC2G), InRow Cooling for series ACRD1xx and ACRD2xx (ACRPTK2G), Ecoflair IAEC25/50 Air Economizer Display (EB2G), Uniflair SP UCF0481I, UCF0341I (UNFLRSP), Uniflair LE DX Perimeter Cooling Display for SKUs: IDAV, IDEV, IDWV, IUAV, IUEV, IUWV, IXAV, IXEV, IXWV, LDAV, LDEV, and LDWV (LEDX2G), Refrigerant Distribution Unit: ACDA9xx (RDU) (NMC2 AOS V6.9.6 and earlier), Environmental Monitoring Unit with embedded NMC2 (NB250): NetBotz NBRK0250 (NMC2 AOS V6.9.6 and earlier), and Network Management Card 2 (NMC2): AP9922 Battery Management System (BM4) (NMC2 AOS V6.9.6 and earlier)",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2021-313-03"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年01月28日"
+  },
+  {
+    "设备品牌": "Hitachi and NEC Corporation",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "Hitachi Virtual File Platform and NEC Storage M Series NAS Gateway which uses Hitachi Virtual File Platform",
+    "CVE编号": "CVE-2021-20740",
+    "漏洞描述": "Hitachi Virtual File Platform Versions prior to 5.5.3-09 and Versions prior to 6.4.3-09, and NEC Storage M Series NAS Gateway Nh4a/Nh8a versions prior to FOS 5.5.3-08(NEC2.5.4a) and Nh4b/Nh8b, Nh4c/Nh8c versions prior to FOS 6.4.3-08(NEC3.4.2) allow remote authenticated attackers to execute arbitrary OS commands with root privileges via unspecified vectors.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.hitachi.co.jp/products/it/storage-solutions/global/sec_info/2021/2021_306.html",
+      "https://jpn.nec.com/security-info/secinfo/nv21-011.html",
+      "https://jvn.jp/en/jp/JVN21298724/index.html"
+    ],
+    "受影响版本": [
+      "Hitachi Virtual File Platform Versions prior to 5.5.3-09 and Versions prior to 6.4.3-09, and NEC Storage M Series NAS Gateway Nh4a/Nh8a versions prior to FOS 5.5.3-08(NEC2.5.4a) and Nh4b/Nh8b, Nh4c/Nh8c versions prior to FOS 6.4.3-08(NEC3.4.2)"
+    ],
+    "公开日期": "2021年06月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "NPort IA5000A Series with Telnet enabled",
+    "CVE编号": "CVE-2020-27184",
+    "漏洞描述": "The NPort IA5000A Series devices use Telnet as one of the network device management services. Telnet does not support the encryption of client-server communications, making it vulnerable to Man-in-the-Middle attacks.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.moxa.com/en/support/product-support/security-advisory/nport-ia5000a-serial-device-servers-vulnerabilities",
+      "https://ics-cert.kaspersky.com/advisories/klcert-advisories/2021/05/11/klcert-20-020%2C"
+    ],
+    "受影响版本": [
+      "All versions"
+    ],
+    "公开日期": "2021年05月14日"
+  },
+  {
+    "设备品牌": "Juniper Networks",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "Junos OS",
+    "CVE编号": "CVE-2020-1688",
+    "漏洞描述": "On Juniper Networks SRX Series and NFX Series, a local authenticated user with access to the shell may obtain the Web API service private key that is used to provide encrypted communication between the Juniper device and the authenticator services. Exploitation of this vulnerability may allow an attacker to decrypt the communications between the Juniper device and the authenticator service. This Web API service is used for authentication services such as the Juniper Identity Management Service, used to obtain user identity for Integrated User Firewall feature, or the integrated ClearPass authentication and enforcement feature. This issue affects Juniper Networks Junos OS on Networks SRX Series and NFX Series: 12.3X48 versions prior to 12.3X48-D105; 15.1X49 versions prior to 15.1X49-D190; 16.1 versions prior to 16.1R7-S8; 17.2 versions prior to 17.2R3-S4; 17.3 versions prior to 17.3R3-S8; 17.4 versions prior to 17.4R2-S11, 17.4R3; 18.1 versions prior to 18.1R3-S7; 18.2 versions prior to 18.2R3; 18.3 versions prior to 18.3R2-S4, 18.3R3; 18.4 versions prior to 18.4R1-S7, 18.4R2; 19.1 versions prior to 19.1R2; 19.2 versions prior to 19.2R1-S4, 19.2R2.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://kb.juniper.net/JSA11085",
+      "https://kb.juniper.net/InfoCenter/index?page=content&id=KB30911",
+      "https://www.juniper.net/documentation/en_US/junos/topics/topic-map/security-user-auth-configure-jims.html",
+      "https://www.juniper.net/documentation/en_US/junos/topics/topic-map/security-user-auth-intergrated-user-firewall-overview.html",
+      "https://www.juniper.net/documentation/en_US/junos/topics/reference/configuration-statement/services-webapi-user-cli.html"
+    ],
+    "受影响版本": [
+      "12.3X48",
+      "15.1X49",
+      "16.1",
+      "17.2",
+      "17.3",
+      "17.4",
+      "18.1",
+      "18.2",
+      "18.3",
+      "18.4",
+      "19.1",
+      "19.2"
+    ],
+    "公开日期": "2020年10月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10210",
+    "漏洞描述": "Because of hard-coded SSH keys for the root user in Amino Communications AK45x series, AK5xx series, AK65x series, Aria6xx series, Aria7/AK7Xx series, Kami7B, an attacker may remotely log in through SSH.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://andre-oudhof.medium.com/pwning-my-isps-stbs-c5e78544274d#1ab7"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10209",
+    "漏洞描述": "Command Injection in the CPE WAN Management Protocol (CWMP) registration in Amino Communications AK45x series, AK5xx series, AK65x series, Aria6xx series, Aria7/AK7Xx series and Kami7B allows man-in-the-middle attackers to execute arbitrary commands with root level privileges.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://andre-oudhof.medium.com/pwning-my-isps-stbs-c5e78544274d#4dbc"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10208",
+    "漏洞描述": "Command Injection in EntoneWebEngine in Amino Communications AK45x series, AK5xx series, AK65x series, Aria6xx series, Aria7/AK7Xx series and Kami7B allows authenticated remote attackers to execute arbitrary commands with root user privileges.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://andre-oudhof.medium.com/pwning-my-isps-stbs-c5e78544274d#9cf3"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10207",
+    "漏洞描述": "Use of Hard-coded Credentials in EntoneWebEngine in Amino Communications AK45x series, AK5xx series, AK65x series, Aria6xx series, Aria7/AK7Xx series and Kami7B allows remote attackers to retrieve and modify the device settings.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://andre-oudhof.medium.com/pwning-my-isps-stbs-c5e78544274d#87fe"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络摄像头（IP Camera）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10206",
+    "漏洞描述": "Use of a Hard-coded Password in VNCserver in Amino Communications AK45x series, AK5xx series, AK65x series, Aria6xx series, Aria7/AK7Xx series and Kami7B allows local attackers to view and interact with the video output of the device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://andre-oudhof.medium.com/pwning-my-isps-stbs-c5e78544274d#dda4"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月29日"
+  }
+]

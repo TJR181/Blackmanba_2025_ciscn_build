@@ -1,0 +1,240 @@
+[
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-58005",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\ntpm: Change to kvalloc() in eventlog/acpi.c\n\nThe following failure was reported on HPE ProLiant D320:\n\n[   10.693310][    T1] tpm_tis STM0925:00: 2.0 TPM (device-id 0x3, rev-id 0)\n[   10.848132][    T1] ------------[ cut here ]------------\n[   10.853559][    T1] WARNING: CPU: 59 PID: 1 at mm/page_alloc.c:4727 __alloc_pages_noprof+0x2ca/0x330\n[   10.862827][    T1] Modules linked in:\n[   10.866671][    T1] CPU: 59 UID: 0 PID: 1 Comm: swapper/0 Not tainted 6.12.0-lp155.2.g52785e2-default #1 openSUSE Tumbleweed (unreleased) 588cd98293a7c9eba9013378d807364c088c9375\n[   10.882741][    T1] Hardware name: HPE ProLiant DL320 Gen12/ProLiant DL320 Gen12, BIOS 1.20 10/28/2024\n[   10.892170][    T1] RIP: 0010:__alloc_pages_noprof+0x2ca/0x330\n[   10.898103][    T1] Code: 24 08 e9 4a fe ff ff e8 34 36 fa ff e9 88 fe ff ff 83 fe 0a 0f 86 b3 fd ff ff 80 3d 01 e7 ce 01 00 75 09 c6 05 f8 e6 ce 01 01 <0f> 0b 45 31 ff e9 e5 fe ff ff f7 c2 00 00 08 00 75 42 89 d9 80 e1\n[   10.917750][    T1] RSP: 0000:ffffb7cf40077980 EFLAGS: 00010246\n[   10.923777][    T1] RAX: 0000000000000000 RBX: 0000000000040cc0 RCX: 0000000000000000\n[   10.931727][    T1] RDX: 0000000000000000 RSI: 000000000000000c RDI: 0000000000040cc0\n\nThe above transcript shows that ACPI pointed a 16 MiB buffer for the log\nevents because RSI maps to the 'order' parameter of __alloc_pages_noprof().\nAddress the bug by moving from devm_kmalloc() to devm_add_action() and\nkvmalloc() and devm_add_action().",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/a676c0401de59548a5bc1b7aaf98f556ae8ea6db",
+      "https://git.kernel.org/stable/c/0621d2599d6e02d05c85d6bbd58eaea2f15b3503",
+      "https://git.kernel.org/stable/c/77779d1258a287f2c5c2c6aeae203e0996209c77",
+      "https://git.kernel.org/stable/c/50365a6304a57266e8f4d3078060743c3b7a1e0d",
+      "https://git.kernel.org/stable/c/422d7f4e8d817be467986589c7968d3ea402f7da",
+      "https://git.kernel.org/stable/c/4c8bfe643bbd00b04ee8f9545ef33bf6a68c38db",
+      "https://git.kernel.org/stable/c/a3a860bc0fd6c07332e4911cf9a238d20de90173"
+    ],
+    "受影响版本": [
+      "55a82ab3181be039c6440d3f2f69260ad6fe2988",
+      "55a82ab3181be039c6440d3f2f69260ad6fe2988",
+      "55a82ab3181be039c6440d3f2f69260ad6fe2988",
+      "55a82ab3181be039c6440d3f2f69260ad6fe2988",
+      "55a82ab3181be039c6440d3f2f69260ad6fe2988",
+      "55a82ab3181be039c6440d3f2f69260ad6fe2988",
+      "55a82ab3181be039c6440d3f2f69260ad6fe2988"
+    ],
+    "公开日期": "2025年02月27日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-42071",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nionic: use dev_consume_skb_any outside of napi\n\nIf we're not in a NAPI softirq context, we need to be careful\nabout how we call napi_consume_skb(), specifically we need to\ncall it with budget==0 to signal to it that we're not in a\nsafe context.\n\nThis was found while running some configuration stress testing\nof traffic and a change queue config loop running, and this\ncurious note popped out:\n\n[ 4371.402645] BUG: using smp_processor_id() in preemptible [00000000] code: ethtool/20545\n[ 4371.402897] caller is napi_skb_cache_put+0x16/0x80\n[ 4371.403120] CPU: 25 PID: 20545 Comm: ethtool Kdump: loaded Tainted: G           OE      6.10.0-rc3-netnext+ #8\n[ 4371.403302] Hardware name: HPE ProLiant DL360 Gen10/ProLiant DL360 Gen10, BIOS U32 01/23/2021\n[ 4371.403460] Call Trace:\n[ 4371.403613]  <TASK>\n[ 4371.403758]  dump_stack_lvl+0x4f/0x70\n[ 4371.403904]  check_preemption_disabled+0xc1/0xe0\n[ 4371.404051]  napi_skb_cache_put+0x16/0x80\n[ 4371.404199]  ionic_tx_clean+0x18a/0x240 [ionic]\n[ 4371.404354]  ionic_tx_cq_service+0xc4/0x200 [ionic]\n[ 4371.404505]  ionic_tx_flush+0x15/0x70 [ionic]\n[ 4371.404653]  ? ionic_lif_qcq_deinit.isra.23+0x5b/0x70 [ionic]\n[ 4371.404805]  ionic_txrx_deinit+0x71/0x190 [ionic]\n[ 4371.404956]  ionic_reconfigure_queues+0x5f5/0xff0 [ionic]\n[ 4371.405111]  ionic_set_ringparam+0x2e8/0x3e0 [ionic]\n[ 4371.405265]  ethnl_set_rings+0x1f1/0x300\n[ 4371.405418]  ethnl_default_set_doit+0xbb/0x160\n[ 4371.405571]  genl_family_rcv_msg_doit+0xff/0x130\n\t[...]\n\nI found that ionic_tx_clean() calls napi_consume_skb() which calls\nnapi_skb_cache_put(), but before that last call is the note\n    /* Zero budget indicate non-NAPI context called us, like netpoll */\nand\n    DEBUG_NET_WARN_ON_ONCE(!in_softirq());\n\nThose are pretty big hints that we're doing it wrong.  We can pass a\ncontext hint down through the calls to let ionic_tx_clean() know what\nwe're doing so it can call napi_consume_skb() correctly.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/ef7646ed49fff962e97b276f4ab91327a67eeb5a",
+      "https://git.kernel.org/stable/c/84b767f9e34fdb143c09e66a2a20722fc2921821"
+    ],
+    "受影响版本": [
+      "386e69865311044b576ff536c99c6ee9cc98a228",
+      "386e69865311044b576ff536c99c6ee9cc98a228"
+    ],
+    "公开日期": "2024年07月29日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-40978",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qedi: Fix crash while reading debugfs attribute\n\nThe qedi_dbg_do_not_recover_cmd_read() function invokes sprintf() directly\non a __user pointer, which results into the crash.\n\nTo fix this issue, use a small local stack buffer for sprintf() and then\ncall simple_read_from_buffer(), which in turns make the copy_to_user()\ncall.\n\nBUG: unable to handle page fault for address: 00007f4801111000\nPGD 8000000864df6067 P4D 8000000864df6067 PUD 864df7067 PMD 846028067 PTE 0\nOops: 0002 [#1] PREEMPT SMP PTI\nHardware name: HPE ProLiant DL380 Gen10/ProLiant DL380 Gen10, BIOS U30 06/15/2023\nRIP: 0010:memcpy_orig+0xcd/0x130\nRSP: 0018:ffffb7a18c3ffc40 EFLAGS: 00010202\nRAX: 00007f4801111000 RBX: 00007f4801111000 RCX: 000000000000000f\nRDX: 000000000000000f RSI: ffffffffc0bfd7a0 RDI: 00007f4801111000\nRBP: ffffffffc0bfd7a0 R08: 725f746f6e5f6f64 R09: 3d7265766f636572\nR10: ffffb7a18c3ffd08 R11: 0000000000000000 R12: 00007f4881110fff\nR13: 000000007fffffff R14: ffffb7a18c3ffca0 R15: ffffffffc0bfd7af\nFS:  00007f480118a740(0000) GS:ffff98e38af00000(0000) knlGS:0000000000000000\nCS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\nCR2: 00007f4801111000 CR3: 0000000864b8e001 CR4: 00000000007706e0\nDR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000\nDR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400\nPKRU: 55555554\nCall Trace:\n <TASK>\n ? __die_body+0x1a/0x60\n ? page_fault_oops+0x183/0x510\n ? exc_page_fault+0x69/0x150\n ? asm_exc_page_fault+0x22/0x30\n ? memcpy_orig+0xcd/0x130\n vsnprintf+0x102/0x4c0\n sprintf+0x51/0x80\n qedi_dbg_do_not_recover_cmd_read+0x2f/0x50 [qedi 6bcfdeeecdea037da47069eca2ba717c84a77324]\n full_proxy_read+0x50/0x80\n vfs_read+0xa5/0x2e0\n ? folio_add_new_anon_rmap+0x44/0xa0\n ? set_pte_at+0x15/0x30\n ? do_pte_missing+0x426/0x7f0\n ksys_read+0xa5/0xe0\n do_syscall_64+0x58/0x80\n ? __count_memcg_events+0x46/0x90\n ? count_memcg_event_mm+0x3d/0x60\n ? handle_mm_fault+0x196/0x2f0\n ? do_user_addr_fault+0x267/0x890\n ? exc_page_fault+0x69/0x150\n entry_SYSCALL_64_after_hwframe+0x72/0xdc\nRIP: 0033:0x7f4800f20b4d",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/56bec63a7fc87ad50b3373a87517dc9770eef9e0",
+      "https://git.kernel.org/stable/c/21c963de2e86e88f6a8ca556bcebb8e62ab8e901",
+      "https://git.kernel.org/stable/c/144d76a676b630e321556965011b00e2de0b40a7",
+      "https://git.kernel.org/stable/c/397a8990c377ee4b61d6df768e61dff9e316d46b",
+      "https://git.kernel.org/stable/c/eaddb86637669f6bad89245ee63f8fb2bfb50241",
+      "https://git.kernel.org/stable/c/fa85b016a56b9775a3fe41e5d26e666945963b46",
+      "https://git.kernel.org/stable/c/e2f433ea7d0ff77998766a088a287337fb43ad75",
+      "https://git.kernel.org/stable/c/28027ec8e32ecbadcd67623edb290dad61e735b5"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2024年07月12日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-26931",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Fix command flush on cable pull\n\nSystem crash due to command failed to flush back to SCSI layer.\n\n BUG: unable to handle kernel NULL pointer dereference at 0000000000000000\n PGD 0 P4D 0\n Oops: 0000 [#1] SMP NOPTI\n CPU: 27 PID: 793455 Comm: kworker/u130:6 Kdump: loaded Tainted: G           OE    --------- -  - 4.18.0-372.9.1.el8.x86_64 #1\n Hardware name: HPE ProLiant DL360 Gen10/ProLiant DL360 Gen10, BIOS U32 09/03/2021\n Workqueue: nvme-wq nvme_fc_connect_ctrl_work [nvme_fc]\n RIP: 0010:__wake_up_common+0x4c/0x190\n Code: 24 10 4d 85 c9 74 0a 41 f6 01 04 0f 85 9d 00 00 00 48 8b 43 08 48 83 c3 08 4c 8d 48 e8 49 8d 41 18 48 39 c3 0f 84 f0 00 00 00 <49> 8b 41 18 89 54 24 08 31 ed 4c 8d 70 e8 45 8b 29 41 f6 c5 04 75\n RSP: 0018:ffff95f3e0cb7cd0 EFLAGS: 00010086\n RAX: 0000000000000000 RBX: ffff8b08d3b26328 RCX: 0000000000000000\n RDX: 0000000000000001 RSI: 0000000000000003 RDI: ffff8b08d3b26320\n RBP: 0000000000000001 R08: 0000000000000000 R09: ffffffffffffffe8\n R10: 0000000000000000 R11: ffff95f3e0cb7a60 R12: ffff95f3e0cb7d20\n R13: 0000000000000003 R14: 0000000000000000 R15: 0000000000000000\n FS:  0000000000000000(0000) GS:ffff8b2fdf6c0000(0000) knlGS:0000000000000000\n CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\n CR2: 0000000000000000 CR3: 0000002f1e410002 CR4: 00000000007706e0\n DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000\n DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400\n PKRU: 55555554\n Call Trace:\n  __wake_up_common_lock+0x7c/0xc0\n  qla_nvme_ls_req+0x355/0x4c0 [qla2xxx]\n qla2xxx [0000:12:00.1]-f084:3: qlt_free_session_done: se_sess 0000000000000000 / sess ffff8ae1407ca000 from port 21:32:00:02:ac:07:ee:b8 loop_id 0x02 s_id 01:02:00 logout 1 keep 0 els_logo 0\n ? __nvme_fc_send_ls_req+0x260/0x380 [nvme_fc]\n qla2xxx [0000:12:00.1]-207d:3: FCPort 21:32:00:02:ac:07:ee:b8 state transitioned from ONLINE to LOST - portid=010200.\n  ? nvme_fc_send_ls_req.constprop.42+0x1a/0x45 [nvme_fc]\n qla2xxx [0000:12:00.1]-2109:3: qla2x00_schedule_rport_del 21320002ac07eeb8. rport ffff8ae598122000 roles 1\n ? nvme_fc_connect_ctrl_work.cold.63+0x1e3/0xa7d [nvme_fc]\n qla2xxx [0000:12:00.1]-f084:3: qlt_free_session_done: se_sess 0000000000000000 / sess ffff8ae14801e000 from port 21:32:01:02:ad:f7:ee:b8 loop_id 0x04 s_id 01:02:01 logout 1 keep 0 els_logo 0\n  ? __switch_to+0x10c/0x450\n ? process_one_work+0x1a7/0x360\n qla2xxx [0000:12:00.1]-207d:3: FCPort 21:32:01:02:ad:f7:ee:b8 state transitioned from ONLINE to LOST - portid=010201.\n  ? worker_thread+0x1ce/0x390\n  ? create_worker+0x1a0/0x1a0\n qla2xxx [0000:12:00.1]-2109:3: qla2x00_schedule_rport_del 21320102adf7eeb8. rport ffff8ae3b2312800 roles 70\n  ? kthread+0x10a/0x120\n qla2xxx [0000:12:00.1]-2112:3: qla_nvme_unregister_remote_port: unregister remoteport on ffff8ae14801e000 21320102adf7eeb8\n  ? set_kthread_struct+0x40/0x40\n qla2xxx [0000:12:00.1]-2110:3: remoteport_delete of ffff8ae14801e000 21320102adf7eeb8 completed.\n  ? ret_from_fork+0x1f/0x40\n qla2xxx [0000:12:00.1]-f086:3: qlt_free_session_done: waiting for sess ffff8ae14801e000 logout\n\nThe system was under memory stress where driver was not able to allocate an\nSRB to carry out error recovery of cable pull.  The failure to flush causes\nupper layer to start modifying scsi_cmnd.  When the system frees up some\nmemory, the subsequent cable pull trigger another command flush. At this\npoint the driver access a null pointer when attempting to DMA unmap the\nSGL.\n\nAdd a check to make sure commands are flush back on session tear down to\nprevent the null pointer access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/b73377124f56d2fec154737c2f8d2e839c237d5a",
+      "https://git.kernel.org/stable/c/d7a68eee87b05d4e29419e6f151aef99314970a9",
+      "https://git.kernel.org/stable/c/67b2d35853c2da25a8ca1c4190a5e96d3083c2ac",
+      "https://git.kernel.org/stable/c/a859f6a8f4234b8ef62862bf7a92f1af5f8cd47a",
+      "https://git.kernel.org/stable/c/09c0ac18cac206ed1218b1fe6c1a0918e5ea9211",
+      "https://git.kernel.org/stable/c/8de1584ec4fe0ebea33c273036e7e0a05e65c81d",
+      "https://git.kernel.org/stable/c/8f0d32004e3a572bb77e6c11c2797c87f8c9703d",
+      "https://git.kernel.org/stable/c/ec7587eef003cab15a13446d67c3adb88146a150",
+      "https://git.kernel.org/stable/c/a27d4d0e7de305def8a5098a614053be208d1aa1"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2024年05月01日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-26854",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nice: fix uninitialized dplls mutex usage\n\nThe pf->dplls.lock mutex is initialized too late, after its first use.\nMove it to the top of ice_dpll_init.\nNote that the \"err_exit\" error path destroys the mutex. And the mutex is\nthe last thing destroyed in ice_dpll_deinit.\nThis fixes the following warning with CONFIG_DEBUG_MUTEXES:\n\n ice 0000:10:00.0: The DDP package was successfully loaded: ICE OS Default Package version 1.3.36.0\n ice 0000:10:00.0: 252.048 Gb/s available PCIe bandwidth (16.0 GT/s PCIe x16 link)\n ice 0000:10:00.0: PTP init successful\n ------------[ cut here ]------------\n DEBUG_LOCKS_WARN_ON(lock->magic != lock)\n WARNING: CPU: 0 PID: 410 at kernel/locking/mutex.c:587 __mutex_lock+0x773/0xd40\n Modules linked in: crct10dif_pclmul crc32_pclmul crc32c_intel polyval_clmulni polyval_generic ice(+) nvme nvme_c>\n CPU: 0 PID: 410 Comm: kworker/0:4 Not tainted 6.8.0-rc5+ #3\n Hardware name: HPE ProLiant DL110 Gen10 Plus/ProLiant DL110 Gen10 Plus, BIOS U56 10/19/2023\n Workqueue: events work_for_cpu_fn\n RIP: 0010:__mutex_lock+0x773/0xd40\n Code: c0 0f 84 1d f9 ff ff 44 8b 35 0d 9c 69 01 45 85 f6 0f 85 0d f9 ff ff 48 c7 c6 12 a2 a9 85 48 c7 c7 12 f1 a>\n RSP: 0018:ff7eb1a3417a7ae0 EFLAGS: 00010286\n RAX: 0000000000000000 RBX: 0000000000000002 RCX: 0000000000000000\n RDX: 0000000000000002 RSI: ffffffff85ac2bff RDI: 00000000ffffffff\n RBP: ff7eb1a3417a7b80 R08: 0000000000000000 R09: 00000000ffffbfff\n R10: ff7eb1a3417a7978 R11: ff32b80f7fd2e568 R12: 0000000000000000\n R13: 0000000000000000 R14: 0000000000000000 R15: ff32b7f02c50e0d8\n FS:  0000000000000000(0000) GS:ff32b80efe800000(0000) knlGS:0000000000000000\n CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\n CR2: 000055b5852cc000 CR3: 000000003c43a004 CR4: 0000000000771ef0\n DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000\n DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400\n PKRU: 55555554\n Call Trace:\n  <TASK>\n  ? __warn+0x84/0x170\n  ? __mutex_lock+0x773/0xd40\n  ? report_bug+0x1c7/0x1d0\n  ? prb_read_valid+0x1b/0x30\n  ? handle_bug+0x42/0x70\n  ? exc_invalid_op+0x18/0x70\n  ? asm_exc_invalid_op+0x1a/0x20\n  ? __mutex_lock+0x773/0xd40\n  ? rcu_is_watching+0x11/0x50\n  ? __kmalloc_node_track_caller+0x346/0x490\n  ? ice_dpll_lock_status_get+0x28/0x50 [ice]\n  ? __pfx_ice_dpll_lock_status_get+0x10/0x10 [ice]\n  ? ice_dpll_lock_status_get+0x28/0x50 [ice]\n  ice_dpll_lock_status_get+0x28/0x50 [ice]\n  dpll_device_get_one+0x14f/0x2e0\n  dpll_device_event_send+0x7d/0x150\n  dpll_device_register+0x124/0x180\n  ice_dpll_init_dpll+0x7b/0xd0 [ice]\n  ice_dpll_init+0x224/0xa40 [ice]\n  ? _dev_info+0x70/0x90\n  ice_load+0x468/0x690 [ice]\n  ice_probe+0x75b/0xa10 [ice]\n  ? _raw_spin_unlock_irqrestore+0x4f/0x80\n  ? process_one_work+0x1a3/0x500\n  local_pci_probe+0x47/0xa0\n  work_for_cpu_fn+0x17/0x30\n  process_one_work+0x20d/0x500\n  worker_thread+0x1df/0x3e0\n  ? __pfx_worker_thread+0x10/0x10\n  kthread+0x103/0x140\n  ? __pfx_kthread+0x10/0x10\n  ret_from_fork+0x31/0x50\n  ? __pfx_kthread+0x10/0x10\n  ret_from_fork_asm+0x1b/0x30\n  </TASK>\n irq event stamp: 125197\n hardirqs last  enabled at (125197): [<ffffffff8416409d>] finish_task_switch.isra.0+0x12d/0x3d0\n hardirqs last disabled at (125196): [<ffffffff85134044>] __schedule+0xea4/0x19f0\n softirqs last  enabled at (105334): [<ffffffff84e1e65a>] napi_get_frags_check+0x1a/0x60\n softirqs last disabled at (105332): [<ffffffff84e1e65a>] napi_get_frags_check+0x1a/0x60\n ---[ end trace 0000000000000000 ]---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/db29ceff3e25c48907016da456a7cbee6310fd83",
+      "https://git.kernel.org/stable/c/9224fc86f1776193650a33a275cac628952f80a9"
+    ],
+    "受影响版本": [
+      "d7999f5ea64bb10d2857b8cbfe973be373bac7c9",
+      "d7999f5ea64bb10d2857b8cbfe973be373bac7c9"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "服务器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-26742",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: smartpqi: Fix disable_managed_interrupts\n\nCorrect blk-mq registration issue with module parameter\ndisable_managed_interrupts enabled.\n\nWhen we turn off the default PCI_IRQ_AFFINITY flag, the driver needs to\nregister with blk-mq using blk_mq_map_queues(). The driver is currently\ncalling blk_mq_pci_map_queues() which results in a stack trace and possibly\nundefined behavior.\n\nStack Trace:\n[    7.860089] scsi host2: smartpqi\n[    7.871934] WARNING: CPU: 0 PID: 238 at block/blk-mq-pci.c:52 blk_mq_pci_map_queues+0xca/0xd0\n[    7.889231] Modules linked in: sd_mod t10_pi sg uas smartpqi(+) crc32c_intel scsi_transport_sas usb_storage dm_mirror dm_region_hash dm_log dm_mod ipmi_devintf ipmi_msghandler fuse\n[    7.924755] CPU: 0 PID: 238 Comm: kworker/0:3 Not tainted 4.18.0-372.88.1.el8_6_smartpqi_test.x86_64 #1\n[    7.944336] Hardware name: HPE ProLiant DL380 Gen10/ProLiant DL380 Gen10, BIOS U30 03/08/2022\n[    7.963026] Workqueue: events work_for_cpu_fn\n[    7.978275] RIP: 0010:blk_mq_pci_map_queues+0xca/0xd0\n[    7.978278] Code: 48 89 de 89 c7 e8 f6 0f 4f 00 3b 05 c4 b7 8e 01 72 e1 5b 31 c0 5d 41 5c 41 5d 41 5e 41 5f e9 7d df 73 00 31 c0 e9 76 df 73 00 <0f> 0b eb bc 90 90 0f 1f 44 00 00 41 57 49 89 ff 41 56 41 55 41 54\n[    7.978280] RSP: 0018:ffffa95fc3707d50 EFLAGS: 00010216\n[    7.978283] RAX: 00000000ffffffff RBX: 0000000000000000 RCX: 0000000000000010\n[    7.978284] RDX: 0000000000000004 RSI: 0000000000000000 RDI: ffff9190c32d4310\n[    7.978286] RBP: 0000000000000000 R08: ffffa95fc3707d38 R09: ffff91929b81ac00\n[    7.978287] R10: 0000000000000001 R11: ffffa95fc3707ac0 R12: 0000000000000000\n[    7.978288] R13: ffff9190c32d4000 R14: 00000000ffffffff R15: ffff9190c4c950a8\n[    7.978290] FS:  0000000000000000(0000) GS:ffff9193efc00000(0000) knlGS:0000000000000000\n[    7.978292] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\n[    8.172814] CR2: 000055d11166c000 CR3: 00000002dae10002 CR4: 00000000007706f0\n[    8.172816] DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000\n[    8.172817] DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400\n[    8.172818] PKRU: 55555554\n[    8.172819] Call Trace:\n[    8.172823]  blk_mq_alloc_tag_set+0x12e/0x310\n[    8.264339]  scsi_add_host_with_dma.cold.9+0x30/0x245\n[    8.279302]  pqi_ctrl_init+0xacf/0xc8e [smartpqi]\n[    8.294085]  ? pqi_pci_probe+0x480/0x4c8 [smartpqi]\n[    8.309015]  pqi_pci_probe+0x480/0x4c8 [smartpqi]\n[    8.323286]  local_pci_probe+0x42/0x80\n[    8.337855]  work_for_cpu_fn+0x16/0x20\n[    8.351193]  process_one_work+0x1a7/0x360\n[    8.364462]  ? create_worker+0x1a0/0x1a0\n[    8.379252]  worker_thread+0x1ce/0x390\n[    8.392623]  ? create_worker+0x1a0/0x1a0\n[    8.406295]  kthread+0x10a/0x120\n[    8.418428]  ? set_kthread_struct+0x50/0x50\n[    8.431532]  ret_from_fork+0x1f/0x40\n[    8.444137] ---[ end trace 1bf0173d39354506 ]---",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/3c31b18a8dd8b7bf36af1cd723d455853b8f94fe",
+      "https://git.kernel.org/stable/c/4f5b15c15e6016efb3e14582d02cc4ddf57227df",
+      "https://git.kernel.org/stable/c/b9433b25cb06c415c9cb24782599649a406c8d6d",
+      "https://git.kernel.org/stable/c/5761eb9761d2d5fe8248a9b719efc4d8baf1f24a"
+    ],
+    "受影响版本": [
+      "cf15c3e734e8d25de7b4d9170f5a69ace633a583",
+      "cf15c3e734e8d25de7b4d9170f5a69ace633a583",
+      "cf15c3e734e8d25de7b4d9170f5a69ace633a583",
+      "cf15c3e734e8d25de7b4d9170f5a69ace633a583"
+    ],
+    "公开日期": "2024年04月03日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise (HPE)",
+    "设备类型": "服务器",
+    "产品型号": "HPE ProLiant RL300 Gen11",
+    "CVE编号": "CVE-2023-28092",
+    "漏洞描述": "A potential security vulnerability has been identified in HPE ProLiant RL300 Gen11 Server. The vulnerability could result in the system being vulnerable to exploits by attackers with physical access inside the server chassis.\n\n",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=hpesbhf04472en_us"
+    ],
+    "受影响版本": [
+      "System ROM v1.12, and HPE Integrated Lights-Out 6 (iLO 6) v1.05"
+    ],
+    "公开日期": "2023年05月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "HPE ProLiant ML30 Gen10 Server; HPE ProLiant DL20 Gen10 Server; HPE ProLiant MicroServer Gen10 Plus",
+    "CVE编号": "CVE-2021-29213",
+    "漏洞描述": "A potential local bypass of security restrictions vulnerability has been identified in HPE ProLiant DL20 Gen10, HPE ProLiant ML30 Gen10, and HPE ProLiant MicroServer Gen10 Plus server's system ROMs prior to version 2.52. The vulnerability could be locally exploited to cause disclosure of sensitive information, denial of service (DoS), and/or compromise system integrity.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbhf04197en_us"
+    ],
+    "受影响版本": [
+      "Prior to system ROM v2.52"
+    ],
+    "公开日期": "2021年11月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "HPE ProLiant BL460c Gen10 Server Blade; HPE ProLiant DL360 Gen10 Server; HPE ProLiant DL380 Gen10 Server; HPE ProLiant DL560 Gen10 Server; HPE ProLiant DL580 Gen10 Server; HPE ProLiant ML110 Gen10 Server; HPE ProLiant XL230k Gen10 Server; HPE Synergy 480 Gen10 Compute Module; HPE Synergy 660 Gen10 Compute Module; HPE ProLiant DL180 Gen10 Server; HPE ProLiant DL160 Gen10 Server; HPE ProLiant DL120 Gen10 Server; HPE ProLiant XL190r Gen10 Server; HPE ProLiant ML350 Gen10 Server; HPE ProLiant XL170r Gen10 Server; HPE Apollo 2000 System; HPE Apollo 4500 System; HPE ProLiant XL270d Gen10 Server; HPE Apollo 4200 Gen10 Server; HPE ProLiant e910 Server Blade; HPE ProLiant XL450 Gen10 Server; HPE ProLiant XL230k Gen10 Server - bad oid",
+    "CVE编号": "CVE-2020-7207",
+    "漏洞描述": "A local elevation of privilege using physical access security vulnerability was found in HPE Proliant Gen10 Servers using Intel Innovation Engine (IE). This attack requires a physical attack to the server motherboard. To mitigate this issue, ensure your server is always physically secured. HPE will not address this issue in the impacted Gen 10 servers listed. HPE recommends using appropriate physical security methods as a compensating control to disallow an attacker from having physical access to the server main circuit board.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbhf04002en_us"
+    ],
+    "受影响版本": [
+      "all current IE firmware"
+    ],
+    "公开日期": "2020年11月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "服务器",
+    "产品型号": "HP Intelligent Provisioning",
+    "CVE编号": "CVE-2020-7205",
+    "漏洞描述": "A potential security vulnerability has been identified in HPE Intelligent Provisioning, Service Pack for ProLiant, and HPE Scripting ToolKit. The vulnerability could be locally exploited to allow arbitrary code execution during the boot process. **Note:** This vulnerability is related to using insmod in GRUB2 in the specific impacted HPE product and HPE is addressing this issue. HPE has made the following software updates and mitigation information to resolve the vulnerability in Intelligent Provisioning, Service Pack for ProLiant, and HPE Scripting ToolKit. HPE provided latest Intelligent Provisioning, Service Pack for ProLiant, and HPE Scripting Toolkit which includes the GRUB2 patch to resolve this vulnerability. These new boot images will update GRUB2 and the Forbidden Signature Database (DBX). After the DBX is updated, users will not be able to boot to the older IP, SPP or Scripting ToolKit with Secure Boot enabled. HPE have provided a standalone DBX update tool to work with Microsoft Windows, and supported Linux Operating Systems. These tools can be used to update the Forbidden Signature Database (DBX) from within the OS. **Note:** This DBX update mitigates the GRUB2 issue with insmod enabled, and the \"Boot Hole\" issue for HPE signed GRUB2 applications.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbhf04020en_us"
+    ],
+    "受影响版本": [
+      "Gen8 - Prior to 1.72",
+      "Gen9 - Prior to 2.81",
+      "Gen10 and Gen10 Plus v3.30 or earlier",
+      "v3.31",
+      "v3.40."
+    ],
+    "公开日期": "2020年07月30日"
+  },
+  {
+    "设备品牌": "Hewlett Packard Enterprise",
+    "设备类型": "服务器",
+    "产品型号": "Smart Update Manager (SUM)",
+    "CVE编号": "CVE-2020-7136",
+    "漏洞描述": "A security vulnerability in HPE Smart Update Manager (SUM) prior to version 8.5.6 could allow remote unauthorized access. Hewlett Packard Enterprise has provided a software update to resolve this vulnerability in HPE Smart Update Manager (SUM) prior to 8.5.6. Please visit the HPE Support Center at https://support.hpe.com/hpesc/public/home to download the latest version of HPE Smart Update Manager (SUM). Download the latest version of HPE Smart Update Manager (SUM) or download the latest Service Pack For ProLiant (SPP).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbmu03997en_us"
+    ],
+    "受影响版本": [
+      "Prior to v8.5.6"
+    ],
+    "公开日期": "2020年04月30日"
+  },
+  {
+    "设备品牌": "HPE",
+    "设备类型": "服务器",
+    "产品型号": "HPE Service Pack for ProLiant",
+    "CVE编号": "CVE-2020-7135",
+    "漏洞描述": "A potential security vulnerability has been identified in the disk drive firmware installers named Supplemental Update / Online ROM Flash Component on HPE servers running Linux. The vulnerable software is included in the HPE Service Pack for ProLiant (SPP) releases 2018.06.0, 2018.09.0, and 2018.11.0. The vulnerable software is the Supplemental Update / Online ROM Flash Component for Linux (x64) software. The installer in this software component could be locally exploited to execute arbitrary code. Drive Models can be found in the Vulnerability Resolution field of the security bulletin. The 2019_03 SPP and Supplemental update / Online ROM Flash Component for Linux (x64) after 2019.03.0 has fixed this issue.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbhf03945en_us"
+    ],
+    "受影响版本": [
+      "2018.06.0",
+      "2018.09.0",
+      "2018.11.0"
+    ],
+    "公开日期": "2020年04月27日"
+  }
+]

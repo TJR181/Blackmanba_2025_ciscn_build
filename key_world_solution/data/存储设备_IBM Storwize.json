@@ -1,0 +1,34 @@
+[
+  {
+    "设备品牌": "IBM",
+    "设备类型": "存储设备",
+    "产品型号": "Storage Virtualize",
+    "CVE编号": "CVE-2023-47700",
+    "漏洞描述": "IBM SAN Volume Controller, IBM Storwize, IBM FlashSystem and IBM Storage Virtualize 8.6 products could allow a remote attacker to spoof a trusted system that would not be correctly validated by the Storwize server.  This could lead to a user connecting to a malicious host, believing that it was a trusted system and deceived into accepting spoofed data.  IBM X-Force ID:  271016.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.ibm.com/support/pages/node/7114767",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/271016"
+    ],
+    "受影响版本": [
+      "8.6"
+    ],
+    "公开日期": "2024年02月07日"
+  },
+  {
+    "设备品牌": "IBM",
+    "设备类型": "存储设备",
+    "产品型号": "Storage Virtualize",
+    "CVE编号": "CVE-2023-43042",
+    "漏洞描述": "IBM SAN Volume Controller, IBM Storwize, IBM FlashSystem and IBM Storage Virtualize 8.3 products use default passwords for a privileged user.  IBM X-Force ID:  266874.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://https://www.ibm.com/support/pages/node/7064976",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/266874"
+    ],
+    "受影响版本": [
+      "8.3"
+    ],
+    "公开日期": "2023年12月14日"
+  }
+]

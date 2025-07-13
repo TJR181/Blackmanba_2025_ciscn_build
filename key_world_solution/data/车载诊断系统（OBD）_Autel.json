@@ -1,0 +1,257 @@
+[
+  {
+    "设备品牌": "Autel",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "Autel MaxiCharger AC Wallbox Commercial",
+    "CVE编号": "CVE-2025-6678",
+    "漏洞描述": "Autel MaxiCharger AC Wallbox Commercial PIN Missing Authentication Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of Autel MaxiCharger AC Wallbox Commercial charging stations. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the Pile API. The issue results from the lack of authentication prior to allowing access to functionality. An attacker can leverage this vulnerability to disclose credentials, leading to further compromise. Was ZDI-CAN-26352.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-342/"
+    ],
+    "受影响版本": [
+      "1.36.00"
+    ],
+    "公开日期": "2025年06月25日"
+  },
+  {
+    "设备品牌": "Autel",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "Autel MaxiCharger AC Wallbox Commercial",
+    "CVE编号": "CVE-2025-5830",
+    "漏洞描述": "Autel MaxiCharger AC Wallbox Commercial DLB_SlaveRegister Heap-based Buffer Overflow Remote Code Execution Vulnerability. This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Autel MaxiCharger AC Wallbox Commercial EV chargers. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the handling of DLB_SlaveRegister messages. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a fixed-length heap-based buffer. An attacker can leverage this vulnerability to execute code in the context of the device. Was ZDI-CAN-26327.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-349/"
+    ],
+    "受影响版本": [
+      "1.36.00"
+    ],
+    "公开日期": "2025年06月25日"
+  },
+  {
+    "设备品牌": "Autel",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "Autel MaxiCharger AC Wallbox Commercial",
+    "CVE编号": "CVE-2025-5829",
+    "漏洞描述": "Autel MaxiCharger AC Wallbox Commercial autocharge Stack-based Buffer Overflow Remote Code Execution Vulnerability. This vulnerability allows physically present attackers to execute arbitrary code on affected  affected installations of Autel MaxiCharger AC Wallbox Commercial EV chargers. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the handling of JSON messages. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a fixed-length stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of the device. Was ZDI-CAN-26330.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-348/"
+    ],
+    "受影响版本": [
+      "1.36.00"
+    ],
+    "公开日期": "2025年06月25日"
+  },
+  {
+    "设备品牌": "Autel",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "Autel MaxiCharger AC Wallbox Commercial",
+    "CVE编号": "CVE-2025-5828",
+    "漏洞描述": "Autel MaxiCharger AC Wallbox Commercial wLength Buffer Overflow Remote Code Execution Vulnerability. This vulnerability allows physically present attackers to execute arbitrary code on affected installations of Autel MaxiCharger AC Wallbox Commercial EV chargers. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the handling of USB frame packets. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a fixed-length buffer. An attacker can leverage this vulnerability to execute code in the context of the device. Was ZDI-CAN-26328.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-347/"
+    ],
+    "受影响版本": [
+      "1.36.00"
+    ],
+    "公开日期": "2025年06月25日"
+  },
+  {
+    "设备品牌": "Autel",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "Autel MaxiCharger AC Wallbox Commercial",
+    "CVE编号": "CVE-2025-5827",
+    "漏洞描述": "Autel MaxiCharger AC Wallbox Commercial ble_process_esp32_msg Stack-based Buffer Overflow Remote Code Execution Vulnerability. This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Autel MaxiCharger AC Wallbox Commercial EV chargers. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the ble_process_esp32_msg function. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a fixed-length stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of the device. Was ZDI-CAN-26369.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-346/"
+    ],
+    "受影响版本": [
+      "1.36.00"
+    ],
+    "公开日期": "2025年06月25日"
+  },
+  {
+    "设备品牌": "Autel",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "Autel MaxiCharger AC Wallbox Commercial",
+    "CVE编号": "CVE-2025-5826",
+    "漏洞描述": "Autel MaxiCharger AC Wallbox Commercial ble_process_esp32_msg Misinterpretation of Input Vulnerability. This vulnerability allows network-adjacent attackers to inject arbitrary AT commands on affected installations of Autel MaxiCharger AC Wallbox Commercial charging stations. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the ble_process_esp32_msg function. The issue results from misinterpretation of input data. An attacker can leverage this vulnerability to execute AT commands in the context of the device. Was ZDI-CAN-26368.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-345/"
+    ],
+    "受影响版本": [
+      "1.36.00"
+    ],
+    "公开日期": "2025年06月25日"
+  },
+  {
+    "设备品牌": "Autel",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "Autel MaxiCharger AC Wallbox Commercial",
+    "CVE编号": "CVE-2025-5825",
+    "漏洞描述": "Autel MaxiCharger AC Wallbox Commercial Firmware Downgrade Remote Code Execution Vulnerability. This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Autel MaxiCharger AC Wallbox Commercial charging stations. An attacker must first obtain the ability to pair a malicious Bluetooth device with the target system in order to exploit this vulnerability.\n\nThe specific flaw exists within the firmware update process. The issue results from the lack of proper validation of a firmware image before using it to perform an upgrade. An attacker can leverage this in conjunction with other vulnerabilities to execute arbitrary code in the context of the device. Was ZDI-CAN-26354.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-344/"
+    ],
+    "受影响版本": [
+      "1.36.00"
+    ],
+    "公开日期": "2025年06月25日"
+  },
+  {
+    "设备品牌": "Autel",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "Autel MaxiCharger AC Wallbox Commercial",
+    "CVE编号": "CVE-2025-5824",
+    "漏洞描述": "Autel MaxiCharger AC Wallbox Commercial Origin Validation Error Authentication Bypass Vulnerability. This vulnerability allows network-adjacent attackers to bypass authentication on affected installations of Autel MaxiCharger AC Wallbox Commercial. An attacker must first obtain the ability to pair a malicious Bluetooth device with the target system in order to exploit this vulnerability.\n\nThe specific flaw exists within the handling of bluetooth pairing requests. The issue results from insufficient validation of the origin of commands. An attacker can leverage this vulnerability to bypass authentication on the system. Was ZDI-CAN-26353.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-343/"
+    ],
+    "受影响版本": [
+      "1.36.00"
+    ],
+    "公开日期": "2025年06月25日"
+  },
+  {
+    "设备品牌": "Autel",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "Autel MaxiCharger AC Wallbox Commercial",
+    "CVE编号": "CVE-2025-5823",
+    "漏洞描述": "Autel MaxiCharger AC Wallbox Commercial Serial Number Exposed Dangerous Method Information Disclosure Vulnerability. This vulnerability allows remote attackers to disclose sensitive information on affected installations of Autel MaxiCharger AC Wallbox Commercial EV chargers. Authentication is required to exploit this vulnerability.\n\nThe specific flaw exists within the implementation of the Autel Technician API. The issue results from an exposed dangerous method. An attacker can leverage this vulnerability to disclose credentials, leading to further compromise. Was ZDI-CAN-26351.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-341/"
+    ],
+    "受影响版本": [
+      "1.36.00"
+    ],
+    "公开日期": "2025年06月25日"
+  },
+  {
+    "设备品牌": "Autel",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "Autel MaxiCharger AC Wallbox Commercial",
+    "CVE编号": "CVE-2025-5822",
+    "漏洞描述": "Autel MaxiCharger AC Wallbox Commercial Technician API Incorrect Authorization Privilege Escalation Vulnerability. This vulnerability allows remote attackers to escalate privileges on affected installations of Autel MaxiCharger AC Wallbox Commercial charging stations. An attacker must first obtain a low-privileged authorization token in order to exploit this vulnerability.\n\nThe specific flaw exists within the implementation of the Autel Technician API. The issue results from incorrect authorization. An attacker can leverage this vulnerability to escalate privileges to resources normally protected from the user. Was ZDI-CAN-26325.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-25-340/"
+    ],
+    "受影响版本": [
+      "1.36.00"
+    ],
+    "公开日期": "2025年06月25日"
+  },
+  {
+    "设备品牌": "Autel",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "MaxiCharger AC Elite Business C50",
+    "CVE编号": "CVE-2024-7795",
+    "漏洞描述": "Autel MaxiCharger AC Elite Business C50 AppAuthenExchangeRandomNum Stack-Based Buffer Overflow Remote Code Execution Vulnerability. This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Autel MaxiCharger AC Elite Business C50 EV chargers. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the handling of the AppAuthenExchangeRandomNum BLE command. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a fixed-length stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of the device. Was ZDI-CAN-23384.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-1154/"
+    ],
+    "受影响版本": [
+      "1.32.00"
+    ],
+    "公开日期": "2024年08月21日"
+  },
+  {
+    "设备品牌": "Autel",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "MaxiCharger AC Elite Business C50",
+    "CVE编号": "CVE-2024-23967",
+    "漏洞描述": "Autel MaxiCharger AC Elite Business C50 WebSocket Base64 Decoding Stack-based Buffer Overflow Remote Code Execution Vulnerability. This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Autel MaxiCharger AC Elite Business C50 chargers. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed.\n\nThe specific flaw exists within the handling of base64-encoded data within WebSocket messages. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a fixed-length stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of the device.\n\nWas ZDI-CAN-23230",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-853/"
+    ],
+    "受影响版本": [
+      "1.32.00"
+    ],
+    "公开日期": "2024年09月28日"
+  },
+  {
+    "设备品牌": "Autel",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "MaxiCharger AC Elite Business C50",
+    "CVE编号": "CVE-2024-23959",
+    "漏洞描述": "Autel MaxiCharger AC Elite Business C50 BLE AppChargingControl Stack-based Buffer Overflow Remote Code Execution Vulnerability. This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Autel MaxiCharger AC Elite Business C50 charging stations. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed.\n\nThe specific flaw exists within the handling of the AppChargingControl BLE command. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a fixed-length stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of the device.\n\nWas ZDI-CAN-23194",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-851/"
+    ],
+    "受影响版本": [
+      "1.32.00"
+    ],
+    "公开日期": "2024年09月28日"
+  },
+  {
+    "设备品牌": "Autel",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "MaxiCharger AC Elite Business C50",
+    "CVE编号": "CVE-2024-23958",
+    "漏洞描述": "Autel MaxiCharger AC Elite Business C50 BLE Hardcoded Credentials Authentication Bypass Vulnerability. This vulnerability allows network-adjacent attackers to bypass authentication on affected installations of Autel MaxiCharger AC Elite Business C50 charging stations. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the BLE AppAuthenRequest command handler. The handler uses hardcoded credentials as a fallback in case of an authentication request failure. An attacker can leverage this vulnerability to bypass authentication on the system.\n\nWas ZDI-CAN-23196",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-852/"
+    ],
+    "受影响版本": [
+      "1.32.00"
+    ],
+    "公开日期": "2024年09月28日"
+  },
+  {
+    "设备品牌": "Autel",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "MaxiCharger AC Elite Business C50",
+    "CVE编号": "CVE-2024-23957",
+    "漏洞描述": "Autel MaxiCharger AC Elite Business C50 DLB_HostHeartBeat Stack-based Buffer Overflow Remote Code Execution Vulnerability. This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Autel MaxiCharger AC Elite Business C50 charging stations. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the DLB_HostHeartBeat handler of the DLB protocol implementation. When parsing an AES key, the process does not properly validate the length of user-supplied data prior to copying it to a fixed-length stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of the device.\n\nWas ZDI-CAN-23241",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-854/"
+    ],
+    "受影响版本": [
+      "1.32.00"
+    ],
+    "公开日期": "2024年09月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-50121",
+    "漏洞描述": "Autel EVO NANO drone flight control firmware version 1.6.5 is vulnerable to denial of service (DoS).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/Drone-Lab/Reports-of-AUTEL-drones-losing-control-at-the-edge-of-the-no-fly-zone/tree/main"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年01月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载诊断系统（OBD）",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-47335",
+    "漏洞描述": "Insecure permissions in the setNFZEnable function of Autel Robotics EVO Nano drone v1.6.5 allows attackers to breach the geo-fence and fly into no-fly zones.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/czbxzm/AUTEL-smart-drones-have-a-vulnerability-to-unauthorised-breaches-of-no-fly-zone"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年11月16日"
+  }
+]

@@ -1,0 +1,103 @@
+[
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "VPN设备",
+    "产品型号": "FortiClientEMS",
+    "CVE编号": "CVE-2025-22855",
+    "漏洞描述": "An improper neutralization of input during web page generation ('Cross-site Scripting') [CWE-79] vulnerability in Fortinet FortiClient before 7.4.1 may allow the EMS administrator to send messages containing javascript code.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://fortiguard.fortinet.com/psirt/FG-IR-23-344"
+    ],
+    "受影响版本": [
+      "7.4.0",
+      "7.2.1"
+    ],
+    "公开日期": "2025年04月08日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "VPN设备",
+    "产品型号": "FortiClientWindows",
+    "CVE编号": "CVE-2023-33304",
+    "漏洞描述": "A use of hard-coded credentials vulnerability in Fortinet FortiClient Windows 7.0.0 - 7.0.9 and 7.2.0 - 7.2.1 allows an attacker to bypass system protections via the use of static credentials.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://fortiguard.com/psirt/FG-IR-23-108"
+    ],
+    "受影响版本": [
+      "7.2.0",
+      "7.0.0"
+    ],
+    "公开日期": "2023年11月14日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "VPN设备",
+    "产品型号": "FortiClientWindows",
+    "CVE编号": "CVE-2022-42470",
+    "漏洞描述": "A relative path traversal vulnerability in Fortinet FortiClient (Windows) 7.0.0 - 7.0.7, 6.4.0 - 6.4.9, 6.2.0 - 6.2.9 and 6.0.0 - 6.0.10 allows an attacker to execute unauthorized code or commands via sending a crafted request to a specific named pipe.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://fortiguard.com/psirt/FG-IR-22-320"
+    ],
+    "受影响版本": [
+      "7.0.0",
+      "6.4.0",
+      "6.2.0",
+      "6.0.0"
+    ],
+    "公开日期": "2023年04月11日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "VPN设备",
+    "产品型号": "FortiClientWindows",
+    "CVE编号": "CVE-2022-40682",
+    "漏洞描述": "A incorrect authorization in Fortinet FortiClient (Windows) 7.0.0 - 7.0.7, 6.4.0 - 6.4.9, 6.2.0 - 6.2.9 and 6.0.0 - 6.0.10 allows an attacker to execute unauthorized code or commands via sending a crafted request to a specific named pipe.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://fortiguard.com/psirt/FG-IR-22-336"
+    ],
+    "受影响版本": [
+      "7.0.0",
+      "6.4.0",
+      "6.2.0",
+      "6.0.0"
+    ],
+    "公开日期": "2023年04月11日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "VPN设备",
+    "产品型号": "FortiClientWindows",
+    "CVE编号": "CVE-2022-40681",
+    "漏洞描述": "A incorrect authorization in Fortinet FortiClient (Windows) 7.0.0 - 7.0.7, 6.4.0 - 6.4.9, 6.2.0 - 6.2.9 and 6.0.0 - 6.0.10 allows an attacker to cause denial of service via sending a crafted request to a specific named pipe.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://fortiguard.com/psirt/FG-IR-22-299"
+    ],
+    "受影响版本": [
+      "7.0.0",
+      "6.4.0",
+      "6.2.0",
+      "6.0.0"
+    ],
+    "公开日期": "2023年11月14日"
+  },
+  {
+    "设备品牌": "Fortinet",
+    "设备类型": "VPN设备",
+    "产品型号": "Fortinet FortiClientWindows",
+    "CVE编号": "CVE-2021-44169",
+    "漏洞描述": "A improper initialization in Fortinet FortiClient (Windows) version 6.0.10 and below, version 6.2.9 and below, version 6.4.7 and below, version 7.0.3 and below allows attacker to gain administrative privileges via placing a malicious executable inside the FortiClient installer's directory.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://fortiguard.com/psirt/FG-IR-21-238"
+    ],
+    "受影响版本": [
+      "FortiClientWindows 7.0.2, 7.0.1, 7.0.0, 6.4.7, 6.4.6, 6.4.5, 6.4.4, 6.4.3, 6.4.2, 6.4.1, 6.4.0, 6.2.9, 6.2.8, 6.2.7, 6.2.6, 6.2.5, 6.2.4, 6.2.3, 6.2.2, 6.2.1, 6.2.0, 6.0.10, 6.0.9, 6.0.8, 6.0.7, 6.0.6, 6.0.5, 6.0.4, 6.0.3, 6.0.2, 6.0.1, 6.0.0"
+    ],
+    "公开日期": "2022年04月06日"
+  }
+]

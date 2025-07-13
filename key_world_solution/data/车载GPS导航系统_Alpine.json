@@ -1,0 +1,540 @@
+[
+  {
+    "设备品牌": "Alpine",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Halo9",
+    "CVE编号": "CVE-2024-23963",
+    "漏洞描述": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Alpine Halo9 devices. An attacker must first obtain the ability to pair a malicious Bluetooth device with the target system in order to exploit this vulnerability.\n\nThe specific flaw exists within the PBAP_DecodeVCARD function. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of root.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-850/"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2025年01月30日"
+  },
+  {
+    "设备品牌": "Alpine",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Halo9",
+    "CVE编号": "CVE-2024-23962",
+    "漏洞描述": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Alpine Halo9 devices. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the DLT interface, which listens on TCP port 3490 by default. The issue results from the lack of authentication prior to allowing access to functionality. An attacker can leverage this in conjunction with other vulnerabilities to execute arbitrary code in the context of the device.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-847/"
+    ],
+    "受影响版本": [
+      "all versions"
+    ],
+    "公开日期": "2025年01月30日"
+  },
+  {
+    "设备品牌": "Alpine",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Halo9",
+    "CVE编号": "CVE-2024-23961",
+    "漏洞描述": "Alpine Halo9 UPDM_wemCmdUpdFSpeDecomp Command Injection Remote Code Execution Vulnerability. This vulnerability allows physically present attackers to execute arbitrary code on affected installations of Alpine Halo9 devices. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the UPDM_wemCmdUpdFSpeDecomp function. The issue results from the lack of proper validation of a user-supplied string before using it to execute a system call. An attacker can leverage this vulnerability to execute code in the context of root.\n\nWas ZDI-CAN-23306",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-849/"
+    ],
+    "受影响版本": [
+      "6.0.000"
+    ],
+    "公开日期": "2024年09月28日"
+  },
+  {
+    "设备品牌": "Alpine",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Halo9",
+    "CVE编号": "CVE-2024-23960",
+    "漏洞描述": "Alpine Halo9 Improper Verification of Cryptographic Signature Vulnerability. This vulnerability allows physically present attackers to bypass signature validation mechanism on affected installations of Alpine Halo9 devices. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the firmware metadata signature validation mechanism. The issue results from the lack of proper verification of a cryptographic signature. An attacker can leverage this in conjunction with other vulnerabilities to execute arbitrary code in the context of root.\n\nWas ZDI-CAN-23102",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-845/"
+    ],
+    "受影响版本": [
+      "6.0.000"
+    ],
+    "公开日期": "2024年09月28日"
+  },
+  {
+    "设备品牌": "Alpine",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Halo9",
+    "CVE编号": "CVE-2024-23935",
+    "漏洞描述": "Alpine Halo9 DecodeUTF7 Stack-based Buffer Overflow Remote Code Execution Vulnerability. This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Alpine Halo9 devices. An attacker must first obtain the ability to pair a malicious Bluetooth device with the target system in order to exploit this vulnerability.\n\nThe specific flaw exists within the DecodeUTF7 function. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of root.\n\nWas ZDI-CAN-23249",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-848/"
+    ],
+    "受影响版本": [
+      "6.0.000"
+    ],
+    "公开日期": "2024年09月28日"
+  },
+  {
+    "设备品牌": "Alpine",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Halo9",
+    "CVE编号": "CVE-2024-23924",
+    "漏洞描述": "Alpine Halo9 UPDM_wemCmdCreatSHA256Hash Command Injection Remote Code Execution Vulnerability. This vulnerability allows physically present attackers to execute arbitrary code on affected installations of Alpine Halo9 devices. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the UPDM_wemCmdCreatSHA256Hash function. The issue results from the lack of proper validation of a user-supplied string before using it to execute a system call. An attacker can leverage this vulnerability to execute code in the context of root.\n\nWas ZDI-CAN-23105",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-846/"
+    ],
+    "受影响版本": [
+      "6.0.000"
+    ],
+    "公开日期": "2024年09月28日"
+  },
+  {
+    "设备品牌": "Alpine",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Halo9",
+    "CVE编号": "CVE-2024-23923",
+    "漏洞描述": "Alpine Halo9 prh_l2_sar_data_ind Use-After-Free Remote Code Execution Vulnerability. This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Alpine Halo9 devices. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the prh_l2_sar_data_ind function. The issue results from the lack of validating the existence of an object prior to performing operations on the object. An attacker can leverage this vulnerability to execute code in the context of root.\n\nWas ZDI-CAN-22945",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-844/"
+    ],
+    "受影响版本": [
+      "6.0.000"
+    ],
+    "公开日期": "2024年09月28日"
+  },
+  {
+    "设备品牌": "Alpine Press",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Alpine PhotoTile for Pinterest (WordPress plugin)",
+    "CVE编号": "CVE-2022-36347",
+    "漏洞描述": "Authenticated (admin+) Stored Cross-Site Scripting (XSS) vulnerability in Alpine Press Alpine PhotoTile for Pinterest plugin <= 1.3.1 at WordPress.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://patchstack.com/database/vulnerability/alpine-photo-tile-for-pinterest/wordpress-alpine-phototile-for-pinterest-plugin-1-3-1-authenticated-stored-cross-site-scripting-xss-vulnerability",
+      "https://wordpress.org/plugins/alpine-photo-tile-for-pinterest/"
+    ],
+    "受影响版本": [
+      "<= 1.3.1"
+    ],
+    "公开日期": "2022年08月23日"
+  },
+  {
+    "设备品牌": "stevespringett",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "alpine",
+    "CVE编号": "CVE-2022-23554",
+    "漏洞描述": "Alpine is a scaffolding library in Java. Alpine prior to version 1.10.4 allows Authentication Filter bypass. The AuthenticationFilter relies on the request URI to evaluate if the user is accessing the swagger endpoint. By accessing a URL with a path such as /api/foo;%2fapi%2fswagger the contains condition will hold and will return from the authentication filter without aborting the request. Note that the principal object will not be assigned and therefore the issue wont allow user impersonation. This issue has been fixed in version 1.10.4. There are no known workarounds.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://securitylab.github.com/advisories/GHSL-2021-1010-Alpine/",
+      "https://github.com/stevespringett/Alpine/blob/f03dbda46229c26145a5f9f7f2660cc2c386be02/alpine/src/main/java/alpine/filters/AuthenticationFilter.java#L58-L60",
+      "https://github.com/stevespringett/Alpine/releases/tag/alpine-parent-1.10.4"
+    ],
+    "受影响版本": [
+      "< 1.10.4"
+    ],
+    "公开日期": "2022年12月28日"
+  },
+  {
+    "设备品牌": "stevespringett",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "alpine",
+    "CVE编号": "CVE-2022-23553",
+    "漏洞描述": "Alpine is a scaffolding library in Java. Alpine prior to version 1.10.4 allows URL access filter bypass. This issue has been fixed in version 1.10.4. There are no known workarounds.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://securitylab.github.com/advisories/GHSL-2021-1009-Alpine/",
+      "https://github.com/stevespringett/Alpine/blob/alpine-parent-1.10.2/alpine/src/main/java/alpine/filters/BlacklistUrlFilter.java#L107-L121",
+      "https://github.com/stevespringett/Alpine/blob/alpine-parent-1.10.2/alpine/src/main/java/alpine/filters/WhitelistUrlFilter.java#L115-L127"
+    ],
+    "受影响版本": [
+      "< 1.10.4"
+    ],
+    "公开日期": "2022年12月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-22704",
+    "漏洞描述": "The zabbix-agent2 package before 5.4.9-r1 for Alpine Linux sometimes allows privilege escalation to root because the design incorrectly expected that systemd would (in effect) determine part of the configuration.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://gitlab.alpinelinux.org/alpine/aports/-/issues/13368"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年01月06日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-46853",
+    "漏洞描述": "Alpine before 2.25 allows remote attackers to cause a denial of service (application crash) when LIST or LSUB is sent before STARTTLS.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://nostarttls.secvuln.info/",
+      "https://bugs.gentoo.org/807613",
+      "https://security.gentoo.org/glsa/202301-07"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年11月03日"
+  },
+  {
+    "设备品牌": "The Eclipse Foundation",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Eclipse Che",
+    "CVE编号": "CVE-2021-41034",
+    "漏洞描述": "The build of some language stacks of Eclipse Che version 6 includes pulling some binaries from an unsecured HTTP endpoint. As a consequence the builds of such stacks are vulnerable to MITM attacks that allow the replacement of the original binaries with arbitrary ones. The stacks involved are Java 8 (alpine and centos), Android and PHP. The vulnerability is not exploitable at runtime but only when building Che.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://bugs.eclipse.org/bugs/show_bug.cgi?id=540989"
+    ],
+    "受影响版本": [
+      "6.0",
+      "unspecified"
+    ],
+    "公开日期": "2021年09月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-38370",
+    "漏洞描述": "In Alpine before 2.25, untagged responses from an IMAP server are accepted before STARTTLS.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://nostarttls.secvuln.info",
+      "https://alpine.x10host.com",
+      "https://bugs.gentoo.org/807613#c4",
+      "https://security.gentoo.org/glsa/202301-07"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-36158",
+    "漏洞描述": "In the xrdp package (in branches through 3.14) for Alpine Linux, RDP sessions are vulnerable to man-in-the-middle attacks because pre-generated RSA certificates and private keys are used.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://gitlab.alpinelinux.org/alpine/aports/-/issues/12811"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年07月05日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-30139",
+    "漏洞描述": "In Alpine Linux apk-tools before 2.12.5, the tarball parser allows a buffer overflow and crash.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://gitlab.alpinelinux.org/alpine/apk-tools/-/issues/10741",
+      "https://gitlab.alpinelinux.org/alpine/aports/-/issues/12606"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年04月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-29133",
+    "漏洞描述": "Lack of verification in haserl, a component of Alpine Linux Configuration Framework, before 0.9.36 allows local users to read the contents of any file on the filesystem.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/rapid7/metasploit-framework/pull/14833",
+      "https://gitlab.alpinelinux.org/alpine/aports/-/issues/12539",
+      "https://twitter.com/steaIth/status/1364940271054712842",
+      "https://github.com/rapid7/metasploit-framework/pull/14833/commits/5bf6b2d094deb22fa8183ce161b90cbe4fd40a70"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年03月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-27971",
+    "漏洞描述": "Alps Alpine Touchpad Driver 10.3201.101.215 is vulnerable to DLL Injection.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://packetstormsecurity.com/files/165690/Alps-Alpine-Touchpad-Driver-DLL-Injection.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年01月31日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-35197",
+    "漏洞描述": "The official memcached docker images before 1.5.11-alpine (Alpine specific) contain a blank password for a root user. System using the memcached docker container deployed by affected versions of the docker image may allow a remote attacker to achieve root access with a blank password.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/koharin/koharin2/blob/main/CVE-2020-35197"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-35196",
+    "漏洞描述": "The official rabbitmq docker images before 3.7.13-beta.1-management-alpine (Alpine specific) contain a blank password for a root user. System using the rabbitmq docker container deployed by affected versions of the docker image may allow a remote attacker to achieve root access with a blank password.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/koharin/koharin2/blob/main/CVE-2020-35196"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-35195",
+    "漏洞描述": "The official haproxy docker images before 1.8.18-alpine (Alpine specific) contain a blank password for a root user. System using the haproxy docker container deployed by affected versions of the docker image may allow a remote attacker to achieve root access with a blank password.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/koharin/koharin2/blob/main/CVE-2020-35195"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-35193",
+    "漏洞描述": "The official sonarqube docker images before alpine (Alpine specific) contain a blank password for a root user. System using the sonarqube docker container deployed by affected versions of the docker image may allow a remote attacker to achieve root access with a blank password.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/koharin/koharin2/blob/main/CVE-2020-35193"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-35191",
+    "漏洞描述": "The official drupal docker images before 8.5.10-fpm-alpine (Alpine specific) contain a blank password for a root user. System using the drupal docker container deployed by affected versions of the docker image may allow a remote attacker to achieve root access with a blank password.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/koharin/koharin2/blob/main/CVE-2020-35191"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-35190",
+    "漏洞描述": "The official plone Docker images before version of 4.3.18-alpine (Alpine specific) contain a blank password for a root user. System using the plone docker container deployed by affected versions of the docker image may allow a remote attacker to achieve root access with a blank password.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/koharin/koharin2/blob/main/CVE-2020-35190"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-35189",
+    "漏洞描述": "The official kong docker images before 1.0.2-alpine (Alpine specific) contain a blank password for a root user. System using the kong docker container deployed by affected versions of the docker image may allow a remote attacker to achieve root access with a blank password.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/koharin/koharin2/blob/main/CVE-2020-35189"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-35187",
+    "漏洞描述": "The official telegraf docker images before 1.9.4-alpine (Alpine specific) contain a blank password for a root user. System using the telegraf docker container deployed by affected versions of the docker image may allow a remote attacker to achieve root access with a blank password.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/koharin/koharin2/blob/main/CVE-2020-35187"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-35185",
+    "漏洞描述": "The official ghost docker images before 2.16.1-alpine (Alpine specific) contain a blank password for a root user. System using the ghost docker container deployed by affected versions of the docker image may allow a remote attacker to achieve root access with a blank password.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/koharin/koharin2/blob/main/CVE-2020-35185"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-29602",
+    "漏洞描述": "The official irssi docker images before 1.1-alpine (Alpine specific) contain a blank password for a root user. System using the irssi docker container deployed by affected versions of the Docker image may allow an remote attacker to achieve root access with a blank password.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/koharin/koharin2/blob/main/CVE-2020-29602"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-29581",
+    "漏洞描述": "The official spiped docker images before 1.5-alpine contain a blank password for a root user. Systems using the spiped docker container deployed by affected versions of the docker image may allow an remote attacker to achieve root access with a blank password.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/koharin/koharin2/blob/main/CVE-2020-29581"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-29578",
+    "漏洞描述": "The official piwik Docker images before fpm-alpine (Alpine specific) contain a blank password for a root user. Systems using the Piwik Docker container deployed by affected versions of the Docker image may allow an remote attacker to achieve root access.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/koharin/koharin2/blob/main/CVE-2020-29578"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-29575",
+    "漏洞描述": "The official elixir Docker images before 1.8.0-alpine (Alpine specific) contain a blank password for a root user. Systems using the elixir Linux Docker container deployed by affected versions of the Docker image may allow a remote attacker to achieve root access with a blank password.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/koharin/koharin2/blob/main/CVE-2020-29575"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-28928",
+    "漏洞描述": "In musl libc through 1.2.1, wcsnrtombs mishandles particular combinations of destination buffer size and source character limit, as demonstrated by an invalid write access (buffer overflow).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://musl.libc.org/releases.html",
+      "https://lists.debian.org/debian-lts-announce/2020/11/msg00050.html",
+      "https://lists.apache.org/thread.html/ra63e8dc5137d952afc55dbbfa63be83304ecf842d1eab1ff3ebb29e2%40%3Cnotifications.apisix.apache.org%3E",
+      "https://lists.apache.org/thread.html/r90b60cf49348e515257b4950900c1bd3ab95a960cf2469d919c7264e%40%3Cnotifications.apisix.apache.org%3E",
+      "https://lists.apache.org/thread.html/r2134abfe847bea7795f0e53756d10a47e6643f35ab8169df8b8a9eb1%40%3Cnotifications.apisix.apache.org%3E",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/UW27QVY7ERPTSGKS4KAWE5TU7EJWHKVQ/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/LKQ3RVSMVZNZNO4D65W2CZZ4DMYFZN2Q/",
+      "https://www.oracle.com//security-alerts/cpujul2021.html",
+      "http://www.openwall.com/lists/oss-security/2020/11/20/4",
+      "https://www.oracle.com/security-alerts/cpuoct2021.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-15596",
+    "漏洞描述": "The ALPS ALPINE touchpad driver before 8.2206.1717.634, as used on various Dell, HP, and Lenovo laptops, allows attackers to conduct Path Disclosure attacks via a \"fake\" DLL file.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hp.com/document/c06706305",
+      "https://seclists.org/fulldisclosure/2020/Jul/30"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年08月12日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-14929",
+    "漏洞描述": "Alpine before 2.23 silently proceeds to use an insecure connection after a /tls is sent in certain circumstances involving PREAUTH, which is a less secure behavior than the alternative of closing the connection and letting the user decide what they would like to do.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://mailman13.u.washington.edu/pipermail/alpine-info/2020-June/008989.html",
+      "https://lists.debian.org/debian-lts-announce/2020/06/msg00025.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/ZJLY6JDVGDNAJZ3UQDWYWSDBWOAOXMNX/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/YFXQGKZZMP3VSTLZVO5Z7Z6USYIW37A6/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年06月19日"
+  }
+]

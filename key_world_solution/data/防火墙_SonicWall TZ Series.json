@@ -1,0 +1,66 @@
+[
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall SMA1000",
+    "CVE编号": "CVE-2022-22282",
+    "漏洞描述": "SonicWall SMA1000 series firmware 12.4.0, 12.4.1-02965 and earlier versions incorrectly restricts access to a resource using HTTP connections from an unauthorized actor leading to Improper Access Control vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0009"
+    ],
+    "受影响版本": [
+      "12.4.0",
+      "12.4.1"
+    ],
+    "公开日期": "2022年05月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SMA100",
+    "CVE编号": "CVE-2022-1703",
+    "漏洞描述": "Improper neutralization of special elements in the SonicWall SSL-VPN SMA100 series management interface allows a remote authenticated attacker to inject OS Commands which potentially leads to remote command execution vulnerability or denial of service (DoS) attack.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0010"
+    ],
+    "受影响版本": [
+      "10.2.0.9-41sv and earlier",
+      "10.2.1.4-31sv and earlier"
+    ],
+    "公开日期": "2022年06月03日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall SMA1000",
+    "CVE编号": "CVE-2022-1702",
+    "漏洞描述": "SonicWall SMA1000 series firmware 12.4.0, 12.4.1-02965 and earlier versions accept a user-controlled input that specifies a link to an external site and uses that link in a redirect which leads to Open redirection vulnerability.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0009"
+    ],
+    "受影响版本": [
+      "12.4.0",
+      "12.4.1"
+    ],
+    "公开日期": "2022年05月13日"
+  },
+  {
+    "设备品牌": "SonicWall",
+    "设备类型": "防火墙",
+    "产品型号": "SonicWall SMA1000",
+    "CVE编号": "CVE-2022-1701",
+    "漏洞描述": "SonicWall SMA1000 series firmware 12.4.0, 12.4.1-02965 and earlier versions uses a shared and hard-coded encryption key to store data.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0009"
+    ],
+    "受影响版本": [
+      "12.4.0",
+      "12.4.1"
+    ],
+    "公开日期": "2022年05月13日"
+  }
+]

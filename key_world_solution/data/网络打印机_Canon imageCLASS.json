@@ -1,0 +1,85 @@
+[
+  {
+    "设备品牌": "Canon",
+    "设备类型": "网络打印机",
+    "产品型号": "imageCLASS MF644Cdw",
+    "CVE编号": "CVE-2022-43608",
+    "漏洞描述": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Canon imageCLASS MF644Cdw 10.03 printers. Authentication is not required to exploit this vulnerability. The specific flaw exists within the BJNP service. The issue results from the lack of proper validation of user-supplied data, which can result in an integer overflow before allocating a buffer. An attacker can leverage this vulnerability to execute code in the context of root. Was ZDI-CAN-16032.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-22-1666/",
+      "https://www.psirt.canon/advisory-information/cve-2022-43608_20221125"
+    ],
+    "受影响版本": [
+      "10.03"
+    ],
+    "公开日期": "2023年03月29日"
+  },
+  {
+    "设备品牌": "Canon",
+    "设备类型": "网络打印机",
+    "产品型号": "imageCLASS MF644Cdw",
+    "CVE编号": "CVE-2022-24674",
+    "漏洞描述": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Canon imageCLASS MF644Cdw 10.02 printers. Authentication is not required to exploit this vulnerability. The specific flaw exists within the privet API. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a fixed-length stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of root. Was ZDI-CAN-15834.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-22-516/",
+      "https://www.usa.canon.com/internet/portal/us/home/support/product-advisories/detail/canon-laser-printer-and-small-office-multifunctional-printer-measure-against-buffer-overflow/"
+    ],
+    "受影响版本": [
+      "10.02"
+    ],
+    "公开日期": "2023年03月28日"
+  },
+  {
+    "设备品牌": "Canon",
+    "设备类型": "网络打印机",
+    "产品型号": "imageCLASS MF644Cdw",
+    "CVE编号": "CVE-2022-24673",
+    "漏洞描述": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Canon imageCLASS MF644Cdw 10.02 printers. Authentication is not required to exploit this vulnerability. The specific flaw exists within the implementation of the SLP protocol. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a fixed-length stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of root. Was ZDI-CAN-15845.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-22-515/",
+      "https://www.usa.canon.com/support/canon-product-advisories/canon-laser-printer-inkjet-printer-and-small-office-multifunctional-printer-measure-against-buffer-overflow"
+    ],
+    "受影响版本": [
+      "10.02"
+    ],
+    "公开日期": "2023年03月28日"
+  },
+  {
+    "设备品牌": "Canon",
+    "设备类型": "网络打印机",
+    "产品型号": "imageCLASS MF644Cdw",
+    "CVE编号": "CVE-2022-24672",
+    "漏洞描述": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Canon imageCLASS MF644Cdw 10.02 printers. Authentication is not required to exploit this vulnerability. The specific flaw exists within the CADM service. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a fixed-length heap-based buffer. An attacker can leverage this vulnerability to execute code in the context of the service account. Was ZDI-CAN-15802.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-22-514/",
+      "https://www.usa.canon.com/support/canon-product-advisories/canon-laser-printer-inkjet-printer-and-small-office-multifunctio"
+    ],
+    "受影响版本": [
+      "10.02"
+    ],
+    "公开日期": "2023年03月28日"
+  },
+  {
+    "设备品牌": "Canon",
+    "设备类型": "网络打印机",
+    "产品型号": "Canon laser printers and small office multifunctional printers",
+    "CVE编号": "CVE-2021-20877",
+    "漏洞描述": "Cross-site scripting vulnerability in Canon laser printers and small office multifunctional printers (LBP162L/LBP162, MF4890dw, MF269dw/MF265dw/MF264dw/MF262dw, MF249dw/MF245dw/MF244dw/MF242dw/MF232w, and MF229dw/MF224dw/MF222dw sold in Japan, imageCLASS MF Series (MF113W/MF212W/MF217W/MF227DW/MF229DW, MF232W/MF244DW/MF247DW/MF249DW, MF264DW/MF267DW/MF269DW/MF269DW VP, and MF4570DN/MF4570DW/MF4770N/MF4880DW/MF4890DW) and imageCLASS LBP Series (LBP113W/LBP151DW/LBP162DW ) sold in the US, and iSENSYS (LBP162DW, LBP113W, LBP151DW, MF269dw, MF267dw, MF264dw, MF113w, MF249dw, MF247dw, MF244dw, MF237w, MF232w, MF229dw, MF217w, MF212w, MF4780w, and MF4890dw) and imageRUNNER (2206IF, 2204N, and 2204F) sold in Europe) allows remote attackers to inject an arbitrary script via unspecified vectors.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://cweb.canon.jp/e-support/info/211221xss.html",
+      "https://www.usa.canon.com/internet/portal/us/home/support/product-advisories/detail/Service-Notice-Canon-Laser-Printer-and-Small-Office-Multifunctional-Printer-related-to-cross-site-scripting",
+      "https://www.canon-europe.com/support/product-security-latest-news/",
+      "https://jvn.jp/en/jp/JVN64806328/index.html",
+      "https://jvn.jp/jp/JVN64806328/index.html"
+    ],
+    "受影响版本": [
+      "LBP162L/LBP162, MF4890dw, MF269dw/MF265dw/MF264dw/MF262dw, MF249dw/MF245dw/MF244dw/MF242dw/MF232w, and MF229dw/MF224dw/MF222dw sold in Japan, imageCLASS MF Series(MF113W/MF212W/MF217W/MF227DW/MF229DW, MF232W/MF244DW/MF247DW/MF249DW, MF264DW/MF267DW/MF269DW/MF269DW VP, and MF4570DN/MF4570DW/MF4770N/MF4880DW/MF4890DW) and imageCLASS LBP Series(LBP113W/LBP151DW/LBP162DW ) sold in the US, and iSENSYS(LBP162DW, LBP113W, LBP151DW, MF269dw, MF267dw, MF264dw, MF113w, MF249dw, MF247dw, MF244dw, MF237w, MF232w, MF229dw, MF217w, MF212w, MF4780w, and MF4890dw) and imageRUNNER(2206IF, 2204N, and 2204F) sold in Europe"
+    ],
+    "公开日期": "2022年02月08日"
+  }
+]

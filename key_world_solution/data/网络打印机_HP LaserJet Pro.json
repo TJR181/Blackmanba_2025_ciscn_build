@@ -1,0 +1,242 @@
+[
+  {
+    "设备品牌": "HP, Inc.",
+    "设备类型": "网络打印机",
+    "产品型号": "Certain HP LaserJet Pro, HP LaserJet Enterprise, HP LaserJet Managed Printers",
+    "CVE编号": "CVE-2025-26508",
+    "漏洞描述": "Certain HP LaserJet Pro, HP LaserJet Enterprise, and HP LaserJet Managed Printers may potentially be vulnerable to Remote Code Execution and Elevation of Privilege when processing a PostScript print job.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hp.com/us-en/document/ish_11953771-11953793-16/hpsbpi04007"
+    ],
+    "受影响版本": [
+      "See HP security bulletin reference for affected versions"
+    ],
+    "公开日期": "2025年02月14日"
+  },
+  {
+    "设备品牌": "HP, Inc.",
+    "设备类型": "网络打印机",
+    "产品型号": "Certain HP LaserJet Pro, HP LaserJet Enterprise, HP LaserJet Managed Printers",
+    "CVE编号": "CVE-2025-26507",
+    "漏洞描述": "Certain HP LaserJet Pro, HP LaserJet Enterprise, and HP LaserJet Managed Printers may potentially be vulnerable to Remote Code Execution and Elevation of Privilege when processing a PostScript print job.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hp.com/us-en/document/ish_11953771-11953793-16/hpsbpi04007"
+    ],
+    "受影响版本": [
+      "See HP security bulletin reference for affected versions"
+    ],
+    "公开日期": "2025年02月14日"
+  },
+  {
+    "设备品牌": "HP, Inc.",
+    "设备类型": "网络打印机",
+    "产品型号": "Certain HP LaserJet Pro, HP LaserJet Enterprise, HP LaserJet Managed Printers",
+    "CVE编号": "CVE-2025-26506",
+    "漏洞描述": "Certain HP LaserJet Pro, HP LaserJet Enterprise, and HP LaserJet Managed Printers may potentially be vulnerable to Remote Code Execution and Elevation of Privilege when processing a PostScript print job.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hp.com/us-en/document/ish_11953771-11953793-16/hpsbpi04007"
+    ],
+    "受影响版本": [
+      "See HP security bulletin reference for affected versions"
+    ],
+    "公开日期": "2025年02月14日"
+  },
+  {
+    "设备品牌": "HP Inc.",
+    "设备类型": "网络打印机",
+    "产品型号": "Certain HP LaserJet Pro Printers",
+    "CVE编号": "CVE-2025-1004",
+    "漏洞描述": "Certain HP LaserJet Pro printers may potentially\nexperience a denial of service when a user sends a raw JPEG file to the printer\nvia IPP (Internet Printing Protocol).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://support.hp.com/au-en/document/ish_11927586-11927615-16/hpsbpi03998"
+    ],
+    "受影响版本": [
+      "See HP Security Bulletin reference for affected versions."
+    ],
+    "公开日期": "2025年02月06日"
+  },
+  {
+    "设备品牌": "HP Inc.",
+    "设备类型": "网络打印机",
+    "产品型号": "Certain HP LaserJet Pro Devices",
+    "CVE编号": "CVE-2024-2301",
+    "漏洞描述": "Certain HP LaserJet Pro devices are potentially vulnerable to a Cross-Site Scripting (XSS) attack via the web management interface of the device. ",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hp.com/us-en/document/ish_10617756-10617781-16/hpsbpi03940"
+    ],
+    "受影响版本": [
+      "See HP Security Bulletin reference for affected versions."
+    ],
+    "公开日期": "2024年05月23日"
+  },
+  {
+    "设备品牌": "HP Inc.",
+    "设备类型": "网络打印机",
+    "产品型号": "Certain LaserJet Pro, HP Enterprise LaserJet, HP LaserJet Managed Printers",
+    "CVE编号": "CVE-2024-0794",
+    "漏洞描述": "Certain HP LaserJet Pro, HP Enterprise LaserJet, and HP LaserJet Managed Printers are potentially vulnerable to Remote Code Execution due to buffer overflow when rendering fonts embedded in a PDF file.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hp.com/us-en/document/ish_10174031-10174074-16/"
+    ],
+    "受影响版本": [
+      "See HP Security Bulletin reference for affected versions."
+    ],
+    "公开日期": "2024年02月20日"
+  },
+  {
+    "设备品牌": "HP Inc.",
+    "设备类型": "网络打印机",
+    "产品型号": "HP LaserJet Pro",
+    "CVE编号": "CVE-2023-35178",
+    "漏洞描述": "Certain HP LaserJet Pro print products are potentially vulnerable to Buffer Overflow when performing a GET request to scan jobs.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hp.com/us-en/document/ish_8651729-8651769-16/hpsbpi03854"
+    ],
+    "受影响版本": [
+      "See HP Security Bulletin reference for affected versions."
+    ],
+    "公开日期": "2023年06月30日"
+  },
+  {
+    "设备品牌": "HP Inc.",
+    "设备类型": "网络打印机",
+    "产品型号": "HP LaserJet Pro",
+    "CVE编号": "CVE-2023-35177",
+    "漏洞描述": "Certain HP LaserJet Pro print products are potentially vulnerable to a stack-based buffer overflow related to the compact font format parser.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hp.com/us-en/document/ish_8651888-8651916-16/hpsbpi03853"
+    ],
+    "受影响版本": [
+      "See HP Security Bulletin reference for affected versions."
+    ],
+    "公开日期": "2023年06月30日"
+  },
+  {
+    "设备品牌": "HP Inc.",
+    "设备类型": "网络打印机",
+    "产品型号": "HP LaserJet Pro",
+    "CVE编号": "CVE-2023-35176",
+    "漏洞描述": "Certain HP LaserJet Pro print products are potentially vulnerable to Buffer Overflow and/or Denial of Service when using the backup & restore feature through the embedded web service on the device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hp.com/us-en/document/ish_8651671-8651697-16/hpsbpi03852"
+    ],
+    "受影响版本": [
+      "See HP Security Bulletin reference for affected versions."
+    ],
+    "公开日期": "2023年06月30日"
+  },
+  {
+    "设备品牌": "HP Inc.",
+    "设备类型": "网络打印机",
+    "产品型号": "HP LaserJet Pro",
+    "CVE编号": "CVE-2023-35175",
+    "漏洞描述": "Certain HP LaserJet Pro print products are potentially vulnerable to Potential Remote Code Execution and/or Elevation of Privilege via Server-Side Request Forgery (SSRF) using the Web Service Eventing model.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hp.com/us-en/document/ish_8651322-8651446-16/hpsbpi03851"
+    ],
+    "受影响版本": [
+      "See HP Security Bulletin reference for affected versions."
+    ],
+    "公开日期": "2023年06月30日"
+  },
+  {
+    "设备品牌": "HP Inc.",
+    "设备类型": "网络打印机",
+    "产品型号": "HP LaserJet Pro",
+    "CVE编号": "CVE-2023-27973",
+    "漏洞描述": "Certain HP LaserJet Pro print products are potentially vulnerable to Heap Overflow and/or Remote Code Execution.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hp.com/us-en/document/ish_7920137-7920161-16/hpsbpi03841"
+    ],
+    "受影响版本": [
+      "See HP Security Bulletin reference for affected versions."
+    ],
+    "公开日期": "2023年04月28日"
+  },
+  {
+    "设备品牌": "HP Inc.",
+    "设备类型": "网络打印机",
+    "产品型号": "HP LaserJet Pro",
+    "CVE编号": "CVE-2023-27972",
+    "漏洞描述": "Certain HP LaserJet Pro print products are potentially vulnerable to Buffer Overflow and/or Remote Code Execution.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hp.com/us-en/document/ish_7920078-7920104-16/hpsbpi03840"
+    ],
+    "受影响版本": [
+      "See HP Security Bulletin reference for affected versions."
+    ],
+    "公开日期": "2023年04月28日"
+  },
+  {
+    "设备品牌": "HP Inc.",
+    "设备类型": "网络打印机",
+    "产品型号": "HP LaserJet Pro",
+    "CVE编号": "CVE-2023-27971",
+    "漏洞描述": "Certain HP LaserJet Pro print products are potentially vulnerable to Buffer Overflow and/or Elevation of Privilege.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hp.com/us-en/document/ish_7919962-7920003-16/hpsbpi03839"
+    ],
+    "受影响版本": [
+      "See HP Security Bulletin reference for affected versions."
+    ],
+    "公开日期": "2023年04月28日"
+  },
+  {
+    "设备品牌": "HP Inc.",
+    "设备类型": "网络打印机",
+    "产品型号": "HP LaserJet Pro",
+    "CVE编号": "CVE-2023-26301",
+    "漏洞描述": "Certain HP LaserJet Pro print products are potentially vulnerable to an Elevation of Privilege and/or Information Disclosure related to a lack of authentication with certain endpoints.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hp.com/us-en/document/ish_8746769-8746795-16/hpsbpi03855"
+    ],
+    "受影响版本": [
+      "See HP Security Bulletin reference for affected versions."
+    ],
+    "公开日期": "2023年07月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络打印机",
+    "产品型号": "HP LaserJet Pro M501 Series J8H61A; HP LaserJet Pro M501 Series J8H60A",
+    "CVE编号": "CVE-2021-3705",
+    "漏洞描述": "Potential security vulnerabilities have been discovered on a certain HP LaserJet Pro printer that may allow an unauthorized user to reconfigure, reset the device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hp.com/us-en/document/ish_4411563-4411589-16/hpsbpi03741"
+    ],
+    "受影响版本": [
+      "before 20210810"
+    ],
+    "公开日期": "2021年11月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "网络打印机",
+    "产品型号": "HP LaserJet Pro M501 Series J8H61A; HP LaserJet Pro M501 Series J8H60A",
+    "CVE编号": "CVE-2021-3704",
+    "漏洞描述": "Potential security vulnerabilities have been discovered on a certain HP LaserJet Pro printer that may allow a Denial of Service on the device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.hp.com/us-en/document/ish_4411563-4411589-16/hpsbpi03741"
+    ],
+    "受影响版本": [
+      "before 20210810"
+    ],
+    "公开日期": "2021年11月01日"
+  }
+]

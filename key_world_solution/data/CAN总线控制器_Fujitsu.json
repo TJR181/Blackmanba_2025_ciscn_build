@@ -1,0 +1,313 @@
+[
+  {
+    "设备品牌": "Acer",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "vz2694g",
+    "CVE编号": "CVE-2024-8105",
+    "漏洞描述": "A vulnerability related to the use an insecure Platform Key (PK) has been discovered. An attacker with the compromised PK private key can create malicious UEFI software that is signed with a trusted key that has been compromised.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://uefi.org/specs/UEFI/2.9_A/32_Secure_Boot_and_Driver_Signing.html",
+      "https://www.binarly.io/advisories/brly-2024-005",
+      "https://kb.cert.org/vuls/id/455367",
+      "https://github.com/binarly-io/Vulnerability-REsearch/blob/main/PKfail/BRLY-2024-005.md",
+      "https://www.supermicro.com/en/support/security_PKFAIL_Jul_2024",
+      "https://www.intel.com/content/www/us/en/security-center/announcement/intel-security-announcement-2024-07-25-001.html",
+      "https://security.ts.fujitsu.com/ProductSecurity/content/Fujitsu-PSIRT-FJ-ISS-2024-072412-Security-Notice.pdf",
+      "https://www.gigabyte.com/us/Support/Security/2205"
+    ],
+    "受影响版本": [
+      "d61d0e09d008bfb29bc32532b1b94fcc4ee2af5e8372c6d38722a4e73ecc71d6"
+    ],
+    "公开日期": "2024年08月26日"
+  },
+  {
+    "设备品牌": "Fujitsu Limited",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "FUJITSU Network Edgiot GW1500 (M2M-GW for FENICS)",
+    "CVE编号": "CVE-2024-40617",
+    "漏洞描述": "Path traversal vulnerability exists in FUJITSU Network Edgiot GW1500 (M2M-GW for FENICS). If a remote authenticated attacker with User Class privilege sends a specially crafted request to the affected product, access restricted files containing sensitive information may be accessed. As a result, Administrator Class privileges of the product may be hijacked.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://fenics.fujitsu.com/networkservice/m2m/download/update-m.html",
+      "https://jvn.jp/en/jp/JVN25583987/"
+    ],
+    "受影响版本": [
+      "prior to V02L19C01"
+    ],
+    "公开日期": "2024年07月17日"
+  },
+  {
+    "设备品牌": "Fsas Technologies Inc.",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "FUJITSU Business Application ID Link Manager II",
+    "CVE编号": "CVE-2024-34024",
+    "漏洞描述": "Observable response discrepancy issue exists in ID Link Manager and FUJITSU Software TIME CREATOR. If this vulnerability is exploited, an unauthenticated remote attacker may determine if a username is valid or not.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.fujitsu.com/jp/group/fsas/about/resources/security/2024/0617.html",
+      "https://jvn.jp/en/jp/JVN65171386/"
+    ],
+    "受影响版本": [
+      "V1.8 and earlier"
+    ],
+    "公开日期": "2024年06月18日"
+  },
+  {
+    "设备品牌": "Fsas Technologies Inc.",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "FUJITSU Business Application ID Link Manager II",
+    "CVE编号": "CVE-2024-33622",
+    "漏洞描述": "Missing authentication for critical function vulnerability exists in ID Link Manager and FUJITSU Software TIME CREATOR. If this vulnerability is exploited, sensitive information may be obtained and/or the information stored in the database may be altered by a remote authenticated attacker.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.fujitsu.com/jp/group/fsas/about/resources/security/2024/0617.html",
+      "https://jvn.jp/en/jp/JVN65171386/"
+    ],
+    "受影响版本": [
+      "V1.8 and earlier"
+    ],
+    "公开日期": "2024年06月18日"
+  },
+  {
+    "设备品牌": "Fsas Technologies Inc.",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "FUJITSU Business Application ID Link Manager II",
+    "CVE编号": "CVE-2024-33620",
+    "漏洞描述": "Absolute path traversal vulnerability exists in ID Link Manager and FUJITSU Software TIME CREATOR. If this vulnerability is exploited, the file contents including sensitive information on the server may be retrieved by an unauthenticated remote attacker.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.fujitsu.com/jp/group/fsas/about/resources/security/2024/0617.html",
+      "https://jvn.jp/en/jp/JVN65171386/"
+    ],
+    "受影响版本": [
+      "V1.8 and earlier"
+    ],
+    "公开日期": "2024年06月18日"
+  },
+  {
+    "设备品牌": "Fujitsu ",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Arconte Áurea",
+    "CVE编号": "CVE-2023-4096",
+    "漏洞描述": "Weak password recovery mechanism vulnerability in Fujitsu Arconte Áurea version 1.5.0.0, which exploitation could allow an attacker to perform a brute force attack on the emailed PIN number in order to change the password of a legitimate user.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.incibe.es/en/incibe-cert/notices/aviso/multiple-vulnerabilities-fujitsu-arconte-aurea"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年09月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-39903",
+    "漏洞描述": "An issue was discovered in Fujitsu Software Infrastructure Manager (ISM) before 2.8.0.061. The ismsnap component (in this specific case at /var/log/fujitsu/ServerViewSuite/ism/FirmwareManagement/FirmwareManagement.log) allows insecure collection and storage of authorization credentials in cleartext. That occurs when users perform any ISM Firmware Repository Address setup test (Test the Connection), or regularly authorize against an already configured remote firmware repository site, as set up in ISM Firmware Repository Address. A privileged attacker is therefore able to potentially gather the associated ismsnap maintenance data, in the same manner as a trusted party allowed to export ismsnap data from ISM. The preconditions for an ISM installation to be generally vulnerable are that the Download Firmware (Firmware Repository Server) function is enabled and configured, and that the character \\ (backslash) is used in a user credential (i.e., user/ID or password) of the remote proxy host / firmware repository server. NOTE: this may overlap CVE-2023-39379.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://security.ts.fujitsu.com/ProductSecurity/content/Fujitsu-PSIRT-ISS-IS-2023-071410-Security-Notice.pdf",
+      "https://security.ts.fujitsu.com/IndexDownload.asp?SoftwareGuid=a0131919-6d84-43b4-800e-d7f78200a70f"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年08月07日"
+  },
+  {
+    "设备品牌": "Fujitsu Limited",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Fujitsu Software Infrastructure Manager Advanced Edition",
+    "CVE编号": "CVE-2023-39379",
+    "漏洞描述": "Fujitsu Software Infrastructure Manager (ISM) stores sensitive information at the product's maintenance data (ismsnap) in cleartext form. As a result, the password for the proxy server that is configured in ISM may be retrieved. Affected products and versions are as follows: Fujitsu Software Infrastructure Manager Advanced Edition V2.8.0.060, Fujitsu Software Infrastructure Manager Advanced Edition for PRIMEFLEX V2.8.0.060, and Fujitsu Software Infrastructure Manager Essential Edition V2.8.0.060.\r\n",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://support.ts.fujitsu.com/IndexProdSecurity.asp?lng=en",
+      "https://jvn.jp/en/jp/JVN38847224/"
+    ],
+    "受影响版本": [
+      "V2.8.0.060"
+    ],
+    "公开日期": "2023年08月04日"
+  },
+  {
+    "设备品牌": "Fujitsu Limited",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Si-R 30B",
+    "CVE编号": "CVE-2023-38555",
+    "漏洞描述": "Authentication bypass vulnerability in Fujitsu network devices Si-R series and SR-M series allows a network-adjacent unauthenticated attacker to obtain, change, and/or reset configuration settings of the affected products. Affected products and versions are as follows: Si-R 30B all versions, Si-R 130B all versions, Si-R 90brin all versions, Si-R570B all versions, Si-R370B all versions, Si-R220D all versions, Si-R G100 V02.54 and earlier, Si-R G200 V02.54 and earlier, Si-R G100B V04.12 and earlier, Si-R G110B V04.12 and earlier, Si-R G200B V04.12 and earlier, Si-R G210 V20.52 and earlier, Si-R G211 V20.52 and earlier, Si-R G120 V20.52 and earlier, Si-R G121 V20.52 and earlier, and SR-M 50AP1 all versions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.fujitsu.com/jp/products/network/support/2023/fjlan-01/",
+      "https://jvn.jp/en/vu/JVNVU96643580/"
+    ],
+    "受影响版本": [
+      "All versions "
+    ],
+    "公开日期": "2023年07月26日"
+  },
+  {
+    "设备品牌": "Fujitsu Limited ",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "IP-HE950E",
+    "CVE编号": "CVE-2023-38433",
+    "漏洞描述": "Fujitsu Real-time Video Transmission Gear \"IP series\" use hard-coded credentials, which may allow a remote unauthenticated attacker to initialize or reboot the products, and as a result, terminate the video transmission. Affected products and versions are as follows: IP-HE950E firmware versions V01L001 to V01L053, IP-HE950D firmware versions V01L001 to V01L053, IP-HE900E firmware versions V01L001 to V01L010, IP-HE900D firmware versions V01L001 to V01L004, IP-900E / IP-920E firmware versions V01L001 to V02L061, IP-900D / IP-900ⅡD / IP-920D firmware versions V01L001 to V02L061, IP-90 firmware versions V01L001 to V01L013, and IP-9610 firmware versions V01L001 to V02L007.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.fujitsu.com/global/products/computing/peripheral/video/download/",
+      "https://jvn.jp/en/jp/JVN95727578/"
+    ],
+    "受影响版本": [
+      "firmware versions V01L001 to V01L053"
+    ],
+    "公开日期": "2023年07月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-31795",
+    "漏洞描述": "An issue was discovered on Fujitsu ETERNUS CentricStor CS8000 (Control Center) devices before 8.1A SP02 P04. The vulnerability resides in the grel_finfo function in grel.php. An attacker is able to influence the username (user), password (pw), and file-name (file) parameters and inject special characters such as semicolons, backticks, or command-substitution sequences in order to force the application to execute arbitrary commands.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://cwe.mitre.org/data/definitions/78.html",
+      "https://support.ts.fujitsu.com/ProductSecurity/content/Fujitsu-PSIRT-PSS-IS-2022-050316-Security-Notice-SF.pdf",
+      "https://research.nccgroup.com/2022/05/27/technical-advisory-fujitsu-centricstor-control-center-v8-1-unauthenticated-command-injection/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年06月20日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-31794",
+    "漏洞描述": "An issue was discovered on Fujitsu ETERNUS CentricStor CS8000 (Control Center) devices before 8.1A SP02 P04. The vulnerability resides in the requestTempFile function in hw_view.php. An attacker is able to influence the unitName POST parameter and inject special characters such as semicolons, backticks, or command-substitution sequences in order to force the application to execute arbitrary commands.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://cwe.mitre.org/data/definitions/78.html",
+      "https://support.ts.fujitsu.com/ProductSecurity/content/Fujitsu-PSIRT-PSS-IS-2022-050316-Security-Notice-SF.pdf",
+      "https://research.nccgroup.com/2022/05/27/technical-advisory-fujitsu-centricstor-control-center-v8-1-unauthenticated-command-injection/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年06月20日"
+  },
+  {
+    "设备品牌": "FUJITSU LIMITED",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "IPCOM EX2 series, IPCOM EX series, IPCOM VE2 series, and IPCOM VA2/VE1 series",
+    "CVE编号": "CVE-2022-29516",
+    "漏洞描述": "The web console of FUJITSU Network IPCOM series (IPCOM EX2 IN(3200, 3500), IPCOM EX2 LB(1100, 3200, 3500), IPCOM EX2 SC(1100, 3200, 3500), IPCOM EX2 NW(1100, 3200, 3500), IPCOM EX2 DC, IPCOM EX2 DC, IPCOM EX IN(2300, 2500, 2700), IPCOM EX LB(1100, 1300, 2300, 2500, 2700), IPCOM EX SC(1100, 1300, 2300, 2500, 2700), and IPCOM EX NW(1100, 1300, 2300, 2500, 2700)) allows a remote attacker to execute an arbitrary OS command via unspecified vectors.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.fujitsu.com/jp/products/network/support/2022/ipcom-01/",
+      "https://jvn.jp/en/jp/JVN96561229/index.html"
+    ],
+    "受影响版本": [
+      "IPCOM EX2 IN(3200, 3500), IPCOM EX2 LB(1100, 3200, 3500), IPCOM EX2 SC(1100, 3200, 3500), IPCOM EX2 NW(1100, 3200, 3500), IPCOM EX2 DC, IPCOM EX2 DC, IPCOM EX IN(2300, 2500, 2700), IPCOM EX LB(1100, 1300, 2300, 2500, 2700), IPCOM EX SC(1100, 1300, 2300, 2500, 2700), and IPCOM EX NW(1100, 1300, 2300, 2500, 2700)"
+    ],
+    "公开日期": "2022年05月18日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-28806",
+    "漏洞描述": "An issue was discovered on certain Fujitsu LIEFBOOK devices (A3510, U9310, U7511/U7411/U7311, U9311, E5510/E5410, U7510/U7410/U7310, E459/E449) with BIOS versions before v1.09 (A3510), v2.17 (U9310), v2.30 (U7511/U7411/U7311), v2.33 (U9311), v2.23 (E5510), v2.19 (U7510/U7410), v2.13 (U7310), and v1.09 (E459/E449). The FjGabiFlashCoreAbstractionSmm driver registers a Software System Management Interrupt (SWSMI) handler that is not sufficiently validated to ensure that the CommBuffer (or any other communication buffer's nested contents) are not pointing to SMRAM contents. A potential attacker can therefore write fixed data to SMRAM, which could lead to data corruption inside this memory (e.g., change the SMI handler's code or modify SMRAM map structures to break input pointer validation for other SMI handlers). Thus, the attacker could elevate privileges from ring 0 to ring -2 and execute arbitrary code in SMM.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.binarly.io/advisories",
+      "https://kb.cert.org/vuls/id/796611",
+      "https://support.ts.fujitsu.com/ProductSecurity/content/Fujitsu-PSIRT-FCCL-IS-2021-090903-Security-Advisory.asp",
+      "http://www.fmworld.net/biz/common/insyde/20220210/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年05月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-27089",
+    "漏洞描述": "In Fujitsu PlugFree Network <= 7.3.0.3, an Unquoted service path in PFNService.exe software allows a local attacker to potentially escalate privileges to system level.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://hansesecure.de/2022/03/schwachstelle-in-fujitsu-plugfree-network/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年04月11日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2021-47149",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: fujitsu: fix potential null-ptr-deref\n\nIn fmvj18x_get_hwinfo(), if ioremap fails there will be NULL pointer\nderef. To fix this, check the return value of ioremap and return -1\nto the caller in case of failure.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/b92170e209f7746ed72eaac98f2c2f4b9af734e6",
+      "https://git.kernel.org/stable/c/6dbf1101594f7c76990b63c35b5a40205a914b6b",
+      "https://git.kernel.org/stable/c/c4f1c23edbe921ab2ecd6140d700e756cd44c5f7",
+      "https://git.kernel.org/stable/c/7883d3895d0fbb0ba9bff0f8665f99974b45210f",
+      "https://git.kernel.org/stable/c/22049c3d40f08facd1867548716a484dad6b3251",
+      "https://git.kernel.org/stable/c/71723a796ab7881f491d663c6cd94b29be5fba50",
+      "https://git.kernel.org/stable/c/f14bf57a08779a5dee9936f63ada0149ea89c5e6",
+      "https://git.kernel.org/stable/c/52202be1cd996cde6e8969a128dc27ee45a7cb5e"
+    ],
+    "受影响版本": [
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+      "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2"
+    ],
+    "公开日期": "2024年03月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-29127",
+    "漏洞描述": "An issue was discovered on Fujitsu Eternus Storage DX200 S4 devices through 2020-11-25. After logging into the portal as a root user (using any web browser), the portal can be accessed with root privileges when the URI cgi-bin/csp?cspid={XXXXXXXXXX}&csppage=cgi_PgOverview&csplang=en is visited from a different web browser.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.first.org/members/teams/fujitsu_psirt",
+      "http://packetstormsecurity.com/files/160255/Fujitsu-Eternus-Storage-DX200-S4-Broken-Authentication.html",
+      "https://cxsecurity.com/issue/WLB-2020110215",
+      "https://seccops.com/fujitsu-eternus-storage-dx200-s4-broken-authentication/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月30日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "CAN总线控制器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-17457",
+    "漏洞描述": "Fujitsu ServerView Suite iRMC before 9.62F allows XSS. An authenticated attacker can store an XSS payload in the PSCU_FILE_INIT field of a Save Configuration XML document. The payload is triggered in the HTTP error response pages.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.gruppotim.it/redteam",
+      "https://support.ts.fujitsu.com/IndexDownload.asp?Softwareguid=C67A44AE-B022-4150-8621-C4393C007ED9"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年03月17日"
+  }
+]

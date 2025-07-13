@@ -1,0 +1,139 @@
+[
+  {
+    "设备品牌": "Gosuncn Technology Group",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Audio-Visual Integrated Management Platform",
+    "CVE编号": "CVE-2025-4536",
+    "漏洞描述": "A vulnerability has been found in Gosuncn Technology Group Audio-Visual Integrated Management Platform 1.0 and classified as critical. Affected by this vulnerability is an unknown functionality of the file /sysmgr/user/listByPage. The manipulation leads to information disclosure. The attack can be launched remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://wiki.shikangsi.com/post/share/ab0b0245-dc38-4b27-80e8-bc61de83692c"
+    ],
+    "受影响版本": [
+      "1.0"
+    ],
+    "公开日期": "2025年05月11日"
+  },
+  {
+    "设备品牌": "Gosuncn Technology Group",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Audio-Visual Integrated Management Platform",
+    "CVE编号": "CVE-2025-4535",
+    "漏洞描述": "A vulnerability, which was classified as problematic, was found in Gosuncn Technology Group Audio-Visual Integrated Management Platform 4.0. Affected is an unknown function of the file /config/config.properties of the component Configuration File Handler. The manipulation leads to information disclosure. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://wiki.shikangsi.com/post/share/d9f6cb0a-a673-472c-812c-7ba9545bfba8"
+    ],
+    "受影响版本": [
+      "4.0"
+    ],
+    "公开日期": "2025年05月11日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-26837",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: bridge: switchdev: Skip MDB replays of deferred events on offload\n\nBefore this change, generation of the list of MDB events to replay\nwould race against the creation of new group memberships, either from\nthe IGMP/MLD snooping logic or from user configuration.\n\nWhile new memberships are immediately visible to walkers of\nbr->mdb_list, the notification of their existence to switchdev event\nsubscribers is deferred until a later point in time. So if a replay\nlist was generated during a time that overlapped with such a window,\nit would also contain a replay of the not-yet-delivered event.\n\nThe driver would thus receive two copies of what the bridge internally\nconsidered to be one single event. On destruction of the bridge, only\na single membership deletion event was therefore sent. As a\nconsequence of this, drivers which reference count memberships (at\nleast DSA), would be left with orphan groups in their hardware\ndatabase when the bridge was destroyed.\n\nThis is only an issue when replaying additions. While deletion events\nmay still be pending on the deferred queue, they will already have\nbeen removed from br->mdb_list, so no duplicates can be generated in\nthat scenario.\n\nTo a user this meant that old group memberships, from a bridge in\nwhich a port was previously attached, could be reanimated (in\nhardware) when the port joined a new bridge, without the new bridge's\nknowledge.\n\nFor example, on an mv88e6xxx system, create a snooping bridge and\nimmediately add a port to it:\n\n    root@infix-06-0b-00:~$ ip link add dev br0 up type bridge mcast_snooping 1 && \\\n    > ip link set dev x3 up master br0\n\nAnd then destroy the bridge:\n\n    root@infix-06-0b-00:~$ ip link del dev br0\n    root@infix-06-0b-00:~$ mvls atu\n    ADDRESS             FID  STATE      Q  F  0  1  2  3  4  5  6  7  8  9  a\n    DEV:0 Marvell 88E6393X\n    33:33:00:00:00:6a     1  static     -  -  0  .  .  .  .  .  .  .  .  .  .\n    33:33:ff:87:e4:3f     1  static     -  -  0  .  .  .  .  .  .  .  .  .  .\n    ff:ff:ff:ff:ff:ff     1  static     -  -  0  1  2  3  4  5  6  7  8  9  a\n    root@infix-06-0b-00:~$\n\nThe two IPv6 groups remain in the hardware database because the\nport (x3) is notified of the host's membership twice: once via the\noriginal event and once via a replay. Since only a single delete\nnotification is sent, the count remains at 1 when the bridge is\ndestroyed.\n\nThen add the same port (or another port belonging to the same hardware\ndomain) to a new bridge, this time with snooping disabled:\n\n    root@infix-06-0b-00:~$ ip link add dev br1 up type bridge mcast_snooping 0 && \\\n    > ip link set dev x3 up master br1\n\nAll multicast, including the two IPv6 groups from br0, should now be\nflooded, according to the policy of br1. But instead the old\nmemberships are still active in the hardware database, causing the\nswitch to only forward traffic to those groups towards the CPU (port\n0).\n\nEliminate the race in two steps:\n\n1. Grab the write-side lock of the MDB while generating the replay\n   list.\n\nThis prevents new memberships from showing up while we are generating\nthe replay list. But it leaves the scenario in which a deferred event\nwas already generated, but not delivered, before we grabbed the\nlock. Therefore:\n\n2. Make sure that no deferred version of a replay event is already\n   enqueued to the switchdev deferred queue, before adding it to the\n   replay list, when replaying additions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/2d5b4b3376fa146a23917b8577064906d643925f",
+      "https://git.kernel.org/stable/c/603be95437e7fd85ba694e75918067fb9e7754db",
+      "https://git.kernel.org/stable/c/e0b4c5b1d760008f1dd18c07c35af0442e54f9c8",
+      "https://git.kernel.org/stable/c/dc489f86257cab5056e747344f17a164f63bff4b"
+    ],
+    "受影响版本": [
+      "4f2673b3a2b6246729a1ff13b8945a040839dbd3",
+      "4f2673b3a2b6246729a1ff13b8945a040839dbd3",
+      "4f2673b3a2b6246729a1ff13b8945a040839dbd3",
+      "4f2673b3a2b6246729a1ff13b8945a040839dbd3"
+    ],
+    "公开日期": "2024年04月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-48818",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: dsa: mv88e6xxx: don't use devres for mdiobus\n\nAs explained in commits:\n74b6d7d13307 (\"net: dsa: realtek: register the MDIO bus under devres\")\n5135e96a3dd2 (\"net: dsa: don't allocate the slave_mii_bus using devres\")\n\nmdiobus_free() will panic when called from devm_mdiobus_free() <-\ndevres_release_all() <- __device_release_driver(), and that mdiobus was\nnot previously unregistered.\n\nThe mv88e6xxx is an MDIO device, so the initial set of constraints that\nI thought would cause this (I2C or SPI buses which call ->remove on\n->shutdown) do not apply. But there is one more which applies here.\n\nIf the DSA master itself is on a bus that calls ->remove from ->shutdown\n(like dpaa2-eth, which is on the fsl-mc bus), there is a device link\nbetween the switch and the DSA master, and device_links_unbind_consumers()\nwill unbind the Marvell switch driver on shutdown.\n\nsystemd-shutdown[1]: Powering off.\nmv88e6085 0x0000000008b96000:00 sw_gl0: Link is Down\nfsl-mc dpbp.9: Removing from iommu group 7\nfsl-mc dpbp.8: Removing from iommu group 7\n------------[ cut here ]------------\nkernel BUG at drivers/net/phy/mdio_bus.c:677!\nInternal error: Oops - BUG: 0 [#1] PREEMPT SMP\nModules linked in:\nCPU: 0 PID: 1 Comm: systemd-shutdow Not tainted 5.16.5-00040-gdc05f73788e5 #15\npc : mdiobus_free+0x44/0x50\nlr : devm_mdiobus_free+0x10/0x20\nCall trace:\n mdiobus_free+0x44/0x50\n devm_mdiobus_free+0x10/0x20\n devres_release_all+0xa0/0x100\n __device_release_driver+0x190/0x220\n device_release_driver_internal+0xac/0xb0\n device_links_unbind_consumers+0xd4/0x100\n __device_release_driver+0x4c/0x220\n device_release_driver_internal+0xac/0xb0\n device_links_unbind_consumers+0xd4/0x100\n __device_release_driver+0x94/0x220\n device_release_driver+0x28/0x40\n bus_remove_device+0x118/0x124\n device_del+0x174/0x420\n fsl_mc_device_remove+0x24/0x40\n __fsl_mc_device_remove+0xc/0x20\n device_for_each_child+0x58/0xa0\n dprc_remove+0x90/0xb0\n fsl_mc_driver_remove+0x20/0x5c\n __device_release_driver+0x21c/0x220\n device_release_driver+0x28/0x40\n bus_remove_device+0x118/0x124\n device_del+0x174/0x420\n fsl_mc_bus_remove+0x80/0x100\n fsl_mc_bus_shutdown+0xc/0x1c\n platform_shutdown+0x20/0x30\n device_shutdown+0x154/0x330\n kernel_power_off+0x34/0x6c\n __do_sys_reboot+0x15c/0x250\n __arm64_sys_reboot+0x20/0x30\n invoke_syscall.constprop.0+0x4c/0xe0\n do_el0_svc+0x4c/0x150\n el0_svc+0x24/0xb0\n el0t_64_sync_handler+0xa8/0xb0\n el0t_64_sync+0x178/0x17c\n\nSo the same treatment must be applied to all DSA switch drivers, which\nis: either use devres for both the mdiobus allocation and registration,\nor don't use devres at all.\n\nThe Marvell driver already has a good structure for mdiobus removal, so\njust plug in mdiobus_free and get rid of devres.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/8ccebe77df6e0d88c72ba5e69cf1835927e53b6c",
+      "https://git.kernel.org/stable/c/8b626d45127d6f5ada7d815b83cfdc09e8cb1394",
+      "https://git.kernel.org/stable/c/1b451c3994a2d322f8e55032c62c8b47b7d95900",
+      "https://git.kernel.org/stable/c/f53a2ce893b2c7884ef94471f170839170a4eba0"
+    ],
+    "受影响版本": [
+      "ac3a68d56651c3dad2c12c7afce065fe15267f44",
+      "ac3a68d56651c3dad2c12c7afce065fe15267f44",
+      "ac3a68d56651c3dad2c12c7afce065fe15267f44",
+      "ac3a68d56651c3dad2c12c7afce065fe15267f44"
+    ],
+    "公开日期": "2024年07月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-28269",
+    "漏洞描述": "Soyal Technology 701Client 9.0.1 is vulnerable to Insecure permissions via client.exe binary with Authenticated Users group with Full permissions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.zeroscience.mk/en/vulnerabilities",
+      "https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5634.php",
+      "https://www.exploit-db.com/exploits/49679"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年04月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-28055",
+    "漏洞描述": "A vulnerability in the TCL Android Smart TV series V8-R851T02-LF1 V295 and below and V8-T658T01-LF1 V373 and below by TCL Technology Group Corporation allows a local unprivileged attacker, such as a malicious App, to read & write to the /data/vendor/tcl, /data/vendor/upgrade, and /var/TerminalManager directories within the TV file system. An attacker, such as a malicious APK or local unprivileged user could perform fake system upgrades by writing to the /data/vendor/upgrage folder.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://twitter.com/sickcodes/",
+      "https://twitter.com/johnjhacking/",
+      "https://sick.codes/extraordinary-vulnerabilities-discovered-in-tcl-android-tvs-now-worlds-3rd-largest-tv-manufacturer/",
+      "https://github.com/sickcodes/security/blob/master/advisories/SICK-2020-012.md",
+      "https://sick.codes/sick-2020-012",
+      "https://github.com/sickcodes/security/blob/master/etc/CVE-2020-27403_CVE-2020-28055_Press-Statement-and-Questions_11162020.pdf",
+      "https://github.com/sickcodes/security/blob/master/etc/CVE-2020-27403_CVE-2020-28055_GlobalFAQ.pdf",
+      "https://securityledger.com/2020/11/security-holes-opened-back-door-to-tcl-android-smart-tvs/",
+      "https://securityledger.com/2020/11/tv-maker-tcl-denies-back-door-promises-better-process/",
+      "https://support.tcl.com/vulnerabilities-found-in-tcl-android-tvs"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载无线网络模块",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-27403",
+    "漏洞描述": "A vulnerability in the TCL Android Smart TV series V8-R851T02-LF1 V295 and below and V8-T658T01-LF1 V373 and below by TCL Technology Group Corporation allows an attacker on the adjacent network to arbitrarily browse and download sensitive files over an insecure web server running on port 7989 that lists all files & directories. An unprivileged remote attacker on the adjacent network, can download most system files, leading to serious critical information disclosure. Also, some TV models and/or FW versions may expose the webserver with the entire filesystem accessible on another port. For example, nmap scan for all ports run directly from the TV model U43P6046 (Android 8.0) showed port 7983 not mentioned in the original CVE description, but containing the same directory listing of the entire filesystem. This webserver is bound (at least) to localhost interface and accessible freely to all unprivileged installed apps on the Android such as a regular web browser. Any app can therefore read any files of any other apps including Android system settings including sensitive data such as saved passwords, private keys etc.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/sickcodes",
+      "https://github.com/sickcodes/security/blob/master/advisories/SICK-2020-009.md",
+      "https://sick.codes/sick-2020-009",
+      "https://sick.codes/extraordinary-vulnerabilities-discovered-in-tcl-android-tvs-now-worlds-3rd-largest-tv-manufacturer/",
+      "https://github.com/sickcodes/security/issues/1",
+      "https://github.com/sickcodes/security/blob/master/etc/CVE-2020-27403_CVE-2020-28055_Press-Statement-and-Questions_11162020.pdf",
+      "https://github.com/sickcodes/security/blob/master/etc/CVE-2020-27403_CVE-2020-28055_GlobalFAQ.pdf",
+      "https://securityledger.com/2020/11/security-holes-opened-back-door-to-tcl-android-smart-tvs/",
+      "https://securityledger.com/2020/11/tv-maker-tcl-denies-back-door-promises-better-process/",
+      "https://support.tcl.com/vulnerabilities-found-in-tcl-android-tvs"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月10日"
+  }
+]

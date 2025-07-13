@@ -1,0 +1,417 @@
+[
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2024-6814",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System getFilterString SQL Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of NETGEAR ProSAFE Network Management System. Authentication is required to exploit this vulnerability.\n\nThe specific flaw exists within the getFilterString method. The issue results from the lack of proper validation of a user-supplied string before using it to construct SQL queries. An attacker can leverage this vulnerability to execute code in the context of SYSTEM. Was ZDI-CAN-23399.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-901/",
+      "https://kb.netgear.com/000066232/Security-Advisory-for-SQL-Injection-on-the-NMS300-PSV-2024-0019"
+    ],
+    "受影响版本": [
+      "1.7.0.34 x64"
+    ],
+    "公开日期": "2024年08月21日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2024-6813",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System getSortString SQL Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of NETGEAR ProSAFE Network Management System. Authentication is required to exploit this vulnerability.\n\nThe specific flaw exists within the getSortString method. The issue results from the lack of proper validation of a user-supplied string before using it to construct SQL queries. An attacker can leverage this vulnerability to execute code in the context of SYSTEM. Was ZDI-CAN-23207.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-902/",
+      "https://kb.netgear.com/000066231/Security-Advisory-for-SQL-Injection-on-the-NMS300-PSV-2024-0018"
+    ],
+    "受影响版本": [
+      "1.7.0.34 x64"
+    ],
+    "公开日期": "2024年08月21日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2024-5505",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System UpLoadServlet Directory Traversal Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of NETGEAR ProSAFE Network Management System. Authentication is required to exploit this vulnerability.\n\nThe specific flaw exists within the UpLoadServlet class. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to execute code in the context of SYSTEM. Was ZDI-CAN-22724.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-563/"
+    ],
+    "受影响版本": [
+      "1.7.0.34 x64"
+    ],
+    "公开日期": "2024年06月06日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2024-5247",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System UpLoadServlet Unrestricted File Upload Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of NETGEAR ProSAFE Network Management System. Authentication is required to exploit this vulnerability.\n\nThe specific flaw exists within the UpLoadServlet class. The issue results from the lack of proper validation of user-supplied data, which can allow the upload of arbitrary files. An attacker can leverage this vulnerability to execute code in the context of SYSTEM. Was ZDI-CAN-22923.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-498/",
+      "https://kb.netgear.com/000066165/Security-Advisory-for-Missing-Function-Level-Access-Control-on-the-NMS300-PSV-2024-0005"
+    ],
+    "受影响版本": [
+      "1.7.0.34 x64"
+    ],
+    "公开日期": "2024年05月23日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2024-5246",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System Tomcat Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of NETGEAR ProSAFE Network Management System. Authentication is required to exploit this vulnerability.\n\nThe specific flaw exists within the product installer. The issue results from the use of a vulnerable version of Apache Tomcat. An attacker can leverage this vulnerability to execute code in the context of SYSTEM. Was ZDI-CAN-22868.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-497/",
+      "https://kb.netgear.com/000066164/Security-Advisory-for-Multiple-Vulnerabilities-on-the-NMS300-PSV-2024-0003-PSV-2024-0004"
+    ],
+    "受影响版本": [
+      "1.7.0.34 x64"
+    ],
+    "公开日期": "2024年05月23日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2024-5245",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System Default Credentials Local Privilege Escalation Vulnerability. This vulnerability allows local attackers to escalate privileges on affected installations of NETGEAR ProSAFE Network Management System. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.\n\nThe specific flaw exists within the product installer. The issue results from the use of default MySQL credentials. An attacker can leverage this vulnerability to escalate privileges and execute arbitrary code in the context of SYSTEM. Was ZDI-CAN-22755.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-24-496/",
+      "https://kb.netgear.com/000066164/Security-Advisory-for-Multiple-Vulnerabilities-on-the-NMS300-PSV-2024-0003-PSV-2024-0004"
+    ],
+    "受影响版本": [
+      "1.7.0.34 x64"
+    ],
+    "公开日期": "2024年05月23日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2023-50231",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System saveNodeLabel Cross-Site Scripting Privilege Escalation Vulnerability. This vulnerability allows remote attackers to escalate privileges on affected installations of NETGEAR ProSAFE Network Management System. Minimal user interaction is required to exploit this vulnerability. \n\nThe specific flaw exists within the saveNodeLabel method. The issue results from the lack of proper validation of user-supplied data, which can lead to the injection of an arbitrary script. An attacker can leverage this vulnerability to escalate privileges to resources normally protected from the user. Was ZDI-CAN-21838.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1847/",
+      "https://kb.netgear.com/000065901/Security-Advisory-for-Stored-Cross-Site-Scripting-on-the-NMS300-PSV-2023-0106"
+    ],
+    "受影响版本": [
+      "1.7.0.26 x64"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "NETGEAR ProSAFE Network Management System",
+    "CVE编号": "CVE-2023-49694",
+    "漏洞描述": "\n\n\nA low-privileged OS user with access to a Windows host where NETGEAR ProSAFE Network Management System is installed can create arbitrary JSP files in a Tomcat web application directory. The user can then execute the JSP files under the security context of SYSTEM.\n\n\n\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://www.tenable.com/security/research/tra-2023-39",
+      "https://kb.netgear.com/000065885/Security-Advisory-for-Vertical-Privilege-Escalation-on-the-NMS300-PSV-2023-0127"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年11月29日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "NETGEAR ProSAFE Network Management System",
+    "CVE编号": "CVE-2023-49693",
+    "漏洞描述": "\nNETGEAR ProSAFE Network Management System has Java Debug Wire Protocol (JDWP) listening on port 11611 and it is remotely accessible by unauthenticated users, allowing attackers to execute arbitrary code.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.tenable.com/security/research/tra-2023-39",
+      "https://kb.netgear.com/000065886/Security-Advisory-for-Sensitive-Information-Disclosure-on-the-NMS300-PSV-2023-0126"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年11月29日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2023-44450",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System getNodesByTopologyMapSearch SQL Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of NETGEAR ProSAFE Network Management System. Authentication is required to exploit this vulnerability.\n\nThe specific flaw exists within the getNodesByTopologyMapSearch function. The issue results from the lack of proper validation of a user-supplied string before using it to construct SQL queries. An attacker can leverage this vulnerability to execute code in the context of SYSTEM. Was ZDI-CAN-21858.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1718/",
+      "https://kb.netgear.com/000065866/Security-Advisory-for-Multiple-Vulnerabilities-on-the-NMS300-PSV-2023-0114-PSV-2023-0115"
+    ],
+    "受影响版本": [
+      "1.7.0.26 x64"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2023-44449",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System clearAlertByIds SQL Injection Privilege Escalation Vulnerability. This vulnerability allows remote attackers to escalate privileges on affected installations of NETGEAR ProSAFE Network Management System. Authentication is required to exploit this vulnerability.\n\nThe specific flaw exists within the clearAlertByIds function. The issue results from the lack of proper validation of a user-supplied string before using it to construct SQL queries. An attacker can leverage this vulnerability to escalate privileges to resources normally protected from the user. Was ZDI-CAN-21875.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1717/",
+      "https://kb.netgear.com/000065866/Security-Advisory-for-Multiple-Vulnerabilities-on-the-NMS300-PSV-2023-0114-PSV-2023-0115"
+    ],
+    "受影响版本": [
+      "1.7.0.26 x64"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2023-41182",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System ZipUtils Directory Traversal Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of NETGEAR ProSAFE Network Management System. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed.\n\nThe specific flaw exists within the ZipUtils class. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to execute code in the context of SYSTEM. Was ZDI-CAN-19716.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-1284/",
+      "https://kb.netgear.com/000065705/Security-Advisory-for-Post-authentication-Command-Injection-on-the-Prosafe-Network-Management-System-PSV-2023-0037"
+    ],
+    "受影响版本": [
+      "1.7.0.12 (Win64)"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2023-38102",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System createUser Missing Authorization Privilege Escalation Vulnerability. This vulnerability allows remote attackers to escalate privileges on affected installations of NETGEAR ProSAFE Network Management System. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed.\n\nThe specific flaw exists within the createUser function. The issue results from the lack of authorization prior to allowing access to functionality. An attacker can leverage this vulnerability to escalate privileges to resources normally protected from the user. Was ZDI-CAN-19726.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-914/",
+      "https://kb.netgear.com/000065707/Security-Advisory-for-Multiple-Vulnerabilities-on-the-ProSAFE-Network-Management-System-PSV-2023-0024-PSV-2023-0025"
+    ],
+    "受影响版本": [
+      "1.7.0.12 (Win64)"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2023-38101",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System SettingConfigController Exposed Dangerous Function Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of NETGEAR ProSAFE Network Management System. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed.\n\nThe specific flaw exists within the SettingConfigController class. The issue results from an exposed dangerous function. An attacker can leverage this vulnerability to execute code in the context of SYSTEM.\n. Was ZDI-CAN-19725.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-915/",
+      "https://kb.netgear.com/000065707/Security-Advisory-for-Multiple-Vulnerabilities-on-the-ProSAFE-Network-Management-System-PSV-2023-0024-PSV-2023-0025"
+    ],
+    "受影响版本": [
+      "1.7.0.12 (Win64)"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2023-38100",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System clearAlertByIds SQL Injection Privilege Escalation Vulnerability. This vulnerability allows remote attackers to escalate privileges on affected installations of NETGEAR ProSAFE Network Management System. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed.\n\nThe specific flaw exists within the clearAlertByIds function. The issue results from the lack of proper validation of a user-supplied string before using it to construct SQL queries. An attacker can leverage this vulnerability to escalate privileges to resources normally protected from the user. Was ZDI-CAN-19724.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-916/",
+      "https://kb.netgear.com/000065707/Security-Advisory-for-Multiple-Vulnerabilities-on-the-ProSAFE-Network-Management-System-PSV-2023-0024-PSV-2023-0025"
+    ],
+    "受影响版本": [
+      "1.7.0.12 (Win64)"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2023-38099",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System getNodesByTopologyMapSearch SQL Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of NETGEAR ProSAFE Network Management System. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed.\n\nThe specific flaw exists within the getNodesByTopologyMapSearch function. The issue results from the lack of proper validation of a user-supplied string before using it to construct SQL queries. An attacker can leverage this vulnerability to execute code in the context of SYSTEM. Was ZDI-CAN-19723.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-917/",
+      "https://kb.netgear.com/000065707/Security-Advisory-for-Multiple-Vulnerabilities-on-the-ProSAFE-Network-Management-System-PSV-2023-0024-PSV-2023-0025"
+    ],
+    "受影响版本": [
+      "1.7.0.12 (Win64)"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2023-38098",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System UpLoadServlet Unrestricted File Upload Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of NETGEAR ProSAFE Network Management System. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed.\n\nThe specific flaw exists within the UpLoadServlet class. The issue results from the lack of proper validation of user-supplied data, which can allow the upload of arbitrary files. An attacker can leverage this vulnerability to execute code in the context of SYSTEM. Was ZDI-CAN-19720.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-918/",
+      "https://kb.netgear.com/000065707/Security-Advisory-for-Multiple-Vulnerabilities-on-the-ProSAFE-Network-Management-System-PSV-2023-0024-PSV-2023-0025"
+    ],
+    "受影响版本": [
+      "1.7.0.12 (Win64)"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2023-38097",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System BkreProcessThread Exposed Dangerous Function Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of NETGEAR ProSAFE Network Management System. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed.\n\nThe specific flaw exists within the BkreProcessThread class. The issue results from an exposed dangerous function. An attacker can leverage this vulnerability to execute code in the context of SYSTEM.\n. Was ZDI-CAN-19719.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-919/",
+      "https://kb.netgear.com/000065707/Security-Advisory-for-Multiple-Vulnerabilities-on-the-ProSAFE-Network-Management-System-PSV-2023-0024-PSV-2023-0025"
+    ],
+    "受影响版本": [
+      "1.7.0.12 (Win64)"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2023-38096",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System MyHandlerInterceptor Authentication Bypass Vulnerability. This vulnerability allows remote attackers to bypass authentication on affected installations of NETGEAR ProSAFE Network Management System. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the MyHandlerInterceptor class. The issue results from improper implementation of the authentication mechanism. An attacker can leverage this vulnerability to bypass authentication on the system.\n. Was ZDI-CAN-19718.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-920/",
+      "https://kb.netgear.com/000065707/Security-Advisory-for-Multiple-Vulnerabilities-on-the-ProSAFE-Network-Management-System-PSV-2023-0024-PSV-2023-0025"
+    ],
+    "受影响版本": [
+      "1.7.0.12 (Win64)"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2023-38095",
+    "漏洞描述": "NETGEAR ProSAFE Network Management System MFileUploadController Unrestricted File Upload Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of NETGEAR ProSAFE Network Management System. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed.\n\nThe specific flaw exists within the MFileUploadController class. The issue results from the lack of proper validation of user-supplied data, which can allow the upload of arbitrary files. An attacker can leverage this vulnerability to execute code in the context of SYSTEM. Was ZDI-CAN-19717.",
+    "攻击向量": "Network",
+    "厂商补丁链接": [
+      "https://www.zerodayinitiative.com/advisories/ZDI-23-921/",
+      "https://kb.netgear.com/000065707/Security-Advisory-for-Multiple-Vulnerabilities-on-the-ProSAFE-Network-Management-System-PSV-2023-0024-PSV-2023-0025"
+    ],
+    "受影响版本": [
+      "1.7.0.12 (Win64)"
+    ],
+    "公开日期": "2024年05月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-29383",
+    "漏洞描述": "NETGEAR ProSafe SSL VPN firmware FVS336Gv2 and FVS336Gv3 was discovered to contain a SQL injection vulnerability via USERDBDomains.Domainname at cgi-bin/platform.cgi.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.netgear.com/about/security/",
+      "https://github.com/badboycxcc/Netgear-ssl-vpn-20211222"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年05月13日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2021-27276",
+    "漏洞描述": "This vulnerability allows remote attackers to delete arbitrary files on affected installations of NETGEAR ProSAFE Network Management System 1.6.0.26. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed. The specific flaw exists within the MibController class. When parsing the realName parameter, the process does not properly validate a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to create a denial-of-service condition on the system. Was ZDI-CAN-12122.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000062722/Security-Advisory-for-Denial-of-Service-on-NMS300-PSV-2020-0500",
+      "https://www.zerodayinitiative.com/advisories/ZDI-21-359/"
+    ],
+    "受影响版本": [
+      "1.6.0.26"
+    ],
+    "公开日期": "2021年03月29日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2021-27275",
+    "漏洞描述": "This vulnerability allows remote attackers to disclose sensitive information and delete arbitrary files on affected installations of NETGEAR ProSAFE Network Management System 1.6.0.26. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed. The specific flaw exists within the ConfigFileController class. When parsing the realName parameter, the process does not properly validate a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to disclose sensitive information or to create a denial-of-service condition on the system. Was ZDI-CAN-12125.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000062687/Security-Advisory-for-Denial-of-Service-on-NMS300-PSV-2020-0561",
+      "https://www.zerodayinitiative.com/advisories/ZDI-21-358/"
+    ],
+    "受影响版本": [
+      "1.6.0.26"
+    ],
+    "公开日期": "2021年03月29日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2021-27274",
+    "漏洞描述": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of NETGEAR ProSAFE Network Management System 1.6.0.26. Authentication is not required to exploit this vulnerability. The specific flaw exists within the MFileUploadController class. The issue results from the lack of proper validation of a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to execute code in the context of SYSTEM. Was ZDI-CAN-12124.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000062688/Security-Advisory-for-Pre-Authentication-Command-Injection-on-NMS300-PSV-2020-0560",
+      "https://www.zerodayinitiative.com/advisories/ZDI-21-357/"
+    ],
+    "受影响版本": [
+      "1.6.0.26"
+    ],
+    "公开日期": "2021年03月29日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2021-27273",
+    "漏洞描述": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of NETGEAR ProSAFE Network Management System 1.6.0.26. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed. The specific flaw exists within the SettingConfigController class. When parsing the fileName parameter, the process does not properly validate a user-supplied string before using it to execute a system call. An attacker can leverage this vulnerability to execute code in the context of SYSTEM. Was ZDI-CAN-12121.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000062686/Security-Advisory-for-Post-Authentication-Command-Injection-on-NMS300-PSV-2020-0559",
+      "https://www.zerodayinitiative.com/advisories/ZDI-21-356/"
+    ],
+    "受影响版本": [
+      "1.6.0.26"
+    ],
+    "公开日期": "2021年03月29日"
+  },
+  {
+    "设备品牌": "NETGEAR",
+    "设备类型": "路由器",
+    "产品型号": "ProSAFE Network Management System",
+    "CVE编号": "CVE-2021-27272",
+    "漏洞描述": "This vulnerability allows remote attackers to delete arbitrary files on affected installations of NETGEAR ProSAFE Network Management System 1.6.0.26. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed. The specific flaw exists within the ReportTemplateController class. When parsing the path parameter, the process does not properly validate a user-supplied path prior to using it in file operations. An attacker can leverage this vulnerability to create a denial-of-service condition on the system. Was ZDI-CAN-12123.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.netgear.com/000062723/Security-Advisory-for-Denial-of-Service-on-NMS300-PSV-2020-0537",
+      "https://www.zerodayinitiative.com/advisories/ZDI-21-355/"
+    ],
+    "受影响版本": [
+      "1.6.0.26"
+    ],
+    "公开日期": "2021年03月29日"
+  }
+]

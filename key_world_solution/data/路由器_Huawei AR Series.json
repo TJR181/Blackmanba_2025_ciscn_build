@@ -1,0 +1,189 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "HUAWEI Mate 20",
+    "CVE编号": "CVE-2020-9103",
+    "漏洞描述": "HUAWEI Mate 20 smartphones with 9.0.0.205(C00E205R2P1) have a logic error vulnerability. In a special scenario, the system does not properly process. As a result, attackers can perform a series of operations to successfully establish P2P connections that are rejected by the peer end. As a result, the availability of the device is affected.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200812-01-smartphone-en"
+    ],
+    "受影响版本": [
+      "9.0.0.205(C00E205R2P1)"
+    ],
+    "公开日期": "2020年08月17日"
+  },
+  {
+    "设备品牌": "Huawei",
+    "设备类型": "路由器",
+    "产品型号": "HUAWEI Mate 20",
+    "CVE编号": "CVE-2020-9081",
+    "漏洞描述": "There is an improper authorization vulnerability in some Huawei smartphones. An attacker could perform a series of operation in specific mode to exploit this vulnerability. Successful exploit could allow the attacker to bypass app lock. (Vulnerability ID: HWPSIRT-2019-12144)\n\n\n\nThis vulnerability has been assigned a Common Vulnerabilities and Exposures (CVE) ID: CVE-2020-9081.",
+    "攻击向量": "PHYSICAL",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/2020/huawei-sa-20200826-15-smartphone-en"
+    ],
+    "受影响版本": [
+      "Versions earlier than 10.1.0.160(C00E160R3P8)",
+      "Versions earlier than 10.1.0.160(C01E160R2P8)"
+    ],
+    "公开日期": "2024年12月27日"
+  },
+  {
+    "设备品牌": "Huawei",
+    "设备类型": "路由器",
+    "产品型号": "CloudEngine 12800",
+    "CVE编号": "CVE-2020-1870",
+    "漏洞描述": "There is a denial of service vulnerability in some Huawei products. Due to improper memory management, memory leakage may occur in some special cases. Attackers can perform a series of operations to exploit this vulnerability. Successful exploit may cause a denial of service. Affected product versions include: CloudEngine 12800 versions V200R019C00SPC800; CloudEngine 5800 versions V200R019C00SPC800; CloudEngine 6800 versions V200R005C20SPC800, V200R019C00SPC800; CloudEngine 7800 versions V200R019C00SPC800; NE40E versions V800R011C00SPC200, V800R011C00SPC300, V800R011C10SPC100; NE40E-F versions V800R011C00SPC200, V800R011C10SPC100; NE40E-M versions V800R011C00SPC200, V800R011C10SPC100.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200527-01-dos-en"
+    ],
+    "受影响版本": [
+      "V200R019C00SPC800"
+    ],
+    "公开日期": "2020年05月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "Secospace AntiDDoS8000",
+    "CVE编号": "CVE-2020-1864",
+    "漏洞描述": "Some Huawei products have a security vulnerability due to improper authentication. A remote attacker needs to obtain some information and forge the peer device to send specific packets to the affected device. Due to the improper implementation of the authentication function, attackers can exploit the vulnerability to connect to affected devices and execute a series of commands.Affected product versions include:Secospace AntiDDoS8000 versions V500R001C00,V500R001C20,V500R001C60,V500R005C00.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200318-01-authentication-en"
+    ],
+    "受影响版本": [
+      "V500R001C00,V500R001C20,V500R001C60,V500R005C00"
+    ],
+    "公开日期": "2020年03月20日"
+  },
+  {
+    "设备品牌": "Huawei",
+    "设备类型": "路由器",
+    "产品型号": "NIP6800",
+    "CVE编号": "CVE-2020-1858",
+    "漏洞描述": "Huawei products NIP6800 versions V500R001C30, V500R001C60SPC500, and V500R005C00SPC100; Secospace USG6600 versions V500R001C30SPC600, V500R001C60SPC500, and V500R005C00SPC100; and USG9500 versions V500R001C30SPC600, V500R001C60SPC500, and V500R005C00SPC100 have a denial of service vulnerability. Attackers need to perform a series of operations in a special scenario to exploit this vulnerability. Successful exploit may cause the new connections can't be established, result in a denial of service.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200205-01-dos-en",
+      "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200219-04-dos-en"
+    ],
+    "受影响版本": [
+      "V500R001C30",
+      "V500R001C60SPC500",
+      "V500R005C00SPC100"
+    ],
+    "公开日期": "2020年02月17日"
+  },
+  {
+    "设备品牌": "Huawei",
+    "设备类型": "路由器",
+    "产品型号": "NIP6800",
+    "CVE编号": "CVE-2020-1857",
+    "漏洞描述": "Huawei NIP6800 versions V500R001C30, V500R001C60SPC500, and V500R005C00SPC100; and Secospace USG6600 and USG9500 versions V500R001C30SPC200, V500R001C30SPC600, V500R001C60SPC500, and V500R005C00SPC100 have an information leakage vulnerability. Due to improper processing of some data, a local authenticated attacker can exploit this vulnerability through a series of operations. Successful exploitation may cause information leakage.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200205-01-leakage-en"
+    ],
+    "受影响版本": [
+      "V500R001C30",
+      "V500R001C60SPC500",
+      "V500R005C00SPC100"
+    ],
+    "公开日期": "2020年02月17日"
+  },
+  {
+    "设备品牌": "HUAWEI",
+    "设备类型": "路由器",
+    "产品型号": "HUAWEI Mate 20",
+    "CVE编号": "CVE-2020-1831",
+    "漏洞描述": "HUAWEI Mate 20 smartphones with versions earlier than 10.0.0.195(SP31C00E74R3P8) have an improper authorization vulnerability. The digital balance function does not sufficiently restrict the using time of certain user, successful exploit could allow the user break the limit of digital balance function after a series of operations with a PC.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200527-04-smartphone-en"
+    ],
+    "受影响版本": [
+      "Versions earlier than 10.0.0.195(SP31C00E74R3P8)"
+    ],
+    "公开日期": "2020年05月29日"
+  },
+  {
+    "设备品牌": "HUAWEI",
+    "设备类型": "路由器",
+    "产品型号": "HUAWEI Mate 10",
+    "CVE编号": "CVE-2020-1809",
+    "漏洞描述": "HUAWEI Mate 10 smartphones with versions earlier than 10.0.0.143(C00E143R2P4) have an information disclosure vulnerability. The attacker could wake up voice assistant then do a series of crafted voice operation, successful exploit could allow the attacker read certain files without unlock the phone leading to information disclosure.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200527-01-smartphone-en"
+    ],
+    "受影响版本": [
+      "Versions earlier than 10.0.0.143(C00E143R2P4)"
+    ],
+    "公开日期": "2020年05月29日"
+  },
+  {
+    "设备品牌": "Huawei",
+    "设备类型": "路由器",
+    "产品型号": "HUAWEI Mate 20",
+    "CVE编号": "CVE-2020-1807",
+    "漏洞描述": "HUAWEI Mate 20 smartphones with versions earlier than 10.0.0.188(C00E74R3P8) have an improper authorization vulnerability. The software does not properly restrict certain user's modification of certain configuration file, successful exploit could allow the attacker to bypass app lock after a series of operation in ADB mode.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200422-01-smartphone-en"
+    ],
+    "受影响版本": [
+      "Versions earlier than 10.0.0.188(C00E74R3P8)"
+    ],
+    "公开日期": "2020年04月27日"
+  },
+  {
+    "设备品牌": "HUAWEI",
+    "设备类型": "路由器",
+    "产品型号": "HUAWEI P30",
+    "CVE编号": "CVE-2020-1798",
+    "漏洞描述": "HUAWEI P30 smartphones with versions earlier than 10.1.0.135(C00E135R2P11) have an improper authentication vulnerability. A logic error occurs when handling NFC work, an attacker should establish a NFC connection to the target phone, and then do a series of operations on the target phone. Successful exploit could allow a guest user do certain operation which is beyond the guest user's privilege.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200527-02-smartphone-en"
+    ],
+    "受影响版本": [
+      "Versions earlier than 10.1.0.135(C00E135R2P11)"
+    ],
+    "公开日期": "2020年05月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "HUAWEI Mate 20;HUAWEI Mate 30 Pro",
+    "CVE编号": "CVE-2020-1795",
+    "漏洞描述": "There is a logic error vulnerability in several smartphones. The software does not properly restrict certain operation when the Digital Balance function is on. Successful exploit could allow the attacker to bypass the Digital Balance limit after a series of operations.Affected product versions include:HUAWEI Mate 20 versions Versions earlier than 10.0.0.188(C00E74R3P8);HUAWEI Mate 30 Pro versions Versions earlier than 10.0.0.203(C00E202R7P2).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200318-04-smartphone-en"
+    ],
+    "受影响版本": [
+      "Versions earlier than 10.0.0.188(C00E74R3P8)",
+      "Versions earlier than 10.0.0.203(C00E202R7P2)"
+    ],
+    "公开日期": "2020年03月20日"
+  },
+  {
+    "设备品牌": "Huawei",
+    "设备类型": "路由器",
+    "产品型号": "HUAWEI Mate 20",
+    "CVE编号": "CVE-2020-1791",
+    "漏洞描述": "HUAWEI Mate 20 smartphones with versions earlier than 10.0.0.185(C00E74R3P8) have an improper authorization vulnerability. The system has a logic judging error under certain scenario, successful exploit could allow the attacker to switch to third desktop after a series of operation in ADB mode.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200205-01-smartphone-en"
+    ],
+    "受影响版本": [
+      "Versions earlier than 10.0.0.185(C00E74R3P8)"
+    ],
+    "公开日期": "2020年02月18日"
+  }
+]

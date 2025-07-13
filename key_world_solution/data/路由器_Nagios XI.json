@@ -1,0 +1,1246 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-54961",
+    "漏洞描述": "Nagios XI 2024R1.2.2 has an Information Disclosure vulnerability, which allows unauthenticated users to access multiple pages displaying the usernames and email addresses of all current users.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/Sharpe-nl/CVEs/tree/main/CVE-2024-54961"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年02月20日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-54960",
+    "漏洞描述": "A SQL Injection vulnerability in Nagios XI 2024R1.2.2 allows a remote attacker to execute SQL injection via a crafted payload in the History Tab component.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/Sharpe-nl/CVEs/tree/main/CVE-2024-54960"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年02月20日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-54959",
+    "漏洞描述": "Nagios XI 2024R1.2.2 is vulnerable to a Cross-Site Request Forgery (CSRF) attack through the Favorites component, enabling POST-based Cross-Site Scripting (XSS).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/Sharpe-nl/CVEs/tree/main/CVE-2024-54959"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年02月20日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-54958",
+    "漏洞描述": "Nagios XI 2024R1.2.2 is susceptible to a stored Cross-Site Scripting (XSS) vulnerability in the Tools page. This flaw allows an attacker to inject malicious scripts into the Tools interface, which are then stored and executed in the context of other users accessing the page.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/Sharpe-nl/CVEs/tree/main/CVE-2024-54958"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年02月20日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-54957",
+    "漏洞描述": "Nagios XI 2024R1.2.2 is vulnerable to an open redirect flaw on the Tools page, exploitable by users with read-only permissions. This vulnerability allows an attacker to craft a malicious link that redirects users to an arbitrary external URL without their consent.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/products/security/",
+      "https://github.com/Sharpe-nl/CVEs/tree/main/CVE-2024-54957"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年02月27日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-42898",
+    "漏洞描述": "A cross-site scripting (XSS) vulnerability in Nagios XI 2024R1.1.4 allows attackers to execute arbitrary web scripts or HTML via a crafted payload injected into the Name parameter in the Account Settings page.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/products/security/",
+      "https://github.com/simalamuel/Research/tree/main/CVE-2024-42898"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-33775",
+    "漏洞描述": "An issue with the Autodiscover component in Nagios XI 2024R1.01 allows a remote attacker to escalate privileges via a crafted Dashlet.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/changelog/#nagios-xi",
+      "https://github.com/Neo-XeD/CVE-2024-33775"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年05月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-24402",
+    "漏洞描述": "An issue in Nagios XI 2024R1.01 allows a remote attacker to escalate privileges via a crafted script to the /usr/local/nagios/bin/npcd component.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/changelog/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年02月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-24401",
+    "漏洞描述": "SQL Injection vulnerability in Nagios XI 2024R1.01 allows a remote attacker to execute arbitrary code via a crafted payload to the monitoringwizard.php component.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/changelog/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年02月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-51072",
+    "漏洞描述": "A stored cross-site scripting (XSS) vulnerability in the NOC component of Nagios XI version up to and including 2024R1 allows low-privileged users to execute malicious HTML or JavaScript code via the audio file upload functionality from the Operation Center section. This allows any authenticated user to execute arbitrary JavaScript code on behalf of other users, including the administrators.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/products/security/#nagios-xi"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年02月02日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-48085",
+    "漏洞描述": "Nagios XI before version 5.11.3 was discovered to contain a remote code execution (RCE) vulnerability via the component command_test.php.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/products/security/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年12月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-48084",
+    "漏洞描述": "Nagios XI before version 5.11.3 was discovered to contain a SQL injection vulnerability via the bulk modification tool.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/products/security/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年12月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-48082",
+    "漏洞描述": "Nagios XI before 2024R1 was discovered to improperly handle API keys generation (randomly-generated), allowing attackers to possibly generate the same set of API keys for all users and utilize them to authenticate.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/change-log/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年10月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-40934",
+    "漏洞描述": "A SQL injection vulnerability in Nagios XI 5.11.1 and below allows authenticated attackers with privileges to manage host escalations in the Core Configuration Manager to execute arbitrary SQL commands via the host escalation notification settings.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://nagios.com",
+      "https://www.nagios.com/products/security/",
+      "https://outpost24.com/blog/nagios-xi-vulnerabilities/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年09月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-40933",
+    "漏洞描述": "A SQL injection vulnerability in Nagios XI v5.11.1 and below allows authenticated attackers with announcement banner configuration privileges to execute arbitrary SQL commands via the ID parameter sent to the update_banner_message() function.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://nagios.com",
+      "https://www.nagios.com/products/security/",
+      "https://outpost24.com/blog/nagios-xi-vulnerabilities/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年09月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-40932",
+    "漏洞描述": "A Cross-site scripting (XSS) vulnerability in Nagios XI version 5.11.1 and below allows authenticated attackers with access to the custom logo component to inject arbitrary javascript or HTML via the alt-text field. This affects all pages containing the navbar including the login page which means the attacker is able to to steal plaintext credentials.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://nagios.com",
+      "https://www.nagios.com/products/security/",
+      "https://outpost24.com/blog/nagios-xi-vulnerabilities/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年09月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2023-40931",
+    "漏洞描述": "A SQL injection vulnerability in Nagios XI from version 5.11.0 up to and including 5.11.1 allows authenticated attackers to execute arbitrary SQL commands via the ID parameter in the POST request to /nagiosxi/admin/banner_message-ajaxhelper.php",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://nagios.com",
+      "https://www.nagios.com/products/security/",
+      "https://outpost24.com/blog/nagios-xi-vulnerabilities/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年09月19日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-38254",
+    "漏洞描述": "Nagios XI before v5.8.7 was discovered to contain a cross-site scripting (XSS) vulnerability via the ajax.php script in CCM 3.1.5.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/#5.8.7"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年09月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-38251",
+    "漏洞描述": "Nagios XI v5.8.6 was discovered to contain a cross-site scripting (XSS) vulnerability via the System Performance Settings page under the Admin panel.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/#5.8.7"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年09月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-38250",
+    "漏洞描述": "Nagios XI v5.8.6 was discovered to contain a SQL injection vulnerability via the mib_name parameter at the Manage MIBs page.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/#5.8.7"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年09月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-38249",
+    "漏洞描述": "Nagios XI v5.8.6 was discovered to contain a cross-site scripting (XSS) vulnerability via the MTR component in version 1.0.4.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/#5.8.7"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年09月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-38248",
+    "漏洞描述": "Nagios XI before v5.8.7 was discovered to contain multiple cross-site scripting (XSS) vulnerabilities at auditlog.php.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/#5.8.7"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年09月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-38247",
+    "漏洞描述": "Nagios XI v5.8.6 was discovered to contain a cross-site scripting (XSS) vulnerability via the System Settings page under the Admin panel.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/#5.8.7"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年09月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-29272",
+    "漏洞描述": "In Nagios XI through 5.8.5, an open redirect vulnerability exists in the login function that could lead to spoofing.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://assets.nagios.com/downloads/nagiosxi/CHANGES-5.TXT",
+      "https://github.com/4LPH4-NL/CVEs",
+      "https://github.com/sT0wn-nl/CVEs/blob/master/README.md#nagios-xi"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年06月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-29271",
+    "漏洞描述": "In Nagios XI through 5.8.5, a read-only Nagios user (due to an incorrect permission check) is able to schedule downtime for any host/services. This allows an attacker to permanently disable all monitoring checks.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://assets.nagios.com/downloads/nagiosxi/CHANGES-5.TXT",
+      "https://github.com/4LPH4-NL/CVEs",
+      "https://github.com/sT0wn-nl/CVEs/blob/master/README.md#nagios-xi"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年06月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-29270",
+    "漏洞描述": "In Nagios XI through 5.8.5, it is possible for a user without password verification to change his e-mail address.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://assets.nagios.com/downloads/nagiosxi/CHANGES-5.TXT",
+      "https://github.com/4LPH4-NL/CVEs",
+      "https://github.com/sT0wn-nl/CVEs/blob/master/README.md#nagios-xi"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年06月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-29269",
+    "漏洞描述": "In Nagios XI through 5.8.5, in the schedule report function, an authenticated attacker is able to inject HTML tags that lead to the reformatting/editing of emails from an official email address.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://assets.nagios.com/downloads/nagiosxi/CHANGES-5.TXT",
+      "https://github.com/4LPH4-NL/CVEs",
+      "https://github.com/sT0wn-nl/CVEs/blob/master/README.md#nagios-xi"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年06月29日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-40345",
+    "漏洞描述": "An issue was discovered in Nagios XI 5.8.5. In the Manage Dashlets section of the Admin panel, an administrator can upload ZIP files. A command injection (within the name of the first file in the archive) allows an attacker to execute system commands.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://assets.nagios.com/downloads/nagiosxi/CHANGES-5.TXT",
+      "https://synacktiv.com",
+      "https://github.com/ArianeBlow/NagiosXI-EmersonFI/blob/main/README.md",
+      "https://www.synacktiv.com/sites/default/files/2021-10/Nagios_XI_multiple_vulnerabilities_0.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年10月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-40344",
+    "漏洞描述": "An issue was discovered in Nagios XI 5.8.5. In the Custom Includes section of the Admin panel, an administrator can upload files with arbitrary extensions as long as the MIME type corresponds to an image. Therefore it is possible to upload a crafted PHP script to achieve remote command execution.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://assets.nagios.com/downloads/nagiosxi/CHANGES-5.TXT",
+      "https://synacktiv.com",
+      "https://www.synacktiv.com/sites/default/files/2021-10/Nagios_XI_multiple_vulnerabilities_0.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年10月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-40343",
+    "漏洞描述": "An issue was discovered in Nagios XI 5.8.5. Insecure file permissions on the nagios_unbundler.py file allow the nagios user to elevate their privileges to the root user.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://assets.nagios.com/downloads/nagiosxi/CHANGES-5.TXT",
+      "https://synacktiv.com",
+      "https://www.synacktiv.com/sites/default/files/2021-10/Nagios_XI_multiple_vulnerabilities_0.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年10月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-38156",
+    "漏洞描述": "In Nagios XI before 5.8.6, XSS exists in the dashboard page (/dashboards/#) when administrative users attempt to edit a dashboard.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://raxis.com/blog/cve-2021-38156"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37353",
+    "漏洞描述": "Nagios XI Docker Wizard before version 1.1.3 is vulnerable to SSRF due to improper sanitation in table_population.php.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37352",
+    "漏洞描述": "An open redirect vulnerability exists in Nagios XI before version 5.8.5 that could lead to spoofing. To exploit the vulnerability, an attacker could send a link that has a specially crafted URL and convince the user to click the link.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37351",
+    "漏洞描述": "Nagios XI before version 5.8.5 is vulnerable to insecure permissions and allows unauthenticated users to access guarded pages through a crafted HTTP request to the server.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37350",
+    "漏洞描述": "Nagios XI before version 5.8.5 is vulnerable to SQL injection vulnerability in Bulk Modifications Tool due to improper input sanitisation.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37349",
+    "漏洞描述": "Nagios XI before version 5.8.5 is vulnerable to local privilege escalation because cleaner.php does not sanitise input read from the database.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37348",
+    "漏洞描述": "Nagios XI before version 5.8.5 is vulnerable to local file inclusion through improper limitation of a pathname in index.php.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37347",
+    "漏洞描述": "Nagios XI before version 5.8.5 is vulnerable to local privilege escalation because getprofile.sh does not validate the directory name it receives as an argument.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37346",
+    "漏洞描述": "Nagios XI WatchGuard Wizard before version 1.4.8 is vulnerable to remote code execution through Improper neutralisation of special elements used in an OS Command (OS Command injection).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37345",
+    "漏洞描述": "Nagios XI before version 5.8.5 is vulnerable to local privilege escalation because xi-sys.cfg is being imported from the var directory for some scripts with elevated permissions.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "http://nagios.com"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37344",
+    "漏洞描述": "Nagios XI Switch Wizard before version 2.5.7 is vulnerable to remote code execution through improper neutralisation of special elements used in an OS Command (OS Command injection).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-37343",
+    "漏洞描述": "A path traversal vulnerability exists in Nagios XI below version 5.8.5 AutoDiscovery component and could lead to post authenticated RCE under security context of the user running Nagios.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "http://packetstormsecurity.com/files/165978/Nagios-XI-Autodiscovery-Shell-Upload.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年08月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-36366",
+    "漏洞描述": "Nagios XI before 5.8.5 incorrectly allows manage_services.sh wildcards.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://assets.nagios.com/downloads/nagiosxi/CHANGES-5.TXT"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-36365",
+    "漏洞描述": "Nagios XI before 5.8.5 has Incorrect Permission Assignment for repairmysql.sh.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://assets.nagios.com/downloads/nagiosxi/CHANGES-5.TXT"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-36364",
+    "漏洞描述": "Nagios XI before 5.8.5 incorrectly allows backup_xi.sh wildcards.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://assets.nagios.com/downloads/nagiosxi/CHANGES-5.TXT"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月28日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-36363",
+    "漏洞描述": "Nagios XI before 5.8.5 has Incorrect Permission Assignment for migrate.php.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://assets.nagios.com/downloads/nagiosxi/CHANGES-5.TXT"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月28日"
+  },
+  {
+    "设备品牌": "Nagios",
+    "设备类型": "路由器",
+    "产品型号": "Nagios XI",
+    "CVE编号": "CVE-2021-33179",
+    "漏洞描述": "The general user interface in Nagios XI versions prior to 5.8.4 is vulnerable to authenticated reflected cross-site scripting. An authenticated victim, who accesses a specially crafted malicious URL, would unknowingly execute the attached payload.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.synopsys.com/blogs/software-security/cyrc-advisory-nagios-xi"
+    ],
+    "受影响版本": [
+      "<5.8.4"
+    ],
+    "公开日期": "2021年10月14日"
+  },
+  {
+    "设备品牌": "Nagios",
+    "设备类型": "路由器",
+    "产品型号": "Nagios XI",
+    "CVE编号": "CVE-2021-33177",
+    "漏洞描述": "The Bulk Modifications functionality in Nagios XI versions prior to 5.8.5 is vulnerable to SQL injection. Exploitation requires the malicious actor to be authenticated to the vulnerable system, but once authenticated they would be able to execute arbitrary sql queries.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.synopsys.com/blogs/software-security/cyrc-advisory-nagios-xi"
+    ],
+    "受影响版本": [
+      "<5.8.5"
+    ],
+    "公开日期": "2021年10月14日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-3277",
+    "漏洞描述": "Nagios XI 5.7.5 and earlier allows authenticated admins to upload arbitrary files due to improper validation of the rename functionality in custom-includes component, which leads to remote code execution by uploading php files.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://asaf.me/2021/01/21/nagios-xi-5-7-5-remote-code-execution/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年06月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-3273",
+    "漏洞描述": "Nagios XI below 5.7 is affected by code injection in the /nagiosxi/admin/graphtemplates.php component. To exploit this vulnerability, someone must have an admin user account in Nagios XI's web system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://gist.github.com/leommxj/93edce6f8572cefe79a3d7da4389374e"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月25日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-3193",
+    "漏洞描述": "Improper access and command validation in the Nagios Docker Config Wizard before 1.1.2, as used in Nagios XI through 5.7, allows an unauthenticated attacker to execute remote code as the apache user.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/products/security/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年01月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-26024",
+    "漏洞描述": "The Favorites component before 1.0.2 for Nagios XI 5.8.0 is vulnerable to Insecure Direct Object Reference: it is possible to create favorites for any other user account.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/products/security/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-26023",
+    "漏洞描述": "The Favorites component before 1.0.2 for Nagios XI 5.8.0 is vulnerable to XSS.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/products/security/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月03日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-25299",
+    "漏洞描述": "Nagios XI version xi-5.7.5 is affected by cross-site scripting (XSS). The vulnerability exists in the file /usr/local/nagiosxi/html/admin/sshterm.php due to improper sanitization of user-controlled input. A maliciously crafted URL, when clicked by an admin user, can be used to steal his/her session cookies or it can be chained with the previous bugs to get one-click remote command execution (RCE) on the Nagios XI server.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://nagios.com",
+      "https://assets.nagios.com/downloads/nagiosxi/versions.php",
+      "https://github.com/fs0c-sh/nagios-xi-5.7.5-bugs/blob/main/README.md",
+      "http://packetstormsecurity.com/files/161561/Nagios-XI-5.7.5-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-25298",
+    "漏洞描述": "Nagios XI version xi-5.7.5 is affected by OS command injection. The vulnerability exists in the file /usr/local/nagiosxi/html/includes/configwizards/cloud-vm/cloud-vm.inc.php due to improper sanitization of authenticated user-controlled input by a single HTTP request, which can lead to OS command injection on the Nagios XI server.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://nagios.com",
+      "https://assets.nagios.com/downloads/nagiosxi/versions.php",
+      "https://github.com/fs0c-sh/nagios-xi-5.7.5-bugs/blob/main/README.md",
+      "http://packetstormsecurity.com/files/161561/Nagios-XI-5.7.5-Remote-Code-Execution.html",
+      "http://packetstormsecurity.com/files/170924/Nagios-XI-5.7.5-Remote-Code-Execution.html",
+      "https://www.fastly.com/blog/anatomy-of-a-command-injection-cve-2021-25296-7-8-with-metasploit-module-and"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-25297",
+    "漏洞描述": "Nagios XI version xi-5.7.5 is affected by OS command injection. The vulnerability exists in the file /usr/local/nagiosxi/html/includes/configwizards/switch/switch.inc.php due to improper sanitization of authenticated user-controlled input by a single HTTP request, which can lead to OS command injection on the Nagios XI server.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://nagios.com",
+      "https://assets.nagios.com/downloads/nagiosxi/versions.php",
+      "https://github.com/fs0c-sh/nagios-xi-5.7.5-bugs/blob/main/README.md",
+      "http://packetstormsecurity.com/files/161561/Nagios-XI-5.7.5-Remote-Code-Execution.html",
+      "http://packetstormsecurity.com/files/170924/Nagios-XI-5.7.5-Remote-Code-Execution.html",
+      "https://www.fastly.com/blog/anatomy-of-a-command-injection-cve-2021-25296-7-8-with-metasploit-module-and"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-25296",
+    "漏洞描述": "Nagios XI version xi-5.7.5 is affected by OS command injection. The vulnerability exists in the file /usr/local/nagiosxi/html/includes/configwizards/windowswmi/windowswmi.inc.php due to improper sanitization of authenticated user-controlled input by a single HTTP request, which can lead to OS command injection on the Nagios XI server.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://nagios.com",
+      "https://assets.nagios.com/downloads/nagiosxi/versions.php",
+      "https://github.com/fs0c-sh/nagios-xi-5.7.5-bugs/blob/main/README.md",
+      "http://packetstormsecurity.com/files/161561/Nagios-XI-5.7.5-Remote-Code-Execution.html",
+      "http://packetstormsecurity.com/files/170924/Nagios-XI-5.7.5-Remote-Code-Execution.html",
+      "https://www.fastly.com/blog/anatomy-of-a-command-injection-cve-2021-25296-7-8-with-metasploit-module-and"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "Nagios XI",
+    "CVE编号": "CVE-2020-5796",
+    "漏洞描述": "Improper preservation of permissions in Nagios XI 5.7.4 allows a local, low-privileged, authenticated user to weaken the permissions of files, resulting in low-privileged users being able to write to and execute arbitrary PHP code with root privileges.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.tenable.com/security/research/tra-2020-61"
+    ],
+    "受影响版本": [
+      "5.7.4"
+    ],
+    "公开日期": "2020年11月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "Nagios XI",
+    "CVE编号": "CVE-2020-5792",
+    "漏洞描述": "Improper neutralization of argument delimiters in a command in Nagios XI 5.7.3 allows a remote, authenticated admin user to write to arbitrary files and ultimately execute code with the privileges of the apache user.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.tenable.com/security/research/tra-2020-58",
+      "http://packetstormsecurity.com/files/162284/Nagios-XI-5.7.3-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "5.7.3"
+    ],
+    "公开日期": "2020年10月20日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "Nagios XI",
+    "CVE编号": "CVE-2020-5791",
+    "漏洞描述": "Improper neutralization of special elements used in an OS command in Nagios XI 5.7.3 allows a remote, authenticated admin user to execute operating system commands with the privileges of the apache user.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.tenable.com/security/research/tra-2020-58",
+      "http://packetstormsecurity.com/files/159743/Nagios-XI-5.7.3-Remote-Command-Injection.html",
+      "http://packetstormsecurity.com/files/162235/Nagios-XI-5.7.3-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "5.7.3"
+    ],
+    "公开日期": "2020年10月20日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "Nagios XI",
+    "CVE编号": "CVE-2020-5790",
+    "漏洞描述": "Cross-site request forgery in Nagios XI 5.7.3 allows a remote attacker to perform sensitive application actions by tricking legitimate users into clicking a crafted link.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.tenable.com/security/research/tra-2020-58"
+    ],
+    "受影响版本": [
+      "5.7.3"
+    ],
+    "公开日期": "2020年10月20日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-35578",
+    "漏洞描述": "An issue was discovered in the Manage Plugins page in Nagios XI before 5.8.0. Because the line-ending conversion feature is mishandled during a plugin upload, a remote, authenticated admin user can execute operating-system commands.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://www.nagios.com/products/security/",
+      "http://packetstormsecurity.com/files/160948/Nagios-XI-5.7.x-Remote-Code-Execution.html",
+      "http://packetstormsecurity.com/files/162207/Nagios-XI-Remote-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年01月13日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-28910",
+    "漏洞描述": "Creation of a Temporary Directory with Insecure Permissions in Nagios XI 5.7.5 and earlier allows for Privilege Escalation via creation of symlinks, which are mishandled in getprofile.sh.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://skylightcyber.com/2021/05/20/13-nagios-vulnerabilities-7-will-shock-you/",
+      "http://packetstormsecurity.com/files/162783/Nagios-XI-Fusion-Privilege-Escalation-Cross-Site-Scripting-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年05月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-28906",
+    "漏洞描述": "Incorrect File Permissions in Nagios XI 5.7.5 and earlier and Nagios Fusion 4.1.8 and earlier allows for Privilege Escalation to root. Low-privileged users are able to modify files that are included (aka sourced) by scripts executed by root.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://skylightcyber.com/2021/05/20/13-nagios-vulnerabilities-7-will-shock-you/",
+      "http://packetstormsecurity.com/files/162783/Nagios-XI-Fusion-Privilege-Escalation-Cross-Site-Scripting-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年05月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-28900",
+    "漏洞描述": "Insufficient Verification of Data Authenticity in Nagios Fusion 4.1.8 and earlier and Nagios XI 5.7.5 and earlier allows for Escalation of Privileges or Code Execution as root via vectors related to an untrusted update package to upgrade_to_latest.sh.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://skylightcyber.com/2021/05/20/13-nagios-vulnerabilities-7-will-shock-you/",
+      "http://packetstormsecurity.com/files/162783/Nagios-XI-Fusion-Privilege-Escalation-Cross-Site-Scripting-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年05月24日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-28648",
+    "漏洞描述": "Improper input validation in the Auto-Discovery component of Nagios XI before 5.7.5 allows an authenticated attacker to execute remote code.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://skylightcyber.com/2021/05/20/13-nagios-vulnerabilities-7-will-shock-you/",
+      "http://packetstormsecurity.com/files/162783/Nagios-XI-Fusion-Privilege-Escalation-Cross-Site-Scripting-Code-Execution.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-27991",
+    "漏洞描述": "Nagios XI before 5.7.5 is vulnerable to XSS in Account Information (Email field).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-27990",
+    "漏洞描述": "Nagios XI before 5.7.5 is vulnerable to XSS in the Deployment tool (add agent).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-27989",
+    "漏洞描述": "Nagios XI before 5.7.5 is vulnerable to XSS in Dashboard Tools (Edit Dashboard).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-27988",
+    "漏洞描述": "Nagios XI before 5.7.5 is vulnerable to XSS in Manage Users (Username field).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月16日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-24899",
+    "漏洞描述": "Nagios XI 5.7.2 is affected by a remote code execution (RCE) vulnerability. An authenticated user can inject additional commands into normal webapp query.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://code610.blogspot.com/2020/08/postauth-rce-in-nagios-572.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年02月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-23992",
+    "漏洞描述": "Cross Site Scripting (XSS) in Nagios XI 5.7.1 allows remote attackers to run arbitrary code via returnUrl parameter in a crafted GET request.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/EmreOvunc/Nagios-XI-Reflected-XSS"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年08月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-15903",
+    "漏洞描述": "An issue was found in Nagios XI before 5.7.3. There is a privilege escalation vulnerability in backend scripts that ran as root where some included files were editable by nagios user. This issue was fixed in version 5.7.3.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年09月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-15902",
+    "漏洞描述": "Graph Explorer in Nagios XI before 5.7.2 allows XSS via the link url option.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://www.nagios.com/products/security/",
+      "https://insinuator.net/2020/07/security-advisories-for-nagios-xi/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年07月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-15901",
+    "漏洞描述": "In Nagios XI before 5.7.3, ajaxhelper.php allows remote authenticated attackers to execute arbitrary commands via cmdsubsys.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.nagios.com/downloads/nagios-xi/change-log/",
+      "https://www.nagios.com/products/security/",
+      "https://insinuator.net/2020/07/security-advisories-for-nagios-xi/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年07月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10821",
+    "漏洞描述": "Nagios XI 5.6.11 allows XSS via the account/main.php theme parameter.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://code610.blogspot.com/2020/03/nagios-5611-xssd.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年03月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10820",
+    "漏洞描述": "Nagios XI 5.6.11 allows XSS via the includes/components/ldap_ad_integration/ password parameter.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://code610.blogspot.com/2020/03/nagios-5611-xssd.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年03月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "路由器",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-10819",
+    "漏洞描述": "Nagios XI 5.6.11 allows XSS via the includes/components/ldap_ad_integration/ username parameter.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://code610.blogspot.com/2020/03/nagios-5611-xssd.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年03月22日"
+  }
+]

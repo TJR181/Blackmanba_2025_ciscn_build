@@ -1,0 +1,579 @@
+[
+  {
+    "设备品牌": "Atakan Au",
+    "设备类型": "车载显示屏",
+    "产品型号": "Automatically Hierarchic Categories in Menu",
+    "CVE编号": "CVE-2025-50048",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Atakan Au Automatically Hierarchic Categories in Menu allows Stored XSS. This issue affects Automatically Hierarchic Categories in Menu: from n/a through 2.0.9.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://patchstack.com/database/wordpress/plugin/automatically-hierarchic-categories-in-menu/vulnerability/wordpress-automatically-hierarchic-categories-in-menu-plugin-2-0-9-cross-site-scripting-xss-vulnerability?_s_id=cve"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2025年06月20日"
+  },
+  {
+    "设备品牌": "Atakan Au",
+    "设备类型": "车载显示屏",
+    "产品型号": "Automatically Hierarchic Categories in Menu",
+    "CVE编号": "CVE-2024-47365",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation (XSS or 'Cross-site Scripting') vulnerability in Atakan Au Automatically Hierarchic Categories in Menu allows Stored XSS.This issue affects Automatically Hierarchic Categories in Menu: from n/a through 2.0.5.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://patchstack.com/database/vulnerability/automatically-hierarchic-categories-in-menu/wordpress-automatically-hierarchic-categories-in-menu-plugin-2-0-5-cross-site-scripting-xss-vulnerability?_s_id=cve"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年10月06日"
+  },
+  {
+    "设备品牌": "Iocharger",
+    "设备类型": "车载显示屏",
+    "产品型号": "Iocharger firmware for AC models",
+    "CVE编号": "CVE-2024-43663",
+    "漏洞描述": "There are many buffer overflow vulnerabilities present in several CGI binaries of the charging station.This issue affects Iocharger firmware for AC model chargers beforeversion 24120701.\n\nLikelihood: High – Given the prevalence of these buffer overflows, and the clear error message of the web server, an attacker is very likely to be able to find these vulnerabilities.\n\nImpact: Low – Usually, overflowing one of these buffers just causes a segmentation fault of the CGI binary, which causes the web server to return a 502 Bad Gateway error. However the webserver itself is not affected, and no DoS can be achieved. Abusing these buffer overflows in a meaningful way requires highly technical knowledge, especially since ASLR also seems to be enabled on the charging station. However, a skilled attacker might be able to use one of these buffer overflows to obtain remote code execution.\n\nCVSS clarification. The attack can be executed over any network connection the station is listening to and serves the web interface (AV:N), and there are no additional security measure sin place that need to be circumvented (AC:L), the attack does not rely on preconditions (AT:N). The attack does require authentication, but the level of authentication is irrelevant (PR:L), it does not require user interaction (UI:N). The attack has a small impact on the availability of the device (VC:N/VI:N/VA:L).  There is no impact on subsequent systems. (SC:N/SI:N/SA:N). While this device is an EV charger handing significant amounts of power, we do not expect  this vulnerability to have a safety impact. The attack can be automated (AU:Y).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csirt.divd.nl/DIVD-2024-00035/",
+      "https://csirt.divd.nl/CVE-2024-43663/",
+      "https://iocharger.com"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "Iocharger",
+    "设备类型": "车载显示屏",
+    "产品型号": "Iocharger firmware for AC models",
+    "CVE编号": "CVE-2024-43662",
+    "漏洞描述": "The <redacted>.exe or <redacted>.exe CGI binary can be used to upload arbitrary files to /tmp/upload/ or /tmp/ respectively as any user, although the user interface for uploading files is only shown to the iocadmin user.\n\nThis issue affects Iocharger firmware for AC models before version 24120701.\n\nLikelihood: Moderate – An attacker will need to have knowledge of this CGI binary, e.g. by finding it in firmware. Furthermore, the attacker will need a (low privilege) account to gain access to the <redacted>.exe or <redacted>.exe CGI binary and upload the file, or convince a user with such access to upload it.\n\nImpact: Low – The attacker can upload arbitrary files to /tmp/upload/ or /tmp/. However, the attacker is unable to access or use these files without other vulnerabilities.\n\nCVSS clarification. The attack can be executed over any network connection the station is listening to and serves the web interface (AV:N), and there are no additional security measure sin place that need to be circumvented (AC:L), the attack does not rely on preconditions (AT:N). The attack does require authentication, but the level of authentication is irrelevant (PR:L), it does not require user interaction (UI:N). Artitrary files can be uploaded, be these files will not be in a location where they can influence confidentiality or availability and have a minimal impact on device integrity (VC:N/VI:L/VA:N).  There is no impact on subsequent systems. (SC:N/SI:N/SA:N). While this device is an EV charger handing significant amounts of power, we do not expect this vulnerability to have a safety impact. The attack can be automated (AU:Y).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csirt.divd.nl/DIVD-2024-00035/",
+      "https://csirt.divd.nl/CVE-2024-43662/",
+      "https://iocharger.com"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "Iocharger",
+    "设备类型": "车载显示屏",
+    "产品型号": "Iocharger firmware for AC models",
+    "CVE编号": "CVE-2024-43661",
+    "漏洞描述": "The <redacted>.so library, which is used by <redacted>, is\nvulnerable to a buffer overflow in the code that handles the deletion\nof certificates. This buffer overflow can be triggered by providing a\nlong file path to the <redacted> action of the <redacted>.exe CGI binary or\nto the <redacted>.sh CGI script. This binary or script will write this\nfile path to <redacted>, which is then\nread by <redacted>.so\n\n\nThis issue affects Iocharger firmware for AC models before version 24120701.\n\nLikelihood: Moderate – An attacker will have to find this exploit by\neither obtaining the binaries involved in this vulnerability, or by trial\nand error. Furthermore, the attacker will need a (low privilege)\naccount to gain access to the <redacted>.exe CGI binary or <redacted>.sh\nscript to trigger the vulnerability, or convince a user with such access\nsend an HTTP request that triggers it.\n\n\nImpact: High – The <redacted> process, which we assume is\nresponsible for OCPP communication, will keep crashing after\nperforming the exploit. This happens because the buffer overflow\ncauses the process to segfault before\n<redacted> is removed. This means that,\neven though <redacted> is automatically restarted, it will crash\nagain as soon as it tries to parse the text file.\n\nCVSS clarification. The attack can be executed over any network connection the station is listening to and serves the web interface (AV:N), and there are no additional security measure sin place that need to be circumvented (AC:L), the attack does not rely on preconditions (AT:N). The attack does require authentication, but the level of authentication is irrelevant (PR:L), it does not require user interaction (UI:N). The attack leads to reducred availability of the device (VC:N/VI:N/VA:H). THere is not impact on subsequent systems. (SC:N/SI:N/SA:N). Alltough this device is an EV charger handing significant amounts of power, we do not forsee a safety impact. The attack can be automated (AU:Y). Because the DoS condition is written to disk persistantly, it cannot be recovered by the user (R:I).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csirt.divd.nl/DIVD-2024-00035/",
+      "https://csirt.divd.nl/CVE-2024-43661/",
+      "https://iocharger.com"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "Iocharger",
+    "设备类型": "车载显示屏",
+    "产品型号": "Iocharger firmware for AC models",
+    "CVE编号": "CVE-2024-43660",
+    "漏洞描述": "The CGI script <redacted>.sh can be used to download any file on the filesystem.\n\nThis issue affects Iocharger firmware for AC model chargers beforeversion 24120701.\n\nLikelihood: High, but credentials required.\n\nImpact: Critical – The script can be used to download any file on the filesystem, including sensitive files such as /etc/shadow, the CGI script source code or binaries and configuration files.\n\nCVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/S:P/AU:Y\nCVSS clarification. The attack can be executed over any network connection the station is listening to and serves the web interface (AV:N), and there are no additional security measure sin place that need to be circumvented (AC:L), the attack does not rely on preconditions (AT:N). The attack does require authentication, but the level of authentication is irrelevant (PR:L), it does not require user interaction (UI:N). The confidentiality of all files of the devicd can be compromised (VC:H/VI:N/VA:N).  There is no impact on subsequent systems. (SC:N/SI:N/SA:N). While this device is an EV charger handing significant amounts of power, this attack in isolation does not have a safety impact. The attack can be automated (AU:Y).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csirt.divd.nl/DIVD-2024-00035/",
+      "https://csirt.divd.nl/CVE-2024-43660/",
+      "https://iocharger.com"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "Iocharger",
+    "设备类型": "车载显示屏",
+    "产品型号": "Iocharger firmware for AC models",
+    "CVE编号": "CVE-2024-43659",
+    "漏洞描述": "After gaining access to the firmware of a charging station, a file at <redacted> can be accessed to obtain default credentials that are the same across all Iocharger AC model EV chargers.\n\nThis issue affects Iocharger firmware for AC models before firmware version 25010801. \n\nThe issue is addressed by requiring a mandatory password change on first login, it is still recommended to change the password on older models.\n\nLikelihood: Moderate – The attacker will first have to abuse a code execution or file inclusion vulnerability (for example by using <redacted>.sh) to gain access to the <redacted>.json file, or obtain a firmware dump of the charging station or obtain the firmware via other channels.\n\nImpact: Critical – All chargers using Iocharger firmware for AC models started with the same initial password. For models with firmware version before 25010801 a password change was not mandatory. It is therefore very likely that this firmware password is still active on many chargers. These credentials could, once obtained, allow an attacker to log into many Iocharger charging station, and allow them to execute arbitrary commands via the System → Custom page.\n\nCVSS clarification: Any network interface serving the web ui is vulnerable (AV:N) and there are not additional security measures to circumvent (AC:L), nor does the attack require and existing preconditions (AT:N). The attack is authenticated, and requires high privileges (PR:H), there is no user interaction required (UI:N). The attack leads to a compromised of the confidentialy of the \"super user\" credentials of the device (VC:H/VI:N/VA:N), and can subsequently be used to full compromise and other devices (SC:H/SI:H/SA:H). Becuase this is an EV charger handing significant power, there is a potential safety impact (S:P). This attack can be automated (AU:Y).",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://csirt.divd.nl/DIVD-2024-00035/",
+      "https://csirt.divd.nl/CVE-2024-43659/",
+      "https://iocharger.com"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "Iocharger",
+    "设备类型": "车载显示屏",
+    "产品型号": "Iocharger firmware for AC models",
+    "CVE编号": "CVE-2024-43658",
+    "漏洞描述": "Patch traversal, External Control of File Name or Path vulnerability in  Iocharger Home allows deletion of arbitrary files\nThis issue affects Iocharger firmware for AC model before firmware version 25010801.\n\nLikelihood: High, but requires authentication\n\nImpact: Critical – The vulnerability can be used to delete any file on the charging station, severely impacting the integrity of the charging station. Furthermore, the vulnerability could be used to delete binaries required for the functioning of the charging station, severely impacting the availability of the charging station.\n\nCVSS clarification: Any network interface serving the web ui is vulnerable (AV:N) and there are not additional security measures to circumvent (AC:L), nor does the attack require and existing preconditions (AT:N). The attack is authenticated, but the level of authentication does not matter (PR:L), nor is any user interaction required (UI:N). The attack leads compromised of the integrity and availability of the device (VVC:N/VI:H/VA:H), with no effect on subsequent systems (SC:N/SI:N/SA:N). We do not forsee a safety impact (S:N). This attack can be automated (AU:Y).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csirt.divd.nl/DIVD-2024-00035/",
+      "https://csirt.divd.nl/CVE-2024-43658/",
+      "https://iocharger.com"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "Iocharger",
+    "设备类型": "车载显示屏",
+    "产品型号": "Iocharger firmware for AC models",
+    "CVE编号": "CVE-2024-43657",
+    "漏洞描述": "Improper Neutralization of Special Elements used in a Command ('Command Injection') vulnerability allows OS Command Injection as root\n\nThis issue affects Iocharger firmware for AC model chargers before version 24120701.\n\nLikelihood: High. However, the attacker will need a (low privilege) account to gain access to the action.exe CGI binary and upload the crafted firmware file, or convince a user with such access to upload it.\n\nImpact: Critical – The attacker has full control over the charging station as the root user, and can arbitrarily add, modify and deletefiles and services.\n\nCVSS clarification: Any network interface serving the web ui is vulnerable (AV:N) and there are not additional security measures to circumvent (AC:L), nor does the attack require and existing preconditions (AT:N). The attack is authenticated, but the level of authentication does not matter (PR:L), nor is any user interaction required (UI:N). The attack leads to a full compromised (VC:H/VI:H/VA:H), and compromised devices can be used to pivot into networks that should potentially not be accessible (SC:L/SI:L/SA:H). Becuase this is an EV charger handing significant power, there is a potential safety impact (S:P). This attack can be automated (AU:Y).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csirt.divd.nl/DIVD-2024-00035/",
+      "https://csirt.divd.nl/CVE-2024-43657/",
+      "https://iocharger.com"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "Iocharger",
+    "设备类型": "车载显示屏",
+    "产品型号": "Iocharger firmware for AC models",
+    "CVE编号": "CVE-2024-43656",
+    "漏洞描述": "Improper Neutralization of Special Elements used in a Command ('Command Injection') vulnerability allows OS Command Injection as root\n\nThis issue affects Iocharger firmware for AC model chargers before version 24120701.\n\nLikelihood: Moderate – It might be difficult for an attacker to identify the file structure of the <redated> directory, and then modify the backup to add a new CGI script in the correct directory. Furthermore, the attacker will need an account to restore the settings backup, or convince a user with such access to upload a modified backup file.\n\nImpact: Critical – The attacker has full control over the charging station as the root user, and can arbitrarily add, modify and deletefiles and services.\n\nCVSS clarification: Any network interface serving the web ui is vulnerable (AV:N) and there are not additional security measures to circumvent (AC:L), nor does the attack require and existing preconditions (AT:N). The attack is authenticated, but the level of authentication does not matter (PR:L), nor is any user interaction required (UI:N). The attack leads to a full compromised (VC:H/VI:H/VA:H), and compromised devices can be used to pivot into networks that should potentially not be accessible (SC:L/SI:L/SA:H). Becuase this is an EV charger handing significant power, there is a potential safety impact (S:P). This attack can be automated (AU:Y).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csirt.divd.nl/DIVD-2024-00035/",
+      "https://csirt.divd.nl/CVE-2024-43656/",
+      "https://iocharger.com"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "Iocharger",
+    "设备类型": "车载显示屏",
+    "产品型号": "Iocharger firmware for AC models",
+    "CVE编号": "CVE-2024-43655",
+    "漏洞描述": "Improper Neutralization of Special Elements used in a Command ('Command Injection') vulnerability allows OS Command Injection as root\n\nThis issue affects Iocharger firmware for AC model chargers before version 24120701.\n\nLikelihood: Moderate – The attacker will first need to find the name of the script, and needs a (low privilege) account to gain access to the script, or convince a user with such access to execute a request to it.\n\nImpact: Critical – The attacker has full control over the charging station as the root user, and can arbitrarily add, modify and deletefiles and services.\n\nCVSS clarification: Any network interface serving the web ui is vulnerable (AV:N) and there are not additional security measures to circumvent (AC:L), nor does the attack require and existing preconditions (AT:N). The attack is authenticated, but the level of authentication does not matter (PR:L), nor is any user interaction required (UI:N). The attack leads to a full compromised (VC:H/VI:H/VA:H), and compromised devices can be used to pivot into networks that should potentially not be accessible (SC:L/SI:L/SA:H). Becuase this is an EV charger handing significant power, there is a potential safety impact (S:P). This attack can be automated (AU:Y).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csirt.divd.nl/DIVD-2024-00035/",
+      "https://csirt.divd.nl/CVE-2024-43655/",
+      "https://iocharger.com"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "Iocharger",
+    "设备类型": "车载显示屏",
+    "产品型号": "Iocharger firmware for AC models",
+    "CVE编号": "CVE-2024-43654",
+    "漏洞描述": "Improper Neutralization of Special Elements used in a Command ('Command Injection') vulnerability in Iocharger  firmware for AC models allows OS Command Injection as root\nThis issue affects all Iocharger AC EV charger models on a firmware version before 25010801.\n\nLikelihood: Moderate – The <redacted> binary does not seem to be used by the web interface, so it might be more difficult to find. It seems to be largely the same binary as used by the Iocharger Pedestal charging station, however. The attacker will also need a (low privilege) account to gain access to the <redacted> binary, or convince a user with such access to execute a crafted HTTP request.\n\nImpact: Critical – The attacker has full control over the charging station as the root user, and can arbitrarily add, modify and delete\nfiles and services.\n\nCVSS clarification: Any network interface serving the web ui is vulnerable (AV:N) and there are not additional security measures to circumvent (AC:L), nor does the attack require and existing preconditions (AT:N). The attack is authenticated, but the level of authentication does not matter (PR:L), nor is any user interaction required (UI:N). The attack leads to a full compromised (VC:H/VI:H/VA:H), and compromised devices can be used to pivot into networks that should potentially not be accessible (SC:L/SI:L/SA:H). Becuase this is an EV charger handing significant power, there is a potential safety impact (S:P). This attack can be automated (AU:Y).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csirt.divd.nl/DIVD-2024-00035/",
+      "https://csirt.divd.nl/CVE-2024-43654/",
+      "https://iocharger.com"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "Iocharger",
+    "设备类型": "车载显示屏",
+    "产品型号": "Iocharger firmware for AC models",
+    "CVE编号": "CVE-2024-43653",
+    "漏洞描述": "Improper Neutralization of Special Elements used in a Command ('Command Injection') vulnerability  allows OS Command Injection as root\nThis issue affects Iocharger firmware for AC model chargers before version 24120701.\n\nLikelihood: Moderate – The <redacted> binary does not seem to be used by the web interface, so it might be more difficult to find. It seems to be largely the same binary as used by the Iocharger Pedestal charging station, however. The attacker will also need a (low privilege) account to gain access to the <redacted> binary, or convince a user with such access to execute a crafted HTTP request.\n\nImpact: Critical – The attacker has full control over the charging station as the root user, and can arbitrarily add, modify and delete\nfiles and services.\n\nCVSS clarification: Any network interface serving the web ui is vulnerable (AV:N) and there are not additional security measures to circumvent (AC:L), nor does the attack require and existing preconditions (AT:N). The attack is authenticated, but the level of authentication does not matter (PR:L), nor is any user interaction required (UI:N). The attack leads to a full compromised (VC:H/VI:H/VA:H), and compromised devices can be used to pivot into networks that should potentially not be accessible (SC:L/SI:L/SA:H). Becuase this is an EV charger handing significant power, there is a potential safety impact (S:P). This attack can be automated (AU:Y).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csirt.divd.nl/DIVD-2024-00035/",
+      "https://csirt.divd.nl/CVE-2024-43653/",
+      "https://iocharger.com"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "Iocharger",
+    "设备类型": "车载显示屏",
+    "产品型号": "Iocharger firmware for AC models",
+    "CVE编号": "CVE-2024-43651",
+    "漏洞描述": "Improper Neutralization of Special Elements used in a Command ('Command Injection') vulnerability allows OS Command Injection as root\nThis issue affects Iocharger firmware for AC models before version 241207101\n\nLikelihood: Moderate – The <redacted> binary does not seem to be used by the web interface, so it might be more difficult to find. It seems to be largely the same binary as used by the Iocharger Pedestal charging station, however. The attacker will also need a (low privilege) account to gain access to the <redacted> binary, or convince a user with such access to execute a crafted HTTP request.\n\nImpact: Critical – The attacker has full control over the charging station as the root user, and can arbitrarily add, modify and delete files and services.\n\nCVSS clarification: Any network connection serving the web interface is vulnerable (AV:N) and there are no additional measures to circumvent (AC:L) nor does the attack require special conditions to be present (AT:N). The attack requires authentication, but the level does not matter (PR:L), nor is user interaction required (UI:N). The attack leads to a full compromised (VC:H/VI:H/VA:H) and a compromised device can be used to potentially \"pivot\" into a network that should nopt be reachable (SC:L/SI:L/SA:H). Because this is an EV charger handing significant power, there is a potential safety impact (S:P). THe attack can be autometed (AU:Y).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csirt.divd.nl/DIVD-2024-00035/",
+      "https://csirt.divd.nl/CVE-2024-43651/",
+      "https://iocharger.com"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "Iocharger",
+    "设备类型": "车载显示屏",
+    "产品型号": "Iocharger firmware for AC models",
+    "CVE编号": "CVE-2024-43650",
+    "漏洞描述": "Improper Neutralization of Special Elements used in a Command ('Command Injection') vulnerability in Iocharger firmware for AC models allows OS Command Injection as root\n\nThis issue affects  firmware versions before 24120701.\n\nLikelihood: Moderate – The <redacted> binary does not seem to be used by the web interface, so it might be more difficult to find. It seems to be largely the same binary as used by the Iocharger Pedestal charging station, however. The attacker will also need a (low privilege) account to gain access to the <redacted> binary, or convince a user with such access to execute a crafted HTTP request.\n\nImpact: Critical – The attacker has full control over the charging station as the root user, and can arbitrarily add, modify and delete\nfiles and services.\n\nCVSS clarification: The attack can be executed over any network connection serving the web interface (AV:N). There are no additional measures that need to be circumvented (AC:L) or attack preconditions (AT:N). THe attack is privileged, but the level does not matter (PR:L) and does not require user interaction (UI:N). Attack leads to full system compromised (VC:H/VI:H/VA:H) and compromised devices can be used to \"pivot\" to other networks that should be unreachable (SC:L/SI:L/SA:H). Because this an EV charger using high power, there is a potential safety impact (S:P). The attack can be automated (AU:Y).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csirt.divd.nl/DIVD-2024-00035/",
+      "https://csirt.divd.nl/CVE-2024-43650/",
+      "https://iocharger.com"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "Iocharger",
+    "设备类型": "车载显示屏",
+    "产品型号": "Iocharger firmware for AC models",
+    "CVE编号": "CVE-2024-43649",
+    "漏洞描述": "Authenticated command injection in the filename of a <redacted>.exe request leads to remote code execution as the root user.\n\nThis issue affects Iocharger firmware for AC models before version 24120701.\n\nLikelihood: Moderate – This action is not a common place for command injection vulnerabilities to occur. Thus, an attacker will likely only be able to find this vulnerability by reverse-engineering the firmware or trying it on all <redacted> fields. The attacker will also need a (low privilege) account to gain access to the <redacted> binary, or convince a user with such access to execute a payload.\n\nImpact: Critical – The attacker has full control over the charging station as the root user, and can arbitrarily add, modify and delete files and services.\n\nCVSS clarification: This attack can be performed over any network conenction serving the web interfacr (AV:N), and there are not additional mitigating measures that need to be circumvented (AC:L) or other prerequisites (AT:N). The attack does require privileges, but the level does not matter (PR:L), there is no user interaction required (UI:N). The attack leeds to a full compromised of the charger (VC:H/VI:H/VA:H) and a compromised charger can be used to \"pivot\" to networks that should normally not be reachable (SC:L/SI:L/SA:H). Because this is an EV chargers with significant pwoer, there is a potential safety imp0act (S:P). THis attack can be automated (AU:Y).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csirt.divd.nl/DIVD-2024-00035/",
+      "https://csirt.divd.nl/CVE-2024-43649/",
+      "https://iocharger.com"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "Iocharger",
+    "设备类型": "车载显示屏",
+    "产品型号": "Iocharger firmware for AC models",
+    "CVE编号": "CVE-2024-43648",
+    "漏洞描述": "Command injection in the <redacted> parameter of a <redacted>.exe request leads to remote code execution as the root user.\n\nThis issue affects Iocharger firmware for AC models before version 24120701.\n\nLikelihood: Moderate – This action is not a common place for command injection vulnerabilities to occur. Thus, an attacker will likely only be able to find this vulnerability by reverse-engineering the firmware or trying it on all <redacted> fields. The attacker will also need a (low privilege) account to gain access to the <redacted> binary, or convince a user with such access to execute a payload.\n\nImpact: Critical – The attacker has full control over the charging station as the root user, and can arbitrarily add, modify and delete files and services.\n\nCVSS clarification. The attack can be executed over any network connection the station is listening to and serves the web interface (AV:N), and there are no additional security measure sin place that need to be circumvented (AC:L), the attack does not rely on preconditions (AT:N). The attack does require authentication, but the level of authentication is irrelevant (PR:L), it does not require user interaction (UI:N). If is a full system compromise, potentially fully compromising confidentiality, integrity and availability of the devicer (VC:H/VI:H/VA:H).  A compromised charger can be used to \"pivot\" onto networks that should otherwise be closed, cause a low confidentiality and interity impact on subsequent systems. (SC:L/SI:L/SA:H). Because this device is an EV charger handing significant amounts of power, we suspect this vulnerability can have a safety impact (S:P). The attack can be automated (AU:Y).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://csirt.divd.nl/DIVD-2024-00035/",
+      "https://csirt.divd.nl/CVE-2024-43648/",
+      "https://iocharger.com"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "Atakan Au",
+    "设备类型": "车载显示屏",
+    "产品型号": "1 click disable all",
+    "CVE编号": "CVE-2024-21749",
+    "漏洞描述": "Cross-Site Request Forgery (CSRF) vulnerability in Atakan Au 1 click disable all.This issue affects 1 click disable all: from n/a through 1.0.1.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://patchstack.com/database/vulnerability/first-graders-toolbox/wordpress-1-click-disable-all-plugin-1-0-1-cross-site-request-forgery-csrf-vulnerability?_s_id=cve"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年02月28日"
+  },
+  {
+    "设备品牌": "Drupal",
+    "设备类型": "车载显示屏",
+    "产品型号": "Tarte au Citron",
+    "CVE编号": "CVE-2024-13298",
+    "漏洞描述": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Drupal Tarte au Citron allows Cross-Site Scripting (XSS).This issue affects Tarte au Citron: from 2.0.0 before 2.0.5.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.drupal.org/sa-contrib-2024-064"
+    ],
+    "受影响版本": [
+      "2.0.0"
+    ],
+    "公开日期": "2025年01月09日"
+  },
+  {
+    "设备品牌": "Splashtop",
+    "设备类型": "车载显示屏",
+    "产品型号": "Splashtop Software Updater",
+    "CVE编号": "CVE-2023-3181",
+    "漏洞描述": "The C:\\Program Files (x86)\\Splashtop\\Splashtop Software Updater\\uninst.exe process creates a folder at C:\\Windows\\Temp~nsu.tmp and copies itself to it as Au_.exe. The C:\\Windows\\Temp~nsu.tmp\\Au_.exe file is automatically launched as SYSTEM when the system reboots or when a standard user runs an MSI repair using Splashtop Streamer’s Windows Installer. Since the C:\\Windows\\Temp~nsu.tmp folder inherits permissions from C:\\Windows\\Temp and Au_.exe is susceptible to DLL hijacking, standard users can write a malicious DLL to it and elevate their privileges.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://github.com/mandiant/Vulnerability-Disclosures/blob/master/2023/MNDT-2023-0015.md"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年01月25日"
+  },
+  {
+    "设备品牌": "pandatix",
+    "设备类型": "车载显示屏",
+    "产品型号": "go-cvss",
+    "CVE编号": "CVE-2022-39213",
+    "漏洞描述": "go-cvss is a Go module to manipulate Common Vulnerability Scoring System (CVSS). In affected versions when a full CVSS v2.0 vector string is parsed using `ParseVector`, an Out-of-Bounds Read is possible due to a lack of tests. The Go module will then panic. The problem is patched in tag `v0.4.0`, by the commit `d9d478ff0c13b8b09ace030db9262f3c2fe031f4`. Users are advised to upgrade. Users unable to upgrade may avoid this issue by parsing only CVSS v2.0 vector strings that do not have all attributes defined (e.g. `AV:N/AC:L/Au:N/C:P/I:P/A:C/E:U/RL:OF/RC:C/CDP:MH/TD:H/CR:M/IR:M/AR:M`). As stated in [SECURITY.md](https://github.com/pandatix/go-cvss/blob/master/SECURITY.md), the CPE v2.3 to refer to this Go module is `cpe:2.3:a:pandatix:go_cvss:*:*:*:*:*:*:*:*`. The entry has already been requested to the NVD CPE dictionary.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/pandatix/go-cvss/security/advisories/GHSA-xhmf-mmv2-4hhx",
+      "https://github.com/pandatix/go-cvss/commit/d9d478ff0c13b8b09ace030db9262f3c2fe031f4",
+      "https://github.com/pandatix/go-cvss/blob/master/SECURITY.md"
+    ],
+    "受影响版本": [
+      ">= 0.2.0, < 0.4.0"
+    ],
+    "公开日期": "2022年09月15日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-33065",
+    "漏洞描述": "Multiple signed integers overflow in function au_read_header in src/au.c and in functions mat4_open and mat4_read_header in src/mat4.c in Libsndfile, allows an attacker to cause Denial of Service or other unspecified impacts.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/libsndfile/libsndfile/issues/833",
+      "https://github.com/libsndfile/libsndfile/issues/789"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年07月18日"
+  },
+  {
+    "设备品牌": "MediaTek, Inc.",
+    "设备类型": "车载显示屏",
+    "产品型号": "MT6580, MT6630, MT6735, MT6737, MT6739, MT6750S, MT6753, MT6755S, MT6757, MT6757C, MT6757CD, MT6757CH, MT6761, MT6762, MT6763, MT6765, MT6768, MT6771, MT6779, MT6785, MT6833, MT6853, MT6853T, MT6873, MT6877, MT6885, MT6889, MT6893, MT7662T, MT7663, MT7668, MT7915, MT7920, MT7921, MT7922, MT8163, MT8167, MT8167S, MT8168, MT8173, MT8175, MT8183, MT8185, MT8195, MT8321, MT8362A, MT8362B, MT8365, MT8385, MT8765, MT8766, MT8768, MT8786, MT8788, MT8789, MT8791, MT8797",
+    "CVE编号": "CVE-2022-20023",
+    "漏洞描述": "In Bluetooth, there is a possible application crash due to bluetooth flooding a device with LMP_AU_rand packet. This could lead to remote denial of service of bluetooth with no additional execution privileges needed. User interaction is not needed for exploitation. Patch ID: ALPS06198608; Issue ID: ALPS06198608.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://corp.mediatek.com/product-security-bulletin/January-2022"
+    ],
+    "受影响版本": [
+      "Android 10.0, 11.0"
+    ],
+    "公开日期": "2022年01月04日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-34149",
+    "漏洞描述": "The Bluetooth Classic implementation on the Texas Instruments CC256XCQFN-EM does not properly handle the reception of continuous LMP_AU_Rand packets, allowing attackers in radio range to trigger a denial of service (deadlock) of the device by flooding it with LMP_AU_Rand packets after the paging procedure.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.ti.com/tool/CC256XC-BT-SP#primary-sw",
+      "https://www.ti.com/product/CC2564C",
+      "https://dl.packetstormsecurity.net/papers/general/braktooth.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-34146",
+    "漏洞描述": "The Bluetooth Classic implementation in the Cypress CYW920735Q60EVB does not properly handle the reception of continuous unsolicited LMP responses, allowing attackers in radio range to trigger a denial of service and restart (crash) of the device by flooding it with LMP_AU_Rand packets after the paging procedure.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.cypress.com/documentation/datasheets/cyw20735b1-single-chip-bluetooth-transceiver-wireless-input-devices",
+      "https://dl.packetstormsecurity.net/papers/general/braktooth.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-34143",
+    "漏洞描述": "The Bluetooth Classic implementation in the Zhuhai Jieli AC6366C_DEMO_V1.0 does not properly handle the reception of continuous unsolicited LMP responses, allowing attackers in radio range to trigger a denial of service (deadlock) of the device by flooding it with LMP_AU_Rand packets after paging procedure. User intervention is required to restart the device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/Jieli-Tech/fw-AC63_BT_SDK",
+      "https://launchstudio.bluetooth.com/ListingDetails/91371",
+      "https://dl.packetstormsecurity.net/papers/general/braktooth.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-31610",
+    "漏洞描述": "The Bluetooth Classic implementation on AB32VG1 devices does not properly handle the reception of continuous unsolicited LMP responses, allowing attackers in radio range to trigger a denial of service (either restart or deadlock the device) by flooding a device with LMP_AU_rand data.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://www.bluetrum.com/product/bt8896a.html",
+      "http://www.bluetrum.com/product/ab5376t.html",
+      "https://www.mi.com/global/mi-true-wireless-earbuds-basic-2/",
+      "https://dl.packetstormsecurity.net/papers/general/braktooth.pdf"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年09月07日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-6765",
+    "漏洞描述": "D-Link DSL-GS225 J1 AU_1.0.4 devices allow an admin to execute OS commands by placing shell metacharacters after a supported CLI command, as demonstrated by ping -c1 127.0.0.1; cat/etc/passwd. The CLI is reachable by TELNET.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://supportannouncement.us.dlink.com/announcement/publication.aspx?name=SAP10165"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年04月10日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-27524",
+    "漏洞描述": "On Audi A7 MMI 2014 vehicles, the Bluetooth stack in Audi A7 MMI Multiplayer with version (N+R_CN_AU_P0395) mishandles %x and %s format string specifiers in a device name. This may lead to memory content leaks and potentially crash the services.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.youtube.com/watch?v=BQUVgAdhwQs",
+      "https://twitter.com/Kevin2600/status/1316380576593571840",
+      "https://tiger-team-1337.blogspot.com/2020/10/audi-a7-2014-mmi-mishandles-format.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-24581",
+    "漏洞描述": "An issue was discovered on D-Link DSL-2888A devices with firmware prior to AU_2.31_V1.1.47ae55. It contains an execute_cmd.cgi feature (that is not reachable via the web user interface) that lets an authenticated user execute Operating System commands.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/d-link-multiple-security-vulnerabilities-leading-to-rce/",
+      "https://www.trustwave.com/en-us/resources/security-resources/security-advisories/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-24580",
+    "漏洞描述": "An issue was discovered on D-Link DSL-2888A devices with firmware prior to AU_2.31_V1.1.47ae55. Lack of authentication functionality allows an attacker to assign a static IP address that was once used by a valid user.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/d-link-multiple-security-vulnerabilities-leading-to-rce/",
+      "https://www.trustwave.com/en-us/resources/security-resources/security-advisories/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-24579",
+    "漏洞描述": "An issue was discovered on D-Link DSL-2888A devices with firmware prior to AU_2.31_V1.1.47ae55. An unauthenticated attacker could bypass authentication to access authenticated pages and functionality.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/d-link-multiple-security-vulnerabilities-leading-to-rce/",
+      "https://www.trustwave.com/en-us/resources/security-resources/security-advisories/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-24578",
+    "漏洞描述": "An issue was discovered on D-Link DSL-2888A devices with firmware prior to AU_2.31_V1.1.47ae55. It has a misconfigured FTP service that allows a malicious network user to access system folders and download sensitive files (such as the password hash file).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/d-link-multiple-security-vulnerabilities-leading-to-rce/",
+      "https://www.trustwave.com/en-us/resources/security-resources/security-advisories/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年12月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-24577",
+    "漏洞描述": "An issue was discovered on D-Link DSL-2888A devices with firmware prior to AU_2.31_V1.1.47ae55. The One Touch application discloses sensitive information, such as the hashed admin login password and the Internet provider connection username and cleartext password, in the application's response body for a /tmp/var/passwd or /tmp/home/wan_stat URI.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/d-link-multiple-security-vulnerabilities-leading-to-rce/",
+      "https://www.trustwave.com/en-us/resources/security-resources/security-advisories/",
+      "https://www.trustwave.com/en-us/resources/security-resources/security-advisories/?fid=28241"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年01月08日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载显示屏",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-11867",
+    "漏洞描述": "Audacity through 2.3.3 saves temporary files to /var/tmp/audacity-$USER by default. After Audacity creates the temporary directory, it sets its permissions to 755. Any user on the system can read and play the temporary audio .au files located there.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/audacity/audacity/releases",
+      "https://salvatoresecurity.com/the-many-perils-of-tmp/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/WKK3S2QBXBHOFOQMXMGY5QAKVUWUX2YY/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/MG5PSF4CJ7UPMJHWX553EG3P2XN3PAYI/"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年11月30日"
+  }
+]

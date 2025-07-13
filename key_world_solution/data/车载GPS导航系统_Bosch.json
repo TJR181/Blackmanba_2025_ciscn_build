@@ -1,0 +1,597 @@
+[
+  {
+    "设备品牌": "Bosch Rexroth AG",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "IndraDrive FWA-INDRV*-MP*",
+    "CVE编号": "CVE-2024-48989",
+    "漏洞描述": "A vulnerability in the PROFINET stack implementation of the IndraDrive (all versions) of Bosch Rexroth allows an attacker to cause a denial of service, rendering the device unresponsive by sending arbitrary UDP messages.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-315415.html"
+    ],
+    "受影响版本": [
+      "17VRS"
+    ],
+    "公开日期": "2024年11月13日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2024-42086",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\niio: chemical: bme680: Fix overflows in compensate() functions\n\nThere are cases in the compensate functions of the driver that\nthere could be overflows of variables due to bit shifting ops.\nThese implications were initially discussed here [1] and they\nwere mentioned in log message of Commit 1b3bd8592780 (\"iio:\nchemical: Add support for Bosch BME680 sensor\").\n\n[1]: https://lore.kernel.org/linux-iio/20180728114028.3c1bbe81@archlinux/",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/6fa31bbe2ea8665ee970258eb8320cbf231dbe9e",
+      "https://git.kernel.org/stable/c/b0af334616ed425024bf220adda0f004806b5feb",
+      "https://git.kernel.org/stable/c/c326551e99f5416986074ce78bef94f6a404b517",
+      "https://git.kernel.org/stable/c/7a13d1357658d3a3c1cd7b3b9543c805a6e5e6e9",
+      "https://git.kernel.org/stable/c/ba1bb3e2a38a7fef1c1818dd4f2d9abbfdde553a",
+      "https://git.kernel.org/stable/c/b5967393d50e3c6e632efda3ea3fdde14c1bfd0e",
+      "https://git.kernel.org/stable/c/3add41bbda92938e9a528d74659dfc552796be4e",
+      "https://git.kernel.org/stable/c/fdd478c3ae98c3f13628e110dce9b6cfb0d9b3c8"
+    ],
+    "受影响版本": [
+      "1b3bd8592780c87c5eddabbe98666b086bbaee36",
+      "1b3bd8592780c87c5eddabbe98666b086bbaee36",
+      "1b3bd8592780c87c5eddabbe98666b086bbaee36",
+      "1b3bd8592780c87c5eddabbe98666b086bbaee36",
+      "1b3bd8592780c87c5eddabbe98666b086bbaee36",
+      "1b3bd8592780c87c5eddabbe98666b086bbaee36",
+      "1b3bd8592780c87c5eddabbe98666b086bbaee36",
+      "1b3bd8592780c87c5eddabbe98666b086bbaee36"
+    ],
+    "公开日期": "2024年07月29日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Network Synchronizer Enterprise",
+    "CVE编号": "CVE-2024-25002",
+    "漏洞描述": "Command Injection in the diagnostics interface of the Bosch Network Synchronizer allows unauthorized users full access to the device.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-152190.html"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2024年03月25日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Camera Firmware",
+    "CVE编号": "CVE-2023-39509",
+    "漏洞描述": "A command injection vulnerability exists in Bosch IP cameras that allows an authenticated user with administrative rights to run arbitrary commands on the OS of the camera.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-638184-BT.html"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年12月18日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "BVMS",
+    "CVE编号": "CVE-2023-35867",
+    "漏洞描述": "An improper handling of a malformed API answer packets to API clients in Bosch BT software products can allow an unauthenticated attacker to cause a Denial of Service (DoS) situation. To exploit this vulnerability an attacker has to replace an existing API server e.g. through Man-in-the-Middle attacks.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-092656-BT.html"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年12月18日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Video Recording Manager",
+    "CVE编号": "CVE-2023-32230",
+    "漏洞描述": "An improper handling of a malformed API request to an API server in Bosch BT software products can allow an unauthenticated attacker to cause a Denial of Service (DoS) situation.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-092656-BT.html"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年12月18日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Camera Firmware",
+    "CVE编号": "CVE-2023-32229",
+    "漏洞描述": "Due to an error in the software interface to the secure element chip on Bosch IP cameras of family CPP13 and CPP14, the chip can be permanently damaged when enabling the Stream security option (signing of the video stream) with option MD5, SHA-1 or SHA-256.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-435698-BT.html"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年06月15日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "BIS",
+    "CVE编号": "CVE-2023-29241",
+    "漏洞描述": "Improper Information in Cybersecurity Guidebook in Bosch Building Integration System (BIS) 5.0 may lead to wrong configuration which allows local users to access data via network",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-988400-BT.html"
+    ],
+    "受影响版本": [
+      "5.0"
+    ],
+    "公开日期": "2023年06月30日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "BVMS",
+    "CVE编号": "CVE-2023-28175",
+    "漏洞描述": "Improper Authorization in SSH server in Bosch VMS 11.0, 11.1.0, and 11.1.1 allows a remote authenticated user to access resources within the trusted internal network via a port forwarding request.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-025794-bt.html"
+    ],
+    "受影响版本": [
+      "7.5"
+    ],
+    "公开日期": "2023年06月15日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Camera Firmware",
+    "CVE编号": "CVE-2022-41677",
+    "漏洞描述": "An information disclosure vulnerability was discovered in Bosch IP camera devices allowing an unauthenticated attacker to retrieve information (like capabilities) about the device itself and network settings of the device, disclosing possibly internal network settings if the device is connected to the internet.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-839739-BT.html"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年12月18日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "PRA-ES8P2S",
+    "CVE编号": "CVE-2022-32536",
+    "漏洞描述": "The user access rights validation in the web server of the Bosch Ethernet switch PRA-ES8P2S with software version 1.01.05 was insufficient. This would allow a non-administrator user to obtain administrator user access rights.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-247052-BT.html"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年06月22日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "PRA-ES8P2S",
+    "CVE编号": "CVE-2022-32535",
+    "漏洞描述": "The Bosch Ethernet switch PRA-ES8P2S with software version 1.01.05 runs its web server with root privilege. In combination with CVE-2022-23534 this could give an attacker root access to the switch.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-247052-BT.html"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年06月22日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "PRA-ES8P2S",
+    "CVE编号": "CVE-2022-32534",
+    "漏洞描述": "The Bosch Ethernet switch PRA-ES8P2S with software version 1.01.05 and earlier was found to be vulnerable to command injection through its diagnostics web interface. This allows execution of shell commands.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-247052-BT.html"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年06月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-23863",
+    "漏洞描述": "HTML code injection vulnerability in Android Application, Bosch Video Security, version 3.2.3. or earlier, when successfully exploited allows an attacker to inject random HTML code into a component loaded by WebView, thus allowing the Application to display web resources controlled by the attacker.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-844050.html"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年01月28日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "BVMS",
+    "CVE编号": "CVE-2021-23859",
+    "漏洞描述": "An unauthenticated attacker is able to send a special HTTP request, that causes a service to crash. In case of a standalone VRM or BVMS with VRM installation this crash also opens the possibility to send further unauthenticated commands to the service. On some products the interface is only local accessible lowering the CVSS base score. For a list of modified CVSS scores, please see the official Bosch Advisory Appendix chapter Modified CVSS Scores for CVE-2021-23859",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-043434-bt.html"
+    ],
+    "受影响版本": [
+      "unspecified",
+      "11.0",
+      "10.0",
+      "10.1"
+    ],
+    "公开日期": "2021年12月08日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "CPP Firmware",
+    "CVE编号": "CVE-2021-23854",
+    "漏洞描述": "An error in the handling of a page parameter in Bosch IP cameras may lead to a reflected cross site scripting (XSS) in the web-based interface. This issue only affects versions 7.7x and 7.6x. All other versions are not affected.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-478243-bt.html"
+    ],
+    "受影响版本": [
+      "7.70",
+      "7.72",
+      "7.62"
+    ],
+    "公开日期": "2021年06月09日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "CPP Firmware",
+    "CVE编号": "CVE-2021-23853",
+    "漏洞描述": "In Bosch IP cameras, improper validation of the HTTP header allows an attacker to inject arbitrary HTTP headers through crafted URLs.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-478243-bt.html"
+    ],
+    "受影响版本": [
+      "all"
+    ],
+    "公开日期": "2021年06月09日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "CPP Firmware",
+    "CVE编号": "CVE-2021-23852",
+    "漏洞描述": "An authenticated attacker with administrator rights Bosch IP cameras can call an URL with an invalid parameter that causes the camera to become unresponsive for a few seconds and cause a Denial of Service (DoS).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-478243-bt.html"
+    ],
+    "受影响版本": [
+      "all"
+    ],
+    "公开日期": "2021年06月09日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "CPP Firmware",
+    "CVE编号": "CVE-2021-23848",
+    "漏洞描述": "An error in the URL handler Bosch IP cameras may lead to a reflected cross site scripting (XSS) in the web-based interface. An attacker with knowledge of the camera address can send a crafted link to a user, which will execute javascript code in the context of the user.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-478243-bt.html"
+    ],
+    "受影响版本": [
+      "all"
+    ],
+    "公开日期": "2021年06月09日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "CPP Firmware",
+    "CVE编号": "CVE-2021-23847",
+    "漏洞描述": "A Missing Authentication in Critical Function in Bosch IP cameras allows an unauthenticated remote attacker to extract sensitive information or change settings of the camera by sending crafted requests to the device. Only devices of the CPP6, CPP7 and CPP7.3 family with firmware 7.70, 7.72, and 7.80 prior to B128 are affected by this vulnerability. Versions 7.62 or lower and INTEOX cameras are not affected.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-478243-bt.html"
+    ],
+    "受影响版本": [
+      "7.70",
+      "7.72",
+      "unspecified"
+    ],
+    "公开日期": "2021年06月09日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "AMS",
+    "CVE编号": "CVE-2021-23843",
+    "漏洞描述": "The Bosch software tools AccessIPConfig.exe and AmcIpConfig.exe are used to configure certains settings in AMC2 devices. The tool allows putting a password protection on configured devices to restrict access to the configuration of an AMC2. An attacker can circumvent this protection and make unauthorized changes to configuration data on the device. An attacker can exploit this vulnerability to manipulate the device\\'s configuration or make it unresponsive in the local network. The attacker needs to have access to the local network, typically even the same subnet.",
+    "攻击向量": "ADJACENT_NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-940448-BT.html"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2022年01月19日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Video Streaming Gateway",
+    "CVE编号": "CVE-2020-6790",
+    "漏洞描述": "Calling an executable through an Uncontrolled Search Path Element in the Bosch Video Streaming Gateway installer up to and including version 6.45.10 potentially allows an attacker to execute arbitrary code on a victim's system. A prerequisite is that the victim is tricked into placing a malicious exe in the same directory where the installer is started from.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-835563-bt.html"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年03月25日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Monitor Wall",
+    "CVE编号": "CVE-2020-6789",
+    "漏洞描述": "Loading a DLL through an Uncontrolled Search Path Element in the Bosch Monitor Wall installer up to and including version 10.00.0164 potentially allows an attacker to execute arbitrary code on a victim's system. A prerequisite is that the victim is tricked into placing a malicious DLL in the same directory where the installer is started from.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-835563-bt.html"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年03月25日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Configuration Manager",
+    "CVE编号": "CVE-2020-6788",
+    "漏洞描述": "Loading a DLL through an Uncontrolled Search Path Element in the Bosch Configuration Manager installer up to and including version 7.21.0078 potentially allows an attacker to execute arbitrary code on a victim's system. A prerequisite is that the victim is tricked into placing a malicious DLL in the same directory where the installer is started from.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-835563-bt.html"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年03月25日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Video Client",
+    "CVE编号": "CVE-2020-6787",
+    "漏洞描述": "Loading a DLL through an Uncontrolled Search Path Element in the Bosch Video Client installer up to and including version 1.7.6.079 potentially allows an attacker to execute arbitrary code on a victim's system. A prerequisite is that the victim is tricked into placing a malicious DLL in the same directory where the installer is started from.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-835563-bt.html"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年03月25日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Video Recording Manager",
+    "CVE编号": "CVE-2020-6786",
+    "漏洞描述": "Loading a DLL through an Uncontrolled Search Path Element in the Bosch Video Recording Manager installer up to and including version 3.82.0055 for 3.82, up to and including version 3.81.0064 for 3.81 and 3.71 and older potentially allows an attacker to execute arbitrary code on a victim's system. A prerequisite is that the victim is tricked into placing a malicious DLL in the same directory where the installer is started from.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-835563-bt.html"
+    ],
+    "受影响版本": [
+      "3.71 and older all",
+      "3.82",
+      "3.81"
+    ],
+    "公开日期": "2021年03月25日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "BVMS",
+    "CVE编号": "CVE-2020-6785",
+    "漏洞描述": "Loading a DLL through an Uncontrolled Search Path Element in Bosch BVMS and BVMS Viewer in versions 10.1.0, 10.0.1, 10.0.0 and 9.0.0 and older potentially allows an attacker to execute arbitrary code on a victim's system. This affects both the installer as well as the installed application. This also affects Bosch DIVAR IP 7000 R2, Bosch DIVAR IP all-in-one 5000 and Bosch DIVAR IP all-in-one 7000 with installers and installed BVMS versions prior to BVMS 10.1.1.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-835563-bt.html"
+    ],
+    "受影响版本": [
+      "unspecified",
+      "10.0",
+      "10.1"
+    ],
+    "公开日期": "2021年03月25日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Smart Home",
+    "CVE编号": "CVE-2020-6781",
+    "漏洞描述": "Improper certificate validation for certain connections in the Bosch Smart Home System App for iOS prior to version 9.17.1 potentially allows to intercept video contents by performing a man-in-the-middle attack.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-347336.html"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年09月16日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "FSM-2500",
+    "CVE编号": "CVE-2020-6780",
+    "漏洞描述": "Use of Password Hash With Insufficient Computational Effort in the database of Bosch FSM-2500 server and Bosch FSM-5000 server up to and including version 5.2 allows a remote attacker with admin privileges to dump the credentials of other users and possibly recover their plain-text passwords by brute-forcing the MD5 hash.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-332072-BT.html"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年01月25日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "FSM-2500",
+    "CVE编号": "CVE-2020-6779",
+    "漏洞描述": "Use of Hard-coded Credentials in the database of Bosch FSM-2500 server and Bosch FSM-5000 server up to and including version 5.2 allows an unauthenticated remote attacker to log into the database with admin-privileges. This may result in complete compromise of the confidentiality and integrity of the stored data as well as a high availability impact on the database itself. In addition, an attacker may execute arbitrary commands on the underlying operating system.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-332072-BT.html"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年01月25日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "PRAESIDEO",
+    "CVE编号": "CVE-2020-6777",
+    "漏洞描述": "A vulnerability in the web-based management interface of Bosch PRAESIDEO until and including version 4.41 and Bosch PRAESENSA until and including version 1.10 allows an authenticated remote attacker with admin privileges to mount a stored Cross-Site-Scripting (XSS) attack against another user. When the victim logs into the management interface, the stored script code is executed in the context of his browser. A successful exploit would allow an attacker to interact with the management interface with the privileges of the victim. However, as the attacker already needs admin privileges, there is no additional impact on the management interface itself.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-538331-bt.html"
+    ],
+    "受影响版本": [
+      "<= 4.41"
+    ],
+    "公开日期": "2021年01月14日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "PRAESIDEO",
+    "CVE编号": "CVE-2020-6776",
+    "漏洞描述": "A vulnerability in the web-based management interface of Bosch PRAESIDEO until and including version 4.41 and Bosch PRAESENSA until and including version 1.10 allows an unauthenticated remote attacker to trigger actions on an affected system on behalf of another user (Cross-Site Request Forgery). This requires the victim to be tricked into clicking a malicious link or submitting a malicious form. A successful exploit allows the attacker to perform arbitrary actions with the privileges of the victim, e.g. creating and modifying user accounts, changing system configuration settings and cause DoS conditions. Note: For Bosch PRAESIDEO 4.31 and newer and Bosch PRAESENSA in all versions, the confidentiality impact is considered low because user credentials are not shown in the web interface.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-538331-bt.html"
+    ],
+    "受影响版本": [
+      "<= 4.41"
+    ],
+    "公开日期": "2021年01月14日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "Bosch Recording Station",
+    "CVE编号": "CVE-2020-6774",
+    "漏洞描述": "Improper Access Control in the Kiosk Mode functionality of Bosch Recording Station allows a local unauthenticated attacker to escape from the Kiosk Mode and access the underlying operating system.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-363824-BT.html"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2020年05月27日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "IP Helper",
+    "CVE编号": "CVE-2020-6771",
+    "漏洞描述": "Loading a DLL through an Uncontrolled Search Path Element in Bosch IP Helper up to and including version 1.00.0008 potentially allows an attacker to execute arbitrary code on a victim's system. A prerequisite is that the victim is tricked into placing a malicious DLL in the same application directory as the portable IP Helper application.",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-835563-bt.html"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2021年03月25日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "DIVAR IP 3000",
+    "CVE编号": "CVE-2020-6770",
+    "漏洞描述": "Deserialization of Untrusted Data in the BVMS Mobile Video Service (BVMS MVS) allows an unauthenticated remote attacker to execute arbitrary code on the system. This affects Bosch BVMS versions 10.0 <= 10.0.0.1225, 9.0 <= 9.0.0.827, 8.0 <= 8.0.0.329 and 7.5 and older. This affects Bosch DIVAR IP 3000 and DIVAR IP 7000 if a vulnerable BVMS version is installed.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-885551-BT.html"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2020年02月07日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "DIVAR IP 2000",
+    "CVE编号": "CVE-2020-6769",
+    "漏洞描述": "Missing Authentication for Critical Function in the Bosch Video Streaming Gateway (VSG) allows an unauthenticated remote attacker to retrieve and set arbitrary configuration data of the Video Streaming Gateway. A successful attack can impact the confidentiality and availability of live and recorded video data of all cameras configured to be controlled by the VSG as well as the recording storage associated with the VSG. This affects Bosch Video Streaming Gateway versions 6.45 <= 6.45.08, 6.44 <= 6.44.022, 6.43 <= 6.43.0023 and 6.42.10 and older. This affects Bosch DIVAR IP 3000, DIVAR IP 7000 and DIVAR IP all-in-one 5000 if a vulnerable VSG version is installed with BVMS. This affects Bosch DIVAR IP 2000 <= 3.62.0019 and DIVAR IP 5000 <= 3.80.0039 if the corresponding port 8023 has been opened in the device's firewall.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-260625-BT.html"
+    ],
+    "受影响版本": [
+      "unspecified"
+    ],
+    "公开日期": "2020年02月07日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "DIVAR IP 3000",
+    "CVE编号": "CVE-2020-6768",
+    "漏洞描述": "A path traversal vulnerability in the Bosch Video Management System (BVMS) NoTouch deployment allows an unauthenticated remote attacker to read arbitrary files from the Central Server. This affects Bosch BVMS versions 10.0 <= 10.0.0.1225, 9.0 <= 9.0.0.827, 8.0 <= 8.0.329 and 7.5 and older. This affects Bosch BVMS Viewer versions 10.0 <= 10.0.0.1225, 9.0 <= 9.0.0.827, 8.0 <= 8.0.329 and 7.5 and older. This affects Bosch DIVAR IP 3000, DIVAR IP 7000 and DIVAR IP all-in-one 5000 if a vulnerable BVMS version is installed.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/bosch-sa-815013-bt.html"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2020年02月07日"
+  },
+  {
+    "设备品牌": "Bosch",
+    "设备类型": "车载GPS导航系统",
+    "产品型号": "DIVAR IP 3000",
+    "CVE编号": "CVE-2020-6767",
+    "漏洞描述": "A path traversal vulnerability in the Bosch Video Management System (BVMS) FileTransferService allows an authenticated remote attacker to read arbitrary files from the Central Server. This affects Bosch BVMS versions 10.0 <= 10.0.0.1225, 9.0 <= 9.0.0.827, 8.0 <= 8.0.329 and 7.5 and older. This affects Bosch BVMS Viewer versions 10.0 <= 10.0.0.1225, 9.0 <= 9.0.0.827, 8.0 <= 8.0.329 and 7.5 and older. This affects Bosch DIVAR IP 3000, DIVAR IP 7000 and DIVAR IP all-in-one 5000 if a vulnerable BVMS version is installed.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://psirt.bosch.com/security-advisories/BOSCH-SA-381489-BT.html"
+    ],
+    "受影响版本": [
+      "All"
+    ],
+    "公开日期": "2020年02月06日"
+  }
+]

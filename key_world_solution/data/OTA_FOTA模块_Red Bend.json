@@ -1,0 +1,913 @@
+[
+  {
+    "设备品牌": "Pilz",
+    "设备类型": "OTA",
+    "产品型号": "IndustrialPI 4 with Firmware Bullseye",
+    "CVE编号": "CVE-2025-41656",
+    "漏洞描述": "An unauthenticated remote attacker can run arbitrary commands on the affected devices with high privileges because the authentication for the Node_RED server is not configured by default.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://certvde.com/en/advisories/VDE-2025-045"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年07月01日"
+  },
+  {
+    "设备品牌": "BishopFox",
+    "设备类型": "OTA",
+    "产品型号": "sliver",
+    "CVE编号": "CVE-2025-27090",
+    "漏洞描述": "Sliver is an open source cross-platform adversary emulation/red team framework, it can be used by organizations of all sizes to perform security testing. The reverse port forwarding in sliver teamserver allows the implant to open a reverse tunnel on the sliver teamserver without verifying if the operator instructed the implant to do so. The only impact that has been shown is the exposure of the server's IP address to a third party. This issue has been addressed in version 1.5.43 and all users are advised to upgrade. There are no known workarounds for this vulnerability.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/BishopFox/sliver/security/advisories/GHSA-fh4v-v779-4g2w",
+      "https://github.com/BishopFox/sliver/commit/0f340a25cf3d496ed870dae7da39eab4427bc16f",
+      "https://github.com/BishopFox/sliver/commit/10e245326070c6a5884a02e0790bb7e2baefb3a1"
+    ],
+    "受影响版本": [
+      ">= 1.5.26, < 1.5.43"
+    ],
+    "公开日期": "2025年02月19日"
+  },
+  {
+    "设备品牌": "KUNBUS GmbH",
+    "设备类型": "OTA",
+    "产品型号": "Revolution Pi OS Bookworm",
+    "CVE编号": "CVE-2025-24522",
+    "漏洞描述": "KUNBUS Revolution Pi OS Bookworm 01/2025 is vulnerable because authentication is not configured by default for the Node-RED server. This can give an unauthenticated remote attacker full access to the Node-RED server where they can run arbitrary commands on the underlying operating system.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.cisa.gov/news-events/ics-advisories/icsa-25-121-01",
+      "http://packages.revolutionpi.de/pool/main/p/pictory/"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2025年05月01日"
+  },
+  {
+    "设备品牌": "elabftw",
+    "设备类型": "OTA",
+    "产品型号": "elabftw",
+    "CVE编号": "CVE-2024-47826",
+    "漏洞描述": "eLabFTW is an open source electronic lab notebook for research labs. A vulnerability in versions prior to 5.1.5 allows an attacker to inject arbitrary HTML tags in the pages: \"experiments.php\" (show mode), \"database.php\" (show mode) or \"search.php\". It works by providing HTML code in the extended search string, which will then be displayed back to the user in the error message. This means that injected HTML will appear in a red \"alert/danger\" box, and be part of an error message. Due to some other security measures, it is not possible to execute arbitrary javascript from this attack. As such, this attack is deemed low impact. Users should upgrade to at least version 5.1.5 to receive a patch. No known workarounds are available.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/elabftw/elabftw/security/advisories/GHSA-cjww-pr9f-4c4w",
+      "https://www.acunetix.com/vulnerabilities/web/html-injection"
+    ],
+    "受影响版本": [
+      "< 5.1.5"
+    ],
+    "公开日期": "2024年10月14日"
+  },
+  {
+    "设备品牌": "BishopFox",
+    "设备类型": "OTA",
+    "产品型号": "sliver",
+    "CVE编号": "CVE-2024-41111",
+    "漏洞描述": "Sliver is an open source cross-platform adversary emulation/red team framework, it can be used by organizations of all sizes to perform security testing. Sliver version 1.6.0 (prerelease) is vulnerable to RCE on the teamserver by a low-privileged \"operator\" user. The RCE is as the system root user. The exploit is pretty fun as we make the Sliver server pwn itself. As described in a past issue (#65), \"there is a clear security boundary between the operator and server, an operator should not inherently be able to run commands or code on the server.\" An operator who exploited this vulnerability would be able to view all console logs, kick all other operators, view and modify files stored on the server, and ultimately delete the server. This issue has not yet be addressed but is expected to be resolved before the full release of version 1.6.0. Users of the 1.6.0 prerelease should avoid using Silver in production.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/BishopFox/sliver/security/advisories/GHSA-hc5w-gxxr-w8x8",
+      "https://github.com/BishopFox/sliver/issues/65",
+      "https://github.com/BishopFox/sliver/pull/1281",
+      "https://github.com/BishopFox/sliver/commit/5016fb8d7cdff38c79e22e8293e58300f8d3bd57",
+      "https://sliver.sh/docs?name=Multi-player+Mode"
+    ],
+    "受影响版本": [
+      "= 1.6.0-dev"
+    ],
+    "公开日期": "2024年07月18日"
+  },
+  {
+    "设备品牌": "Cog-Creators",
+    "设备类型": "OTA",
+    "产品型号": "Red-DiscordBot",
+    "CVE编号": "CVE-2024-39905",
+    "漏洞描述": "Red is a fully modular Discord bot. Due to a bug in Red's Core API, 3rd-party cogs using the `@commands.can_manage_channel()` command permission check without additional permission controls may authorize a user to run a command even when that user doesn't have permissions to manage a channel. None of the core commands or core cogs are affected. The maintainers of the project are not aware of any _public_ 3rd-party cog utilizing this API at the time of writing this advisory. The problem was patched and released in version 3.5.10.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/Cog-Creators/Red-DiscordBot/security/advisories/GHSA-5jq8-q6rj-9gq4",
+      "https://github.com/Cog-Creators/Red-DiscordBot/pull/6398",
+      "https://github.com/Cog-Creators/Red-DiscordBot/commit/0b0b23b9717b40ed4f8715720b199417c8e89750"
+    ],
+    "受影响版本": [
+      ">= 3.5.0, < 3.5.10"
+    ],
+    "公开日期": "2024年07月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-36445",
+    "漏洞描述": "Swissphone DiCal-RED 4009 devices allow a remote attacker to gain a root shell via TELNET without authentication.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.swissphone.com/en-us/solutions/components/terminals/radio-data-module-dical-red/",
+      "https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SYSS-2024-035.txt"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年08月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-36444",
+    "漏洞描述": "cgi-bin/fdmcgiwebv2.cgi on Swissphone DiCal-RED 4009 devices allows an unauthenticated attacker to gain access to device logs.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.swissphone.com/en-us/solutions/components/terminals/radio-data-module-dical-red/",
+      "https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SYSS-2024-040.txt"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年08月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-36443",
+    "漏洞描述": "Swissphone DiCal-RED 4009 devices allow a remote attacker to gain read access to almost the whole file system via anonymous FTP.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.swissphone.com/en-us/solutions/components/terminals/radio-data-module-dical-red/",
+      "https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SYSS-2024-036.txt"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年08月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-36442",
+    "漏洞描述": "cgi-bin/fdmcgiwebv2.cgi on Swissphone DiCal-RED 4009 devices allows an authenticated attacker to gain access to arbitrary files on the device's file system.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.swissphone.com/en-us/solutions/components/terminals/radio-data-module-dical-red/",
+      "https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SYSS-2024-039.txt"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年08月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-36441",
+    "漏洞描述": "Swissphone DiCal-RED 4009 devices allow an unauthenticated attacker use a port-2101 TCP connection to gain access to operation messages that are received by the device.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.swissphone.com/en-us/solutions/components/terminals/radio-data-module-dical-red/",
+      "https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SYSS-2024-042.txt"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年08月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-36440",
+    "漏洞描述": "An issue was discovered on Swissphone DiCal-RED 4009 devices. An attacker with access to the file /etc/deviceconfig may recover the administrative device password via password-cracking methods, because unsalted MD5 is used.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.swissphone.com/en-us/solutions/components/terminals/radio-data-module-dical-red/",
+      "https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SYSS-2024-037.txt"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年08月22日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2024-36439",
+    "漏洞描述": "Swissphone DiCal-RED 4009 devices allow a remote attacker to gain access to the administrative web interface via the device password's hash value, without knowing the actual device password.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.swissphone.com/en-us/solutions/components/terminals/radio-data-module-dical-red/",
+      "https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SYSS-2024-038.txt"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2024年08月22日"
+  },
+  {
+    "设备品牌": "Red Lion Europe",
+    "设备类型": "OTA",
+    "产品型号": "mbCONNECT24",
+    "CVE编号": "CVE-2023-4834",
+    "漏洞描述": "In Red Lion Europe mbCONNECT24 and mymbCONNECT24 and Helmholz myREX24 and myREX24.virtual up to and including 2.14.2 an improperly implemented access validation allows an authenticated, low privileged attacker to gain read access to limited, non-critical device information in his account he should not have access to.\n\n\n\n\t\t\t\t\t\n\n\n\t\t\t\t\n\n\n\t\t\t\n\n\n\t\t\n\n\n\t\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://cert.vde.com/en/advisories/VDE-2023-041",
+      "https://cert.vde.com/en/advisories/VDE-2023-043"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年10月16日"
+  },
+  {
+    "设备品牌": "Red Lion Controls",
+    "设备类型": "OTA",
+    "产品型号": "ST-IPm-8460",
+    "CVE编号": "CVE-2023-42770",
+    "漏洞描述": "\nRed Lion SixTRAK and VersaTRAK Series RTUs with authenticated users enabled (UDR-A) any Sixnet UDR message will meet an authentication challenge over UDP/IP. When the same message is received over TCP/IP the RTU will simply accept the message with no authentication challenge.\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.cisa.gov/news-events/ics-advisories/icsa-23-320-01",
+      "https://https://support.redlion.net/hc/en-us/articles/19339209248269-RLCSIM-2023-05-Authentication-Bypass-and-Remote-Code-Execution"
+    ],
+    "受影响版本": [
+      "6.0.202"
+    ],
+    "公开日期": "2023年11月21日"
+  },
+  {
+    "设备品牌": "ZTE",
+    "设备类型": "OTA",
+    "产品型号": "Red Magic 8 Pro",
+    "CVE编号": "CVE-2023-41784",
+    "漏洞描述": "\nPermissions and Access Control Vulnerability in ZTE Red Magic 8 Pro \n\n",
+    "攻击向量": "LOCAL",
+    "厂商补丁链接": [
+      "https://support.zte.com.cn/support/news/LoopholeInfoDetail.aspx?newsId=1034444"
+    ],
+    "受影响版本": [
+      "GEN_CN_NX729JV1.0.0B21MR"
+    ],
+    "公开日期": "2024年01月04日"
+  },
+  {
+    "设备品牌": "Red Lion Controls",
+    "设备类型": "OTA",
+    "产品型号": "ST-IPm-8460",
+    "CVE编号": "CVE-2023-40151",
+    "漏洞描述": "\n\n\nWhen user authentication is not enabled the shell can execute commands with the highest privileges. Red Lion SixTRAK and VersaTRAK Series RTUs with authenticated users enabled (UDR-A) any Sixnet UDR message will meet an authentication challenge over UDP/IP. When the same message comes over TCP/IP the RTU will simply accept the message with no authentication challenge.\n\n\n\n",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.cisa.gov/news-events/ics-advisories/icsa-23-320-01",
+      "https://support.redlion.net/hc/en-us/articles/19339209248269-RLCSIM-2023-05-Authentication-Bypass-and-Remote-Code-Execution"
+    ],
+    "受影响版本": [
+      "6.0.202"
+    ],
+    "公开日期": "2023年11月21日"
+  },
+  {
+    "设备品牌": "Red Lion Europe",
+    "设备类型": "OTA",
+    "产品型号": "mbNET",
+    "CVE编号": "CVE-2023-34412",
+    "漏洞描述": "A vulnerability in Red Lion Europe mbNET/mbNET.rokey and Helmholz REX 200 and REX 250 devices with firmware lower 7.3.2 allows an\nauthenticated remote attacker with high privileges to inject malicious HTML or JavaScript code (XSS).",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://cert.vde.com/en/advisories/VDE-2023-012/",
+      "https://cert.vde.com/en/advisories/VDE-2023-029/"
+    ],
+    "受影响版本": [
+      "0"
+    ],
+    "公开日期": "2023年08月17日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "OTA",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-49921",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: sched: Fix use after free in red_enqueue()\n\nWe can't use \"skb\" again after passing it to qdisc_enqueue().  This is\nbasically identical to commit 2f09707d0c97 (\"sch_sfb: Also store skb\nlen before calling child enqueue\").",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/795afe0b9bb6c915f0299a8e309936519be01619",
+      "https://git.kernel.org/stable/c/a238cdcf2bdc72207c74375fc8be13ee549ca9db",
+      "https://git.kernel.org/stable/c/e877f8fa49fbccc63cb2df2e9179bddc695b825a",
+      "https://git.kernel.org/stable/c/52e0429471976785c155bfbf51d80990c6cd46e2",
+      "https://git.kernel.org/stable/c/5960b9081baca85cc7dcb14aec1de85999ea9d36",
+      "https://git.kernel.org/stable/c/fc4b50adb400ee5ec527a04073174e8e73a139fa",
+      "https://git.kernel.org/stable/c/170e5317042c302777ed6d59fdb84af9b0219d4e",
+      "https://git.kernel.org/stable/c/8bdc2acd420c6f3dd1f1c78750ec989f02a1e2b9"
+    ],
+    "受影响版本": [
+      "d7f4f332f082c4d4ba53582f902ed6b44fd6f45e",
+      "d7f4f332f082c4d4ba53582f902ed6b44fd6f45e",
+      "d7f4f332f082c4d4ba53582f902ed6b44fd6f45e",
+      "d7f4f332f082c4d4ba53582f902ed6b44fd6f45e",
+      "d7f4f332f082c4d4ba53582f902ed6b44fd6f45e",
+      "d7f4f332f082c4d4ba53582f902ed6b44fd6f45e",
+      "d7f4f332f082c4d4ba53582f902ed6b44fd6f45e",
+      "d7f4f332f082c4d4ba53582f902ed6b44fd6f45e",
+      "ab0b3b9dbf559a5633d460e748144697bd2d3aa3"
+    ],
+    "公开日期": "2025年05月01日"
+  },
+  {
+    "设备品牌": "Linux",
+    "设备类型": "OTA",
+    "产品型号": "Linux",
+    "CVE编号": "CVE-2022-48998",
+    "漏洞描述": "In the Linux kernel, the following vulnerability has been resolved:\n\npowerpc/bpf/32: Fix Oops on tail call tests\n\ntest_bpf tail call tests end up as:\n\n  test_bpf: #0 Tail call leaf jited:1 85 PASS\n  test_bpf: #1 Tail call 2 jited:1 111 PASS\n  test_bpf: #2 Tail call 3 jited:1 145 PASS\n  test_bpf: #3 Tail call 4 jited:1 170 PASS\n  test_bpf: #4 Tail call load/store leaf jited:1 190 PASS\n  test_bpf: #5 Tail call load/store jited:1\n  BUG: Unable to handle kernel data access on write at 0xf1b4e000\n  Faulting instruction address: 0xbe86b710\n  Oops: Kernel access of bad area, sig: 11 [#1]\n  BE PAGE_SIZE=4K MMU=Hash PowerMac\n  Modules linked in: test_bpf(+)\n  CPU: 0 PID: 97 Comm: insmod Not tainted 6.1.0-rc4+ #195\n  Hardware name: PowerMac3,1 750CL 0x87210 PowerMac\n  NIP:  be86b710 LR: be857e88 CTR: be86b704\n  REGS: f1b4df20 TRAP: 0300   Not tainted  (6.1.0-rc4+)\n  MSR:  00009032 <EE,ME,IR,DR,RI>  CR: 28008242  XER: 00000000\n  DAR: f1b4e000 DSISR: 42000000\n  GPR00: 00000001 f1b4dfe0 c11d2280 00000000 00000000 00000000 00000002 00000000\n  GPR08: f1b4e000 be86b704 f1b4e000 00000000 00000000 100d816a f2440000 fe73baa8\n  GPR16: f2458000 00000000 c1941ae4 f1fe2248 00000045 c0de0000 f2458030 00000000\n  GPR24: 000003e8 0000000f f2458000 f1b4dc90 3e584b46 00000000 f24466a0 c1941a00\n  NIP [be86b710] 0xbe86b710\n  LR [be857e88] __run_one+0xec/0x264 [test_bpf]\n  Call Trace:\n  [f1b4dfe0] [00000002] 0x2 (unreliable)\n  Instruction dump:\n  XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX\n  XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX\n  ---[ end trace 0000000000000000 ]---\n\nThis is a tentative to write above the stack. The problem is encoutered\nwith tests added by commit 38608ee7b690 (\"bpf, tests: Add load store\ntest case for tail call\")\n\nThis happens because tail call is done to a BPF prog with a different\nstack_depth. At the time being, the stack is kept as is when the caller\ntail calls its callee. But at exit, the callee restores the stack based\non its own properties. Therefore here, at each run, r1 is erroneously\nincreased by 32 - 16 = 16 bytes.\n\nThis was done that way in order to pass the tail call count from caller\nto callee through the stack. As powerpc32 doesn't have a red zone in\nthe stack, it was necessary the maintain the stack as is for the tail\ncall. But it was not anticipated that the BPF frame size could be\ndifferent.\n\nLet's take a new approach. Use register r4 to carry the tail call count\nduring the tail call, and save it into the stack at function entry if\nrequired. This means the input parameter must be in r3, which is more\ncorrect as it is a 32 bits parameter, then tail call better match with\nnormal BPF function entry, the down side being that we move that input\nparameter back and forth between r3 and r4. That can be optimised later.\n\nDoing that also has the advantage of maximising the common parts between\ntail calls and a normal function exit.\n\nWith the fix, tail call tests are now successfull:\n\n  test_bpf: #0 Tail call leaf jited:1 53 PASS\n  test_bpf: #1 Tail call 2 jited:1 115 PASS\n  test_bpf: #2 Tail call 3 jited:1 154 PASS\n  test_bpf: #3 Tail call 4 jited:1 165 PASS\n  test_bpf: #4 Tail call load/store leaf jited:1 101 PASS\n  test_bpf: #5 Tail call load/store jited:1 141 PASS\n  test_bpf: #6 Tail call error path, max count reached jited:1 994 PASS\n  test_bpf: #7 Tail call count preserved across function calls jited:1 140975 PASS\n  test_bpf: #8 Tail call error path, NULL target jited:1 110 PASS\n  test_bpf: #9 Tail call error path, index out of range jited:1 69 PASS\n  test_bpf: test_tail_calls: Summary: 10 PASSED, 0 FAILED, [10/10 JIT'ed]",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://git.kernel.org/stable/c/747a6e547240baaaf41874d27333b87b87cfd24c",
+      "https://git.kernel.org/stable/c/89d21e259a94f7d5582ec675aa445f5a79f347e4"
+    ],
+    "受影响版本": [
+      "51c66ad849a703d9bbfd7704c941827aed0fd9fd",
+      "51c66ad849a703d9bbfd7704c941827aed0fd9fd"
+    ],
+    "公开日期": "2024年10月21日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-47542",
+    "漏洞描述": "Red Gate SQL Monitor 11.0.14 through 12.1.46 has Incorrect Access Control, exploitable remotely for Escalation of Privileges.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://red-gate.com",
+      "https://www.red-gate.com/privacy-and-security/vulnerabilities/2023-01-31-sql-monitor"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年03月30日"
+  },
+  {
+    "设备品牌": "unspecified",
+    "设备类型": "OTA",
+    "产品型号": "node-red-dashboard",
+    "CVE编号": "CVE-2022-3783",
+    "漏洞描述": "A vulnerability, which was classified as problematic, has been found in node-red-dashboard. This issue affects some unknown processing of the file components/ui-component/ui-component-ctrl.js of the component ui_text Format Handler. The manipulation leads to cross site scripting. The attack may be initiated remotely. The name of the patch is 9305d1a82f19b235dfad24a7d1dd4ed244db7743. It is recommended to apply a patch to fix this issue. The associated identifier of this vulnerability is VDB-212555.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/node-red/node-red-dashboard/issues/772",
+      "https://github.com/node-red/node-red-dashboard/commit/9305d1a82f19b235dfad24a7d1dd4ed244db7743"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年10月31日"
+  },
+  {
+    "设备品牌": "Red Lion Controls",
+    "设备类型": "OTA",
+    "产品型号": "Crimson 3.0",
+    "CVE编号": "CVE-2022-3090",
+    "漏洞描述": "Red Lion Controls Crimson 3.0 versions 707.000 and prior, Crimson 3.1 versions 3126.001 and prior, and Crimson 3.2 versions 3.2.0044.0 and prior are vulnerable to path traversal. When attempting to open a file using a specific path, the user's password hash is sent to an arbitrary host. This could allow an attacker to obtain user credential hashes.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.cisa.gov/uscert/ics/advisories/icsa-22-321-01"
+    ],
+    "受影响版本": [
+      "All versions"
+    ],
+    "公开日期": "2022年11月17日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2022-28452",
+    "漏洞描述": "Red Planet Laundry Management System 1.0 is vulnerable to SQL Injection.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://laundry.redplanetcomputers.com/",
+      "https://laundry.redplanetcomputers.com/demo/index.php/login",
+      "https://sourceforge.net/projects/laundry-management-system/",
+      "https://github.com/YavuzSahbaz/Red-Planet-Laundry-Management-System-1.0-is-vulnerable-to-SQL",
+      "https://github.com/nu11secur1ty/CVE-mitre/tree/main/2022/CVE-2022-28452"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2022年04月29日"
+  },
+  {
+    "设备品牌": "Qualcomm, Inc.",
+    "设备类型": "OTA",
+    "产品型号": "Snapdragon",
+    "CVE编号": "CVE-2022-25738",
+    "漏洞描述": "Information disclosure in modem due to buffer over-red while performing checksum of packet received",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.qualcomm.com/company/product-security/bulletins/february-2023-bulletin"
+    ],
+    "受影响版本": [
+      "AR8031",
+      "CSRA6620",
+      "CSRA6640",
+      "MDM8207",
+      "MDM9205",
+      "MDM9206",
+      "MDM9207",
+      "MDM9607",
+      "QCA4004",
+      "QCA4010",
+      "QCA4020",
+      "QCA4024",
+      "QCS405",
+      "QTS110",
+      "SSG2115P",
+      "SSG2125P",
+      "SXR1230P",
+      "SXR2230P",
+      "WCD9306",
+      "WCD9330",
+      "WCD9335",
+      "WCD9380",
+      "WCD9385",
+      "WCN3980",
+      "WCN3998",
+      "WCN3999",
+      "WCN6855",
+      "WCN6856",
+      "WCN7850",
+      "WCN7851",
+      "WSA8810",
+      "WSA8815",
+      "WSA8830",
+      "WSA8832",
+      "WSA8835"
+    ],
+    "公开日期": "2023年02月09日"
+  },
+  {
+    "设备品牌": "Twentysix26",
+    "设备类型": "OTA",
+    "产品型号": "x26-Cogs",
+    "CVE编号": "CVE-2022-23604",
+    "漏洞描述": "x26-Cogs is a repository of cogs made by Twentysix for the Red Discord bot. Among these cogs is the Defender cog, a tool for Discord server moderation. A vulnerability in the Defender cog prior to version 1.10.0 allows users with admin privileges to issue commands as other users who share the same server. If a bot owner shares the same server as the attacker, it is possible for the attacker to issue bot-owner restricted commands. The issue has been patched in version 1.10.0. One may unload the Defender cog as a workaround.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/Twentysix26/x26-Cogs/security/advisories/GHSA-cfh8-v56j-5757",
+      "https://github.com/Twentysix26/x26-Cogs/commit/72dd9323cb4c90f3a5accac7087605375d178246",
+      "https://github.com/Twentysix26/x26-Cogs/releases/tag/v1.10"
+    ],
+    "受影响版本": [
+      "< 1.10.0"
+    ],
+    "公开日期": "2022年02月15日"
+  },
+  {
+    "设备品牌": "Juniper Networks",
+    "设备类型": "OTA",
+    "产品型号": "Junos OS Evolved",
+    "CVE编号": "CVE-2022-22211",
+    "漏洞描述": "A limitless resource allocation vulnerability in FPC resources of Juniper Networks Junos OS Evolved on PTX Series allows an unprivileged attacker to cause Denial of Service (DoS). Continuously polling the SNMP jnxCosQstatTable causes the FPC to run out of GUID space, causing a Denial of Service to the FPC resources. When the FPC runs out of the GUID space, you will see the following syslog messages. The evo-aftmand-bt process is asserting. fpc1 evo-aftmand-bt[17556]: %USER-3: get_next_guid: Ran out of Guid Space start 1748051689472 end 1752346656767 fpc1 audit[17556]: %AUTH-5: ANOM_ABEND auid=4294967295 uid=0 gid=0 ses=4294967295 pid=17556 comm=\"EvoAftManBt-mai\" exe=\"/usr/sbin/evo-aftmand-bt\" sig=6 fpc1 kernel: %KERN-5: audit: type=1701 audit(1648567505.119:57): auid=4294967295 uid=0 gid=0 ses=4294967295 pid=17556 comm=\"EvoAftManBt-mai\" exe=\"/usr/sbin/evo-aftmand-bt\" sig=6 fpc1 emfd-fpa[14438]: %USER-5: Alarm set: APP color=red, class=CHASSIS, reason=Application evo-aftmand-bt fail on node Fpc1 fpc1 emfd-fpa[14438]: %USER-3-EMF_FPA_ALARM_REP: RaiseAlarm: Alarm(Location: /Chassis[0]/Fpc[1] Module: sysman Object: evo-aftmand-bt:0 Error: 2) reported fpc1 sysepochman[12738]: %USER-5-SYSTEM_REBOOT_EVENT: Reboot [node] [ungraceful reboot] [evo-aftmand-bt exited] The FPC resources can be monitored using the following commands: user@router> start shell [vrf:none] user@router-re0:~$ cli -c \"show platform application-info allocations app evo-aftmand-bt\" | grep ^fpc | grep -v Route | grep -i -v Nexthop | awk '{total[$1] += $5} END { for (key in total) { print key \" \" total[key]/4294967296 }}' Once the FPCs become unreachable they must be manually restarted as they do not self-recover. This issue affects Juniper Networks Junos OS Evolved on PTX Series: All versions prior to 20.4R3-S4-EVO; 21.1-EVO version 21.1R1-EVO and later versions; 21.2-EVO version 21.2R1-EVO and later versions; 21.3-EVO versions prior to 21.3R3-EVO; 21.4-EVO versions prior to 21.4R2-EVO; 22.1-EVO versions prior to 22.1R2-EVO.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://kb.juniper.net/JSA69916"
+    ],
+    "受影响版本": [
+      "unspecified",
+      "21.1R1-EVO",
+      "21.2R1-EVO",
+      "21.3-EVO",
+      "21.4-EVO",
+      "22.1-EVO"
+    ],
+    "公开日期": "2022年10月18日"
+  },
+  {
+    "设备品牌": "Microsoft",
+    "设备类型": "OTA",
+    "产品型号": "Microsoft Office LTSC 2021",
+    "CVE编号": "CVE-2021-42293",
+    "漏洞描述": "",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-42293"
+    ],
+    "受影响版本": [
+      "16.0.1"
+    ],
+    "公开日期": "2021年12月15日"
+  },
+  {
+    "设备品牌": "tmercswims",
+    "设备类型": "OTA",
+    "产品型号": "tmerc-cogs",
+    "CVE编号": "CVE-2021-37697",
+    "漏洞描述": "tmerc-cogs are a collection of open source plugins for the Red Discord bot. A vulnerability has been found in the code that allows any user to access sensitive information by crafting a specific membership event message. Issue is patched in commit d63c49b4cfc30c795336e4fff08cba3795e0fcc0. As a workaround users may unload the Welcome cog.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/tmercswims/tmerc-cogs/security/advisories/GHSA-77xv-8c2x-j96j",
+      "https://github.com/tmercswims/tmerc-cogs/commit/d63c49b4cfc30c795336e4fff08cba3795e0fcc0"
+    ],
+    "受影响版本": [
+      "< d63c49b4cfc30c795336e4fff08cba3795e0fcc0"
+    ],
+    "公开日期": "2021年08月11日"
+  },
+  {
+    "设备品牌": "tmercswims",
+    "设备类型": "OTA",
+    "产品型号": "tmerc-cogs",
+    "CVE编号": "CVE-2021-37696",
+    "漏洞描述": "tmerc-cogs are a collection of open source plugins for the Red Discord bot. A vulnerability has been found in the code that allows any user to access sensitive information by crafting a specific MassDM message. Issue is patched in commit 92325be650a6c17940cc52611797533ed95dbbe1. All users are advised to update to the current commit. As a workaround users may unload the MassDM cog or globally disable the `[p]massdm` command.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/tmercswims/tmerc-cogs/security/advisories/GHSA-ffhm-9c8j-wx9h",
+      "https://github.com/tmercswims/tmerc-cogs/commit/92325be650a6c17940cc5"
+    ],
+    "受影响版本": [
+      "< 92325be650a6c17940cc5"
+    ],
+    "公开日期": "2021年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-3223",
+    "漏洞描述": "Node-RED-Dashboard before 2.26.2 allows ui_base/js/..%2f directory traversal to read files.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/node-red/node-red-dashboard/issues/669",
+      "https://github.com/node-red/node-red-dashboard/releases/tag/2.26.2"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年01月26日"
+  },
+  {
+    "设备品牌": "retke",
+    "设备类型": "OTA",
+    "产品型号": "Laggrons-Dumb-Cogs",
+    "CVE编号": "CVE-2021-29502",
+    "漏洞描述": "WarnSystem is a cog (plugin) for the Red discord bot. A vulnerability has been found in the code that allows any user to access sensible informations by setting up a specific template which is not properly sanitized. The problem has been patched in version 1.3.18. Users should update and type `!warnsysteminfo` to check that their version is 1.3.18 or above. As a workaround users may unload the WarnSystem cog or disable the `!warnset description` command globally.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/retke/Laggrons-Dumb-Cogs/security/advisories/GHSA-834g-67vv-m9wq",
+      "https://github.com/retke/Laggrons-Dumb-Cogs/commit/c79dd2cc879989cf2018e76ba2aad0baef3b4ec8"
+    ],
+    "受影响版本": [
+      "< 1.3.18"
+    ],
+    "公开日期": "2021年05月10日"
+  },
+  {
+    "设备品牌": "Dav-Git",
+    "设备类型": "OTA",
+    "产品型号": "Dav-Cogs",
+    "CVE编号": "CVE-2021-29501",
+    "漏洞描述": "Ticketer is a command based ticket system cog (plugin) for the red discord bot. A vulnerability allowing discord users to expose sensitive information has been found in the Ticketer cog. Please upgrade to version 1.0.1 as soon as possible. As a workaround users may unload the ticketer cog to disable the exploitable code.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/Dav-Git/Dav-Cogs/security/advisories/GHSA-r2cf-49r7-pfj7",
+      "https://github.com/Dav-Git/Dav-Cogs/commit/3d54ef9b52ce03f139b7d6c1cc38c375e65593fd"
+    ],
+    "受影响版本": [
+      "< 1.0.1"
+    ],
+    "公开日期": "2021年05月10日"
+  },
+  {
+    "设备品牌": "kennnyshiwa",
+    "设备类型": "OTA",
+    "产品型号": "kennnyshiwa-cogs",
+    "CVE编号": "CVE-2021-29493",
+    "漏洞描述": "Kennnyshiwa-cogs contains cogs for Red Discordbot. An RCE exploit has been found in the Tickets module of kennnyshiwa-cogs. This exploit allows discord users to craft a message that can reveal sensitive and harmful information. Users can upgrade to version 5a84d60018468e5c0346f7ee74b2b4650a6dade7 to receive a patch or, as a workaround, unload tickets to render the exploit unusable.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/kennnyshiwa/kennnyshiwa-cogs/security/advisories/GHSA-f4j2-2cwr-h473",
+      "https://github.com/kennnyshiwa/kennnyshiwa-cogs/commit/5a84d60018468e5c0346f7ee74b2b4650a6dade7"
+    ],
+    "受影响版本": [
+      "< 5a84d60018468e5c0346f7ee74b2b4650a6dade7"
+    ],
+    "公开日期": "2021年05月06日"
+  },
+  {
+    "设备品牌": "Microsoft",
+    "设备类型": "OTA",
+    "产品型号": "Microsoft Access 2013 Service Pack 1 (32-bit editions)",
+    "CVE编号": "CVE-2021-28455",
+    "漏洞描述": "",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-28455"
+    ],
+    "受影响版本": [
+      "15.0.0"
+    ],
+    "公开日期": "2021年05月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-26504",
+    "漏洞描述": "Directory Traversal vulnerability in Foddy node-red-contrib-huemagic version 3.0.0, allows remote attackers to gain sensitive information via crafted request in res.sendFile API in hue-magic.js.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/Foddy/node-red-contrib-huemagic/issues/217"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2023年08月11日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2021-25864",
+    "漏洞描述": "node-red-contrib-huemagic 3.0.0 is affected by hue/assets/..%2F Directory Traversal.in the res.sendFile API, used in file hue-magic.js, to fetch an arbitrary file.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://github.com/Foddy/node-red-contrib-huemagic/issues/217"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2021年01月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "Rockwell Automation MicroLogix 1400",
+    "CVE编号": "CVE-2021-22659",
+    "漏洞描述": "Rockwell Automation MicroLogix 1400 Version 21.6 and below may allow a remote unauthenticated attacker to send a specially crafted Modbus packet allowing the attacker to retrieve or modify random values in the register. If successfully exploited, this may lead to a buffer overflow resulting in a denial-of-service condition. The FAULT LED will flash RED and communications may be lost. Recovery from denial-of-service condition requires the fault to be cleared by the user.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://us-cert.cisa.gov/ics/advisories/icsa-21-033-01",
+      "https://rockwellautomation.custhelp.com/app/answers/answer_view/a_id/1129877/loc/en_US#__highlight"
+    ],
+    "受影响版本": [
+      "MicroLogix 1400, All series Version 21.6 and below"
+    ],
+    "公开日期": "2021年03月25日"
+  },
+  {
+    "设备品牌": "node-red",
+    "设备类型": "OTA",
+    "产品型号": "node-red",
+    "CVE编号": "CVE-2021-21298",
+    "漏洞描述": "Node-Red is a low-code programming for event-driven applications built using nodejs. Node-RED 1.2.7 and earlier has a vulnerability which allows arbitrary path traversal via the Projects API. If the Projects feature is enabled, a user with `projects.read` permission is able to access any file via the Projects API. The issue has been patched in Node-RED 1.2.8. The vulnerability applies only to the Projects feature which is not enabled by default in Node-RED. The primary workaround is not give untrusted users read access to the Node-RED editor.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://www.npmjs.com/package/%40node-red/runtime",
+      "https://github.com/node-red/node-red/releases/tag/1.2.8",
+      "https://github.com/node-red/node-red/security/advisories/GHSA-m33v-338h-4v9f",
+      "https://github.com/node-red/node-red/commit/74db3e17d075f23d9c95d7871586cf461524c456"
+    ],
+    "受影响版本": [
+      "< 1.2.8"
+    ],
+    "公开日期": "2021年02月26日"
+  },
+  {
+    "设备品牌": "node-red",
+    "设备类型": "OTA",
+    "产品型号": "node-red",
+    "CVE编号": "CVE-2021-21297",
+    "漏洞描述": "Node-Red is a low-code programming for event-driven applications built using nodejs. Node-RED 1.2.7 and earlier contains a Prototype Pollution vulnerability in the admin API. A badly formed request can modify the prototype of the default JavaScript Object with the potential to affect the default behaviour of the Node-RED runtime. The vulnerability is patched in the 1.2.8 release. A workaround is to ensure only authorized users are able to access the editor url.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/node-red/node-red/security/advisories/GHSA-xp9c-82x8-7f67",
+      "https://www.npmjs.com/package/%40node-red/runtime",
+      "https://www.npmjs.com/package/%40node-red/editor-api",
+      "https://github.com/node-red/node-red/releases/tag/1.2.8"
+    ],
+    "受影响版本": [
+      "< 1.2.8"
+    ],
+    "公开日期": "2021年02月26日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "n/a",
+    "CVE编号": "CVE-2020-9318",
+    "漏洞描述": "Red Gate SQL Monitor 9.0.13 through 9.2.14 allows an administrative user to perform a SQL injection attack by configuring the SNMP alert settings in the UI. This is fixed in 9.2.15.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.red-gate.com/privacy-and-security/vulnerabilities/2020-02-19-sql-monitor"
+    ],
+    "受影响版本": [
+      "n/a"
+    ],
+    "公开日期": "2020年02月20日"
+  },
+  {
+    "设备品牌": "Hirschmann Automation and Control GmbH, a division of Belden Inc.",
+    "设备类型": "OTA",
+    "产品型号": "HiOS for the following devices RSP, RSPE, RSPS, RSPL, MSP, EES, EES, EESX, GRS, OS, RED",
+    "CVE编号": "CVE-2020-6994",
+    "漏洞描述": "A buffer overflow vulnerability was found in some devices of Hirschmann Automation and Control HiOS and HiSecOS. The vulnerability is due to improper parsing of URL arguments. An attacker could exploit this vulnerability by specially crafting HTTP requests to overflow an internal buffer. The following devices using HiOS Version 07.0.02 and lower are affected: RSP, RSPE, RSPS, RSPL, MSP, EES, EES, EESX, GRS, OS, RED. The following devices using HiSecOS Version 03.2.00 and lower are affected: EAGLE20/30.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://www.us-cert.gov/ics/advisories/icsa-20-091-01"
+    ],
+    "受影响版本": [
+      "07.0.02 and lower"
+    ],
+    "公开日期": "2020年04月03日"
+  },
+  {
+    "设备品牌": "Cog-Creators",
+    "设备类型": "OTA",
+    "产品型号": "Red-Dashboard",
+    "CVE编号": "CVE-2020-26249",
+    "漏洞描述": "Red Discord Bot Dashboard is an easy-to-use interactive web dashboard to control your Redbot. In Red Discord Bot before version 0.1.7a an RCE exploit has been discovered. This exploit allows Discord users with specially crafted Server names and Usernames/Nicknames to inject code into the webserver front-end code. By abusing this exploit, it's possible to perform destructive actions and/or access sensitive information. This high severity exploit has been fixed on version 0.1.7a. There are no workarounds, bot owners must upgrade their relevant packages (Dashboard module and Dashboard webserver) in order to patch this issue.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/Cog-Creators/Red-Dashboard/security/advisories/GHSA-hm45-mgqm-gjm4",
+      "https://pypi.org/project/Red-Dashboard",
+      "https://github.com/Cog-Creators/Red-Dashboard/commit/a6b9785338003ec87fb75305e7d1cc2d40c7ab91",
+      "https://github.com/Cog-Creators/Red-Dashboard/commit/99d88b840674674166ce005b784ae8e31e955ab1"
+    ],
+    "受影响版本": [
+      "< 0.1.7a"
+    ],
+    "公开日期": "2020年12月08日"
+  },
+  {
+    "设备品牌": "Trend Micro",
+    "设备类型": "OTA",
+    "产品型号": "Trend Micro Apex One",
+    "CVE编号": "CVE-2020-25774",
+    "漏洞描述": "A vulnerability in the Trend Micro Apex One ServerMigrationTool component could allow an attacker to trigger an out-of-bounds red information disclosure which would disclose sensitive information to an unprivileged account. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://success.trendmicro.com/solution/000271974",
+      "https://www.zerodayinitiative.com/advisories/ZDI-20-1225/"
+    ],
+    "受影响版本": [
+      "2009, SaaS"
+    ],
+    "公开日期": "2020年09月28日"
+  },
+  {
+    "设备品牌": "ABB",
+    "设备类型": "OTA",
+    "产品型号": "AC500 V2 products with onboard Ethernet",
+    "CVE编号": "CVE-2020-24685",
+    "漏洞描述": "An unauthenticated specially crafted packet sent by an attacker over the network will cause a denial-of-service (DoS) vulnerability. Vulnerability allows attacker to stop the PLC. After stopping (ERR LED flashing red), physical access to the PLC is required in order to restart the application. This issue affects: ABB AC500 V2 products with onboard Ethernet version 2.8.4 and prior versions.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://search.abb.com/library/Download.aspx?DocumentID=3ADR010667&LanguageCode=en&DocumentPartId=&Action=Launch"
+    ],
+    "受影响版本": [
+      "version 2.8.4 and prior versions"
+    ],
+    "公开日期": "2021年02月09日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "N-Tron 702-W / 702M12-W",
+    "CVE编号": "CVE-2020-16210",
+    "漏洞描述": "The affected product is vulnerable to reflected cross-site scripting, which may allow an attacker to remotely execute arbitrary code and perform actions in the context of an attacked user on the N-Tron 702-W / 702M12-W (all versions).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://us-cert.cisa.gov/ics/advisories/icsa-20-240-01",
+      "http://seclists.org/fulldisclosure/2020/Sep/6",
+      "http://packetstormsecurity.com/files/159064/Red-Lion-N-Tron-702-W-702M12-W-2.0.26-XSS-CSRF-Shell.html"
+    ],
+    "受影响版本": [
+      "Versions prior to all versions"
+    ],
+    "公开日期": "2020年09月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "N-Tron 702-W / 702M12-W",
+    "CVE编号": "CVE-2020-16208",
+    "漏洞描述": "The affected product is vulnerable to cross-site request forgery, which may allow an attacker to modify different configurations of a device by luring an authenticated user to click on a crafted link on the N-Tron 702-W / 702M12-W (all versions).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://us-cert.cisa.gov/ics/advisories/icsa-20-240-01",
+      "http://seclists.org/fulldisclosure/2020/Sep/6",
+      "http://packetstormsecurity.com/files/159064/Red-Lion-N-Tron-702-W-702M12-W-2.0.26-XSS-CSRF-Shell.html"
+    ],
+    "受影响版本": [
+      "Versions prior to all versions"
+    ],
+    "公开日期": "2020年09月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "N-Tron 702-W / 702M12-W",
+    "CVE编号": "CVE-2020-16206",
+    "漏洞描述": "The affected product is vulnerable to stored cross-site scripting, which may allow an attacker to remotely execute arbitrary code to gain access to sensitive data on the N-Tron 702-W / 702M12-W (all versions).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://us-cert.cisa.gov/ics/advisories/icsa-20-240-01",
+      "http://seclists.org/fulldisclosure/2020/Sep/6",
+      "http://packetstormsecurity.com/files/159064/Red-Lion-N-Tron-702-W-702M12-W-2.0.26-XSS-CSRF-Shell.html"
+    ],
+    "受影响版本": [
+      "Versions prior to all versions"
+    ],
+    "公开日期": "2020年09月01日"
+  },
+  {
+    "设备品牌": "n/a",
+    "设备类型": "OTA",
+    "产品型号": "N-Tron 702-W / 702M12-W",
+    "CVE编号": "CVE-2020-16204",
+    "漏洞描述": "The affected product is vulnerable due to an undocumented interface found on the device, which may allow an attacker to execute commands as root on the device on the N-Tron 702-W / 702M12-W (all versions).",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "https://us-cert.cisa.gov/ics/advisories/icsa-20-240-01",
+      "http://seclists.org/fulldisclosure/2020/Sep/6",
+      "http://packetstormsecurity.com/files/159064/Red-Lion-N-Tron-702-W-702M12-W-2.0.26-XSS-CSRF-Shell.html"
+    ],
+    "受影响版本": [
+      "Versions prior to all versions"
+    ],
+    "公开日期": "2020年09月01日"
+  },
+  {
+    "设备品牌": "Cog-Creators",
+    "设备类型": "OTA",
+    "产品型号": "Red-DiscordBot",
+    "CVE编号": "CVE-2020-15278",
+    "漏洞描述": "Red Discord Bot before version 3.4.1 has an unauthorized privilege escalation exploit in the Mod module. This exploit allows Discord users with a high privilege level within the guild to bypass hierarchy checks when the application is in a specific condition that is beyond that user's control. By abusing this exploit, it is possible to perform destructive actions within the guild the user has high privileges in. This exploit has been fixed in version 3.4.1. As a workaround, unloading the Mod module with unload mod or, disabling the massban command with command disable global massban can render this exploit not accessible. We still highly recommend updating to 3.4.1 to completely patch this issue.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/Cog-Creators/Red-DiscordBot/security/advisories/GHSA-mp9m-g7qj-6vqr",
+      "https://github.com/Cog-Creators/Red-DiscordBot/commit/726bfd38adfdfaef760412a68e01447b470f438b",
+      "https://github.com/Cog-Creators/Red-DiscordBot/releases/tag/3.4.1"
+    ],
+    "受影响版本": [
+      "< 3.4.1"
+    ],
+    "公开日期": "2020年10月28日"
+  },
+  {
+    "设备品牌": "zephyrkul",
+    "设备类型": "OTA",
+    "产品型号": "FluffyCogs",
+    "CVE编号": "CVE-2020-15172",
+    "漏洞描述": "The Act module for Red Discord Bot before commit 6b9f3b86 is vulnerable to Remote Code Execution. With this exploit, Discord users can use specially crafted messages to perform destructive actions and/or access sensitive information. Unloading the Act module with `unload act` can render this exploit inaccessible.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/zephyrkul/FluffyCogs/security/advisories/GHSA-rm7m-j4xp-rv2p",
+      "https://github.com/zephyrkul/FluffyCogs/commit/6b9f3b862e1f0a5429c62f3090f814e53a242347"
+    ],
+    "受影响版本": [
+      "< 2.0.38"
+    ],
+    "公开日期": "2020年09月15日"
+  },
+  {
+    "设备品牌": "Cog-Creators",
+    "设备类型": "OTA",
+    "产品型号": "Red-DiscordBot",
+    "CVE编号": "CVE-2020-15147",
+    "漏洞描述": "Red Discord Bot before versions 3.3.12 and 3.4 has a Remote Code Execution vulnerability in the Streams module. This exploit allows Discord users with specifically crafted \"going live\" messages to inject code into the Streams module's going live message. By abusing this exploit, it's possible to perform destructive actions and/or access sensitive information. As a workaround, unloading the Trivia module with `unload streams` can render this exploit not accessible. It is highly recommended updating to 3.3.12 or 3.4 to completely patch this issue.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/Cog-Creators/Red-DiscordBot/security/advisories/GHSA-7257-96vg-qf6x",
+      "https://github.com/Cog-Creators/Red-DiscordBot/pull/4183",
+      "https://github.com/Cog-Creators/Red-DiscordBot/pull/4183/commits/e269ea0d3bc88417163c18431b1df38a9be92bfc"
+    ],
+    "受影响版本": [
+      "< 3.3.12"
+    ],
+    "公开日期": "2020年08月21日"
+  },
+  {
+    "设备品牌": "Cog-Creators",
+    "设备类型": "OTA",
+    "产品型号": "Red-DiscordBot",
+    "CVE编号": "CVE-2020-15140",
+    "漏洞描述": "In Red Discord Bot before version 3.3.11, a RCE exploit has been discovered in the Trivia module: this exploit allows Discord users with specifically crafted usernames to inject code into the Trivia module's leaderboard command. By abusing this exploit, it's possible to perform destructive actions and/or access sensitive information. This critical exploit has been fixed on version 3.3.11.",
+    "攻击向量": "NETWORK",
+    "厂商补丁链接": [
+      "https://github.com/Cog-Creators/Red-DiscordBot/security/advisories/GHSA-55j9-849x-26h4",
+      "https://github.com/Cog-Creators/Red-DiscordBot/pull/4175/commits/9ab536235bafc2b42c3c17d7ce26f1cc64482a81"
+    ],
+    "受影响版本": [
+      "< 3.3.11"
+    ],
+    "公开日期": "2020年08月21日"
+  }
+]

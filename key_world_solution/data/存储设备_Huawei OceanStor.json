@@ -1,0 +1,18 @@
+[
+  {
+    "设备品牌": "n/a",
+    "设备类型": "存储设备",
+    "产品型号": "OceanStor 5310 V5",
+    "CVE编号": "CVE-2020-9098",
+    "漏洞描述": "Huawei OceanStor 5310 product with version of V500R007C60SPC100 has an invalid pointer access vulnerability. The software system access an invalid pointer when attacker malformed packet. Due to the insufficient validation of some parameter, successful exploit could cause device reboot.",
+    "攻击向量": "N/A",
+    "厂商补丁链接": [
+      "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200429-01-invalidpointer-en",
+      "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200429-01-invalidpointer-en"
+    ],
+    "受影响版本": [
+      "V500R007C60SPC100"
+    ],
+    "公开日期": "2020年04月30日"
+  }
+]
